@@ -25,13 +25,11 @@ function SearchBar(props) {
 
   return (
     <>
-      <div className="input-field first-wrap" id={searchId}>
-        <div className="svg-wrapper">
-          {/* <SearchIcon className="search-svg" /> */}
-        </div>
-        <form className="searchbar-container" autocomplete="off">
+      <div className="searchBar-container" id={searchId}>
+        <div className="searchBar-wrapper">
+          <SearchIcon className="searchBar-svg" />
           <input
-            className="searchbar-input"
+            className="searchBar-input"
             id="search"
             type="text"
             placeholder="search"
@@ -43,7 +41,7 @@ function SearchBar(props) {
               setSearchInput(e.target.value);
             }}
           />
-        </form>
+        </div>
       </div>
     </>
   );
