@@ -25,7 +25,7 @@ function RuBento(props) {
 
   // 向後端請求資料
   useEffect(() => {
-    // 拿商品列表
+    // // 拿商品列表
     axios.get('http://localhost:5000/product/bento').then((res) => {
       console.log('res', res);
       setData(res.data);
@@ -43,6 +43,12 @@ function RuBento(props) {
         console.log(copyJsonFav);
       });
   }, []);
+  // 第二種寫法
+  // useEffect(async () => {
+  //   // 拿商品列表
+  //   const promiseData = await axios.get('http://localhost:5000/product/bento'); // 等待promise物件回傳
+  //   setData(promiseData.data); // 再執行非同步的setData
+  // }, []);
 
   useEffect(() => {
     // 第一次掛載DOM 與 每次state改變時 都會觸發
