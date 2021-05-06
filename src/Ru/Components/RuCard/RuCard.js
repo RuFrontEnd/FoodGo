@@ -60,14 +60,9 @@ function RuCard(props) {
     if (!data) {
       return;
     }
-    for (let i = 0; i < 22; i++) {
-      // console.log(data[i].sid);
-      switch (proudctId) {
-        case data[i].sid:
-          setPath('/bento/' + (data[i].sid - 1));
-          break;
-      }
-    }
+    data.forEach((dataItem) => {
+      setPath('/bento/' + (dataItem.sid - 1));
+    });
   }, [data]);
   // 決定path路徑
 
