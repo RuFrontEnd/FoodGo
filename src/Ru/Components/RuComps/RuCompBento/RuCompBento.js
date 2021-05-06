@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth';
 import RuBento from 'Ru/Components/RuCards/RuBento/RuBento';
 import RuButton from 'Ru/Components/RuButton/RuButton';
 import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar';
@@ -22,8 +21,7 @@ function RuCompBento(props) {
   // JSX
   return (
     <>
-      <div style={{ height: '100px', backgroundColor: '#FF5151' }}></div>
-      {/* <RuShowWidth /> */}
+      <div className="top-space"></div>
 
       <div className="ru-mainImg-warp">
         <h1>享受美食 不需要理由</h1>
@@ -32,14 +30,11 @@ function RuCompBento(props) {
 
       <div className="ru-productList-container">
         <div className="ru-optionWarp">
-          {/* 搜尋欄s */}
           <RuSearchBar
             searchInput={searchInput}
             setSearchInput={setSearchInput}
           />
-          {/* 搜尋欄e */}
 
-          {/* 選項按鈕 s */}
           <section className="ru-buttonWarp">
             <RuButton
               text={'低GI便當'}
@@ -88,14 +83,10 @@ function RuCompBento(props) {
           </section>
         </div>
 
-        {/* 分隔曲線 s*/}
         <div className="ru-line">
           <img src={line}></img>
         </div>
-        {/* 分隔曲線 e*/}
       </div>
-
-      {/* 商品卡片區 s */}
       <RuBento
         searchInput={searchInput}
         handleCartNumber={handleCartNumber} // localStorage函式
@@ -103,15 +94,7 @@ function RuCompBento(props) {
         count={count}
         setCount={setCount}
       />
-      {/* 商品卡片區 e */}
-
-      {/* to top s */}
       <ScrollButton />
-      {/* to top e */}
-
-      {/* <div style={{ height: '222px', backgroundColor: '#FF5151' }}>
-        我是footer
-      </div> */}
     </>
   );
 }
