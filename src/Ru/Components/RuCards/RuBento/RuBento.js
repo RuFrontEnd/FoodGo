@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'Ru/Components/RuCards/Style.scss';
 import RuNothing from 'Ru/Components/RuNothing/RuNothing';
 import RuCard from 'Ru/Components/RuCard/RuCard';
+import axios from 'axios';
 
 function RuBento(props) {
   const { searchInput, handleCartNumber, currentUser, count, setCount } = props;
@@ -25,20 +26,10 @@ function RuBento(props) {
   // 向後端請求資料
   useEffect(() => {
     // 拿商品列表
-    console.log(fetch('http://localhost:5000/product/bento'))
-    fetch('http://localhost:5000/product/bento') // 非同步
-      .then((response) => {
-        return response.json();
-      })
-      .then(function (myJson) {
-        // console.log(myJson)
-        const copyJson = [...myJson];
-        setData(copyJson);
-      })
-      .catch((err) => {
-        console.log('fetch error!');
-        console.log(err);
-      });
+    axios.get('http://localhost:5000/product/bento').then((res) => {
+      console.log('res', res);
+      setData(res.data);
+    });
 
     // 拿 我的最愛
     fetch('http://localhost:5000/member/myFavList') // 非同步
