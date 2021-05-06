@@ -26,10 +26,10 @@ function RuBento(props) {
   // 向後端請求資料
   useEffect(() => {
     // // 拿商品列表
-    axios.get('http://localhost:5000/product/bento').then((res) => {
-      console.log('res', res);
-      setData(res.data);
-    });
+    // axios.get('http://localhost:5000/product/bento').then((res) => {
+    //   console.log('res', res);
+    //   setData(res.data);
+    // });
 
     // 拿 我的最愛
     fetch('http://localhost:5000/member/myFavList') // 非同步
@@ -40,14 +40,13 @@ function RuBento(props) {
         // console.log(myJson)
         const copyJsonFav = [...myJson];
         setDataFav(copyJsonFav);
-        console.log(copyJsonFav);
       });
   }, []);
   // 第二種寫法
   // useEffect(async () => {
   //   // 拿商品列表
   //   const promiseData = await axios.get('http://localhost:5000/product/bento'); // 等待promise物件回傳
-  //   setData(promiseData.data); // 再執行非同步的setData
+  //   setData(promiseData.data);
   // }, []);
 
   useEffect(() => {
