@@ -3,10 +3,6 @@ import 'Ru/Components/RuCards/Style.scss';
 import RuNothing from 'Ru/Components/RuNothing/RuNothing';
 import RuCard from 'Ru/Components/RuCard/RuCard';
 
-
-// 引用圖片
-import background from './Images/background.png';
-
 function RuBento(props) {
   const { searchInput, handleCartNumber, currentUser, count, setCount } = props;
   const [itemWarp1, setItemWarp1] = useState(false);
@@ -21,9 +17,7 @@ function RuBento(props) {
   const [itemWarp10, setItemWarp10] = useState(false);
   const [itemWarp11, setItemWarp11] = useState(false);
   const [itemWarp12, setItemWarp12] = useState(false);
-
   const [isShowNothing, setIsShowNothing] = useState(false);
-  // 後端資料
   const [data, setData] = useState('');
   const [dataFav, setDataFav] = useState('');
   const [showFavArr, setShowFavArr] = useState([]);
@@ -31,14 +25,19 @@ function RuBento(props) {
   // 向後端請求資料
   useEffect(() => {
     // 拿商品列表
+    console.log(fetch('http://localhost:5000/product/bento'))
     fetch('http://localhost:5000/product/bento') // 非同步
-      .then(function (response) {
+      .then((response) => {
         return response.json();
       })
       .then(function (myJson) {
         // console.log(myJson)
         const copyJson = [...myJson];
         setData(copyJson);
+      })
+      .catch((err) => {
+        console.log('fetch error!');
+        console.log(err);
       });
 
     // 拿 我的最愛
@@ -422,7 +421,6 @@ function RuBento(props) {
         {/* <img src={background}></img> */}
         {/* 背景米圖 e */}
       </div>
- 
     </>
   );
 }
