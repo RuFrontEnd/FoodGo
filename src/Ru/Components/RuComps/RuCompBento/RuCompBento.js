@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import RuBento from 'Ru/Components/RuCards/RuBento/RuBento';
 import RuButton from 'Ru/Components/RuButton/RuButton';
-import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar';
+import SearchBar from 'components/searchBar/SearchBar';
 import 'Ru/Components/RuComps/Style.scss';
 
 // 引用共用元件
@@ -30,7 +30,7 @@ function RuCompBento(props) {
 
       <div className="ru-productList-container">
         <div className="ru-optionWarp">
-          <RuSearchBar
+          <SearchBar
             searchInput={searchInput}
             setSearchInput={setSearchInput}
           />
