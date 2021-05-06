@@ -26,7 +26,7 @@ function SearchBar(props) {
   return (
     <>
       <div className="searchBar-container" id={searchId}>
-        <div className="searchBar-wrapper">
+        <form className="searchBar-wrapper" autocomplete="off">
           <SearchIcon className="searchBar-svg" />
           <input
             className="searchBar-input"
@@ -40,8 +40,8 @@ function SearchBar(props) {
             onChange={(e) => {
               setSearchInput(e.target.value);
             }}
-          />
-        </div>
+          ></input>
+        </form>
       </div>
     </>
   );
