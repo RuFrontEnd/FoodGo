@@ -1,0 +1,123 @@
+@import './Variable.scss';
+
+// 橘色
+.cha-submit-button-btn:focus {
+  outline: none;
+}
+.cha-submit-button-btn {
+  background-color: $light-orange;
+  height: 4.5rem;
+  width: 17rem;
+  border: 1px solid $light-orange;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    #fff
+  );
+}
+
+.cha-submit-button-btn:hover {
+  color: $white;
+  transition: 0.5s;
+}
+
+.cha-submit-button-btn:active {
+  border: 1px solid $dark-orange;
+}
+
+.cha-submit-button-btn::after {
+  content: '';
+  background-color: #e0611e;
+  height: 4.5rem;
+  width: 17rem;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: 0px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.cha-submit-button-btn:hover::after {
+  top: 0px;
+}
+
+.cha-submit-button-btn:active::after {
+  background-color: $dark-orange;
+}
+
+// 綠色
+.cha-submit-button-btn-g:focus {
+  outline: none;
+}
+.cha-submit-button-btn-g {
+  background-color: $white;
+  height: 4.5rem;
+  width: 17rem;
+  border: 1px solid $light-green;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $light-green
+  );
+}
+
+.cha-submit-button-btn-g:hover {
+  color: $white;
+  transition: 0.5s;
+}
+
+.cha-submit-button-btn-g:active {
+  border: 1px solid $dark-green;
+}
+
+.cha-submit-button-btn-g::after {
+  content: '';
+  background-color: $light-green;
+  height: 4.5rem;
+  width: 17rem;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: -10px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.cha-submit-button-btn-g:hover::after {
+  top: 0px;
+}
+
+.cha-submit-button-btn-g:active::after {
+  background-color: $dark-green;
+}

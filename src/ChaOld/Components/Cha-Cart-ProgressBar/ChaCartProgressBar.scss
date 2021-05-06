@@ -1,0 +1,69 @@
+.cha-progress-bar-arrow-header {
+  width: 100%;
+  height: 7rem;
+  position: fixed;
+  top: 0rem;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #858585;
+  font-weight: 500;
+}
+.cha-progress-bar-yellow {
+  width: 0;
+  height: 7rem;
+  // background-color: #f6bd60;
+  position: fixed;
+  top: 0rem;
+  z-index: 6;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.cha-progress-bar-arrow-header-white {
+  width: 100%;
+  height: 7rem;
+  top: 0rem;
+  font-weight: 500;
+  font-size: 2.4rem;
+  overflow: hidden;
+}
+.cha-progress-bar-header-fff {
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  left: 66.5rem;
+  top: 17px;
+}
+.cha-progress-bar {
+  width: 100%;
+  height: 7rem;
+  background-color: #fff;
+  position: fixed;
+  top: 0rem;
+  z-index: 2;
+  box-shadow: 0.3rem 0 1rem #cfcfcf;
+}
+.cha-progress-bar-header {
+  font-size: 2.4rem;
+}
+.cha-right-arrow-fff,
+.cha-right-arrow {
+  // background-position: center center;
+  height: 2.5rem;
+  width: 1.5rem;
+  position: absolute;
+  top: 2rem;
+  left: 4rem;
+  cursor: pointer;
+}
+.cha-right-arrow {
+  background: url('./Images/right-arrow-gray.svg') no-repeat;
+}
+.cha-right-arrow-fff {
+  background: url('./Images/right-arrow-white.svg') no-repeat;
+}
+// .cha-right-arrow:hover {
+//   background: url('./Images/right-arrow-gray.svg') no-repeat;
+// }

@@ -1,0 +1,96 @@
+// 引入
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
+
+// 色票
+$white: #ffffff;
+$black: #000000;
+$light-orange: #f48145;
+$dark-orange: #e0611e;
+$light-yellow: #f6bd60;
+$dark-yellow: #f5a016;
+$light-Beige: #f7ede2;
+$dark-Beige: #decdbb;
+$light-green: #66ab8c;
+$dark-green: #438b6b;
+$grey: #858585; 
+$light-grey: #9b9b9b;
+$tan: #a59583;
+$productName-Color: #262628;
+$hr-Color: #DECDBB;
+
+// 字體
+$notoSansTC: "Noto Sans TC", sans-serif; 
+
+// 字體大小
+// web
+$main-title: 36px;
+$sub-title: 24px;
+$minor-heading: 20px;
+$content: 15px;
+$line-hieght: 30px;
+$productName-size: 18px;
+$number-size: 12px;
+
+// rwd
+$rwd-strong-title: 40px;
+$rwd-main-title: 24px;
+$rwd-sub-title: 20px;
+$rwd-minor-heading: 18px;
+$content: 14px;
+$line-hieght: 25px;
+
+// 字重
+$thin: 100;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+$black: 900;
+
+// 字距
+$letter-spacing: 5px;
+
+// 字集合
+@mixin font($notoSansTC, $sub-title, $regular, $letter-spacing, $white) {
+  // 字體, 字體大小, 字重, 字距, 字色
+  font-family: $notoSansTC;
+  font-size: $sub-title;
+  font-weight: $regular;
+  letter-spacing: $letter-spacing;
+  color: $white;
+}
+
+// 父容器置中
+@mixin page {
+  max-width: 1440px;
+  padding: 0px 135px;
+  margin: auto;
+}
+
+// flex
+// display
+$df: flex;
+// 主軸方向
+$fdr: row;
+$fdc: column;
+// 主軸排列
+$jcs: flex-start;
+$jcc: center;
+$jce: flex-end;
+// 次軸排列
+$als: flex-start;
+$alc: center;
+$ale: flex-end;
+@mixin flex($df, $fdr, $jcc, $alc) {
+  display: $df;
+  flex-direction: $fdr;
+  justify-content: $jcc;
+  align-items: $alc;
+}
+
+// transition 時間
+$zero: 0s;
+$zero-one: .1s;
+$two-five: .25s;
+$three-five: .35s;
+$zero-five: .5s;

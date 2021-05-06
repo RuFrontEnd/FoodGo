@@ -1,0 +1,123 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+/* 清除內外邊距 */
+* {
+  /* table elements 表格元素 */
+  margin: 0;
+  padding: 0;
+}
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+$green: #66ab8c;
+$white: #ffffff;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
+
+.jess-VegE-container-fluid {
+  background-color: $lightBrown;
+  width: 100%;
+  height: 80rem;
+  padding: 0;
+  margin-top: 5rem;
+}
+.jess-vegE-card {
+  width: 35rem;
+  height: 57rem;
+  padding: 3rem;
+  justify-content: center;
+}
+.jess-vegE-card::after {
+  width: 35rem;
+  height: 57rem;
+  opacity: 1;
+}
+.jess-vegE-card:hover {
+  background-color: $white;
+  border-radius: 8%;
+  box-shadow: 1px 1px 5px 2px rgba(122, 117, 117, 0.2);
+  opacity: 1;
+  & button {
+    background-color: $green;
+    color: $white;
+  }
+}
+.jess-vegE-farm1 {
+  background: url('./images/jess-VegE-farm1.png') no-repeat center center;
+  background-size: contain;
+  width: 28rem;
+  height: 28rem;
+  margin: 0 !important;
+}
+.jess-vegE-farm2 {
+  background: url('./images/jess-VegE-farm2.png') no-repeat center center;
+  background-size: contain;
+  width: 28rem;
+  height: 28rem;
+  margin: 0 !important;
+}
+.jess-vegE-farm3 {
+  background: url('./images/jess-VegE-farm3.png') no-repeat center center;
+  background-size: contain;
+  width: 28rem;
+  height: 28rem;
+}
+.jess-text-24GreenSe {
+  font-size: 2.4rem;
+  font-family: 'Noto Serif Tc', serif;
+  font-weight: 600;
+  color: $green;
+}
+.jess-text-15Gray {
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  color: $darkGary;
+  line-height: 2.5rem;
+}
+.jess-VegE-button button {
+  width: 14rem;
+  height: 4rem;
+  font-size: 2rem;
+  background-color: transparent;
+}
+.jess-text-tooMany {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.jess-vegE-bottomBorder {
+  background: url('../../Components/images/SVG/brownBorder.svg') no-repeat
+    center center;
+  background-size: contain;
+  height: 1rem;
+}
+@media screen and (max-width: 576px) {
+  .jess-VegE-container-fluid {
+    background-color: $lightBrown;
+    width: 100%;
+    height: 196rem;
+    padding: 0;
+    margin-top: 5rem;
+  }
+  .jess-vegE-bottomBorder {
+    background: url('../../Components/images/SVG/brownBorder.svg') no-repeat
+      center center;
+    background-size: cover;
+    height: 1rem;
+  }
+}

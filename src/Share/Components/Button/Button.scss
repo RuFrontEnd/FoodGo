@@ -1,0 +1,182 @@
+@import './Variable.scss';
+
+// 橘色
+.button-btn:focus {
+  outline: none;
+}
+
+.button-btn {
+  background-color: $white;
+  height: 65px;
+  width: 200px;
+  border: 1px solid $light-orange;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $light-orange
+  );
+}
+
+.button-btn:hover {
+  color: $white;
+}
+
+.button-btn:active {
+  border: 1px solid $dark-orange;
+}
+
+.button-btn::after {
+  content: '';
+  background-color: $light-orange;
+  height: 65px;
+  width: 220px;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: -10px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.button-btn:hover::after {
+  top: 0px;
+}
+
+.button-btn:active::after {
+  background-color: $dark-orange;
+}
+
+// 綠色
+.button-btn-g:focus {
+  outline: none;
+}
+.button-btn-g {
+  background-color: $white;
+  height: 65px;
+  width: 200px;
+  border: 1px solid $light-green;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $light-green
+  );
+}
+
+.button-btn-g:hover {
+  color: $white;
+}
+
+.button-btn-g:active {
+  border: 1px solid $dark-green;
+}
+
+.button-btn-g::after {
+  content: '';
+  background-color: $light-green;
+  height: 65px;
+  width: 220px;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: -10px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.button-btn-g:hover::after {
+  top: 0px;
+}
+
+.button-btn-g:active::after {
+  background-color: $dark-green;
+}
+
+// 黃色
+.button-btn-y:focus {
+  outline: none;
+}
+.button-btn-y {
+  background-color: $white;
+  height: 65px;
+  width: 200px;
+  border: 1px solid $light-yellow;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $dark-yellow
+  );
+}
+
+.button-btn-y:hover {
+  color: $white;
+}
+
+.button-btn-y:active {
+  border: 1px solid $dark-yellow;
+}
+
+.button-btn-y::after {
+  content: '';
+  background-color: $light-yellow;
+  height: 65px;
+  width: 220px;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: -10px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.button-btn-y:hover::after {
+  top: 0px;
+}
+
+.button-btn-y:active::after {
+  background-color: $dark-yellow;
+}

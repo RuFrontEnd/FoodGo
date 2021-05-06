@@ -1,0 +1,162 @@
+//------------------------------Desktop--------------------------------
+.claudia-index-card-list-box {
+    width: 384px;
+    height: 620px;
+    background-color: #fff;
+    border-radius: 40px;
+    padding: 35px 40px 10px 40px;
+    box-shadow: 0px 3px 6px #D1C5B8;
+    opacity: 0;
+    display: none;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+#claudia-index-card-list-city {
+    color: #F6BD60;
+    margin-bottom: 10px;
+}
+
+#claudia-index-card-list-text {
+    font-size: 1.5rem;
+    color: #858585;
+    margin-bottom: 20px;
+}
+
+//button box 
+
+.claudia-index-card-list-box-buttons {
+    width: 304px;
+    height: 480px;
+}
+
+//button
+
+.claudia-index-card-list-box-button {
+    width: 304px;
+    height: 110px;
+    color:  #66AB8C;
+    border: 2px solid #66AB8C;
+    border-radius: 40px;
+    background-color: #fff;
+    text-align: left;
+    padding: 35px 10px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    //style
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: color .35s, border 0s;
+}
+
+
+//button hover
+
+.claudia-index-card-list-box-button:hover {
+    color: #fff;
+}
+
+.claudia-index-card-list-box-button:active {
+    border: 2px solid #66AB8C;
+}
+
+
+.claudia-index-card-list-box-button::after {
+    content: '';
+    background-color: #66AB8C;
+    height: 110px;
+    width: 304px;
+    position: absolute;
+    z-index: -1;
+    top: 110px;
+    left: 0px;
+    transition: top .25s, background-color 0s, border 0s;
+    color: #fff;
+}
+
+
+.claudia-index-card-list-box-button:hover::after {
+    top: 0px;
+  }
+  
+.claudia-index-card-list-box-button:active::after {
+    background-color: #66AB8C;
+}
+
+
+.claudia-index-card-list-box-button:focus {
+    outline: none;
+}
+
+//------------------------------Desktop--------------------------------
+
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576.1px) and (max-width: 1200px) {
+    .claudia-index-card-list-box {
+        width: 345px;
+        height: 590px;
+        margin: 0px auto;
+    }
+
+    .claudia-index-card-list-box-button {
+        width: 265px;
+        height: 90px;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .claudia-index-card-list-box-button p {
+        font-size: 1.8rem;
+    }
+
+    .claudia-index-card-list-box-buttons {
+        margin-top: 45px;
+    }
+
+
+
+
+}
+
+//--------------------------------Ipad---------------------------------
+
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+@media only screen and (max-width: 576px) {
+
+    .claudia-index-card-list-box {
+        width: 335px;
+        height: 590px;
+        margin: 0px auto;
+    }
+
+    .claudia-index-card-list-box-button {
+        width: 255px;
+        height: 90px;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .claudia-index-card-list-box-button p {
+        font-size: 1.8rem;
+    }
+
+    .claudia-index-card-list-box-buttons {
+        margin-top: 45px;
+    }
+}
+//----------------------Iphone 6/7/8 + Plus + X------------------------

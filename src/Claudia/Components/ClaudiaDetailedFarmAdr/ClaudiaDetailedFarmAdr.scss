@@ -1,0 +1,236 @@
+//------------------------------Desktop--------------------------------
+
+.claudia-detailed-farm-adr h1 {
+    font-family: 'Noto Serif TC';
+    color: #66AB8C;
+    font-size: 3.6rem;
+    text-align: center;
+    margin: 60px auto;
+}
+
+.claudia-detailed-farm-adr-container {
+    width: 920px;
+    margin: 0px auto;
+    display: flex;
+    padding-bottom: 40px;
+}
+
+//Left
+
+.claudia-detailed-farm-adr-info {
+    width: 560px;
+}
+
+.claudia-detailed-farm-adr-info p {
+    font-size: 20px;
+    color: #858585;
+}
+
+.claudia-detailed-farm-adr-info iframe {
+    margin-top: 20px;
+}
+
+//Right
+
+.claudia-detailed-farm-adr-transport {
+    padding-left: 20px;
+}
+
+.claudia-detailed-farm-adr-transport-container {
+    width: 90%;
+    height: 357px;
+    margin: 150px auto;
+}
+
+.claudia-detailed-farm-adr-transport-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.claudia-detailed-farm-adr-transport-buttons button{
+    width: 150px;
+    height: 45px;
+    margin: 0px 2px 30px 2px;
+    background-color: transparent;
+}
+
+.claudia-detailed-farm-adr-transport-text {
+    margin-top: 20px;
+}
+
+.claudia-detailed-farm-adr-transport-text p{
+    font-size: 18px;
+    color: #858585;
+    margin: 40px 0px;
+}
+
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576px) and (max-width: 1200px) {
+    .claudia-detailed-farm-adr {
+        width: 600px;
+        height: 870px;
+        margin: 0px auto;
+    }
+
+    .claudia-detailed-farm-adr h1 {
+        font-size: 28px;
+        margin: 40px auto;
+    }
+
+    .claudia-detailed-farm-adr-container {
+        width: 600px;
+        display: block;
+        padding-bottom: 30px;
+    }
+
+    //Left
+
+    .claudia-detailed-farm-adr-info-container { 
+        width: 600px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .claudia-detailed-farm-adr-info {
+        width: 600px;
+        height: 500px;
+        margin: 0px auto;
+    }
+
+    .claudia-detailed-farm-adr-info p {
+        width: 312px;
+        font-size: 18px;
+        margin: 0px auto;
+    }
+
+    .claudia-detailed-farm-adr-info iframe {
+        width: 600px;
+        height: 370px;
+    }
+
+    //Right
+
+    .claudia-detailed-farm-adr-transport {
+        width: 600px;
+        height: 250px;
+        padding: 0px;
+    }
+
+    .claudia-detailed-farm-adr-transport-container {
+        width: 555px;
+        height: 250px;
+        margin: 0px auto;
+    }
+
+    .claudia-detailed-farm-adr-transport-buttons button{
+        width: 125px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .claudia-detailed-farm-adr-transport-buttons-i {
+        height: 45px;
+        margin: 0px 10px;
+    }
+
+    .claudia-detailed-farm-adr-transport-text {
+        margin-top: 30px;
+    }
+
+
+    .claudia-detailed-farm-adr-transport-text p{
+        margin: 20px 0px;
+    }
+
+}
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media only screen and (max-width: 576px) {
+    .claudia-detailed-farm-adr {
+        width: 375px;
+        height: 750px;
+        margin: 0px auto;
+
+    }
+
+    .claudia-detailed-farm-adr h1 {
+        font-size: 24px;
+        margin: 40px auto;
+    }
+
+    .claudia-detailed-farm-adr-container {
+        width: 375px;
+        display: block;
+        padding-bottom: 30px;
+    }
+
+    //Left
+
+    .claudia-detailed-farm-adr-info-container { 
+        width: 375px;
+        height: 330px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .claudia-detailed-farm-adr-info {
+        width: 335px;
+        height: 350px;
+        margin: 0px auto;
+        
+    }
+
+    .claudia-detailed-farm-adr-info p {
+        width: 312px;
+        font-size: 18px;
+        margin: 0px auto;
+    }
+
+    .claudia-detailed-farm-adr-info iframe {
+        width: 335px;
+        height: 255px;
+    }
+
+    //Right
+
+    .claudia-detailed-farm-adr-transport {
+        width: 375px;
+        height: 320px;
+        padding: 0px;
+    }
+
+    .claudia-detailed-farm-adr-transport-container {
+        width: 297px;
+        height: 320px;
+        margin: 30px auto 0px auto;
+    }
+
+    .claudia-detailed-farm-adr-transport-buttons button{
+        width: 125px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .claudia-detailed-farm-adr-transport-buttons-i {
+        height: 45px;
+    }
+
+
+    .claudia-detailed-farm-adr-transport-text p{
+        margin: 20px 0px;
+    }
+}
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+
+

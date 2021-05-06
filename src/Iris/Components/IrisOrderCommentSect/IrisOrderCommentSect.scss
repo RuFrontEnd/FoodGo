@@ -1,0 +1,303 @@
+.iris-content-title-container {
+  margin-top: 15rem;
+  width: 100;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.iris-comment-title {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  color: #a59583;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.iris-comment-note {
+  color: #858585;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.iris-comment-quantity {
+  color: #f48145;
+}
+
+.iris-comment-box {
+  display: flex;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.iris-member-line {
+  width: auto;
+  height: 0.1rem;
+  background-color: #decdbb;
+  // margin-top: 1.5rem;
+  // margin-bottom: 1.5rem;
+  display: block;
+}
+
+.iris-comment-list-container {
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-top: 3.6rem;
+}
+
+.iris-comment-img {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  width: 9.8rem;
+  height: 9.3rem;
+}
+
+.iris-text-area {
+  position: absolute;
+  bottom: -1rem;
+  width: 30rem;
+  display: none;
+}
+
+.iris-comment-section-wrapper {
+  width: 100%;
+  position: relative;
+  margin-left: 1.7rem;
+}
+.iris-comment-text-wrapper {
+  // background-color: #ffa;
+  color: #858585;
+  font-size: 1.8rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.iris-comment-text {
+  // background-color: #faa;
+  color: #a59583;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+}
+.iris-comment-edit-delete {
+  // background-color: #aff;
+  color: #a59583;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.iris-comment-edit-delete .comment-edit:hover {
+  color: #f5a016;
+  cursor: pointer;
+}
+.iris-comment-edit-delete .comment-delete:hover {
+  color: #f5a016;
+  cursor: pointer;
+}
+
+.iris-comment-update {
+  color: #a59583;
+  font-size: 1.5rem;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.iris-comment-update:hover {
+  color: #f5a016;
+  cursor: pointer;
+}
+
+.iris-comment-date {
+  // background-color: #afa;
+  color: #a59583;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.iris-comment-text-wrapper .card-star-warp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+
+.iris-comment-text-wrapper .card-star-warp .ant-rate-star {
+  margin-right: 0px;
+}
+
+.iris-comment-text-wrapper .ant-rate-star {
+  height: 25px;
+}
+
+.iris-comment-text-wrapper .anticon.anticon-star {
+  height: 27px;
+}
+
+// comment image
+#comment-img-1 {
+  background-image: url('./Images/item1.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-2 {
+  background-image: url('./Images/item2.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-3 {
+  background-image: url('./Images/item3.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-4 {
+  background-image: url('./Images/item4.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-5 {
+  background-image: url('./Images/item5.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-6 {
+  background-image: url('./Images/item6.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-7 {
+  background-image: url('./Images/item7.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-8 {
+  background-image: url('./Images/item8.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-9 {
+  background-image: url('./Images/item9.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-10 {
+  background-image: url('./Images/item10.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-11 {
+  background-image: url('./Images/item11.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-12 {
+  background-image: url('./Images/item12.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-13 {
+  background-image: url('./Images/item13.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-14 {
+  background-image: url('./Images/item14.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-15 {
+  background-image: url('./Images/item15.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-16 {
+  background-image: url('./Images/item16.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-17 {
+  background-image: url('./Images/item17.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-18 {
+  background-image: url('./Images/item18.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-19 {
+  background-image: url('./Images/item19.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-20 {
+  background-image: url('./Images/item20.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-21 {
+  background-image: url('./Images/item21.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-22 {
+  background-image: url('./Images/item22.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#comment-img-23 {
+  background-image: url('./Images/item23.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,23 @@
+.arrowLeft-warp:focus {
+  outline: none;
+}
+
+.arrowLeft-warp {
+  border: none;
+  background-color: #ffffff00;
+  margin: 0px;
+  padding: 0px;
+  width: 100px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.arrowLeft-warp > img {
+  width: 100%;
+}
+
+.arrowLeft-warp:active {
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+}
+/*# sourceMappingURL=ArrowLeft.css.map */

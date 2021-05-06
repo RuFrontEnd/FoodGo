@@ -1,0 +1,166 @@
+//----------------------------Desktop 1920-----------------------------
+
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+  .claudia-fake-navbar {
+    width: 100vw;
+    height: 100px;
+  }
+
+  .claudia-detailed-background {
+    width: 100%;
+  }
+
+  .claudia-detailed-background-image {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    background-image: url(./Images/strawberry_1920.jpg);
+    margin: 0px auto;
+  }
+
+  .claudia-detailed-text {
+    font-family: 'Noto Serif TC';
+    position: absolute;
+    top: 600px;
+    left: 200px;
+    color: #fafafa;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fafafa;
+  }
+
+  .claudia-detailed-text-1 {
+    font-size: 60px;
+    color: #fafafa;
+  }
+
+  .claudia-detailed-text-2 {
+    font-size: 40px;
+    color: #fafafa;
+  }
+
+}
+
+//----------------------------Desktop 1920-----------------------------
+
+
+//----------------------------Desktop 1440-----------------------------
+
+@media screen and (min-width: 1220px) and (max-width: 1440px) {
+
+  .claudia-fake-navbar {
+    width: 100vw;
+    height: 100px;
+  }
+
+  .claudia-detailed-background {
+    width: 100%;
+  }
+
+  .claudia-detailed-background-image {
+    width: 1440px;
+    height: 765px;
+    position: relative;
+    background-image: url(./Images/strawberry.jpg);
+    margin: 0px auto;
+  }
+
+  .claudia-detailed-text {
+    font-family: 'Noto Serif TC';
+    position: absolute;
+    top: 400px;
+    left: 200px;
+    color: #fafafa;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fafafa;
+  }
+
+  .claudia-detailed-text-1 {
+    font-size: 40px;
+    color: #fafafa;
+  }
+
+  .claudia-detailed-text-2 {
+    font-size: 36px;
+    color: #fafafa;
+  }
+}
+
+//----------------------------Desktop 1440-----------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576px) and (max-width: 1200px) {
+  .claudia-detailed-background-image {
+    width: 768px;
+    height: 1024px;
+    position: relative;
+    background-image: url(./Images/rwd_pad_strawberry.jpg);
+  }
+
+  .claudia-detailed-text {
+    position: absolute;
+    top: 380px;
+    left: 135px;
+  }
+
+  .claudia-detailed-text-1 {
+    font-size: 50px;
+  }
+
+  .claudia-detailed-text-2 {
+    font-size: 36px;
+  }
+}
+
+//--------------------------------Ipad---------------------------------
+
+//---------------------------Iphone 6/7/8 Plus-------------------------
+
+@media screen and (min-width: 375px) and (max-width: 576px) {
+
+  .claudia-detailed-background-image {
+    width: 414px;
+    height: 736px;
+    position: relative;
+    background-image: url(./Images/rwd_plus_strawberry.jpg);
+  }
+
+  .claudia-detailed-text {
+    width: 270px;
+    height: 105px;
+    position: absolute;
+    top: 230px;
+    left: 60px;
+  }
+
+  .claudia-detailed-text-1 {
+    font-size: 40px;
+  }
+
+  .claudia-detailed-text-2 {
+    font-size: 24px;
+  }
+}
+
+//---------------------------Iphone 6/7/8 Plus-------------------------
+
+//---------------------------Iphone 6/7/8 + X--------------------------
+
+@media only screen and (max-width: 375px) {
+  .claudia-detailed-background-image {
+    width: 375px;
+    height: 667px;
+    position: relative;
+    background-image: url(./Images/rwd_strawberry.jpg);
+  }
+
+  .claudia-detailed-text {
+    width: 270px;
+    height: 105px;
+    position: absolute;
+    top: 210px;
+    left: 60px;
+  }
+}
+
+//---------------------------Iphone 6/7/8 + X--------------------------

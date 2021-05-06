@@ -1,0 +1,47 @@
+.cha-step3-5-2-1-vehicle lab,
+.cha-step3-5-receipt-choose span {
+  font-size: 1.5rem;
+  color: #858585;
+  margin-top: 2rem;
+  margin-bottom: 1.7rem;
+}
+// .cha-step3-5-receipt-choose > p > span {
+//   // font-size: 1.5rem;
+//   // color: #858585;
+//   margin-top: 2rem;
+//   // margin-bottom: 1.7rem;
+// }
+
+.cha-receipt-title-switch input {
+  margin-right: 1rem !important;
+}
+.cha-receipt-title-switch label {
+  margin-right: 2rem !important;
+}
+select.cha-step3-5-2-1-vehicle,
+.cha-TWZipCode-display select {
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  height: 4rem !important;
+  padding: 0.375rem 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  &:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #fad290;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(245, 160, 22, 0.25);
+  }
+}
+.cha-TWZipCode-display input {
+  margin-top: 2rem;
+}
+// .form-control.cha-step3-5-2-5-vehicle {
+//   margin-top: 2rem;
+// }

@@ -1,0 +1,96 @@
+.iris-getcoupon-content-container {
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-top: 3.5rem;
+}
+
+.iris-getcoupon-container {
+  margin-top: 4rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.iris-getcoupon-box {
+  margin-top: 3rem;
+  height: 13rem;
+  border-radius: 2rem;
+  border: 1px #bcbcbc solid;
+}
+
+.iris-coupon-icon {
+  padding-right: 3.7rem;
+  padding-left: 3.7rem;
+}
+
+.iris-coupon-title {
+  color: #f48145;
+  font-size: 1.8rem;
+}
+
+.iris-coupon1-title {
+  color: #f48145;
+  font-size: 1.8rem;
+}
+
+.iris-coupon-issue {
+  color: #858585;
+  font-size: 1.5rem;
+}
+
+.iris-coupon-due {
+  color: #858585;
+  font-size: 1.5rem;
+}
+
+.iris-coupon-info {
+  height: 70%;
+  justify-content: space-between;
+  margin-left: 3.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.iris-getcoupon1-learnmore {
+  color: #f48145;
+  font-size: 1.8em;
+  position: absolute;
+  top: 0;
+  right: 5%;
+}
+.iris-getcoupon-learnmore {
+  color: #f48145;
+  font-size: 1.8em;
+  position: absolute;
+  top: 0;
+  right: 5%;
+}
+
+.iris-getcoupon1-learnmore:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+.iris-getcoupon-learnmore:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.coupon1-received {
+  color: grey;
+  font-size: 1.8em;
+  position: absolute;
+  top: 0;
+  right: 5%;
+}
+
+.iris-getcoupon1-received {
+  color: grey;
+  font-size: 1.8em;
+  position: absolute;
+  top: 0;
+  right: 5%;
+  display: none;
+}
+
+.iris-beastieCoupon-grey-svg {
+  display: none;
+}

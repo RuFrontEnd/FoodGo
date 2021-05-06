@@ -1,0 +1,323 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+/* 清除內外邊距 */
+* {
+  /* table elements 表格元素 */
+  margin: 0;
+  padding: 0;
+}
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
+
+.cha-jess-proE-bg {
+  width: 100%;
+  height: 58rem;
+  background-color: $white;
+  position: relative;
+}
+.cha-jess-productTabBorder {
+  // background: url('../images/SVG/border.svg') no-repeat;
+  width: 114rem;
+  height: 1rem;
+  margin: 4rem 0;
+}
+.cha-jess-carousel {
+  margin: 0 auto;
+  padding: 0 6rem;
+  width: 100%;
+}
+.cha-jess-arrowR {
+  background: url('./Images/right.svg');
+  width: 5rem;
+  height: 5rem;
+  float: right;
+}
+
+// 第1張
+.cha-jessListE-view-first .cha-jess-proE-pic1 {
+  /*2*/
+  background: url('/productImages/Bento/14_salmon.jpg') no-repeat;
+  background-position: -3rem center;
+  background-size: 150%;
+  width: 16rem;
+  height: 16rem;
+  background-color: rgb(251, 224, 103);
+
+  // position: relative;
+}
+
+.cha-jessListE-view-first .mask {
+  opacity: 0;
+  transform: translateY(20px);
+  // background-color: rgba(228, 228, 228, 0.5);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  bottom: 2rem;
+  width: 16rem;
+  height: 0rem;
+  overflow: hidden;
+}
+
+.cha-jessListE-view-first h2 {
+  transform: translateY(-180px);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  padding-left: 1.5rem;
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+  color: $white;
+  // position: absolute;
+}
+
+.cha-jessListE-view-first p {
+  transform: translateY(100px);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  padding-left: 1.5rem;
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+  color: $white;
+  // position: absolute;
+}
+
+.cha-jessListE-view-first:hover .mask {
+  opacity: 1;
+  transform: translateY(20px);
+  background-color: rgba(77, 77, 77, 0.5);
+  height: 8rem;
+}
+.cha-jessListE-view-first:hover h2,
+.cha-jessListE-view-first:hover p {
+  color: #f48145;
+  transform: translateY(20px);
+  opacity: 1;
+  font-size: 1.8rem;
+  font-family: 'Noto Sans TC';
+  color: $white;
+  transition-delay: 0.1s;
+  // position: absolute;
+}
+
+// 第2張
+.cha-jessListE-view-first .cha-jess-proE-pic2 {
+  /*2*/
+  background: url('/productImages/Bento/13_salad.jpg') no-repeat;
+  background-position: -6rem center;
+  background-size: 150%;
+  width: 16rem;
+  height: 16rem;
+  // position: relative;
+  background-color: rgb(251, 224, 103);
+}
+
+.cha-jessListE-view-first .mask {
+  opacity: 0;
+  transform: translateY(20px);
+  // background-color: rgba(228, 228, 228, 0.5);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  bottom: 2rem;
+  width: 32rem;
+  height: 0rem;
+  overflow: hidden;
+}
+
+.cha-jessListE-view-first h2 {
+  transform: translateY(-180px);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  padding-left: 1.5rem;
+  font-size: 1.8rem;
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+  color: $white;
+  // position: absolute;
+}
+
+.cha-jessListE-view-first p {
+  transform: translateY(100px);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  padding-left: 1.5rem;
+  font-size: 1.8rem;
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+  color: $white;
+  // position: absolute;
+}
+
+.cha-jessListE-view-first:hover h2,
+.cha-jessListE-view-first:hover p {
+  color: #f48145;
+  transform: translateY(20px);
+  opacity: 1;
+  font-size: 1.8rem;
+  font-family: 'Noto Sans TC';
+  color: $white;
+  transition-delay: 0.1s;
+  // position: absolute;
+}
+
+/*第三張圖3*/
+
+.cha-jessListE-view-first .cha-jess-proE-pic3 {
+  /*1*/
+  background: url('/productImages/Bento/12_afternoon.jpg') no-repeat;
+  background-position: center center;
+  background-size: 170%;
+  width: 16rem;
+  height: 16rem;
+  background-color: rgb(251, 224, 103);
+  cursor: pointer;
+  // position: relative;
+}
+
+.cha-jessListE-view-first .mask {
+  opacity: 0;
+  transform: translateY(20px);
+  // background-color: rgba(228, 228, 228, 0.5);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  bottom: 2rem;
+  width: 32rem;
+  height: 0rem;
+  overflow: hidden;
+}
+
+.cha-jessListE-view-first h2 {
+  transform: translateY(-180px);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  padding-left: 1.5rem;
+  font-size: 1.8rem;
+  font-family: 'Noto Sans TC';
+  font-weight: 600;
+  color: $white;
+  // position: absolute;
+}
+
+.cha-jessListE-view-first p {
+  transform: translateY(100px);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  padding-left: 1.5rem;
+  font-size: 1.8rem;
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+  color: $white;
+  // position: absolute;
+}
+
+.cha-jessListE-view-first:hover .mask {
+  opacity: 1;
+  transform: translateY(20px);
+  background-color: rgba(77, 77, 77, 0.5);
+  height: 8rem;
+}
+.cha-jessListE-view-first:hover h2,
+.cha-jessListE-view-first:hover p {
+  color: #f48145;
+  transform: translateY(20px);
+  opacity: 1;
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  color: $white;
+  transition-delay: 0.1s;
+  // position: absolute;
+}
+
+/*第4張圖4*/
+
+.cha-jessListE-view-first .cha-jess-proE-pic4 img {
+  /*1*/
+  object-fit: cover;
+  width: 16rem;
+  height: 16rem;
+  // position: relative;
+  background-color: rgb(251, 224, 103);
+}
+
+.cha-jessListE-view-first .mask {
+  opacity: 0;
+  transform: translateY(20px);
+  // background-color: rgba(228, 228, 228, 0.5);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  bottom: 2rem;
+  width: 16rem;
+  height: 0rem;
+  overflow: hidden;
+}
+
+.cha-jessListE-view-first h2 {
+  transform: translateY(-180px);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  padding-left: 1.5rem;
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+  color: $white;
+  // position: absolute;
+}
+
+.cha-jessListE-view-first p {
+  transform: translateY(100px);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  padding-left: 1.5rem;
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+  color: $white;
+  // position: absolute;
+}
+
+.cha-jessListE-view-first:hover .mask {
+  opacity: 1;
+  transform: translateY(20px);
+  background-color: rgba(77, 77, 77, 0.5);
+  height: 8rem;
+}
+.cha-jessListE-view-first:hover h2,
+.cha-jessListE-view-first:hover p {
+  color: #f48145;
+  transform: translateY(20px);
+  opacity: 1;
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  color: $white;
+  transition-delay: 0.1s;
+  // position: absolute;
+}
+
+.cha-jess-text-30orange {
+  color: #f48145;
+  font-size: 2.4rem;
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+  margin-top: 3rem;
+}
+@media screen and (max-width: 576px) {
+  .cha-jess-proE-bg {
+    width: 100%;
+    height: 118rem;
+    background-color: $white;
+    position: relative;
+  }
+}

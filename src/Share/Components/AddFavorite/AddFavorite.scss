@@ -1,0 +1,42 @@
+@import "./Variable.scss";
+
+// .favorite-btn
+.addFavorite-btn:focus{
+  outline: none;
+}
+
+.addFavorite-btn {
+  background-color: $white;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  background-image: url("./Images/addFavoriteA.svg");
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}
+
+.addFavorite-btn:hover {
+  background-color: $light-yellow;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  background-image: url("./Images/addFavoriteB.svg");
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}
+
+.addFavorite-btn:active {
+  background-color: $dark-yellow;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  background-image: url("./Images/addFavoriteC.svg");
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}

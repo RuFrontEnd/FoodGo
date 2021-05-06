@@ -1,0 +1,568 @@
+//------------------------------Desktop--------------------------------
+//Title - first line
+
+.claudia-modal {
+  font-family: 'Noto Sans TC';
+}
+
+.claudia-modal h1 {
+  font-size: 2rem;
+  color: #438b6b;
+}
+
+//FRIST BLOCK
+
+//second line
+
+.claudia-modal-inline {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.claudia-modal-inline h2 {
+  font-size: 1.5rem;
+  color: #858585;
+}
+
+//second line - reset button
+
+.claudia-modal-inline-reset-button {
+  width: 100px;
+  height: 30px;
+  display: flex;
+  border: 1px solid #66ab8c;
+  padding: 2px 2px 2px 10px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #66ab8c;
+}
+
+.claudia-modal-inline-reset-button img {
+  margin-top: 2px;
+}
+
+.claudia-modal-inline-reset-button h3 {
+  padding-top: 2.5px;
+  margin: 0px 5px 0px 0px;
+
+  font-size: 1.5rem;
+}
+
+.claudia-modal-inline-reset-button:focus {
+  outline: 0;
+}
+
+//third line
+
+.claudia-modal-calender-button {
+  display: flex;
+  width: 175px;
+  height: 40px;
+  background-color: #438b6b;
+  padding: 10px 0px 0px 30px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  border: 1px solid #438b6b;
+}
+
+.claudia-modal-calender-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.claudia-modal-calender-button h3 {
+  margin: 0px 0px 0px 8px;
+  color: white;
+  font-size: 1.5rem;
+}
+
+//SECOND BLOCK
+
+.claudia-modal-middle-transport h3 {
+  font-size: 1.5rem;
+  color: #858585;
+  margin-bottom: 10px;
+}
+
+.claudia-modal-middle {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+//left - select transportation options
+
+.claudia-modal-middle-transport {
+  width: 235px;
+  height: 105px;
+  margin-right: 50px;
+}
+
+.claudia-modal-middle-transport-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.claudia-modal-middle-transport-buttons-toggle {
+  width: 105px;
+  height: 40px;
+  border: 1px solid #438b6b;
+  background-color: #fff;
+  font-size: 1.5rem;
+  color: #438b6b;
+}
+
+.claudia-modal-middle-transport-buttons button:hover {
+  background-color: #438b6b;
+  color: #fff;
+}
+
+.claudia-modal-middle-transport-buttons button:focus {
+  outline: 0;
+}
+
+//right - signup notes
+
+.claudia-modal-middle-group-notes {
+  width: 315px;
+  height: 105px;
+  background-color: #f7ede2;
+  padding: 10px 15px;
+}
+
+.claudia-modal-middle-group-notes h4 {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  color: #858585;
+}
+
+.claudia-modal-middle-group-notes-title {
+  margin-bottom: 8px;
+}
+
+.claudia-modal-middle-group-notes-second {
+  margin-bottom: 0px;
+}
+
+.claudia-modal-middle-group-nums {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.claudia-modal-middle-group-nums h5 {
+  font-size: 1.2rem;
+  width: 70px;
+  height: 23px;
+  background-color: #f6bd60;
+  color: #fff;
+  margin-left: 10px;
+  padding: 5px 0px 0px 10px;
+}
+
+//THRID BLOCK
+
+.claudia-modal-signup-num h3 {
+  color: #858585;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.claudia-modal-signup-num-box {
+  width: 630px;
+  height: 50px;
+  background-color: #f7ede2;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0px;
+}
+
+//left
+
+.claudia-modal-signup-num-box-left {
+  width: 80px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #858585;
+}
+
+//right
+
+.claudia-modal-signup-num-box-right {
+  width: 235px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.claudia-modal-signup-num-box-right span {
+  font-size: 1.5rem;
+  color: #f48145;
+  display: flex;
+  align-items: flex-start;
+}
+
+.claudia-modal-signup-num-box-right del {
+  font-size: 1.2rem;
+  color: #858585;
+  margin-right: 10px;
+}
+
+.claudia-modal-signup-num-box-price-inline {
+  width: 85px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+//counter
+
+.claudia-modal-counter-box {
+  outline: 0rem;
+  width: 12rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.claudia-modal-counter-increment,
+.claudia-modal-counter-decrement {
+  border: 0.1rem solid #858585;
+  height: 2.5rem;
+  width: 2.5rem;
+  font-size: 1.4rem;
+  color: #858585;
+  line-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1.2rem;
+  cursor: pointer;
+}
+
+.claudia-modal-cursor-default {
+  cursor: default;
+}
+.claudia-modal-counter-hover:hover,
+.claudia-modal-counter-increment:hover {
+  color: #fff;
+  background-color: #66ab8c;
+}
+
+.claudia-modal-counter-count {
+  border-top: 0.1rem solid #858585;
+  border-bottom: 0.1rem solid #858585;
+  width: 7rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  padding-bottom: 0.2rem;
+  color: #858585;
+}
+
+.claudia-modal-counter-count p {
+  margin: 0px;
+  user-select: none;
+}
+
+.claudia-modal-counter-decrement p,
+.claudia-modal-counter-increment p {
+  user-select: none;
+}
+
+//counter rwd display none
+
+.claudia-modal-signup-num-box-right-rwd {
+  display: none;
+}
+
+//FOURTH BLOCK
+
+//price
+
+.claudia-modal-total-price {
+  font-size: 1.5rem;
+  color: #858585;
+  margin: 10px 0px;
+}
+
+.claudia-modal-total-price-orange {
+  color: #f48145;
+}
+
+//cart button
+
+.claudia-modal-cart-button {
+  width: 630px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.claudia-modal-cart-button button {
+  background-color: #fff;
+  width: 140px;
+  height: 40px;
+  color: #438b6b;
+  border-radius: 9999px;
+  border: 1px solid #438b6b;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.35s, border 0s;
+}
+
+.claudia-modal-cart-button button:hover {
+  color: #fff;
+}
+
+.claudia-modal-cart-button button:active {
+  border: 1px solid #438b6b;
+}
+
+.claudia-modal-cart-button button:focus {
+  outline: none;
+}
+
+.claudia-modal-cart-button button::after {
+  content: '';
+  background-color: #438b6b;
+  height: 40px;
+  width: 160px;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: -10px;
+  transition: top 0.25s, background-color 0s, border 0s;
+}
+
+.claudia-modal-cart-button button:hover::after {
+  top: 0px;
+}
+
+.claudia-modal-cart-button button:active::after {
+  background-color: #438b6b;
+}
+
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+@media screen and (min-width: 576px) and (max-width: 1200px) {
+
+  //FIRST BLOCK
+
+  .claudia-modal-inline {
+    margin-bottom: 10px;
+  }
+
+  //THIRD BLOCK
+
+  .claudia-modal-signup-num-box {
+    width: 600px;
+  }
+
+  //FORTH BLOCK
+
+  .claudia-modal-total-price {
+    margin: 20px 0px;
+  }
+
+  .claudia-modal-cart-button {
+    width: 600px;
+  }
+
+
+}
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media only screen and (max-width: 576px) {
+  //Title
+  .claudia-modal h1 {
+    font-size: 1.8rem;
+  }
+
+  //FRIST BLOCK
+
+  .claudia-modal-inline {
+    margin-top: 0px;
+  }
+
+  .claudia-modal-inline h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .claudia-modal-inline-reset-button {
+    display: none;
+  }
+
+  .claudia-modal-calender-button {
+    margin-bottom: 1.5rem;
+  }
+
+  .claudia-modal-calender-button h3 {
+    margin: 0.2rem 0rem 0rem 1rem;
+    font-size: 1.4rem;
+  }
+
+  //SECOND BLOCK
+
+  .claudia-modal-middle {
+    display: block;
+  }
+
+  .claudia-modal-middle-transport h3 {
+    font-size: 1.4rem;
+  }
+
+  .claudia-modal-middle-transport button {
+    font-size: 1.4rem;
+    width: 90px;
+    height: 35px;
+  }
+
+  .claudia-modal-middle-transport {
+    width: 195px;
+    height: 80px;
+  }
+
+  .claudia-modal-middle-group-notes {
+    width: 295px;
+    height: 115px;
+    padding: 12px 9px;
+  }
+
+  .claudia-modal-middle-group-notes h4 {
+    font-size: 1.4rem;
+  }
+
+  //THIRD BLOCK
+
+  .claudia-modal-signup-num-box {
+    width: 295px;
+  }
+
+  .claudia-modal-signup-num-box-left {
+    font-size: 1.4rem;
+    width: 6rem;
+  }
+
+  //counter display none
+
+  .claudia-modal-signup-num-box-right {
+    display: none;
+  }
+
+  // selection list display
+
+  .claudia-modal-signup-num-box-right-rwd {
+    display: block;
+    width: 185px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .claudia-modal-signup-num-box-right-rwd span {
+    font-size: 1.4rem;
+    color: #f48145;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .claudia-modal-signup-num-box-right-rwd del {
+    font-size: 1.2rem;
+    color: #858585;
+    margin-right: 10px;
+  }
+
+  .claudia-modal-signup-num-box-price-inline-rwd {
+    width: 85px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  //selection list shared component custom css
+
+  .claudia-selection-container {
+    background-color: #66ab8c;
+    width: 75px;
+    position: relative;
+  }
+
+  .claudia-selection-container select {
+    width: 100%;
+    height: 28px;
+    border: 1px solid #66ab8c;
+    border-radius: 0px;
+    font-size: 1.4rem;
+    color: #858585;
+    padding-right: 30px;
+    text-align-last: center;
+    appearance: none;
+  }
+
+  .claudia-selection-container select:focus {
+    outline: none;
+  }
+
+  .claudia-selection-container button:focus {
+    outline: none;
+  }
+
+  .claudia-selection-container button {
+    pointer-events: none; // 穿透元素
+    background-color: #66ab8c;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .claudia-selection-container button img {
+    width: 10px;
+  }
+
+  //FOURTH BLOCK
+
+  .claudia-modal-last-block {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .claudia-modal-total-price {
+    width: 147px;
+    font-size: 1.8rem;
+  }
+
+  .claudia-modal-cart-button {
+    width: 147px;
+  }
+
+  .claudia-modal-cart-button button {
+    width: 143px;
+    height: 37px;
+  }
+}
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------

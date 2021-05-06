@@ -1,0 +1,189 @@
+@import "./Variable.scss";
+
+#card-margin {
+  margin: 0px 20px;
+}
+
+.card-container {
+  border-radius: 5px;
+  width: 345px;
+  height: 100%;
+}
+
+.card-img-warp {
+  height: 340px;
+  position: relative;
+}
+
+.card-info-warp h3 {
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $bold,
+    0px,
+    $light-orange
+  );
+}
+
+.card-img-warp:hover > .card-abs {
+  top: 83%;
+  transition: 0.35s;
+}
+
+.card-abs {
+  position: absolute;
+  top: 110%;
+  right: 20px;
+  transition: 0.35s;
+}
+
+.card-img {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+#card-img-1 {
+  background-image: url("./Images/item1.jpg");
+  background-size: cover;
+  background-position: 70% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-2 {
+  background-image: url("./Images/item2.jpg");
+  background-size: cover;
+  background-position: 45% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-3 {
+  background-image: url("./Images/item3.jpg");
+  background-size: cover;
+  background-position: 62.5% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-4 {
+  background-image: url("./Images/item4.jpg");
+  background-size: cover;
+  background-position: 57.5% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-5 {
+  background-image: url("./Images/item5.jpg");
+  background-size: cover;
+  background-position: 60% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-6 {
+  background-image: url("./Images/item6.jpg");
+  background-size: cover;
+  background-position: 17.5% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-7 {
+  background-image: url("./Images/item7.jpg");
+  background-size: cover;
+  background-position: 17.5% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-8 {
+  background-image: url("./Images/item8.jpg");
+  background-size: cover;
+  background-position: 65% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-9 {
+  background-image: url("./Images/item9.jpg");
+  background-size: cover;
+  background-position: 62.5% center;
+  background-repeat: no-repeat;
+}
+
+.card-info-warp {
+  background-color: $white;
+  border-right: 1px solid $hr-Color;
+  border-left: 1px solid $hr-Color;
+  width: 100%;
+  height: 108px;
+  position: relative;
+  @include flex($df, $fdc, $jcc, $alc);
+  flex-direction: row;
+}
+
+.card-none {
+  opacity: 0;
+}
+
+.card-info {
+  width: 170px;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.card-price {
+  align-self: flex-end;
+  margin-bottom: 15px;
+}
+
+.card-info > h2 {
+  font-size: $productName-size;
+  margin-bottom: 15px;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $productName-size,
+    $regular,
+    0px,
+    $productName-Color
+  );
+}
+
+.card-star-warp {
+  @include flex($df, $fdr, $jcc, $alc);
+}
+
+.card-star {
+  margin: 0px 2px;
+  width: 14px;
+}
+
+.card-num {
+  display: inline;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $number-size,
+    $regular,
+    0px,
+    $light-grey
+  );
+}
+
+.card-commentNum {
+  margin-right: 6px;
+  margin-bottom: 16px;
+}
+
+.card-addCartWarp {
+  background-color: $white;
+  height: 84px;
+  border-right: 1px solid $hr-Color;
+  border-left: 1px solid $hr-Color;
+  border-bottom: 1px solid $hr-Color;
+  @include flex($df, $fdr, $jcc, $alc);
+}
+
+.card-hr {
+  width: 87.465%;
+  height: 100%;
+  border-top: 1px solid $hr-Color;
+  @include flex($df, $fdc, $jcc, $alc);
+}

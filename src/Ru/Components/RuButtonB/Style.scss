@@ -1,0 +1,67 @@
+@import 'Ru/Pages/variable.scss';
+
+// 橘色
+.ru-buttonB:focus {
+  outline: none;
+}
+
+.ru-buttonB {
+  background-color: $white;
+  height: 40px;
+  width: 100px;
+  border: 1px solid $light-orange;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $content,
+    $regular,
+    1.25px,
+    $light-orange
+  );
+}
+
+.ru-buttonB:hover {
+  color: $white;
+}
+
+.ru-buttonB:active {
+  border: 1px solid $dark-orange;
+}
+
+.ru-buttonB::after {
+  content: '';
+  background-color: $light-orange;
+  height: 65px;
+  width: 220px;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: -10px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.ru-buttonB:hover::after {
+  top: 0px;
+}
+
+.ru-buttonB:active::after {
+  background-color: $dark-orange;
+}
+
+.ru-buttonB-active {
+  background-color: $light-orange;
+  color: $white;
+}

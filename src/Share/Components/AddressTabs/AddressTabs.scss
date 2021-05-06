@@ -1,0 +1,246 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+/* 清除內外邊距 */
+* {
+  /* table elements 表格元素 */
+  margin: 0;
+  padding: 0;
+}
+
+$gray: #858585;
+$lightGray: #fafafa;
+$brown: #a59583;
+$lightBrown: #decdbb;
+$skin: #f7ede2;
+$green: #66ab8c;
+$deepGreen: #438b6b;
+$orange: #f48145;
+$deepOrange: #e0611e;
+$yellow: #f6bd60;
+$deepYello: #f5a016;
+
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
+
+@import '../../../Share/Components/Button/Variable.scss';
+@import '../../../Share/Components/Button/Button.scss';
+
+.jan-tabs-bcc {
+  top: 5rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  z-index: 1035;
+}
+.jan-tabs {
+  max-width: 90rem;
+  margin: 10rem auto 5rem auto;
+  background-color: $lightGray;
+  border-radius: 20px;
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #9e9e9e92;
+  overflow: hidden;
+}
+.jan-tabs-close {
+  background: url('./SVG/jan-tabs-close.svg') center center no-repeat;
+  background-size: cover;
+  width: 4rem;
+  height: 4rem;
+  float: right;
+  margin: 1.5rem;
+  cursor: pointer;
+}
+.jan-address-tab {
+  width: 85rem;
+  height: 60rem;
+}
+.jan-address-tab-menu {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  align-items: center;
+  &__item {
+    font-size: 1.5rem;
+    color: $darkBrown;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 500;
+    padding: 2rem 2rem 0rem 3rem;
+    justify-content: space-around;
+    cursor: pointer;
+  }
+  & .active {
+    color: $orange;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+.jan-tab-address-form-wrap {
+  width: 30rem;
+  height: 50rem;
+  // border: 1px solid $orange;
+}
+.jan-form-announce {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: $deepYello;
+}
+.jan-address-radio {
+  color: $gray;
+  font-size: 1.7rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 300;
+}
+// select box
+.iris-mainpage-select-wrapper .iris-mainpage-select {
+  font-size: 2rem;
+  border-radius: 2.5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 376px) {
+  .jan-address-select select {
+    font-size: 1.4rem;
+    border-radius: 1.5rem;
+    height: 3rem;
+  }
+}
+
+.jan-address-select .iris-mainpage-whitebox {
+  border-radius: 2.5rem;
+  height: 4.6rem;
+  width: 4.6rem;
+  background-color: #fff;
+  position: absolute;
+  right: 0.3rem;
+  top: 0.2rem;
+  // 點擊會直接穿透whitebox
+  pointer-events: none;
+}
+
+@media screen and (max-width: 376px) {
+  .jan-address-select .iris-mainpage-whitebox {
+    border-radius: 1.5rem;
+    height: 2.6rem;
+    width: 2.7rem;
+    background-color: #fff;
+    position: absolute;
+    right: 0.1rem;
+    top: 0.2rem;
+    // 點擊會直接穿透whitebox
+    pointer-events: none;
+  }
+}
+
+.jan-address-select .iris-selectbar-wrapper .iris-mainpage-trianglearrow {
+  background: url('../../../Share/image/triangleArrow.svg') cover center
+    no-repeat;
+  background-size: auto;
+  position: absolute;
+  right: 1.9rem;
+  top: 2.1em;
+  pointer-events: none;
+  fill: #c9c9c9;
+}
+@media screen and (max-width: 376px) {
+  .jan-address-select
+    > .iris-mainpage-select-wrapper
+    > .iris-selectbar-wrapper
+    > .iris-mainpage-trianglearrow {
+    position: absolute;
+    right: 1.5rem;
+    top: 1em;
+    pointer-events: none;
+    fill: #c9c9c9;
+  }
+}
+
+.jan-address-select > .iris-mainpage-select-wrapper > .iris-selectbar-wrapper {
+  width: 16.7rem;
+  position: relative;
+}
+
+.jan-address-input .iris-inputH50 {
+  font-size: 2rem;
+  border-radius: 2.5rem;
+  height: 5rem;
+}
+
+@media screen and (max-width: 376px) {
+  .jan-address-input > .iris-inputH50 {
+    font-size: 1.4rem;
+    border-radius: 1.5rem;
+    height: 3rem;
+  }
+}
+
+.jan-address-button button {
+  width: 12rem;
+  height: 4.5rem;
+  font-size: 1.5rem;
+}
+.jan-put-button button {
+  width: 15rem;
+  height: 4.5rem;
+  font-size: 1.5rem;
+}
+
+.jan-map-results {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: $gray;
+  visibility: hidden;
+  .jan-tabs-highlight {
+    color: $deepYello;
+  }
+}
+.jan-tab-address-map {
+  width: 60rem;
+  height: 54rem;
+  // border: 1px solid #ccc;
+  overflow: hidden;
+}
+.jan-tab-shops-list-wrap {
+  width: 30rem;
+  height: 50rem;
+  // border: 1px solid $orange;
+}
+.jan-shops-radio {
+  color: $gray;
+  font-size: 1.4rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 400;
+  line-height: 3rem;
+}
+.jan-shops-button button {
+  width: 16rem;
+  height: 4.5rem;
+  font-size: 1.5rem;
+}
+.jan-tab-shops-map {
+  width: 60rem;
+  height: 54rem;
+  // border: 1px solid #ccc;
+  iframe {
+    border: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+}

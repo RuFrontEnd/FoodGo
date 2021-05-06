@@ -1,0 +1,55 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+$white: #ffffff;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~antd/dist/antd.css';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap');
+
+.jess-commentOderBg {
+  width: 60rem;
+}
+//commentItem
+.jess-commentOder {
+  height: 7rem;
+  width: 70rem;
+  // background-color: $lightBrown;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: $darkGary;
+  list-style: none;
+  border-bottom: 0.1rem solid $darkBrown;
+  padding: 1rem;
+  display: flex;
+  outline: none;
+  align-self: center;
+}
+
+.jess-textTittle {
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  color: $orange;
+}
+.jess-commentOrderStar a:hover {
+  text-decoration: none;
+}
+
+// .jess-commentOrderStar ul {
+//   width: 17rem;
+// }

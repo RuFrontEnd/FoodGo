@@ -1,0 +1,150 @@
+$primary: #f5a016;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+
+.cha-refund-coupon-add-checkbox input {
+  background-color: #faf;
+  color: #ffa;
+  height: 2rem;
+}
+.cha-refund-claudia-overlay {
+  position: fixed;
+  display: block;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.cha-refund-claudia-modal-bg {
+  margin: 280px auto 0px auto;
+  background-color: white;
+  border-radius: 2rem;
+  width: 700px;
+  height: 400px;
+  padding: 6.5rem 7.5rem 6.5rem 8.5rem;
+  position: relative;
+}
+// 我增添的樣式
+// .cha-refund-wrap-coupon-container {
+//   margin-top: 0rem;
+//   // width: 600px;
+//   height: 380px;
+//   overflow: hidden;
+//   overflow-y: scroll;
+//   overflow-x: hidden;
+//   background-attachment: scroll;
+// background-color: rgb(240, 240, 240);
+// }
+.cha-refund-coupon-add-checkbox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 3rem;
+  cursor: pointer;
+}
+.cha-refund-iris-coupon-box {
+  width: 48rem;
+}
+.cha-refund-wrap-coupon-container::-webkit-scrollbar {
+  display: none;
+}
+
+.cha-refund-claudia-modal-cross-img {
+  background: url(./Images/cross.svg) no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  cursor: pointer;
+  float: right;
+  position: absolute;
+  right: 6rem;
+  transition: 0.3s;
+  // visibility: hidden;
+}
+// .cha-refund-claudia-modal-cross-img:hover {
+//   background: url(./Images/cross-black.svg) no-repeat;
+//   background-position: center center;
+//   background-size: cover;
+//   width: 3rem;
+//   height: 3rem;
+//   transition: 0.3s;
+// }
+
+@media only screen and (max-width: 57.6rem) {
+  .cha-refund-claudia-modal-bg {
+    width: 335px;
+    height: 535px;
+    padding: 2.5rem 2rem 4.5rem 2rem;
+    border-radius: 40px;
+    margin: 115px auto;
+  }
+
+  .cha-refund-claudia-overlay {
+    overflow: hidden;
+  }
+}
+
+//提交成功的確認況
+.cha-refund-modal-container {
+  // background-color: rgb(247, 213, 213);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0rem;
+  // width: 600px;
+}
+.cha-refund-modal-container span {
+  color: #e0611e;
+  font-size: 3.6rem;
+  margin-bottom: 3rem;
+}
+.cha-refund-logo {
+  background: url(./Images/cha-logo.svg) no-repeat;
+  // background-color: #faf;
+  // background-position: center center;
+  background-size: cover;
+  width: 15.9rem;
+  height: 6.9rem;
+}
+
+.cha-refund-modal-container p {
+  font-size: 1.8rem;
+  color: #858585;
+  margin-bottom: 0.5rem;
+}
+.cha-refund-modal-btn {
+  width: 30rem;
+  margin-top: 3rem;
+  margin-bottom: 8rem;
+}
+.cha-horizontal-line-in-refund-modal {
+  width: 100%;
+  border-bottom: 0.1rem solid #8585853a;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.cha-refund-confirm-btn {
+  display: flex;
+  justify-content: space-around;
+  width: 45rem;
+}
+.cha-gray-modal-btn,
+.cha-refund-modal-btn {
+  width: 18rem;
+}
+
+.cha-gray-modal-btn {
+  margin-top: 3rem;
+  margin-bottom: 8rem;
+}

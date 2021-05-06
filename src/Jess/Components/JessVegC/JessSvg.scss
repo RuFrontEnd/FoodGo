@@ -1,0 +1,53 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+/* 清除內外邊距 */
+* {
+  /* table elements 表格元素 */
+  margin: 0;
+  padding: 0;
+}
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+$green: #66ab8c;
+$white: #ffffff;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
+
+.jess-Svg {
+  width: 4.2rem;
+  height: 4.2rem;
+}
+
+.st0 {
+  fill: none;
+  stroke: $darkBrown;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+
+#path {
+  stroke-dasharray: 2000px, 1194px;
+  //   stroke-dashoffset: 0;
+  animation: move 3s linear forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move {
+  0% {
+    stroke-dashoffset: 1194px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

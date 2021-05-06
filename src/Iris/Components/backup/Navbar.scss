@@ -1,0 +1,367 @@
+// 10/31 iris修改navbar 原版備份
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+// * {
+//   margin: 0;
+//   padding: 0;
+// }
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+//navBar的背景
+
+// @media screen and (max-width: 480px)
+// @media (min-width: 480px) and (max-width: 680px)
+
+.nav {
+  width: 100%;
+  height: 10rem;
+  background-color: rgb(255, 255, 255);
+  padding: 0.5rem 5rem;
+  box-shadow: 0.3rem 0 1rem #cfcfcf;
+  position: fixed;
+  padding: 0;
+  z-index: 1040;
+}
+.navBar-jess-container {
+  width: 140rem;
+  height: 10rem;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+//logo
+.nav .navBar-jess-nav_brand {
+  margin-top: -2rem;
+  width: 37rem;
+  padding-left: 8rem;
+}
+//text color
+.nav a {
+  color: #858585;
+  text-decoration: none;
+}
+.nav .navBar-jess-navigation {
+  width: 114rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+//when text hover
+.nav a:hover,
+.nav a:focus,
+.nav a:active {
+  color: #e0611e;
+  text-decoration: none;
+}
+
+.nav .navBar-jess-navCollapse {
+  display: inline-block;
+  justify-content: center;
+  margin-top: 3.5rem;
+}
+
+.nav .navBar-jess-navCollapse ul {
+  list-style: none;
+  padding-left: 0;
+}
+//選單文字
+.nav .navBar-jess-navCollapse li {
+  padding-left: 0px;
+  font-size: 2rem;
+}
+// 下拉式選單出現切換
+.nav
+  .navBar-jess-navCollapse
+  .navBar-jess-navigation
+  .navBar-jess-navigation_item {
+  display: inline-block;
+}
+.nav .navBar-jess-navigation_item:hover .navBar-jess-dropdown {
+  display: block;
+}
+.navBar-jess-emptydiv {
+  width: 10rem;
+  height: 2rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  left: 30rem;
+}
+//下拉式選單 none隱藏
+.nav .navBar-jess-navigation_item .navBar-jess-dropdown {
+  display: none;
+  position: absolute;
+  width: 17rem;
+  height: 22.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  left: 32rem;
+  backdrop-filter: blur(3px);
+}
+
+//下拉式選單間距
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown
+  .navBar-jess-dropdown_item {
+  padding: 5px;
+}
+// 下拉式選單 文字顏色
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown
+  .navBar-jess-dropdown_item
+  a {
+  color: rgb(255, 255, 255);
+  line-height: 2.5rem;
+  font-size: 1.8rem;
+}
+//下拉式選單 hover後效果
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown
+  .navBar-jess-dropdown_item:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+//下拉式選單 頂部三角形
+.nav .navBar-jess-triangle {
+  width: 0rem;
+  height: 0rem;
+  border-style: solid;
+  border-width: 0 9px 15px 9px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.3) transparent;
+  position: absolute;
+  top: -1.5rem;
+  left: 7.5rem;
+
+  text-align: center;
+}
+
+//右邊dropdowm
+.nav .navBar-jess-navigation_item .navBar-jess-dropdown2 {
+  display: none;
+  position: absolute;
+  width: 17rem;
+  height: 22.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  right: 15rem;
+  backdrop-filter: blur(3px);
+}
+.nav .navBar-jess-navigation_item:hover .navBar-jess-dropdown2 {
+  display: block;
+}
+
+// 下拉式選單間距
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item {
+  padding: 5px;
+}
+// 下拉式選單 文字顏色
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item
+  a {
+  color: rgb(255, 255, 255);
+  line-height: 2.5rem;
+  font-size: 1.8rem;
+}
+//下拉式選單 hover後效果
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+//小怪獸的出現效果-我的怪獸
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item
+  .navBar-jess-monster4 {
+  position: absolute;
+  left: 14rem;
+  top: 13.5rem;
+  opacity: 0;
+  transition: left 0.5s;
+  transition-timing-function: linear;
+  z-index: -1;
+}
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item:hover
+  .navBar-jess-monster4 {
+  opacity: 1;
+  left: 16rem;
+}
+
+//right下拉式選單 頂部三角形
+.nav .navBar-jess-triangle2 {
+  width: 0rem;
+  height: 0rem;
+  border-style: solid;
+  border-width: 0 9px 15px 9px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.3) transparent;
+  position: absolute;
+  top: -1.5rem;
+  right: 7.5rem;
+
+  text-align: center;
+}
+.navbar-jess-ShopingCart {
+  z-index: 1050;
+}
+
+//shopping cart number
+.nav .jess-navbarCartAmount {
+  position: absolute;
+  top: 2rem;
+  right: 11.5rem;
+}
+
+.nav .jess-navbarCartNum {
+  font-family: 'Noto Sans TC';
+  font-weight: bold;
+  position: absolute;
+  top: 2rem;
+  right: 12.4rem;
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+.nav .nav_toggle {
+  // float: right;
+  clear: both;
+  display: none;
+  font-size: 4rem;
+  position: absolute;
+  left: 2;
+  top: 0;
+}
+
+/*mobile styles*/
+@media screen and (max-width: 57.6rem) {
+  .nav .navBar-jess-container {
+    display: none;
+  }
+  .nav .nav_toggle {
+    display: block;
+  }
+}
+@media screen and(max-width: 57.6rem) {
+  .nav.responsive {
+    width: 100%;
+    height: 43rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0.3rem 0 1rem #cfcfcf;
+    padding: 0;
+  }
+  .nav.responsive .backArrow {
+    display: none;
+  }
+  .nav.responsive .navBar-jess-container {
+    display: block;
+  }
+  .nav.responsive .nav_toggle {
+    position: absolute;
+    left: 2;
+    top: 0;
+  }
+  .nav.responsive .jess-navbarCartAmount {
+    display: none;
+  }
+  .nav.responsive .jess-navbarCartNum {
+    display: none;
+  }
+
+  .nav.responsive .collapse {
+    display: none;
+  }
+  .nav.responsive .navBar-jess-navigation {
+    width: 100%;
+  }
+  .nav.responsive .navBar-jess-navigation li {
+    padding: 0;
+  }
+  .nav.responsive .navBar-jess-navCollapse {
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    display: block;
+  }
+
+  .nav.responsive .navBar-jess-navCollapse .navBar-jess-navigation {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .nav.responsive
+    .navBar-jess-navCollapse
+    .navBar-jess-navigation
+    .navBar-jess-navigation_item {
+    display: block;
+    position: relative;
+    padding: 10px 0;
+    // text-align: center;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.3);
+      // overflow: hidden;
+    }
+    &:hover a {
+      color: rgb(255, 255, 255);
+    }
+  }
+
+  .nav.responsive .navBar-jess-navigation_item .navBar-jess-dropdown {
+    display: none;
+  }
+  .nav.responsive .navBar-jess-navigation_item .navBar-jess-dropdown2 {
+    display: none;
+  }
+  //logo
+  .nav.responsive .navBar-jess-nav_brand {
+    position: fixed;
+    top: 3rem;
+    left: 5rem;
+    width: 20rem;
+    display: block;
+  }
+  .nav.responsive .navBar-jess-emptydiv {
+    display: none;
+  }
+  .nav.responsive .navBar-jess-navCollapse ul {
+    list-style: none;
+  }
+  //選單文字
+  .nav.responsive .navBar-jess-navCollapse li {
+    font-size: 2rem;
+    line-height: 2rem;
+    left: 0rem;
+    top: -10rem;
+  }
+  .navbar-jess-ShopingCart {
+    z-index: 1000;
+    position: absolute;
+    left: 16rem;
+    top: 20rem;
+  }
+}

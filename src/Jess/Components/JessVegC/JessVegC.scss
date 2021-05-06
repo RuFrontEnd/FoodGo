@@ -1,0 +1,716 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+/* 清除內外邊距 */
+* {
+  /* table elements 表格元素 */
+  margin: 0;
+  padding: 0;
+}
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+$green: #66ab8c;
+$white: #ffffff;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
+
+.jess-VegC-container-fluid {
+  background-color: $lightBrown;
+  width: 100%;
+  height: 70rem;
+  padding: 0;
+  margin-top: 5rem;
+}
+.jess-VegB-container {
+  width: 100%;
+}
+.jess-text-30orange {
+  font-size: 3rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+  color: $orange;
+  letter-spacing: 1rem;
+}
+.jess-vegC-border {
+  background: url('./SVG/orangeBorder.svg') no-repeat;
+  width: 30rem;
+  height: 1rem;
+}
+.jess-text-15Gray {
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  color: $darkGary;
+  line-height: 2.5rem;
+}
+.jess-text-24Green {
+  font-size: 2.4rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+  color: $green;
+}
+//本週主打星蔬菜
+
+@mixin link-hover {
+  &.active {
+    @content;
+  }
+}
+
+.jess-vegC-red {
+  width: 2rem;
+  height: 2rem;
+  background-color: #e0611e;
+  border-radius: 50%;
+  @include link-hover {
+    box-shadow: 0 0 0 0.2rem #e0611e;
+    border: 0.1rem solid $lightBrown;
+    box-sizing: border-box;
+  }
+}
+.jess-vegC-yellow {
+  width: 2rem;
+  height: 2rem;
+  background-color: #f6bd60;
+  border-radius: 50%;
+  @include link-hover {
+    box-shadow: 0 0 0 0.2rem #f6bd60;
+    border: 0.1rem solid $lightBrown;
+    box-sizing: border-box;
+  }
+}
+.jess-vegC-green {
+  width: 2rem;
+  height: 2rem;
+  background-color: #438b6b;
+  border-radius: 50%;
+  @include link-hover {
+    box-shadow: 0 0 0 0.2rem #438b6b;
+    border: 0.1rem solid $lightBrown;
+    box-sizing: border-box;
+  }
+}
+.jess-vegC-purple {
+  width: 2rem;
+  height: 2rem;
+  background-color: #9019c7;
+  border-radius: 50%;
+  @include link-hover {
+    box-shadow: 0 0 0 0.2rem #9019c7;
+    border: 0.1rem solid $lightBrown;
+    box-sizing: border-box;
+  }
+}
+.jess-vegC-white {
+  width: 2rem;
+  height: 2rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  @include link-hover {
+    box-shadow: 0 0 0 0.2rem #ffffff;
+    border: 0.1rem solid $lightBrown;
+    box-sizing: border-box;
+  }
+}
+//SVG
+.jess-svg {
+  background: url('./SVG/jess-svg.svg') no-repeat;
+  width: 65rem;
+  height: 42rem;
+  background-size: 90%;
+  margin-top: 3rem;
+  margin-left: -3rem;
+  position: relative;
+  z-index: 1;
+}
+//C
+.jess-Veg-24green {
+  font-size: 2.4rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+  color: $green;
+  letter-spacing: 1rem;
+  z-index: 7;
+  position: absolute;
+  top: 40rem;
+  left: 22rem;
+}
+.jess-Veg-20gray {
+  font-size: 2rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 700;
+  color: $darkGary;
+  z-index: 7;
+  position: absolute;
+  top: 11rem;
+  left: 7rem;
+}
+.jess-ColorC-01 {
+  background: url('./images/jess-colorC01.png') no-repeat;
+  width: 22rem;
+  height: 24rem;
+  background-size: 100%;
+  position: absolute;
+  z-index: 10;
+  top: 11rem;
+  left: 7rem;
+}
+.jess-ColorC-02 {
+  background: url('./images/jess-colorC02.png') no-repeat;
+  width: 22rem;
+  height: 24rem;
+  background-size: 90%;
+  position: absolute;
+  z-index: 8;
+  top: 20rem;
+  left: 26rem;
+}
+.jess-Veg-20gray2 {
+  font-size: 2rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 700;
+  color: $darkGary;
+  z-index: 7;
+  position: absolute;
+  top: 11rem;
+  left: 37rem;
+}
+
+.jess-monster {
+  background: url('./SVG/monst.svg') no-repeat;
+  width: 7rem;
+  height: 8rem;
+  background-size: 100%;
+  position: absolute;
+  animation-name: example;
+  animation-duration: 0.5s;
+  top: 1rem;
+  left: 11rem;
+  opacity: 1;
+}
+@keyframes example {
+  from {
+    top: 7rem;
+    left: 11rem;
+    opacity: 0;
+  }
+  to {
+    top: 1rem;
+    left: 11rem;
+    opacity: 1;
+  }
+}
+//A
+.jess-Veg-24red {
+  font-size: 2.4rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+  color: #e0611e;
+  letter-spacing: 1rem;
+  z-index: 7;
+  position: absolute;
+  top: 40rem;
+  left: 22rem;
+}
+.jess-ColorA-01 {
+  background: url('./images/jess-colorA02.png') no-repeat;
+  width: 22rem;
+  height: 24rem;
+  background-size: 60%;
+  position: absolute;
+  z-index: 10;
+  top: 16rem;
+  left: 12rem;
+}
+.jess-ColorA-02 {
+  background: url('./images/jess-colorA01.png') no-repeat;
+  width: 22rem;
+  height: 24rem;
+  background-size: 80%;
+  position: absolute;
+  z-index: 8;
+  top: 20rem;
+  left: 26rem;
+}
+.jess-monsterRed {
+  background: url('./SVG/monsterRed.svg') no-repeat;
+  width: 7rem;
+  height: 8rem;
+  background-size: 100%;
+  position: absolute;
+  animation-name: example;
+  animation-duration: 0.5s;
+  top: 1rem;
+  left: 11rem;
+  opacity: 1;
+}
+
+//B
+.jess-Veg-24yellow {
+  font-size: 2.4rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+  color: #f6bd60;
+  letter-spacing: 1rem;
+  z-index: 7;
+  position: absolute;
+  top: 40rem;
+  left: 22rem;
+}
+.jess-ColorB-01 {
+  background: url('./images/jess-colorB01.png') no-repeat;
+  width: 22rem;
+  height: 24rem;
+  background-size: 30%;
+  position: absolute;
+  z-index: 10;
+  top: 18rem;
+  left: 12rem;
+}
+.jess-ColorB-02 {
+  background: url('./images/jess-colorB02.png') no-repeat;
+  width: 22rem;
+  height: 24rem;
+  background-size: 90%;
+  position: absolute;
+  z-index: 8;
+  top: 18rem;
+  left: 26rem;
+}
+.jess-monsterYellow {
+  background: url('./SVG/monsterYellow.svg') no-repeat;
+  width: 7rem;
+  height: 8rem;
+  background-size: 100%;
+  position: absolute;
+  animation-name: example;
+  animation-duration: 0.5s;
+  top: 1rem;
+  left: 11rem;
+  opacity: 1;
+}
+
+//D
+.jess-Veg-24purple {
+  font-size: 2.4rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+  color: #9019c7;
+  letter-spacing: 1rem;
+  z-index: 7;
+  position: absolute;
+  top: 40rem;
+  left: 22rem;
+}
+.jess-ColorD-01 {
+  background: url('./images/jess-colorD01.png') no-repeat;
+  width: 22rem;
+  height: 24rem;
+  background-size: 88%;
+  position: absolute;
+  z-index: 10;
+  top: 18rem;
+  left: 9rem;
+}
+.jess-ColorD-02 {
+  background: url('./images/jess-colorD02.png') no-repeat;
+  width: 22rem;
+  height: 24rem;
+  background-size: 80%;
+  position: absolute;
+  z-index: 8;
+  top: 18rem;
+  left: 28rem;
+}
+.jess-monsterPurple {
+  background: url('./SVG/monsterPurple.svg') no-repeat;
+  width: 7rem;
+  height: 8rem;
+  background-size: 100%;
+  position: absolute;
+  animation-name: example;
+  animation-duration: 0.5s;
+  top: 1rem;
+  left: 11rem;
+  opacity: 1;
+}
+
+//E
+.jess-Veg-24white {
+  font-size: 2.4rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+  color: $darkBrown;
+  letter-spacing: 1rem;
+  z-index: 7;
+  position: absolute;
+  top: 40rem;
+  left: 22rem;
+}
+.jess-ColorE-01 {
+  background: url('./images/jess-colorE01.png') no-repeat;
+  width: 22rem;
+  height: 24rem;
+  background-size: 80%;
+  position: absolute;
+  z-index: 10;
+  top: 18rem;
+  left: 10rem;
+}
+.jess-ColorE-02 {
+  background: url('./images/jess-colorE02.png') no-repeat;
+  width: 22rem;
+  height: 24rem;
+  background-size: 100%;
+  position: absolute;
+  z-index: 8;
+  top: 18rem;
+  left: 26rem;
+}
+.jess-monsterWhite {
+  background: url('./SVG/monsterWhite.svg') no-repeat;
+  width: 7rem;
+  height: 8rem;
+  background-size: 100%;
+  position: absolute;
+  animation-name: example;
+  animation-duration: 0.5s;
+  top: 1rem;
+  left: 11rem;
+  opacity: 1;
+}
+
+@media screen and (max-width: 576px) {
+  .jess-VegC-container-fluid {
+    background-color: $lightBrown;
+    width: 100%;
+    height: 65rem;
+    padding: 0;
+    margin-top: 5rem;
+  }
+  .jess-vegC-border {
+    display: none;
+  }
+  .jess-VegC-text > .jess-text-24Green {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .jess-VegC-text > .jess-text-15Gray {
+    margin: 0 auto;
+    margin-top: 2rem;
+    justify-content: center;
+    text-align: center;
+  }
+  //SVG
+  .jess-svg {
+    background: url('./SVG/jess-svg.svg') no-repeat;
+    width: 42rem;
+    height: 42rem;
+    background-size: 100%;
+    margin-top: 3rem;
+    left: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .jess-VegC-colorRow {
+    margin-top: -15rem;
+  }
+
+  .jess-vegC-yellow {
+    width: 2rem;
+    height: 2rem;
+    background-color: #f6bd60;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+  }
+  .jess-vegC-green {
+    width: 2rem;
+    height: 2rem;
+    background-color: #438b6b;
+    border-radius: 50%;
+  }
+  .jess-vegC-purple {
+    width: 2rem;
+    height: 2rem;
+    background-color: #9019c7;
+    border-radius: 50%;
+  }
+  .jess-vegC-white {
+    width: 2rem;
+    height: 2rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: none;
+  }
+
+  //A
+  .jess-Veg-24red {
+    font-size: 2.4rem;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: bold;
+    color: #e0611e;
+    letter-spacing: 1rem;
+    z-index: 7;
+    position: absolute;
+    top: 25rem;
+    left: 12rem;
+  }
+  .jess-ColorA-01 {
+    background: url('./images/jess-colorA02.png') no-repeat;
+    width: 22rem;
+    height: 24rem;
+    background-size: 40%;
+    position: absolute;
+    z-index: 10;
+    top: 9rem;
+    left: 6rem;
+  }
+  .jess-ColorA-02 {
+    background: url('./images/jess-colorA01.png') no-repeat;
+    width: 22rem;
+    height: 24rem;
+    background-size: 50%;
+    position: absolute;
+    z-index: 8;
+    top: 13rem;
+    left: 17rem;
+  }
+  .jess-monsterRed {
+    background: url('./SVG/monsterRed.svg') no-repeat;
+    width: 7rem;
+    height: 8rem;
+    background-size: 100%;
+    position: absolute;
+    animation-name: example;
+    animation-duration: 0.5s;
+    top: -1rem;
+    left: 8rem;
+    opacity: 1;
+  }
+
+  //B
+  .jess-Veg-24yellow {
+    font-size: 2.4rem;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: bold;
+    color: #f6bd60;
+    letter-spacing: 1rem;
+    z-index: 7;
+    position: absolute;
+    top: 25rem;
+    left: 12rem;
+  }
+  .jess-ColorB-01 {
+    background: url('./images/jess-colorB01.png') no-repeat;
+    width: 22rem;
+    height: 24rem;
+    background-size: 20%;
+    position: absolute;
+    z-index: 10;
+    top: 11rem;
+    left: 9rem;
+  }
+  .jess-ColorB-02 {
+    background: url('./images/jess-colorB02.png') no-repeat;
+    width: 22rem;
+    height: 24rem;
+    background-size: 60%;
+    position: absolute;
+    z-index: 8;
+    top: 11rem;
+    left: 17rem;
+  }
+  .jess-monsterYellow {
+    background: url('./SVG/monsterYellow.svg') no-repeat;
+    width: 7rem;
+    height: 8rem;
+    background-size: 100%;
+    position: absolute;
+    animation-name: example;
+    animation-duration: 0.5s;
+    top: -1rem;
+    left: 8rem;
+    opacity: 1;
+  }
+
+  //C
+  .jess-Veg-24green {
+    font-size: 2.4rem;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: bold;
+    color: $green;
+    letter-spacing: 1rem;
+    z-index: 7;
+    position: absolute;
+    top: 25rem;
+    left: 12rem;
+  }
+  .jess-Veg-20gray {
+    font-size: 2rem;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
+    color: $darkGary;
+    z-index: 7;
+    position: absolute;
+    top: 7rem;
+    left: 4rem;
+  }
+  .jess-ColorC-01 {
+    background: url('./images/jess-colorC01.png') no-repeat;
+    width: 22rem;
+    height: 24rem;
+    background-size: 60%;
+    position: absolute;
+    z-index: 10;
+    top: 9rem;
+    left: 5rem;
+  }
+  .jess-ColorC-02 {
+    background: url('./images/jess-colorC02.png') no-repeat;
+    width: 22rem;
+    height: 24rem;
+    background-size: 60%;
+    position: absolute;
+    z-index: 8;
+    top: 13rem;
+    left: 17rem;
+  }
+  .jess-Veg-20gray2 {
+    font-size: 2rem;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
+    color: $darkGary;
+    z-index: 7;
+    position: absolute;
+    top: 7rem;
+    left: 22rem;
+  }
+
+  .jess-monster {
+    background: url('./SVG/monst.svg') no-repeat;
+    width: 7rem;
+    height: 8rem;
+    background-size: 100%;
+    position: absolute;
+    animation-name: example;
+    animation-duration: 0.5s;
+    top: -1rem;
+    left: 8rem;
+    opacity: 1;
+  }
+
+  //D
+  .jess-Veg-24purple {
+    font-size: 2.4rem;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: bold;
+    color: #9019c7;
+    letter-spacing: 1rem;
+    z-index: 7;
+    position: absolute;
+    top: 25rem;
+    left: 12rem;
+  }
+  .jess-ColorD-01 {
+    background: url('./images/jess-colorD01.png') no-repeat;
+    width: 22rem;
+    height: 24rem;
+    background-size: 60%;
+    position: absolute;
+    z-index: 10;
+    top: 13rem;
+    left: 6rem;
+  }
+  .jess-ColorD-02 {
+    background: url('./images/jess-colorD02.png') no-repeat;
+    width: 22rem;
+    height: 24rem;
+    background-size: 50%;
+    position: absolute;
+    z-index: 8;
+    top: 13rem;
+    left: 18rem;
+  }
+  .jess-monsterPurple {
+    background: url('./SVG/monsterPurple.svg') no-repeat;
+    width: 7rem;
+    height: 8rem;
+    background-size: 100%;
+    position: absolute;
+    animation-name: example;
+    animation-duration: 0.5s;
+    top: -1rem;
+    left: 8rem;
+    opacity: 1;
+  }
+
+  //E
+  .jess-Veg-24white {
+    font-size: 2.4rem;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: bold;
+    color: $darkBrown;
+    letter-spacing: 1rem;
+    z-index: 7;
+    position: absolute;
+    top: 25rem;
+    left: 12rem;
+  }
+  .jess-ColorE-01 {
+    background: url('./images/jess-colorE01.png') no-repeat;
+    width: 22rem;
+    height: 24rem;
+    background-size: 55%;
+    position: absolute;
+    z-index: 10;
+    top: 12rem;
+    left: 6rem;
+  }
+  .jess-ColorE-02 {
+    background: url('./images/jess-colorE02.png') no-repeat;
+    width: 22rem;
+    height: 24rem;
+    background-size: 70%;
+    position: absolute;
+    z-index: 8;
+    top: 14rem;
+    left: 15rem;
+  }
+  .jess-monsterWhite {
+    background: url('./SVG/monsterWhite.svg') no-repeat;
+    width: 7rem;
+    height: 8rem;
+    background-size: 100%;
+    position: absolute;
+    animation-name: example;
+    animation-duration: 0.5s;
+    top: -1rem;
+    left: 8rem;
+    opacity: 1;
+  }
+
+  @keyframes example {
+    from {
+      top: 7rem;
+      left: 11rem;
+      opacity: 0;
+    }
+    to {
+      top: -1rem;
+      left: 8rem;
+      opacity: 1;
+    }
+  }
+}

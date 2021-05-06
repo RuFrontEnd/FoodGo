@@ -1,0 +1,55 @@
+.arrowRight-warp {
+  width: 8rem;
+  height: 10rem;
+  cursor: pointer;
+}
+
+.jan-arrow-circleR:active {
+  transform: scale(0.85);
+}
+
+// .jan-arrow-circleR {
+//   background: url('../../../Janice/Components/JanIndexx/Images/Svg/arrow-circle.svg')
+//     center center no-repeat;
+//   background-size: cover;
+//   width: 8rem;
+//   height: 8rem;
+//   position: relative;
+//   cursor: pointer;
+//   transition: 0.5s;
+// }
+.jess-arrow {
+  background: url('./SVG/jess-arrow-circle-01.svg') center center no-repeat;
+  background-size: cover;
+  width: 8rem;
+  height: 8rem;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.jess-arrow-right {
+  background: url('../../../Janice/Components/JanIndexx/Images/Svg/arrow-right.svg')
+    center center;
+  width: 6.5rem;
+  height: 2.2rem;
+  background-size: cover;
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  transition: 0.5s;
+}
+.jess-arrow-circleR:hover {
+  .jess-arrow-right {
+    animation: arrow-moveR 1s infinite;
+    transition: 0.5s;
+  }
+  @keyframes arrow-moveR {
+    from {
+      right: 6rem;
+    }
+    to {
+      right: 3rem;
+    }
+  }
+}

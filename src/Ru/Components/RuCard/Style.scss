@@ -1,0 +1,141 @@
+@import 'Ru/Pages/variable.scss';
+
+#ru-card-margin {
+  margin: 0px 20px;
+}
+
+.ru-card-container {
+  border-radius: 5px;
+  width: 345px;
+  height: 100%;
+}
+
+.ru-card-img-warp {
+  height: 340px;
+  position: relative;
+}
+
+.ru-card-info-warp h3 {
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $bold,
+    0px,
+    $light-orange
+  );
+}
+
+.ru-card-img-warp:hover > .ru-card-abs {
+  top: 83%;
+  transition: 0.35s;
+}
+
+.ru-card-abs {
+  position: absolute;
+  top: 110%;
+  right: 20px;
+  transition: 0.35s;
+}
+
+.ru-card-abs-stop {
+  position: absolute;
+  top: 83%;
+  right: 20px;
+  transition: 0.35s;
+}
+
+.ru-card-abs-stop .addFavorite-btn {
+  background-color: $dark-yellow;
+  background-image: url('./Images/addFavoriteC.svg');
+}
+
+.ru-card-img {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.ru-card-info-warp {
+  background-color: $white;
+  border-right: 1px solid $hr-Color;
+  border-left: 1px solid $hr-Color;
+  width: 100%;
+  height: 108px;
+  position: relative;
+  @include flex($df, $fdc, $jcc, $alc);
+  flex-direction: row;
+}
+
+.ru-card-none {
+  opacity: 0;
+}
+
+.ru-card-info {
+  min-width: 170px;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.ru-card-info > h2 {
+  font-size: $productName-size;
+  margin-bottom: 15px;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $productName-size,
+    $regular,
+    0px,
+    $productName-Color
+  );
+}
+
+.ru-card-price {
+  align-self: flex-end;
+  margin-bottom: 15px;
+}
+
+.ru-card-star-warp {
+  @include flex($df, $fdr, $jcc, $alc);
+}
+
+.ru-card-star {
+  margin: 0px 2px;
+  width: 14px;
+}
+
+.ru-card-num {
+  display: inline;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $number-size,
+    $regular,
+    0px,
+    $light-grey
+  );
+}
+
+.ru-card-commentNum {
+  margin-right: 6px;
+  margin-bottom: 16px;
+}
+
+.ru-card-addCartWarp {
+  background-color: $white;
+  height: 84px;
+  border-right: 1px solid $hr-Color;
+  border-left: 1px solid $hr-Color;
+  border-bottom: 1px solid $hr-Color;
+  @include flex($df, $fdr, $jcc, $alc);
+}
+
+.ru-card-hr {
+  width: 87.465%;
+  height: 100%;
+  border-top: 1px solid $hr-Color;
+  @include flex($df, $fdc, $jcc, $alc);
+}

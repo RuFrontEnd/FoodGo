@@ -1,0 +1,166 @@
+@import './Variable.scss';
+
+#iris-card-margin {
+  margin: 0px 20px;
+}
+
+.iris-card-container {
+  border-radius: 5px;
+  width: 100%;
+  // height: 100%;
+  margin-bottom: 5rem;
+}
+
+.iris-card-img-warp {
+  height: 230px;
+  position: relative;
+}
+
+.iris-card-info-warp h3 {
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $bold,
+    0px,
+    $light-orange
+  );
+}
+
+.iris-card-img-warp:hover > .iris-card-abs {
+  top: 80%;
+  transition: 0.35s;
+}
+
+.iris-card-abs {
+  position: absolute;
+  top: 110%;
+  right: 20px;
+  transition: 0.35s;
+}
+
+.iris-card-abs-stop {
+  position: absolute;
+  top: 80%;
+  right: 20px;
+  transition: 0.35s;
+}
+
+.iris-card-abs-stop .iris-addFavorite-btn {
+  background-color: $dark-yellow;
+  background-image: url('./Images/addFavoriteC.svg');
+}
+
+.iris-card-img {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.iris-card-info-warp {
+  background-color: $white;
+  border-right: 1px solid $hr-Color;
+  border-left: 1px solid $hr-Color;
+  width: 100%;
+  height: 85px;
+  position: relative;
+  @include flex($df, $fdc, $jcc, $alc);
+  flex-direction: column;
+}
+
+.iris-card-info-warp > h3 {
+  margin-bottom: 0px;
+}
+
+.iris-card-info-warp div {
+  margin-bottom: 0px;
+}
+
+.iris-card-none {
+  opacity: 0;
+}
+
+.iris-card-info {
+  min-width: 170px;
+  margin-bottom: 0px;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.iris-card-info > h2 {
+  font-size: $productName-size;
+  margin-bottom: 5px;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $productName-size,
+    $regular,
+    0px,
+    $productName-Color
+  );
+}
+
+.iris-card-info > h3 {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+}
+
+.iris-card-price {
+  align-self: flex-end;
+}
+
+.iris-card-star-warp {
+  @include flex($df, $fdr, $jcc, $alc);
+}
+
+.iris-card-star {
+  margin: 0px 2px;
+  width: 14px;
+}
+
+.iris-card-num {
+  display: inline;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $number-size,
+    $regular,
+    0px,
+    $light-grey
+  );
+}
+
+.iris-card-commentNum {
+  // margin-right: 6px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.iris-card-title {
+  margin-top: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.iris-card-addCartWarp {
+  background-color: $white;
+  height: 50px;
+  border-right: 1px solid $hr-Color;
+  border-left: 1px solid $hr-Color;
+  border-bottom: 1px solid $hr-Color;
+  @include flex($df, $fdr, $jcc, $alc);
+}
+
+.iris-card-hr {
+  width: 87.465%;
+  height: 100%;
+  border-top: 1px solid $hr-Color;
+  @include flex($df, $fdc, $jcc, $alc);
+}

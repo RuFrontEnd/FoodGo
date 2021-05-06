@@ -1,0 +1,164 @@
+//------------------------------Desktop--------------------------------
+
+html {
+    font-size: 10px;
+}
+
+
+.claudia-index-card-intro-box {
+    width: 384px;
+    height: 620px;
+    background-color: #fff;
+    border-radius: 40px;
+    padding: 35px 40px 10px 40px;
+    box-shadow: 0px 3px 6px #D1C5B8;
+    transition: 1s;
+    opacity: 0;
+    display: none;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+.claudia-index-card-intro-box-first-line {
+    display:flex;
+    justify-content: space-between;
+}
+
+//goback button
+
+#claudia-index-card-intro-goback{
+    font-size: 1.8rem;
+    border: 0px;
+    background-color: transparent;
+    color: #858585;
+}
+
+#claudia-index-card-intro-goback:focus{
+    outline: none;
+}
+
+#claudia-index-card-intro-goback:hover {
+    color: black;
+}
+
+// box content
+
+#claudia-index-card-intro-city {
+    color: #F6BD60;
+}
+
+#claudia-index-card-intro-title {
+    color: #66AB8C;
+    line-height: 3rem;
+}
+
+.claudia-index-card-intro-box hr {
+    border: 1px solid #66AB8C;
+    width: 304px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+}
+
+.claudia-index-card-intro-outside img {
+    width: 304px;
+    height: 203px;
+    border-radius: 10px;
+}
+
+#claudia-index-card-intro-intro {
+    color: #858585;
+    width: 304px;
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    line-height: 2.5rem;
+    overflow: hidden;
+}
+
+.claudia-index-card-intro-button button{
+    width: 304px;
+    height: 50px;
+    font-size: 20px;
+    background-color: transparent;
+    margin-top: 20px;
+}
+
+.claudia-index-card-intro-button button::after {
+    width: 320px;
+}
+
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576.1px) and (max-width: 1200px) {
+
+    .claudia-index-card-intro-box{
+        width: 345px;
+        height: 590px;
+        margin: 0px auto;
+    }
+
+    .claudia-index-card-intro-box hr {
+        width: 245px;
+    }
+
+    .claudia-index-card-intro-outside img {
+        width: 265px;
+        height: 180px;
+    }
+
+    #claudia-index-card-intro-intro {
+        width: 265px;
+    }
+
+    .claudia-index-card-intro-button button {
+        width: 265px;
+        height: 45px;
+    }
+
+}
+
+//--------------------------------Ipad---------------------------------
+
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media only screen and (max-width: 576px) {
+
+    .claudia-index-card-intro-box{
+        width: 335px;
+        height: 590px;
+        margin: 0px auto;
+    }
+
+    .claudia-index-card-intro-box hr {
+        width: 255px;
+    }
+
+    .claudia-index-card-intro-outside img {
+        width: 255px;
+        height: 180px;
+    }
+
+    #claudia-index-card-intro-intro {
+        width: 255px;
+    }
+
+    .claudia-index-card-intro-button button {
+        width: 255px;
+        height: 45px;
+    }
+
+}
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+
+
+
+
+

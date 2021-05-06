@@ -1,0 +1,1276 @@
+$gray: #858585;
+$lightGray: #fafafa;
+$brown: #a59583;
+$lightBrown: #decdbb;
+$skin: #f7ede2;
+$green: #66ab8c;
+$deepGreen: #438b6b;
+$orange: #f48145;
+$deepOrange: #e0611e;
+$yellow: #f6bd60;
+$deepYello: #f5a016;
+
+@import '../../../Share/Components/Button/Variable.scss';
+@import '../../../Share/Components/Button/Button.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
+
+.jan-p0 {
+  padding: 0 !important;
+}
+
+.jan-fake-nav {
+  width: 144rem;
+  height: 10rem;
+  background-color: #fff;
+}
+
+// 標題宋體樣式
+.jan-feature-title {
+  font-size: 3.2rem;
+  font-family: 'Noto Serif TC', serif;
+  color: $gray;
+  margin: 0.5rem 1rem 1rem 1rem;
+  font-weight: 600;
+}
+
+// 共用元件按鈕大小修改
+.jan-index-button button {
+  width: 15rem;
+  height: 5rem;
+  font-size: 1.8rem;
+}
+
+// 輪播牆
+.ant-carousel .slick-dots li.slick-active {
+  width: 7.5rem;
+}
+.ant-carousel .slick-dots li.slick-active button {
+  background-color: $orange;
+}
+.ant-carousel .slick-dots li {
+  width: 6rem;
+}
+
+.ant-carousel .slick-dots li button {
+  height: 1.5rem;
+  background-color: $lightGray;
+  opacity: 0.7;
+}
+
+.ant-carousel .slick-dots-bottom {
+  bottom: 3rem;
+}
+
+.jan-index-carousel-wrap {
+  width: 100%;
+  height: 87rem;
+  .ant-carousel > .slick-slider > ul {
+    float: left;
+    margin-left: 120rem;
+    margin-bottom: 3rem;
+  }
+  .bannerwrap {
+    width: 100%;
+    height: 100%;
+
+    .banner1 {
+      width: 100%;
+      height: 100%;
+      background: url('./Images/Images/banner01.png') center center no-repeat;
+      background-size: cover;
+
+      .jan-health {
+        width: 67rem;
+        height: 4.5rem;
+        background: url('./Images/Images/healthtitle.svg') center center
+          no-repeat;
+        background-size: cover;
+        margin-top: 26rem;
+      }
+      .jan-fresh {
+        width: 48rem;
+        height: 8rem;
+        background: url('./Images/Images/FRESHEVERYDAY.svg') center center
+          no-repeat;
+        background-size: cover;
+        margin-top: 26rem;
+        // background-position: center 20rem;
+      }
+    }
+    .banner2 {
+      width: 100%;
+      height: 100%;
+      background: url('./Images/Images/banner5.jpg') center center no-repeat;
+      background-size: cover;
+      .jan-p1 {
+        margin-top: 15rem;
+        margin-bottom: 5rem;
+      }
+
+      p {
+        font-size: 6rem;
+        font-family: 'Noto Serif TC', serif;
+        color: $skin;
+        font-weight: 700;
+        float: left;
+        line-height: 3rem;
+        margin-left: 20rem;
+      }
+    }
+    .banner3 {
+      width: 100%;
+      height: 100%;
+      background: url('./Images/Images/banner2.jpg') center center no-repeat;
+      background-size: cover;
+    }
+    .banner4 {
+      width: 100%;
+      height: 100%;
+      background: url('./Images/Images/banner4.png') center center no-repeat;
+      background-size: cover;
+    }
+  }
+
+  // 滾動提示
+  .jan-mouse {
+    width: 3rem;
+    height: 5rem;
+    background: url('./Images/Svg/mouse.svg') center center no-repeat;
+    bottom: 6rem;
+    left: 49vw;
+    cursor: pointer;
+  }
+  .jan-mouse-arrow {
+    width: 3rem;
+    height: 1rem;
+    background: url('./Images/Svg/mouse-arrow.svg') center center no-repeat;
+    bottom: 2rem;
+    left: 49vw;
+    cursor: pointer;
+    animation: mouse-arrow 0.7s infinite;
+  }
+  @keyframes mouse-arrow {
+    from {
+      bottom: 4.5rem;
+    }
+    to {
+      bottom: 2rem;
+    }
+  }
+  // 下載應用程式div的樣式
+  .jan-download-area {
+    bottom: 2.5rem;
+    width: 28rem;
+    height: 10rem;
+    border-radius: 20px;
+    background-color: #f5a0168e;
+    margin-left: 5rem;
+    padding: 1rem;
+    z-index: 50;
+    transition: transform 1s;
+    .jan-app-logo {
+      background: url('./Images/Images/appLogo.png') center center no-repeat;
+      background-size: cover;
+      margin: auto;
+      width: 7rem;
+      height: 7rem;
+    }
+    .jan-app-info {
+      width: 18rem;
+      height: 8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        color: $skin;
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+      .jan-ios {
+        background: url('./Images/Images/ios.png') center center no-repeat;
+        background-size: cover;
+        height: 2.5rem;
+        width: 8rem;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .jan-android {
+        background: url('./Images/Images/android.png') center center no-repeat;
+        background-size: cover;
+        width: 8rem;
+        height: 2.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+    .jan-col-download {
+      background: url('./Images/Svg/downloadIcon.svg') center center no-repeat;
+      background-size: cover;
+      width: 2.5rem;
+      height: 8.5rem;
+      display: none;
+      cursor: pointer;
+      transition: transform 1s;
+    }
+  }
+}
+
+// 特色專區-切換區域
+.jan-index-feature {
+  max-width: 117rem;
+  height: 23rem;
+  background-color: #fff;
+  // 圓圈們
+  .jan-circles {
+    width: 117rem;
+    // 分隔橘色小圓圈
+    .jan-index-feature-smcircle {
+      background-color: $orange;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50vw;
+    }
+    // skin底色
+    .jan-index-feature-circle {
+      background-color: $skin;
+      width: 13rem;
+      height: 13rem;
+      border-radius: 50%;
+      // 特色文字樣式
+      .jan-circle-title {
+        font-size: 2rem;
+        font-family: 'Noto Sans TC', sans-serif;
+        color: $brown;
+        margin-bottom: 0;
+      }
+      // 在地小農
+      .jan-farmer-icon {
+        background: url('./Images/Svg/farmer-o.svg') center center no-repeat;
+        background-size: 9.5rem 9.5rem;
+        // background-size: 8rem 8rem;
+        width: 9.5rem;
+        height: 9.5rem;
+        margin: 1.5rem 0 0.5rem 0;
+        cursor: pointer;
+      }
+      .jan-farmer-icon:hover {
+        background-size: 9.5rem 9.5rem;
+      }
+      // 產銷履歷
+      .jan-diet-icon {
+        background: url('./Images/Svg/diet.svg') center center no-repeat;
+        background-size: 8rem 8rem;
+        width: 9.5rem;
+        height: 9.5rem;
+        margin: 1.5rem 0 0.5rem 0.5rem;
+        cursor: pointer;
+      }
+      .jan-diet-icon:hover {
+        background-size: 9.5rem 9.5rem;
+      }
+      // 客製化便當
+      .jan-choices-icon {
+        background: url('./Images/Svg/choices.svg') center center no-repeat;
+        background-size: 7.5rem 7.5rem;
+        width: 9.5rem;
+        height: 9.5rem;
+        margin: 2rem 0 0 0;
+        cursor: pointer;
+      }
+      .jan-choices-icon:hover {
+        background-size: 9rem 9rem;
+      }
+      // 揪團訂餐
+      .jan-network-icon {
+        background: url('./Images/Svg/network.svg') center center no-repeat;
+        background-size: 8rem 8rem;
+        width: 9.5rem;
+        height: 9.5rem;
+        margin: 1.8rem 0 0.2rem 0.2rem;
+        cursor: pointer;
+      }
+      .jan-network-icon:hover {
+        background-size: 9.5rem 9.5rem;
+      }
+      // 卡路里計算
+      .jan-kcal-icon {
+        background: url('./Images/Svg/kcal.svg') center center no-repeat;
+        background-size: 8rem 8rem;
+        width: 9.5rem;
+        height: 9.5rem;
+        margin: 2rem 0 0 0;
+        cursor: pointer;
+      }
+      .jan-kcal-icon:hover {
+        background-size: 9.5rem 9.5rem;
+      }
+    }
+  }
+}
+// 切換指示的三角形
+.jan-index-feature-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 22px 15px;
+  border-color: transparent transparent $skin transparent;
+  margin-top: 2rem;
+  left: 6rem;
+  top: 23rem;
+}
+// 特色內容
+.jan-intro-area {
+  margin-top: 4rem;
+  width: 100%;
+  height: 55rem;
+  background-color: $skin;
+}
+.jan-intro1 {
+  margin: auto;
+  max-width: 117rem;
+  height: 55rem;
+  display: flex;
+  // display: none;
+  justify-content: space-around;
+  align-items: center;
+  .jan-intro1-wrap {
+    // background-color: #bbb;
+    width: 44rem;
+    height: 50rem;
+    .jan-intro1-title {
+      background: url('./Images/Svg/intro1.svg') center center no-repeat;
+      background-size: cover;
+      width: 38rem;
+      height: 11rem;
+    }
+    .jan-intro1-text {
+      width: 38rem;
+      height: 30rem;
+      color: $gray;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-left: 5rem;
+      .jan-intro1-large-text {
+        color: $green;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+    }
+  }
+  .jan-intro1-cards {
+    // background-color: #ccc;
+    width: 68rem;
+    height: 50rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .jan-intro1-card1 {
+      background-color: $lightGray;
+      width: 30rem;
+      height: 45rem;
+      border-radius: 20px;
+      box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+      position: relative;
+      overflow: hidden;
+      .jan-intro1-farmer1 {
+        border-radius: 50%;
+        background: url('./Images/Images/farmer1.jpg') center center no-repeat;
+        background-size: 40rem;
+        background-position: -5rem -1.5rem;
+        width: 15rem;
+        height: 15rem;
+        margin: 3rem auto 0 auto;
+        display: flex;
+        justify-content: center;
+      }
+      .jan-intro1-card1-wrap {
+        width: 25rem;
+        height: 45rem;
+        top: 0;
+        right: 2.5rem;
+        position: absolute;
+        .jan-intro1-fake-farmer1 {
+          width: 15rem;
+          height: 15rem;
+          margin: 3rem auto 2rem auto;
+        }
+        .jan-card1-title {
+          font-family: 'Noto Sans TC', sans-serif;
+          font-size: 1.8rem;
+          font-weight: 600;
+        }
+        .jan-card1-text {
+          width: 25rem;
+          height: 15rem;
+          font-family: 'Noto Sans TC', sans-serif;
+          font-size: 1.4rem;
+          font-weight: 500;
+          margin: 0 auto;
+        }
+        .jan-card-arrow {
+          background: url('./Images/Svg/intro1-arrow.svg') center center
+            no-repeat;
+          background-size: cover;
+          width: 3rem;
+          height: 2.2rem;
+          cursor: pointer;
+        }
+
+        .jan-card1-viewmore {
+          font-family: 'Noto Sans TC', sans-serif;
+          color: $gray;
+          font-size: 1rem;
+          margin-bottom: 3rem;
+        }
+      }
+    }
+    .jan-intro1-card1:hover {
+      .jan-intro1-farmer1 {
+        margin-left: -15rem;
+        margin-top: -7.5rem;
+        background: url('./Images/Images/farmer1.jpg') center center no-repeat;
+        background-size: 80rem;
+        background-position: -2rem 6rem;
+        transition: 0.5s;
+        border-radius: 50rem;
+        opacity: 0.3;
+        width: 60rem;
+        height: 60rem;
+      }
+      .jan-card-arrow {
+        animation: myCustomAnimate 0.7s infinite;
+      }
+      @keyframes myCustomAnimate {
+        from {
+          margin-right: 3rem;
+        }
+        to {
+          margin-right: 0rem;
+        }
+      }
+    }
+
+    .jan-intro1-card2 {
+      background-color: $lightGray;
+      width: 30rem;
+      height: 45rem;
+      border-radius: 20px;
+      box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+      position: relative;
+      overflow: hidden;
+      .jan-intro1-farmer2 {
+        border-radius: 50%;
+        background: url('./Images/Images/farmer2.jpg') center center no-repeat;
+        background-size: 24rem;
+        background-position: -8rem 0rem;
+        width: 15rem;
+        height: 15rem;
+        margin: 3rem auto 0 auto;
+        display: flex;
+        justify-content: center;
+      }
+      .jan-intro1-card2-wrap {
+        width: 25rem;
+        height: 45rem;
+        top: 0;
+        right: 2.5rem;
+        position: absolute;
+        .jan-intro1-fake-farmer2 {
+          width: 15rem;
+          height: 15rem;
+          margin: 3rem auto 2rem auto;
+        }
+        .jan-card2-title {
+          font-family: 'Noto Sans TC', sans-serif;
+          font-size: 1.8rem;
+          font-weight: 600;
+        }
+        .jan-card2-text {
+          width: 25rem;
+          height: 15rem;
+          font-family: 'Noto Sans TC', sans-serif;
+          font-size: 1.4rem;
+          font-weight: 500;
+          margin: 0 auto;
+        }
+        .jan-card-arrow {
+          background: url('./Images/Svg/intro1-arrow.svg') center center
+            no-repeat;
+          background-size: cover;
+          width: 3rem;
+          height: 2.2rem;
+          cursor: pointer;
+        }
+        .jan-card2-viewmore {
+          font-family: 'Noto Sans TC', sans-serif;
+          color: $gray;
+          font-size: 1rem;
+          // margin-right: 2.5rem;
+        }
+      }
+      .jan-intro1-card2:hover {
+        .jan-intro1-farmer2 {
+          margin-left: -15rem;
+          margin-top: -7.5rem;
+          background: url('./Images/Images/farmer2.jpg') center center no-repeat;
+          background-size: 80rem;
+          background-position: -30rem 3rem;
+          transition: 0.5s;
+          border-radius: 50rem;
+          opacity: 0.3;
+          width: 60rem;
+          height: 60rem;
+        }
+        .jan-card-arrow {
+          animation: myCustomAnimate 0.7s infinite;
+        }
+        @keyframes myCustomAnimate {
+          from {
+            margin-right: 3rem;
+          }
+          to {
+            margin-right: 0rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.jan-intro2 {
+  margin: auto;
+  max-width: 117rem;
+  height: 55rem;
+  display: flex;
+  display: none;
+  // display: block;
+  justify-content: space-around;
+  align-items: center;
+  .jan-intro2-wrap {
+    // background-color: #bbb;
+    width: 44rem;
+    height: 50rem;
+
+    .jan-intro2-title {
+      background: url('./Images/Svg/intro2.svg') center center no-repeat;
+      background-size: cover;
+      width: 43rem;
+      height: 11rem;
+    }
+  }
+  .jan-intro2-text {
+    width: 38rem;
+    height: 30rem;
+    color: $gray;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1.4rem;
+    margin-top: 6rem;
+    margin-left: 5rem;
+    .jan-intro2-large-text {
+      color: $deepYello;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+  }
+  .jan-intro2-cards {
+    // background-color: #ccc;
+    width: 68rem;
+    height: 50rem;
+    background: url('./Images/Images/intro2.jpg');
+    background-size: cover;
+  }
+}
+
+.jan-intro3 {
+  margin: auto;
+  max-width: 117rem;
+  height: 55rem;
+  display: flex;
+  display: none;
+  // display: block;
+  justify-content: space-around;
+  align-items: center;
+  .jan-intro3-wrap {
+    // background-color: #bbb;
+    width: 44rem;
+    height: 50rem;
+
+    .jan-intro3-title {
+      background: url('./Images/Svg/intro3.svg') center center no-repeat;
+      background-size: cover;
+      width: 35rem;
+      height: 11rem;
+    }
+  }
+  .jan-intro3-text {
+    width: 38rem;
+    height: 30rem;
+    color: $gray;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1.4rem;
+    margin-top: 6rem;
+    margin-left: 5rem;
+    .jan-intro3-large-text {
+      color: $deepYello;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+  }
+  .jan-intro3-cards {
+    // background-color: #ccc;
+    width: 68rem;
+    height: 50rem;
+    video {
+      outline: none;
+    }
+  }
+}
+
+.jan-intro4 {
+  // background-color: #ddd;
+  margin: auto;
+  max-width: 117rem;
+  height: 55rem;
+  display: flex;
+  display: none;
+  // display: block;
+  justify-content: space-around;
+  align-items: center;
+  .jan-intro4-wrap {
+    // background-color: #bbb;
+    width: 44rem;
+    height: 50rem;
+
+    .jan-intro4-title {
+      background: url('./Images/Svg/intro4.svg') center center no-repeat;
+      background-size: cover;
+      width: 43rem;
+      height: 11rem;
+    }
+  }
+  .jan-intro4-text {
+    width: 38rem;
+    height: 30rem;
+    color: $gray;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1.4rem;
+    margin-top: 6rem;
+    margin-left: 5rem;
+    .jan-intro4-large-text {
+      color: $deepYello;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+  }
+  .jan-intro4-cards {
+    background: url('./Images/Images/networkintro4.jpg') center center no-repeat;
+    width: 68rem;
+    height: 50rem;
+    background-size: cover;
+  }
+}
+
+.jan-intro5 {
+  // background-color: #ddd;
+  margin: auto;
+  max-width: 117rem;
+  height: 55rem;
+  display: flex;
+  display: none;
+  // display: block;
+  justify-content: space-around;
+  align-items: center;
+  .jan-intro5-wrap {
+    // background-color: #bbb;
+    width: 44rem;
+    height: 50rem;
+
+    .jan-intro5-title {
+      background: url('./Images/Svg/intro5.svg') center center no-repeat;
+      background-size: cover;
+      width: 43rem;
+      height: 11rem;
+    }
+  }
+  .jan-intro5-text {
+    width: 38rem;
+    height: 30rem;
+    color: $gray;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1.4rem;
+    margin-top: 6rem;
+    margin-left: 5rem;
+    .jan-intro5-large-text {
+      color: $deepYello;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+  }
+  .jan-intro5-cards {
+    background: url('./Images/Images/kcalintro5.png') center center no-repeat;
+    width: 68rem;
+    height: 50rem;
+    background-size: cover;
+  }
+}
+
+// 今日推薦
+.jan-recommend {
+  background: url('./Images/Svg/rice.svg') center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 78rem;
+  .jan-recommend-wrap {
+    margin-top: 4rem;
+    width: 100%;
+    height: 100%;
+  }
+  .jan-recommend-cards {
+    .jan-card-container {
+      box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+      background-color: $lightGray;
+      border-radius: 20px;
+      width: 30rem;
+      height: 45rem;
+      .jan-card-img-warp {
+        height: 30rem;
+        position: relative;
+        overflow: hidden;
+        transition: 0.5s;
+        .jan-card-img1 {
+          border-radius: 20px 20px 0 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('./Images/Images/01_bento-chicken-breast.jpg');
+          background-size: cover;
+          background-position: 70% center;
+          background-repeat: no-repeat;
+          cursor: pointer;
+        }
+        .jan-card-img2 {
+          border-radius: 20px 20px 0 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('./Images/Images/04_bento-shrimp.jpg');
+          background-size: cover;
+          background-position: 70% center;
+          background-repeat: no-repeat;
+          cursor: pointer;
+        }
+        .jan-card-img3 {
+          border-radius: 20px 20px 0 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('./Images/Images/05_bento-porkneck.jpg');
+          background-size: cover;
+          background-position: 70% center;
+          background-repeat: no-repeat;
+          cursor: pointer;
+        }
+        .jan-ingredient {
+          border-radius: 20px 20px 0 0;
+          display: none;
+          width: 100%;
+          height: 100%;
+          backdrop-filter: blur(3px);
+        }
+      }
+      .jan-card-img-warp:hover {
+        transition: 0.5s;
+        text-decoration: none;
+        .jan-ingredient {
+          border-radius: 20px 20px 0 0;
+          display: block;
+          display: flex;
+          justify-content: center;
+          color: #fff;
+          background-color: #0000003c;
+          font-size: 1.5rem;
+          font-family: 'Noto Sans TC', sans-serif;
+          font-weight: 300;
+          transition: 0.5s;
+          .jan-ingredient-content {
+            margin-top: 5rem;
+            letter-spacing: 5px;
+            line-height: 30px;
+            width: 20rem;
+            height: 8rem;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+    .jan-card-info {
+      h3 {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 400;
+        text-align: center;
+        margin: 2.5rem 0;
+      }
+      .jan-card-hr {
+        width: 25rem;
+        height: 100%;
+        border-top: 1px solid $lightBrown;
+        p {
+          color: $gray;
+          font-family: 'Noto Sans TC', sans-serif;
+          margin: 0 1rem;
+        }
+        .jan-card-star {
+          margin: 0px 2px;
+          width: 1.4rem;
+        }
+      }
+    }
+  }
+}
+
+// 專屬優惠
+.jan-discount {
+  background-color: $skin;
+  width: 100%;
+  height: 80rem;
+}
+.jan-event {
+  width: 85rem;
+  height: 40rem;
+  background-color: $lightGray;
+  border-radius: 20px;
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+  overflow: hidden;
+  .jan-event-img {
+    width: 40rem;
+    height: 40rem;
+    background: url('./Images/Images/event1.png') center center no-repeat;
+    background-size: cover;
+  }
+}
+.jan-event-text {
+  width: 35rem;
+  height: 30rem;
+}
+.jan-event-title {
+  font-size: 1.8rem;
+  font-family: 'Noto Serif TC', serif;
+  color: $orange;
+  line-height: 13px;
+  font-weight: 700;
+}
+.jan-event-title2 {
+  display: none;
+}
+.jan-event-title3 {
+  display: none;
+}
+.jan-event-content2 {
+  display: none;
+}
+.jan-event-content3 {
+  display: none;
+}
+.jan-event-content {
+  font-size: 1.3rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  color: $gray;
+  line-height: 10px;
+  p {
+    line-height: 15px;
+  }
+  .jan-call-to-action {
+    color: $orange;
+  }
+}
+.jan-event-date {
+  font-size: 1rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  color: $gray;
+}
+.jan-img-select {
+  width: 140rem;
+  height: 17rem;
+  .img-row {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 17rem;
+      height: 17rem;
+      // border: 1px solid #ccc;
+      border-radius: 20px;
+      margin: auto;
+      cursor: pointer;
+      position: relative;
+    }
+    // .img-row-infor {
+    //   width: 17rem;
+    //   height: 17rem;
+    //   background-color: rgba(94, 93, 93, 0.171);
+    //   border-radius: 20px;
+    //   margin: auto;
+    //   cursor: pointer;
+    //   position: absolute;
+    // }
+  }
+}
+
+// 購物流程背景樣式
+.jan-shopping-process {
+  background: url('./Images/Images/bentos.jpg') center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 78rem;
+  margin: 0 1.5rem;
+  overflow: hidden;
+  .jan-blur {
+    background-color: rgba(255, 255, 255, 0.235);
+    width: 100vw;
+    height: 78rem;
+    backdrop-filter: blur(5px) brightness(1.2);
+    .jan-black-blur {
+      height: 45rem;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+// 購物五步驟
+.jan-step-circle {
+  margin-top: 6rem;
+  p {
+    font-size: 1.8rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    color: $skin;
+    margin-top: 14rem;
+  }
+  .jan-step1 {
+    background: url('./Images/Svg/step1.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+  }
+  .jan-step2 {
+    background: url('./Images/Svg/step2.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+  }
+  .jan-step3 {
+    background: url('./Images/Svg/step3.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+  }
+  .jan-step4 {
+    background: url('./Images/Svg/step4.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+  }
+  .jan-step5 {
+    background: url('./Images/Svg/step5.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+  }
+}
+
+// 地圖
+// 米粒底圖
+.jan-map {
+  background: url('./Images/Svg/rice.svg') center center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 75rem;
+  position: relative;
+  // 表單背景色
+  .jan-map-form-bcc {
+    background-color: $skin;
+    width: 70%;
+    height: 75rem;
+    margin: 0;
+    margin-top: -3rem;
+    left: 0;
+    top: 0;
+    .jan-map-form-wrap {
+      margin-left: 20%;
+      // margin-left: 25rem;
+    }
+    .jan-adress-form-wrap {
+      margin-left: 2rem;
+      width: 38rem;
+      height: 52rem;
+      .jan-form-announce {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 2rem;
+        font-weight: 400;
+        color: $deepYello;
+      }
+      .jan-adress-radio {
+        color: $brown;
+        font-size: 1.6rem;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 400;
+      }
+      .jan-map-results {
+        color: $brown;
+        font-size: 1.6rem;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 400;
+      }
+      // .jan-map-buttons {
+      //   text-align: right;
+      //   margin: 0px 0 0px auto;
+      // }
+    }
+    // 地圖區域
+    .jan-map-view {
+      width: 55%;
+      height: 70%;
+      // border: 0.1rem solid $yellow;
+      right: 0;
+      // right: -5%;
+      bottom: 3rem;
+      position: absolute;
+      overflow: hidden;
+    }
+  }
+}
+.jan-form-wrap2 {
+  width: 38rem;
+}
+
+// 首頁select box
+.iris-mainpage-select-wrapper .iris-mainpage-select {
+  font-size: 2rem;
+  border-radius: 2.5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 376px) {
+  .jan-adress-select select {
+    font-size: 1.4rem;
+    border-radius: 1.5rem;
+    height: 3rem;
+  }
+}
+
+.jan-adress-select .iris-mainpage-whitebox {
+  border-radius: 2.5rem;
+  height: 4.6rem;
+  width: 4.6rem;
+  background-color: #fff;
+  position: absolute;
+  right: 0.3rem;
+  top: 0.2rem;
+  // 點擊會直接穿透whitebox
+  pointer-events: none;
+}
+
+@media screen and (max-width: 376px) {
+  .jan-adress-select .iris-mainpage-whitebox {
+    border-radius: 1.5rem;
+    height: 2.6rem;
+    width: 2.7rem;
+    background-color: #fff;
+    position: absolute;
+    right: 0.1rem;
+    top: 0.2rem;
+    // 點擊會直接穿透whitebox
+    pointer-events: none;
+  }
+}
+
+.jan-adress-select .iris-selectbar-wrapper .iris-mainpage-trianglearrow {
+  background: url('../../../Share/image/triangleArrow.svg') cover center
+    no-repeat;
+  background-size: auto;
+  position: absolute;
+  right: 1.9rem;
+  top: 2.1em;
+  pointer-events: none;
+  fill: #c9c9c9;
+}
+@media screen and (max-width: 376px) {
+  .jan-adress-select
+    > .iris-mainpage-select-wrapper
+    > .iris-selectbar-wrapper
+    > .iris-mainpage-trianglearrow {
+    position: absolute;
+    right: 1.5rem;
+    top: 1em;
+    pointer-events: none;
+    fill: #c9c9c9;
+  }
+}
+
+.jan-adress-select > .iris-mainpage-select-wrapper > .iris-selectbar-wrapper {
+  width: 16.7rem;
+  position: relative;
+}
+
+.jan-adress-input .iris-inputH50 {
+  font-size: 2rem;
+  border-radius: 2.5rem;
+  height: 5rem;
+}
+
+@media screen and (max-width: 376px) {
+  .jan-adress-input > .iris-inputH50 {
+    font-size: 1.4rem;
+    border-radius: 1.5rem;
+    height: 3rem;
+  }
+}
+
+// 好文推薦
+.jan-article {
+  background-color: #fff;
+  width: 100%;
+  height: 62rem;
+  position: relative;
+  .jan-article-sbcc {
+    background-color: $lightGray;
+    width: 20rem;
+    height: 28rem;
+    border-radius: 20px;
+    box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+  }
+  .jan-article-bcc {
+    background-color: $lightGray;
+    width: 30rem;
+    height: 45rem;
+    border-radius: 20px;
+    box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+    .jan-article-img1 {
+      background: url('./Images/Images/article-img1.jpg') center center
+        no-repeat;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      margin: 2rem auto 1rem auto;
+    }
+    .jan-article-img2 {
+      background: url('./Images/Images/article-img2.jpg') center center
+        no-repeat;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      margin: 2rem auto 1rem auto;
+    }
+    .jan-article-img3 {
+      background: url('./Images/Images/article-img4.jpg') center center
+        no-repeat;
+      background-size: cover;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      margin: 2rem auto 1rem auto;
+    }
+    .jan-article-text-area {
+      width: 25rem;
+      height: 25rem;
+      border-top: 1px solid $lightBrown;
+      margin: 0 auto;
+      .jan-article-name {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: $gray;
+        margin: 1rem auto;
+        text-align: center;
+      }
+      .jan-article-text {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: $brown;
+        text-align: center;
+      }
+    }
+  }
+}
+.jan-article-left-blur {
+  width: 20rem;
+  height: 28rem;
+  filter: blur(5px);
+  .jan-article-img {
+    background: url('./Images/Images/article-img1.jpg') center center no-repeat;
+    background-size: cover;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin: 1.5rem auto 1rem auto;
+  }
+  .jan-article-text-area {
+    width: 21rem;
+    height: 22rem;
+    margin: 0 auto;
+    .jan-article-name {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $gray;
+      margin: 1rem auto;
+      text-align: center;
+    }
+    .jan-article-text {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: $brown;
+      text-align: center;
+    }
+  }
+}
+.jan-article-right-blur {
+  width: 25rem;
+  height: 35rem;
+  filter: blur(5px);
+  .jan-article-img {
+    background: url('./Images/Images/article-img2.jpg') center center no-repeat;
+    background-size: cover;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin: 1.5rem auto 1rem auto;
+  }
+  .jan-article-text-area {
+    width: 21rem;
+    height: 22rem;
+    margin: 0 auto;
+    .jan-article-name {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $gray;
+      margin: 1rem auto;
+      text-align: center;
+    }
+    .jan-article-text {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: $brown;
+      text-align: center;
+    }
+  }
+}
+.jan-article-arrowR {
+  position: absolute;
+  top: 30rem;
+  right: 25rem;
+}
+.jan-article-arrowL {
+  position: absolute;
+  top: 30rem;
+  left: 25rem;
+}

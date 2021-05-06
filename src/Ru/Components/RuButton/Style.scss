@@ -1,0 +1,127 @@
+@import 'Ru/Pages/variable.scss';
+
+// 橘色
+.ru-button-btn:focus {
+  outline: none;
+}
+
+.ru-button-btn {
+  background-color: $white;
+  height: 65px;
+  width: 200px;
+  border: 1px solid $light-orange;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $light-orange
+  );
+}
+
+.ru-button-btn:hover {
+  color: $white;
+}
+
+.ru-button-btn:active {
+  border: 1px solid $dark-orange;
+}
+
+.ru-button-btn::after {
+  content: '';
+  background-color: $light-orange;
+  height: 65px;
+  width: 220px;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: -10px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.ru-button-btn:hover::after {
+  top: 0px;
+}
+
+.ru-button-btn:active::after {
+  background-color: $dark-orange;
+}
+
+// 綠色
+.ru-button-btn-g:focus {
+  outline: none;
+}
+.ru-button-btn-g {
+  background-color: $white;
+  height: 65px;
+  width: 200px;
+  border: 1px solid $light-green;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $light-green
+  );
+}
+
+.ru-button-btn-g:hover {
+  color: $white;
+}
+
+.ru-button-btn-g:active {
+  border: 1px solid $dark-green;
+}
+
+.ru-button-btn-g::after {
+  content: '';
+  background-color: $light-green;
+  height: 65px;
+  width: 220px;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: -10px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.ru-button-btn-g:hover::after {
+  top: 0px;
+}
+
+.ru-button-btn-g:active::after {
+  background-color: $dark-green;
+}
+
+.ru-button-btn-active {
+  color: $white;
+  background-color: $light-orange;
+}

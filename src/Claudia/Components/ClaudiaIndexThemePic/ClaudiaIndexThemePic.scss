@@ -1,0 +1,383 @@
+//----------------------------Desktop 1920-----------------------------
+
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+
+  .claudia-fake-navbar {
+    width: 100vw;
+    height: 100px;
+  }
+
+  .claudia-index-background-image {
+    background-image: url(./Images/index_bg_1920.jpg);
+    height: 1080px;
+    width: 1920px;
+    margin: 0px auto;
+    position: relative;
+  }
+
+  .claudia-index-text {
+    font-family: 'Noto Serif TC';
+    position: absolute;
+    top: 600px;
+    right: 150px;
+  }
+
+  .claudia-index-text h1 {
+    color: #fafafa;
+    margin-bottom: 10px;
+  }
+
+  .claudia-index-text-1 {
+    font-size: 70px;
+  }
+
+  .claudia-index-text-2 {
+    font-size: 50px;
+  }
+
+  //mouse scroll icon
+
+  .claudia-center {
+    margin: 0 auto;
+    height: 90px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 48%;
+  }
+
+  .claudia-mouseLayout {
+    width: 30px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    position: relative;
+  }
+
+  .claudia-mouseLayout::before {
+    content: '';
+    border: 2px solid #fff;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: drop 1s linear infinite;
+  }
+
+  .claudia-mouseLayout::after {
+    content: '';
+    border: 2px solid #fff;
+    height: 10px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    transition: all 2s ease;
+  }
+
+  @keyframes drop {
+    0% {
+      transform: translate(-50%, 10px);
+      opacity: 0;
+    }
+
+    60% {
+      transform: translate(-50%, 15px);
+      opacity: 0.8;
+    }
+
+    100% {
+      transform: translate(-50%, 20px);
+      opacity: 1;
+    }
+  }
+
+  .claudia-text {
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+}
+
+
+//----------------------------Desktop 1920-----------------------------
+
+//----------------------------Desktop 1440-----------------------------
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+
+  .claudia-fake-navbar {
+    width: 100vw;
+    height: 100px;
+  }
+
+  .claudia-index-background-image {
+    background-image: url(./Images/index_new_bg.jpg);
+    height: 765px;
+    width: 1440px;
+    margin: 0px auto;
+    position: relative;
+  }
+
+  .claudia-index-text {
+    font-family: 'Noto Serif TC';
+    position: absolute;
+    top: 450px;
+    right: 200px;
+  }
+
+  .claudia-index-text h1 {
+    color: #fafafa;
+    margin-bottom: 10px;
+  }
+
+  .claudia-index-text-1 {
+    font-size: 50px;
+  }
+
+  .claudia-index-text-2 {
+    font-size: 30px;
+  }
+
+  //mouse scroll icon
+
+  .claudia-center {
+    margin: 0 auto;
+    height: 90px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 48%;
+  }
+
+  .claudia-mouseLayout {
+    width: 30px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    position: relative;
+  }
+
+  .claudia-mouseLayout::before {
+    content: '';
+    border: 2px solid #fff;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: drop 1s linear infinite;
+  }
+
+  .claudia-mouseLayout::after {
+    content: '';
+    border: 2px solid #fff;
+    height: 10px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    transition: all 2s ease;
+  }
+
+  @keyframes drop {
+    0% {
+      transform: translate(-50%, 10px);
+      opacity: 0;
+    }
+
+    60% {
+      transform: translate(-50%, 15px);
+      opacity: 0.8;
+    }
+
+    100% {
+      transform: translate(-50%, 20px);
+      opacity: 1;
+    }
+  }
+
+  .claudia-text {
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+}
+
+//----------------------------Desktop 1440-----------------------------
+
+//-----------------------------Ipad Pro--------------------------------
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .claudia-index-text {
+    position: absolute;
+    top: 770px;
+    right: 240px;
+  }
+
+  .claudia-index-background-image {
+    width: 768px;
+    height: 1024px;
+    background-image: url(./Images/rwd_pad_index_bg.jpg);
+  }
+
+  .claudia-index-text {
+    font-family: 'Noto Serif TC';
+    text-align: center;
+  }
+
+  .claudia-index-text h1 {
+    color: #fafafa;
+  }
+
+  .claudia-index-text-1 {
+    font-size: 70px;
+  }
+  
+  .claudia-index-text-2 {
+    font-size: 50px;
+  }
+
+  .claudia-index-text {
+    position: absolute;
+    top: 1000px;
+    right: 295px;
+  }
+
+  .claudia-index-background-image {
+    width: 1024px;
+    height: 1366px;
+    background-image: url(./Images/rwd_pad_pro_index_bg.jpg);
+  }
+
+  //mouse scroll icon
+
+  .claudia-center {
+    display: none;
+  }
+
+}
+
+//-----------------------------Ipad Pro--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .claudia-index-text {
+    font-family: 'Noto Serif TC';
+    position: absolute;
+    top: 770px;
+    right: 240px;
+  }
+
+  .claudia-index-background-image {
+    width: 768px;
+    height: 1024px;
+    background-image: url(./Images/rwd_pad_index_bg.jpg);
+  }
+
+  .claudia-index-text h1 {
+    color: #fafafa;
+  }
+
+  .claudia-index-text-1 {
+        font-size: 50px;
+      }
+      
+      .claudia-index-text-2 {
+        font-size: 30px;
+      }
+
+  //mouse scroll icon
+
+  .claudia-center {
+    display: none;
+  }
+}
+
+//--------------------------------Ipad---------------------------------
+
+//---------------------------Iphone 6/7/8 Plus-------------------------
+
+@media screen and (min-width: 375px) and (max-width: 576px) {
+  .claudia-fake-navbar {
+    width: 100%;
+    height: 100px;
+  }
+
+  .claudia-index-background-image {
+    width: 414px;
+    height: 736px;
+    background-image: url(./Images/rwd_plus_index_bg.jpg);
+  }
+
+  .claudia-index-text {
+    font-family: 'Noto Serif TC';
+    position: absolute;
+    top: 530px;
+    right: 100px;
+  }
+
+  .claudia-index-text h1 {
+    color: #fafafa;
+  }
+
+  .claudia-index-text-1 {
+    font-size: 40px;
+  }
+
+  .claudia-index-text-2 {
+    font-size: 24px;
+  }
+
+  //mouse scroll icon
+
+  .claudia-center {
+    display: none;
+  }
+}
+
+//---------------------------Iphone 6/7/8 Plus-------------------------
+
+//---------------------------Iphone 6/7/8 + X--------------------------
+
+@media screen and (max-width: 375px) {
+  .claudia-index-background-image {
+    width: 375px;
+    height: 667px;
+    background-image: url(./Images/rwd_index_bg.jpg);
+  }
+
+  .claudia-index-text {
+    font-family: 'Noto Serif TC';
+    position: absolute;
+    right: 80px;
+  }
+
+  .claudia-index-text h1 {
+    color: #fafafa;
+  }
+}
+
+//--------------------------Iphone 6/7/8 + X--------------------------

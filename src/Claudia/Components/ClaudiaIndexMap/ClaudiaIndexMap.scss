@@ -1,0 +1,289 @@
+//------------------------------Desktop--------------------------------
+.claudia-index-map svg {
+  width: 505px;
+  height: 715px;
+  position: absolute;
+}
+
+//placeholder
+
+.claudia-icon {
+  position: relative;
+  visibility: hidden;
+  z-index: 100;
+  opacity: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+//taipei
+
+#claudia-taipei1 {
+  top: 40px;
+  left: 390px;
+}
+
+//new-taipei
+
+#claudia-new-taipei1 {
+  top: 78px;
+  left: 338px;
+}
+
+#claudia-new-taipei2 {
+  top: 98px;
+  left: 325px;
+}
+
+#claudia-new-taipei3 {
+  top: 85px;
+  left: 320px;
+}
+
+#claudia-new-taipei4 {
+  top: 66px;
+  left: 310px;
+}
+
+//keelung1
+
+#claudia-keelung1 {
+  top: 40px;
+  left: 264px;
+}
+
+//yilan1
+
+#claudia-yilan1 {
+  top: 125px;
+  left: 236px;
+}
+
+#claudia-yilan2 {
+  top: 160px;
+  left: 179px;
+}
+
+// hualien
+
+#claudia-hualien1 {
+  top: 230px;
+  left: 144px;
+}
+
+#claudia-hualien2 {
+  top: 328px;
+  left: 78px;
+}
+
+// taitung
+
+#claudia-taitung1 {
+  top: 456px;
+  left: 18px;
+}
+
+#claudia-taitung2 {
+  top: 509px;
+  left: -50px;
+}
+
+#claudia-taoyuan1 {
+  top: 63px;
+  left: -36px;
+}
+
+#claudia-taoyuan2 {
+  top: 93px;
+  left: -60px;
+}
+
+// hsinchu
+
+#claudia-hsinchu1 {
+  top: 125px;
+  left: -117px;
+}
+//miaoli
+
+#claudia-miaoli1 {
+  top: 164px;
+  left: -168px;
+}
+
+// taichung
+
+#claudia-taichung1 {
+  top: 200px;
+  left: -168px;
+}
+
+#claudia-taichung2 {
+  top: 224px;
+  left: -268px;
+}
+
+// changhua
+
+#claudia-changhua1 {
+  top: 219px;
+  left: 208px;
+}
+
+#claudia-changhua2 {
+  top: 249px;
+  left: 182px;
+}
+
+// yunlin
+
+#claudia-yunlin1 {
+  top: 280px;
+  left: 107px;
+}
+
+#claudia-yunlin2 {
+  top: 283px;
+  left: 123px;
+}
+
+// chiayi
+
+#claudia-chiayi1 {
+  top: 318px;
+  left: 123px;
+}
+
+#claudia-chiayi2 {
+  top: 328px;
+  left: 14px;
+}
+
+#claudia-tainan1 {
+  top: 377px;
+  left: 14px;
+}
+
+// nantou
+
+#claudia-nantou1 {
+  top: 285px;
+  left: 80px;
+}
+
+// kaohsiung
+
+#claudia-kaohsiung1 {
+  top: 400px;
+  left: 0px;
+}
+
+#claudia-kaohsiung2 {
+  top: 425px;
+  left: -60px;
+}
+
+// pingtung
+
+#claudia-pingtung1 {
+  top: 487px;
+  left: -82px;
+}
+
+//map
+
+.claudia-index-map path {
+  stroke: white;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.claudia-index-map path:hover {
+  fill: #f4f1c3;
+  transform: translate(-5px, -5px);
+}
+
+.claudia-index-map path:hover ~ .claudia-taipei {
+  transform: scale(2);
+}
+
+.claudia-index-card-list-box-button {
+  width: 304px;
+  height: 110px;
+  color: #66ab8c;
+  border: 2px solid #66ab8c;
+  border-radius: 30px;
+  background-color: #fff;
+  text-align: left;
+  padding: 0px 10px;
+  margin-bottom: 10px;
+  //style
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.35s, border 0s;
+}
+
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576.1px) and (max-width: 1200px) {
+  .claudia-index-map-inside {
+    width: 100vw;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+  }
+
+  .claudia-index-map {
+    width: 100%;
+    height: 600px;
+    padding: 0px;
+  }
+
+  .claudia-index-map svg {
+    width: 400px;
+    height: 600px;
+    margin: 0px auto;
+    position: static;
+  }
+
+  .claudia-icon {
+    display: none;
+  }
+
+}
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media only screen and (max-width: 576px) {
+  .claudia-index-map-inside {
+    width: 100vw;
+    height: 470px;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+  }
+
+  .claudia-index-map {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .claudia-index-map svg {
+    width: 325px;
+    height: 470px;
+    margin: 0px auto;
+    position: static;
+  }
+
+  .claudia-icon {
+    display: none;
+  }
+}
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------

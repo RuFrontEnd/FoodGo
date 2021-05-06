@@ -1,0 +1,118 @@
+.iris-img {
+  border-style: none;
+  fill: #c2c4ca;
+}
+
+.iris-searchbar {
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+.iris-searchbar {
+  /* 1 */
+  overflow: visible;
+}
+
+.iris-input-field {
+  border: 1px solid gray;
+  border-radius: 2.5rem;
+  height: 5rem;
+  width: 512px;
+}
+
+.iris-input-field input {
+  height: 100%;
+  background: transparent;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 20px;
+  color: #000;
+}
+
+.iris-input-field input.placeholder {
+  color: gray;
+  font-size: 20px;
+}
+
+.iris-input-field input:-moz-placeholder {
+  color: gray;
+  font-size: 20px;
+}
+
+.iris-input-field input::-webkit-input-placeholder {
+  color: gray;
+  font-size: 20px;
+}
+
+.iris-input-field input:hover,
+.iris-input-field input:focus {
+  box-shadow: none;
+  outline: 0;
+}
+
+.iris-input-field.first-wrap {
+  -ms-flex-positive: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #fff;
+}
+
+.iris-input-field.first-wrap input {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.iris-input-field.first-wrap .svg-wrapper {
+  min-width: 70px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.iris-input-field.first-wrap svg {
+  width: 36px;
+  height: 36px;
+}
+
+// @media screen and (max-width: 992px) {
+//   .iris-input-field {
+//     height: 5rem;
+//   }
+// }
+
+// @media screen and (max-width: 376px) {
+//   .iris-input-field.first-wrap .svg-wrapper {
+//     min-width: 40px;
+//     display: -ms-flexbox;
+//     display: flex;
+//     -ms-flex-pack: center;
+//     justify-content: center;
+//     -ms-flex-align: center;
+//     align-items: center;
+//     padding: 0 10px;
+//   }
+//   .iris-input-field {
+//     height: 4.5rem;
+//   }
+//   .iris-input-field.first-wrap svg {
+//     width: 26px;
+//     height: 26px;
+//     fill: #222;
+//   }
+// }

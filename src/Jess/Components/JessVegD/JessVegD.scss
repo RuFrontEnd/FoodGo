@@ -1,0 +1,70 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+/* 清除內外邊距 */
+* {
+  /* table elements 表格元素 */
+  margin: 0;
+  padding: 0;
+}
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+$green: #66ab8c;
+$white: #ffffff;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
+
+.jess-VegD-container-fluid {
+  padding: 0;
+  height: 70rem;
+  margin-top: 3rem;
+  background-color: $white;
+}
+.jess-vegDbox-s {
+  background: url('./images/jess-vegDbox-s.jpg') no-repeat;
+  background-size: contain;
+  width: 33rem;
+  height: 33rem;
+}
+.jess-vegDbox-M {
+  background: url('./images/jess-vegDbox-M.jpg') no-repeat;
+  background-size: contain;
+  width: 33rem;
+  height: 33rem;
+}
+.jess-text-24Green {
+  font-size: 2.4rem;
+  font-family: 'Noto Sans TC', serif;
+  font-weight: 500;
+  color: $green;
+}
+.jess-text-15Gray {
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  color: $darkGary;
+  line-height: 2.5rem;
+}
+.jess-vegDbox-L {
+  background: url('./images/jess-vegDbox-L.jpg') no-repeat;
+  background-size: contain;
+  width: 33rem;
+  height: 33rem;
+}
+@media screen and (max-width: 576px) {
+  .jess-VegD-container-fluid {
+    padding: 0;
+    height: 180rem;
+    margin-top: 3rem;
+    background-color: $white;
+  }
+}

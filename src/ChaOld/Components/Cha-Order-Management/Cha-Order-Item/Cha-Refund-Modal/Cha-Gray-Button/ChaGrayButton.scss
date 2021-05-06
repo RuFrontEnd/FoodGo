@@ -1,0 +1,62 @@
+@import './Variable.scss';
+
+// 橘色
+.cha-gray-modal-button-btn:focus {
+  outline: none;
+}
+.cha-gray-modal-button-btn {
+  background-color: #bebebe;
+  height: 4.5rem;
+  width: 15rem;
+  border: 1px solid #bebebe;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    #fff
+  );
+}
+
+.cha-gray-modal-button-btn:hover {
+  color: $white;
+  transition: 0.5s;
+}
+
+.cha-gray-modal-button-btn:active {
+  border: 1px solid #858585;
+}
+
+.cha-gray-modal-button-btn::after {
+  content: '';
+  background-color: #858585;
+  height: 4.5rem;
+  width: 30rem;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: 0px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.cha-gray-modal-button-btn:hover::after {
+  top: 0px;
+}
+
+.cha-gray-modal-button-btn:active::after {
+  background-color: #858585;
+}

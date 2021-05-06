@@ -1,0 +1,223 @@
+// 覆蓋bootstrap
+$primary: #f5a016;
+$dropdown-link-hover-color: #fff;
+$dropdown-link-hover-bg: #f5a016;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+
+// height:50px   font-size:20px   圓角輸入框
+.iris-inputH50 {
+  font-size: 2rem;
+  border-radius: 2.5rem;
+  height: 5rem;
+}
+
+@media screen and (max-width: 376px) {
+  .iris-inputH50 {
+    font-size: 1.4rem;
+    border-radius: 1.5rem;
+    height: 3rem;
+  }
+}
+
+// height:44px   font-size:20px   圓角輸入框
+.iris-InputH44 {
+  font-size: 2rem;
+  border-radius: 2.2rem;
+  height: 4.4rem;
+}
+
+@media screen and (max-width: 376px) {
+  .iris-InputH44 {
+    font-size: 1.8rem;
+    border-radius: 1.35rem;
+    height: 2.7rem;
+  }
+}
+
+// height:40px   font-size:15px   方角輸入框
+.iris-InputH40 {
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  height: 4rem;
+}
+
+// textarea   font-size:15px   方角輸入框
+.iris-textarea {
+  font-size: 15px;
+  border-radius: 0.5rem;
+}
+
+// height:40px   font-size:15px   方角select box
+// 用白div蓋住原本的圖示
+.iris-select {
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  height: 4rem;
+}
+
+.iris-whitebox {
+  border-radius: 0.5rem;
+  height: 3.8rem;
+  width: 4rem;
+  background-color: #fff;
+  position: absolute;
+  right: 0.1rem;
+  top: 0.1rem;
+  // 點擊會直接穿透whitebox
+  pointer-events: none;
+}
+
+.iris-select-wrapper {
+  position: relative;
+}
+.iris-select:hover {
+  cursor: pointer;
+}
+
+.iris-triangle {
+  position: absolute;
+  right: 1.3rem;
+  top: 1.4rem;
+  pointer-events: none;
+  fill: #c9c9c9;
+}
+
+// 首頁select box
+.iris-mainpage-select {
+  font-size: 2rem;
+  border-radius: 2.5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 376px) {
+  .iris-mainpage-select {
+    font-size: 1.4rem;
+    border-radius: 1.5rem;
+    height: 3rem;
+  }
+}
+
+.iris-mainpage-whitebox {
+  border-radius: 2.5rem;
+  height: 4.6rem;
+  width: 4.6rem;
+  background-color: #fff;
+  position: absolute;
+  right: 0.3rem;
+  top: 0.2rem;
+  // 點擊會直接穿透whitebox
+  pointer-events: none;
+}
+
+@media screen and (max-width: 376px) {
+  .iris-mainpage-whitebox {
+    border-radius: 1.5rem;
+    height: 2.6rem;
+    width: 2.7rem;
+    background-color: #fff;
+    position: absolute;
+    right: 0.1rem;
+    top: 0.2rem;
+    // 點擊會直接穿透whitebox
+    pointer-events: none;
+  }
+}
+.iris-mainpage-backarrow {
+  position: absolute;
+  right: -4rem;
+  top: 2.1em;
+  // pointer-events: none;
+  fill: #c9c9c9;
+}
+.iris-mainpage-trianglearrow {
+  position: absolute;
+  right: 1.9rem;
+  top: 2.1em;
+  pointer-events: none;
+  fill: #c9c9c9;
+}
+@media screen and (max-width: 376px) {
+  .iris-mainpage-trianglearrow {
+    position: absolute;
+    right: 1.5rem;
+    top: 1em;
+    pointer-events: none;
+    fill: #c9c9c9;
+  }
+}
+
+.iris-selectbar-wrapper {
+  width: 16.7rem;
+  position: relative;
+}
+
+// input-add
+.iris-InputAdd {
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  height: 4rem;
+}
+.iris-symbolAdd {
+  position: absolute;
+  right: 1rem;
+  top: -1rem;
+  pointer-events: none;
+  font-size: 3.5rem;
+  color: #858585;
+}
+.iris-whitebox-add {
+  border-radius: 0.5rem;
+  height: 4rem;
+  width: 4rem;
+  background-color: transparent;
+  position: absolute;
+  right: 0.1rem;
+  top: 0.1rem;
+}
+
+.iris-whitebox-add:hover {
+  cursor: pointer;
+}
+
+// 地址輸入框
+.iris-InputAddress {
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  height: 4rem;
+  position: relative;
+  line-height: 3rem;
+}
+
+.iris-edit-icon {
+  fill: #c9c9c9;
+  position: absolute;
+  right: 4.5rem;
+  top: 1.1rem;
+}
+.iris-edit-icon:hover {
+  fill: #f5a016;
+  cursor: pointer;
+}
+.iris-delete-icon {
+  fill: #c9c9c9;
+  position: absolute;
+  right: 1.3rem;
+  top: 0.9rem;
+}
+.iris-delete-icon:hover {
+  fill: #f5a016;
+  cursor: pointer;
+}
+
+// 地址輸入框編輯狀態
+.iris-InputAddress-edit {
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  height: 4rem;
+}

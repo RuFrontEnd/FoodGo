@@ -1,0 +1,171 @@
+//------------------------------Desktop--------------------------------
+.claudia-detailed-slider {
+  width: 100%;
+  height: 1000px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.claudia-detailed-slider-fixed-container {
+  width: 1440px;
+  height: 1000px;
+  padding: 50px 0px;
+  margin: 0px auto;
+  position: relative;
+  display: inline-block;
+}
+
+.claudia-detailed-slider-ricebg {
+  position: absolute;
+  width: 1440px;
+  height: 1000px;
+  object-fit: cover;
+  transform: scale(0.93);
+}
+
+.claudia-detailed-slider-container {
+  width: 1160px;
+  margin: 65px auto 0px auto;
+  position: absolute;
+  top: 45px;
+  left: 130px;
+}
+
+.claudia-image-select img {
+  width: 225px;
+  height: 150px;
+  cursor: pointer;
+}
+
+.claudia-image-select {
+  display: flex;
+  justify-content: space-between;
+}
+
+.claudia-image-triangle-area {
+  width: 1160px;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.claudia-image-triangle-box {
+  width: 225px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.claudia-image-triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 10px 0 10px;
+  border-color: #66ab8c transparent transparent transparent;
+}
+
+.claudia-image-large img {
+  width: 1160px;
+  height: 570px;
+  object-fit: cover;
+}
+
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+@media screen and (min-width: 576px) and (max-width: 1200px) {
+  .claudia-detailed-slider {
+    width: 100%;
+    height: 1700px;
+    position: static;
+    padding: 0px;
+    display: block;
+  }
+
+  .claudia-detailed-slider-fixed-container {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .claudia-detailed-slider-ricebg {
+    display: none;
+  }
+
+  .claudia-detailed-slider-container {
+    width: 600px;
+    margin: 0px auto;
+    padding-top: 70px;
+    position: static;
+  }
+
+  .claudia-image-select {
+    display: block;
+    text-align: center;
+  }
+
+  .claudia-image-select img {
+    width: 600px;
+    height: 370px;
+    margin-bottom: 30px;
+  }
+
+  .claudia-image-triangle-area {
+    display: none;
+  }
+
+  .claudia-image-large img {
+    display: none;
+  }
+}
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media only screen and (max-width: 576px) {
+  .claudia-detailed-slider {
+    width: 100%;
+    height: 1120px;
+    position: static;
+    padding: 0px;
+    display: block;
+  }
+
+  .claudia-detailed-slider-fixed-container {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .claudia-detailed-slider-ricebg {
+    display: none;
+  }
+
+  .claudia-detailed-slider-container {
+    width: 375px;
+    margin: 0px auto;
+    padding-top: 70px;
+    position: static;
+  }
+
+  .claudia-image-select {
+    display: block;
+    text-align: center;
+  }
+
+  .claudia-image-select img {
+    width: 335px;
+    height: 240px;
+    margin-bottom: 10px;
+  }
+
+  .claudia-image-triangle-area {
+    display: none;
+  }
+
+  .claudia-image-large img {
+    display: none;
+  }
+}
+//----------------------Iphone 6/7/8 + Plus + X------------------------

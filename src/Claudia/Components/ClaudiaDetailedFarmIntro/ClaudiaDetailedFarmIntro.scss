@@ -1,0 +1,402 @@
+//------------------------------Desktop--------------------------------
+.claudia-detailed-farm-intro {
+  width: 100%;
+  height: 1480px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.claudia-detailed-farm-intro-fixed-container {
+  width: 1440px;
+  height: 1480px;
+  padding: 10px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.claudia-detailed-farm-intro-grice {
+  width: 1440px;
+  height: 1480px;
+  // display: none;
+}
+
+.claudia-detailed-farm-intro-container {
+  position: absolute;
+  top: 0px;
+  left: 260px;
+}
+
+.claudia-detailed-farm-intro h1 {
+  font-family: 'Noto Serif TC';
+  color: #66ab8c;
+  font-size: 3.6rem;
+  text-align: center;
+  margin: 60px auto;
+}
+
+.claudia-detailed-farm-video {
+  text-align: center;
+}
+
+//Middle
+
+.claudia-detailed-farm-middle {
+  display: flex;
+  justify-content: space-between;
+  width: 920px;
+  height: 325px;
+  margin: 50px auto;
+}
+
+.claudia-detailed-farm-text {
+  width: 45%;
+}
+
+.claudia-detailed-farm-text p {
+  font-size: 20px;
+  color: #858585;
+}
+
+.claudia-detailed-farm-silder {
+  width: 425px;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.claudia-detailed-farm-silder-img-container {
+  width: 425px;
+  height: 280px;
+  display: flex;
+  position: absolute;
+}
+
+.claudia-detailed-farm-silder img {
+  width: 425px;
+  height: 280px;
+}
+
+.claudia-detailed-farm-silder-container {
+  display: flex;
+  justify-content: space-between;
+  width: 185px;
+  position: absolute;
+  bottom: 20px;
+  left: 120px;
+  z-index: 30;
+}
+
+.claudia-detailed-farm-silder-bar {
+  width: 40px;
+  height: 7px;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+//Quote Card
+
+.claudia-detailed-farm-card {
+  width: 920px;
+  height: 245px;
+  border-radius: 15px;
+  background-color: #f7ede2;
+  margin: 0px auto;
+  position: relative;
+}
+
+.claudia-detailed-farmer-avatar img {
+  border-radius: 50%;
+  width: 165px;
+  height: 165px;
+  position: absolute;
+  left: 100px;
+  top: 40px;
+}
+
+.claudia-detailed-farm-card-quote h1 {
+  color: #a59583;
+  font-size: 24px;
+  position: absolute;
+  top: 30px;
+  right: 200px;
+}
+
+.claudia-detailed-farm-card-quote h2 {
+  color: #676462;
+  font-size: 15px;
+  position: absolute;
+  top: 140px;
+  right: 200px;
+}
+
+.claudia-detailed-farm-card-quote-left {
+  position: absolute;
+  top: 90px;
+  right: 510px;
+}
+
+.claudia-detailed-farm-card-quote-right {
+  position: absolute;
+  top: 90px;
+  right: 140px;
+}
+
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576px) and (max-width: 1200px) {
+  .claudia-detailed-farm-intro {
+    width: 100%;
+    height: 2480px;
+    position: static;
+    padding: 0px;
+  }
+
+  .claudia-detailed-farm-intro-fixed-container {
+    width: 100%;
+    height: 2480px;
+    padding: 0px;
+  }
+
+  .claudia-detailed-farm-intro h1 {
+    font-size: 2.8rem;
+    margin: 40px 0px;
+  }
+
+  .claudia-detailed-farm-intro-container {
+    position: static;
+  }
+
+  .claudia-detailed-farm-intro-grice {
+    display: none;
+  }
+
+  .claudia-detailed-farm-video iframe {
+    width: 600px;
+    height: 370px;
+  }
+
+  //Middle
+
+  .claudia-detailed-farm-middle {
+    display: block;
+    width: 600px;
+    height: 1530px;
+    margin-bottom: 42px;
+  }
+
+  .claudia-detailed-farm-text {
+    width: 485px;
+    height: 300px;
+    margin: 0px auto;
+  }
+
+  .claudia-detailed-farm-silder {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .claudia-detailed-farm-silder-img-container {
+    width: 600px;
+    height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .claudia-detailed-farm-silder img {
+    width: 600px;
+    height: 370px;
+    margin: 20px auto;
+    position: static;
+  }
+
+  .claudia-detailed-farm-silder-container {
+    display: none;
+  }
+
+  //Quote Card
+
+  .claudia-detailed-farm-card {
+    width: 595px;
+    height: 290px;
+    position: relative;
+  }
+
+  .claudia-detailed-farmer-avatar img {
+    position: absolute;
+    top: 30px;
+    left: 220px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .claudia-detailed-farm-card-quote h1 {
+    position: absolute;
+    top: 160px;
+    left: 175px;
+    font-size: 20px;
+    width: 245px;
+    height: 30px;
+  }
+
+  .claudia-detailed-farm-card-quote h2 {
+    position: absolute;
+    top: 240px;
+    left: 280px;
+    font-size: 14px;
+    width: 190px;
+    height: 22px;
+  }
+
+  .claudia-detailed-farm-card-quote-left {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 200px;
+    left: 145px;
+  }
+
+  .claudia-detailed-farm-card-quote-right {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 200px;
+    right: 145px;
+  }
+}
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media only screen and (max-width: 576px) {
+  .claudia-detailed-farm-intro {
+    width: 100%;
+    height: 1930px;
+    position: static;
+    padding: 0px;
+  }
+
+  .claudia-detailed-farm-intro-fixed-container {
+    width: 100%;
+    height: 1930px;
+    padding: 0px;
+  }
+
+  .claudia-detailed-farm-intro h1 {
+    font-size: 2.4rem;
+    margin: 40px 0px;
+  }
+
+  .claudia-detailed-farm-intro-container {
+    position: static;
+  }
+
+  .claudia-detailed-farm-intro-grice {
+    display: none;
+  }
+
+  .claudia-detailed-farm-video iframe {
+    width: 335px;
+    height: 200px;
+  }
+
+  //Middle
+
+  .claudia-detailed-farm-middle {
+    display: block;
+    width: 375px;
+    height: 1180px;
+    margin-bottom: 42px;
+  }
+
+  .claudia-detailed-farm-text {
+    width: 270px;
+    height: 500px;
+    margin: 0px auto;
+  }
+
+  .claudia-detailed-farm-silder {
+    width: 375px;
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .claudia-detailed-farm-silder-img-container {
+    width: 375px;
+    height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .claudia-detailed-farm-silder img {
+    width: 335px;
+    height: 210px;
+    position: static;
+  }
+
+  .claudia-detailed-farm-silder-container {
+    display: none;
+  }
+
+  //Quote Card
+
+  .claudia-detailed-farm-card {
+    width: 335px;
+    height: 300px;
+    position: relative;
+  }
+
+  .claudia-detailed-farmer-avatar img {
+    position: absolute;
+    top: 30px;
+    left: 90px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .claudia-detailed-farm-card-quote h1 {
+    position: absolute;
+    top: 160px;
+    left: 45px;
+    font-size: 20px;
+    width: 245px;
+    height: 30px;
+  }
+
+  .claudia-detailed-farm-card-quote h2 {
+    position: absolute;
+    top: 240px;
+    left: 100px;
+    font-size: 14px;
+    width: 190px;
+    height: 22px;
+  }
+
+  .claudia-detailed-farm-card-quote-left {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 202px;
+    left: 18px;
+  }
+
+  .claudia-detailed-farm-card-quote-right {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 202px;
+    right: 18px;
+  }
+}
+//----------------------Iphone 6/7/8 + Plus + X------------------------

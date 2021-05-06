@@ -1,0 +1,57 @@
+// 遮罩
+.iris-rule-box-mask {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 100;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+}
+
+// 白底
+.iris-rule-box-container {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 55%;
+  z-index: 110;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 70rem;
+  height: 50rem;
+  border-radius: 3rem;
+}
+
+.iris-rule-content-wrapper {
+  height: auto;
+  // height: 40rem;
+  width: auto;
+  // width: 60rem;
+  //   background-color: #faf;
+  padding: 3rem;
+}
+
+.iris-rule-box-container h2 {
+  //   background-color: #ffa;
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 4rem;
+  color: #f5a016;
+}
+
+.iris-question {
+  font-size: 2rem;
+  color: #f5a016;
+}
+
+.iris-rule-content-wrapper li {
+  font-size: 1.5rem;
+  color: #6e6b66;
+}

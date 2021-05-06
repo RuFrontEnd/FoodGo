@@ -1,0 +1,275 @@
+//------------------------------Desktop--------------------------------
+html {
+  font-size: 10px;
+}
+
+.claudia-detailed-recommanded {
+  width: 100%;
+  height: 703px;
+}
+
+.claudia-detailed-recommanded h1 {
+  font-family: 'Noto Serif TC';
+  color: #66ab8c;
+  font-size: 3.6rem;
+  text-align: center;
+  margin: 60px auto;
+}
+
+.claudia-detailed-recommanded-container {
+  width: 1020px;
+  height: 700px;
+  margin: 0 auto;
+}
+
+.claudia-detailed-recommanded-card {
+  width: 310px;
+  height: 480px;
+  background-color: #fff;
+  border-radius: 40px;
+  box-shadow: 0px 3px 6px #d1c5b8;
+  padding: 45px 35px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.claudia-detailed-recommanded-card:hover {
+  transform: scale(1.05);
+}
+
+.claudia-detailed-recommanded-card-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.claudia-detailed-recommanded-card img {
+  width: 240px;
+  height: 160px;
+  margin: 20px auto 20px auto;
+  background-color: #f7ede2;
+}
+
+.claudia-detailed-recommanded-card h2 {
+  font-size: 20px;
+  color: #66ab8c;
+  text-align: center;
+}
+
+.claudia-detailed-recommanded-card h3 {
+  font-size: 15px;
+  color: #676462;
+  margin: 10px auto;
+}
+
+.claudia-detailed-recommanded-wave-bg img {
+  width: 100%;
+}
+
+.claudia-detailed-recommanded-wave-bg {
+  background-color: #f7ede2;
+  display: flex;
+  justify-content: center;
+}
+
+.claudia-fake-footer {
+  width: 100%;
+  height: 22.2rem;
+  background-color: #f7ede2;
+}
+//------------------------------Desktop--------------------------------
+
+//-----------------------------Ipad Pro--------------------------------
+@media screen and (min-width: 768.1px) and (max-width: 1200px) {
+
+  .claudia-detailed-recommanded {
+    width: 100%;
+    height: 560px;
+    // overflow: hidden;
+  }
+
+  .claudia-detailed-recommanded h1 {
+    width: 600px;
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 40px auto;
+  }
+
+  .claudia-detailed-recommanded-container {
+    width: 900px;
+    height: 525px;
+  }
+
+  .claudia-detailed-recommanded-card-container {
+    width: 900px;
+    height: 450px;
+    overflow: scroll;
+  }
+
+  .claudia-detailed-recommanded-card {
+    width: 290px;
+    height: 410px;
+    padding: 20px;
+    margin: 0px 5px;
+  }
+
+  .claudia-detailed-recommanded-card:hover {
+    transform: scale(1);
+  }
+
+  .claudia-detailed-recommanded-card img {
+    width: 245px;
+    height: 160px;
+    margin-bottom: 10px;
+  }
+
+  .claudia-detailed-recommanded-card h2 {
+    font-size: 18px;
+  }
+
+  .claudia-detailed-recommanded-card h3 {
+    font-size: 14px;
+  }
+
+  .claudia-detailed-recommanded-wave {
+    display: none;
+  }
+
+  .claudia-fake-footer {
+    width: 100%;
+    height: 21rem;
+    background-color: #f7ede2;
+  }
+
+}
+
+//-----------------------------Ipad Pro--------------------------------
+
+//--------------------------------Ipad---------------------------------
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .claudia-detailed-recommanded {
+    width: 100%;
+    height: 560px;
+    // overflow: hidden;
+  }
+
+  .claudia-detailed-recommanded h1 {
+    width: 600px;
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 40px auto;
+  }
+
+  .claudia-detailed-recommanded-container {
+    width: 600px;
+    height: 525px;
+  }
+
+  .claudia-detailed-recommanded-card-container {
+    width: 600px;
+    height: 450px;
+    overflow: scroll;
+  }
+
+  .claudia-detailed-recommanded-card {
+    width: 290px;
+    height: 410px;
+    padding: 20px;
+    margin: 0px 5px;
+  }
+
+  .claudia-detailed-recommanded-card:hover {
+    transform: scale(1);
+  }
+
+  .claudia-detailed-recommanded-card img {
+    width: 245px;
+    height: 160px;
+    margin-bottom: 10px;
+  }
+
+  .claudia-detailed-recommanded-card h2 {
+    font-size: 18px;
+  }
+
+  .claudia-detailed-recommanded-card h3 {
+    font-size: 14px;
+  }
+
+  .claudia-detailed-recommanded-wave {
+    display: none;
+  }
+
+  .claudia-fake-footer {
+    width: 100%;
+    height: 21rem;
+    background-color: #f7ede2;
+  }
+}
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media only screen and (max-width: 576px) {
+  .claudia-detailed-recommanded {
+    width: 100%;
+    height: 560px;
+    // overflow: hidden;
+  }
+
+  .claudia-detailed-recommanded h1 {
+    width: 375px;
+    font-size: 2.4rem;
+    text-align: center;
+    margin: 40px auto;
+  }
+
+  .claudia-detailed-recommanded-container {
+    width: 375px;
+    height: 525px;
+  }
+
+  .claudia-detailed-recommanded-card-container {
+    width: 290px;
+    height: 450px;
+    margin-left: 40px;
+    overflow: scroll;
+  }
+
+  .claudia-detailed-recommanded-card {
+    width: 290px;
+    height: 410px;
+    padding: 20px;
+    margin: 0px 5px;
+  }
+
+  .claudia-detailed-recommanded-card:hover {
+    transform: scale(1);
+  }
+
+  .claudia-detailed-recommanded-card img {
+    width: 245px;
+    height: 160px;
+    margin-bottom: 10px;
+  }
+
+  .claudia-detailed-recommanded-card h2 {
+    font-size: 18px;
+  }
+
+  .claudia-detailed-recommanded-card h3 {
+    font-size: 14px;
+  }
+
+  .claudia-detailed-recommanded-wave {
+    display: none;
+  }
+
+  .claudia-fake-footer {
+    width: 100%;
+    height: 21rem;
+    background-color: #f7ede2;
+  }
+}
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------

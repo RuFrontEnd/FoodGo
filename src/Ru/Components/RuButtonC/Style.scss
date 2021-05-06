@@ -1,0 +1,122 @@
+@import 'Ru/Pages/variable.scss';
+
+// 橘色
+.ru-buttonC:focus {
+  outline: none;
+}
+
+.ru-buttonC {
+  background-color: $white;
+  height: 40px;
+  width: 100px;
+  border: 1px solid $light-orange;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $content,
+    $regular,
+    1.25px,
+    $light-orange
+  );
+}
+
+.ru-buttonC:hover {
+  color: $white;
+}
+
+.ru-buttonC:active {
+  border: 1px solid $dark-orange;
+}
+
+.ru-buttonC::after {
+  content: '';
+  background-color: $light-orange;
+  height: 65px;
+  width: 220px;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: -10px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.ru-buttonC:hover::after {
+  top: 0px;
+}
+
+.ru-buttonC:active::after {
+  background-color: $dark-orange;
+}
+
+// // 綠色
+// .ru-buttonB-g:focus {
+//   outline: none;
+// }
+// .ru-buttonB-g {
+//   background-color: $white;
+//   height: 65px;
+//   width: 200px;
+//   border: 1px solid $light-green;
+//   border-radius: 9999px;
+//   position: relative;
+//   z-index: 1;
+//   overflow: hidden;
+//   transition: color $three-five, border $zero;
+//   @include font(
+//     // 字體, 字體大小, 字重, 字距, 字色
+//     $notoSansTC,
+//     $minor-heading,
+//     $regular,
+//     1.25px,
+//     $light-green
+//   );
+// }
+
+// .ru-buttonB-g:hover {
+//   color: $white;
+// }
+
+// .ru-buttonB-g:active {
+//   border: 1px solid $dark-green;
+// }
+
+// .ru-buttonB-g::after {
+//   content: '';
+//   background-color: $light-green;
+//   height: 65px;
+//   width: 220px;
+//   position: absolute;
+//   z-index: -1;
+//   top: 70px;
+//   left: -10px;
+//   transition: top $two-five, background-color $zero, border $zero;
+//   @include font(
+//     // 字體, 字體大小, 字重, 字距, 字色
+//     $notoSansTC,
+//     $minor-heading,
+//     $regular,
+//     1.25px,
+//     $white
+//   );
+// }
+
+// .ru-buttonB-g:hover::after {
+//   top: 0px;
+// }
+
+// .ru-buttonB-g:active::after {
+//   background-color: $dark-green;
+// }

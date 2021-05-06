@@ -1,0 +1,69 @@
+@import "./Variable.scss";
+
+// .ru-addBtn .ru-cart
+.addCart-btn:focus {
+  outline: none;
+}
+
+.addCart-btn {
+  background-color: $white;
+  width: 150px;
+  height: 45px;
+  border-radius: 9999px;
+  border: 1px solid $light-orange;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.addCart-btn::after {
+  content: "加入購物車";
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  // transition: 屬性1 執行時間1 延遲多久1, ... , 屬性N 執行時間N 延遲多久N
+  transition: opacity $two-five $zero-one, background-color $zero $zero,
+    color $zero $zero;
+  user-select: none;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $light-orange
+  );
+  @include flex($df, $fdr, $jcc, $alc);
+}
+// 當 加入購物車 被 按到時
+.addCart-btn:hover::after {
+  opacity: 100;
+}
+
+.addCart-btn:active::after {
+  background-color: $light-orange;
+  color: $white;
+}
+
+.addCart-cart {
+  width: 30px;
+  transition: $three-five; // 滑鼠滑離.addCart-cart時執行的時間
+  transition-delay: $zero-one;
+  user-select: none;
+}
+
+// 購物車按鈕hover時
+.addCart-btn:hover > .addCart-cart {
+  transform: translateX(-100px);
+  transition: $three-five; // 滑鼠hover到.addCart-cart時執行的時間
+}
+
+.addCart-btn-warp {
+  width: 100%;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+

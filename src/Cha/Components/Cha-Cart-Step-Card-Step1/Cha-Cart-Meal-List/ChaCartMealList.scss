@@ -1,0 +1,55 @@
+// * {
+//   outline: 1px solid red;
+// }
+
+.cha-order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.cha-order .cha-step1-product-name {
+  font-size: 2rem;
+}
+
+.cha-order .cha-step1-product-price {
+  font-size: 1.8rem;
+  color: #f48145;
+}
+
+.cha-order-right,
+.cha-order-left {
+  display: flex;
+  align-items: center;
+}
+
+.cha-order-right > div {
+  margin-right: 2rem;
+}
+.cha-order-left > div {
+  margin-left: 4rem;
+}
+.cha-trash-can {
+  background: url('./Images/trash-can-gray.svg') no-repeat;
+  background-position: center center;
+  // background-size: cover;
+  width: 2.2rem;
+  height: 2.5rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.cha-trash-can:hover {
+  background: url('./Images/trash-can-yellow.svg') no-repeat;
+  transition: 0.2s;
+}
+.cha-HeadPic,
+.cha-product-pic {
+  width: 7rem;
+  height: 7rem;
+  background-color: rgb(212, 172, 119);
+}
+.cha-HeadPic {
+  object-fit: cover;
+}

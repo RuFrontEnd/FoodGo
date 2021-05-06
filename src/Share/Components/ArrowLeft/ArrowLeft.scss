@@ -1,0 +1,47 @@
+.arrowLeft-warp {
+  width: 8rem;
+  height: 10rem;
+  cursor: pointer;
+  margin-right: 6rem;
+}
+
+.jan-arrow-circleL:active {
+  transform: scale(0.85);
+}
+
+.jan-arrow-circleL {
+  background: url('../../../Janice/Components/JanIndexx/Images/Svg/arrow-circle.svg')
+    center center no-repeat;
+  background-size: cover;
+  width: 8rem;
+  height: 8rem;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.jan-arrow-left {
+  background: url('../../../Janice/Components/JanIndexx/Images/Svg/arrow-left.svg')
+    center center;
+  width: 6.5rem;
+  height: 2.2rem;
+  background-size: cover;
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+  transition: 0.5s;
+}
+.jan-arrow-circleL:hover {
+  .jan-arrow-left {
+    animation: arrow-moveL 1s infinite;
+    transition: 0.5s;
+  }
+  @keyframes arrow-moveL {
+    from {
+      left: 6rem;
+    }
+    to {
+      left: 3rem;
+    }
+  }
+}

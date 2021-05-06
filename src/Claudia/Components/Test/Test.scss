@@ -1,0 +1,54 @@
+.claudia-modal-counter-box {
+    outline: 0rem ;
+    width: 12rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .claudia-modal-counter-increment,
+  .claudia-modal-counter-decrement {
+    border: 0.1rem solid #858585;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.4rem;
+    color: #858585;
+    line-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.8rem;
+    cursor: pointer;
+  }
+  
+  .claudia-modal-cursor-default{cursor: default;}
+  .claudia-modal-counter-hover:hover,
+  // .counter-decrement:hover,
+  .claudia-modal-counter-increment:hover {
+    color: #fff;
+    background-color: #66AB8C;
+  }
+  
+  .claudia-modal-counter-count {
+    border-top: 0.1rem solid #858585;
+    border-bottom: 0.1rem solid #858585;
+    width: 7rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    padding-bottom: 0.2rem;
+    color: #858585;
+  }
+  
+  .claudia-modal-counter-count p {
+    margin: 0;
+    user-select: none;
+  }
+  
+  .claudia-modal-counter-decrement p,
+  .claudia-modal-counter-increment p {
+    user-select: none;
+  }
+  

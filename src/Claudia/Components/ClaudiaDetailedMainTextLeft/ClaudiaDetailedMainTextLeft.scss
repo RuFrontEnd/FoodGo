@@ -1,0 +1,68 @@
+//------------------------------Desktop--------------------------------
+
+.claudia-detailed-maintext-left-i {
+  width: 455px;
+  margin: 0px auto;
+}
+
+.claudia-detailed-maintext-left-i h1 {
+  font-size: 24px;
+  color: #66ab8c;
+  width: 455px;
+  margin: 0 auto;
+}
+
+.claudia-detailed-maintext-left-i p {
+  margin: 30px auto 0px auto;
+  font-size: 20px;
+  color: #676462;
+  width: 455px;
+}
+
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576px) and (max-width: 769px) {
+  .claudia-detailed-maintext-left-i {
+    width: 485px;
+  }
+
+  .claudia-detailed-maintext-left-i h1 {
+    width: 485px;
+  }
+
+  .claudia-detailed-maintext-left-i p {
+    width: 485px;
+  }
+}
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media screen and (max-width: 576px) {
+  .claudia-detailed-maintext-left-i {
+    width: 285px;
+  }
+  .claudia-detailed-maintext-left-i h1 {
+    font-size: 24px;
+    color: #66ab8c;
+    width: 280px;
+    height: 35px;
+    margin: 0 auto;
+  }
+  .claudia-detailed-maintext-left-i-p {
+    width: 280px;
+    height: 650px;
+  }
+
+  .claudia-detailed-maintext-left-i-p p {
+    margin: 10px auto 30px auto;
+    font-size: 20px;
+    color: #676462;
+    width: 280px;
+  }
+}
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------

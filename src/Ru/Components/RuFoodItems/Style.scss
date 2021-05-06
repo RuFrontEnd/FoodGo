@@ -1,0 +1,55 @@
+@import 'Ru/Pages/variable.scss';
+
+// 網頁版
+.ru-species-warp .ru-species-item {
+  // background-color: yellow;
+  flex-basis: 350px;
+  height: 100%;
+  @include flex($df, $fdr, $jcs, $alc);
+}
+
+.ru-species-img {
+  // background-color: rgb(107, 47, 107);
+  cursor: grab;
+  width: 35%;
+  height: 100%;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.ru-species-info {
+  // background-color: rgb(144, 220, 255);
+  width: 65%;
+  margin-left: 15px;
+}
+
+.ru-species-info ul {
+  // background-color: deepskyblue;
+  width: 100%;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.ru-species-info ul h4 {
+  // background-color: hotpink;
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 5px;
+  @include font(
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $productName-Color
+  );
+}
+
+.ru-species-info ul h4 span {
+  @include font($notoSansTC, $minor-heading, $bold, 1.25px, $light-orange);
+}
+
+.ru-species-info ul li {
+  // background-color: deeppink;
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 5px;
+  @include font($notoSansTC, $content, $regular, 1.25px, $grey);
+}

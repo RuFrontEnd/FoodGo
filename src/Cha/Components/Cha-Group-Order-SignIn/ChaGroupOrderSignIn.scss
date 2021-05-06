@@ -1,0 +1,64 @@
+.cha-fake-navbar {
+  width: 100%;
+  height: 13.5rem;
+  background-color: #faf;
+  position: fixed;
+}
+
+.cha-bc-lunch-box {
+  background: url('./Images/bc-lunch-box.jpg') no-repeat;
+  height: 100rem;
+  background-size: cover;
+  padding-top: 25rem;
+  backdrop-filter: blur(5px);
+}
+.cha-group-sign-in-card {
+  margin: auto;
+  width: 69rem;
+  border-radius: 1rem;
+  border: 0.1rem solid #e5e5e5;
+  box-sizing: border-box;
+  // height: 400px;
+  background-color: #fff;
+  // display: flex;
+  // align-items: center;
+  // flex-direction: column;
+  padding: 3rem;
+}
+.cha-group-sign-in-header {
+  color: #858585;
+  font-size: 3rem;
+}
+.cha-group-sign-in-header-div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.cha-horizontal-line {
+  border-bottom: 0.1rem solid #8585853a;
+}
+
+.cha-group-sign-in-btn {
+  height: 4.5rem;
+  width: 17rem;
+  border-radius: 5rem;
+  background-color: #fff;
+  border: solid 0.1rem #e0611e;
+  outline: none;
+  color: #e0611e;
+  font-size: 1.8rem;
+  &:hover {
+    background-color: #e0611e;
+    color: #fff;
+  }
+}
+.cha-group-sign-in-btn-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+.cha-group-sign-in-phone {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}

@@ -1,0 +1,66 @@
+.cha-counter-box {
+  outline: 0rem;
+  width: 16rem;
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cha-counter-increment,
+.cha-counter-decrement {
+  border: 0.1rem solid #858585;
+  height: 3.5rem;
+  width: 3.5rem;
+  font-size: 4rem;
+  color: #858585;
+  line-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.cha-counter-increment {
+  font-size: 3rem;
+  padding-top: 0.2rem;
+}
+
+.cha-cursor-default {
+  cursor: default;
+}
+.cha-counter-hover:hover,
+// .cha-counter-decrement:hover,
+.cha-counter-increment:hover {
+  color: #fff;
+  background-color: #f6bd60;
+}
+
+.cha-counter-count {
+  border-top: 0.1rem solid #858585;
+  border-bottom: 0.1rem solid #858585;
+  width: 9rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  padding-bottom: 0.2rem;
+  color: #858585;
+}
+
+.cha-counter-count p {
+  margin: 0;
+  user-select: none;
+}
+
+.cha-counter-decrement p,
+.cha-counter-increment p {
+  margin-bottom: 1rem;
+  // height: 1rem;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // flex-direction: column;
+  // line-height: 3.5rem;
+  // margin-bottom: 0!important;
+  user-select: none;
+}

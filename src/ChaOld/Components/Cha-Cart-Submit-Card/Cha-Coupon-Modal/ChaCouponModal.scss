@@ -1,0 +1,275 @@
+$primary: #f5a016;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+
+.cha-coupon-add-checkbox input {
+  background-color: #faf;
+  color: #ffa;
+  height: 2rem;
+}
+.cha-claudia-overlay {
+  position: fixed;
+  display: block;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.cha-claudia-modal-bg {
+  margin: 110px auto 0px auto;
+  background-color: white;
+  border-radius: 2rem;
+  width: 800px;
+  height: 500px;
+  padding: 6.5rem 7.5rem 6.5rem 8.5rem;
+  position: relative;
+}
+// 我增添的樣式
+.cha-wrap-coupon-container {
+  margin-top: 0rem;
+  // width: 600px;
+  height: 380px;
+  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-attachment: scroll;
+  // background-color: rgb(240, 240, 240);
+}
+.cha-coupon-add-checkbox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 3rem;
+  cursor: pointer;
+}
+.cha-iris-coupon-box {
+  width: 48rem;
+  transition: 0.3s;
+}
+.cha-iris-coupon-box:hover {
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.3rem #9e9e9e79;
+  transition: 0.3s;
+}
+.cha-wrap-coupon-container::-webkit-scrollbar {
+  display: none;
+}
+
+.cha-claudia-modal-cross-img {
+  background: url(./Images/cross.svg) no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  cursor: pointer;
+  float: right;
+  position: absolute;
+  right: 6rem;
+  transition: 0.3s;
+}
+.cha-claudia-modal-cross-img:hover {
+  background: url(./Images/cross-black.svg) no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 3rem;
+  height: 3rem;
+  transition: 0.3s;
+}
+
+@media only screen and (max-width: 57.6rem) {
+  .cha-claudia-modal-bg {
+    width: 335px;
+    height: 535px;
+    padding: 2.5rem 2rem 4.5rem 2rem;
+    border-radius: 40px;
+    margin: 115px auto;
+  }
+
+  .cha-claudia-overlay {
+    overflow: hidden;
+  }
+}
+
+///////
+// .cha-iris-beastie-content-container {
+//   padding-left: 4%;
+//   padding-right: 4%;
+//   margin-top: 3.5rem;
+// }
+
+.cha-iris-beastie-icons-container {
+  align-items: center;
+  position: relative;
+}
+
+.cha-iris-icon-box {
+  margin-left: 10%;
+  margin-right: 10%;
+  flex-direction: column;
+  margin-top: 2.5rem;
+}
+
+.cha-iris-beastie-coin {
+  color: #f5a016;
+  font-size: 2rem;
+  margin-top: -1rem;
+  position: absolute;
+  bottom: 0;
+  left: 17%;
+}
+
+.cha-iris-beastie-box {
+  margin-left: 10%;
+  margin-right: 10%;
+  flex-direction: column;
+}
+
+.cha-iris-beastie-name {
+  color: #a59583;
+  font-size: 2rem;
+  display: block;
+}
+
+// .cha-iris-beastie-name-box {
+//   margin-bottom: 1.3rem;
+// }
+
+.cha-iris-beastie-name-input {
+  display: none;
+  width: 8rem;
+  border-radius: 0.5rem;
+  border: #858585 0.5px solid;
+}
+.cha-iris-beastie-name-input:focus {
+  border: #f5a016 0.5px solid;
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(245, 160, 22, 1);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(245, 160, 22, 1);
+  box-shadow: 0px 0px 2px 0px rgba(245, 160, 22, 1);
+}
+
+.cha-iris-pencil-icon {
+  fill: #858585;
+}
+.cha-iris-pencil-icon:hover {
+  fill: #f5a016;
+  cursor: pointer;
+}
+
+.cha-iris-icon-box p {
+  color: #858585;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+}
+
+.cha-iris-coupon-container {
+  margin-top: 4rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.cha-iris-coupon-box {
+  // margin-bottom: 3rem;
+  height: 13rem;
+  border-radius: 2rem;
+  border: 1px #bcbcbc solid;
+}
+
+.cha-iris-coupon-icon {
+  padding-right: 3.5rem;
+  padding-left: 3.5rem;
+  height: 8.9rem;
+  width: 21.2rem;
+}
+
+.cha-iris-coupon-img {
+  height: 8.9rem;
+  width: 21.2rem;
+}
+
+.cha-iris-coupon-title {
+  color: #f48145;
+  font-size: 1.8rem;
+}
+
+.cha-iris-coupon-title-grey {
+  color: #858585;
+  font-size: 1.8rem;
+  opacity: 70%;
+}
+
+.cha-iris-coupon-issue {
+  color: #858585;
+  font-size: 1.5rem;
+}
+
+.cha-iris-coupon-issue-grey {
+  color: #858585;
+  font-size: 1.5rem;
+  opacity: 70%;
+}
+
+.cha-iris-coupon-due {
+  color: #858585;
+  font-size: 1.5rem;
+}
+
+.cha-iris-coupon-due-grey {
+  color: #858585;
+  font-size: 1.5rem;
+  opacity: 70%;
+}
+
+.cha-iris-coupon-info {
+  height: 70%;
+  justify-content: space-between;
+  margin-left: 3.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.cha-iris-coupon-due-text {
+  color: #858585;
+  font-size: 2.4rem;
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  opacity: 70%;
+}
+
+#coupon-img-1 {
+  background-image: url('./Images/beastie_coupon10.svg');
+  background-size: contain;
+  // background-position: 70% center;
+  background-repeat: no-repeat;
+}
+#coupon-img-2 {
+  background-image: url('./Images/beastie_coupon20.svg');
+  background-size: contain;
+  // background-position: 70% center;
+  background-repeat: no-repeat;
+}
+#coupon-img-3 {
+  background-image: url('./Images/beastie_coupon30.svg');
+  background-size: contain;
+  // background-position: 70% center;
+  background-repeat: no-repeat;
+}
+#coupon-img-4 {
+  background-image: url('./Images/beastie_coupon40.svg');
+  background-size: contain;
+  // background-position: 70% center;
+  background-repeat: no-repeat;
+}
+#coupon-img-5 {
+  background-image: url('./Images/beastie_coupon50.svg');
+  background-size: contain;
+  // background-position: 70% center;
+  background-repeat: no-repeat;
+}

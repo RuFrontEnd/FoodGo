@@ -1,0 +1,164 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+/* 清除內外邊距 */
+* {
+  /* table elements 表格元素 */
+  margin: 0;
+  padding: 0;
+}
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
+
+.jess-proB-container-fluid {
+  background: url('./SVG/bg.svg') repeat;
+  background-size: cover;
+  padding: 0;
+  background-attachment: fixed;
+}
+.jess-proB-container {
+  width: 117rem;
+  padding: 0;
+}
+.jess-ListB-cheif {
+  width: 114rem;
+  padding-top: 5rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.jess-ListB-cheif > h1 {
+  color: #a59583;
+  font-size: 3rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+}
+.jess-ListB-cheif > p {
+  font-size: 1.5rem;
+  width: 50rem;
+  color: #858585;
+  font-family: 'Noto Sans TC';
+  padding-top: 3rem;
+  line-height: 4rem;
+  margin: 0 auto;
+}
+.jess-ListB-chicken {
+  background: url('./Images/chichen.jpg');
+  background-size: cover;
+  background-position: center center;
+  width: 114rem;
+  height: 39.8rem;
+  margin-top: 6rem;
+}
+.jess-ListB-word {
+  width: 114rem;
+  height: 66.2rem;
+  display: flex;
+  // margin-top: 10rem;
+  // margin-bottom: 10rem;
+  margin: 10rem 0;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  & h2 {
+    font-size: 3.6rem;
+    writing-mode: vertical-rl;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+    color: #a59583;
+    padding-left: 3rem;
+    align-self: flex-start;
+  }
+  & p {
+    width: 13rem;
+    height: 51rem;
+    font-size: 1.5rem;
+    line-height: 4rem;
+    writing-mode: vertical-rl;
+    font-family: 'Noto Sans TC';
+    font-weight: 300;
+    color: #858585;
+  }
+}
+
+.jessListBpic1 {
+  width: 28rem;
+  height: 51.2rem;
+  background: url('./Images/rice01.jpg') no-repeat;
+  background-color: #ccc;
+  margin-right: 3rem;
+  margin-left: 3rem;
+}
+.jessListBpic2 {
+  width: 28rem;
+  height: 51.2rem;
+  background: url('./Images/Mask\ Group\ 9.jpg') no-repeat;
+  background-color: #ccc;
+  margin-right: 3rem;
+  align-self: flex-start;
+}
+.jessListBpic3 {
+  width: 28rem;
+  height: 51.2rem;
+  background: url('./Images/Mask\ Group\ 7.jpg');
+  background-color: #ccc;
+  // margin-top: 11rem;
+  // margin-right: 3rem;
+}
+
+@media screen and (max-width: 576px) {
+  .jess-ListB-cheif {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .jess-ListB-cheif > p {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .jess-ListB-chicken {
+    background: url('./Images/chichen.jpg');
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    margin: 0;
+  }
+  .jess-ListB-word {
+    display: none;
+  }
+  .jess-ListB-word > h2 {
+    writing-mode: horizontal-tb;
+    text-align: center;
+    justify-content: center;
+  }
+  .jess-ListB-word > p {
+    writing-mode: horizontal-tb;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex: w;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .jessListBpic1 {
+    display: none;
+  }
+}

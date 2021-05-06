@@ -1,0 +1,109 @@
+.claudia-detailed-nav-buttons-outside {
+  width: 100%;
+  height: 600px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.claudia-detailed-nav-buttons {
+  height: 400px;
+  margin: 65px auto;
+}
+
+.claudia-detailed-nav-button1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.claudia-detailed-nav-button1 button {
+  width: 170px;
+  height: 50px;
+}
+
+.claudia-detailed-nav-buttons h1 {
+  font-size: 24px;
+  color: #858585;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+//Buttons area
+
+.claudia-detailed-nav-buttons-container a:hover {
+    text-decoration: none;
+}
+
+.claudia-detailed-nav-buttons-area {
+  width: 890px;
+  height: 250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.claudia-detailed-nav-buttons-area img {
+  width: 120px;
+  height: 120px;
+}
+
+.claudia-detailed-nav-buttons-area .claudia-taiwan {
+  width: 80px;
+  height: 120px;
+}
+
+.claudia-detailed-nav-buttons-box {
+  width: 170px;
+  height: 200px;
+  text-align: center;
+}
+
+.claudia-detailed-nav-button2 button {
+  width: 170px;
+  height: 50px;
+  margin-top: 30px;
+}
+
+.claudia-detailed-nav-buttons-icons {
+  width: 170px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 57.6rem) {
+  .claudia-detailed-nav-buttons-outside {
+    width: 100%;
+    height: 980px;
+    display: block;
+  }
+
+  .claudia-detailed-nav-button1 button {
+    margin-top: 50px;
+    width: 160px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  //Buttons area
+
+  .claudia-detailed-nav-buttons-area {
+    width: 375px;
+    display: block;
+  }
+
+  .claudia-detailed-nav-buttons {
+    width: 375px;
+    margin: 0px auto;
+  }
+
+  .claudia-detailed-nav-buttons-box {
+    margin: 0px auto 45px auto;
+  }
+
+  .claudia-detailed-nav-button2 button {
+    width: 160px;
+    height: 45px;
+    font-size: 18px;
+  }
+}

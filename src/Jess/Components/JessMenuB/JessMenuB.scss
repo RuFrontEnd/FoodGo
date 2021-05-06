@@ -1,0 +1,418 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+/* 清除內外邊距 */
+* {
+  /* table elements 表格元素 */
+  margin: 0;
+  padding: 0;
+}
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+$green: #66ab8c;
+$white: #ffffff;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
+
+.jess-MenuB-container-fluid {
+  background-color: $white;
+  width: 100%;
+  height: 85rem;
+  padding: 0;
+}
+
+.jess-menuB-BentoText {
+  color: #ffffff;
+  font-size: 3rem;
+  font-family: 'Noto Serif TC';
+  font-weight: 600;
+  letter-spacing: 1rem;
+  position: absolute;
+  text-shadow: #000 1px 1px 5px;
+  top: 40%;
+  left: 35%;
+  z-index: 20;
+}
+.jess-menuBtn button {
+  width: 11rem;
+  height: 3 rem;
+  color: #f48145;
+  font-size: 1.8rem;
+}
+// .jess-menuB-pic1::before {
+//   content: '客製化便當';
+//   color: #ffffff;
+//   font-size: 3rem;
+//   font-family: 'Noto Serif TC';
+//   font-weight: 600;
+//   letter-spacing: 1rem;
+//   position: relative;
+//   text-shadow: #000 1px 1px 5px;
+//   top: 40%;
+//   left: 35%;
+// }
+
+.jess-menuB-pic1 {
+  background: url('./images/jess-menuB-pic1.jpg') no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 100%;
+  height: 50rem;
+  position: relative;
+}
+.banner-anim {
+  width: 100%;
+  height: 50rem;
+}
+// .jess-menuB-pic3 {
+//   background: url('../images/images/00_bento-chicken-breast.jpg') no-repeat;
+//   background-position: center center;
+//   background-size: contain;
+//   width: 100%;
+//   height: 23rem;
+// }
+// .jess-menuB-pic4 {
+//   background: url('../images/images/06_bento-tenderloin.jpg') no-repeat;
+//   background-position: center center;
+//   background-size: contain;
+//   width: 100%;
+//   height: 23.5rem;
+// }
+// .jess-menuB-pic5 {
+//   background: url('../images/images/03_bento-shrimp.jpg') no-repeat;
+//   background-position: center center;
+//   background-size: contain;
+//   width: 100%;
+//   height: 23.5rem;
+// }
+/*1*/
+.view .mask,
+.view .content {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 1.5rem;
+}
+.view-first .jess-menuB-pic1 {
+  /*1*/
+  transition: all 0.2s linear;
+  width: 50rem;
+  height: 50rem;
+}
+
+.view-first .mask {
+  opacity: 0;
+  background-color: rgba(8, 8, 8, 0.575);
+  transition: all 0.4s ease-in-out;
+  width: 50rem;
+  height: 50rem;
+}
+
+.view-first h2 {
+  transform: translateY(-10rem);
+  opacity: 0;
+  font-family: Raleway, serif;
+  transition: all 0.2s ease-in-out;
+}
+
+.view-first p {
+  transform: translateY(40rem);
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+
+/* */
+
+.view-first:hover .mask {
+  opacity: 1;
+}
+
+.view-first:hover h2,
+.view-first:hover p {
+  opacity: 1;
+  transform: translateY(25rem);
+  color: #ffffff;
+}
+
+.view-first:hover p {
+  transition-delay: 0.1s;
+}
+
+// no.2 effect慢煮嫩雞胸-蒜味香草
+.jess-menuB-pic2 {
+  background: url('../images/images/00_bento-chicken-breast.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 23rem;
+  height: 23rem;
+  position: relative;
+}
+
+.jess-view-menuBpic2 .mask {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  bottom: 28rem;
+  width: 23rem;
+  height: 7rem;
+  overflow: hidden;
+}
+
+.jess-view-menuBpic2 h2,
+.jess-view-menuBpic2 p {
+  transform: translateY(0px);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  padding-left: 3rem;
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+}
+
+.jess-view-menuBpic2:hover .mask {
+  opacity: 1;
+  transform: translateY(10px);
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 6rem;
+}
+.jess-view-menuBpic2:hover h2,
+.jess-view-menuBpic2:hover p {
+  color: rgb(34, 34, 34);
+  transform: translateY(8px);
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+// no.3 effect
+.jess-menuB-pic3 {
+  background: url('../images/images/01_bento-chicken-thigh.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 23rem;
+  height: 23rem;
+  position: relative;
+}
+
+.jess-view-menuBpic3 .mask {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  bottom: 1rem;
+  width: 23rem;
+  height: 7rem;
+  overflow: hidden;
+}
+
+.jess-view-menuBpic3 h2,
+.jess-view-menuBpic3 p {
+  transform: translateY(0px);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  padding-left: 3rem;
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+}
+
+.jess-view-menuBpic3:hover .mask {
+  opacity: 1;
+  transform: translateY(10px);
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 6rem;
+}
+.jess-view-menuBpic3:hover h2,
+.jess-view-menuBpic3:hover p {
+  color: rgb(34, 34, 34);
+  transform: translateY(8px);
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+// no.5 effect 麴塩五香松阪豬
+.jess-menuB-pic4 {
+  background: url('../images/images/06_bento-tenderloin.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 23rem;
+  height: 23rem;
+  position: relative;
+}
+
+.jess-view-menuBpic4 .mask {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  bottom: 28rem;
+  width: 23rem;
+  height: 7rem;
+  overflow: hidden;
+}
+
+.jess-view-menuBpic4 h2,
+.jess-view-menuBpic4 p {
+  transform: translateY(0px);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  padding-left: 3rem;
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+}
+
+.jess-view-menuBpic4:hover .mask {
+  opacity: 1;
+  transform: translateY(10px);
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 6rem;
+}
+.jess-view-menuBpic4:hover h2,
+.jess-view-menuBpic4:hover p {
+  color: rgb(34, 34, 34);
+  transform: translateY(8px);
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+// no.5 effect 熱帶火烤萊姆蝦
+.jess-menuB-pic5 {
+  background: url('../images/images/03_bento-shrimp.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 23rem;
+  height: 23rem;
+  position: relative;
+}
+
+.jess-view-menuBpic5 .mask {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  bottom: 1rem;
+  width: 23rem;
+  height: 7rem;
+  overflow: hidden;
+}
+
+.jess-view-menuBpic5 h2,
+.jess-view-menuBpic5 p {
+  transform: translateY(0px);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  padding-left: 3rem;
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+}
+
+.jess-view-menuBpic5:hover .mask {
+  opacity: 1;
+  transform: translateY(10px);
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 6rem;
+}
+.jess-view-menuBpic5:hover h2,
+.jess-view-menuBpic5:hover p {
+  color: rgb(34, 34, 34);
+  transform: translateY(8px);
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+.jess-Menu-bottomBorder img {
+  width: 100%;
+  height: 1rem;
+  margin-top: 5rem;
+  position: relative;
+}
+
+.jess-p {
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  color: $darkBrown;
+  position: absolute;
+  right: 48rem;
+  opacity: 0;
+}
+.jess-menuBtn:hover .jess-p {
+  opacity: 1;
+}
+
+@media screen and (max-width: 1440px) {
+  .jess-p {
+    font-size: 1.5rem;
+    font-family: 'Noto Sans TC';
+    color: $darkBrown;
+    position: absolute;
+    right: 25rem;
+    opacity: 0;
+  }
+  .jess-menuBtn:hover .jess-p {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .jess-MenuB-container-fluid {
+    width: 100%;
+    height: 110rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .jess-MenuB-RWD {
+    width: 37.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+    margin-top: -15rem;
+    justify-content: center;
+  }
+  .jess-menuB-pic1 {
+    width: 100%;
+  }
+  .jess-menuB-pic1::before {
+    content: '客製化便當';
+    color: #ffffff;
+    font-size: 3rem;
+    font-family: 'Noto Serif TC';
+    font-weight: 600;
+    letter-spacing: 1rem;
+    position: relative;
+    text-shadow: #000 1px 1px 5px;
+    top: 30%;
+    left: 10%;
+  }
+
+  .jess-menuB-pic2 {
+    width: 37.5rem;
+    margin: 2rem;
+  }
+  .jess-menuB-pic3 {
+    width: 37.5rem;
+    margin: 2rem;
+  }
+  .jess-menuB-pic4 {
+    display: none;
+  }
+  .jess-menuB-pic5 {
+    display: none;
+  }
+  .jess-Menu-bottomBorder {
+    display: none;
+  }
+}

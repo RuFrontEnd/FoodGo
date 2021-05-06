@@ -1,0 +1,325 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+$green: #66ab8c;
+$white: #ffffff;
+$light-yellow: #f6bd60;
+$dark-yellow: #f5a016;
+$font-size: 1rem;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap');
+
+// ::selection {
+//   background: #f6bd60;
+//   color: #ffffff;
+// }
+.jess-fluidBg {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.jess-breadCrumb a {
+  margin-top: 20rem;
+  &:hover {
+    color: $dark-yellow;
+    text-decoration: none;
+  }
+}
+
+//
+.jess-productList-chichenPic::-webkit-scrollbar {
+  display: none;
+}
+.jess-productList-chichenPic {
+  // background: url('./Images/chickenRice02.jpg') no-repeat;
+  // background-size: contain;
+  background-position: center center;
+  width: 110rem;
+  height: 65rem;
+  margin-right: 13.5rem;
+  margin-top: 4rem;
+  overflow: scroll;
+  background-attachment: local;
+}
+.jess-HeadPic {
+  background-size: cover;
+  background-position: center center;
+  // overflow: hidden;
+  width: 100%;
+  // height: 65rem;
+}
+.jess-menuList {
+  width: 50rem;
+  margin-top: 4rem;
+  margin-left: 5rem;
+}
+.jess-tittle {
+  font-size: $font-size + 1.8;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 600;
+  color: $primary;
+}
+.jess-content {
+  font-family: 'Noto Sans TC';
+  font-size: $font-size + 0.5;
+  color: #858585;
+  margin-top: 3rem;
+}
+.jess-nutrient {
+  margin-top: 3rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #decdbb;
+  color: #a59583;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0.6rem;
+  box-sizing: border-box;
+  line-height: 2.5rem;
+}
+.jess-nutrient2 {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #decdbb;
+  text-align: center;
+  padding: 0.6rem;
+  color: #a59583;
+}
+.jess-nutrient3 {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #decdbb;
+  text-align: center;
+  padding: 0.6rem;
+  color: #a59583;
+  letter-spacing: 0.1rem;
+}
+
+.jess-rateStar {
+  margin-top: 2rem;
+  width: 29rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jess-rateStarMsgNum {
+  font-family: 'Noto Sans TC';
+  font-size: $font-size + 0.5;
+  color: #858585;
+}
+hr {
+  color: #a59583;
+  margin-top: 3rem;
+}
+.jess-productPrice {
+  margin-top: 0rem;
+  width: 29rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.jess-productPrice .jess-salePrice {
+  font-family: 'Noto Sans TC';
+  font-size: 3.6rem;
+  color: $primary;
+}
+.jess-productPrice > .jess-saleTotal {
+  font-family: 'Noto Sans TC';
+  font-size: 1.5rem;
+  color: #858585;
+}
+// .favorite-btn
+.addFavorite-btn:focus {
+  outline: none;
+}
+
+.addFavorite-btn {
+  background-color: $white;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  background-image: url('./Images/addFavoriteA.svg');
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}
+
+.addFavorite-btn:hover {
+  background-color: $light-yellow;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  background-image: url('./Images/addFavoriteB.svg');
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}
+@mixin link-hover {
+  &.active {
+    @content;
+  }
+}
+.addFavorite-btn.active {
+  background-color: $dark-yellow;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  background-image: url('./Images/addFavoriteC.svg');
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}
+
+@media screen and (max-width: 576px) {
+  .jess-fluidBg {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .jess-productList-chichenPic {
+    background: url('./Images/chickenRice.jpg') no-repeat center;
+    background-size: contain;
+    width: 100%;
+    height: 35rem;
+  }
+  .jess-menuList {
+    margin: 0 auto;
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  //營養標示
+  .jess-nutrient {
+    margin-top: 3rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #decdbb;
+    color: #a59583;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0.6rem;
+    box-sizing: border-box;
+    line-height: 2.5rem;
+  }
+  .jess-nutrient2 {
+    margin-top: 3rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #decdbb;
+    text-align: center;
+    padding: 0.6rem;
+  }
+
+  hr {
+    color: #a59583;
+    margin-top: 3rem;
+  }
+}
+
+.jess-contentId:hover {
+  text-decoration: none;
+}
+@media screen and (max-width: 1440px) {
+  .jess-productList-chichenPic {
+    // background: url('./Images/chickenRice02.jpg') no-repeat;
+    // background-size: contain;
+    // background-position: center center;
+    width: 80rem;
+    height: 60rem;
+    margin-right: 13.5rem;
+    margin-top: 4rem;
+    overflow: scroll;
+    background-attachment: local;
+  }
+  .jess-HeadPic {
+    background-size: contain;
+    background-position: center center;
+    // overflow: hidden;
+    width: 100%;
+    // height: 60rem;
+  }
+  .jess-menuList {
+    width: 50rem;
+    margin-top: 4rem;
+    // margin-left: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .jess-fluidBg {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .jess-productList-chichenPic {
+    background: url('./Images/chickenRice.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    margin: 0;
+  }
+  .jess-menuList {
+    margin: 0 auto;
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  //營養標示
+  .jess-nutrient {
+    margin-top: 3rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #decdbb;
+    color: #a59583;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0.6rem;
+    box-sizing: border-box;
+    line-height: 2.5rem;
+  }
+  .jess-nutrient2 {
+    margin-top: 3rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #decdbb;
+    text-align: center;
+    padding: 0.6rem;
+  }
+
+  hr {
+    color: #a59583;
+    margin-top: 3rem;
+  }
+}

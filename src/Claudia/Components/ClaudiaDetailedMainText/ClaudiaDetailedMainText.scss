@@ -1,0 +1,77 @@
+//------------------------------Desktop--------------------------------
+
+.claudia-detailed-maintext {
+  width: 100%;
+}
+
+.claudia-detailed-maintext-container {
+  width: 70%;
+  display: flex;
+  margin: 65px auto;
+}
+
+.claudia-detailed-maintext-left {
+  width: 50%;
+  margin: 0px auto;
+}
+
+.claudia-detailed-maintext-right {
+  width: 50%;
+  margin: 0px auto;
+}
+
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576px) and (max-width: 1200px) {
+  .claudia-detailed-maintext {
+    width: 100%;
+    display: block;
+  }
+
+  .claudia-detailed-maintext-container {
+    width: 485px;
+    display: block;
+    margin: 65px auto;
+  }
+
+  .claudia-detailed-maintext-left {
+    width: 485px;
+    margin: 0px auto 50px auto;
+  }
+
+  .claudia-detailed-maintext-right {
+    width: 485px;
+    margin: 0px auto;
+  }
+}
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media only screen and (max-width: 576px) {
+  .claudia-detailed-maintext {
+    width: 100%;
+    display: block;
+  }
+
+  .claudia-detailed-maintext-container {
+    width: 335px;
+    display: block;
+    margin: 65px auto;
+  }
+
+  .claudia-detailed-maintext-left {
+    width: 285px;
+    margin: 0px auto;
+  }
+
+  .claudia-detailed-maintext-right {
+    width: 335px;
+    margin: 0px auto;
+  }
+}
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------

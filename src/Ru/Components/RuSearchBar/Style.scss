@@ -1,0 +1,97 @@
+#ru-searchId {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.ru-img {
+  border-style: none;
+  fill: #c2c4ca;
+}
+
+.ru-searchbar {
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+.ru-searchbar {
+  /* 1 */
+  width: 100%;
+  overflow: visible;
+}
+
+.ru-input-field {
+  border: 1px solid gray;
+  border-radius: 2.5rem;
+  height: 5rem;
+  width: 512px;
+}
+
+.ru-input-field input {
+  height: 100%;
+  background: transparent;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 20px;
+  color: #000;
+}
+
+.ru-input-field input.placeholder {
+  color: gray;
+  font-size: 20px;
+}
+
+.ru-input-field input:-moz-placeholder {
+  color: gray;
+  font-size: 20px;
+}
+
+.ru-input-field input::-webkit-input-placeholder {
+  color: gray;
+  font-size: 20px;
+}
+
+.ru-input-field input:hover,
+.ru-input-field input:focus {
+  box-shadow: none;
+  outline: 0;
+}
+
+.ru-input-field.first-wrap {
+  -ms-flex-positive: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #fff;
+}
+
+.ru-input-field.first-wrap input {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.ru-input-field.first-wrap .svg-wrapper {
+  min-width: 70px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.ru-input-field.first-wrap svg {
+  width: 36px;
+  height: 36px;
+}

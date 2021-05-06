@@ -1,0 +1,74 @@
+//------------------------------Desktop--------------------------------
+.claudia-overlay {
+  position: fixed;
+  display: block;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.claudia-modal-bg {
+  margin: 110px auto 0px auto;
+  background-color: white;
+  border-radius: 40px;
+  width: 800px;
+  height: 600px;
+  padding: 6.5rem 8.5rem;
+  position: relative;
+}
+
+.claudia-modal-cross-img {
+  cursor: pointer;
+  float: right;
+}
+
+.claudia-modal-cross-img:hover{
+  cursor: pointer;
+  float: right;
+  opacity: 0.5;
+}
+
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576px) and (max-width: 1200px) {
+  .claudia-modal-bg {
+    width: 640px;
+    height: 580px;
+    padding: 5.5rem 2rem 4.5rem 2rem;
+    border-radius: 40px;
+    margin: 250px auto;
+  }
+
+  .claudia-overlay {
+    overflow: hidden;
+  }
+
+}
+
+
+//--------------------------------Ipad---------------------------------
+
+//------------------------Iphone 6/7/8 + Plus + X----------------------
+@media only screen and (max-width: 576px) {
+  .claudia-modal-bg {
+    width: 335px;
+    height: 535px;
+    padding: 2.5rem 2rem 4.5rem 2rem;
+    border-radius: 40px;
+    margin: 115px auto;
+  }
+
+  .claudia-overlay {
+    overflow: hidden;
+  }
+}
+
+//------------------------Iphone 6/7/8 + Plus + X----------------------

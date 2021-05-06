@@ -1,0 +1,131 @@
+//------------------------------Desktop--------------------------------
+.claudia-detailed-maintext-signup {
+  background-color: #fff;
+  border-radius: 40px;
+  width: 400px;
+  height: 500px;
+  margin: 0px auto;
+  padding: 40px 25px;
+  font-size: 20px;
+  box-shadow: 0px 3px 6px #d1c5b8;
+}
+
+.claudia-detailed-maintext-signup-box {
+  width: 347px;
+  margin: 0px auto;
+}
+
+.claudia-detailed-maintext-signup-box h1 {
+  font-size: 20px;
+  color: #858585;
+}
+
+.claudia-signup-text {
+  margin: 2px 0px;
+  color: #676462;
+}
+
+.claudia-signup-box {
+  width: 125px;
+  height: 40px;
+  background-color: #438b6b;
+  color: white;
+  margin: 20px 0px 10px 0px;
+  padding: 4px 22px;
+}
+
+.claudia-signup-text-group {
+  font-size: 15px;
+}
+
+.claudia-yellow-confirm {
+  margin: 0px 20px;
+  width: 70px;
+  height: 25px;
+  background-color: #f6bd60;
+  padding: 7px;
+  color: white;
+}
+
+.claudia-signup-text-map {
+  font-size: 15px;
+}
+
+.claudia-signup-text-map {
+  display: flex;
+}
+
+.claudia-signup-text-map img {
+  margin-right: 5px;
+  height: 30px;
+}
+
+.claudia-signup-text-map a {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  color: #f6bd60;
+}
+
+.claudia-signup-text-map a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.claudia-signup-date-button {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.claudia-signup-date-button button {
+  height: 45px;
+}
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576px) and (max-width: 1200px) {
+  .claudia-detailed-maintext-signup {
+    margin: 0px auto;
+    width: 485px;
+    height: 535px;
+  }
+
+  .claudia-detailed-maintext-signup-box {
+    width: 435px;
+    margin: 0px auto;
+    padding: 10px 20px;
+  }
+}
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media only screen and (max-width: 576px) {
+  .claudia-detailed-maintext-signup {
+    margin: 0px auto;
+    width: 335px;
+    height: 535px;
+  }
+
+  .claudia-signup-text-group-adr {
+    display: block;
+  }
+
+  .claudia-detailed-maintext-signup-box {
+    width: 250px;
+    height: 505px;
+  }
+  .claudia-signup-date-button {
+    margin-top: 10px;
+  }
+
+  .claudia-signup-date-button button {
+    width: 250px;
+    height: 50px;
+    margin-top: 10px;
+  }
+}
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
