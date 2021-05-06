@@ -19,7 +19,7 @@ function RuBento(props) {
   const [itemWarp11, setItemWarp11] = useState(false);
   const [itemWarp12, setItemWarp12] = useState(false);
   const [isShowNothing, setIsShowNothing] = useState(false);
-  const [data, setData] = useState('');
+  const [commodities, setCommodities] = useState([]);
   const [dataFav, setDataFav] = useState('');
   const [showFavArr, setShowFavArr] = useState([]);
 
@@ -27,21 +27,11 @@ function RuBento(props) {
   useEffect(() => {
     // 拿商品列表
     axios.get('http://localhost:5000/product/bento').then((res) => {
-      console.log('res', res);
-      setData(res.data);
+      setCommodities(res.data);
     });
-
-    // 拿 我的最愛
-    fetch('http://localhost:5000/member/myFavList') // 非同步
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (myJson) {
-        // console.log(myJson)
-        const copyJsonFav = [...myJson];
-        setDataFav(copyJsonFav);
-        console.log(copyJsonFav);
-      });
+    axios.get('http://localhost:5000/member/myFavList').then((res) => {
+      setDataFav(res.data);
+    });
   }, []);
 
   useEffect(() => {
@@ -49,7 +39,7 @@ function RuBento(props) {
     // console.log(searchInput)
 
     // 等待兩個fetch都結束
-    if (!data || !dataFav) {
+    if (!commodities || !dataFav) {
       return;
     }
 
@@ -67,18 +57,18 @@ function RuBento(props) {
     // console.log(showFavArr)
 
     // 搜尋功能 s
-    let title1 = data[0].productname;
-    let title2 = data[1].productname;
-    let title3 = data[2].productname;
-    let title4 = data[3].productname;
-    let title5 = data[4].productname;
-    let title6 = data[5].productname;
-    let title7 = data[6].productname;
-    let title8 = data[7].productname;
-    let title9 = data[8].productname;
-    let title10 = data[9].productname;
-    let title11 = data[10].productname;
-    let title12 = data[11].productname;
+    let title1 = commodities[0].productname;
+    let title2 = commodities[1].productname;
+    let title3 = commodities[2].productname;
+    let title4 = commodities[3].productname;
+    let title5 = commodities[4].productname;
+    let title6 = commodities[5].productname;
+    let title7 = commodities[6].productname;
+    let title8 = commodities[7].productname;
+    let title9 = commodities[8].productname;
+    let title10 = commodities[9].productname;
+    let title11 = commodities[10].productname;
+    let title12 = commodities[11].productname;
     const $containerA = document.querySelector('.ru-itemWarp');
 
     setItemWarp1(true);
@@ -149,10 +139,10 @@ function RuBento(props) {
     }
     // 搜尋功能 e
     return () => {};
-  }, [searchInput, data, dataFav]); // 如果這邊沒有設定state, 就只會在掛載時執行一次 / 如果有, 在每次state變動時都會執行一次.
+  }, [searchInput, commodities, dataFav]); // 如果這邊沒有設定state, 就只會在掛載時執行一次 / 如果有, 在每次state變動時都會執行一次.
 
   // 等待兩個fetch都結束
-  if (!data || !dataFav) {
+  if (!commodities || !dataFav) {
     return <></>;
   }
   return (
@@ -163,248 +153,26 @@ function RuBento(props) {
         <div className="ru-card-warp">
           <div className="ru-itemWarp">
             {isShowNothing && <RuNothing />}
-            {itemWarp1 && (
+            {commodities.map((commodity, index) => (
               <RuCard
-                data={data}
+                data={commodities}
                 dataFav={dataFav}
-                title={data[0].productname}
-                comment={data[0].contentNum}
-                buy={data[0].purchased}
-                price={data[0].price}
-                stars={data[0].startRating}
-                id={'ru-addCart-btn-1'}
-                proudctId={data[0].sid}
-                parentId={'ru-addCart-btn-warp-1'}
-                imgId={data[0].img_id}
+                title={commodity.productname}
+                comment={commodity.contentNum}
+                buy={commodity.purchased}
+                price={commodity.price}
+                stars={commodity.startRating}
+                id={`ru-addCart-btn-${index + 1}`}
+                proudctId={commodity.sid}
+                parentId={`ru-addCart-btn-warp-${index + 1}`}
+                imgId={commodity.img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
                 showFavArr={showFavArr}
                 count={count}
                 setCount={setCount}
               />
-            )}
-            {itemWarp2 && (
-              <RuCard
-                data={data}
-                dataFav={dataFav}
-                title={data[1].productname}
-                comment={data[1].contentNum}
-                buy={data[1].purchased}
-                price={data[1].price}
-                stars={data[1].startRating}
-                id={'ru-addCart-btn-2'}
-                proudctId={data[1].sid}
-                parentId={'ru-addCart-btn-warp-2'}
-                imgId={data[1].img_id}
-                handleCartNumber={handleCartNumber} // localStorage函式
-                currentUser={currentUser}
-                showFavArr={showFavArr}
-                count={count}
-                setCount={setCount}
-              />
-            )}
-            {itemWarp3 && (
-              <RuCard
-                data={data}
-                dataFav={dataFav}
-                title={data[2].productname}
-                comment={data[2].contentNum}
-                buy={data[2].purchased}
-                price={data[2].price}
-                stars={data[2].startRating}
-                id={'ru-addCart-btn-3'}
-                proudctId={data[2].sid}
-                parentId={'ru-addCart-btn-warp-3'}
-                imgId={data[2].img_id}
-                handleCartNumber={handleCartNumber} // localStorage函式
-                currentUser={currentUser}
-                showFavArr={showFavArr}
-                count={count}
-                setCount={setCount}
-              />
-            )}
-
-            {itemWarp4 && (
-              <RuCard
-                data={data}
-                dataFav={dataFav}
-                title={data[3].productname}
-                comment={data[3].contentNum}
-                buy={data[3].purchased}
-                price={data[3].price}
-                stars={data[3].startRating}
-                id={'ru-addCart-btn-4'}
-                proudctId={data[3].sid}
-                parentId={'ru-addCart-btn-warp-4'}
-                imgId={data[3].img_id}
-                handleCartNumber={handleCartNumber} // localStorage函式
-                currentUser={currentUser}
-                showFavArr={showFavArr}
-                count={count}
-                setCount={setCount}
-              />
-            )}
-            {itemWarp5 && (
-              <RuCard
-                data={data}
-                dataFav={dataFav}
-                title={data[4].productname}
-                comment={data[4].contentNum}
-                buy={data[4].purchased}
-                price={data[4].price}
-                stars={data[4].startRating}
-                id={'ru-addCart-btn-5'}
-                proudctId={data[4].sid}
-                parentId={'ru-addCart-btn-warp-5'}
-                imgId={data[4].img_id}
-                handleCartNumber={handleCartNumber} // localStorage函式
-                currentUser={currentUser}
-                showFavArr={showFavArr}
-                count={count}
-                setCount={setCount}
-              />
-            )}
-            {itemWarp6 && (
-              <RuCard
-                data={data}
-                dataFav={dataFav}
-                title={data[5].productname}
-                comment={data[5].contentNum}
-                buy={data[5].purchased}
-                price={data[5].price}
-                stars={data[5].startRating}
-                id={'ru-addCart-btn-6'}
-                proudctId={data[5].sid}
-                parentId={'ru-addCart-btn-warp-6'}
-                imgId={data[5].img_id}
-                handleCartNumber={handleCartNumber} // localStorage函式
-                currentUser={currentUser}
-                showFavArr={showFavArr}
-                count={count}
-                setCount={setCount}
-              />
-            )}
-
-            {itemWarp7 && (
-              <RuCard
-                data={data}
-                dataFav={dataFav}
-                title={data[6].productname}
-                comment={data[6].contentNum}
-                buy={data[6].purchased}
-                price={data[6].price}
-                stars={data[6].startRating}
-                id={'ru-addCart-btn-7'}
-                proudctId={data[6].sid}
-                parentId={'ru-addCart-btn-warp-7'}
-                imgId={data[6].img_id}
-                handleCartNumber={handleCartNumber} // localStorage函式
-                currentUser={currentUser}
-                showFavArr={showFavArr}
-                count={count}
-                setCount={setCount}
-              />
-            )}
-            {itemWarp8 && (
-              <RuCard
-                data={data}
-                dataFav={dataFav}
-                title={data[7].productname}
-                comment={data[7].contentNum}
-                buy={data[7].purchased}
-                price={data[7].price}
-                stars={data[7].startRating}
-                id={'ru-addCart-btn-8'}
-                proudctId={data[7].sid}
-                parentId={'ru-addCart-btn-warp-8'}
-                imgId={data[7].img_id}
-                handleCartNumber={handleCartNumber} // localStorage函式
-                currentUser={currentUser}
-                showFavArr={showFavArr}
-                count={count}
-                setCount={setCount}
-              />
-            )}
-            {itemWarp9 && (
-              <RuCard
-                data={data}
-                dataFav={dataFav}
-                title={data[8].productname}
-                comment={data[8].contentNum}
-                buy={data[8].purchased}
-                price={data[8].price}
-                stars={data[8].startRating}
-                id={'ru-addCart-btn-9'}
-                proudctId={data[8].sid}
-                parentId={'ru-addCart-btn-warp-9'}
-                imgId={data[8].img_id}
-                handleCartNumber={handleCartNumber} // localStorage函式
-                currentUser={currentUser}
-                showFavArr={showFavArr}
-                count={count}
-                setCount={setCount}
-              />
-            )}
-            {itemWarp10 && (
-              <RuCard
-                data={data}
-                dataFav={dataFav}
-                title={data[9].productname}
-                comment={data[9].contentNum}
-                buy={data[9].purchased}
-                price={data[9].price}
-                stars={data[9].startRating}
-                id={'ru-addCart-btn-10'}
-                proudctId={data[9].sid}
-                parentId={'ru-addCart-btn-warp-10'}
-                imgId={data[9].img_id}
-                handleCartNumber={handleCartNumber} // localStorage函式
-                currentUser={currentUser}
-                showFavArr={showFavArr}
-                count={count}
-                setCount={setCount}
-              />
-            )}
-            {itemWarp11 && (
-              <RuCard
-                data={data}
-                dataFav={dataFav}
-                title={data[10].productname}
-                comment={data[10].contentNum}
-                buy={data[10].purchased}
-                price={data[10].price}
-                stars={data[10].startRating}
-                id={'ru-addCart-btn-11'}
-                proudctId={data[10].sid}
-                parentId={'ru-addCart-btn-warp-11'}
-                imgId={data[10].img_id}
-                handleCartNumber={handleCartNumber} // localStorage函式
-                currentUser={currentUser}
-                showFavArr={showFavArr}
-                count={count}
-                setCount={setCount}
-              />
-            )}
-            {itemWarp12 && (
-              <RuCard
-                data={data}
-                dataFav={dataFav}
-                title={data[11].productname}
-                comment={data[11].contentNum}
-                buy={data[11].purchased}
-                price={data[11].price}
-                stars={data[11].startRating}
-                id={'ru-addCart-btn-12'}
-                proudctId={data[11].sid}
-                parentId={'ru-addCart-btn-warp-12'}
-                imgId={data[11].img_id}
-                handleCartNumber={handleCartNumber} // localStorage函式
-                currentUser={currentUser}
-                showFavArr={showFavArr}
-                count={count}
-                setCount={setCount}
-              />
-            )}
+            ))}
           </div>
         </div>
         {/* 卡片區 e */}
