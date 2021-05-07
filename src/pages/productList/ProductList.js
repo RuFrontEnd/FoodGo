@@ -15,26 +15,28 @@ function ProductList(props) {
   const [openBento, setOpenBento] = useState(false); // 判斷便當按鈕是否要亮
   const [openSalad, setOpenSalad] = useState(false); // 判斷沙拉按鈕是否要亮
   const [openCustom, setOpenCustom] = useState(false); // 判斷客製化按鈕是否要亮
+  const [isSelected, setIsSelected] = useState([true, false, false, false]);
   const buttonAttributes = [
     {
       text: '低GI便當',
-      className: 'ru-button-btn',
-      id: 'ru-button-btn-1',
+      isSelected: isSelected[0],
+      type: 'origin',
     },
     {
       text: '鮮蔬沙拉',
-      className: 'ru-button-btn',
-      id: 'ru-button-btn-2',
+      isSelected: isSelected[1],
+      type: 'origin',
     },
     {
       text: '客製化便當',
-      className: 'ru-button-btn',
-      id: 'ru-button-btn-3',
+      isSelected: isSelected[2],
+      type: 'origin',
     },
     {
       text: '蔬菜箱',
-      className: 'ru-button-btn-g',
-      id: 'ru-button-btn-4',
+      isSelected: isSelected[3],
+      type: 'green',
+      routes: '/vegBox',
     },
   ];
   const onSearch = () => {
@@ -55,12 +57,14 @@ function ProductList(props) {
             setSearchInput={setSearchInput}
             onSearch={onSearch}
           />
-          <div className="ru-buttonWarp">
+          <div className="buttonWarp">
             {buttonAttributes.map((buttonAttribute) => (
               <RuButton
                 text={buttonAttribute.text}
-                className={buttonAttribute.className}
-                id={buttonAttribute.id}
+                isSelected={buttonAttribute.isSelected}
+                setIsSelected={setIsSelected}
+                type={buttonAttribute.type}
+                routes={buttonAttribute.routes}
                 openBento={openBento}
                 setOpenBento={setOpenBento}
                 openSalad={openSalad}
