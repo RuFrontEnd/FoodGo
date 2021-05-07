@@ -7,9 +7,10 @@ import Footer from 'Share/Components/Footer/Footer';
 // 引入 所有人的總元件
 import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex';
 import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage';
-import RuProudctList from 'Ru/Pages/RuProudctList';
-import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad';
-import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom';
+import RuProudctList from 'Ru/Pages/RuProudctList'; // delete later
+import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'; // delete later
+import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'; // delete later
+import ProductList from 'pages/productList/ProductList';
 
 import IrisOrderComment from 'Iris/Pages/IrisOrderComment';
 import IrisMyFav from 'Iris/Pages/IrisMyFav';
@@ -176,7 +177,7 @@ function App() {
             {/* ru */}
             {/* 放"page資料夾"內的元件 */}
             <Route exact path="/productList">
-              <RuProudctList
+              <ProductList
                 setShowBar={setShowBar}
                 handleCartNumber={handleCartNumber}
                 currentUser={currentUser}
