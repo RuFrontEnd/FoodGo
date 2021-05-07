@@ -12,29 +12,35 @@ import line from './Images/line.png';
 function ProductList(props) {
   const { handleCartNumber, currentUser, count, setCount } = props;
   const [searchInput, setSearchInput] = useState('');
-  const [openBento, setOpenBento] = useState(false); // 判斷便當按鈕是否要亮
-  const [openSalad, setOpenSalad] = useState(false); // 判斷沙拉按鈕是否要亮
-  const [openCustom, setOpenCustom] = useState(false); // 判斷客製化按鈕是否要亮
-  const [isSelected, setIsSelected] = useState([true, false, false, false]);
+  const [selectedTypes, setSelectedTypes] = useState([
+    true,
+    false,
+    false,
+    false,
+  ]);
   const buttonAttributes = [
     {
       text: '低GI便當',
-      isSelected: isSelected[0],
+      isSelected: selectedTypes[0],
+      index: 0,
       type: 'origin',
     },
     {
       text: '鮮蔬沙拉',
-      isSelected: isSelected[1],
+      isSelected: selectedTypes[1],
+      index: 1,
       type: 'origin',
     },
     {
       text: '客製化便當',
-      isSelected: isSelected[2],
+      isSelected: selectedTypes[2],
+      index: 2,
       type: 'origin',
     },
     {
       text: '蔬菜箱',
-      isSelected: isSelected[3],
+      isSelected: selectedTypes[3],
+      index: 3,
       type: 'green',
       routes: '/vegBox',
     },
@@ -61,16 +67,12 @@ function ProductList(props) {
             {buttonAttributes.map((buttonAttribute) => (
               <RuButton
                 text={buttonAttribute.text}
+                selectedTypes={selectedTypes}
+                setSelectedTypes={setSelectedTypes}
                 isSelected={buttonAttribute.isSelected}
-                setIsSelected={setIsSelected}
+                index={buttonAttribute.index}
                 type={buttonAttribute.type}
                 routes={buttonAttribute.routes}
-                openBento={openBento}
-                setOpenBento={setOpenBento}
-                openSalad={openSalad}
-                setOpenSalad={setOpenSalad}
-                openCustom={openCustom}
-                setOpenCustom={setOpenCustom}
                 onSearch={onSearch}
               />
             ))}

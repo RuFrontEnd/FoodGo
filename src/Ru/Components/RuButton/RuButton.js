@@ -6,21 +6,27 @@ function RuButton(props) {
   // text 按鈕文字
   // className 橘色樣式為button-btn 綠色樣式為button-btn-g
   const {
-    text,
-    openBento,
-    setOpenBento,
-    openSalad,
-    setOpenSalad,
-    openCustom,
-    setOpenCustom,
-    isSelected,
-    setIsSelected,
-    type,
-    routes,
+    text, // show btn content
+    selectedTypes, // all button active types
+    setSelectedTypes, // set all button active types state
+    isSelected, // is button active
+    index, // all button active types index
+    type, // orange or green
+    routes, // link address
   } = props;
 
-  // 路由方法
   function handleCardArea(e) {
+    // setIsSelected([]);
+    let _selectedTypes = [];
+    for (let i = 0; i < selectedTypes.length; i++) {
+      if (index === i) {
+        _selectedTypes.push(true);
+      } else {
+        _selectedTypes.push(false);
+      }
+    }
+    setSelectedTypes(_selectedTypes);
+
     // // console.log(props)
     // if (id === 'ru-button-btn-1') {
     //   props.history.push('/productList')
@@ -34,17 +40,17 @@ function RuButton(props) {
   }
 
   // 亮按鈕邏輯
-  useEffect(() => {
-    // 查看所處路由
-    // if (props.location.pathname === '/productList') {
-    //   // 改變state值讓JSX的三元去判斷要不要顯示亮鈕樣式
-    //   setOpenBento(true);
-    // } else if (props.location.pathname === '/productListSalad') {
-    //   setOpenSalad(true);
-    // } else if (props.location.pathname === '/productListCustom') {
-    //   setOpenCustom(true);
-    // }
-  }, [openBento, openSalad, openCustom]);
+  // useEffect(() => {
+  // 查看所處路由
+  // if (props.location.pathname === '/productList') {
+  //   // 改變state值讓JSX的三元去判斷要不要顯示亮鈕樣式
+  //   setOpenBento(true);
+  // } else if (props.location.pathname === '/productListSalad') {
+  //   setOpenSalad(true);
+  // } else if (props.location.pathname === '/productListCustom') {
+  //   setOpenCustom(true);
+  // }
+  // }, [openBento, openSalad, openCustom]);
 
   return (
     <>
@@ -53,15 +59,21 @@ function RuButton(props) {
         <>
           {isSelected ? (
             <button
-              className={'selection-btn selection-btn-orange selection-btn-orange-active'}
-              onClick={handleCardArea}
+              className={
+                'selection-btn selection-btn-orange selection-btn-orange-active'
+              }
+              onClick={() => {
+                handleCardArea();
+              }}
             >
               {text}
             </button>
           ) : (
             <button
               className={'selection-btn selection-btn-orange'}
-              onClick={handleCardArea}
+              onClick={() => {
+                handleCardArea();
+              }}
             >
               {text}
             </button>
@@ -72,15 +84,21 @@ function RuButton(props) {
         <>
           {isSelected ? (
             <button
-              className={'selection-btn selection-btn-green selection-btn-green-active'}
-              onClick={handleCardArea}
+              className={
+                'selection-btn selection-btn-green selection-btn-green-active'
+              }
+              onClick={() => {
+                handleCardArea();
+              }}
             >
               {text}
             </button>
           ) : (
             <button
               className={'selection-btn selection-btn-green'}
-              onClick={handleCardArea}
+              onClick={() => {
+                handleCardArea();
+              }}
             >
               {text}
             </button>
