@@ -7,12 +7,13 @@
 
 .searchBar-wrapper {
   display: flex;
+  align-items: center;
   width: 100%;
   height: 100%;
   padding: 0px 25px;
 }
 
-.searchBar-svg {
+.search-svg {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,10 +34,10 @@
   height: 100%;
   border: 0;
   margin: 0;
-  padding-bottom: 5px;
+  padding-bottom: 2.5px;
 }
 
-.searchBar-input.placeholder{
+.searchBar-input.placeholder {
   color: gray;
   font-size: 20px;
 }
@@ -45,4 +46,18 @@
 .searchBar-input:focus {
   box-shadow: none;
   outline: 0;
+}
+
+.search-container-active {
+  box-shadow: 0 0 0.5rem #f5a016;
+  border-color: #fff;
+}
+
+.search-svg-active {
+  fill: #f5cb87;
+}
+
+.cross-svg {
+  fill: #c2c4ca;
+  cursor: pointer;
 }
