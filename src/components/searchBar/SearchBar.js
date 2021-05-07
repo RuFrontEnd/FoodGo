@@ -4,7 +4,7 @@ import { ReactComponent as SearchIcon } from 'components/searchBar/Images/search
 import { ReactComponent as CrossIcon } from 'components/searchBar/Images/cross.svg';
 
 function SearchBar(props) {
-  const { searchInput, setSearchInput, searchId } = props;
+  const { searchInput, setSearchInput, searchId, onSearch } = props;
   const [containerClassName, setContainerClassName] = useState(
     'searchBar-container'
   );
@@ -25,7 +25,12 @@ function SearchBar(props) {
     <>
       <div className={containerClassName} id={searchId}>
         <form className="searchBar-wrapper" autocomplete="off">
-          <SearchIcon className={searchIconClassName} />
+          <SearchIcon
+            className={searchIconClassName}
+            onClick={() => {
+              onSearch();
+            }}
+          />
           <input
             className="searchBar-input"
             id="search"

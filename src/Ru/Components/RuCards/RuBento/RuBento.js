@@ -10,6 +10,7 @@ function RuBento(props) {
   const [commodities, setCommodities] = useState([]);
   const [dataFav, setDataFav] = useState('');
   const [showFavArr, setShowFavArr] = useState([]);
+  
 
   // 向後端請求資料
   useEffect(() => {
@@ -46,12 +47,12 @@ function RuBento(props) {
       return;
     }
     if (searchInput !== '') {
-      console.log('searchInput', searchInput);
-      const _commodities = commodities.filter((commodity) => {
-        return commodity.productname.includes(searchInput);
-      });
-      console.log('_commodities', _commodities);
-      setCommodities(_commodities);
+      // console.log('searchInput', searchInput);
+      // const _commodities = commodities.filter((commodity) => {
+      //   return commodity.productname.includes(searchInput);
+      // });
+      // console.log('_commodities', _commodities);
+      // setCommodities(_commodities);
     }
   }, [searchInput]);
 
