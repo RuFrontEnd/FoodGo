@@ -15,7 +15,28 @@ function ProductList(props) {
   const [openBento, setOpenBento] = useState(false); // 判斷便當按鈕是否要亮
   const [openSalad, setOpenSalad] = useState(false); // 判斷沙拉按鈕是否要亮
   const [openCustom, setOpenCustom] = useState(false); // 判斷客製化按鈕是否要亮
-
+  const buttonAttributes = [
+    {
+      text: '低GI便當',
+      className: 'ru-button-btn',
+      id: 'ru-button-btn-1',
+    },
+    {
+      text: '鮮蔬沙拉',
+      className: 'ru-button-btn',
+      id: 'ru-button-btn-2',
+    },
+    {
+      text: '客製化便當',
+      className: 'ru-button-btn',
+      id: 'ru-button-btn-3',
+    },
+    {
+      text: '蔬菜箱',
+      className: 'ru-button-btn-g',
+      id: 'ru-button-btn-4',
+    },
+  ];
   const onSearch = () => {
     console.log('A');
   };
@@ -23,66 +44,35 @@ function ProductList(props) {
   return (
     <>
       <section className="top-space"></section>
-      <section className="ru-mainImg-warp">
+      <section className="mainImg-warp">
         <h1>享受美食 不需要理由</h1>
-        <div className="ru-mainImg"></div>
+        <div className="mainImg"></div>
       </section>
-      <section className="ru-productList-container">
-        <div className="ru-optionWarp">
+      <section className="productList-container">
+        <div className="optionWarp">
           <SearchBar
             searchInput={searchInput}
             setSearchInput={setSearchInput}
             onSearch={onSearch}
           />
           <div className="ru-buttonWarp">
-            <RuButton
-              text={'低GI便當'}
-              className={'ru-button-btn'}
-              id={'ru-button-btn-1'}
-              openBento={openBento}
-              setOpenBento={setOpenBento}
-              openSalad={openSalad}
-              setOpenSalad={setOpenSalad}
-              openCustom={openCustom}
-              setOpenCustom={setOpenCustom}
-              onSearch={onSearch}
-            />
-            <RuButton
-              text={'鮮蔬沙拉'}
-              className={'ru-button-btn'}
-              id={'ru-button-btn-2'}
-              openBento={openBento}
-              setOpenBento={setOpenBento}
-              openSalad={openSalad}
-              setOpenSalad={setOpenSalad}
-              openCustom={openCustom}
-              setOpenCustom={setOpenCustom}
-            />
-            <RuButton
-              text={'客製化便當'}
-              className={'ru-button-btn'}
-              id={'ru-button-btn-3'}
-              openBento={openBento}
-              setOpenBento={setOpenBento}
-              openSalad={openSalad}
-              setOpenSalad={setOpenSalad}
-              openCustom={openCustom}
-              setOpenCustom={setOpenCustom}
-            />
-            <RuButton
-              text={'蔬菜箱'}
-              className={'ru-button-btn-g'}
-              id={'ru-button-btn-4'}
-              openBento={openBento}
-              setOpenBento={setOpenBento}
-              openSalad={openSalad}
-              setOpenSalad={setOpenSalad}
-              openCustom={openCustom}
-              setOpenCustom={setOpenCustom}
-            />
+            {buttonAttributes.map((buttonAttribute) => (
+              <RuButton
+                text={buttonAttribute.text}
+                className={buttonAttribute.className}
+                id={buttonAttribute.id}
+                openBento={openBento}
+                setOpenBento={setOpenBento}
+                openSalad={openSalad}
+                setOpenSalad={setOpenSalad}
+                openCustom={openCustom}
+                setOpenCustom={setOpenCustom}
+                onSearch={onSearch}
+              />
+            ))}
           </div>
         </div>
-        <div className="ru-line">
+        <div className="line">
           <img src={line}></img>
         </div>
       </section>
