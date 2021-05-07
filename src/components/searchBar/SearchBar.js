@@ -4,7 +4,7 @@ import { ReactComponent as SearchIcon } from 'components/searchBar/Images/search
 import { ReactComponent as CrossIcon } from 'components/searchBar/Images/cross.svg';
 
 function SearchBar(props) {
-  const { searchInput, setSearchInput, searchId, isShowDeleteBtn } = props;
+  const { searchInput, setSearchInput, searchId } = props;
   const [containerClassName, setContainerClassName] = useState(
     'searchBar-container'
   );
@@ -39,7 +39,7 @@ function SearchBar(props) {
               setSearchInput(e.target.value);
             }}
           />
-          {isShowDeleteBtn && (
+          {searchInput !== '' && (
             <CrossIcon
               className="cross-svg"
               onClick={() => {
