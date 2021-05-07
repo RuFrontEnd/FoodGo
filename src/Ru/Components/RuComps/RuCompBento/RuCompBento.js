@@ -10,15 +10,16 @@ import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import line from './Images/line.png';
 
 function RuCompBento(props) {
-  // console.log(props);
   const { handleCartNumber, currentUser, count, setCount } = props;
   const [searchInput, setSearchInput] = useState('');
   const [openBento, setOpenBento] = useState(false); // 判斷便當按鈕是否要亮
   const [openSalad, setOpenSalad] = useState(false); // 判斷沙拉按鈕是否要亮
   const [openCustom, setOpenCustom] = useState(false); // 判斷客製化按鈕是否要亮
-  // console.log(searchInput);
 
-  // JSX
+  const onSearch = () => {
+    console.log('A');
+  };
+
   return (
     <>
       <div className="top-space"></div>
@@ -33,8 +34,8 @@ function RuCompBento(props) {
           <SearchBar
             searchInput={searchInput}
             setSearchInput={setSearchInput}
+            onSearch={onSearch}
           />
-
           <section className="ru-buttonWarp">
             <RuButton
               text={'低GI便當'}
@@ -46,6 +47,7 @@ function RuCompBento(props) {
               setOpenSalad={setOpenSalad}
               openCustom={openCustom}
               setOpenCustom={setOpenCustom}
+              onSearch={onSearch}
             />
             <RuButton
               text={'鮮蔬沙拉'}

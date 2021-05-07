@@ -1,0 +1,237 @@
+@import "Ru/Pages/variable.scss";
+// 以下開始自訂CSS
+button:focus,
+input {
+  outline: none;
+}
+
+.top-space{
+  height: 100px;
+  background-color: '#FF5151'
+}
+
+.skeleton-container{
+  max-width: 1440px;
+  padding: 90px 135px 0px;
+  margin: auto;
+}
+
+.mainImg-warp {
+  position: relative;
+}
+
+.mainImg-warp > h1 {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $sub-title,
+    $regular,
+    2.5px,
+    $white
+  );
+}
+
+.mainImg {
+  height: 362px;
+  background-image: url("./Images/mainImg.jpg");
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: cover;
+  @include flex($df, $fdr, $jcc, $alc);
+  filter: brightness(0.5);
+}
+
+.optionWarp {
+  // background-color: dodgerblue;
+  color: white;
+  height: 325px;
+  @include page(); // 1440px
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.buttonWarp {
+  // background-color: rgb(30, 236, 255);
+  width: 80.8%;
+  height: 65px;
+  margin-top: 50px;
+  @include flex($df, $fdr, space-between, $alc);
+}
+
+.buttonWarp .button-btn:nth-child(1) {
+  // background-color: ;
+  margin-right: 10px;
+}
+
+.buttonWarp .button-btn:nth-child(2),
+.button-btn:nth-child(3) {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.buttonWarp .button-btn-g {
+  margin-left: 10px;
+}
+
+.optionWarp .input-field {
+  width: 43.762%;
+  height: 50px;
+}
+
+.line {
+  // background-color: red;
+  width: 100%;
+  @include flex($df, $fdr, $jcc, $als);
+  overflow: hidden;
+}
+
+.line > img {
+  height: 8px;
+}
+
+// 響應式 --------------------------------------------------------------------------------
+// ipad pro版 ----------
+@media screen and (min-width: 992px) and (max-width: 1365.99px) {
+  .optionWarp {
+    @include page-iPadPro();
+  }
+
+  .optionWarp .input-field {
+    width: 56.6375%;
+  }
+
+  .buttonWarp {
+    width: 100%;
+  }
+}
+
+// ipad 版 ----------
+@media screen and (min-width: 768px) and (max-width: 991.99px) {
+  .optionWarp {
+    // background-color: gold;
+    @include page-iPad();
+    padding: 0px 30px;
+    width: 100%;
+  }
+
+  .optionWarp .input-field {
+    width: 59.9525%;
+  }
+
+  .buttonWarp {
+    width: 100%;
+  }
+
+  .buttonWarp .button-btn:nth-child(1),
+  .buttonWarp .button-btn:nth-child(2),
+  .buttonWarp .button-btn:nth-child(3),
+  .buttonWarp .button-btn-g {
+    font-size: 18px;
+    width: 160px;
+    height: 52px;
+    margin: 0px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.99px) {
+  .productList-container {
+    // background-color: blueviolet;
+  }
+
+  .mainImg-warp {
+    position: relative;
+  }
+
+  .optionWarp {
+    // background-color: dodgerblue;
+    color: white;
+    @include page-iPad();
+    padding: 0px 30px;
+  }
+
+  .optionWarp .input-field {
+    width: 62.5%;
+  }
+
+  .buttonWarp {
+    width: 98%;
+    flex-wrap: wrap;
+  }
+
+  .buttonWarp .button-btn:nth-child(1),
+  .buttonWarp .button-btn:nth-child(2),
+  .buttonWarp .button-btn:nth-child(3),
+  .buttonWarp .button-btn-g {
+    font-size: 18px;
+    width: 120px;
+    height: 52px;
+    margin: 0px;
+  }
+}
+
+// 手機版 ----------
+@media screen and (max-width: 575.99px) {
+  .productList-container {
+    // background-color: blueviolet;
+  }
+
+  .mainImg-warp {
+    position: relative;
+  }
+
+  .optionWarp {
+    // background-color: dodgerblue;
+    color: white;
+    height: 257px;
+    @include page-phone();
+    @include flex($df, $fdc, $jcc, $alc);
+  }
+
+  .optionWarp .input-field {
+    width: 100%;
+  }
+
+  .buttonWarp {
+    // background-color: rgb(30, 236, 255);
+    width: 80%;
+    height: 100px;
+    margin-top: 30px;
+    @include flex($df, $fdr, space-between, $alc);
+    flex-wrap: wrap;
+  }
+
+  .buttonWarp .button-btn {
+    width: 120px;
+    height: 40px;
+  }
+
+  .buttonWarp .button-btn-g {
+    width: 120px;
+    height: 40px;
+  }
+
+  .buttonWarp div {
+    display: flex;
+    justify-content: center;
+  }
+  .buttonWarp .button-btn:nth-child(1) {
+    font-size: 18px;
+    margin: 5px 0px;
+  }
+  .buttonWarp .button-btn:nth-child(2),
+  .button-btn:nth-child(3) {
+    font-size: 18px;
+    margin: 5px 0px;
+  }
+
+  .buttonWarp .button-btn-g {
+    font-size: 18px;
+    margin: 5px 0px;
+  }
+}
