@@ -1,0 +1,240 @@
+@import "Ru/Pages/variable.scss";
+// 以下開始自訂CSS
+button:focus,
+input {
+  outline: none;
+}
+
+.top-space{
+  height: 100px;
+  background-color: '#FF5151'
+}
+
+.skeleton-container{
+  max-width: 1440px;
+  padding: 90px 135px 0px;
+  margin: auto;
+}
+
+.ru-mainImg-warp {
+  position: relative;
+}
+
+.ru-mainImg-warp > h1 {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $sub-title,
+    $regular,
+    2.5px,
+    $white
+  );
+}
+
+.ru-mainImg {
+  height: 362px;
+  background-image: url("./Images/mainImg.jpg");
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: cover;
+  @include flex($df, $fdr, $jcc, $alc);
+  filter: brightness(0.5);
+}
+
+.ru-productList-container {
+  // background-color: blueviolet;
+}
+
+.ru-optionWarp {
+  // background-color: dodgerblue;
+  color: white;
+  height: 325px;
+  @include page(); // 1440px
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.ru-buttonWarp {
+  // background-color: rgb(30, 236, 255);
+  width: 80.8%;
+  height: 65px;
+  margin-top: 50px;
+  @include flex($df, $fdr, space-between, $alc);
+}
+
+.ru-buttonWarp .ru-button-btn:nth-child(1) {
+  margin-right: 10px;
+}
+
+.ru-buttonWarp .ru-button-btn:nth-child(2),
+.ru-button-btn:nth-child(3) {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.ru-buttonWarp .ru-button-btn-g {
+  margin-left: 10px;
+}
+
+.ru-optionWarp .ru-input-field {
+  width: 43.762%;
+  height: 50px;
+}
+
+.ru-line {
+  // background-color: red;
+  width: 100%;
+  @include flex($df, $fdr, $jcc, $als);
+  overflow: hidden;
+}
+
+.ru-line > img {
+  height: 8px;
+}
+
+// 響應式 --------------------------------------------------------------------------------
+// ipad pro版 ----------
+@media screen and (min-width: 992px) and (max-width: 1365.99px) {
+  .ru-optionWarp {
+    @include page-iPadPro();
+  }
+
+  .ru-optionWarp .ru-input-field {
+    width: 56.6375%;
+  }
+
+  .ru-buttonWarp {
+    width: 100%;
+  }
+}
+
+// ipad 版 ----------
+@media screen and (min-width: 768px) and (max-width: 991.99px) {
+  .ru-optionWarp {
+    // background-color: gold;
+    @include page-iPad();
+    padding: 0px 30px;
+    width: 100%;
+  }
+
+  .ru-optionWarp .ru-input-field {
+    width: 59.9525%;
+  }
+
+  .ru-buttonWarp {
+    width: 100%;
+  }
+
+  .ru-buttonWarp .ru-button-btn:nth-child(1),
+  .ru-buttonWarp .ru-button-btn:nth-child(2),
+  .ru-buttonWarp .ru-button-btn:nth-child(3),
+  .ru-buttonWarp .ru-button-btn-g {
+    font-size: 18px;
+    width: 160px;
+    height: 52px;
+    margin: 0px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.99px) {
+  .ru-productList-container {
+    // background-color: blueviolet;
+  }
+
+  .ru-mainImg-warp {
+    position: relative;
+  }
+
+  .ru-optionWarp {
+    // background-color: dodgerblue;
+    color: white;
+    @include page-iPad();
+    padding: 0px 30px;
+  }
+
+  .ru-optionWarp .ru-input-field {
+    width: 62.5%;
+  }
+
+  .ru-buttonWarp {
+    width: 98%;
+    flex-wrap: wrap;
+  }
+
+  .ru-buttonWarp .ru-button-btn:nth-child(1),
+  .ru-buttonWarp .ru-button-btn:nth-child(2),
+  .ru-buttonWarp .ru-button-btn:nth-child(3),
+  .ru-buttonWarp .ru-button-btn-g {
+    font-size: 18px;
+    width: 120px;
+    height: 52px;
+    margin: 0px;
+  }
+}
+
+// 手機版 ----------
+@media screen and (max-width: 575.99px) {
+  .ru-productList-container {
+    // background-color: blueviolet;
+  }
+
+  .ru-mainImg-warp {
+    position: relative;
+  }
+
+  .ru-optionWarp {
+    // background-color: dodgerblue;
+    color: white;
+    height: 257px;
+    @include page-phone();
+    @include flex($df, $fdc, $jcc, $alc);
+  }
+
+  .ru-optionWarp .ru-input-field {
+    width: 100%;
+  }
+
+  .ru-buttonWarp {
+    // background-color: rgb(30, 236, 255);
+    width: 80%;
+    height: 100px;
+    margin-top: 30px;
+    @include flex($df, $fdr, space-between, $alc);
+    flex-wrap: wrap;
+  }
+
+  .ru-buttonWarp .ru-button-btn {
+    width: 120px;
+    height: 40px;
+  }
+
+  .ru-buttonWarp .ru-button-btn-g {
+    width: 120px;
+    height: 40px;
+  }
+
+  .ru-buttonWarp div {
+    display: flex;
+    justify-content: center;
+  }
+  .ru-buttonWarp .ru-button-btn:nth-child(1) {
+    font-size: 18px;
+    margin: 5px 0px;
+  }
+  .ru-buttonWarp .ru-button-btn:nth-child(2),
+  .ru-button-btn:nth-child(3) {
+    font-size: 18px;
+    margin: 5px 0px;
+  }
+
+  .ru-buttonWarp .ru-button-btn-g {
+    font-size: 18px;
+    margin: 5px 0px;
+  }
+}

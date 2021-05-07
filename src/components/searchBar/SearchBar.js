@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SearchBar.scss';
+import 'components/searchBar/searchBar.scss';
 import { ReactComponent as SearchIcon } from 'components/searchBar/Images/search_icon.svg';
 import { ReactComponent as CrossIcon } from 'components/searchBar/Images/cross.svg';
 

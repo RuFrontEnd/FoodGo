@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import RuBento from 'Ru/Components/RuCards/RuBento/RuBento';
 import RuButton from 'Ru/Components/RuButton/RuButton';
 import SearchBar from 'components/searchBar/SearchBar';
-import 'Ru/Components/RuComps/Style.scss';
+import 'pages/productList/productList.scss';
 
 // 引用共用元件
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
@@ -22,21 +22,19 @@ function ProductList(props) {
 
   return (
     <>
-      <div className="top-space"></div>
-
-      <div className="ru-mainImg-warp">
+      <section className="top-space"></section>
+      <section className="ru-mainImg-warp">
         <h1>享受美食 不需要理由</h1>
         <div className="ru-mainImg"></div>
-      </div>
-
-      <div className="ru-productList-container">
+      </section>
+      <section className="ru-productList-container">
         <div className="ru-optionWarp">
           <SearchBar
             searchInput={searchInput}
             setSearchInput={setSearchInput}
             onSearch={onSearch}
           />
-          <section className="ru-buttonWarp">
+          <div className="ru-buttonWarp">
             <RuButton
               text={'低GI便當'}
               className={'ru-button-btn'}
@@ -82,13 +80,12 @@ function ProductList(props) {
               openCustom={openCustom}
               setOpenCustom={setOpenCustom}
             />
-          </section>
+          </div>
         </div>
-
         <div className="ru-line">
           <img src={line}></img>
         </div>
-      </div>
+      </section>
       <RuBento
         searchInput={searchInput}
         handleCartNumber={handleCartNumber} // localStorage函式
