@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import 'components/customBento/Style.scss';
+import 'components/customBento/customBento.scss';
 import RuArrowLeft from 'Ru/Components/RuArrowLeft/RuArrowLeft';
 import RuArrowRight from 'Ru/Components/RuArrowRight/RuArrowRight';
 import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
@@ -44,13 +44,14 @@ import { ReactComponent as LunchBox } from './Images/lunchBox.svg'; // 將svg以
 
 function CustomBento(props) {
   const {
-    searchInput,
     handleCartNumber,
     amount,
     setAmount,
     count,
     setCount,
   } = props;
+
+  console.log(props)
   const [moveX, setMoveX] = useState(0); // 選項區滑動變亮(RuArrowRight / RuArrowLeft 調整)
   const [isPrice, setIsPrice] = useState(true); // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false); // 是否開啟營養標示

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import OptionButton from 'components/optionButton/OptionButton';
 import CommodityList from 'components/commodityList/CommodityList';
-import RuSalad from 'Ru/Components/RuCards/RuSalad/RuSalad';
-import RuCustom from 'Ru/Components/RuCards/RuCustom/RuCustom';
+import CustomBento from 'components/customBento/CustomBento';
 import SearchBar from 'components/searchBar/SearchBar';
 import axios from 'axios';
 import 'pages/productList/productList.scss';
@@ -13,9 +12,10 @@ import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import line from './Images/line.png';
 
 function ProductList(props) {
-  const { handleCartNumber, currentUser, count, setCount } = props;
+  const { handleCartNumber, currentUser, amount, setAmount } = props;
   const [commodities, setCommodities] = useState([]);
   const [favorites, setFavorites] = useState('');
+  const [count, setCount] = useState(1);
   const [searchInput, setSearchInput] = useState('');
   const [selectedTypes, setSelectedTypes] = useState([
     true,
@@ -127,15 +127,26 @@ function ProductList(props) {
           <img src={line}></img>
         </div>
       </section>
-      <CommodityList
-        commodities={commodities}
-        favorites={favorites}
-        searchInput={searchInput}
-        handleCartNumber={handleCartNumber} // localStorage method
-        currentUser={currentUser}
-        count={count}
-        setCount={setCount}
-      />
+      {(selectedTypes[0] || selectedTypes[1]) && (
+        <CommodityList
+          commodities={commodities}
+          favorites={favorites}
+          searchInput={searchInput}
+          handleCartNumber={handleCartNumber} // localStorage method
+          currentUser={currentUser}
+          count={count}
+          setCount={setCount}
+        />
+      )}
+      {selectedTypes[2] && (
+        <CustomBento
+          handleCartNumber={handleCartNumber}
+          setAmount={setAmount}
+          amount={amount}
+          count={count}
+          setCount={setCount}
+        />
+      )}
       <ScrollButton />
     </>
   );

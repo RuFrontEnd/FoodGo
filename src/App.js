@@ -69,7 +69,7 @@ function App() {
   const [selectDate, setSelectDate] = useState(new Date());
   const [slecteTime, setSelectTime] = useState('11:00 ~ 11:30');
   const [takeOrNot, setTakeOrNot] = useState('外送');
-  const [textAddress, setTextAddress] = useState(address)
+  const [textAddress, setTextAddress] = useState(address);
 
   //----------------------索引值轉字串----------------------
   const [textCounty, setTextCounty] = useState('');
@@ -77,9 +77,7 @@ function App() {
   const [textTownship, setTextTownship] = useState('');
   // setTextTownship(turnTown);
 
-  useEffect(() => setTextAddress(address), [
-    address,
-  ]);
+  useEffect(() => setTextAddress(address), [address]);
   useEffect(() => setTextCounty(county !== -1 ? datacountries[county] : ''), [
     county,
   ]);
@@ -194,6 +192,8 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
                 isLogin={isLogin}
+                amount={amount}
+                setAmount={setAmount}
               />
             </Route>
             <Route exact path="/productListSalad">
