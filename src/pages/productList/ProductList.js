@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import OptionButton from 'components/optionButton/OptionButton';
 import CommodityList from 'components/commodityList/CommodityList';
 import RuSalad from 'Ru/Components/RuCards/RuSalad/RuSalad';
@@ -51,11 +51,13 @@ function ProductList(props) {
     },
   ];
 
-  const getBentoData = () => {
+  const getBentoData = (categories) => {
+    console.log('categories', categories);
     axios.get('http://localhost:5000/product/bento').then((res) => {
       const _commodities = res.data.filter(
-        (dataItem) => dataItem.categories === '1.低GI便當'
+        (dataItem) => dataItem.categories === categories
       );
+      console.log('_commodities', _commodities);
       setCommodities(_commodities);
     });
     axios.get('http://localhost:5000/member/myFavList').then((res) => {
@@ -64,24 +66,23 @@ function ProductList(props) {
   };
 
   useEffect(() => {
-    switch (selectedTypes) {
-      case selectedTypes[0]:
-        getBentoData();
-        break;
-
-      default:
-        getBentoData();
-        break;
+    if (selectedTypes[0] === true) {
+      console.log('a');
+      return getBentoData('1.低GI便當');
     }
-  }, []); // get backend data
+    if (selectedTypes[1] === true) {
+      console.log('b');
+      return getBentoData('2.蔬食沙拉');
+    }
+  }, [selectedTypes]); // get backend data
 
   const filterData = (url) => {
-    axios.get(url).then((res) => {
-      const _commodities = res.data.filter(
-        (dataItem) => dataItem.categories === '1.低GI便當'
-      );
-      setCommodities(_commodities);
-    });
+    //   axios.get(url).then((res) => {
+    //     const _commodities = res.data.filter(
+    //       (dataItem) => dataItem.categories === '1.低GI便當'
+    //     );
+    //     setCommodities(_commodities);
+    //   });
   };
 
   return (
@@ -127,15 +128,17 @@ function ProductList(props) {
           setCount={setCount}
         />
       )}
-      {/* {selectedTypes[0] && (
-        <RuBento
+      {selectedTypes[1] && (
+        <CommodityList
+          commodities={commodities}
+          favorites={favorites}
           searchInput={searchInput}
           handleCartNumber={handleCartNumber} // localStorage method
           currentUser={currentUser}
           count={count}
           setCount={setCount}
         />
-      )} */}
+      )}
       <ScrollButton />
     </>
   );
