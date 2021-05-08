@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+
+// 安裝 react router 用於制定路由 => npm install react-router-dom
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 // 引入 共用元件
 import Navbar from 'Share/Components/NavBar/NavBar';
 import Footer from 'Share/Components/Footer/Footer';
@@ -16,7 +20,6 @@ import IrisOrderComment from 'Iris/Pages/IrisOrderComment';
 import IrisMyFav from 'Iris/Pages/IrisMyFav';
 import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint';
 import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon';
-
 import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement';
 import JessMenu from 'Jess/Pages/JessMenu';
 import JessBento from 'Jess/Pages/JessBento';
@@ -37,10 +40,7 @@ import JanIndex from 'Janice/Pages/JanIndex';
 import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal';
 import IrisUserprofile from 'Iris/Pages/IrisUserprofile';
 
-// 安裝react router => npm install react-router-dom
-// 引入react router => 用於制定路由
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-//加入 ScrollToTop
+// 加入 toTop 按鈕元件
 import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
 
 import {
