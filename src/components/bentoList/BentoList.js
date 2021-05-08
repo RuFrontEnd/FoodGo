@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import 'Ru/Components/RuCards/Style.scss';
+import 'components/bentoList/bentoList.scss';
 import RuNothing from 'Ru/Components/RuNothing/RuNothing';
 import RuCard from 'Ru/Components/RuCard/RuCard';
 import axios from 'axios';
 
-function RuBento(props) {
+function BentoList(props) {
   const { searchInput, handleCartNumber, currentUser, count, setCount } = props;
   const [isShowNothing, setIsShowNothing] = useState(false);
   const [commodities, setCommodities] = useState([]);
   const [dataFav, setDataFav] = useState('');
   const [showFavArr, setShowFavArr] = useState([]);
-  
 
   // 向後端請求資料
   useEffect(() => {
@@ -93,4 +92,4 @@ function RuBento(props) {
   );
 }
 
-export default RuBento;
+export default BentoList;

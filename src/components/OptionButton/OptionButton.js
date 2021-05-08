@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import 'components/OptionButton/optionButton.scss';
+import 'components/optionButton/optionButton.scss';
 import { withRouter } from 'react-router';
 
 function OptionButton(props) {

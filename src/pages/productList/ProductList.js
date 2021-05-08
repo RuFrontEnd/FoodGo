@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import OptionButton from 'components/OptionButton/OptionButton';
-import RuBento from 'Ru/Components/RuCards/RuBento/RuBento';
+import OptionButton from 'components/optionButton/OptionButton';
+import BentoList from 'components/bentoList/BentoList';
 import RuSalad from 'Ru/Components/RuCards/RuSalad/RuSalad';
 import RuCustom from 'Ru/Components/RuCards/RuCustom/RuCustom';
 import SearchBar from 'components/searchBar/SearchBar';
@@ -85,7 +85,7 @@ function ProductList(props) {
         </div>
       </section>
       {selectedTypes[0] && (
-        <RuBento
+        <BentoList
           searchInput={searchInput}
           handleCartNumber={handleCartNumber} // localStorage method
           currentUser={currentUser}
@@ -93,7 +93,7 @@ function ProductList(props) {
           setCount={setCount}
         />
       )}
-      {selectedTypes[0] && (
+      {/* {selectedTypes[0] && (
         <RuBento
           searchInput={searchInput}
           handleCartNumber={handleCartNumber} // localStorage method
@@ -101,7 +101,7 @@ function ProductList(props) {
           count={count}
           setCount={setCount}
         />
-      )}
+      )} */}
       <ScrollButton />
     </>
   );
