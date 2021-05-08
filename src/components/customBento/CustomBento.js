@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import 'Ru/Components/RuCards/RuCustom/Style.scss';
+import 'components/customBento/Style.scss';
 import RuArrowLeft from 'Ru/Components/RuArrowLeft/RuArrowLeft';
 import RuArrowRight from 'Ru/Components/RuArrowRight/RuArrowRight';
 import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
@@ -42,7 +42,7 @@ import hintF from './Images/hintF.svg';
 import background from './Images/background.png';
 import { ReactComponent as LunchBox } from './Images/lunchBox.svg'; // 將svg以元件方式引入
 
-function RuCustom(props) {
+function CustomBento(props) {
   const {
     searchInput,
     handleCartNumber,
@@ -1034,4 +1034,4 @@ function RuCustom(props) {
   );
 }
 
-export default RuCustom;
+export default CustomBento;
