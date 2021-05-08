@@ -88,11 +88,9 @@ function ProductList(props) {
 
   useEffect(() => {
     if (selectedTypes[0] === true) {
-      console.log('a');
       return getBentoData('1.低GI便當');
     }
     if (selectedTypes[1] === true) {
-      console.log('b');
       return getBentoData('2.蔬食沙拉');
     }
   }, [selectedTypes]); // get backend data
