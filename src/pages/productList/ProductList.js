@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import OptionButton from 'components/optionButton/OptionButton';
 import BentoList from 'components/bentoList/BentoList';
 import RuSalad from 'Ru/Components/RuCards/RuSalad/RuSalad';
 import RuCustom from 'Ru/Components/RuCards/RuCustom/RuCustom';
 import SearchBar from 'components/searchBar/SearchBar';
+import axios from 'axios';
 import 'pages/productList/productList.scss';
 
 // 引用共用元件
@@ -13,6 +14,8 @@ import line from './Images/line.png';
 
 function ProductList(props) {
   const { handleCartNumber, currentUser, count, setCount } = props;
+  const [commodities, setCommodities] = useState([]);
+  const [favorites, setFavorites] = useState('');
   const [searchInput, setSearchInput] = useState('');
   const [selectedTypes, setSelectedTypes] = useState([
     true,
@@ -47,8 +50,38 @@ function ProductList(props) {
       routes: '/vegBox',
     },
   ];
-  const onSearch = () => {
-    console.log('A');
+
+  const getBentoData = () => {
+    axios.get('http://localhost:5000/product/bento').then((res) => {
+      const _commodities = res.data.filter(
+        (dataItem) => dataItem.categories === '1.低GI便當'
+      );
+      setCommodities(_commodities);
+    });
+    axios.get('http://localhost:5000/member/myFavList').then((res) => {
+      setFavorites(res.data);
+    });
+  };
+
+  useEffect(() => {
+    switch (selectedTypes) {
+      case selectedTypes[0]:
+        getBentoData();
+        break;
+
+      default:
+        getBentoData();
+        break;
+    }
+  }, []); // get backend data
+
+  const filterData = (url) => {
+    axios.get(url).then((res) => {
+      const _commodities = res.data.filter(
+        (dataItem) => dataItem.categories === '1.低GI便當'
+      );
+      setCommodities(_commodities);
+    });
   };
 
   return (
@@ -63,7 +96,7 @@ function ProductList(props) {
           <SearchBar
             searchInput={searchInput}
             setSearchInput={setSearchInput}
-            onSearch={onSearch}
+            onSearch={filterData}
           />
           <div className="buttonWarp">
             {buttonAttributes.map((buttonAttribute) => (
@@ -75,7 +108,6 @@ function ProductList(props) {
                 index={buttonAttribute.index}
                 type={buttonAttribute.type}
                 routes={buttonAttribute.routes}
-                onSearch={onSearch}
               />
             ))}
           </div>
@@ -86,6 +118,8 @@ function ProductList(props) {
       </section>
       {selectedTypes[0] && (
         <BentoList
+          commoditiesData={commodities}
+          favoritesData={favorites}
           searchInput={searchInput}
           handleCartNumber={handleCartNumber} // localStorage method
           currentUser={currentUser}

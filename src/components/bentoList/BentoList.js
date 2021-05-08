@@ -5,49 +5,41 @@ import RuCard from 'Ru/Components/RuCard/RuCard';
 import axios from 'axios';
 
 function BentoList(props) {
-  const { searchInput, handleCartNumber, currentUser, count, setCount } = props;
-  const [isShowNothing, setIsShowNothing] = useState(false);
-  const [commodities, setCommodities] = useState([]);
-  const [dataFav, setDataFav] = useState('');
+  const {
+    commoditiesData,
+    favoritesData,
+    searchInput,
+    handleCartNumber,
+    currentUser,
+    count,
+    setCount,
+  } = props;
+
   const [showFavArr, setShowFavArr] = useState([]);
 
-  // 向後端請求資料
   useEffect(() => {
-    // 拿商品列表
-    axios.get('http://localhost:5000/product/bento').then((res) => {
-      const _commodities = res.data.filter(
-        (dataItem) => dataItem.categories === '1.低GI便當'
-      );
-      setCommodities(_commodities);
-    });
-    axios.get('http://localhost:5000/member/myFavList').then((res) => {
-      setDataFav(res.data);
-    });
-  }, []);
-
-  useEffect(() => {
-    if (!commodities || !dataFav) {
+    if (!commoditiesData || !favoritesData) {
       return;
     }
 
     // 拿到有幾筆要固定我的最愛按鈕 邏輯
     const favArr = []; // 放抓到的dataFav[i].product_sid資料
-    for (let i = 0; i < dataFav.length; i++) {
+    for (let i = 0; i < favoritesData.length; i++) {
       // 如果當前會員 跟 我的最愛資料表的member_sid匹配
-      if (currentUser === dataFav[i].member_sid) {
-        favArr.push(dataFav[i].product_sid);
+      if (currentUser === favoritesData[i].member_sid) {
+        favArr.push(favoritesData[i].product_sid);
       }
     }
     setShowFavArr(favArr); // 這樣才可以傳到RuAddFavorite
-  }, [commodities, dataFav]);
+  }, [commoditiesData, favoritesData]);
 
   useEffect(() => {
-    if (!commodities || !dataFav) {
+    if (!commoditiesData || !favoritesData) {
       return;
     }
     if (searchInput !== '') {
       // console.log('searchInput', searchInput);
-      // const _commodities = commodities.filter((commodity) => {
+      // const _commodities = commoditiesData.filter((commodity) => {
       //   return commodity.productname.includes(searchInput);
       // });
       // console.log('_commodities', _commodities);
@@ -55,7 +47,7 @@ function BentoList(props) {
     }
   }, [searchInput]);
 
-  if (!commodities || !dataFav) {
+  if (!commoditiesData || !favoritesData) {
     return <></>;
   } // waiting for fetching data complete then render
 
@@ -64,11 +56,11 @@ function BentoList(props) {
       <div className="ru-item-container">
         <div className="ru-card-warp">
           <div className="ru-itemWarp">
-            {isShowNothing && <RuNothing />}
-            {commodities.map((commodity, index) => (
+            {/* {isShowNothing && <RuNothing />} */}
+            {commoditiesData.map((commodity, index) => (
               <RuCard
-                data={commodities}
-                dataFav={dataFav}
+                data={commoditiesData}
+                favoritesData={favoritesData}
                 title={commodity.productname}
                 comment={commodity.contentNum}
                 buy={commodity.purchased}
