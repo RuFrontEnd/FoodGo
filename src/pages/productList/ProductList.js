@@ -127,28 +127,15 @@ function ProductList(props) {
           <img src={line}></img>
         </div>
       </section>
-      {selectedTypes[0] && (
-        <CommodityList
-          commodities={commodities}
-          favorites={favorites}
-          searchInput={searchInput}
-          handleCartNumber={handleCartNumber} // localStorage method
-          currentUser={currentUser}
-          count={count}
-          setCount={setCount}
-        />
-      )}
-      {selectedTypes[1] && (
-        <CommodityList
-          commodities={commodities}
-          favorites={favorites}
-          searchInput={searchInput}
-          handleCartNumber={handleCartNumber} // localStorage method
-          currentUser={currentUser}
-          count={count}
-          setCount={setCount}
-        />
-      )}
+      <CommodityList
+        commodities={commodities}
+        favorites={favorites}
+        searchInput={searchInput}
+        handleCartNumber={handleCartNumber} // localStorage method
+        currentUser={currentUser}
+        count={count}
+        setCount={setCount}
+      />
       <ScrollButton />
     </>
   );
