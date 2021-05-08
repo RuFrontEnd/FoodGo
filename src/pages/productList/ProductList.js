@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import OptionButton from 'components/optionButton/OptionButton';
-import BentoList from 'components/bentoList/BentoList';
+import CommodityList from 'components/commodityList/CommodityList';
 import RuSalad from 'Ru/Components/RuCards/RuSalad/RuSalad';
 import RuCustom from 'Ru/Components/RuCards/RuCustom/RuCustom';
 import SearchBar from 'components/searchBar/SearchBar';
@@ -117,9 +117,9 @@ function ProductList(props) {
         </div>
       </section>
       {selectedTypes[0] && (
-        <BentoList
-          commoditiesData={commodities}
-          favoritesData={favorites}
+        <CommodityList
+          commodities={commodities}
+          favorites={favorites}
           searchInput={searchInput}
           handleCartNumber={handleCartNumber} // localStorage method
           currentUser={currentUser}
