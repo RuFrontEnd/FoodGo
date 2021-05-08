@@ -52,17 +52,38 @@ function ProductList(props) {
   ];
 
   const getBentoData = (categories) => {
-    console.log('categories', categories);
     axios.get('http://localhost:5000/product/bento').then((res) => {
       const _commodities = res.data.filter(
         (dataItem) => dataItem.categories === categories
       );
-      console.log('_commodities', _commodities);
       setCommodities(_commodities);
     });
     axios.get('http://localhost:5000/member/myFavList').then((res) => {
       setFavorites(res.data);
     });
+  };
+
+  const filterData = () => {
+    if (selectedTypes[0] === true) {
+      axios.get('http://localhost:5000/product/bento').then((res) => {
+        const _commodities = res.data.filter(
+          (dataItem) =>
+            dataItem.categories === '1.低GI便當' &&
+            dataItem.productname.includes(searchInput)
+        );
+        setCommodities(_commodities);
+      });
+    }
+    if (selectedTypes[1] === true) {
+      axios.get('http://localhost:5000/product/bento').then((res) => {
+        const _commodities = res.data.filter(
+          (dataItem) =>
+            dataItem.categories === '2.蔬食沙拉' &&
+            dataItem.productname.includes(searchInput)
+        );
+        setCommodities(_commodities);
+      });
+    }
   };
 
   useEffect(() => {
@@ -75,15 +96,6 @@ function ProductList(props) {
       return getBentoData('2.蔬食沙拉');
     }
   }, [selectedTypes]); // get backend data
-
-  const filterData = (url) => {
-    //   axios.get(url).then((res) => {
-    //     const _commodities = res.data.filter(
-    //       (dataItem) => dataItem.categories === '1.低GI便當'
-    //     );
-    //     setCommodities(_commodities);
-    //   });
-  };
 
   return (
     <>
