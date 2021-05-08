@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './IrisLoginCard.scss';
-import { ReactComponent as LoginCardBg } from './Images/login_card.svg';
-import { ReactComponent as RegisterCardBg } from './Images/register_card.svg';
 import InputH44 from './../../../Share/Components/Input/InputH44.js';
 import Button from './Button/Button';
 import ButtonLogin from './Button/ButtonLogin';
@@ -290,9 +288,12 @@ function IrisLoginCard(props) {
               <InputH44 type="text" id="createaccount" />
             </div>
             <div class="iris-wrong-account-format">*帳號要大於8碼</div>
-
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">密碼</div>
+              <InputH44 type="password" id="createpassword" />
+            </div>
+            <div className="iris-login-input d-flex  align-items-center">
+              <div className="iris-login-text">確認密碼</div>
               <InputH44 type="password" id="createpassword" />
             </div>
             <div className="iris-wrong-password-format">*密碼要大於8碼</div>

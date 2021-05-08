@@ -164,7 +164,6 @@ function NavBar(props) {
                 >
                   會員中心 <BackArrow className="backArrow" />
                 </Nav.Link>
-                {/* </div> */}
                 <div className="navBar-jess-emptydiv">
                   <ul className="navBar-jess-dropdown2">
                     <div className="navBar-jess-triangle2"></div>

@@ -48,12 +48,10 @@ function IrisLoginModal(props) {
           setCurrentUserData={setCurrentUserData}
         />
       </div>
-      {/* <div class="iris-login-success-element"> */}
       <IrisSuccessBox
         showSuccessBox={showSuccessBox}
         setShowSuccessBox={setShowSuccessBox}
       />
-      {/* </div> */}
     </>
   )
 }

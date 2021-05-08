@@ -159,6 +159,15 @@ function App() {
             currentUser={currentUser}
           />
         </div>
+        <IrisLoginModal
+          showLoginModal={showLoginModal}
+          setShowLoginModal={setShowLoginModal}
+          setIsLogin={setIsLogin}
+          setCurrentUser={setCurrentUser}
+          isLogin={isLogin}
+          currentUserData={currentUserData}
+          setCurrentUserData={setCurrentUserData}
+        />
         {/* 放切頁時不重新渲染的部份 e*/}
         {/* 路由設定開始 */}
 
@@ -535,16 +544,6 @@ function App() {
         {/* 放切頁時不重新渲染的部份 s*/}
         <Footer />
         {/* 放切頁時不重新渲染的部份 e*/}
-
-        <IrisLoginModal
-          showLoginModal={showLoginModal}
-          setShowLoginModal={setShowLoginModal}
-          setIsLogin={setIsLogin}
-          setCurrentUser={setCurrentUser}
-          isLogin={isLogin}
-          currentUserData={currentUserData}
-          setCurrentUserData={setCurrentUserData}
-        />
       </>
     </Router>
   );
