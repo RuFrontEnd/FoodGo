@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import OptionButton from 'components/OptionButton/OptionButton';
 import RuBento from 'Ru/Components/RuCards/RuBento/RuBento';
-import RuButton from 'Ru/Components/RuButton/RuButton';
+import RuSalad from 'Ru/Components/RuCards/RuSalad/RuSalad';
+import RuCustom from 'Ru/Components/RuCards/RuCustom/RuCustom';
 import SearchBar from 'components/searchBar/SearchBar';
 import 'pages/productList/productList.scss';
 
@@ -65,7 +67,7 @@ function ProductList(props) {
           />
           <div className="buttonWarp">
             {buttonAttributes.map((buttonAttribute) => (
-              <RuButton
+              <OptionButton
                 text={buttonAttribute.text}
                 selectedTypes={selectedTypes}
                 setSelectedTypes={setSelectedTypes}
@@ -82,13 +84,24 @@ function ProductList(props) {
           <img src={line}></img>
         </div>
       </section>
-      <RuBento
-        searchInput={searchInput}
-        handleCartNumber={handleCartNumber} // localStorage函式
-        currentUser={currentUser}
-        count={count}
-        setCount={setCount}
-      />
+      {selectedTypes[0] && (
+        <RuBento
+          searchInput={searchInput}
+          handleCartNumber={handleCartNumber} // localStorage method
+          currentUser={currentUser}
+          count={count}
+          setCount={setCount}
+        />
+      )}
+      {selectedTypes[0] && (
+        <RuBento
+          searchInput={searchInput}
+          handleCartNumber={handleCartNumber} // localStorage method
+          currentUser={currentUser}
+          count={count}
+          setCount={setCount}
+        />
+      )}
       <ScrollButton />
     </>
   );

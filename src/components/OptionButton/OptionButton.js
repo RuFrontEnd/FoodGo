@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import 'Ru/Components/RuButton/Style.scss';
+import 'components/OptionButton/optionButton.scss';
 import { withRouter } from 'react-router';
 
-function RuButton(props) {
+function OptionButton(props) {
   // text 按鈕文字
   // className 橘色樣式為button-btn 綠色樣式為button-btn-g
   const {
@@ -45,7 +45,7 @@ function RuButton(props) {
           {isSelected ? (
             <button
               className={
-                'selection-btn selection-btn-orange selection-btn-orange-active'
+                'option-btn option-btn-orange option-btn-orange-active'
               }
               onClick={() => {
                 handleCardArea();
@@ -55,7 +55,7 @@ function RuButton(props) {
             </button>
           ) : (
             <button
-              className={'selection-btn selection-btn-orange'}
+              className={'option-btn option-btn-orange'}
               onClick={() => {
                 handleCardArea();
               }}
@@ -70,7 +70,7 @@ function RuButton(props) {
           {isSelected ? (
             <button
               className={
-                'selection-btn selection-btn-green selection-btn-green-active'
+                'option-btn option-btn-green option-btn-green-active'
               }
               onClick={() => {
                 handleCardArea();
@@ -80,7 +80,7 @@ function RuButton(props) {
             </button>
           ) : (
             <button
-              className={'selection-btn selection-btn-green'}
+              className={'option-btn option-btn-green'}
               onClick={() => {
                 handleCardArea();
               }}
@@ -94,4 +94,4 @@ function RuButton(props) {
   );
 }
 
-export default withRouter(RuButton);
+export default withRouter(OptionButton);
