@@ -1,3 +1,4 @@
+// moved
 import React, { useEffect } from 'react';
 import 'Ru/Components/RuButton/Style.scss';
 import { withRouter } from 'react-router';

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'components/loginModal/loginModal.scss';
 import LoginCard from 'components/loginCard/LoginCard';
-import IrisSuccessBox from 'Iris/Components/IrisSuccessBox/IrisSuccessBox';
+import LoginSuccessBox from 'components/loginSuccessBox/LoginSuccessBox';
 
 function LoginModal(props) {
   const [showSuccessBox, setShowSuccessBox] = useState(false);
@@ -48,7 +48,7 @@ function LoginModal(props) {
           setCurrentUserData={setCurrentUserData}
         />
       </div>
-      <IrisSuccessBox
+      <LoginSuccessBox
         showSuccessBox={showSuccessBox}
         setShowSuccessBox={setShowSuccessBox}
       />

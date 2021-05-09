@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import './IrisSuccessBox.scss'
+import 'components/loginSuccessBox/loginSuccessBox.scss'
 
-function IrisSuccessBox(props) {
+function LoginSuccessBox(props) {
   const { showSuccessBox, setShowSuccessBox } = props
   if (showSuccessBox === true) {
     console.log('show')
@@ -42,4 +42,4 @@ function IrisSuccessBox(props) {
   )
 }
 
-export default IrisSuccessBox
+export default LoginSuccessBox
