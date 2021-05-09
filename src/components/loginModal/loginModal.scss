@@ -1,0 +1,29 @@
+// 引入bs會讓下層的IrisLoginCard吃不到共用元件的css
+// @import '~bootstrap/scss/bootstrap.scss';
+
+// 登入遮罩
+.iris-login-mask {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  position: fixed;
+  // position: absolute;
+  left: 0px;
+  top: 0px;
+  display: none;
+  z-index: 100;
+}
+
+// 登入卡片 先隱藏
+.iris-login-container {
+  display: none;
+  // position: absolute;
+  left: 50%;
+  top: 60%;
+  position: fixed;
+  z-index: 110;
+  transform: translate(-50%, -50%);
+}

@@ -11,7 +11,6 @@ import Footer from 'Share/Components/Footer/Footer';
 // 引入 所有人的總元件
 import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex';
 import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage';
-import RuProudctList from 'Ru/Pages/RuProudctList'; // delete later
 import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'; // delete later
 import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'; // delete later
 import ProductList from 'pages/productList/ProductList';
@@ -37,7 +36,7 @@ import ChaCartTest from 'Cha/Components-demo/ChaCartTest';
 
 import JanIndex from 'Janice/Pages/JanIndex';
 
-import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal';
+import LoginModal from 'components/loginModal/LoginModal';
 import IrisUserprofile from 'Iris/Pages/IrisUserprofile';
 
 // 加入 toTop 按鈕元件
@@ -159,7 +158,7 @@ function App() {
             currentUser={currentUser}
           />
         </div>
-        <IrisLoginModal
+        <LoginModal
           showLoginModal={showLoginModal}
           setShowLoginModal={setShowLoginModal}
           setIsLogin={setIsLogin}
