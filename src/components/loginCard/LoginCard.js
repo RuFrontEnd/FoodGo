@@ -251,11 +251,11 @@ function LoginCard(props) {
             <div className="alert alert-danger iris-login-alert" role="alert">
               帳號或密碼錯誤
             </div>
-            <div className="iris-login-input d-flex align-items-center">
+            <div className="iris-login-input d-flex align-items-center justify-content-between">
               <div className="iris-login-text">帳號</div>
               <LoginInput type="text" id="useraccount" />
             </div>
-            <div className="iris-login-input d-flex  align-items-center">
+            <div className="iris-login-input d-flex  align-items-center justify-content-between">
               <div className="iris-login-text">密碼</div>
               <LoginInput type="password" id="userpassword" />
             </div>
