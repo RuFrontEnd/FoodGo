@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-// 安裝 react router 用於制定路由 => npm install react-router-dom
+// install react router => npm install react-router-dom
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// 引入 共用元件
+// components
 import Navbar from 'Share/Components/NavBar/NavBar';
 import Footer from 'Share/Components/Footer/Footer';
+import LoginModal from 'components/loginModal/LoginModal';
 
 // 引入 所有人的總元件
 import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex';
@@ -35,8 +36,6 @@ import ChaProductList from 'Cha/Components-demo/ChaProductList';
 import ChaCartTest from 'Cha/Components-demo/ChaCartTest';
 
 import JanIndex from 'Janice/Pages/JanIndex';
-
-import LoginModal from 'components/loginModal/LoginModal';
 import IrisUserprofile from 'Iris/Pages/IrisUserprofile';
 
 // 加入 toTop 按鈕元件
@@ -146,31 +145,28 @@ function App() {
     // <Router>元件一定要放在最外層
     <Router>
       <>
-        {/* 放切頁時不重新渲染的部份 s*/}
-        <div style={{ display: !showBar && 'none' }}>
-          <Navbar
-            cartNumber={cartNumber}
-            amount={amount}
-            setShowLoginModal={setShowLoginModal}
-            showLoginModal={showLoginModal}
-            setIsLogin={setIsLogin}
-            isLogin={isLogin}
-            currentUser={currentUser}
-          />
-        </div>
+        {/* 切頁時不重新渲染的部份 s*/}
+        <Navbar
+          style={{ display: !showBar && 'none' }}
+          cartNumber={cartNumber}
+          amount={amount}
+          setShowLoginModal={setShowLoginModal}
+          showLoginModal={showLoginModal}
+          setIsLogin={setIsLogin}
+          isLogin={isLogin}
+          currentUser={currentUser}
+        />
         <LoginModal
           showLoginModal={showLoginModal}
           setShowLoginModal={setShowLoginModal}
+          isLogin={isLogin}
           setIsLogin={setIsLogin}
           setCurrentUser={setCurrentUser}
-          isLogin={isLogin}
           currentUserData={currentUserData}
           setCurrentUserData={setCurrentUserData}
         />
-        {/* 放切頁時不重新渲染的部份 e*/}
-        {/* 路由設定開始 */}
-
         <ScrollToTop>
+          {/* 路由設定開始 */}
           <Switch>
             {/* claudia */}
             {/* 放"page資料夾"內的元件 */}
@@ -472,7 +468,6 @@ function App() {
                 isLogin={isLogin}
               />
             </Route>
-            {/* component={JessBento} */}
             <Route path="/bento/:id?">
               <JessBento
                 setShowBar={setShowBar}
@@ -538,11 +533,8 @@ function App() {
             </Route>
           </Switch>
         </ScrollToTop>
-        {/* 路由設定結束 */}
-
-        {/* 放切頁時不重新渲染的部份 s*/}
+        {/* 切頁時不重新渲染的部份*/}
         <Footer />
-        {/* 放切頁時不重新渲染的部份 e*/}
       </>
     </Router>
   );

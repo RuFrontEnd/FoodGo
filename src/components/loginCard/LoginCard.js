@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react';
 import 'components/loginCard/loginCard.scss';
 import LoginInput from 'components/loginInput/LoginInput.js';
 import OptionButton from 'components/optionButton/OptionButton';
-import ButtonLogin from './Button/ButtonLogin';
 import $ from 'jquery';
 
 function LoginCard(props) {
   const {
+    className,
+    id,
     setIsLogin,
     setCurrentUser,
     isLogin,
@@ -112,11 +113,11 @@ function LoginCard(props) {
         setShowSuccessBox(true); // 出現登入成功光箱)
       } else {
         // 若帳密錯誤，顯示錯誤提示
-        $('.iris-login-alert').slideDown('slow');
-        // 2秒後消失
-        setTimeout(() => {
-          $('.iris-login-alert').slideUp('slow');
-        }, 2000);
+        // $('.iris-login-alert').slideDown('slow');
+        // // 2秒後消失
+        // setTimeout(() => {
+        //   $('.iris-login-alert').slideUp('slow');
+        // }, 2000);
         // 清空input
         document.querySelector('#useraccount').value = '';
         document.querySelector('#userpassword').value = '';
@@ -133,13 +134,13 @@ function LoginCard(props) {
 
     // 帳號小於8碼
     if (!account.match(/[A-Za-z0-9]{8,24}/)) {
-      $('.iris-empty-account').slideUp('slow');
-      $('.iris-wrong-account-format').slideDown('slow');
+      // $('.iris-empty-account').slideUp('slow');
+      // $('.iris-wrong-account-format').slideDown('slow');
       // 密碼小於8碼
     }
     if (!password.match(/[A-Za-z0-9]{8,24}/)) {
-      $('.iris-empty-password').slideUp('slow');
-      $('.iris-wrong-password-format').slideDown('slow');
+      // $('.iris-empty-password').slideUp('slow');
+      // $('.iris-wrong-password-format').slideDown('slow');
       // 信箱格式不符
     }
     if (
@@ -147,13 +148,13 @@ function LoginCard(props) {
         /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
       )
     ) {
-      $('.iris-empty-email').slideUp('slow');
-      $('.iris-wrong-email-format').slideDown('slow');
+      // $('.iris-empty-email').slideUp('slow');
+      // $('.iris-wrong-email-format').slideDown('slow');
       // 手機格式不符
     }
     if (!mobile.match(/^09[0-9]{8}$/)) {
-      $('.iris-empty-mobile').slideUp('slow');
-      $('.iris-wrong-mobile-format').slideDown('slow');
+      // $('.iris-empty-mobile').slideUp('slow');
+      // $('.iris-wrong-mobile-format').slideDown('slow');
     }
 
     // 資料都ok才送出
@@ -166,14 +167,14 @@ function LoginCard(props) {
       mobile.match(/^09[0-9]{8}$/)
     ) {
       // 清空錯誤題示
-      $('.iris-empty-account').slideUp('slow');
-      $('.iris-empty-password').slideUp('slow');
-      $('.iris-empty-email').slideUp('slow');
-      $('.iris-empty-mobile').slideUp('slow');
-      $('.iris-wrong-account-format').slideUp('slow');
-      $('.iris-wrong-password-format').slideUp('slow');
-      $('.iris-wrong-email-format').slideUp('slow');
-      $('.iris-wrong-mobile-format').slideUp('slow');
+      // $('.iris-empty-account').slideUp('slow');
+      // $('.iris-empty-password').slideUp('slow');
+      // $('.iris-empty-email').slideUp('slow');
+      // $('.iris-empty-mobile').slideUp('slow');
+      // $('.iris-wrong-account-format').slideUp('slow');
+      // $('.iris-wrong-password-format').slideUp('slow');
+      // $('.iris-wrong-email-format').slideUp('slow');
+      // $('.iris-wrong-mobile-format').slideUp('slow');
 
       // 把輸入的內容包成物件傳出去
       const newRegister = {
@@ -198,11 +199,11 @@ function LoginCard(props) {
         });
 
       // 若註冊成功，顯示成功提示
-      $('.iris-register-alert').slideDown('slow');
-      // 2秒後消失
-      setTimeout(() => {
-        $('.iris-register-alert').slideUp('slow');
-      }, 2000);
+      // $('.iris-register-alert').slideDown('slow');
+      // // 2秒後消失
+      // setTimeout(() => {
+      //   $('.iris-register-alert').slideUp('slow');
+      // }, 2000);
       document.querySelector('#createaccount').value = '';
       document.querySelector('#createpassword').value = '';
       document.querySelector('#createmail').value = '';
@@ -210,8 +211,28 @@ function LoginCard(props) {
     }
   };
 
+  const [number, setNumber] = useState(5);
+  const jq = () => {
+    $('.num').html(3);
+  };
+
   return (
-    <>
+    <div className={className} id={id}>
+      <div class="num">{number}</div>
+      <div
+        onClick={() => {
+          setNumber(5);
+        }}
+      >
+        SAYSTATE
+      </div>
+      <div
+        onClick={() => {
+          jq();
+        }}
+      >
+        JQ
+      </div>
       <div className="iris-login-card-container d-flex align-items-center">
         <div className="iris-card-background">
           <div className="iris-login-background">
@@ -230,7 +251,7 @@ function LoginCard(props) {
             <div className="alert alert-danger iris-login-alert" role="alert">
               帳號或密碼錯誤
             </div>
-            <div className="iris-login-input d-flex  align-items-center">
+            <div className="iris-login-input d-flex align-items-center">
               <div className="iris-login-text">帳號</div>
               <LoginInput type="text" id="useraccount" />
             </div>
@@ -279,7 +300,7 @@ function LoginCard(props) {
             >
               註冊成功
             </div>
-            <div className="iris-login-input d-flex  align-items-center">
+            <div className="iris-login-input">
               <div className="iris-login-text">帳號</div>
               <LoginInput type="text" id="createaccount" />
             </div>
@@ -288,12 +309,7 @@ function LoginCard(props) {
               <div className="iris-login-text">密碼</div>
               <LoginInput type="password" id="createpassword" />
             </div>
-            <div className="iris-login-input d-flex  align-items-center">
-              <div className="iris-login-text">確認密碼</div>
-              <LoginInput type="password" id="createpassword" />
-            </div>
             <div className="iris-wrong-password-format">*密碼要大於8碼</div>
-
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">信箱</div>
               <LoginInput type="text" id="createmail" />
@@ -330,7 +346,7 @@ function LoginCard(props) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

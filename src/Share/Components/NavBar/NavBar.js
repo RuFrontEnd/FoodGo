@@ -19,6 +19,9 @@ function NavBar(props) {
   const [shoppingList, setShoppingList] = useState('0');
   const [showNav, setShowNav] = useState(true);
   const {
+    style = {},
+    className = '',
+    id = '',
     isLogin,
     setShowLoginModal,
     showLoginModal,
@@ -65,9 +68,8 @@ function NavBar(props) {
   };
 
   return (
-    <>
+    <div style={style} className={className} id={id}>
       <div className="nav" id="NavBar">
-        {/* <span id="ru-target">123</span> */}
         <div
           className="navBar-jess-container"
           onClick={() => {
@@ -276,7 +278,7 @@ function NavBar(props) {
           <MenuOutlined />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

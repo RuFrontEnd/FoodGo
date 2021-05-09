@@ -5,16 +5,14 @@ import React, { useState, useEffect } from 'react';
 import './loginInput.scss';
 
 function LoginInput(props) {
-  const { placeholder, type, id } = props;
+  const { placeholder, type, id, className } = props;
   return (
-    <>
-      <input
-        className="LoginInput"
-        type={type}
-        placeholder={placeholder}
-        id={id}
-      />
-    </>
+    <input
+      id={id}
+      className={`LoginInput ${className}`}
+      type={type}
+      placeholder={placeholder}
+    />
   );
 }
 

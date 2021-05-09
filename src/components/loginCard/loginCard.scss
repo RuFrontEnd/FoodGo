@@ -48,14 +48,16 @@
 
 // 文字+輸入框的wrapper
 .iris-login-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 29.5rem;
   margin-top: 1.8rem;
 }
 
 .iris-login-form .iris-login-text {
-  font-size: 2rem;
   color: #858585;
-  width: 7rem;
+  font-size: 2rem;
 }
 
 .iris-login-text button:hover {

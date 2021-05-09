@@ -38,16 +38,15 @@ function LoginModal(props) {
           setShowLoginModal(false); // 點擊黑色遮罩把ShowLoginModa把改回false
         }}
       ></div>
-      <div class="container iris-login-container">
-        <LoginCard
-          setIsLogin={setIsLogin}
-          setCurrentUser={setCurrentUser}
-          isLogin={isLogin}
-          setShowSuccessBox={setShowSuccessBox}
-          setShowLoginModal={setShowLoginModal}
-          setCurrentUserData={setCurrentUserData}
-        />
-      </div>
+      <LoginCard
+        className={'container iris-login-container'}
+        setIsLogin={setIsLogin}
+        setCurrentUser={setCurrentUser}
+        isLogin={isLogin}
+        setShowSuccessBox={setShowSuccessBox}
+        setShowLoginModal={setShowLoginModal}
+        setCurrentUserData={setCurrentUserData}
+      />
       <LoginSuccessBox
         showSuccessBox={showSuccessBox}
         setShowSuccessBox={setShowSuccessBox}
