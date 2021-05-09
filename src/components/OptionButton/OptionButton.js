@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
 import 'components/optionButton/optionButton.scss';
-import { withRouter } from 'react-router'; 
+import { withRouter } from 'react-router';
 
 function OptionButton(props) {
   // text 按鈕文字
   // className 橘色樣式為button-btn 綠色樣式為button-btn-g
   const {
-    text, // show btn content
-    selectedTypes, // all button active types
-    setSelectedTypes, // set all button active types state
-    isSelected, // is button active
-    index, // all button active types index
-    type, // orange or green
-    routes, // link address
+    className = '',
+    id = '',
+    text = '', // show btn content
+    selectedTypes = [], // all button active types
+    setSelectedTypes = () => {}, // set all button active types state
+    isSelected = false, // is button active
+    index = 0, // all button active types index
+    type = 'origin', // orange or green
+    routes = '/', // link address
   } = props;
 
   function handleCardArea(e) {
@@ -41,7 +43,7 @@ function OptionButton(props) {
   return (
     <>
       {type === 'origin' && (
-        <>
+        <div className={className} id={id}>
           {isSelected ? (
             <button
               className={
@@ -63,15 +65,13 @@ function OptionButton(props) {
               {text}
             </button>
           )}
-        </>
+        </div>
       )}
       {type === 'green' && (
-        <>
+        <div className={className} id={id}>
           {isSelected ? (
             <button
-              className={
-                'option-btn option-btn-green option-btn-green-active'
-              }
+              className={'option-btn option-btn-green option-btn-green-active'}
               onClick={() => {
                 handleCardArea();
               }}
@@ -88,7 +88,7 @@ function OptionButton(props) {
               {text}
             </button>
           )}
-        </>
+        </div>
       )}
     </>
   );

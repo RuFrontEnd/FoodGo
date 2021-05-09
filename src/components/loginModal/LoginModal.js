@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'components/loginModal/loginModal.scss';
-import IrisLoginCard from 'Iris/Components/IrisLoginCard/IrisLoginCard';
+import LoginCard from 'components/loginCard/LoginCard';
 import IrisSuccessBox from 'Iris/Components/IrisSuccessBox/IrisSuccessBox';
 
 function LoginModal(props) {
@@ -39,7 +39,7 @@ function LoginModal(props) {
         }}
       ></div>
       <div class="container iris-login-container">
-        <IrisLoginCard
+        <LoginCard
           setIsLogin={setIsLogin}
           setCurrentUser={setCurrentUser}
           isLogin={isLogin}

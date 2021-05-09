@@ -1,16 +1,15 @@
-// moved
+// inputH44
 // height:50px   font-size:20px   圓角輸入框
 // iris 會員註冊/登入
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import './Input.scss';
+import './loginInput.scss';
 
-function InputH44(props) {
+function LoginInput(props) {
   const { placeholder, type, id } = props;
   return (
     <>
       <input
-        className="form-control iris-InputH44"
+        className="LoginInput"
         type={type}
         placeholder={placeholder}
         id={id}
@@ -19,4 +18,4 @@ function InputH44(props) {
   );
 }
 
-export default InputH44;
+export default LoginInput;

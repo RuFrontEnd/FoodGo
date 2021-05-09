@@ -1,0 +1,187 @@
+// $primary: #438B6B;
+// @import '~bootstrap/scss/bootstrap.scss';
+
+// 背景圖片wrapper
+.iris-card-background {
+  position: relative;
+}
+
+// 表單
+.iris-login-form {
+  position: absolute;
+  left: 47%;
+  height: 55rem;
+  width: 47rem;
+  background-color: #fff;
+  border-radius: 2rem;
+  transform: translate(-90%, 0);
+  display: flex;
+}
+
+// ----------------------------- login start
+// 綠色背景圖片
+.iris-login-background {
+  display: block;
+  opacity: 1;
+}
+.iris-login-content {
+  width: 54rem;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  // display: none;
+}
+
+.iris-login-alert {
+  width: 55%;
+  text-align: center;
+  font-size: 1.5rem;
+  display: none;
+}
+
+.iris-login-title {
+  color: #438b6b;
+  font-size: 2.4rem;
+  margin-bottom: 4rem;
+}
+
+// 文字+輸入框的wrapper
+.iris-login-input {
+  width: 29.5rem;
+  margin-top: 1.8rem;
+}
+
+.iris-login-form .iris-login-text {
+  font-size: 2rem;
+  color: #858585;
+  width: 7rem;
+}
+
+.iris-login-text button:hover {
+  $primary: #438b6b;
+}
+
+// 記住我,忘記密碼的wrapper
+.iris-login-other {
+  justify-content: space-between;
+  width: 28rem;
+  color: #858585;
+  font-size: 1.7rem;
+  margin-left: -3rem;
+  margin-top: 3rem;
+  margin-bottom: 6rem;
+}
+
+// 忘記密碼
+.iris-login-forget-pw {
+  border-bottom: 1px solid #858585;
+}
+
+.iris-login-forget-pw:hover {
+  cursor: pointer;
+}
+
+// 記住我
+.iris-login-remember-me {
+  margin-left: 2.8rem;
+  padding-top: 0.3rem;
+}
+
+// 改checkbox大小
+.iris-big-checkbox {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.iris-login-button button {
+  width: 12rem;
+  height: 4rem;
+  margin-bottom: 2.3rem;
+}
+
+.iris-no-account {
+  color: #a59583;
+  font-size: 2rem;
+}
+
+.iris-no-account-register {
+  color: #438b6b;
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.iris-no-account-register:hover {
+  cursor: pointer;
+}
+
+// ------------------------------ login end
+
+// -------------------------------register start
+.iris-register-background {
+  display: none;
+  opacity: 0;
+}
+
+.iris-register-content {
+  display: none;
+  width: 54rem;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.iris-register-title {
+  color: #a59583;
+  font-size: 2.4rem;
+  margin-bottom: 2.5rem;
+}
+
+.iris-login-now {
+  color: #f48145;
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.iris-login-now:hover {
+  cursor: pointer;
+}
+
+.iris-register-button button {
+  width: 12rem;
+  height: 4rem;
+  margin-bottom: 2.3rem;
+  margin-top: 3rem;
+}
+
+// 註冊表單提示
+.iris-wrong-account-format {
+  color: red;
+  margin-left: -9.5rem;
+  display: none;
+}
+
+.iris-wrong-password-format {
+  color: red;
+  margin-left: -9.5rem;
+  display: none;
+}
+
+.iris-wrong-email-format {
+  color: red;
+  margin-left: -5rem;
+  display: none;
+}
+
+.iris-wrong-mobile-format {
+  color: red;
+  margin-left: -5rem;
+  display: none;
+}
+
+.iris-register-alert {
+  width: 55%;
+  text-align: center;
+  font-size: 1.5rem;
+  display: none;
+}

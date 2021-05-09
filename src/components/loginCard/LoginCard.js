@@ -1,13 +1,12 @@
 // moved
 import React, { useState, useEffect } from 'react';
-import './IrisLoginCard.scss';
-import InputH44 from './../../../Share/Components/Input/InputH44.js';
-import Button from './Button/Button';
+import 'components/loginCard/loginCard.scss';
+import LoginInput from 'components/loginInput/LoginInput.js';
+import OptionButton from 'components/optionButton/OptionButton';
 import ButtonLogin from './Button/ButtonLogin';
 import $ from 'jquery';
-// import IrisSuccessBox from './../IrisSuccessBox/IrisSuccessBox'
 
-function IrisLoginCard(props) {
+function LoginCard(props) {
   const {
     setIsLogin,
     setCurrentUser,
@@ -233,11 +232,11 @@ function IrisLoginCard(props) {
             </div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">帳號</div>
-              <InputH44 type="text" id="useraccount" />
+              <LoginInput type="text" id="useraccount" />
             </div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">密碼</div>
-              <InputH44 type="password" id="userpassword" />
+              <LoginInput type="password" id="userpassword" />
             </div>
             <div className="iris-login-other d-flex">
               <div className="form-check">
@@ -256,11 +255,7 @@ function IrisLoginCard(props) {
                 handleLogin();
               }}
             >
-              <ButtonLogin
-                className="button-btn-g"
-                id="iris-login-btn"
-                text="登入"
-              />
+              <OptionButton text={'登入'} type={'green'} />
             </div>
             <div className="d-flex">
               <div className="iris-no-account">還沒有帳號嗎?</div>
@@ -286,28 +281,28 @@ function IrisLoginCard(props) {
             </div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">帳號</div>
-              <InputH44 type="text" id="createaccount" />
+              <LoginInput type="text" id="createaccount" />
             </div>
             <div class="iris-wrong-account-format">*帳號要大於8碼</div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">密碼</div>
-              <InputH44 type="password" id="createpassword" />
+              <LoginInput type="password" id="createpassword" />
             </div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">確認密碼</div>
-              <InputH44 type="password" id="createpassword" />
+              <LoginInput type="password" id="createpassword" />
             </div>
             <div className="iris-wrong-password-format">*密碼要大於8碼</div>
 
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">信箱</div>
-              <InputH44 type="text" id="createmail" />
+              <LoginInput type="text" id="createmail" />
             </div>
             <div class="iris-wrong-email-format">*請填入正確的信箱格式</div>
 
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">手機</div>
-              <InputH44 type="text" id="createmobile" />
+              <LoginInput type="text" id="createmobile" />
             </div>
             <div className="iris-wrong-mobile-format">
               *請填入正確的手機格式
@@ -319,11 +314,7 @@ function IrisLoginCard(props) {
                 handleRegister();
               }}
             >
-              <Button
-                className="button-btn"
-                id="iris-register-btn"
-                text="送出"
-              />
+              <OptionButton text={'送出'} />
             </div>
             <div className="d-flex">
               <div className="iris-no-account">已經有帳號了嗎?</div>
@@ -343,4 +334,4 @@ function IrisLoginCard(props) {
   );
 }
 
-export default IrisLoginCard;
+export default LoginCard;

@@ -1,0 +1,23 @@
+// 覆蓋bootstrap
+$primary: #f5a016;
+$dropdown-link-hover-color: #fff;
+$dropdown-link-hover-bg: #f5a016;
+
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+.LoginInput {
+  font-size: 2rem;
+  border-radius: 2.2rem;
+  height: 4.4rem;
+}
+
+@media screen and (max-width: 376px) {
+  .LoginInput {
+    font-size: 1.8rem;
+    border-radius: 1.35rem;
+    height: 2.7rem;
+  }
+}
