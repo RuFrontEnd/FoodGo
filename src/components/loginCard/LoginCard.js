@@ -11,7 +11,6 @@ function LoginCard(props) {
   const {
     className,
     id,
-    setIsLogin,
     setCurrentUser,
     setShowSuccessBox,
     SetShowLoginCard,
@@ -93,6 +92,7 @@ function LoginCard(props) {
   // 登入比對帳密
   // 要用 async await, 先拿到資料再比對
   async function handleLogin() {
+    console.log('a')
     await getData();
     const useraccount = document.querySelector('#useraccount').value;
     const userpassword = document.querySelector('#userpassword').value;
@@ -102,7 +102,6 @@ function LoginCard(props) {
         useraccount === userinfo[i].account &&
         userpassword === userinfo[i].password
       ) {
-        setIsLogin(true);
         dispatch(login());
         setCurrentUser(userinfo[i].member_sid); // 設定目前使用者id
 

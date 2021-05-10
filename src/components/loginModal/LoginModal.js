@@ -8,7 +8,6 @@ function LoginModal(props) {
   const {
     showLoginModal,
     setShowLoginModal,
-    setIsLogin,
     setCurrentUser,
     currentUserData,
     setCurrentUserData,
@@ -39,7 +38,6 @@ function LoginModal(props) {
       ></div>
       <LoginCard
         className={'container iris-login-container'}
-        setIsLogin={setIsLogin}
         setCurrentUser={setCurrentUser}
         setShowSuccessBox={setShowSuccessBox}
         setShowLoginModal={setShowLoginModal}

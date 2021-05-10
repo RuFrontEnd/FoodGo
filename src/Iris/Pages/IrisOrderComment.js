@@ -6,16 +6,19 @@ import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import './IrisMemberPage.scss';
 import { Redirect } from 'react-router-dom';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
+import { useSelector } from 'react-redux';
 
 function IrisOrderComment(props) {
   const [commentDelete, setCommentDelete] = useState('');
   const {
-    isLogin,
     currentUser,
     currentUserData,
     setShowLoginModal,
     setShowBar,
   } = props;
+
+  const isLogin = useSelector((state) => state.member.isLogin);
+
   useEffect(() => {
     setShowBar(true);
   }, []);

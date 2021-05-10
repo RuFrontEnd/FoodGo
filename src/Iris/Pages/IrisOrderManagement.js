@@ -7,10 +7,10 @@ import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import './IrisMemberPage.scss';
 import { Redirect } from 'react-router-dom';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
+import { useSelector } from 'react-redux';
 
 function IrisOrderManagement(props) {
   const {
-    isLogin,
     currentUser,
     currentUserData,
     setShowLoginModal,
@@ -18,9 +18,12 @@ function IrisOrderManagement(props) {
     handleCartNumber,
   } = props;
 
+  const isLogin = useSelector((state) => state.member.isLogin);
+
   useEffect(() => {
     setShowBar(true);
   }, []);
+
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {
     // setShowLoginModal(true)
