@@ -11,11 +11,12 @@ const loginReducers = (state = initialState, action) => {
       return {
         isLogin: true,
       };
+
     case LOGOUT:
       return {
         isLogin: false,
       };
-
+      
     default:
       return state;
   }
