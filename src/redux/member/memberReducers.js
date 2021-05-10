@@ -1,4 +1,5 @@
-import { LOGIN } from 'redux/login/loginTypes';
+import { LOGIN } from 'redux/member/memberTypes';
+import { LOGOUT } from 'redux/member/memberTypes';
 
 const initialState = {
   isLogin: false,
@@ -9,6 +10,10 @@ const loginReducers = (state = initialState, action) => {
     case LOGIN:
       return {
         isLogin: true,
+      };
+    case LOGOUT:
+      return {
+        isLogin: false,
       };
 
     default:

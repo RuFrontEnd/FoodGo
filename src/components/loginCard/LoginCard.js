@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import 'components/loginCard/loginCard.scss';
 import LoginInput from 'components/loginInput/LoginInput.js';
 import OptionButton from 'components/optionButton/OptionButton';
-import { login } from 'redux/login/loginActions';
+import { login } from 'redux/member/memberActions';
 import { useDispatch } from 'react-redux';
 import $ from 'jquery';
 

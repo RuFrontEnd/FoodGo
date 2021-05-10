@@ -13,7 +13,8 @@ import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNu
 // 選單連結要使用NavLink取代Link
 import { NavLink, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { login } from 'redux/member/memberActions';
 
 function NavBar(props) {
   const {
@@ -27,7 +28,8 @@ function NavBar(props) {
     SetShowLoginCard,
   } = props;
 
-  const isLogin = useSelector((state) => state.login.isLogin);
+  const dispatch = useDispatch();
+  const isLogin = useSelector((state) => state.member.isLogin);
   const [count, setCount] = useState(0);
   const [shoppingList, setShoppingList] = useState('0');
   const [showNav, setShowNav] = useState(true);
@@ -61,6 +63,7 @@ function NavBar(props) {
   const showLoginOption = () => {
     // 顯示登入選項,隱藏登出選項
     setIsLogin(false);
+    dispatch(login());
     document.querySelector('.iris-login-option').style.display = 'block';
     document.querySelector('.iris-logout-option').style.display = 'none';
   };
