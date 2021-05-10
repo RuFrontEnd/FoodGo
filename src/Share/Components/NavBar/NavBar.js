@@ -25,7 +25,6 @@ function NavBar(props) {
     setShowLoginModal,
     showLoginModal,
     cartNumber,
-    setIsLogin,
     SetShowLoginCard,
   } = props;
 
@@ -63,7 +62,6 @@ function NavBar(props) {
   // 點擊登出
   const showLoginOption = () => {
     // 顯示登入選項,隱藏登出選項
-    setIsLogin(false);
     dispatch(logout());
     document.querySelector('.iris-login-option').style.display = 'block';
     document.querySelector('.iris-logout-option').style.display = 'none';
