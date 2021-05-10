@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import 'components/loginCard/loginCard.scss';
 import LoginInput from 'components/loginInput/LoginInput.js';
 import OptionButton from 'components/optionButton/OptionButton';
+import { login } from 'redux/login/loginActions';
+import { useDispatch } from 'react-redux';
 import $ from 'jquery';
 
 function LoginCard(props) {
@@ -17,6 +19,7 @@ function LoginCard(props) {
     setShowLoginModal,
     setCurrentUserData,
   } = props;
+  const dispatch = useDispatch();
 
   // 變成註冊表單
   const ToRegisterForm = () => {
@@ -101,6 +104,7 @@ function LoginCard(props) {
         userpassword === userinfo[i].password
       ) {
         setIsLogin(true);
+        dispatch(login());
         setCurrentUser(userinfo[i].member_sid); // 設定目前使用者id
 
         // 放在localStorage
@@ -211,28 +215,8 @@ function LoginCard(props) {
     }
   };
 
-  const [number, setNumber] = useState(5);
-  const jq = () => {
-    $('.num').html(3);
-  };
-
   return (
     <div className={className} id={id}>
-      <div class="num">{number}</div>
-      <div
-        onClick={() => {
-          setNumber(5);
-        }}
-      >
-        SAYSTATE
-      </div>
-      <div
-        onClick={() => {
-          jq();
-        }}
-      >
-        JQ
-      </div>
       <div className="iris-login-card-container d-flex align-items-center">
         <div className="iris-card-background">
           <div className="iris-login-background">

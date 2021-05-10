@@ -13,22 +13,24 @@ import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNu
 // 選單連結要使用NavLink取代Link
 import { NavLink, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function NavBar(props) {
-  const [count, setCount] = useState(0);
-  const [shoppingList, setShoppingList] = useState('0');
-  const [showNav, setShowNav] = useState(true);
   const {
     style = {},
     className = '',
     id = '',
-    isLogin,
     setShowLoginModal,
     showLoginModal,
     cartNumber,
     setIsLogin,
     SetShowLoginCard,
   } = props;
+
+  const isLogin = useSelector((state) => state.login.isLogin);
+  const [count, setCount] = useState(0);
+  const [shoppingList, setShoppingList] = useState('0');
+  const [showNav, setShowNav] = useState(true);
 
   function myFunction() {
     const x = document.getElementById('NavBar');
@@ -50,8 +52,8 @@ function NavBar(props) {
   // 在未登入的狀態點擊會員相關選項
   const disableLink = (e) => {
     if (isLogin === false) {
-      e.preventDefault(); //不跳轉頁面
-      setShowLoginModal(true); //秀登入光箱
+      e.preventDefault(); // 不跳轉頁面
+      setShowLoginModal(true); // 秀登入光箱
     }
   };
 
