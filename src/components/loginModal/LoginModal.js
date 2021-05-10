@@ -10,7 +10,6 @@ function LoginModal(props) {
     setShowLoginModal,
     setIsLogin,
     setCurrentUser,
-    isLogin,
     currentUserData,
     setCurrentUserData,
   } = props;
@@ -42,7 +41,6 @@ function LoginModal(props) {
         className={'container iris-login-container'}
         setIsLogin={setIsLogin}
         setCurrentUser={setCurrentUser}
-        isLogin={isLogin}
         setShowSuccessBox={setShowSuccessBox}
         setShowLoginModal={setShowLoginModal}
         setCurrentUserData={setCurrentUserData}

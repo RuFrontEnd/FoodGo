@@ -22,7 +22,6 @@ function ChaCart(props) {
   const {
     setShowBar,
     setCartNumber,
-    isLogin,
     // county,
     // setCounty,
     // township,

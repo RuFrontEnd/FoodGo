@@ -13,7 +13,6 @@ function LoginCard(props) {
     id,
     setIsLogin,
     setCurrentUser,
-    isLogin,
     setShowSuccessBox,
     SetShowLoginCard,
     setShowLoginModal,
@@ -274,7 +273,6 @@ function LoginCard(props) {
               </div>
             </div>
           </div>
-
           {/* ----------------註冊表單----------------- */}
           <div className="iris-register-content">
             <div className="iris-register-title">會員註冊</div>
@@ -299,7 +297,6 @@ function LoginCard(props) {
               <LoginInput type="text" id="createmail" />
             </div>
             <div class="iris-wrong-email-format">*請填入正確的信箱格式</div>
-
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">手機</div>
               <LoginInput type="text" id="createmobile" />
@@ -307,7 +304,6 @@ function LoginCard(props) {
             <div className="iris-wrong-mobile-format">
               *請填入正確的手機格式
             </div>
-
             <div
               className="iris-register-button"
               onClick={() => {

@@ -15,6 +15,7 @@ import { NavLink, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { login } from 'redux/member/memberActions';
+import { logout } from 'redux/member/memberActions';
 
 function NavBar(props) {
   const {
@@ -63,7 +64,7 @@ function NavBar(props) {
   const showLoginOption = () => {
     // 顯示登入選項,隱藏登出選項
     setIsLogin(false);
-    dispatch(login());
+    dispatch(logout());
     document.querySelector('.iris-login-option').style.display = 'block';
     document.querySelector('.iris-logout-option').style.display = 'none';
   };
@@ -232,7 +233,6 @@ function NavBar(props) {
                     <li
                       className="navBar-jess-dropdown_item iris-logout-option"
                       onClick={() => {
-                        setIsLogin(false);
                         showLoginOption();
                         clearUserStorage();
                       }}
