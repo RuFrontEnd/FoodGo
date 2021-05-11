@@ -9,8 +9,8 @@
 // 表單
 .iris-login-form {
   position: absolute;
-  left: 47%;
-  height: 55rem;
+  left: 45%;
+  padding: 50px 0px;
   width: 47rem;
   background-color: #fff;
   border-radius: 2rem;
@@ -55,6 +55,7 @@
 .iris-login-form .iris-login-text {
   color: #858585;
   font-size: 2rem;
+  margin-right: 20px;
 }
 
 .iris-login-text button:hover {
