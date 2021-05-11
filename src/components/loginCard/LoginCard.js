@@ -130,20 +130,29 @@ function LoginCard(props) {
   const handleRegister = () => {
     let account = document.querySelector('#createaccount').value;
     let password = document.querySelector('#createpassword').value;
+    let confirmPassword = document.querySelector('#createConfirmPassword')
+      .value;
     let email = document.querySelector('#createmail').value;
     let mobile = document.querySelector('#createmobile').value;
 
-    // 帳號小於8碼
     if (!account.match(/[A-Za-z0-9]{8,24}/)) {
       $('.iris-empty-account').slideUp('slow');
       $('.iris-wrong-account-format').slideDown('slow');
-      // 密碼小於8碼
-    }
+    } // 帳號小於8碼
+
     if (!password.match(/[A-Za-z0-9]{8,24}/)) {
       $('.iris-empty-password').slideUp('slow');
       $('.iris-wrong-password-format').slideDown('slow');
-      // 信箱格式不符
-    }
+    } // 密碼小於8碼
+
+    if (
+      !confirmPassword.match(/[A-Za-z0-9]{8,24}/) ||
+      confirmPassword !== password
+    ) {
+      $('.iris-empty-password').slideUp('slow');
+      $('.iris-wrong-confirmPassword-format').slideDown('slow');
+    } // 確認密碼小於8碼或確認密碼不等於密碼
+
     if (
       !email.match(
         /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
@@ -151,17 +160,19 @@ function LoginCard(props) {
     ) {
       $('.iris-empty-email').slideUp('slow');
       $('.iris-wrong-email-format').slideDown('slow');
-      // 手機格式不符
-    }
+    } // 信箱格式不符
+
     if (!mobile.match(/^09[0-9]{8}$/)) {
       $('.iris-empty-mobile').slideUp('slow');
       $('.iris-wrong-mobile-format').slideDown('slow');
-    }
+    } // 手機格式不符
 
     // 資料都ok才送出
     if (
       account.match(/[A-Za-z0-9]{8,24}/) &&
       password.match(/[A-Za-z0-9]{8,24}/) &&
+      confirmPassword.match(/[A-Za-z0-9]{8,24}/) &&
+      confirmPassword === password &&
       email.match(
         /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
       ) &&
@@ -174,6 +185,7 @@ function LoginCard(props) {
       $('.iris-empty-mobile').slideUp('slow');
       $('.iris-wrong-account-format').slideUp('slow');
       $('.iris-wrong-password-format').slideUp('slow');
+      $('.iris-wrong-confirmPassword-format').slideUp('slow');
       $('.iris-wrong-email-format').slideUp('slow');
       $('.iris-wrong-mobile-format').slideUp('slow');
 
@@ -207,13 +219,29 @@ function LoginCard(props) {
       }, 2000);
       document.querySelector('#createaccount').value = '';
       document.querySelector('#createpassword').value = '';
+      document.querySelector('#createConfirmPassword').value = '';
       document.querySelector('#createmail').value = '';
       document.querySelector('#createmobile').value = '';
     }
   };
 
+  const handleFake = () => {
+    document.querySelector('#createaccount').value = '456456456';
+    document.querySelector('#createpassword').value = '456456456';
+    document.querySelector('#createConfirmPassword').value = '456456456';
+    document.querySelector('#createmail').value = '456456456@gmail.com';
+    document.querySelector('#createmobile').value = '0945456456';
+  };
+
   return (
     <div className={className} id={id}>
+      <button
+        onClick={() => {
+          handleFake();
+        }}
+      >
+        假資料
+      </button>
       <div className="iris-login-card-container d-flex align-items-center">
         <div className="iris-card-background">
           <div className="iris-login-background">
@@ -289,11 +317,14 @@ function LoginCard(props) {
               <div className="iris-login-text">密碼</div>
               <LoginInput type="password" id="createpassword" />
             </div>
+            <div className="iris-wrong-password-format">*密碼要大於8碼</div>
             <div className="iris-login-input d-flex align-items-center justify-content-between">
               <div className="iris-login-text">確認密碼</div>
-              <LoginInput type="password" id="createpassword" />
+              <LoginInput type="password" id="createConfirmPassword" />
             </div>
-            <div className="iris-wrong-password-format">*密碼要大於8碼</div>
+            <div className="iris-wrong-confirmPassword-format">
+              *兩次輸入的密碼不符
+            </div>
             <div className="iris-login-input d-flex align-items-center justify-content-between">
               <div className="iris-login-text">信箱</div>
               <LoginInput type="text" id="createmail" />
