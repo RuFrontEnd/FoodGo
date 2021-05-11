@@ -235,13 +235,13 @@ function LoginCard(props) {
 
   return (
     <div className={className} id={id}>
-      <button
+      {/* <button
         onClick={() => {
           handleFake();
         }}
       >
         假資料
-      </button>
+      </button> */}
       <div className="iris-login-card-container d-flex align-items-center">
         <div className="iris-card-background">
           <div className="iris-login-background">
