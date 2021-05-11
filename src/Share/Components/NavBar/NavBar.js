@@ -13,22 +13,26 @@ import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNu
 // 選單連結要使用NavLink取代Link
 import { NavLink, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { login } from 'redux/member/memberActions';
+import { logout } from 'redux/member/memberActions';
 
 function NavBar(props) {
-  const [count, setCount] = useState(0);
-  const [shoppingList, setShoppingList] = useState('0');
-  const [showNav, setShowNav] = useState(true);
   const {
     style = {},
     className = '',
     id = '',
-    isLogin,
     setShowLoginModal,
     showLoginModal,
     cartNumber,
-    setIsLogin,
     SetShowLoginCard,
   } = props;
+
+  const dispatch = useDispatch();
+  const isLogin = useSelector((state) => state.member.isLogin);
+  const [count, setCount] = useState(0);
+  const [shoppingList, setShoppingList] = useState('0');
+  const [showNav, setShowNav] = useState(true);
 
   function myFunction() {
     const x = document.getElementById('NavBar');
@@ -50,15 +54,15 @@ function NavBar(props) {
   // 在未登入的狀態點擊會員相關選項
   const disableLink = (e) => {
     if (isLogin === false) {
-      e.preventDefault(); //不跳轉頁面
-      setShowLoginModal(true); //秀登入光箱
+      e.preventDefault(); // 不跳轉頁面
+      setShowLoginModal(true); // 秀登入光箱
     }
   };
 
   // 點擊登出
   const showLoginOption = () => {
     // 顯示登入選項,隱藏登出選項
-    setIsLogin(false);
+    dispatch(logout());
     document.querySelector('.iris-login-option').style.display = 'block';
     document.querySelector('.iris-logout-option').style.display = 'none';
   };
@@ -227,7 +231,6 @@ function NavBar(props) {
                     <li
                       className="navBar-jess-dropdown_item iris-logout-option"
                       onClick={() => {
-                        setIsLogin(false);
                         showLoginOption();
                         clearUserStorage();
                       }}

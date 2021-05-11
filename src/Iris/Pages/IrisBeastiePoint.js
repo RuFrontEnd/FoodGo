@@ -7,15 +7,16 @@ import './IrisMemberPage.scss';
 import { Redirect } from 'react-router-dom';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import IrisBeastieRuleBox from '../Components/IrisBeastieRuleBox/IrisBeastieRuleBox';
+import { useSelector } from 'react-redux';
 
 function IrisBeastiePoint(props) {
   const {
-    isLogin,
     currentUser,
     currentUserData,
     setShowLoginModal,
     setShowBar,
   } = props;
+  const isLogin = useSelector((state) => state.member.isLogin);
   const [showRuleBox, setShowRuleBox] = useState(false);
 
   useEffect(() => {

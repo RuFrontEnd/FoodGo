@@ -55,7 +55,7 @@ function App() {
   // ---------- iris ---------- //
   const [currentUser, setCurrentUser] = useState(''); // 目前用戶
   const [currentUserData, setCurrentUserData] = useState({}); // 目前用戶
-  const [isLogin, setIsLogin] = useState(false); //是否登入，預設否
+
   const [showLoginModal, setShowLoginModal] = useState(false); //控制是否秀光箱
   const [couponStatus, setCouponStatus] = useState([]);
   const [couponOneStatus, setCouponOneStatus] = useState('');
@@ -128,7 +128,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // console.log(amount)
     return () => {};
   }, [amount]);
 
@@ -137,39 +136,31 @@ function App() {
     if (JSON.parse(localStorage.getItem('currentUser'))) {
       setCurrentUser(JSON.parse(localStorage.getItem('currentUser')));
       // console.log(localStorage.getItem('currentUser'))
-      setIsLogin(true);
     }
   }, []);
 
   return (
-    // <Router>元件一定要放在最外層
     <Router>
       <>
-        {/* 切頁時不重新渲染的部份 s*/}
+        {/* 切頁時不重新渲染的部份 */}
         <Navbar
           style={{ display: !showBar && 'none' }}
           cartNumber={cartNumber}
           amount={amount}
           setShowLoginModal={setShowLoginModal}
           showLoginModal={showLoginModal}
-          setIsLogin={setIsLogin}
-          isLogin={isLogin}
           currentUser={currentUser}
         />
         <LoginModal
           showLoginModal={showLoginModal}
           setShowLoginModal={setShowLoginModal}
-          isLogin={isLogin}
-          setIsLogin={setIsLogin}
           setCurrentUser={setCurrentUser}
           currentUserData={currentUserData}
           setCurrentUserData={setCurrentUserData}
         />
         <ScrollToTop>
-          {/* 路由設定開始 */}
           <Switch>
             {/* claudia */}
-            {/* 放"page資料夾"內的元件 */}
             <Route exact path="/farmMap">
               <ClaudiaFarmIndex />
             </Route>
@@ -177,7 +168,6 @@ function App() {
               <ClaudiaFarmDetailedPage handleCartNumber={handleCartNumber} />
             </Route>
             {/* ru */}
-            {/* 放"page資料夾"內的元件 */}
             <Route exact path="/productList">
               <ProductList
                 setShowBar={setShowBar}
@@ -195,29 +185,8 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
-                isLogin={isLogin}
                 amount={amount}
                 setAmount={setAmount}
-              />
-            </Route>
-            <Route exact path="/productListSalad">
-              <RuProudctListSalad
-                setShowBar={setShowBar}
-                handleCartNumber={handleCartNumber}
-                currentUser={currentUser}
-                county={county}
-                setCounty={setCounty}
-                township={township}
-                setTownship={setTownship}
-                address={address}
-                setAddress={setAddress}
-                takeOrNot={takeOrNot}
-                setTakeOrNot={setTakeOrNot}
-                selectDate={selectDate}
-                setSelectDate={setSelectDate}
-                slecteTime={slecteTime}
-                setSelectTime={setSelectTime}
-                isLogin={isLogin}
               />
             </Route>
             <Route exact path="/productListCustom">
@@ -238,18 +207,13 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
-                isLogin={isLogin}
               />
             </Route>
             {/* cha */}
-            {/* 放"page資料夾"內的元件 */}
-            {/* 購物車 */}
-
             <Route exact path="/cart">
               <ChaCart
                 setShowBar={setShowBar}
                 setCartNumber={setCartNumber}
-                isLogin={isLogin}
                 // handleCartNumber={handleCartNumber}
                 // county={county}
                 // setCounty={setCounty}
@@ -268,7 +232,6 @@ function App() {
                 textAddress={textAddress}
               />
             </Route>
-            {/* 揪團 */}
             <Route exact path="/groupOrder/groupOrderCreate">
               <ChaGroupOrderCreate />
             </Route>
@@ -298,12 +261,10 @@ function App() {
             {/* 404 */}
 
             {/* iris */}
-            {/* 放"page資料夾"內的元件 */}
             <Route exact path="/memberUserprofile">
               <IrisUserprofile
                 setShowBar={setShowBar}
                 // 會員
-                isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 currentUserData={currentUserData}
@@ -330,7 +291,6 @@ function App() {
               <IrisOrderComment
                 setShowBar={setShowBar}
                 // 會員
-                isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 currentUserData={currentUserData}
@@ -353,7 +313,6 @@ function App() {
               <IrisMyFav
                 setShowBar={setShowBar}
                 // 會員
-                isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 currentUserData={currentUserData}
@@ -376,7 +335,6 @@ function App() {
               <IrisBeastiePoint
                 setShowBar={setShowBar}
                 // 會員
-                isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 currentUserData={currentUserData}
@@ -399,7 +357,6 @@ function App() {
               <IrisGetCoupon
                 setShowBar={setShowBar}
                 // 會員
-                isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 currentUserData={currentUserData}
@@ -427,7 +384,6 @@ function App() {
                 showBar={showBar}
                 setShowBar={setShowBar}
                 // 會員
-                isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 currentUserData={currentUserData}
@@ -447,7 +403,6 @@ function App() {
               />
             </Route>
             {/* jess */}
-            {/* 放"page資料夾"內的元件 */}
             <Route path="/menu">
               <JessMenu
                 setShowBar={setShowBar}
@@ -465,7 +420,6 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
-                isLogin={isLogin}
               />
             </Route>
             <Route path="/bento/:id?">
@@ -486,7 +440,6 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
-                isLogin={isLogin}
               />
             </Route>
             <Route path="/vegBox">
@@ -507,14 +460,11 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
-                isLogin={isLogin}
               />
             </Route>
             {/* janice */}
-            {/* 放"page資料夾"內的元件 */}
             <Route exact path="/">
               <JanIndex
-                isLogin={isLogin}
                 currentUser={currentUser}
                 takeOrNot={takeOrNot}
                 setTakeOrNot={setTakeOrNot}
@@ -533,7 +483,6 @@ function App() {
             </Route>
           </Switch>
         </ScrollToTop>
-        {/* 切頁時不重新渲染的部份*/}
         <Footer />
       </>
     </Router>

@@ -22,7 +22,6 @@ function ChaCart(props) {
   const {
     setShowBar,
     setCartNumber,
-    isLogin,
     county,
     township,
     address,
@@ -35,7 +34,6 @@ function ChaCart(props) {
   // if (isLogin === false) {
   //   props.history.push('/');
   // }
-  console.log('isLogin', isLogin);
   // ----------給「會員資料表」用-------------//
   const [memberSid, setMemberSid] = useState(1);
   const [name, setName] = useState('');

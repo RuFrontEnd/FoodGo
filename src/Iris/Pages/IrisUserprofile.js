@@ -7,15 +7,15 @@ import './IrisMemberPage.scss';
 import { Redirect } from 'react-router-dom';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import IrisGetCouponBox from './../Components/IrisGetCouponBox/IrisGetCouponBox';
+import { useSelector } from 'react-redux';
 
 function IrisUserprofile(props) {
+  const isLogin = useSelector((state) => state.member.isLogin);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [showGetCouponBox, setShowGetCouponBox] = useState(false);
   const [beastiePointAdd, setBeastiePointAdd] = useState();
-
   const {
     setShowBar,
-    isLogin,
     currentUser,
     currentUserData,
     setShowLoginModal,
@@ -24,10 +24,6 @@ function IrisUserprofile(props) {
     couponOneStatus,
     setCouponOneStatus,
   } = props;
-
-  useEffect(() => {
-    setShowBar(true);
-  }, []);
 
   if (showUpdateModal === true) {
     document.querySelector('.iris-update-success-mask').style.display = 'block';
@@ -50,6 +46,10 @@ function IrisUserprofile(props) {
       document.querySelector('.IrisGetCouponBox').style.display = 'none';
     }
   }
+
+  useEffect(() => {
+    setShowBar(true);
+  }, []);
 
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {

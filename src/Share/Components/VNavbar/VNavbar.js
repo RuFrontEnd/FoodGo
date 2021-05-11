@@ -15,11 +15,11 @@ import {
   datatownships,
   dataprice,
 } from '../../../Janice/Components/JanIndexx/data.js';
+import { useSelector } from 'react-redux';
 registerLocale('zh-TW', zhTW);
 
 function VNavbar(props) {
   const {
-    isLogin,
     currentUser,
     // selectDate,
     setSelectDate,
@@ -34,6 +34,7 @@ function VNavbar(props) {
   } = props;
   // console.log('currentUser:', currentUser)
   const [userInfoJan, setUserInfoJan] = useState([]);
+  const isLogin = useSelector((state) => state.member.isLogin);
 
   const [startDate, setStartDate] = useState(new Date());
   setSelectDate(startDate);

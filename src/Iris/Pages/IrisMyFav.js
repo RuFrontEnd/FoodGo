@@ -7,19 +7,17 @@ import './IrisMemberPage.scss';
 import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
+import { useSelector } from 'react-redux';
 
 function IrirsMyFav(props) {
+  const isLogin = useSelector((state) => state.member.isLogin);
   const [userFavDelete, setUserFavDelete] = useState('');
-  const {
-    isLogin,
-    currentUser,
-    currentUserData,
-    setShowLoginModal,
-    setShowBar,
-  } = props;
+  const { currentUser, currentUserData, setShowLoginModal, setShowBar } = props;
+
   useEffect(() => {
     setShowBar(true);
   }, []);
+
 
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {
