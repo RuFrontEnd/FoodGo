@@ -109,36 +109,60 @@ function LoginCard(props) {
   // 登入比對帳密
   // 要用 async await, 先拿到資料再比對
   async function handleLogin() {
-    await getData();
-    for (let i = 0; i < userinfo.length; i++) {
-      if (
-        // 正確
-        userAccountValue === userinfo[i].account &&
-        userPasswordValue === userinfo[i].password
-      ) {
-        dispatch(login());
-        setCurrentUser(userinfo[i].member_sid); // 設定目前使用者id
+    const member = {
+      account: userAccountValue,
+      password: userPasswordValue,
+    };
 
-        // 放在localStorage
-        let currentUserStorage = parseInt(userinfo[i].member_sid);
-        localStorage.setItem('currentUser', currentUserStorage);
+    await fetch('http://localhost:5000/member/login', {
+      method: 'POST',
+      body: JSON.stringify(member),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+      .then((res) => res.json())
+      .then((jsonData) => {
+        console.log('jsonData', jsonData);
+        // if (jsonData.status === true) {
+        //   dispatch(login());
+        //   setCurrentUser(jsonData.currentUser);
+        //   console.log('document.cookie', document.cookie);
+        //   setShowLoginModal(false); // 登入光箱消失
+        //   setShowSuccessBox(true); // 出現登入成功光箱
+        // }
+      });
+    // await getData();
+    // for (let i = 0; i < userinfo.length; i++) {
+    //   if (
+    //     // 正確
+    //     userAccountValue === userinfo[i].account &&
+    //     userPasswordValue === userinfo[i].password
+    //   ) {
+    //     dispatch(login());
+    //     setCurrentUser(userinfo[i].member_sid); // 設定目前使用者id
 
-        setCurrentUserData(userinfo[i]);
-        console.log(userinfo[i]);
-        setShowLoginModal(false); // 登入光箱消失
-        setShowSuccessBox(true); // 出現登入成功光箱)
-      } else {
-        // 若帳密錯誤，顯示錯誤提示
-        $($loginAlert.current).slideDown('slow');
-        // 2秒後消失
-        setTimeout(() => {
-          $($loginAlert.current).slideUp('slow');
-        }, 2000);
-        // 清空input
-        setUserAccountValue('');
-        setUserPasswordValue('');
-      }
-    }
+    //     // 放在localStorage
+    //     let currentUserStorage = parseInt(userinfo[i].member_sid);
+    //     localStorage.setItem('currentUser', currentUserStorage);
+
+    //     setCurrentUserData(userinfo[i]);
+    //     console.log(userinfo[i]);
+    //     setShowLoginModal(false); // 登入光箱消失
+    //     setShowSuccessBox(true); // 出現登入成功光箱)
+    //   } else {
+    //     // 若帳密錯誤，顯示錯誤提示
+    //     $($loginAlert.current).slideDown('slow');
+    //     // 2秒後消失
+    //     setTimeout(() => {
+    //       $($loginAlert.current).slideUp('slow');
+    //     }, 2000);
+    //     // 清空input
+    //     setUserAccountValue('');
+    //     setUserPasswordValue('');
+    //   }
+    // }
   }
 
   // 註冊功能
