@@ -13,65 +13,80 @@ function LoginCard(props) {
     id,
     setCurrentUser,
     setShowSuccessBox,
-    SetShowLoginCard,
     setShowLoginModal,
     setCurrentUserData,
   } = props;
   const dispatch = useDispatch();
+  const $loginCardBackgroundWrap = useRef();
+  const $registerBackgroundWrap = useRef();
+  const $loginForm = useRef();
+  const $loginContent = useRef();
+  const $registerContent = useRef();
+  const $userAccount = useRef();
+  const $userPassword = useRef();
+  const $createAccount = useRef();
+  const $createPassword = useRef();
+  const $createConfirmPassword = useRef();
+  const $createEmail = useRef();
+  const $createMobile = useRef();
+  const $wrongAccountFormat = useRef();
+  const $wrongPasswordFormat = useRef();
+  const $wrongConfirmPasswordFormat = useRef();
+  const $wrongEmailFormat = useRef();
+  const $wrongMobileFormat = useRef();
+  const $loginAlert = useRef();
+  const $registerAlert = useRef();
+  const [userAccountValue, setUserAccountValue] = useState('');
+  const [userPasswordValue, setUserPasswordValue] = useState('');
+  const [createAccountValue, setCreateAccountValue] = useState('');
+  const [createPasswordValue, setCreatePasswordValue] = useState('');
+  const [confirmPasswordValue, setConfirmPasswordValue] = useState('');
+  const [userEmailValue, setUserEmailValue] = useState('');
+  const [userMobileValue, setUserMobileValue] = useState('');
 
   // 變成註冊表單
   const ToRegisterForm = () => {
     // 白底移動
-    const loginEnrollCard = document.querySelector('.login-form');
-    loginEnrollCard.style.transform = 'translate(5%, 0)';
-    loginEnrollCard.style.transition = '1.3s';
+    $loginForm.current.style.transform = 'translate(5%, 0)';
+    $loginForm.current.style.transition = '1.3s';
     // -------------登入卡消失效果
-    document.querySelector('.login-content').style.display = 'none';
-    document.querySelector('.loginCard-background-wrap').style.opacity = '0';
-    document.querySelector('.loginCard-background-wrap').style.transition =
-      'opacity 2s';
+    $loginContent.current.style.display = 'none';
+    $loginCardBackgroundWrap.current.style.opacity = '0';
+    $loginCardBackgroundWrap.current.style.transition = 'opacity 2s';
     setTimeout(function () {
-      document.querySelector('.loginCard-background-wrap').style.display =
-        'none';
+      $loginCardBackgroundWrap.current.style.display = 'none';
     }, 900);
     //------------ 註冊卡出現效果
     setTimeout(function () {
-      document.querySelector('.register-background-wrap').style.display =
-        'block';
+      $registerBackgroundWrap.current.style.display = 'block';
     }, 990);
-    document.querySelector('.register-content').style.display = 'flex';
+    $registerContent.current.style.display = 'flex';
     setTimeout(function () {
-      document.querySelector('.register-background-wrap').style.opacity = '1';
-      document.querySelector('.register-background-wrap').style.transition =
-        'opacity 1.1s';
+      $registerBackgroundWrap.current.style.opacity = '1';
+      $registerBackgroundWrap.current.style.transition = 'opacity 1.1s';
     }, 1100);
   };
 
   // 變成登入表單
   const ToLoginForm = () => {
     // 白底移動
-    const loginEnrollCard = document.querySelector('.login-form');
-    loginEnrollCard.style.transform = 'translate(-90%, 0)';
-    loginEnrollCard.style.transition = '1.3s';
+    $loginForm.current.style.transform = 'translate(-90%, 0)';
+    $loginForm.current.style.transition = '1.3s';
     // -------------註冊卡消失效果
-    document.querySelector('.register-content').style.display = 'none';
-    document.querySelector('.register-background-wrap').style.opacity = '0';
-    document.querySelector('.register-background-wrap').style.transition =
-      'opacity 2s';
+    $registerContent.current.style.display = 'none';
+    $registerBackgroundWrap.current.style.opacity = '0';
+    $registerBackgroundWrap.current.style.transition = 'opacity 2s';
     setTimeout(function () {
-      document.querySelector('.register-background-wrap').style.display =
-        'none';
+      $registerBackgroundWrap.current.style.display = 'none';
     }, 900);
     //------------ 登入卡出現效果
     setTimeout(function () {
-      document.querySelector('.loginCard-background-wrap').style.display =
-        'block';
+      $loginCardBackgroundWrap.current.style.display = 'block';
     }, 990);
-    document.querySelector('.login-content').style.display = 'flex';
+    $loginContent.current.style.display = 'flex';
     setTimeout(function () {
-      document.querySelector('.loginCard-background-wrap').style.opacity = '1';
-      document.querySelector('.loginCard-background-wrap').style.transition =
-        'opacity 1.1s';
+      $loginCardBackgroundWrap.current.style.opacity = '1';
+      $loginCardBackgroundWrap.current.style.transition = 'opacity 1.1s';
     }, 1100);
   };
 
@@ -95,13 +110,11 @@ function LoginCard(props) {
   // 要用 async await, 先拿到資料再比對
   async function handleLogin() {
     await getData();
-    const useraccount = document.querySelector('#useraccount').value;
-    const userpassword = document.querySelector('#userpassword').value;
     for (let i = 0; i < userinfo.length; i++) {
       if (
         // 正確
-        useraccount === userinfo[i].account &&
-        userpassword === userinfo[i].password
+        userAccountValue === userinfo[i].account &&
+        userPasswordValue === userinfo[i].password
       ) {
         dispatch(login());
         setCurrentUser(userinfo[i].member_sid); // 設定目前使用者id
@@ -116,87 +129,80 @@ function LoginCard(props) {
         setShowSuccessBox(true); // 出現登入成功光箱)
       } else {
         // 若帳密錯誤，顯示錯誤提示
-        $('.iris-login-alert').slideDown('slow');
+        $($loginAlert.current).slideDown('slow');
         // 2秒後消失
         setTimeout(() => {
-          $('.iris-login-alert').slideUp('slow');
+          $($loginAlert.current).slideUp('slow');
         }, 2000);
         // 清空input
-        document.querySelector('#useraccount').value = '';
-        document.querySelector('#userpassword').value = '';
+        setUserAccountValue('');
+        setUserPasswordValue('');
       }
     }
   }
 
   // 註冊功能
   const handleRegister = () => {
-    let account = document.querySelector('#createaccount').value;
-    let password = document.querySelector('#createpassword').value;
-    let confirmPassword = document.querySelector('#createConfirmPassword')
-      .value;
-    let email = document.querySelector('#createmail').value;
-    let mobile = document.querySelector('#createmobile').value;
-
-    if (!account.match(/[A-Za-z0-9]{8,24}/)) {
-      $('.empty-account').slideUp('slow');
-      $('.wrong-account-format').slideDown('slow');
+    if (!createAccountValue.match(/[A-Za-z0-9]{8,24}/)) {
+      // $('.empty-account').slideUp('slow');
+      $($wrongAccountFormat.current).slideDown('slow');
     } // 帳號小於8碼
 
-    if (!password.match(/[A-Za-z0-9]{8,24}/)) {
-      $('.empty-password').slideUp('slow');
-      $('.wrong-password-format').slideDown('slow');
+    if (!createPasswordValue.match(/[A-Za-z0-9]{8,24}/)) {
+      // $('.empty-password').slideUp('slow');
+      $($wrongPasswordFormat.current).slideDown('slow');
     } // 密碼小於8碼
 
     if (
-      !confirmPassword.match(/[A-Za-z0-9]{8,24}/) ||
-      confirmPassword !== password
+      !confirmPasswordValue.match(/[A-Za-z0-9]{8,24}/) ||
+      confirmPasswordValue !== createPasswordValue
     ) {
-      $('.empty-password').slideUp('slow');
-      $('.wrong-confirmPassword-format').slideDown('slow');
+      // $('.empty-password').slideUp('slow');
+      $($wrongConfirmPasswordFormat.current).slideDown('slow');
     } // 確認密碼小於8碼或確認密碼不等於密碼
 
     if (
-      !email.match(
+      !userEmailValue.match(
         /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
       )
     ) {
-      $('.empty-email').slideUp('slow');
-      $('.wrong-email-format').slideDown('slow');
+      // $('.empty-email').slideUp('slow');
+      $($wrongEmailFormat.current).slideDown('slow');
     } // 信箱格式不符
 
-    if (!mobile.match(/^09[0-9]{8}$/)) {
-      $('.empty-mobile').slideUp('slow');
-      $('.wrong-mobile-format').slideDown('slow');
+    if (!userMobileValue.match(/^09[0-9]{8}$/)) {
+      // $('.empty-mobile').slideUp('slow');
+      $($wrongMobileFormat.current).slideDown('slow');
     } // 手機格式不符
 
     // 資料都ok才送出
     if (
-      account.match(/[A-Za-z0-9]{8,24}/) &&
-      password.match(/[A-Za-z0-9]{8,24}/) &&
-      confirmPassword.match(/[A-Za-z0-9]{8,24}/) &&
-      confirmPassword === password &&
-      email.match(
+      createAccountValue.match(/[A-Za-z0-9]{8,24}/) &&
+      createPasswordValue.match(/[A-Za-z0-9]{8,24}/) &&
+      confirmPasswordValue.match(/[A-Za-z0-9]{8,24}/) &&
+      confirmPasswordValue === createPasswordValue &&
+      userEmailValue.match(
         /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
       ) &&
-      mobile.match(/^09[0-9]{8}$/)
+      userMobileValue.match(/^09[0-9]{8}$/)
     ) {
       // 清空錯誤題示
-      $('.empty-account').slideUp('slow');
-      $('.empty-password').slideUp('slow');
-      $('.empty-email').slideUp('slow');
-      $('.empty-mobile').slideUp('slow');
-      $('.wrong-account-format').slideUp('slow');
-      $('.wrong-password-format').slideUp('slow');
-      $('.wrong-confirmPassword-format').slideUp('slow');
-      $('.wrong-email-format').slideUp('slow');
-      $('.wrong-mobile-format').slideUp('slow');
+      // $('.empty-account').slideUp('slow');
+      // $('.empty-password').slideUp('slow');
+      // $('.empty-email').slideUp('slow');
+      // $('.empty-mobile').slideUp('slow');
+      $($wrongAccountFormat.current).slideUp('slow');
+      $($wrongPasswordFormat.current).slideUp('slow');
+      $($wrongConfirmPasswordFormat.current).slideUp('slow');
+      $($wrongEmailFormat.current).slideUp('slow');
+      $($wrongMobileFormat.current).slideUp('slow');
 
       // 把輸入的內容包成物件傳出去
       const newRegister = {
-        account: account,
-        password: password,
-        email: email,
-        mobile: mobile,
+        account: createAccountValue,
+        password: createPasswordValue,
+        email: userEmailValue,
+        mobile: userMobileValue,
         name: null,
       };
 
@@ -214,25 +220,25 @@ function LoginCard(props) {
         });
 
       // 若註冊成功，顯示成功提示
-      $('.register-alert').slideDown('slow');
+      $($registerAlert.current).slideDown('slow');
       // 2秒後消失
       setTimeout(() => {
-        $('.register-alert').slideUp('slow');
+        $($registerAlert.current).slideUp('slow');
       }, 2000);
-      document.querySelector('#createaccount').value = '';
-      document.querySelector('#createpassword').value = '';
-      document.querySelector('#createConfirmPassword').value = '';
-      document.querySelector('#createmail').value = '';
-      document.querySelector('#createmobile').value = '';
+      setCreateAccountValue('');
+      setCreatePasswordValue('');
+      setConfirmPasswordValue('');
+      setUserEmailValue('');
+      setUserMobileValue('');
     }
   };
 
   const handleFake = () => {
-    document.querySelector('#createaccount').value = '456456456';
-    document.querySelector('#createpassword').value = '456456456';
-    document.querySelector('#createConfirmPassword').value = '456456456';
-    document.querySelector('#createmail').value = '456456456@gmail.com';
-    document.querySelector('#createmobile').value = '0945456456';
+    setCreateAccountValue('456456456');
+    setCreatePasswordValue('456456456');
+    setConfirmPasswordValue('456456456');
+    setUserEmailValue('456456456@gmail.com');
+    setUserMobileValue('0945456456');
   };
 
   return (
@@ -246,29 +252,51 @@ function LoginCard(props) {
       </button> */}
       <div className="loginCard-container d-flex align-items-center">
         <section className="loginCard-background-container">
-          <div className="loginCard-background-wrap">
+          <div
+            className="loginCard-background-wrap"
+            ref={$loginCardBackgroundWrap}
+          >
             {/* <LoginCardBg /> */}
             <img src={require('./Images/login_card.png')} />
           </div>
-          <div className="register-background-wrap">
+          <div
+            className="register-background-wrap"
+            ref={$registerBackgroundWrap}
+          >
             {/* <RegisterCardBg /> */}
             <img src={require('./Images/register_card.png')} />
           </div>
         </section>
-        <section className="login-form">
+        <section className="login-form" ref={$loginForm}>
           {/* ----------------登入表單----------------- */}
-          <div className="login-content">
+          <div className="login-content" ref={$loginContent}>
             <div className="login-title">會員登入</div>
-            <div className="alert alert-danger login-alert" role="alert">
+            <div
+              className="alert alert-danger login-alert"
+              role="alert"
+              ref={$loginAlert}
+            >
               帳號或密碼錯誤
             </div>
             <div className="login-input d-flex align-items-center justify-content-between">
               <div className="login-text">帳號</div>
-              <LoginInput type="text" id="useraccount" />
+              <LoginInput
+                type="text"
+                id="userAccount"
+                ref={$userAccount}
+                value={userAccountValue}
+                setValue={setUserAccountValue}
+              />
             </div>
             <div className="login-input d-flex  align-items-center justify-content-between">
               <div className="login-text">密碼</div>
-              <LoginInput type="password" id="userpassword" />
+              <LoginInput
+                type="password"
+                id="userPassword"
+                ref={$userPassword}
+                value={userPasswordValue}
+                setValue={setUserPasswordValue}
+              />
             </div>
             <div className="login-other d-flex">
               <div className="form-check">
@@ -302,38 +330,83 @@ function LoginCard(props) {
             </div>
           </div>
           {/* ----------------註冊表單----------------- */}
-          <div className="register-content">
+          <div className="register-content" ref={$registerContent}>
             <div className="register-title">會員註冊</div>
-            <div className="alert alert-success register-alert" role="alert">
+            <div
+              className="alert alert-success register-alert"
+              role="alert"
+              ref={$registerAlert}
+            >
               註冊成功
             </div>
             <div className="login-input d-flex align-items-center justify-content-between">
               <div className="login-text">帳號</div>
-              <LoginInput type="text" id="createaccount" />
+              <LoginInput
+                type="text"
+                id="createAccount"
+                ref={$createAccount}
+                value={createAccountValue}
+                setValue={setCreateAccountValue}
+              />
             </div>
-            <div class="wrong-account-format">*帳號要大於8碼</div>
+            <div class="wrong-account-format" ref={$wrongAccountFormat}>
+              *帳號要大於8碼
+            </div>
             <div className="login-input d-flex align-items-center justify-content-between">
               <div className="login-text">密碼</div>
-              <LoginInput type="password" id="createpassword" />
+              <LoginInput
+                type="password"
+                id="createPassword"
+                ref={$createPassword}
+                value={createPasswordValue}
+                setValue={setCreatePasswordValue}
+              />
             </div>
-            <div className="wrong-password-format">*密碼要大於8碼</div>
+            <div className="wrong-password-format" ref={$wrongPasswordFormat}>
+              *密碼要大於8碼
+            </div>
             <div className="login-input d-flex align-items-center justify-content-between">
               <div className="login-text">確認密碼</div>
-              <LoginInput type="password" id="createConfirmPassword" />
+              <LoginInput
+                type="password"
+                id="createConfirmPassword"
+                ref={$createConfirmPassword}
+                value={confirmPasswordValue}
+                setValue={setConfirmPasswordValue}
+              />
             </div>
-            <div className="wrong-confirmPassword-format">
+            <div
+              className="wrong-confirmPassword-format"
+              ref={$wrongConfirmPasswordFormat}
+            >
               *兩次輸入的密碼不符
             </div>
             <div className="login-input d-flex align-items-center justify-content-between">
               <div className="login-text">信箱</div>
-              <LoginInput type="text" id="createmail" />
+              <LoginInput
+                type="text"
+                id="creatEmail"
+                ref={$createEmail}
+                value={userEmailValue}
+                setValue={setUserEmailValue}
+              />
             </div>
-            <div class="wrong-email-format">*請填入正確的信箱格式</div>
+            <div class="wrong-email-format" ref={$wrongEmailFormat}>
+              *請填入正確的信箱格式
+            </div>
             <div className="login-input d-flex align-items-center justify-content-between">
               <div className="login-text">手機</div>
-              <LoginInput type="text" id="createmobile" />
+              <LoginInput
+                type="text"
+                id="createMobile"
+                ref={$createMobile}
+                value={userMobileValue}
+                setValue={setUserMobileValue}
+              />
             </div>
-            <div className="wrong-mobile-format">*請填入正確的手機格式</div>
+            <div className="wrong-mobile-format" ref={$wrongMobileFormat}>
+              *請填入正確的手機格式
+            </div>
             <div
               className="register-button"
               onClick={() => {
