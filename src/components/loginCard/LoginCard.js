@@ -1,5 +1,5 @@
 // moved
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import 'components/loginCard/loginCard.scss';
 import LoginInput from 'components/loginInput/LoginInput.js';
 import OptionButton from 'components/optionButton/OptionButton';
@@ -22,26 +22,27 @@ function LoginCard(props) {
   // 變成註冊表單
   const ToRegisterForm = () => {
     // 白底移動
-    const loginEnrollCard = document.querySelector('.iris-login-form');
+    const loginEnrollCard = document.querySelector('.login-form');
     loginEnrollCard.style.transform = 'translate(5%, 0)';
     loginEnrollCard.style.transition = '1.3s';
     // -------------登入卡消失效果
-    document.querySelector('.iris-login-content').style.display = 'none';
-    document.querySelector('.iris-login-background').style.opacity = '0';
-    document.querySelector('.iris-login-background').style.transition =
+    document.querySelector('.login-content').style.display = 'none';
+    document.querySelector('.loginCard-background-wrap').style.opacity = '0';
+    document.querySelector('.loginCard-background-wrap').style.transition =
       'opacity 2s';
     setTimeout(function () {
-      document.querySelector('.iris-login-background').style.display = 'none';
+      document.querySelector('.loginCard-background-wrap').style.display =
+        'none';
     }, 900);
     //------------ 註冊卡出現效果
     setTimeout(function () {
-      document.querySelector('.iris-register-background').style.display =
+      document.querySelector('.register-background-wrap').style.display =
         'block';
     }, 990);
-    document.querySelector('.iris-register-content').style.display = 'flex';
+    document.querySelector('.register-content').style.display = 'flex';
     setTimeout(function () {
-      document.querySelector('.iris-register-background').style.opacity = '1';
-      document.querySelector('.iris-register-background').style.transition =
+      document.querySelector('.register-background-wrap').style.opacity = '1';
+      document.querySelector('.register-background-wrap').style.transition =
         'opacity 1.1s';
     }, 1100);
   };
@@ -49,26 +50,27 @@ function LoginCard(props) {
   // 變成登入表單
   const ToLoginForm = () => {
     // 白底移動
-    const loginEnrollCard = document.querySelector('.iris-login-form');
+    const loginEnrollCard = document.querySelector('.login-form');
     loginEnrollCard.style.transform = 'translate(-90%, 0)';
     loginEnrollCard.style.transition = '1.3s';
     // -------------註冊卡消失效果
-    document.querySelector('.iris-register-content').style.display = 'none';
-    document.querySelector('.iris-register-background').style.opacity = '0';
-    document.querySelector('.iris-register-background').style.transition =
+    document.querySelector('.register-content').style.display = 'none';
+    document.querySelector('.register-background-wrap').style.opacity = '0';
+    document.querySelector('.register-background-wrap').style.transition =
       'opacity 2s';
     setTimeout(function () {
-      document.querySelector('.iris-register-background').style.display =
+      document.querySelector('.register-background-wrap').style.display =
         'none';
     }, 900);
     //------------ 登入卡出現效果
     setTimeout(function () {
-      document.querySelector('.iris-login-background').style.display = 'block';
+      document.querySelector('.loginCard-background-wrap').style.display =
+        'block';
     }, 990);
-    document.querySelector('.iris-login-content').style.display = 'flex';
+    document.querySelector('.login-content').style.display = 'flex';
     setTimeout(function () {
-      document.querySelector('.iris-login-background').style.opacity = '1';
-      document.querySelector('.iris-login-background').style.transition =
+      document.querySelector('.loginCard-background-wrap').style.opacity = '1';
+      document.querySelector('.loginCard-background-wrap').style.transition =
         'opacity 1.1s';
     }, 1100);
   };
@@ -136,21 +138,21 @@ function LoginCard(props) {
     let mobile = document.querySelector('#createmobile').value;
 
     if (!account.match(/[A-Za-z0-9]{8,24}/)) {
-      $('.iris-empty-account').slideUp('slow');
-      $('.iris-wrong-account-format').slideDown('slow');
+      $('.empty-account').slideUp('slow');
+      $('.wrong-account-format').slideDown('slow');
     } // 帳號小於8碼
 
     if (!password.match(/[A-Za-z0-9]{8,24}/)) {
-      $('.iris-empty-password').slideUp('slow');
-      $('.iris-wrong-password-format').slideDown('slow');
+      $('.empty-password').slideUp('slow');
+      $('.wrong-password-format').slideDown('slow');
     } // 密碼小於8碼
 
     if (
       !confirmPassword.match(/[A-Za-z0-9]{8,24}/) ||
       confirmPassword !== password
     ) {
-      $('.iris-empty-password').slideUp('slow');
-      $('.iris-wrong-confirmPassword-format').slideDown('slow');
+      $('.empty-password').slideUp('slow');
+      $('.wrong-confirmPassword-format').slideDown('slow');
     } // 確認密碼小於8碼或確認密碼不等於密碼
 
     if (
@@ -158,13 +160,13 @@ function LoginCard(props) {
         /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
       )
     ) {
-      $('.iris-empty-email').slideUp('slow');
-      $('.iris-wrong-email-format').slideDown('slow');
+      $('.empty-email').slideUp('slow');
+      $('.wrong-email-format').slideDown('slow');
     } // 信箱格式不符
 
     if (!mobile.match(/^09[0-9]{8}$/)) {
-      $('.iris-empty-mobile').slideUp('slow');
-      $('.iris-wrong-mobile-format').slideDown('slow');
+      $('.empty-mobile').slideUp('slow');
+      $('.wrong-mobile-format').slideDown('slow');
     } // 手機格式不符
 
     // 資料都ok才送出
@@ -179,15 +181,15 @@ function LoginCard(props) {
       mobile.match(/^09[0-9]{8}$/)
     ) {
       // 清空錯誤題示
-      $('.iris-empty-account').slideUp('slow');
-      $('.iris-empty-password').slideUp('slow');
-      $('.iris-empty-email').slideUp('slow');
-      $('.iris-empty-mobile').slideUp('slow');
-      $('.iris-wrong-account-format').slideUp('slow');
-      $('.iris-wrong-password-format').slideUp('slow');
-      $('.iris-wrong-confirmPassword-format').slideUp('slow');
-      $('.iris-wrong-email-format').slideUp('slow');
-      $('.iris-wrong-mobile-format').slideUp('slow');
+      $('.empty-account').slideUp('slow');
+      $('.empty-password').slideUp('slow');
+      $('.empty-email').slideUp('slow');
+      $('.empty-mobile').slideUp('slow');
+      $('.wrong-account-format').slideUp('slow');
+      $('.wrong-password-format').slideUp('slow');
+      $('.wrong-confirmPassword-format').slideUp('slow');
+      $('.wrong-email-format').slideUp('slow');
+      $('.wrong-mobile-format').slideUp('slow');
 
       // 把輸入的內容包成物件傳出去
       const newRegister = {
@@ -212,10 +214,10 @@ function LoginCard(props) {
         });
 
       // 若註冊成功，顯示成功提示
-      $('.iris-register-alert').slideDown('slow');
+      $('.register-alert').slideDown('slow');
       // 2秒後消失
       setTimeout(() => {
-        $('.iris-register-alert').slideUp('slow');
+        $('.register-alert').slideUp('slow');
       }, 2000);
       document.querySelector('#createaccount').value = '';
       document.querySelector('#createpassword').value = '';
@@ -242,45 +244,45 @@ function LoginCard(props) {
       >
         假資料
       </button> */}
-      <div className="iris-login-card-container d-flex align-items-center">
-        <div className="iris-card-background">
-          <div className="iris-login-background">
+      <div className="loginCard-container d-flex align-items-center">
+        <section className="loginCard-background-container">
+          <div className="loginCard-background-wrap">
             {/* <LoginCardBg /> */}
             <img src={require('./Images/login_card.png')} />
           </div>
-          <div className="iris-register-background">
+          <div className="register-background-wrap">
             {/* <RegisterCardBg /> */}
             <img src={require('./Images/register_card.png')} />
           </div>
-        </div>
-        <div className="iris-login-form">
+        </section>
+        <section className="login-form">
           {/* ----------------登入表單----------------- */}
-          <div className="iris-login-content">
-            <div className="iris-login-title">會員登入</div>
-            <div className="alert alert-danger iris-login-alert" role="alert">
+          <div className="login-content">
+            <div className="login-title">會員登入</div>
+            <div className="alert alert-danger login-alert" role="alert">
               帳號或密碼錯誤
             </div>
-            <div className="iris-login-input d-flex align-items-center justify-content-between">
-              <div className="iris-login-text">帳號</div>
+            <div className="login-input d-flex align-items-center justify-content-between">
+              <div className="login-text">帳號</div>
               <LoginInput type="text" id="useraccount" />
             </div>
-            <div className="iris-login-input d-flex  align-items-center justify-content-between">
-              <div className="iris-login-text">密碼</div>
+            <div className="login-input d-flex  align-items-center justify-content-between">
+              <div className="login-text">密碼</div>
               <LoginInput type="password" id="userpassword" />
             </div>
-            <div className="iris-login-other d-flex">
+            <div className="login-other d-flex">
               <div className="form-check">
                 <input
-                  class="form-check-input iris-big-checkbox"
+                  class="form-check-input big-checkbox"
                   type="checkbox"
                   id="gridCheck"
                 />
-                <div className="iris-login-remember-me">記住我</div>
+                <div className="login-remember-me">記住我</div>
               </div>
-              <div className="iris-login-forget-pw">忘記密碼</div>
+              <div className="login-forget-pw">忘記密碼</div>
             </div>
             <div
-              className="iris-login-button"
+              className="login-button"
               onClick={() => {
                 handleLogin();
               }}
@@ -288,9 +290,9 @@ function LoginCard(props) {
               <OptionButton text={'登入'} type={'green'} />
             </div>
             <div className="d-flex">
-              <div className="iris-no-account">還沒有帳號嗎?</div>
+              <div className="no-account">還沒有帳號嗎?</div>
               <div
-                className="iris-no-account-register"
+                className="no-account-register"
                 onClick={() => {
                   ToRegisterForm();
                 }}
@@ -300,45 +302,40 @@ function LoginCard(props) {
             </div>
           </div>
           {/* ----------------註冊表單----------------- */}
-          <div className="iris-register-content">
-            <div className="iris-register-title">會員註冊</div>
-            <div
-              className="alert alert-success iris-register-alert"
-              role="alert"
-            >
+          <div className="register-content">
+            <div className="register-title">會員註冊</div>
+            <div className="alert alert-success register-alert" role="alert">
               註冊成功
             </div>
-            <div className="iris-login-input d-flex align-items-center justify-content-between">
-              <div className="iris-login-text">帳號</div>
+            <div className="login-input d-flex align-items-center justify-content-between">
+              <div className="login-text">帳號</div>
               <LoginInput type="text" id="createaccount" />
             </div>
-            <div class="iris-wrong-account-format">*帳號要大於8碼</div>
-            <div className="iris-login-input d-flex align-items-center justify-content-between">
-              <div className="iris-login-text">密碼</div>
+            <div class="wrong-account-format">*帳號要大於8碼</div>
+            <div className="login-input d-flex align-items-center justify-content-between">
+              <div className="login-text">密碼</div>
               <LoginInput type="password" id="createpassword" />
             </div>
-            <div className="iris-wrong-password-format">*密碼要大於8碼</div>
-            <div className="iris-login-input d-flex align-items-center justify-content-between">
-              <div className="iris-login-text">確認密碼</div>
+            <div className="wrong-password-format">*密碼要大於8碼</div>
+            <div className="login-input d-flex align-items-center justify-content-between">
+              <div className="login-text">確認密碼</div>
               <LoginInput type="password" id="createConfirmPassword" />
             </div>
-            <div className="iris-wrong-confirmPassword-format">
+            <div className="wrong-confirmPassword-format">
               *兩次輸入的密碼不符
             </div>
-            <div className="iris-login-input d-flex align-items-center justify-content-between">
-              <div className="iris-login-text">信箱</div>
+            <div className="login-input d-flex align-items-center justify-content-between">
+              <div className="login-text">信箱</div>
               <LoginInput type="text" id="createmail" />
             </div>
-            <div class="iris-wrong-email-format">*請填入正確的信箱格式</div>
-            <div className="iris-login-input d-flex align-items-center justify-content-between">
-              <div className="iris-login-text">手機</div>
+            <div class="wrong-email-format">*請填入正確的信箱格式</div>
+            <div className="login-input d-flex align-items-center justify-content-between">
+              <div className="login-text">手機</div>
               <LoginInput type="text" id="createmobile" />
             </div>
-            <div className="iris-wrong-mobile-format">
-              *請填入正確的手機格式
-            </div>
+            <div className="wrong-mobile-format">*請填入正確的手機格式</div>
             <div
-              className="iris-register-button"
+              className="register-button"
               onClick={() => {
                 handleRegister();
               }}
@@ -346,9 +343,9 @@ function LoginCard(props) {
               <OptionButton text={'送出'} />
             </div>
             <div className="d-flex">
-              <div className="iris-no-account">已經有帳號了嗎?</div>
+              <div className="no-account">已經有帳號了嗎?</div>
               <div
-                className="iris-login-now"
+                className="login-now"
                 onClick={() => {
                   ToLoginForm();
                 }}
@@ -357,7 +354,7 @@ function LoginCard(props) {
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );
