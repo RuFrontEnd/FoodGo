@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import './App.css';
 
 // install react router => npm install react-router-dom
@@ -46,8 +47,13 @@ import {
   datatownships,
 } from '../src/Janice/Components/JanIndexx/data.js';
 
+// 判斷是否 login 的狀態
+import { login } from 'redux/member/memberActions';
+
 // 路由表
 function App() {
+  const dispatch = useDispatch();
+  const isLogin = useSelector((state) => state.member.isLogin);
   const [showBar, setShowBar] = useState(true);
   const [cartNumber, setCartNumber] = useState(0);
   const [amount, setAmount] = useState(1);
@@ -55,8 +61,8 @@ function App() {
   // ---------- iris ---------- //
   const [currentUser, setCurrentUser] = useState(''); // 目前用戶
   const [currentUserData, setCurrentUserData] = useState({}); // 目前用戶
-
   const [showLoginModal, setShowLoginModal] = useState(false); //控制是否秀光箱
+  const [showSuccessBox, setShowSuccessBox] = useState(false);
   const [couponStatus, setCouponStatus] = useState([]);
   const [couponOneStatus, setCouponOneStatus] = useState('');
 
@@ -121,7 +127,27 @@ function App() {
   //   }
   // };
 
-  useEffect(() => {
+  useEffect(async () => {
+    const accessToken = localStorage.getItem('accessToken');
+    if (accessToken) {
+      const token = { accessToken: accessToken };
+      await fetch('http://localhost:5000/member/login', {
+        method: 'POST',
+        body: JSON.stringify(token),
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${accessToken}`,
+        }),
+      })
+        .then((res) => res.json())
+        .then((jsonData) => {
+          if (jsonData.status) {
+            dispatch(login());
+            // setShowSuccessBox(true);
+          }
+        });
+    }
     const currentCartNumber =
       JSON.parse(localStorage.getItem('cartNumber')) || 0;
     setCartNumber(currentCartNumber);
@@ -139,6 +165,9 @@ function App() {
     }
   }, []);
 
+  if (isLogin === null) {
+    return <></>;
+  }
   return (
     <Router>
       <>
@@ -148,12 +177,15 @@ function App() {
           cartNumber={cartNumber}
           amount={amount}
           setShowLoginModal={setShowLoginModal}
+          setShowSuccessBox={setShowSuccessBox}
           showLoginModal={showLoginModal}
           currentUser={currentUser}
         />
         <LoginModal
           showLoginModal={showLoginModal}
           setShowLoginModal={setShowLoginModal}
+          showSuccessBox={showSuccessBox}
+          setShowSuccessBox={setShowSuccessBox}
           setCurrentUser={setCurrentUser}
           currentUserData={currentUserData}
           setCurrentUserData={setCurrentUserData}

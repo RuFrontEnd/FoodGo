@@ -26,6 +26,7 @@ function NavBar(props) {
     showLoginModal,
     cartNumber,
     SetShowLoginCard,
+    setShowSuccessBox,
   } = props;
 
   const dispatch = useDispatch();
@@ -53,28 +54,7 @@ function NavBar(props) {
 
   // 在未登入的狀態點擊會員相關選項
   const disableLink = async (e) => {
-    console.log('a');
-    const accessToken = localStorage.getItem('accessToken');
-    console.log('accessToken', accessToken);
-    if (accessToken) {
-      const token = { accessToken: accessToken };
-      await fetch('http://localhost:5000/member/login', {
-        method: 'POST',
-        body: JSON.stringify(token),
-        headers: new Headers({
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-          authorization: `Bearer ${accessToken}`,
-        }),
-      })
-        .then((res) => res.json())
-        .then((jsonData) => {
-          if (jsonData.status) {
-            dispatch(login());
-          }
-        });
-    }
-    if (isLogin === false && !accessToken) {
+    if (isLogin === false) {
       e.preventDefault(); // 不跳轉頁面
       setShowLoginModal(true); // 秀登入光箱
     }
@@ -83,6 +63,7 @@ function NavBar(props) {
   // 點擊登出
   const handleLogout = () => {
     dispatch(logout());
+    localStorage.removeItem('accessToken');
     localStorage.removeItem('currentUser');
   };
 
