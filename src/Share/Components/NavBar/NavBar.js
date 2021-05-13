@@ -43,32 +43,47 @@ function NavBar(props) {
     }
   }
 
-  // 在登入狀態
-  if (isLogin === true) {
-    // 登入選項消失
-    document.querySelector('.iris-login-option').style.display = 'none';
-    // 顯示登出選項
-    document.querySelector('.iris-logout-option').style.display = 'block';
-  }
+  // // 在登入狀態
+  // if (isLogin === true) {
+  //   // 登入選項消失
+  //   document.querySelector('.iris-login-option').style.display = 'none';
+  //   // 顯示登出選項
+  //   document.querySelector('.iris-logout-option').style.display = 'block';
+  // }
 
   // 在未登入的狀態點擊會員相關選項
-  const disableLink = (e) => {
-    if (isLogin === false) {
+  const disableLink = async (e) => {
+    console.log('a');
+    const accessToken = localStorage.getItem('accessToken');
+    console.log('accessToken', accessToken);
+    if (accessToken) {
+      const token = { accessToken: accessToken };
+      await fetch('http://localhost:5000/member/login', {
+        method: 'POST',
+        body: JSON.stringify(token),
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${accessToken}`,
+        }),
+      })
+        .then((res) => res.json())
+        .then((jsonData) => {
+          if (jsonData.status) {
+            dispatch(login());
+          }
+        });
+    }
+    if (isLogin === false && !accessToken) {
       e.preventDefault(); // 不跳轉頁面
       setShowLoginModal(true); // 秀登入光箱
     }
   };
 
   // 點擊登出
-  const showLoginOption = () => {
-    // 顯示登入選項,隱藏登出選項
+  const handleLogout = () => {
     dispatch(logout());
-    document.querySelector('.iris-login-option').style.display = 'block';
-    document.querySelector('.iris-logout-option').style.display = 'none';
-  };
-
-  const clearUserStorage = () => {
-    localStorage.clear('currentUser');
+    localStorage.removeItem('currentUser');
   };
 
   return (
@@ -160,87 +175,91 @@ function NavBar(props) {
                   關於我們
                 </Nav.Link>
               </li>
-              <li className="navBar-jess-navigation_item">
-                <Nav.Link
-                  as={NavLink}
-                  to="/memberUserprofile"
-                  onClick={(e) => {
-                    disableLink(e);
-                  }}
-                >
-                  會員中心 <BackArrow className="backArrow" />
-                </Nav.Link>
-                <div className="navBar-jess-emptydiv">
-                  <ul className="navBar-jess-dropdown2">
-                    <div className="navBar-jess-triangle2"></div>
-                    <li className="navBar-jess-dropdown_item">
-                      <Nav.Link
-                        as={NavLink}
-                        to="/orderManagement"
-                        onClick={(e) => {
-                          disableLink(e);
-                        }}
-                      >
-                        訂單管理
-                      </Nav.Link>
-                    </li>
-                    <li className="navBar-jess-dropdown_item">
-                      <Nav.Link
-                        as={NavLink}
-                        to="/memberUserprofile"
-                        onClick={(e) => {
-                          disableLink(e);
-                        }}
-                      >
-                        修改會員資料
-                      </Nav.Link>
-                    </li>
-                    <li className="navBar-jess-dropdown_item">
-                      <Nav.Link
-                        as={NavLink}
-                        to="/myFav"
-                        onClick={(e) => {
-                          disableLink(e);
-                        }}
-                      >
-                        我的最愛
-                      </Nav.Link>
-                    </li>
-                    <li className="navBar-jess-dropdown_item">
-                      <Nav.Link
-                        as={NavLink}
-                        to="/beastiePoint"
-                        onClick={(e) => {
-                          disableLink(e);
-                        }}
-                      >
-                        我的怪獸
-                      </Nav.Link>
-                      <Monster className="navBar-jess-monster4" />
-                    </li>
+              {!isLogin && (
+                <li className="navBar-jess-navigation_item">
+                  <Nav.Link
+                    as={NavLink}
+                    to="/"
+                    onClick={(e) => {
+                      disableLink(e);
+                    }}
+                  >
+                    登入會員
+                  </Nav.Link>
+                </li>
+              )}
+              {isLogin && (
+                <li className="navBar-jess-navigation_item">
+                  <Nav.Link
+                    as={NavLink}
+                    to="/memberUserprofile"
+                    onClick={(e) => {
+                      disableLink(e);
+                    }}
+                  >
+                    會員中心 <BackArrow className="backArrow" />
+                  </Nav.Link>
+                  <div className="navBar-jess-emptydiv">
+                    <ul className="navBar-jess-dropdown2">
+                      <div className="navBar-jess-triangle2"></div>
+                      <li className="navBar-jess-dropdown_item">
+                        <Nav.Link
+                          as={NavLink}
+                          to="/orderManagement"
+                          onClick={(e) => {
+                            disableLink(e);
+                          }}
+                        >
+                          訂單管理
+                        </Nav.Link>
+                      </li>
+                      <li className="navBar-jess-dropdown_item">
+                        <Nav.Link
+                          as={NavLink}
+                          to="/memberUserprofile"
+                          onClick={(e) => {
+                            disableLink(e);
+                          }}
+                        >
+                          修改會員資料
+                        </Nav.Link>
+                      </li>
+                      <li className="navBar-jess-dropdown_item">
+                        <Nav.Link
+                          as={NavLink}
+                          to="/myFav"
+                          onClick={(e) => {
+                            disableLink(e);
+                          }}
+                        >
+                          我的最愛
+                        </Nav.Link>
+                      </li>
+                      <li className="navBar-jess-dropdown_item">
+                        <Nav.Link
+                          as={NavLink}
+                          to="/beastiePoint"
+                          onClick={(e) => {
+                            disableLink(e);
+                          }}
+                        >
+                          我的怪獸
+                        </Nav.Link>
+                        <Monster className="navBar-jess-monster4" />
+                      </li>
 
-                    <li
-                      className="navBar-jess-dropdown_item iris-login-option"
-                      onClick={() => {
-                        setShowLoginModal(true);
-                      }}
-                    >
-                      登入/註冊
-                    </li>
-                    {/* 11/9 新增登出選項 */}
-                    <li
-                      className="navBar-jess-dropdown_item iris-logout-option"
-                      onClick={() => {
-                        showLoginOption();
-                        clearUserStorage();
-                      }}
-                    >
-                      登出
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
+                      <li
+                        className="navBar-jess-dropdown_item iris-login-option"
+                        onClick={() => {
+                          handleLogout();
+                        }}
+                      >
+                        登出
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              )}
               <li id="ru-target">
                 <span className="jess-navbarCartNum" id="jess-navbarCartNum">
                   {cartNumber}

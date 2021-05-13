@@ -109,6 +109,21 @@ function LoginCard(props) {
   // 登入比對帳密
   // 要用 async await, 先拿到資料再比對
   async function handleLogin() {
+    // if (localStorage.getItem('accessToken')) {
+    //   const token = { accessToken: localStorage.getItem('accessToken') };
+    //   console.log('token', token);
+    //   await fetch('http://localhost:5000/member/isUserAuth', {
+    //     method: 'POST',
+    //     body: JSON.stringify(token),
+    //     headers: new Headers({
+    //       Accept: 'application/json',
+    //       'Content-Type': 'application/json',
+    //     }),
+    //   }).then((res) => res.json());
+    //   // .then(jsonData);
+    // }
+
+    // if (!localStorage.getItem('accessToken')) {
     const member = {
       account: userAccountValue,
       password: userPasswordValue,
@@ -125,14 +140,17 @@ function LoginCard(props) {
       .then((res) => res.json())
       .then((jsonData) => {
         console.log('jsonData', jsonData);
-        // if (jsonData.status === true) {
-        //   dispatch(login());
-        //   setCurrentUser(jsonData.currentUser);
-        //   console.log('document.cookie', document.cookie);
-        //   setShowLoginModal(false); // 登入光箱消失
-        //   setShowSuccessBox(true); // 出現登入成功光箱
-        // }
+        if (jsonData.status === true) {
+          localStorage.setItem('accessToken', jsonData.accessToken);
+          localStorage.setItem('currentUser', jsonData.currentUser);
+          dispatch(login());
+          setCurrentUser(jsonData.currentUser);
+          setShowLoginModal(false); // 登入光箱消失
+          setShowSuccessBox(true); // 出現登入成功光箱
+        }
       });
+    // }
+
     // await getData();
     // for (let i = 0; i < userinfo.length; i++) {
     //   if (
