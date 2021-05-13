@@ -81,6 +81,36 @@ function App() {
   const [textTownship, setTextTownship] = useState('');
   // setTextTownship(turnTown);
 
+  useEffect(async () => {
+    const accessToken = localStorage.getItem('accessToken');
+    const currentCartNumber =
+      JSON.parse(localStorage.getItem('cartNumber')) || 0;
+    if (accessToken) {
+      const token = { accessToken: accessToken };
+      await fetch('http://localhost:5000/member/login', {
+        method: 'POST',
+        body: JSON.stringify(token),
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${accessToken}`,
+        }),
+      })
+        .then((res) => res.json())
+        .then((jsonData) => {
+          if (jsonData.status) {
+            dispatch(login());
+          }
+        });
+    }
+
+    setCartNumber(currentCartNumber);
+
+    if (JSON.parse(localStorage.getItem('currentUser'))) {
+      setCurrentUser(JSON.parse(localStorage.getItem('currentUser')));
+    }
+  }, []); // 初始判斷會員狀態與資料
+
   useEffect(() => setTextAddress(address), [address]);
   useEffect(() => setTextCounty(county !== -1 ? datacountries[county] : ''), [
     county,
@@ -126,44 +156,6 @@ function App() {
   //     setCartNumber(newCartNumber);
   //   }
   // };
-
-  useEffect(async () => {
-    const accessToken = localStorage.getItem('accessToken');
-    if (accessToken) {
-      const token = { accessToken: accessToken };
-      await fetch('http://localhost:5000/member/login', {
-        method: 'POST',
-        body: JSON.stringify(token),
-        headers: new Headers({
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-          authorization: `Bearer ${accessToken}`,
-        }),
-      })
-        .then((res) => res.json())
-        .then((jsonData) => {
-          if (jsonData.status) {
-            dispatch(login());
-            // setShowSuccessBox(true);
-          }
-        });
-    }
-    const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || 0;
-    setCartNumber(currentCartNumber);
-  }, []);
-
-  useEffect(() => {
-    return () => {};
-  }, [amount]);
-
-  // 若localstorage有user就用user資料
-  useEffect(() => {
-    if (JSON.parse(localStorage.getItem('currentUser'))) {
-      setCurrentUser(JSON.parse(localStorage.getItem('currentUser')));
-      // console.log(localStorage.getItem('currentUser'))
-    }
-  }, []);
 
   if (isLogin === null) {
     return <></>;
