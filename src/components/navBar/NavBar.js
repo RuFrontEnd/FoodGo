@@ -255,7 +255,7 @@ function NavBar(props) {
                     disableLink(e);
                   }}
                 >
-                  <ShoppingCart className="navbar-ShoppingCart" />
+                  <ShoppingCart className="navbar-shoppingCart" />
                 </Nav.Link>
                 <div className="navbar-tag-wrap">
                   <div className="navbar-tag">

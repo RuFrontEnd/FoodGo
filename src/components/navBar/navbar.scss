@@ -7,6 +7,10 @@
 // 引入字體
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap");
 
+.navBar-hidden {
+  visibility: hidden;
+}
+
 .navBar-container {
   background-color: rgb(255, 255, 255);
   position: fixed;
@@ -14,6 +18,7 @@
   box-shadow: 0.3rem 0 1rem #cfcfcf;
   z-index: 1040;
 }
+
 .navBar-wrap {
   width: 144rem;
   margin: 0 auto;
@@ -26,14 +31,21 @@
   padding: 10px 0px;
 }
 
+.navBar-collapse ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0px;
+}
+
+.navBar-navigation {
+  display: flex;
+  align-items: center;
+}
+
 //text color
 .navBar-container a {
   color: #858585;
   text-decoration: none;
-}
-.navBar-navigation {
-  display: flex;
-  align-items: center;
 }
 
 //when text hover
@@ -44,29 +56,25 @@
   text-decoration: none;
 }
 
-.navBar-container .navBar-collapse ul {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0px;
-}
-
 // 下拉式選單出現切換
 .navBar-navigation-item {
   position: relative;
   display: inline-block;
+  font-size: 2rem;
   padding-right: 20px;
   padding-left: 20px;
-  font-size: 2rem;
 }
 
-.navBar-dropdown {
+.navBar-navigation-item:hover .navBar-dropdown,
+.navBar-navigation-item:hover .navBar-dropdown2 {
   display: block;
 }
 
-.navBar-logo {
-  height: 70px;
-  margin-left: 55px;
+.navBar-dropdown-item:hover .navBar-monster4 {
+  opacity: 1;
+  left: 16rem;
 }
+
 //下拉式選單 none隱藏
 .navBar-dropdown {
   display: none;
@@ -79,24 +87,6 @@
   text-align: center;
   left: -4rem;
   backdrop-filter: blur(3px);
-}
-
-//下拉式選單間距
-.navBar-dropdown-item {
-  padding: 5px;
-}
-
-//下拉式選單 hover後效果
-.navBar-dropdown-item:hover {
-  color: rgb(255, 255, 255);
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-// 下拉式選單 文字顏色
-.navBar-dropdown-item a {
-  color: rgb(255, 255, 255);
-  line-height: 2.5rem;
-  font-size: 1.8rem;
 }
 
 //下拉式選單 頂部三角形
@@ -112,7 +102,29 @@
   text-align: center;
 }
 
-//右邊dropdowm
+//下拉式選單 hover後效果
+.navBar-dropdown-item:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.navBar-dropdown-item {
+  padding: 5px 0px;
+}
+
+// 下拉式選單 文字顏色
+.navBar-dropdown-item a {
+  color: rgb(255, 255, 255);
+  line-height: 2.5rem;
+  font-size: 1.8rem;
+}
+
+.navBar-logo {
+  height: 70px;
+  margin-left: 55px;
+}
+
+// 右邊dropdown
 .navBar-dropdown2 {
   display: none;
   position: absolute;
@@ -124,38 +136,6 @@
   text-align: center;
   right: 0rem;
   backdrop-filter: blur(3px);
-}
-
-.navBar-navigation-item:hover .navBar-dropdown,
-.navBar-navigation-item:hover .navBar-dropdown2 {
-  display: block;
-}
-
-// 下拉式選單間距
-.navBar-dropdown-item {
-  padding: 5px;
-}
-// 下拉式選單 文字顏色
-.navBar-dropdown-item a {
-  color: rgb(255, 255, 255);
-  line-height: 2.5rem;
-  font-size: 1.8rem;
-}
-
-//小怪獸的出現效果-我的怪獸
-.navBar-monster4 {
-  position: absolute;
-  left: 14rem;
-  top: 13.5rem;
-  opacity: 0;
-  transition: left 0.5s;
-  transition-timing-function: linear;
-  z-index: -1;
-}
-
-.navBar-dropdown-item:hover .navBar-monster4 {
-  opacity: 1;
-  left: 16rem;
 }
 
 //right下拉式選單 頂部三角形
@@ -171,6 +151,21 @@
   text-align: center;
 }
 
+//小怪獸的出現效果-我的怪獸
+.navBar-monster4 {
+  position: absolute;
+  left: 14rem;
+  top: 13.5rem;
+  opacity: 0;
+  transition: left 0.5s;
+  transition-timing-function: linear;
+  z-index: -1;
+}
+
+.navbar-shoppingCart {
+  z-index: 1050;
+}
+
 .navbar-tag-wrap {
   transform: translate(30px, -50px);
 }
@@ -178,10 +173,6 @@
 .navbar-tag {
   position: absolute;
   text-align: center;
-}
-
-.navbar-ShoppingCart {
-  z-index: 1050;
 }
 
 //shopping cart number
@@ -210,10 +201,6 @@
   position: absolute;
   left: 2;
   top: 0;
-}
-
-.navBar-hidden {
-  visibility: hidden;
 }
 
 /*mobile styles*/
