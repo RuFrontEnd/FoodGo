@@ -49,6 +49,7 @@ import {
 
 // 判斷是否 login 的狀態
 import { login } from 'redux/member/memberActions';
+import { logout } from 'redux/member/memberActions';
 
 // 路由表
 function App() {
@@ -82,6 +83,7 @@ function App() {
   // setTextTownship(turnTown);
 
   useEffect(async () => {
+    console.log('a');
     const accessToken = localStorage.getItem('accessToken');
     const currentCartNumber =
       JSON.parse(localStorage.getItem('cartNumber')) || 0;
@@ -102,6 +104,9 @@ function App() {
             dispatch(login());
           }
         });
+    }
+    if (!accessToken) {
+      dispatch(logout());
     }
 
     setCartNumber(currentCartNumber);

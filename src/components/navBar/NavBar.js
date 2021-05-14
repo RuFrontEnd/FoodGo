@@ -68,19 +68,19 @@ function NavBar(props) {
   };
 
   return (
-    <div style={style} className={className} id={id}>
-      <div className="nav" id="NavBar">
+    <nav style={style} className={className} id={id}>
+      <section className="navBar-container" id="NavBar">
         <div
-          className="navBar-jess-container"
+          className="navBar-wrap"
           onClick={() => {
             if (showLoginModal === true) {
               setShowLoginModal(false);
             }
           }}
         >
-          <div className="navBar-jess-navCollapse ">
-            <ul className="navBar-jess-navigation">
-              <li className="navBar-jess-navigation_item">
+          <div className="navBar-collapse">
+            <ul className="navBar-navigation">
+              <li className="navBar-navigation-item">
                 <Nav.Link
                   as={NavLink}
                   to="/groupOrder/groupOrderCreate"
@@ -91,56 +91,52 @@ function NavBar(props) {
                   作伙揪團
                 </Nav.Link>
               </li>
-              <li className="navBar-jess-navigation_item">
+              <li className="navBar-navigation-item">
                 <Nav.Link as={NavLink} to="/farmMap">
                   哈囉小農
                 </Nav.Link>
               </li>
-              <li className="navBar-jess-navigation_item">
+              <li className="navBar-navigation-item">
                 <Nav.Link as={NavLink} to="/menu">
                   尋找美味 <BackArrow className="backArrow" />{' '}
                 </Nav.Link>
-                <div className="navBar-jess-emptydiv">
-                  <ul className="navBar-jess-dropdown">
-                    <div className="navBar-jess-triangle"></div>
-                    <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/productList">
-                        低GI便當
-                      </Nav.Link>
-                    </li>
-                    <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/productListSalad">
-                        美味沙拉
-                      </Nav.Link>
-                    </li>
-                    <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/vegBox">
-                        蔬菜箱
-                      </Nav.Link>
-                    </li>
-                    <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/productListCustom">
-                        客製化便當
-                      </Nav.Link>
-                    </li>
-                    <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/">
-                        外送服務
-                      </Nav.Link>
-                    </li>
-                  </ul>
-                </div>
+                <ul className="navBar-dropdown">
+                  <div className="navBar-triangle"></div>
+                  <li className="navBar-dropdown-item">
+                    <Nav.Link as={NavLink} to="/productList">
+                      低GI便當
+                    </Nav.Link>
+                  </li>
+                  <li className="navBar-dropdown-item">
+                    <Nav.Link as={NavLink} to="/productListSalad">
+                      美味沙拉
+                    </Nav.Link>
+                  </li>
+                  <li className="navBar-dropdown-item">
+                    <Nav.Link as={NavLink} to="/vegBox">
+                      蔬菜箱
+                    </Nav.Link>
+                  </li>
+                  <li className="navBar-dropdown-item">
+                    <Nav.Link as={NavLink} to="/productListCustom">
+                      客製化便當
+                    </Nav.Link>
+                  </li>
+                  <li className="navBar-dropdown-item">
+                    <Nav.Link as={NavLink} to="/">
+                      外送服務
+                    </Nav.Link>
+                  </li>
+                </ul>
               </li>
-              <Nav.Link
-                as={NavLink}
-                to="/"
-                exact
-                className="navBar-jess-nav_brand"
-              >
-                <Logo />
-              </Nav.Link>
+            </ul>
 
-              <li className="navBar-jess-navigation_item">
+            <Nav.Link as={NavLink} to="/" exact className="navBar-navBrand">
+              <Logo className="navBar-logo" />
+            </Nav.Link>
+
+            <ul className="navBar-navigation">
+              <li className="navBar-navigation-item">
                 <Nav.Link
                   as={NavLink}
                   to="/getcoupon"
@@ -151,13 +147,13 @@ function NavBar(props) {
                   專屬優惠
                 </Nav.Link>
               </li>
-              <li className="navBar-jess-navigation_item">
+              <li className="navBar-navigation-item">
                 <Nav.Link as={NavLink} to="/">
                   關於我們
                 </Nav.Link>
               </li>
               {!isLogin && (
-                <li className="navBar-jess-navigation_item">
+                <li className="navBar-navigation-item">
                   <Nav.Link
                     as={NavLink}
                     to="/"
@@ -165,12 +161,12 @@ function NavBar(props) {
                       disableLink(e);
                     }}
                   >
-                    登入會員
+                    登入會員 <BackArrow className="backArrow navBar-hidden" />
                   </Nav.Link>
                 </li>
               )}
               {isLogin && (
-                <li className="navBar-jess-navigation_item">
+                <li className="navBar-navigation-item">
                   <Nav.Link
                     as={NavLink}
                     to="/memberUserprofile"
@@ -180,69 +176,69 @@ function NavBar(props) {
                   >
                     會員中心 <BackArrow className="backArrow" />
                   </Nav.Link>
-                  <div className="navBar-jess-emptydiv">
-                    <ul className="navBar-jess-dropdown2">
-                      <div className="navBar-jess-triangle2"></div>
-                      <li className="navBar-jess-dropdown_item">
-                        <Nav.Link
-                          as={NavLink}
-                          to="/orderManagement"
-                          onClick={(e) => {
-                            disableLink(e);
-                          }}
-                        >
-                          訂單管理
-                        </Nav.Link>
-                      </li>
-                      <li className="navBar-jess-dropdown_item">
-                        <Nav.Link
-                          as={NavLink}
-                          to="/memberUserprofile"
-                          onClick={(e) => {
-                            disableLink(e);
-                          }}
-                        >
-                          修改會員資料
-                        </Nav.Link>
-                      </li>
-                      <li className="navBar-jess-dropdown_item">
-                        <Nav.Link
-                          as={NavLink}
-                          to="/myFav"
-                          onClick={(e) => {
-                            disableLink(e);
-                          }}
-                        >
-                          我的最愛
-                        </Nav.Link>
-                      </li>
-                      <li className="navBar-jess-dropdown_item">
-                        <Nav.Link
-                          as={NavLink}
-                          to="/beastiePoint"
-                          onClick={(e) => {
-                            disableLink(e);
-                          }}
-                        >
-                          我的怪獸
-                        </Nav.Link>
-                        <Monster className="navBar-jess-monster4" />
-                      </li>
-
-                      <li
-                        className="navBar-jess-dropdown_item iris-login-option"
-                        onClick={() => {
-                          handleLogout();
+                  <ul className="navBar-dropdown2">
+                    <div className="navBar-triangle2"></div>
+                    <li className="navBar-dropdown-item">
+                      <Nav.Link
+                        as={NavLink}
+                        to="/orderManagement"
+                        onClick={(e) => {
+                          disableLink(e);
                         }}
                       >
-                        登出
-                      </li>
-                    </ul>
-                  </div>
+                        訂單管理
+                      </Nav.Link>
+                    </li>
+                    <li className="navBar-dropdown-item">
+                      <Nav.Link
+                        as={NavLink}
+                        to="/memberUserprofile"
+                        onClick={(e) => {
+                          disableLink(e);
+                        }}
+                      >
+                        修改會員資料
+                      </Nav.Link>
+                    </li>
+                    <li className="navBar-dropdown-item">
+                      <Nav.Link
+                        as={NavLink}
+                        to="/myFav"
+                        onClick={(e) => {
+                          disableLink(e);
+                        }}
+                      >
+                        我的最愛
+                      </Nav.Link>
+                    </li>
+                    <li className="navBar-dropdown-item">
+                      <Nav.Link
+                        as={NavLink}
+                        to="/beastiePoint"
+                        onClick={(e) => {
+                          disableLink(e);
+                        }}
+                      >
+                        我的怪獸
+                      </Nav.Link>
+                      <Monster className="navBar-monster4" />
+                    </li>
+                    <li
+                      className="navBar-dropdown-item navBar-login-option"
+                      onClick={() => {
+                        handleLogout();
+                      }}
+                    >
+                      登出
+                    </li>
+                  </ul>
                 </li>
               )}
-              <li id="ru-target">
-                <span className="jess-navbarCartNum" id="jess-navbarCartNum">
+              <li className="navBar-navigation-item">
+                <span
+                  className="navBar-navbarCartNum"
+                  id="navBar-navbarCartNum"
+                >
                   {cartNumber}
                 </span>
                 {/* <Popover
@@ -250,7 +246,7 @@ function NavBar(props) {
                   content={shoppingList}
                   title="我的購買清單"
                   trigger="hover"
-                  className="navbar-jess-popover"
+                  className="navbar-popover"
                 > */}
                 <Nav.Link
                   as={NavLink}
@@ -259,14 +255,14 @@ function NavBar(props) {
                     disableLink(e);
                   }}
                 >
-                  <ShoppingCart className="navbar-jess-ShopingCart" />
+                  <ShoppingCart className="navbar-ShoppingCart" />
                 </Nav.Link>
                 <div className="navbar-tag-wrap">
                   <div className="navbar-tag">
-                    <ShoppingAmount className="jess-navbarCartAmount" />
+                    <ShoppingAmount className="navBar-navbarCartAmount" />
                     <span
-                      className="jess-navbarCartNum"
-                      id="jess-navbarCartNum"
+                      className="navBar-navbarCartNum"
+                      id="navBar-navbarCartNum"
                     >
                       {cartNumber}
                     </span>
@@ -277,11 +273,14 @@ function NavBar(props) {
             </ul>
           </div>
         </div>
-        <div className="icons-list nav_toggle" onClick={myFunction}>
+        <div
+          className="navBar-icons-list navBar-navToggle"
+          onClick={myFunction}
+        >
           <MenuOutlined />
         </div>
-      </div>
-    </div>
+      </section>
+    </nav>
   );
 }
 

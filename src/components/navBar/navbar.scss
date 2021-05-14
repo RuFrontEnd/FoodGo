@@ -1,101 +1,86 @@
 // 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
 
-html {
-  font-size: 10px;
-}
-// * {
-//   margin: 0;
-//   padding: 0;
-// }
-
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap.scss";
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
-//引入字體
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
-//navBar的背景
+// 引入字體
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap");
 
-// @media screen and (max-width: 480px)
-// @media (min-width: 480px) and (max-width: 680px)
-
-.nav {
-  width: 100%;
-  height: 10rem;
+.navBar-container {
   background-color: rgb(255, 255, 255);
-  padding: 0.5rem 5rem;
-  box-shadow: 0.3rem 0 1rem #cfcfcf;
   position: fixed;
-  padding: 0;
+  width: 100%;
+  box-shadow: 0.3rem 0 1rem #cfcfcf;
   z-index: 1040;
 }
-.navBar-jess-container {
-  width: 140rem;
-  height: 10rem;
+.navBar-wrap {
+  width: 144rem;
   margin: 0 auto;
   text-align: center;
 }
-//logo
-.nav .navBar-jess-nav_brand {
-  margin-top: -2rem;
-  width: 37rem;
-  padding-left: 6rem;
+
+.navBar-collapse {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
 }
+
 //text color
-.nav a {
+.navBar-container a {
   color: #858585;
   text-decoration: none;
 }
-.nav .navBar-jess-navigation {
-  width: 114rem;
+.navBar-navigation {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 
 //when text hover
-.nav a:hover,
-.nav a:focus,
-.nav a:active {
+.navBar-container a:hover,
+.navBar-container a:focus,
+.navBar-container a:active {
   color: #e0611e;
   text-decoration: none;
 }
 
-.nav .navBar-jess-navCollapse {
-  display: inline-block;
-  justify-content: center;
-  margin-top: 3.5rem;
-}
-
-.nav .navBar-jess-navCollapse ul {
+.navBar-container .navBar-collapse ul {
   list-style: none;
   padding-left: 0;
+  margin-bottom: 0px;
 }
-//選單文字
-.nav .navBar-jess-navCollapse li {
-  padding-left: 0px;
+
+// 下拉式選單出現切換
+.navBar-navigation-item {
+  position: relative;
+  display: inline-block;
+  padding-right: 20px;
+  padding-left: 20px;
   font-size: 2rem;
 }
-// 下拉式選單出現切換
-.nav
-  .navBar-jess-navCollapse
-  .navBar-jess-navigation
-  .navBar-jess-navigation_item {
-  display: inline-block;
-  position: relative;
-}
-.nav .navBar-jess-navigation_item:hover .navBar-jess-dropdown {
+
+// .navBar-backArrow {
+//   visibility: hidden;
+// }
+
+.navBar-container .navBar-navigation-item:hover .navBar-dropdown {
   display: block;
 }
-.navBar-jess-emptydiv {
-  width: 10rem;
-  height: 2rem;
-  margin-top: 1rem;
-  border-radius: 0.5rem;
-  text-align: center;
-  left: 30rem;
+.navBar-emptydiv {
+  // width: 10rem;
+  // height: 2rem;
+  // margin-top: 1rem;
+  // border-radius: 0.5rem;
+  // text-align: center;
+  // left: 30rem;
+}
+
+.navBar-logo {
+  height: 70px;
+  margin-left: 55px;
 }
 //下拉式選單 none隱藏
-.nav .navBar-jess-navigation_item .navBar-jess-dropdown {
+.navBar-container .navBar-navigation-item .navBar-dropdown {
   display: none;
   position: absolute;
   width: 17rem;
@@ -109,32 +94,22 @@ html {
 }
 
 //下拉式選單間距
-.nav
-  .navBar-jess-navigation_item
-  .navBar-jess-dropdown
-  .navBar-jess-dropdown_item {
+.navBar-container .navBar-navigation-item .navBar-dropdown .navBar-dropdown-item {
   padding: 5px;
 }
 // 下拉式選單 文字顏色
-.nav
-  .navBar-jess-navigation_item
-  .navBar-jess-dropdown
-  .navBar-jess-dropdown_item
-  a {
+.navBar-container .navBar-navigation-item .navBar-dropdown .navBar-dropdown-item a {
   color: rgb(255, 255, 255);
   line-height: 2.5rem;
   font-size: 1.8rem;
 }
 //下拉式選單 hover後效果
-.nav
-  .navBar-jess-navigation_item
-  .navBar-jess-dropdown
-  .navBar-jess-dropdown_item:hover {
+.navBar-container .navBar-navigation-item .navBar-dropdown .navBar-dropdown-item:hover {
   color: rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0.4);
 }
 //下拉式選單 頂部三角形
-.nav .navBar-jess-triangle {
+.navBar-container .navBar-triangle {
   width: 0rem;
   height: 0rem;
   border-style: solid;
@@ -147,7 +122,7 @@ html {
 }
 
 //右邊dropdowm
-.nav .navBar-jess-navigation_item .navBar-jess-dropdown2 {
+.navBar-container .navBar-navigation-item .navBar-dropdown2 {
   display: none;
   position: absolute;
   width: 17rem;
@@ -159,42 +134,28 @@ html {
   right: 0rem;
   backdrop-filter: blur(3px);
 }
-.nav .navBar-jess-navigation_item:hover .navBar-jess-dropdown2 {
+.navBar-container .navBar-navigation-item:hover .navBar-dropdown2 {
   display: block;
 }
 
 // 下拉式選單間距
-.nav
-  .navBar-jess-navigation_item
-  .navBar-jess-dropdown2
-  .navBar-jess-dropdown_item {
+.navBar-container .navBar-navigation-item .navBar-dropdown2 .navBar-dropdown-item {
   padding: 5px;
 }
 // 下拉式選單 文字顏色
-.nav
-  .navBar-jess-navigation_item
-  .navBar-jess-dropdown2
-  .navBar-jess-dropdown_item
-  a {
+.navBar-container .navBar-navigation-item .navBar-dropdown2 .navBar-dropdown-item a {
   color: rgb(255, 255, 255);
   line-height: 2.5rem;
   font-size: 1.8rem;
 }
 //下拉式選單 hover後效果
-.nav
-  .navBar-jess-navigation_item
-  .navBar-jess-dropdown2
-  .navBar-jess-dropdown_item:hover {
+.navBar-container .navBar-navigation-item .navBar-dropdown2 .navBar-dropdown-item:hover {
   color: rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0.4);
 }
 
 //小怪獸的出現效果-我的怪獸
-.nav
-  .navBar-jess-navigation_item
-  .navBar-jess-dropdown2
-  .navBar-jess-dropdown_item
-  .navBar-jess-monster4 {
+.navBar-container .navBar-navigation-item .navBar-dropdown2 .navBar-dropdown-item .navBar-monster4 {
   position: absolute;
   left: 14rem;
   top: 13.5rem;
@@ -203,17 +164,13 @@ html {
   transition-timing-function: linear;
   z-index: -1;
 }
-.nav
-  .navBar-jess-navigation_item
-  .navBar-jess-dropdown2
-  .navBar-jess-dropdown_item:hover
-  .navBar-jess-monster4 {
+.navBar-container .navBar-navigation-item .navBar-dropdown2 .navBar-dropdown-item:hover .navBar-monster4 {
   opacity: 1;
   left: 16rem;
 }
 
 //right下拉式選單 頂部三角形
-.nav .navBar-jess-triangle2 {
+.navBar-container .navBar-triangle2 {
   width: 0rem;
   height: 0rem;
   border-style: solid;
@@ -234,19 +191,19 @@ html {
   text-align: center;
 }
 
-.navbar-jess-ShopingCart {
+.navbar-ShopingCart {
   z-index: 1050;
 }
 
 //shopping cart number
-.nav .jess-navbarCartAmount {
+.navBar-container .navBar-navbarCartAmount {
   width: 3rem;
   height: 2.2rem;
   position: relative;
 }
 
-.nav .jess-navbarCartNum {
-  font-family: 'Noto Sans TC';
+.navBar-container .navBar-navbarCartNum {
+  font-family: "Noto Sans TC";
   font-weight: bold;
   font-size: 1.3rem;
   color: #ffffff;
@@ -256,7 +213,7 @@ html {
   text-align: center;
 }
 
-.nav .nav_toggle {
+.navBar-container .navBar-navToggle {
   // float: right;
   clear: both;
   display: none;
@@ -270,51 +227,55 @@ html {
   z-index: 2000 !important;
 }
 
+.navBar-hidden {
+  visibility: hidden;
+}
+
 /*mobile styles*/
 @media screen and (max-width: 57.6rem) {
-  .nav .navBar-jess-container {
+  .navBar-container .navBar-wrap {
     display: none;
   }
-  .nav .nav_toggle {
+  .navBar-container .navBar-navToggle {
     display: block;
   }
 }
 @media screen and(max-width: 57.6rem) {
-  .nav.responsive {
+  .navBar-container.responsive {
     width: 100%;
     height: 43rem;
     background-color: rgb(255, 255, 255);
     box-shadow: 0.3rem 0 1rem #cfcfcf;
     padding: 0;
   }
-  .nav.responsive .backArrow {
+  .navBar-container.responsive .backArrow {
     display: none;
   }
-  .nav.responsive .navBar-jess-container {
+  .navBar-container.responsive .navBar-wrap {
     display: block;
   }
-  .nav.responsive .nav_toggle {
+  .navBar-container.responsive .navBar-navToggle {
     position: absolute;
     left: 2;
     top: 0;
   }
-  .nav.responsive .jess-navbarCartAmount {
+  .navBar-container.responsive .navBar-navbarCartAmount {
     display: none;
   }
-  .nav.responsive .jess-navbarCartNum {
+  .navBar-container.responsive .navBar-navbarCartNum {
     display: none;
   }
 
-  .nav.responsive .collapse {
+  .navBar-container.responsive .collapse {
     display: none;
   }
-  .nav.responsive .navBar-jess-navigation {
+  .navBar-container.responsive .navBar-navigation {
     width: 100%;
   }
-  .nav.responsive .navBar-jess-navigation li {
+  .navBar-container.responsive .navBar-navigation li {
     padding: 0;
   }
-  .nav.responsive .navBar-jess-navCollapse {
+  .navBar-container.responsive .navBar-collapse {
     position: absolute;
     top: 4rem;
     left: 0;
@@ -322,15 +283,12 @@ html {
     display: block;
   }
 
-  .nav.responsive .navBar-jess-navCollapse .navBar-jess-navigation {
+  .navBar-container.responsive .navBar-collapse .navBar-navigation {
     display: block;
     margin: 0 auto;
   }
 
-  .nav.responsive
-    .navBar-jess-navCollapse
-    .navBar-jess-navigation
-    .navBar-jess-navigation_item {
+  .navBar-container.responsive .navBar-collapse .navBar-navigation .navBar-navigation-item {
     display: block;
     position: relative;
     padding: 10px 0;
@@ -345,34 +303,34 @@ html {
     }
   }
 
-  .nav.responsive .navBar-jess-navigation_item .navBar-jess-dropdown {
+  .navBar-container.responsive .navBar-navigation-item .navBar-dropdown {
     display: none;
   }
-  .nav.responsive .navBar-jess-navigation_item .navBar-jess-dropdown2 {
+  .navBar-container.responsive .navBar-navigation-item .navBar-dropdown2 {
     display: none;
   }
   //logo
-  .nav.responsive .navBar-jess-nav_brand {
+  .navBar-container.responsive .navBar-navBrand {
     position: fixed;
     top: 3rem;
     left: 4rem;
     width: 20rem;
     display: block;
   }
-  .nav.responsive .navBar-jess-emptydiv {
+  .navBar-container.responsive .navBar-emptydiv {
     display: none;
   }
-  .nav.responsive .navBar-jess-navCollapse ul {
+  .navBar-container.responsive .navBar-collapse ul {
     list-style: none;
   }
   //選單文字
-  .nav.responsive .navBar-jess-navCollapse li {
+  .navBar-container.responsive .navBar-collapse li {
     font-size: 2rem;
     line-height: 1.5rem;
     left: -17rem;
     top: 2rem;
   }
-  .navbar-jess-ShopingCart {
+  .navbar-ShopingCart {
     z-index: 1000;
     position: absolute;
     left: 17rem;
@@ -382,25 +340,19 @@ html {
 
 // 10/31 iris新增
 // 會員下拉式選單的登入/登出 文字樣式
-.nav
-  .navBar-jess-navigation_item
-  .navBar-jess-dropdown2
-  .navBar-jess-dropdown_item {
+.navBar-container .navBar-navigation-item .navBar-dropdown2 .navBar-dropdown-item {
   color: rgb(255, 255, 255);
   line-height: 2.5rem;
   font-size: 1.8rem;
 }
 
 //會員下拉式選單的登入/登出 hover後效果
-.nav
-  .navBar-jess-navigation_item
-  .navBar-jess-dropdown2
-  .navBar-jess-dropdown_item:hover {
+.navBar-container .navBar-navigation-item .navBar-dropdown2 .navBar-dropdown-item:hover {
   cursor: pointer;
 }
 
 // 11/9 iris新增登出選項
-.iris-login-option {
+.navBar-login-option {
   display: block;
 }
 
