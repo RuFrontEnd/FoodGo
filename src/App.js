@@ -6,7 +6,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // components
-import Navbar from 'Share/Components/NavBar/NavBar';
+import Navbar from 'components/navBar/NavBar';
 import Footer from 'Share/Components/Footer/Footer';
 import LoginModal from 'components/loginModal/LoginModal';
 

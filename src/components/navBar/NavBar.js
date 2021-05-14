@@ -1,15 +1,15 @@
 // 導入其它的模組
 import React, { useState, useEffect } from 'react';
 import { Nav } from 'react-bootstrap';
-import './Navbar.scss';
+import './navbar.scss';
 import 'antd/dist/antd.css';
 // import { Popover } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
-import { ReactComponent as Logo } from '../../Images/SVG/navbar-logo.svg';
-import { ReactComponent as BackArrow } from '../../Images/SVG/navbar-back arrow.svg';
-import { ReactComponent as Monster } from '../../Images/SVG/navbar-monster.svg';
-import { ReactComponent as ShoppingCart } from '../../Images/SVG/navbar-shopping-cart.svg';
-import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNumber.svg';
+import { ReactComponent as Logo } from 'components/navBar/images/navbar-logo.svg';
+import { ReactComponent as BackArrow } from 'components/navBar/images/navbar-back arrow.svg';
+import { ReactComponent as Monster } from 'components/navBar/images/navbar-monster.svg';
+import { ReactComponent as ShoppingCart } from 'components/navBar/images/navbar-shopping-cart.svg';
+import { ReactComponent as ShoppingAmount } from 'components/navBar/images/navbar-cartNumber.svg';
 // 選單連結要使用NavLink取代Link
 import { NavLink, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
