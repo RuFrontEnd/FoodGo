@@ -79,7 +79,7 @@ function NavBar(props) {
           }}
         >
           <div className="navBar-collapse">
-            <ul className="navBar-navigation">
+            <ul className="navBar-navigation  navBar-navigation-1">
               <li className="navBar-navigation-item">
                 <Nav.Link
                   as={NavLink}
@@ -130,12 +130,12 @@ function NavBar(props) {
                 </ul>
               </li>
             </ul>
-
-            <Nav.Link as={NavLink} to="/" exact className="navBar-navBrand">
-              <Logo className="navBar-logo" />
-            </Nav.Link>
-
-            <ul className="navBar-navigation">
+            <div className="navBar-navigation navBar-navigation-2">
+              <Nav.Link as={NavLink} to="/" exact className="navBar-navBrand">
+                <Logo className="navBar-logo" />
+              </Nav.Link>
+            </div>
+            <ul className="navBar-navigation  navBar-navigation-3">
               <li className="navBar-navigation-item">
                 <Nav.Link
                   as={NavLink}

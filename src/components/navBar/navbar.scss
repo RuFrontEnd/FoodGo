@@ -42,6 +42,24 @@
   align-items: center;
 }
 
+.navBar-navigation-1{
+  display: flex;
+  justify-content: flex-start;
+  flex-basis: 637.5px;
+}
+
+.navBar-navigation-2{
+  display: flex;
+  justify-content: center;
+  flex-basis: 165px;
+}
+
+.navBar-navigation-3{
+  flex-basis: 637.5px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 //text color
 .navBar-container a {
   color: #858585;
@@ -121,7 +139,6 @@
 
 .navBar-logo {
   height: 70px;
-  margin-left: 55px;
 }
 
 // 右邊dropdown
