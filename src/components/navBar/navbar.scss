@@ -21,6 +21,7 @@
 
 .navBar-wrap {
   max-width: 144rem;
+  padding: 0px 135px;
   margin: 0 auto;
   text-align: center;
 }
@@ -79,12 +80,17 @@
   position: relative;
   display: inline-block;
   font-size: 2rem;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding: 0px 12.5px;
+}
+
+.navBar-member {
+  width: 31px;
+  height: 31px;
+  fill: #858585;
 }
 
 .navBar-navigation-item:hover .navBar-dropdown,
-.navBar-navigation-item:hover .navBar-dropdown {
+.navBar-navigation-item:hover .navBar-dropdown-2 {
   display: block;
 }
 
@@ -106,7 +112,6 @@
   text-align: center;
 }
 
-// 右邊dropdown
 .navBar-dropdown {
   display: none;
   position: absolute;
@@ -127,6 +132,18 @@
 
 .navBar-dropdown-item {
   padding: 5px 0px;
+}
+
+.navBar-dropdown-2 {
+  display: none;
+  position: absolute;
+  width: 17rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  left: -4.825rem;
+  backdrop-filter: blur(3px);
 }
 
 // 下拉式選單 文字顏色
@@ -206,14 +223,21 @@
 }
 
 /*mobile styles*/
-@media screen and (max-width: 57.6rem) {
+// @media screen and (max-width: 1440.6rem) {
+//   .navBar-wrap {
+//     display: none;
+//   }
+//   .navBar-navToggle {
+//     display: block;
+//   }
+// }
+
+@media screen and (max-width: 1440px) {
   .navBar-wrap {
-    display: none;
-  }
-  .navBar-navToggle {
-    display: block;
+    padding: 0px 62.5px;
   }
 }
+
 @media screen and(max-width: 57.6rem) {
   .navBar-container.responsive {
     width: 100%;

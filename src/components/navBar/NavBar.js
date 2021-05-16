@@ -6,6 +6,7 @@ import 'antd/dist/antd.css';
 // import { Popover } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import { ReactComponent as Logo } from 'components/navBar/images/navbar-logo.svg';
+import { ReactComponent as Member } from 'components/navBar/images/navBar-member.svg';
 import { ReactComponent as BackArrow } from 'components/navBar/images/navbar-back arrow.svg';
 import { ReactComponent as Monster } from 'components/navBar/images/navbar-monster.svg';
 import { ReactComponent as ShoppingCart } from 'components/navBar/images/navbar-shopping-cart.svg';
@@ -161,7 +162,7 @@ function NavBar(props) {
                       disableLink(e);
                     }}
                   >
-                    登入會員 <BackArrow className="backArrow navBar-hidden" />
+                    登入
                   </Nav.Link>
                 </li>
               )}
@@ -174,9 +175,9 @@ function NavBar(props) {
                       disableLink(e);
                     }}
                   >
-                    會員中心 <BackArrow className="backArrow" />
+                    <Member className="navBar-member" />
                   </Nav.Link>
-                  <ul className="navBar-dropdown">
+                  <ul className="navBar-dropdown-2">
                     <div className="navBar-triangle2"></div>
                     <li className="navBar-dropdown-item">
                       <Nav.Link
@@ -235,21 +236,9 @@ function NavBar(props) {
                 </li>
               )}
               <li className="navBar-navigation-item">
-                <span
-                  className="navBar-navbarCartNum"
-                  id="navBar-navbarCartNum"
-                >
-                  {cartNumber}
-                </span>
-                {/* <Popover
-                  placement="bottomLeft"
-                  content={shoppingList}
-                  title="我的購買清單"
-                  trigger="hover"
-                  className="navbar-popover"
-                > */}
                 <Nav.Link
                   as={NavLink}
+                  style={{ padding: '0px' }}
                   to="/cart"
                   onClick={(e) => {
                     disableLink(e);
@@ -268,7 +257,6 @@ function NavBar(props) {
                     </span>
                   </div>
                 </div>
-                {/* </Popover> */}
               </li>
             </ul>
           </div>
