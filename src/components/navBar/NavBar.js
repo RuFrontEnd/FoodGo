@@ -11,6 +11,8 @@ import { ReactComponent as BackArrow } from 'components/navBar/images/navbar-bac
 import { ReactComponent as Monster } from 'components/navBar/images/navbar-monster.svg';
 import { ReactComponent as ShoppingCart } from 'components/navBar/images/navbar-shopping-cart.svg';
 import { ReactComponent as ShoppingAmount } from 'components/navBar/images/navbar-cartNumber.svg';
+import { ReactComponent as HamburgerMenu } from 'components/navBar/images/navBar_hamburger.svg';
+
 // 選單連結要使用NavLink取代Link
 import { NavLink, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
@@ -81,16 +83,9 @@ function NavBar(props) {
         >
           <div className="navBar-collapse">
             <ul className="navBar-navigation navBar-navigation-1">
-              <li className="navBar-navigation-item navBar-hamburger">
-                <Nav.Link
-                  as={NavLink}
-                  style={{ padding: '0px' }}
-                  to="/cart"
-                  onClick={(e) => {
-                    disableLink(e);
-                  }}
-                >
-                  <ShoppingCart className="navbar-shoppingCart" />
+              <li className="navBar-navigation-item navBar-hamburger-wrap">
+                <Nav.Link style={{ padding: '0px' }}>
+                  <HamburgerMenu className="navbar-icon navBar-hamburger" />
                 </Nav.Link>
               </li>
               <li className="navBar-navigation-item navBar-navigation-item-txt">
@@ -187,7 +182,7 @@ function NavBar(props) {
                       disableLink(e);
                     }}
                   >
-                    <Member className="navBar-member" />
+                    <Member className="navbar-icon navBar-member" />
                   </Nav.Link>
                   <ul className="navBar-dropdown-2">
                     <div className="navBar-triangle2"></div>
@@ -256,7 +251,7 @@ function NavBar(props) {
                     disableLink(e);
                   }}
                 >
-                  <ShoppingCart className="navbar-shoppingCart" />
+                  <ShoppingCart className="navbar-icon navbar-shoppingCart" />
                 </Nav.Link>
                 <div className="navbar-tag-wrap">
                   <div className="navbar-tag">

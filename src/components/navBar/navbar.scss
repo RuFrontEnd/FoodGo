@@ -83,14 +83,8 @@
   padding: 0px 12.5px;
 }
 
-.navBar-hamburger {
+.navBar-hamburger-wrap {
   display: none;
-}
-
-.navBar-member {
-  width: 31px;
-  height: 31px;
-  fill: #858585;
 }
 
 .navBar-navigation-item:hover .navBar-dropdown,
@@ -193,8 +187,11 @@
   z-index: -1;
 }
 
-.navbar-shoppingCart {
+.navbar-icon {
   z-index: 1050;
+  width: 35px;
+  height: 35px;
+  fill: #858585;
 }
 
 .navbar-tag-wrap {
@@ -225,7 +222,6 @@
 }
 
 .navBar-navToggle {
-  // float: right;
   clear: both;
   display: none;
   font-size: 4rem;
@@ -233,16 +229,6 @@
   left: 2;
   top: 0;
 }
-
-/*mobile styles*/
-// @media screen and (max-width: 1440.6rem) {
-//   .navBar-wrap {
-//     display: none;
-//   }
-//   .navBar-navToggle {
-//     display: block;
-//   }
-// }
 
 @media screen and (max-width: 1440px) {
   .navBar-wrap {
@@ -254,117 +240,141 @@
   .navBar-wrap {
     padding: 0px 70px;
   }
+
   .navBar-navigation-item {
     padding: 0px 5px;
   }
 }
 
 @media screen and (max-width: 1024px) {
+
   .navBar-navigation-item {
     padding: 0px 5px;
   }
+
   .navBar-navigation-item-txt {
     display: none;
   }
-  .navBar-hamburger {
+
+  .navBar-hamburger-wrap {
     display: block;
   }
 }
 
-@media screen and(max-width: 57.6rem) {
-  .navBar-container.responsive {
-    width: 100%;
-    height: 43rem;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0.3rem 0 1rem #cfcfcf;
-    padding: 0;
-  }
-  .navBar-container.responsive .backArrow {
-    display: none;
-  }
-  .navBar-container.responsive .navBar-wrap {
-    display: block;
-  }
-  .navBar-container.responsive .navBar-navToggle {
-    position: absolute;
-    left: 2;
-    top: 0;
-  }
-  .navBar-container.responsive .navBar-navbarCartAmount {
-    display: none;
-  }
-  .navBar-container.responsive .navBar-navbarCartNum {
-    display: none;
-  }
-
-  .navBar-container.responsive .collapse {
-    display: none;
-  }
-  .navBar-container.responsive .navBar-navigation {
-    width: 100%;
-  }
-  .navBar-container.responsive .navBar-navigation li {
-    padding: 0;
-  }
-  .navBar-container.responsive .navBar-collapse {
-    position: absolute;
-    top: 4rem;
-    left: 0;
-    width: 100%;
-    display: block;
-  }
-
-  .navBar-container.responsive .navBar-collapse .navBar-navigation {
-    display: block;
-    margin: 0 auto;
-  }
-
-  .navBar-container.responsive .navBar-collapse .navBar-navigation .navBar-navigation-item {
-    display: block;
-    position: relative;
-    padding: 10px 0;
-
-    // text-align: center;
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.3);
-      // overflow: hidden;
-    }
-    &:hover a {
-      color: rgb(255, 255, 255);
-    }
-  }
-
-  .navBar-container.responsive .navBar-navigation-item .navBar-dropdown {
-    display: none;
-  }
-  .navBar-container.responsive .navBar-navigation-item .navBar-dropdown {
-    display: none;
-  }
-  //logo
-  .navBar-container.responsive .navBar-navBrand {
-    position: fixed;
-    top: 3rem;
-    left: 4rem;
-    width: 20rem;
-    display: block;
-  }
-  .navBar-container.responsive .navBar-emptydiv {
-    display: none;
-  }
-  .navBar-container.responsive .navBar-collapse ul {
-    list-style: none;
-  }
-  //選單文字
-  .navBar-container.responsive .navBar-collapse li {
-    font-size: 2rem;
-    line-height: 1.5rem;
-    left: -17rem;
-    top: 2rem;
-  }
-  .navbar-ShopingCart {
-    z-index: 1000;
-    position: absolute;
-    left: 17rem;
-    top: 30rem;
+@media screen and (max-width: 768px) {
+  .navBar-wrap {
+    padding: 0px 50px;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .navBar-wrap {
+    padding: 0px 20px;
+  }
+
+  .navBar-logo {
+    width: 100px;
+  }
+  
+  .navbar-icon {
+    width: 30px;
+  }
+}
+
+// @media screen and(max-width: 57.6rem) {
+//   .navBar-container.responsive {
+//     width: 100%;
+//     height: 43rem;
+//     background-color: rgb(255, 255, 255);
+//     box-shadow: 0.3rem 0 1rem #cfcfcf;
+//     padding: 0;
+//   }
+//   .navBar-container.responsive .backArrow {
+//     display: none;
+//   }
+//   .navBar-container.responsive .navBar-wrap {
+//     display: block;
+//   }
+//   .navBar-container.responsive .navBar-navToggle {
+//     position: absolute;
+//     left: 2;
+//     top: 0;
+//   }
+//   .navBar-container.responsive .navBar-navbarCartAmount {
+//     display: none;
+//   }
+//   .navBar-container.responsive .navBar-navbarCartNum {
+//     display: none;
+//   }
+
+//   .navBar-container.responsive .collapse {
+//     display: none;
+//   }
+//   .navBar-container.responsive .navBar-navigation {
+//     width: 100%;
+//   }
+//   .navBar-container.responsive .navBar-navigation li {
+//     padding: 0;
+//   }
+//   .navBar-container.responsive .navBar-collapse {
+//     position: absolute;
+//     top: 4rem;
+//     left: 0;
+//     width: 100%;
+//     display: block;
+//   }
+
+//   .navBar-container.responsive .navBar-collapse .navBar-navigation {
+//     display: block;
+//     margin: 0 auto;
+//   }
+
+//   .navBar-container.responsive .navBar-collapse .navBar-navigation .navBar-navigation-item {
+//     display: block;
+//     position: relative;
+//     padding: 10px 0;
+
+//     // text-align: center;
+//     &:hover {
+//       background-color: rgba(0, 0, 0, 0.3);
+//       // overflow: hidden;
+//     }
+//     &:hover a {
+//       color: rgb(255, 255, 255);
+//     }
+//   }
+
+//   .navBar-container.responsive .navBar-navigation-item .navBar-dropdown {
+//     display: none;
+//   }
+//   .navBar-container.responsive .navBar-navigation-item .navBar-dropdown {
+//     display: none;
+//   }
+//   //logo
+//   .navBar-container.responsive .navBar-navBrand {
+//     position: fixed;
+//     top: 3rem;
+//     left: 4rem;
+//     width: 20rem;
+//     display: block;
+//   }
+//   .navBar-container.responsive .navBar-emptydiv {
+//     display: none;
+//   }
+//   .navBar-container.responsive .navBar-collapse ul {
+//     list-style: none;
+//   }
+//   //選單文字
+//   .navBar-container.responsive .navBar-collapse li {
+//     font-size: 2rem;
+//     line-height: 1.5rem;
+//     left: -17rem;
+//     top: 2rem;
+//   }
+//   .navbar-ShopingCart {
+//     z-index: 1000;
+//     position: absolute;
+//     left: 17rem;
+//     top: 30rem;
+//   }
+// }
