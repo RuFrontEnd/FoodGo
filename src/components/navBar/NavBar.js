@@ -80,8 +80,20 @@ function NavBar(props) {
           }}
         >
           <div className="navBar-collapse">
-            <ul className="navBar-navigation  navBar-navigation-1">
-              <li className="navBar-navigation-item">
+            <ul className="navBar-navigation navBar-navigation-1">
+              <li className="navBar-navigation-item navBar-hamburger">
+                <Nav.Link
+                  as={NavLink}
+                  style={{ padding: '0px' }}
+                  to="/cart"
+                  onClick={(e) => {
+                    disableLink(e);
+                  }}
+                >
+                  <ShoppingCart className="navbar-shoppingCart" />
+                </Nav.Link>
+              </li>
+              <li className="navBar-navigation-item navBar-navigation-item-txt">
                 <Nav.Link
                   as={NavLink}
                   to="/groupOrder/groupOrderCreate"
@@ -92,12 +104,12 @@ function NavBar(props) {
                   作伙揪團
                 </Nav.Link>
               </li>
-              <li className="navBar-navigation-item">
+              <li className="navBar-navigation-item navBar-navigation-item-txt">
                 <Nav.Link as={NavLink} to="/farmMap">
                   哈囉小農
                 </Nav.Link>
               </li>
-              <li className="navBar-navigation-item">
+              <li className="navBar-navigation-item navBar-navigation-item-txt">
                 <Nav.Link as={NavLink} to="/menu">
                   尋找美味 <BackArrow className="backArrow" />
                 </Nav.Link>
@@ -137,7 +149,7 @@ function NavBar(props) {
               </Nav.Link>
             </div>
             <ul className="navBar-navigation navBar-navigation-3">
-              <li className="navBar-navigation-item">
+              <li className="navBar-navigation-item navBar-navigation-item-txt">
                 <Nav.Link
                   as={NavLink}
                   to="/getcoupon"
@@ -148,13 +160,13 @@ function NavBar(props) {
                   專屬優惠
                 </Nav.Link>
               </li>
-              <li className="navBar-navigation-item">
+              <li className="navBar-navigation-item navBar-navigation-item-txt">
                 <Nav.Link as={NavLink} to="/">
                   關於我們
                 </Nav.Link>
               </li>
               {!isLogin && (
-                <li className="navBar-navigation-item">
+                <li className="navBar-navigation-item navBar-navigation-item-txt">
                   <Nav.Link
                     as={NavLink}
                     to="/"

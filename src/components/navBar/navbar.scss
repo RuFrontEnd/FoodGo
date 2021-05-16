@@ -83,6 +83,10 @@
   padding: 0px 12.5px;
 }
 
+.navBar-hamburger {
+  display: none;
+}
+
 .navBar-member {
   width: 31px;
   height: 31px;
@@ -234,7 +238,28 @@
 
 @media screen and (max-width: 1440px) {
   .navBar-wrap {
-    padding: 0px 62.5px;
+    padding: 0px 100px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .navBar-wrap {
+    padding: 0px 70px;
+  }
+  .navBar-navigation-item {
+    padding: 0px 5px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navBar-navigation-item {
+    padding: 0px 5px;
+  }
+  .navBar-navigation-item-txt {
+    display: none;
+  }
+  .navBar-hamburger {
+    display: block;
   }
 }
 
