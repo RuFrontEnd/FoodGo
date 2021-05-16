@@ -132,6 +132,7 @@
 .navBar-dropdown-item:hover {
   color: rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 
 .navBar-dropdown-item {
@@ -148,6 +149,13 @@
   text-align: center;
   left: -4.825rem;
   backdrop-filter: blur(3px);
+}
+
+// 下拉式選單 文字顏色
+.navBar-dropdown-item {
+  color: rgb(255, 255, 255);
+  line-height: 2.5rem;
+  font-size: 1.8rem;
 }
 
 // 下拉式選單 文字顏色
@@ -359,28 +367,4 @@
     left: 17rem;
     top: 30rem;
   }
-}
-
-// 10/31 iris新增
-// 會員下拉式選單的登入/登出 文字樣式
-.navBar-container .navBar-navigation-item .navBar-dropdown .navBar-dropdown-item {
-  color: rgb(255, 255, 255);
-  line-height: 2.5rem;
-  font-size: 1.8rem;
-}
-
-//會員下拉式選單的登入/登出 hover後效果
-.navBar-container .navBar-navigation-item .navBar-dropdown .navBar-dropdown-item:hover {
-  cursor: pointer;
-}
-
-// 11/9 iris新增登出選項
-.navBar-login-option {
-  display: block;
-}
-
-.iris-logout-option {
-  display: none;
-  // opacity: 0;
-  // pointer-events: none;
 }
