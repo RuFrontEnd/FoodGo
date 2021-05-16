@@ -194,20 +194,26 @@
   fill: #858585;
 }
 
+.navBar-shoppingCard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar-tag-wrap {
-  transform: translate(30px, -50px);
+  position: absolute;
+  top: -12px;
+  left: 37px;
 }
 
 .navbar-tag {
-  position: absolute;
-  text-align: center;
+  position: relative;
 }
 
 //shopping cart number
 .navBar-navbarCartAmount {
-  width: 3rem;
-  height: 2.2rem;
-  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .navBar-navbarCartNum {
@@ -216,7 +222,7 @@
   font-size: 1.3rem;
   color: #ffffff;
   position: absolute;
-  top: 7px;
+  top: 8px;
   left: 8px;
   text-align: center;
 }
@@ -247,7 +253,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-
   .navBar-navigation-item {
     padding: 0px 5px;
   }
@@ -275,7 +280,7 @@
   .navBar-logo {
     width: 100px;
   }
-  
+
   .navbar-icon {
     width: 30px;
   }

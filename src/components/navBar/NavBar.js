@@ -161,7 +161,7 @@ function NavBar(props) {
                 </Nav.Link>
               </li>
               {!isLogin && (
-                <li className="navBar-navigation-item navBar-navigation-item-txt">
+                <li className="navBar-navigation-item">
                   <Nav.Link
                     as={NavLink}
                     to="/"
@@ -242,7 +242,7 @@ function NavBar(props) {
                   </ul>
                 </li>
               )}
-              <li className="navBar-navigation-item">
+              <li className="navBar-navigation-item navBar-shoppingCard-container">
                 <Nav.Link
                   as={NavLink}
                   style={{ padding: '0px' }}
@@ -260,7 +260,8 @@ function NavBar(props) {
                       className="navBar-navbarCartNum"
                       id="navBar-navbarCartNum"
                     >
-                      {cartNumber}
+                      50
+                      {/* {cartNumber} */}
                     </span>
                   </div>
                 </div>
