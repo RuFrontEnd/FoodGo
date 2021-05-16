@@ -42,19 +42,19 @@
   align-items: center;
 }
 
-.navBar-navigation-1{
+.navBar-navigation-1 {
   display: flex;
   justify-content: flex-start;
   flex-basis: 637.5px;
 }
 
-.navBar-navigation-2{
+.navBar-navigation-2 {
   display: flex;
   justify-content: center;
   flex-basis: 165px;
 }
 
-.navBar-navigation-3{
+.navBar-navigation-3 {
   flex-basis: 637.5px;
   display: flex;
   justify-content: flex-end;
@@ -84,27 +84,13 @@
 }
 
 .navBar-navigation-item:hover .navBar-dropdown,
-.navBar-navigation-item:hover .navBar-dropdown2 {
+.navBar-navigation-item:hover .navBar-dropdown {
   display: block;
 }
 
 .navBar-dropdown-item:hover .navBar-monster4 {
   opacity: 1;
   left: 16rem;
-}
-
-//下拉式選單 none隱藏
-.navBar-dropdown {
-  display: none;
-  position: absolute;
-  width: 17rem;
-  height: 22.5rem;
-  background-color: rgba(0, 0, 0, 0.3);
-  margin-top: 1rem;
-  border-radius: 0.5rem;
-  text-align: center;
-  left: -4rem;
-  backdrop-filter: blur(3px);
 }
 
 //下拉式選單 頂部三角形
@@ -118,6 +104,19 @@
   top: -1.5rem;
   left: 7.5rem;
   text-align: center;
+}
+
+// 右邊dropdown
+.navBar-dropdown {
+  display: none;
+  position: absolute;
+  width: 17rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  right: 0rem;
+  backdrop-filter: blur(3px);
 }
 
 //下拉式選單 hover後效果
@@ -139,20 +138,6 @@
 
 .navBar-logo {
   height: 70px;
-}
-
-// 右邊dropdown
-.navBar-dropdown2 {
-  display: none;
-  position: absolute;
-  width: 17rem;
-  height: 21.7rem;
-  background-color: rgba(0, 0, 0, 0.3);
-  margin-top: 1rem;
-  border-radius: 0.5rem;
-  text-align: center;
-  right: 0rem;
-  backdrop-filter: blur(3px);
 }
 
 //right下拉式選單 頂部三角形
@@ -295,7 +280,7 @@
   .navBar-container.responsive .navBar-navigation-item .navBar-dropdown {
     display: none;
   }
-  .navBar-container.responsive .navBar-navigation-item .navBar-dropdown2 {
+  .navBar-container.responsive .navBar-navigation-item .navBar-dropdown {
     display: none;
   }
   //logo
@@ -329,14 +314,14 @@
 
 // 10/31 iris新增
 // 會員下拉式選單的登入/登出 文字樣式
-.navBar-container .navBar-navigation-item .navBar-dropdown2 .navBar-dropdown-item {
+.navBar-container .navBar-navigation-item .navBar-dropdown .navBar-dropdown-item {
   color: rgb(255, 255, 255);
   line-height: 2.5rem;
   font-size: 1.8rem;
 }
 
 //會員下拉式選單的登入/登出 hover後效果
-.navBar-container .navBar-navigation-item .navBar-dropdown2 .navBar-dropdown-item:hover {
+.navBar-container .navBar-navigation-item .navBar-dropdown .navBar-dropdown-item:hover {
   cursor: pointer;
 }
 

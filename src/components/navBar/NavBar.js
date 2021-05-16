@@ -98,7 +98,7 @@ function NavBar(props) {
               </li>
               <li className="navBar-navigation-item">
                 <Nav.Link as={NavLink} to="/menu">
-                  尋找美味 <BackArrow className="backArrow" />{' '}
+                  尋找美味 <BackArrow className="backArrow" />
                 </Nav.Link>
                 <ul className="navBar-dropdown">
                   <div className="navBar-triangle"></div>
@@ -135,7 +135,7 @@ function NavBar(props) {
                 <Logo className="navBar-logo" />
               </Nav.Link>
             </div>
-            <ul className="navBar-navigation  navBar-navigation-3">
+            <ul className="navBar-navigation navBar-navigation-3">
               <li className="navBar-navigation-item">
                 <Nav.Link
                   as={NavLink}
@@ -176,7 +176,7 @@ function NavBar(props) {
                   >
                     會員中心 <BackArrow className="backArrow" />
                   </Nav.Link>
-                  <ul className="navBar-dropdown2">
+                  <ul className="navBar-dropdown">
                     <div className="navBar-triangle2"></div>
                     <li className="navBar-dropdown-item">
                       <Nav.Link
