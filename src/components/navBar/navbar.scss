@@ -87,8 +87,7 @@
   display: none;
 }
 
-.navBar-navigation-item:hover .navBar-dropdown,
-.navBar-navigation-item:hover .navBar-dropdown-2 {
+.navBar-navigation-item:hover .navBar-dropdown {
   display: block;
 }
 
@@ -105,20 +104,23 @@
   border-width: 0 9px 15px 9px;
   border-color: transparent transparent rgba(0, 0, 0, 0.3) transparent;
   position: absolute;
-  top: -1.5rem;
-  left: 7.5rem;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
   text-align: center;
 }
 
 .navBar-dropdown {
   display: none;
+  background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   width: 17rem;
-  background-color: rgba(0, 0, 0, 0.3);
-  margin-top: 1rem;
+  margin-top: 3.5rem;
   border-radius: 0.5rem;
   text-align: center;
-  right: 0rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
   backdrop-filter: blur(3px);
 }
 
@@ -129,20 +131,12 @@
   cursor: pointer;
 }
 
-.navBar-dropdown-item {
-  padding: 5px 0px;
+.navBar-dropdown-item-wrap {
+  position: relative;
 }
 
-.navBar-dropdown-2 {
-  display: none;
-  position: absolute;
-  width: 17rem;
-  background-color: rgba(0, 0, 0, 0.3);
-  margin-top: 1rem;
-  border-radius: 0.5rem;
-  text-align: center;
-  left: -4.825rem;
-  backdrop-filter: blur(3px);
+.navBar-dropdown-item {
+  padding: 5px 0px;
 }
 
 // 下拉式選單 文字顏色
