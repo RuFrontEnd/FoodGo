@@ -83,7 +83,10 @@ function NavBar(props) {
         >
           <div className="navBar-collapse">
             <ul className="navBar-navigation navBar-navigation-1">
-              <li className="navBar-navigation-item navBar-hamburger-wrap">
+              <li
+                className="navBar-navigation-item navBar-hamburger-wrap"
+                onClick={() => {}}
+              >
                 <Nav.Link style={{ padding: '0px' }}>
                   <HamburgerMenu className="navbar-icon navBar-hamburger" />
                 </Nav.Link>
@@ -280,6 +283,119 @@ function NavBar(props) {
           <MenuOutlined />
         </div>
       </section>
+      <aside className="navBar-sideBar">
+        <li className="navBar-listNavigation-item">
+          <Nav.Link
+            as={NavLink}
+            to="/groupOrder/groupOrderCreate"
+            onClick={(e) => {
+              disableLink(e);
+            }}
+          >
+            作伙揪團
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item">
+          <Nav.Link as={NavLink} to="/farmMap">
+            哈囉小農
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item">
+          <Nav.Link as={NavLink} to="/menu">
+            尋找美味 <BackArrow className="backArrow" />
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+          <Nav.Link as={NavLink} to="/menu">
+            菜單介紹
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+          <Nav.Link as={NavLink} to="/productList">
+            低GI便當
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+          <Nav.Link as={NavLink} to="/productListSalad">
+            美味沙拉
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+          <Nav.Link as={NavLink} to="/vegBox">
+            蔬菜箱
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+          <Nav.Link as={NavLink} to="/productListCustom">
+            客製化便當
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+          <Nav.Link as={NavLink} to="/">
+            外送服務
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item">
+          <Nav.Link
+            as={NavLink}
+            to="/getcoupon"
+            onClick={(e) => {
+              disableLink(e);
+            }}
+          >
+            專屬優惠
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item">
+          <Nav.Link as={NavLink} to="/">
+            關於我們
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item">
+          <Nav.Link
+            as={NavLink}
+            to="/"
+            onClick={(e) => {
+              disableLink(e);
+            }}
+          >
+            會員中心 <BackArrow className="backArrow" />
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+          <Nav.Link as={NavLink} to="/orderManagement">
+            訂單管理
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+          <Nav.Link as={NavLink} to="/memberUserprofile">
+            修改會員資料
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+          <Nav.Link as={NavLink} to="/myFav">
+            我的最愛
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+          <Nav.Link as={NavLink} to="/beastiePoint">
+            我的怪獸
+          </Nav.Link>
+        </li>
+        <li
+          className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item"
+          onClick={() => {
+            handleLogout();
+          }}
+        >
+          <Nav.Link>登出</Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+          <Nav.Link as={NavLink} to="/">
+            外送服務
+          </Nav.Link>
+        </li>
+      </aside>
     </nav>
   );
 }

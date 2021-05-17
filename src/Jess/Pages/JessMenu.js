@@ -21,7 +21,7 @@ function JessMenu(props) {
   }, [currentUser]);
   return (
     <>
-      <VNavbar {...props} />
+      {/* <VNavbar {...props} /> */}
       <JessMenuA />
       <JessMenuB id={id} />
       <JessMenuC id={id} />
