@@ -300,41 +300,14 @@ function NavBar(props) {
             哈囉小農
           </Nav.Link>
         </li>
-        <li className="navBar-listNavigation-item">
+        <li
+          id="navBar-listNavigation-menu"
+          className="navBar-listNavigation-item"
+        >
           <Nav.Link as={NavLink} to="/menu">
-            尋找美味 <BackArrow className="backArrow" />
+            尋找美味 <BackArrow className="navBar-backArrow" />
           </Nav.Link>
         </li>
-        {/* <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
-          <Nav.Link as={NavLink} to="/menu">
-            菜單介紹
-          </Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
-          <Nav.Link as={NavLink} to="/productList">
-            低GI便當
-          </Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
-          <Nav.Link as={NavLink} to="/productListSalad">
-            美味沙拉
-          </Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
-          <Nav.Link as={NavLink} to="/vegBox">
-            蔬菜箱
-          </Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
-          <Nav.Link as={NavLink} to="/productListCustom">
-            客製化便當
-          </Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
-          <Nav.Link as={NavLink} to="/">
-            外送服務
-          </Nav.Link>
-        </li> */}
         <li className="navBar-listNavigation-item">
           <Nav.Link
             as={NavLink}
@@ -362,39 +335,44 @@ function NavBar(props) {
             會員中心 <BackArrow className="backArrow" />
           </Nav.Link>
         </li>
-        {/* <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
-          <Nav.Link as={NavLink} to="/orderManagement">
-            訂單管理
+      </aside>
+      <aside id="navBar-sideBar-menu" className="navBar-sideBar">
+        <li id="navBar-listNavigation-back">
+          <BackArrow className="backArrow" />
+        </li>
+        <li className="navBar-listNavigation-item">
+          <h3>尋找美味</h3>
+        </li>
+        <li className="navBar-listNavigation-item">
+          <Nav.Link as={NavLink} to="/menu">
+            菜單介紹
           </Nav.Link>
         </li>
-        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
-          <Nav.Link as={NavLink} to="/memberUserprofile">
-            修改會員資料
+        <li className="navBar-listNavigation-item">
+          <Nav.Link as={NavLink} to="/productList">
+            低GI便當
           </Nav.Link>
         </li>
-        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
-          <Nav.Link as={NavLink} to="/myFav">
-            我的最愛
+        <li className="navBar-listNavigation-item">
+          <Nav.Link as={NavLink} to="/productListSalad">
+            美味沙拉
           </Nav.Link>
         </li>
-        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
-          <Nav.Link as={NavLink} to="/beastiePoint">
-            我的怪獸
+        <li className="navBar-listNavigation-item">
+          <Nav.Link as={NavLink} to="/vegBox">
+            蔬菜箱
           </Nav.Link>
         </li>
-        <li
-          className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item"
-          onClick={() => {
-            handleLogout();
-          }}
-        >
-          <Nav.Link>登出</Nav.Link>
-        </li> */}
-        {/* <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+        <li className="navBar-listNavigation-item">
+          <Nav.Link as={NavLink} to="/productListCustom">
+            客製化便當
+          </Nav.Link>
+        </li>
+        <li className="navBar-listNavigation-item">
           <Nav.Link as={NavLink} to="/">
             外送服務
           </Nav.Link>
-        </li> */}
+        </li>
       </aside>
     </nav>
   );

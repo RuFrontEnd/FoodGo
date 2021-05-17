@@ -70,7 +70,8 @@ nav {
 }
 
 //text color
-.navBar-container a {
+.navBar-container a,
+.navBar-sideBar a {
   color: #858585;
   text-decoration: none;
 }
@@ -78,7 +79,10 @@ nav {
 //when text hover
 .navBar-container a:hover,
 .navBar-container a:focus,
-.navBar-container a:active {
+.navBar-container a:active,
+.navBar-sideBar a:hover,
+.navBar-sideBar a:focus,
+.navBar-sideBar a:active {
   color: #e0611e;
   text-decoration: none;
 }
@@ -89,6 +93,25 @@ nav {
   display: inline-block;
   font-size: 2rem;
   padding: 0px 12.5px;
+  transition: 0.5s;
+}
+
+.navBar-navigation-item:hover #back_arrow,
+.navBar-listNavigation-item:hover #back_arrow {
+  fill: #e0611e;
+  transition: 0.5s;
+}
+
+.navBar-navigation-item:hover .navBar-member,
+.navBar-listNavigation-item:hover .navBar-member {
+  fill: #e0611e;
+  transition: 0.5s;
+}
+
+.navBar-navigation-item:hover #_001-shopping-cart,
+.navBar-listNavigation-item:hover #_001-shopping-cart {
+  fill: #e0611e;
+  transition: 0.5s;
 }
 
 .navBar-hamburger-wrap {
@@ -255,7 +278,13 @@ nav {
 }
 
 .navBar-sideBar {
-  padding: 30px 0px;
+  background-color: white;
+  position: fixed;
+  z-index: 1000;
+  height: 100vh;
+  top: 100px;
+  box-shadow: 0.3rem 0 1rem #cfcfcf;
+  padding: 30px 10px;
 }
 
 .navBar-listNavigation-item {
@@ -266,6 +295,10 @@ nav {
   line-height: 2.5rem;
   font-size: 1.8rem;
   border-bottom: 1px solid #85858533;
+}
+
+.navBar-listNavigation-item:last-child {
+  border: none;
 }
 
 .navBar-listNavigation-item a {
@@ -281,17 +314,47 @@ nav {
   margin-left: 15px;
 }
 
-.navBar-listDropdown-wrap {
-  display: flex;
+#navBar-listNavigation-menu {
+  position: relative;
 }
 
-.navBar-sideBar {
+.navBar-listDropdown-wrap {
   background-color: white;
-  position: fixed;
-  z-index: 1000;
-  height: 100vh;
-  top: 100px;
+  position: absolute;
+  padding: 15px;
+  width: 100%;
+  top: 0;
+  left: 250px;
   box-shadow: 0.3rem 0 1rem #cfcfcf;
+}
+
+#navBar-listDropdown-menu-wrap li {
+  padding: 10px 0px;
+  border-bottom: 1px solid #85858533;
+}
+
+#navBar-listDropdown-menu-wrap li:last-child {
+  border-bottom: none;
+}
+
+#navBar-listNavigation-back{
+  margin-left: 20px;
+}
+
+#navBar-sideBar-menu .navBar-listNavigation-item {
+  padding-right: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#navBar-sideBar-menu .navBar-listNavigation-item:nth-child(2) {
+  border: none;
+}
+
+#navBar-sideBar-menu .navBar-listNavigation-item:nth-child(2) h3 {
+  color: #e0611e;
+  font-size: 2.2rem;
+  margin-bottom: 0px;
 }
 
 @media screen and (max-width: 1440px) {
