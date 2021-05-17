@@ -260,9 +260,12 @@ nav {
 
 .navBar-listNavigation-item {
   color: #858585;
-  padding: 10px 70px;
+  margin: 0px 50px;
+  padding: 20px 50px;
+  padding-right: 35px;
   line-height: 2.5rem;
   font-size: 1.8rem;
+  border-bottom: 1px solid #85858533;
 }
 
 .navBar-listNavigation-item a {

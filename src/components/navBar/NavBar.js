@@ -305,7 +305,7 @@ function NavBar(props) {
             尋找美味 <BackArrow className="backArrow" />
           </Nav.Link>
         </li>
-        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+        {/* <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
           <Nav.Link as={NavLink} to="/menu">
             菜單介紹
           </Nav.Link>
@@ -334,7 +334,7 @@ function NavBar(props) {
           <Nav.Link as={NavLink} to="/">
             外送服務
           </Nav.Link>
-        </li>
+        </li> */}
         <li className="navBar-listNavigation-item">
           <Nav.Link
             as={NavLink}
@@ -362,7 +362,7 @@ function NavBar(props) {
             會員中心 <BackArrow className="backArrow" />
           </Nav.Link>
         </li>
-        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+        {/* <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
           <Nav.Link as={NavLink} to="/orderManagement">
             訂單管理
           </Nav.Link>
@@ -389,12 +389,12 @@ function NavBar(props) {
           }}
         >
           <Nav.Link>登出</Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
+        </li> */}
+        {/* <li className="navBar-listNavigation-item navBar-listNavigation-subItem navBar-listNavigation-menu-Item">
           <Nav.Link as={NavLink} to="/">
             外送服務
           </Nav.Link>
-        </li>
+        </li> */}
       </aside>
     </nav>
   );
