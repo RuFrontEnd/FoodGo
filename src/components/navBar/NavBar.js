@@ -7,11 +7,12 @@ import 'antd/dist/antd.css';
 import { MenuOutlined } from '@ant-design/icons';
 import { ReactComponent as Logo } from 'components/navBar/images/navbar-logo.svg';
 import { ReactComponent as Member } from 'components/navBar/images/navBar-member.svg';
-import { ReactComponent as BackArrow } from 'components/navBar/images/navbar-back arrow.svg';
+import { ReactComponent as DropArrow } from 'components/navBar/images/navbar-dropArrow.svg';
 import { ReactComponent as Monster } from 'components/navBar/images/navbar-monster.svg';
 import { ReactComponent as ShoppingCart } from 'components/navBar/images/navbar-shopping-cart.svg';
 import { ReactComponent as ShoppingAmount } from 'components/navBar/images/navbar-cartNumber.svg';
-import { ReactComponent as HamburgerMenu } from 'components/navBar/images/navBar_hamburger.svg';
+import { ReactComponent as HamburgerMenu } from 'components/navBar/images/navBar-hamburger.svg';
+import { ReactComponent as BackArrow } from 'components/navBar/images/navBar-backArrow.svg';
 
 // 選單連結要使用NavLink取代Link
 import { NavLink, Redirect } from 'react-router-dom';
@@ -109,7 +110,7 @@ function NavBar(props) {
               </li>
               <li className="navBar-navigation-item navBar-navigation-item-txt">
                 <Nav.Link as={NavLink} to="/menu">
-                  尋找美味 <BackArrow className="backArrow" />
+                  尋找美味 <DropArrow className="navBar-dropArrow" />
                 </Nav.Link>
                 <ul className="navBar-dropdown">
                   <div className="navBar-dropdown-item-wrap">
@@ -305,7 +306,7 @@ function NavBar(props) {
           className="navBar-listNavigation-item"
         >
           <Nav.Link as={NavLink} to="/menu">
-            尋找美味 <BackArrow className="navBar-backArrow" />
+            尋找美味 <DropArrow className="navBar-dropArrow" />
           </Nav.Link>
         </li>
         <li className="navBar-listNavigation-item">
@@ -332,13 +333,13 @@ function NavBar(props) {
               disableLink(e);
             }}
           >
-            會員中心 <BackArrow className="backArrow" />
+            會員中心 <DropArrow className="navBar-dropArrow" />
           </Nav.Link>
         </li>
       </aside>
       <aside id="navBar-sideBar-menu" className="navBar-sideBar">
         <li id="navBar-listNavigation-back">
-          <BackArrow className="backArrow" />
+          <BackArrow className="navBar-backArrow" />
         </li>
         <li className="navBar-listNavigation-item">
           <h3>尋找美味</h3>

@@ -337,7 +337,7 @@ nav {
   border-bottom: none;
 }
 
-#navBar-listNavigation-back{
+#navBar-listNavigation-back {
   margin-left: 20px;
 }
 
@@ -355,6 +355,14 @@ nav {
   color: #e0611e;
   font-size: 2.2rem;
   margin-bottom: 0px;
+}
+
+#navBar-listNavigation-back {
+  cursor: pointer;
+}
+
+#back-arrow {
+  fill: #858585;
 }
 
 @media screen and (max-width: 1440px) {
