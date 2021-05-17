@@ -337,7 +337,7 @@ function NavBar(props) {
           </Nav.Link>
         </li>
       </aside>
-      <aside id="navBar-sideBar-menu" className="navBar-sideBar">
+      <aside id="navBar-sub-sideBar" className="navBar-sideBar">
         <li id="navBar-listNavigation-back">
           <BackArrow className="navBar-backArrow" />
         </li>
@@ -355,7 +355,7 @@ function NavBar(props) {
           </Nav.Link>
         </li>
         <li className="navBar-listNavigation-item">
-          <Nav.Link as={NavLink} to="/productListSalad">
+          <Nav.Link as={NavLink} to="/productList">
             美味沙拉
           </Nav.Link>
         </li>
