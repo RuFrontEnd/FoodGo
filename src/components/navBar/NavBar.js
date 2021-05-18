@@ -4,7 +4,7 @@ import { Nav } from 'react-bootstrap';
 import './navbar.scss';
 import 'antd/dist/antd.css';
 // import { Popover } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
+import { FastForwardFilled, MenuOutlined } from '@ant-design/icons';
 import { ReactComponent as Logo } from 'components/navBar/images/navbar-logo.svg';
 import { ReactComponent as Member } from 'components/navBar/images/navBar-member.svg';
 import { ReactComponent as DropArrow } from 'components/navBar/images/navbar-dropArrow.svg';
@@ -44,7 +44,7 @@ function NavBar(props) {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('currentUser');
   };
-  const [isMainSideBarOpen, setIsMainSideBarOpen] = useState(true);
+  const [isMainSideBarOpen, setIsMainSideBarOpen] = useState(false);
   const [isMenuSideBarOpen, setIsMenuSideBarOpen] = useState(false);
   const [isMemberSideBarOpen, setIsMemberSideBarOpen] = useState(false);
   const mainSideBarItems = [
@@ -119,6 +119,17 @@ function NavBar(props) {
     }
   };
 
+  const toggleSideBarOpen = () => {
+    if (!isMainSideBarOpen) {
+      return setIsMainSideBarOpen(true);
+    }
+    if (isMainSideBarOpen) {
+      setIsMainSideBarOpen(false);
+      setIsMenuSideBarOpen(false);
+      setIsMemberSideBarOpen(false);
+    }
+  };
+
   return (
     <nav style={style} className={className} id={id}>
       <section className="navBar-container" id="NavBar">
@@ -136,7 +147,7 @@ function NavBar(props) {
                 id="navBar-hamburger-wrap"
                 className="navBar-navigation-item"
                 onClick={() => {
-                  setIsMainSideBarOpen(true);
+                  toggleSideBarOpen();
                 }}
               >
                 <Nav.Link style={{ padding: '0px' }}>

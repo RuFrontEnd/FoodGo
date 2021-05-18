@@ -367,12 +367,14 @@ nav {
 }
 
 #main-sideBar {
+  display: none;
   z-index: 1000;
   top: 100px;
 }
 
 #menu-sideBar,
 #member-sideBar {
+  display: none;
   z-index: 1030;
   top: 100px;
 }
@@ -406,28 +408,13 @@ nav {
     display: block;
   }
 
-  .navBar-sideBar {
+  #main-sideBar {
     display: block;
   }
 
-  #navBar-main-sideBar {
-    left: -50%;
-    transition: 0.5s;
-  }
-
-  #navBar-main-sideBar-active {
-    left: 0;
-    transition: 0.5s;
-  }
-
-  #navBar-sideBar-menu {
-    left: -50%;
-    transition: 0.5s;
-  }
-
-  #navBar-sideBar-menu-active {
-    left: 0;
-    transition: 0.5s;
+  #menu-sideBar,
+  #member-sideBar {
+    display: block;
   }
 }
 
