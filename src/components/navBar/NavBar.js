@@ -38,18 +38,58 @@ function NavBar(props) {
 
   const dispatch = useDispatch();
   const isLogin = useSelector((state) => state.member.isLogin);
-  const [isSideBarOpen, setIsSideBarOpen] = useState(true);
-  const sideBarItems = [
+  // 點擊登出
+  const handleLogout = () => {
+    dispatch(logout());
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('currentUser');
+  };
+  const [isMainSideBarOpen, setIsMainSideBarOpen] = useState(true);
+  const [isMenuSideBarOpen, setIsMenuSideBarOpen] = useState(false);
+  const [isMemberSideBarOpen, setIsMemberSideBarOpen] = useState(false);
+  const mainSideBarItems = [
     { linkTo: '/groupOrder/groupOrderCreate', content: '作伙揪團' },
     { linkTo: '/farmMap', content: '哈囉小農' },
-    { linkTo: '', content: '尋找美味', isDropArrow: true },
+    {
+      linkTo: '',
+      content: '尋找美味',
+      isDropArrow: true,
+      handleItemEvent: () => {
+        setIsMenuSideBarOpen(true);
+      },
+    },
     { linkTo: '/getcoupon', content: '專屬優惠' },
     { linkTo: '/', content: '關於我們' },
-    { linkTo: '', content: '會員中心', isDropArrow: true },
+    {
+      linkTo: '',
+      content: '會員中心',
+      isDropArrow: true,
+      handleItemEvent: () => {
+        setIsMemberSideBarOpen(true);
+      },
+    },
   ];
-  const [sideBarId, setSideBarId] = useState('navBar-main-sideBar');
-  const [sideBarMenuId, setSideBarMenuId] = useState('navBar-sideBar-menu');
-
+  const menuSideBarItems = [
+    { linkTo: '/menu', content: '菜單介紹' },
+    { linkTo: '/productList', content: '低GI便當' },
+    { linkTo: '/productList', content: '美味沙拉' },
+    { linkTo: '/vegBox', content: ' 蔬菜箱' },
+    { linkTo: '/productListCustom', content: '客製化便當' },
+    { linkTo: '/', content: '外送服務' },
+  ];
+  const memberSideBarItems = [
+    { linkTo: '/orderManagement', content: '訂單管理' },
+    { linkTo: '/memberUserprofile', content: '修改會員資料' },
+    { linkTo: '/myFav', content: '我的最愛' },
+    { linkTo: '/beastiePoint', content: ' 我的怪獸' },
+    {
+      linkTo: '/productListCustom',
+      content: '登出',
+      handleItemEvent: () => {
+        handleLogout();
+      },
+    },
+  ];
   const [count, setCount] = useState(0);
   const [shoppingList, setShoppingList] = useState('0');
   const [showNav, setShowNav] = useState(true);
@@ -79,13 +119,6 @@ function NavBar(props) {
     }
   };
 
-  // 點擊登出
-  const handleLogout = () => {
-    dispatch(logout());
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('currentUser');
-  };
-
   return (
     <nav style={style} className={className} id={id}>
       <section className="navBar-container" id="NavBar">
@@ -103,7 +136,7 @@ function NavBar(props) {
                 id="navBar-hamburger-wrap"
                 className="navBar-navigation-item"
                 onClick={() => {
-                  setIsSideBarOpen(true);
+                  setIsMainSideBarOpen(true);
                 }}
               >
                 <Nav.Link style={{ padding: '0px' }}>
@@ -303,80 +336,26 @@ function NavBar(props) {
         </div>
       </section>
       <SideBar
-        isOpen={isSideBarOpen}
-        setIsOpen={setIsSideBarOpen}
-        listNavigationItems={sideBarItems}
+        isOpen={isMainSideBarOpen}
+        setIsOpen={setIsMainSideBarOpen}
+        listNavigationItems={mainSideBarItems}
         id={'main-sideBar'}
       />
       <SideBar
-        isOpen={isSideBarOpen}
-        setIsOpen={setIsSideBarOpen}
-        listNavigationItems={sideBarItems}
+        isOpen={isMenuSideBarOpen}
+        setIsOpen={setIsMenuSideBarOpen}
+        title={'尋找美味'}
+        listNavigationItems={menuSideBarItems}
         id={'menu-sideBar'}
       />
-      {/* <aside id={sideBarId} className="navBar-sideBar">
-        <li id="navBar-listNavigation-back">
-          <Cancel
-            className="navBar-backArrow"
-            onClick={() => {
-              toggleSideBarId();
-            }}
-          />
-        </li>
-        <li className="navBar-listNavigation-item">
-          <Nav.Link
-            as={NavLink}
-            to="/groupOrder/groupOrderCreate"
-            onClick={(e) => {
-              disableLink(e);
-            }}
-          >
-            作伙揪團
-          </Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item">
-          <Nav.Link as={NavLink} to="/farmMap">
-            哈囉小農
-          </Nav.Link>
-        </li>
-        <li
-          id="navBar-listNavigation-menu"
-          className="navBar-listNavigation-item"
-          onClick={() => {
-            toggleSideBarMenuId();
-          }}
-        >
-          <Nav.Link>
-            尋找美味 <DropArrow className="navBar-dropArrow" />
-          </Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item">
-          <Nav.Link
-            as={NavLink}
-            to="/getcoupon"
-            onClick={(e) => {
-              disableLink(e);
-            }}
-          >
-            專屬優惠
-          </Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item">
-          <Nav.Link as={NavLink} to="/">
-            關於我們
-          </Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item">
-          <Nav.Link
-            onClick={(e) => {
-              disableLink(e);
-            }}
-          >
-            會員中心 <DropArrow className="navBar-dropArrow" />
-          </Nav.Link>
-        </li>
-      </aside>
-      <aside id={sideBarMenuId} className="navBar-sideBar navBar-sub-sideBar">
+      <SideBar
+        isOpen={isMemberSideBarOpen}
+        setIsOpen={setIsMemberSideBarOpen}
+        title={'會員中心'}
+        listNavigationItems={memberSideBarItems}
+        id={'member-sideBar'}
+      />
+      {/* <aside id={sideBarMenuId} className="navBar-sideBar navBar-sub-sideBar">
         <li id="navBar-listNavigation-back">
           <BackArrow
             className="navBar-backArrow"

@@ -371,6 +371,12 @@ nav {
   top: 100px;
 }
 
+#menu-sideBar,
+#member-sideBar {
+  z-index: 1030;
+  top: 100px;
+}
+
 @media screen and (max-width: 1440px) {
   .navBar-wrap {
     padding: 0px 100px;

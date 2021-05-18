@@ -55,7 +55,7 @@ function NavBar(props) {
           )}
         </li>
         {title && (
-          <li className="sideBar-item">
+          <li id="sideBar-title" className="sideBar-item">
             <h3>{title}</h3>
           </li>
         )}
@@ -63,9 +63,9 @@ function NavBar(props) {
           <li
             className="sideBar-item"
             onClick={
-              listNavigationItem.handleSideBarItem &&
+              listNavigationItem.handleItemEvent &&
               (() => {
-                listNavigationItem.handleSideBarItem();
+                listNavigationItem.handleItemEvent();
               })
             }
           >

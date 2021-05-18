@@ -56,6 +56,17 @@
   line-height: 2.5rem;
   font-size: 1.8rem;
   border-bottom: 1px solid #85858533;
+  display: flex;
+  justify-content: center;
+}
+
+#sideBar-title {
+  color: #e0611e;
+  border: none;
+}
+
+#sideBar-title h3 {
+  font-size: 2.2rem;
 }
 
 .sideBar-item:last-child {
