@@ -38,6 +38,7 @@ function NavBar(props) {
 
   const dispatch = useDispatch();
   const isLogin = useSelector((state) => state.member.isLogin);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(true);
   const sideBarItems = [
     { linkTo: '/groupOrder/groupOrderCreate', content: '作伙揪團' },
     { linkTo: '/farmMap', content: '哈囉小農' },
@@ -120,7 +121,7 @@ function NavBar(props) {
                 id="navBar-hamburger-wrap"
                 className="navBar-navigation-item"
                 onClick={() => {
-                  toggleSideBarId();
+                  setIsSideBarOpen(true);
                 }}
               >
                 <Nav.Link style={{ padding: '0px' }}>
@@ -320,8 +321,10 @@ function NavBar(props) {
         </div>
       </section>
       <SideBar
+        isOpen={isSideBarOpen}
+        setIsOpen={setIsSideBarOpen}
         listNavigationItems={sideBarItems}
-        style={{ zIndex: '1000', top: '100px' }}
+        id={'main-sideBar'}
       />
       {/* <aside id={sideBarId} className="navBar-sideBar">
         <li id="navBar-listNavigation-back">

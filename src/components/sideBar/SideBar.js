@@ -5,12 +5,15 @@ import 'components/sideBar/sideBar.scss';
 import 'antd/dist/antd.css';
 import { ReactComponent as BackArrow } from 'assets/svg/backArrow.svg';
 import { ReactComponent as DropArrow } from 'assets/svg/dropArrow.svg';
+import { ReactComponent as Cancel } from 'assets/svg/cancel.svg';
 
 // 選單連結要使用NavLink取代Link
 import { NavLink, Redirect } from 'react-router-dom';
 
 function NavBar(props) {
   const {
+    isOpen = true,
+    setIsOpen = () => {},
     style = {},
     className = '',
     id = '',
@@ -18,19 +21,41 @@ function NavBar(props) {
     listNavigationItems = [
       { linkTo: '/', content: '項目', isDropArrow: false },
     ],
-    handleGoBack = () => {},
+    handleCancel = () => {},
+    handleGoBack,
   } = props;
 
+  // const handleCancel = () => {};
+  const [sideBarClassName, setSideBarClassName] = useState('sideBar-container');
+
   return (
-    <aside style={style} id={id} className={`${className} sideBar-container`}>
+    <aside
+      style={style}
+      id={id}
+      className={
+        isOpen ? 'sideBar-container-active' : 'sideBar-container-disActive'
+      }
+    >
       <ul id="sideBar-warp">
-        <li id="sideBar-backArrow-wrap">
-          <BackArrow
-            className="sideBar-backArrow"
-            onClick={() => {
-              handleGoBack();
-            }}
-          />
+        <li id="sideBar-leftIcon-wrap">
+          {handleCancel && (
+            <Cancel
+              className="sideBar-leftIcon"
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            />
+          )}
+          {handleGoBack && (
+            <li id="sideBar-leftIcon-wrap">
+              <BackArrow
+                className="sideBar-leftIcon"
+                onClick={() => {
+                  handleGoBack();
+                }}
+              />
+            </li>
+          )}
         </li>
         {title && (
           <li className="sideBar-item">
@@ -38,12 +63,20 @@ function NavBar(props) {
           </li>
         )}
         {listNavigationItems.map((listNavigationItem) => (
-          <li className="sideBar-item">
+          <li
+            className="sideBar-item"
+            onClick={
+              listNavigationItem.handleSideBarItem &&
+              (() => {
+                listNavigationItem.handleSideBarItem();
+              })
+            }
+          >
             <Nav.Link as={NavLink} to={listNavigationItem.linkTo}>
               {listNavigationItem.content}
               {listNavigationItem.isDropArrow && (
-                <span id="dropArrow-wrap">
-                  <DropArrow className="navBar-dropArrow" />
+                <span id="sidBar-dropArrow-wrap">
+                  <DropArrow className="sidBar-dropArrow" />
                 </span>
               )}
             </Nav.Link>
