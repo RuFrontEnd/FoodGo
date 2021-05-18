@@ -12,7 +12,7 @@
   position: fixed;
   height: 100vh;
   box-shadow: 0.3rem 0 1rem #cfcfcf;
-  padding: 30px 20px;
+  padding: 30px 30px;
   left: 0%;
   transition: 0.6s;
 }
@@ -22,24 +22,24 @@
   position: fixed;
   height: 100vh;
   box-shadow: 0.3rem 0 1rem #cfcfcf;
-  padding: 30px 20px;
+  padding: 30px 30px;
   left: -100%;
   transition: 0.8s;
 }
 
 //text color
-.sideBar-container a {
+.sideBar-container-active a {
   color: #858585;
   text-decoration: none;
 }
 
 //when text hover
-.sideBar-container a:hover,
-.sideBar-container a:focus,
-.sideBar-container a:active,
-.sideBar-container a:hover #drop_arrow,
-.sideBar-container a:focus #drop_arrow,
-.sideBar-container a:active #drop_arrow {
+.sideBar-container-active a:hover,
+.sideBar-container-active a:focus,
+.sideBar-container-active a:active,
+.sideBar-container-active a:hover #drop_arrow,
+.sideBar-container-active a:focus #drop_arrow,
+.sideBar-container-active a:active #drop_arrow {
   fill: #e0611e;
   color: #e0611e;
   text-decoration: none;
