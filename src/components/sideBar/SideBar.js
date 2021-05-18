@@ -21,24 +21,21 @@ function NavBar(props) {
     listNavigationItems = [
       { linkTo: '/', content: '項目', isDropArrow: false },
     ],
-    handleCancel = () => {},
     handleGoBack,
   } = props;
-
-  // const handleCancel = () => {};
-  const [sideBarClassName, setSideBarClassName] = useState('sideBar-container');
 
   return (
     <aside
       style={style}
       id={id}
       className={
-        isOpen ? 'sideBar-container-active' : 'sideBar-container-disActive'
+        (className,
+        isOpen ? 'sideBar-container-active' : 'sideBar-container-disActive')
       }
     >
       <ul id="sideBar-warp">
         <li id="sideBar-leftIcon-wrap">
-          {handleCancel && (
+          {!handleGoBack && (
             <Cancel
               className="sideBar-leftIcon"
               onClick={() => {

@@ -63,24 +63,6 @@ function NavBar(props) {
     }
   }
 
-  const toggleSideBarId = () => {
-    if (sideBarId === 'navBar-main-sideBar') {
-      return setSideBarId('navBar-main-sideBar-active');
-    }
-    if (sideBarId === 'navBar-main-sideBar-active') {
-      return setSideBarId('navBar-main-sideBar');
-    }
-  };
-
-  const toggleSideBarMenuId = () => {
-    if (sideBarMenuId === 'navBar-sideBar-menu') {
-      return setSideBarMenuId('navBar-sideBar-menu-active');
-    }
-    if (sideBarMenuId === 'navBar-sideBar-menu-active') {
-      return setSideBarMenuId('navBar-sideBar-menu');
-    }
-  };
-
   // // 在登入狀態
   // if (isLogin === true) {
   //   // 登入選項消失
@@ -325,6 +307,12 @@ function NavBar(props) {
         setIsOpen={setIsSideBarOpen}
         listNavigationItems={sideBarItems}
         id={'main-sideBar'}
+      />
+      <SideBar
+        isOpen={isSideBarOpen}
+        setIsOpen={setIsSideBarOpen}
+        listNavigationItems={sideBarItems}
+        id={'menu-sideBar'}
       />
       {/* <aside id={sideBarId} className="navBar-sideBar">
         <li id="navBar-listNavigation-back">
