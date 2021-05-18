@@ -30,26 +30,29 @@
   text-decoration: none;
 }
 
-.listNavigation-item {
+.sideBar-item {
   color: #858585;
   margin: 0px 50px;
   padding: 20px 50px;
-  padding-right: 35px;
   line-height: 2.5rem;
   font-size: 1.8rem;
   border-bottom: 1px solid #85858533;
 }
 
-.listNavigation-item:last-child {
+.sideBar-item:last-child {
   border: none;
 }
 
-.listNavigation-item a {
+.sideBar-item a {
   color: #858585;
 }
 
 #back-arrow {
   fill: #858585;
+}
+
+#dropArrow-wrap {
+  margin-left: 5px;
 }
 
 @media screen and (max-width: 1440px) {

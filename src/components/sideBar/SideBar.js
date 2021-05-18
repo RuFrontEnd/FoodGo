@@ -33,16 +33,18 @@ function NavBar(props) {
           />
         </li>
         {title && (
-          <li className="sideBar-listNavigation-item">
+          <li className="sideBar-item">
             <h3>{title}</h3>
           </li>
         )}
         {listNavigationItems.map((listNavigationItem) => (
-          <li className="listNavigation-item">
+          <li className="sideBar-item">
             <Nav.Link as={NavLink} to={listNavigationItem.linkTo}>
               {listNavigationItem.content}
               {listNavigationItem.isDropArrow && (
-                <DropArrow className="navBar-dropArrow" />
+                <span id="dropArrow-wrap">
+                  <DropArrow className="navBar-dropArrow" />
+                </span>
               )}
             </Nav.Link>
           </li>
