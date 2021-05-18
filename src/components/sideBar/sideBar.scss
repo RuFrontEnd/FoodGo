@@ -1,0 +1,68 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+// 引入字體
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap");
+
+.sideBar-container {
+  background-color: white;
+  position: fixed;
+  z-index: 1000;
+  height: 100vh;
+  box-shadow: 0.3rem 0 1rem #cfcfcf;
+  padding: 30px 20px;
+}
+
+//text color
+.sideBar-container a {
+  color: #858585;
+  text-decoration: none;
+}
+
+//when text hover
+.sideBar-container a:hover,
+.sideBar-container a:focus,
+.sideBar-container a:active {
+  color: #e0611e;
+  text-decoration: none;
+}
+
+.listNavigation-item {
+  color: #858585;
+  margin: 0px 50px;
+  padding: 20px 50px;
+  padding-right: 35px;
+  line-height: 2.5rem;
+  font-size: 1.8rem;
+  border-bottom: 1px solid #85858533;
+}
+
+.listNavigation-item:last-child {
+  border: none;
+}
+
+.listNavigation-item a {
+  color: #858585;
+}
+
+#back-arrow {
+  fill: #858585;
+}
+
+@media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 576px) {
+}

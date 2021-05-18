@@ -13,6 +13,7 @@ import { ReactComponent as ShoppingCart } from 'components/navBar/images/navbar-
 import { ReactComponent as ShoppingAmount } from 'components/navBar/images/navbar-cartNumber.svg';
 import { ReactComponent as HamburgerMenu } from 'components/navBar/images/navBar-hamburger.svg';
 import { ReactComponent as BackArrow } from 'components/navBar/images/navBar-backArrow.svg';
+import { ReactComponent as Cancel } from 'components/navBar/images/navBar-cancel.svg';
 
 // 選單連結要使用NavLink取代Link
 import { NavLink, Redirect } from 'react-router-dom';
@@ -20,6 +21,8 @@ import { withRouter } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { login } from 'redux/member/memberActions';
 import { logout } from 'redux/member/memberActions';
+
+import SideBar from 'components/sideBar/SideBar';
 
 function NavBar(props) {
   const {
@@ -35,6 +38,17 @@ function NavBar(props) {
 
   const dispatch = useDispatch();
   const isLogin = useSelector((state) => state.member.isLogin);
+  const sideBarItems = [
+    { linkTo: '/groupOrder/groupOrderCreate', content: '作伙揪團' },
+    { linkTo: '/farmMap', content: '哈囉小農' },
+    { linkTo: '', content: '尋找美味', isDropArrow: true },
+    { linkTo: '/getcoupon', content: '專屬優惠' },
+    { linkTo: '/', content: '關於我們' },
+    { linkTo: '', content: '會員中心', isDropArrow: true },
+  ];
+  const [sideBarId, setSideBarId] = useState('navBar-main-sideBar');
+  const [sideBarMenuId, setSideBarMenuId] = useState('navBar-sideBar-menu');
+
   const [count, setCount] = useState(0);
   const [shoppingList, setShoppingList] = useState('0');
   const [showNav, setShowNav] = useState(true);
@@ -47,6 +61,24 @@ function NavBar(props) {
       x.className = 'nav';
     }
   }
+
+  const toggleSideBarId = () => {
+    if (sideBarId === 'navBar-main-sideBar') {
+      return setSideBarId('navBar-main-sideBar-active');
+    }
+    if (sideBarId === 'navBar-main-sideBar-active') {
+      return setSideBarId('navBar-main-sideBar');
+    }
+  };
+
+  const toggleSideBarMenuId = () => {
+    if (sideBarMenuId === 'navBar-sideBar-menu') {
+      return setSideBarMenuId('navBar-sideBar-menu-active');
+    }
+    if (sideBarMenuId === 'navBar-sideBar-menu-active') {
+      return setSideBarMenuId('navBar-sideBar-menu');
+    }
+  };
 
   // // 在登入狀態
   // if (isLogin === true) {
@@ -85,8 +117,11 @@ function NavBar(props) {
           <div className="navBar-collapse">
             <ul className="navBar-navigation navBar-navigation-1">
               <li
-                className="navBar-navigation-item navBar-hamburger-wrap"
-                onClick={() => {}}
+                id="navBar-hamburger-wrap"
+                className="navBar-navigation-item"
+                onClick={() => {
+                  toggleSideBarId();
+                }}
               >
                 <Nav.Link style={{ padding: '0px' }}>
                   <HamburgerMenu className="navbar-icon navBar-hamburger" />
@@ -284,7 +319,19 @@ function NavBar(props) {
           <MenuOutlined />
         </div>
       </section>
-      <aside className="navBar-sideBar">
+      <SideBar
+        listNavigationItems={sideBarItems}
+        style={{ zIndex: '1000', top: '100px' }}
+      />
+      {/* <aside id={sideBarId} className="navBar-sideBar">
+        <li id="navBar-listNavigation-back">
+          <Cancel
+            className="navBar-backArrow"
+            onClick={() => {
+              toggleSideBarId();
+            }}
+          />
+        </li>
         <li className="navBar-listNavigation-item">
           <Nav.Link
             as={NavLink}
@@ -304,8 +351,11 @@ function NavBar(props) {
         <li
           id="navBar-listNavigation-menu"
           className="navBar-listNavigation-item"
+          onClick={() => {
+            toggleSideBarMenuId();
+          }}
         >
-          <Nav.Link as={NavLink} to="/menu">
+          <Nav.Link>
             尋找美味 <DropArrow className="navBar-dropArrow" />
           </Nav.Link>
         </li>
@@ -327,8 +377,6 @@ function NavBar(props) {
         </li>
         <li className="navBar-listNavigation-item">
           <Nav.Link
-            as={NavLink}
-            to="/"
             onClick={(e) => {
               disableLink(e);
             }}
@@ -337,9 +385,14 @@ function NavBar(props) {
           </Nav.Link>
         </li>
       </aside>
-      <aside id="navBar-sub-sideBar" className="navBar-sideBar">
+      <aside id={sideBarMenuId} className="navBar-sideBar navBar-sub-sideBar">
         <li id="navBar-listNavigation-back">
-          <BackArrow className="navBar-backArrow" />
+          <BackArrow
+            className="navBar-backArrow"
+            onClick={() => {
+              toggleSideBarMenuId();
+            }}
+          />
         </li>
         <li className="navBar-listNavigation-item">
           <h3>尋找美味</h3>
@@ -374,7 +427,7 @@ function NavBar(props) {
             外送服務
           </Nav.Link>
         </li>
-      </aside>
+      </aside> */}
     </nav>
   );
 }
