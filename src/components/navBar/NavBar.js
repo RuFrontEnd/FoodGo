@@ -123,11 +123,9 @@ function NavBar(props) {
     if (!isMainSideBarOpen) {
       return setIsMainSideBarOpen(true);
     }
-    if (isMainSideBarOpen) {
-      setIsMainSideBarOpen(false);
-      setIsMenuSideBarOpen(false);
-      setIsMemberSideBarOpen(false);
-    }
+    setIsMainSideBarOpen(false);
+    setIsMenuSideBarOpen(false);
+    setIsMemberSideBarOpen(false);
   };
 
   return (
