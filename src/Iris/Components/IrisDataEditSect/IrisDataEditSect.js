@@ -165,7 +165,7 @@ function IrisDataEditSect(props) {
     const response = await fetch(request);
     const data = await response.json();
 
-    // console.log(data)
+    console.log(data);
     setUserInfo(data);
   }
 
@@ -211,20 +211,26 @@ function IrisDataEditSect(props) {
   // console.log(currentUserCouponStatus[0].coupon1_status)
 
   // ----------- 把user資料代進去 ----------- //
+  useEffect(() => {
+    console.log('currentUserInfo', currentUserInfo);
+  }, [currentUserInfo]);
+
   const setData = () => {
     currentUserInfo.map((item, index) => {
       const userFamilyName = item.name.slice(0, 1);
       const userGivenName = item.name.slice(1, 3);
-      const userBirthday = item.birthday.slice(0, 10);
+      // const userBirthday = item.birthday.slice(0, 10);
+      const userBirthday = '';
       const fullAddress = item.county + item.district + item.address;
+
       let familyname = document.querySelector('#iris-member-family-name');
       let givenname = document.querySelector('#iris-member-given-name');
       let birthday = document.querySelector('#iris-member-birthday');
       let mobile = document.querySelector('#iris-member-mobile');
       let oldPassword = document.querySelector('#iris-member-password');
-      // let password = document.querySelector('#iris-member-new-password')
       let email = document.querySelector('#iris-member-email');
       let address = document.querySelector('#iris-member-address');
+
       familyname.value = userFamilyName;
       givenname.value = userGivenName;
       // 讓新註冊會員的生日顯示為空值
