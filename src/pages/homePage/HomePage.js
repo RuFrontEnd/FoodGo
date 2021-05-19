@@ -360,25 +360,25 @@ function HomePage(props) {
           <div className="d-flex homePage-circles justify-content-around align-items-center">
             {/* circle1 */}
             <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
-              <div onClick={intro1} className="homePage-farmer-icon"></div>
+              <div onClick={intro1} className="homePage-feature-icon homePage-farmer-icon"></div>
               <p className="homePage-circle-title">在地小農</p>
             </div>
             <div className="homePage-index-feature-smcircle"></div>
             {/* circle2 */}
             <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
-              <div onClick={intro2} className="homePage-diet-icon"></div>
+              <div onClick={intro2} className="homePage-feature-icon homePage-diet-icon"></div>
               <p className="homePage-circle-title">產銷履歷</p>
             </div>
             <div className="homePage-index-feature-smcircle"></div>
             {/* circle3 */}
             <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
-              <div onClick={intro3} className="homePage-choices-icon"></div>
+              <div onClick={intro3} className="homePage-feature-icon homePage-choices-icon"></div>
               <p className="homePage-circle-title homePage-circle-title-customize">客製化便當</p>
             </div>
             <div className="homePage-index-feature-smcircle"></div>
             {/* circle4 */}
             <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
-              <div onClick={intro4} className="homePage-network-icon"></div>
+              <div onClick={intro4} className="homePage-feature-icon homePage-network-icon"></div>
               <p className="homePage-circle-title">揪團訂購</p>
             </div>
             <div className="homePage-index-feature-smcircle"></div>

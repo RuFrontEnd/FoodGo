@@ -257,51 +257,38 @@ $deepYello: #f5a016;
         color: $brown;
         margin-bottom: 0;
       }
+
+      .homePage-feature-icon {
+        background-size: 9.5rem 9.5rem;
+        width: 9.5rem;
+        height: 9.5rem;
+        cursor: pointer;
+      }
+
+      .homePage-feature-icon:hover {
+        background-size: 9.5rem 9.5rem;
+      }
+
       // 在地小農
       .homePage-farmer-icon {
         background: url("../../assets/svg/farmer-o.svg") center center no-repeat;
-        background-size: 9.5rem 9.5rem;
-        // background-size: 8rem 8rem;
-        width: 9.5rem;
-        height: 9.5rem;
-        cursor: pointer;
       }
-      .homePage-farmer-icon:hover {
-        background-size: 9.5rem 9.5rem;
-      }
+
       // 產銷履歷
       .homePage-diet-icon {
         background: url("../../assets/svg/diet.svg") center center no-repeat;
-        background-size: 8rem 8rem;
-        width: 9.5rem;
-        height: 9.5rem;
-        cursor: pointer;
       }
-      .homePage-diet-icon:hover {
-        background-size: 9.5rem 9.5rem;
-      }
+
       // 客製化便當
       .homePage-choices-icon {
         background: url("../../assets/svg/choices.svg") center center no-repeat;
-        background-size: 7.5rem 7.5rem;
-        width: 9.5rem;
-        height: 9.5rem;
-        cursor: pointer;
       }
-      .homePage-choices-icon:hover {
-        background-size: 9rem 9rem;
-      }
+
       // 揪團訂餐
       .homePage-network-icon {
         background: url("../../assets/svg/network.svg") center center no-repeat;
-        background-size: 8rem 8rem;
-        width: 9.5rem;
-        height: 9.5rem;
-        cursor: pointer;
       }
-      .homePage-network-icon:hover {
-        background-size: 9.5rem 9.5rem;
-      }
+
       // 卡路里計算
       .homePage-kcal-icon {
         background: url("../../assets/svg/kcal.svg") center center no-repeat;
@@ -1241,6 +1228,17 @@ $deepYello: #f5a016;
 
 .button-btn-y:active::after {
   background-color: $dark-yellow;
+}
+
+@media screen and (max-width: 1024px) {
+  .homePage-index-feature .homePage-circles .homePage-index-feature-circle {
+    width: 13rem;
+    height: 13rem;
+  }
+
+  .homePage-index-feature .homePage-circles .homePage-index-feature-circle .homePage-farmer-icon {
+    background-size: 6.5rem 6.5rem;
+  }
 }
 
 @media screen and (max-width: 376px) {
