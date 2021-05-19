@@ -14,7 +14,7 @@ $deepYello: #f5a016;
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap");
 
 .slick-list {
-  height: calc(100vh - 100px);
+  // height: calc(100vh - 100px);
 }
 
 .homePage-fake-nav {
@@ -61,16 +61,13 @@ $deepYello: #f5a016;
 }
 
 .ant-carousel .slick-dots-bottom {
-  bottom: 3rem;
+}
+
+.slick-slider > ul {
 }
 
 .homePage-index-carousel-wrap {
   width: 100%;
-  .ant-carousel > .slick-slider > ul {
-    float: left;
-    margin-left: 120rem;
-    margin-bottom: 3rem;
-  }
   .bannerwrap {
     width: 100%;
     height: 100%;
@@ -82,15 +79,15 @@ $deepYello: #f5a016;
       background-size: cover;
 
       .homePage-health {
-        width: 67rem;
-        height: 4.5rem;
+        // width: 67rem;
+        // height: 4.5rem;
         background: url("../../assets/svg/healthtitle.svg") center center no-repeat;
         background-size: cover;
         margin-top: 26rem;
       }
       .homePage-fresh {
-        width: 48rem;
-        height: 8rem;
+        // width: 48rem;
+        // height: 8rem;
         background: url("../../assets/svg/FRESHEVERYDAY.svg") center center no-repeat;
         background-size: cover;
         margin-top: 26rem;
