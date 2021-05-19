@@ -312,8 +312,6 @@ function HomePage(props) {
             <div>
               <div className="homepage-banner-wrap">
                 <div className="banner2 d-flex flex-column text-left">
-                  <p className="float-left homePage-p1">選擇友善的安心蔬果，</p>
-                  <p className="float-left">是我們愛護土地的方式。</p>
                 </div>
               </div>
             </div>
@@ -343,8 +341,8 @@ function HomePage(props) {
             <div className="homePage-col-download"></div>
           </div>
           {/* 滾動提示 */}
-          <button className="position-absolute homePage-mouse"></button>
-          <div className="position-absolute homePage-mouse-arrow"></div>
+          {/* <button className="position-absolute homePage-mouse"></button>
+          <div className="position-absolute homePage-mouse-arrow"></div> */}
           {/* 切換鈕 */}
         </div>
         {/* </div> */}
