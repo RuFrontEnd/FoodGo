@@ -300,7 +300,7 @@ function HomePage(props) {
           <Carousel autoplay>
             <div>
               <div
-                className="bannerwrap d-flex flex-column"
+                className="homepage-banner-wrap"
                 // style={contentStyle}
               >
                 <div className="banner1 d-flex flex-column align-items-center">
@@ -309,8 +309,8 @@ function HomePage(props) {
                 </div>
               </div>
             </div>
-            {/* <div>
-              <div className="bannerwrap" style={contentStyle}>
+            <div>
+              <div className="homepage-banner-wrap">
                 <div className="banner2 d-flex flex-column text-left">
                   <p className="float-left homePage-p1">選擇友善的安心蔬果，</p>
                   <p className="float-left">是我們愛護土地的方式。</p>
@@ -318,15 +318,15 @@ function HomePage(props) {
               </div>
             </div>
             <div>
-              <div className="bannerwrap" style={contentStyle}>
+              <div className="homepage-banner-wrap">
                 <div className="banner3"></div>
               </div>
             </div>
             <div>
-              <div className="bannerwrap" style={contentStyle}>
+              <div className="homepage-banner-wrap">
                 <div className="banner4"></div>
               </div>
-            </div> */}
+            </div>
           </Carousel>
           {/* 應用程式下載 */}
           {/* 橘底 */}

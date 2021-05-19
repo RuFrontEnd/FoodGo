@@ -68,9 +68,9 @@ $deepYello: #f5a016;
 
 .homePage-index-carousel-wrap {
   width: 100%;
-  .bannerwrap {
+  .homepage-banner-wrap {
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 100px);
 
     .banner1 {
       width: 100%;
