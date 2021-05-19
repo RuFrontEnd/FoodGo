@@ -36,7 +36,7 @@ import ChaCheckpoint from 'Cha/Pages/ChaCheckpoint';
 import ChaProductList from 'Cha/Components-demo/ChaProductList';
 import ChaCartTest from 'Cha/Components-demo/ChaCartTest';
 
-import JanIndex from 'Janice/Pages/JanIndex';
+import HomePage from 'pages/homePage/HomePage';
 import IrisUserprofile from 'Iris/Pages/IrisUserprofile';
 
 // 加入 toTop 按鈕元件
@@ -493,7 +493,7 @@ function App() {
             </Route>
             {/* janice */}
             <Route exact path="/">
-              <JanIndex
+              <HomePage
                 currentUser={currentUser}
                 takeOrNot={takeOrNot}
                 setTakeOrNot={setTakeOrNot}

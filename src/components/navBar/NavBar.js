@@ -328,8 +328,7 @@ function NavBar(props) {
                       className="navBar-navbarCartNum"
                       id="navBar-navbarCartNum"
                     >
-                      50
-                      {/* {cartNumber} */}
+                      {cartNumber}
                     </span>
                   </div>
                 </div>
