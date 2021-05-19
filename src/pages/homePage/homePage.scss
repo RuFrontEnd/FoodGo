@@ -13,18 +13,22 @@ $deepYello: #f5a016;
 @import "variable/variable.scss";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap");
 
-.jan-p0 {
-  padding: 0 !important;
+.slick-list {
+  height: calc(100vh - 100px);
 }
 
-.jan-fake-nav {
+.homePage-fake-nav {
   width: 100%;
   height: 10rem;
   background-color: #fff;
 }
 
+.homePage-p0 {
+  padding: 0 !important;
+}
+
 // 標題宋體樣式
-.jan-feature-title {
+.homePage-feature-title {
   font-size: 3.2rem;
   font-family: "Noto Serif TC", serif;
   color: $gray;
@@ -33,7 +37,7 @@ $deepYello: #f5a016;
 }
 
 // 共用元件按鈕大小修改
-.jan-index-button button {
+.homePage-index-button button {
   width: 15rem;
   height: 5rem;
   font-size: 1.8rem;
@@ -60,9 +64,8 @@ $deepYello: #f5a016;
   bottom: 3rem;
 }
 
-.jan-index-carousel-wrap {
+.homePage-index-carousel-wrap {
   width: 100%;
-  height: 87rem;
   .ant-carousel > .slick-slider > ul {
     float: left;
     margin-left: 120rem;
@@ -78,14 +81,14 @@ $deepYello: #f5a016;
       background: url("../../assets/png/banner01.png") center center no-repeat;
       background-size: cover;
 
-      .jan-health {
+      .homePage-health {
         width: 67rem;
         height: 4.5rem;
         background: url("../../assets/svg/healthtitle.svg") center center no-repeat;
         background-size: cover;
         margin-top: 26rem;
       }
-      .jan-fresh {
+      .homePage-fresh {
         width: 48rem;
         height: 8rem;
         background: url("../../assets/svg/FRESHEVERYDAY.svg") center center no-repeat;
@@ -99,7 +102,7 @@ $deepYello: #f5a016;
       height: 100%;
       background: url("../../assets/jpg/banner5.jpg") center center no-repeat;
       background-size: cover;
-      .jan-p1 {
+      .homePage-p1 {
         margin-top: 15rem;
         margin-bottom: 5rem;
       }
@@ -129,7 +132,7 @@ $deepYello: #f5a016;
   }
 
   // 滾動提示
-  .jan-mouse {
+  .homePage-mouse {
     width: 3rem;
     height: 5rem;
     background: url("../../assets/svg/mouse.svg") center center no-repeat;
@@ -137,7 +140,7 @@ $deepYello: #f5a016;
     left: 49vw;
     cursor: pointer;
   }
-  .jan-mouse-arrow {
+  .homePage-mouse-arrow {
     width: 3rem;
     height: 1rem;
     background: url("../../assets/svg/mouse-arrow.svg") center center no-repeat;
@@ -155,7 +158,7 @@ $deepYello: #f5a016;
     }
   }
   // 下載應用程式div的樣式
-  .jan-download-area {
+  .homePage-download-area {
     bottom: 2.5rem;
     width: 28rem;
     height: 10rem;
@@ -165,14 +168,14 @@ $deepYello: #f5a016;
     padding: 1rem;
     z-index: 50;
     transition: transform 1s;
-    .jan-app-logo {
+    .homePage-app-logo {
       background: url("../../assets/png/appLogo.png") center center no-repeat;
       background-size: cover;
       margin: auto;
       width: 7rem;
       height: 7rem;
     }
-    .jan-app-info {
+    .homePage-app-info {
       width: 18rem;
       height: 8rem;
       display: flex;
@@ -183,7 +186,7 @@ $deepYello: #f5a016;
         font-size: 1.6rem;
         font-weight: 400;
       }
-      .jan-ios {
+      .homePage-ios {
         background: url("../../assets/png/ios.png") center center no-repeat;
         background-size: cover;
         height: 2.5rem;
@@ -191,7 +194,7 @@ $deepYello: #f5a016;
         border-radius: 5px;
         cursor: pointer;
       }
-      .jan-android {
+      .homePage-android {
         background: url("../../assets/png/android.png") center center no-repeat;
         background-size: cover;
         width: 8rem;
@@ -200,7 +203,7 @@ $deepYello: #f5a016;
         cursor: pointer;
       }
     }
-    .jan-col-download {
+    .homePage-col-download {
       background: url("../../assets/svg/downloadIcon.svg") center center no-repeat;
       background-size: cover;
       width: 2.5rem;
@@ -213,35 +216,35 @@ $deepYello: #f5a016;
 }
 
 // 特色專區-切換區域
-.jan-index-feature {
+.homePage-index-feature {
   max-width: 117rem;
   height: 23rem;
   background-color: #fff;
   // 圓圈們
-  .jan-circles {
+  .homePage-circles {
     width: 117rem;
     // 分隔橘色小圓圈
-    .jan-index-feature-smcircle {
+    .homePage-index-feature-smcircle {
       background-color: $orange;
       width: 1.5rem;
       height: 1.5rem;
       border-radius: 50vw;
     }
     // skin底色
-    .jan-index-feature-circle {
+    .homePage-index-feature-circle {
       background-color: $skin;
       width: 13rem;
       height: 13rem;
       border-radius: 50%;
       // 特色文字樣式
-      .jan-circle-title {
+      .homePage-circle-title {
         font-size: 2rem;
         font-family: "Noto Sans TC", sans-serif;
         color: $brown;
         margin-bottom: 0;
       }
       // 在地小農
-      .jan-farmer-icon {
+      .homePage-farmer-icon {
         background: url("../../assets/svg/farmer-o.svg") center center no-repeat;
         background-size: 9.5rem 9.5rem;
         // background-size: 8rem 8rem;
@@ -250,11 +253,11 @@ $deepYello: #f5a016;
         margin: 1.5rem 0 0.5rem 0;
         cursor: pointer;
       }
-      .jan-farmer-icon:hover {
+      .homePage-farmer-icon:hover {
         background-size: 9.5rem 9.5rem;
       }
       // 產銷履歷
-      .jan-diet-icon {
+      .homePage-diet-icon {
         background: url("../../assets/svg/diet.svg") center center no-repeat;
         background-size: 8rem 8rem;
         width: 9.5rem;
@@ -262,11 +265,11 @@ $deepYello: #f5a016;
         margin: 1.5rem 0 0.5rem 0.5rem;
         cursor: pointer;
       }
-      .jan-diet-icon:hover {
+      .homePage-diet-icon:hover {
         background-size: 9.5rem 9.5rem;
       }
       // 客製化便當
-      .jan-choices-icon {
+      .homePage-choices-icon {
         background: url("../../assets/svg/choices.svg") center center no-repeat;
         background-size: 7.5rem 7.5rem;
         width: 9.5rem;
@@ -274,11 +277,11 @@ $deepYello: #f5a016;
         margin: 2rem 0 0 0;
         cursor: pointer;
       }
-      .jan-choices-icon:hover {
+      .homePage-choices-icon:hover {
         background-size: 9rem 9rem;
       }
       // 揪團訂餐
-      .jan-network-icon {
+      .homePage-network-icon {
         background: url("../../assets/svg/network.svg") center center no-repeat;
         background-size: 8rem 8rem;
         width: 9.5rem;
@@ -286,11 +289,11 @@ $deepYello: #f5a016;
         margin: 1.8rem 0 0.2rem 0.2rem;
         cursor: pointer;
       }
-      .jan-network-icon:hover {
+      .homePage-network-icon:hover {
         background-size: 9.5rem 9.5rem;
       }
       // 卡路里計算
-      .jan-kcal-icon {
+      .homePage-kcal-icon {
         background: url("../../assets/svg/kcal.svg") center center no-repeat;
         background-size: 8rem 8rem;
         width: 9.5rem;
@@ -298,14 +301,14 @@ $deepYello: #f5a016;
         margin: 2rem 0 0 0;
         cursor: pointer;
       }
-      .jan-kcal-icon:hover {
+      .homePage-kcal-icon:hover {
         background-size: 9.5rem 9.5rem;
       }
     }
   }
 }
 // 切換指示的三角形
-.jan-index-feature-triangle {
+.homePage-index-feature-triangle {
   width: 0;
   height: 0;
   border-style: solid;
@@ -316,13 +319,13 @@ $deepYello: #f5a016;
   top: 23rem;
 }
 // 特色內容
-.jan-intro-area {
+.homePage-intro-area {
   margin-top: 4rem;
   width: 100%;
   height: 55rem;
   background-color: $skin;
 }
-.jan-intro1 {
+.homePage-intro1 {
   margin: auto;
   max-width: 117rem;
   height: 55rem;
@@ -330,17 +333,17 @@ $deepYello: #f5a016;
   // display: none;
   justify-content: space-around;
   align-items: center;
-  .jan-intro1-wrap {
+  .homePage-intro1-wrap {
     // background-color: #bbb;
     width: 44rem;
     height: 50rem;
-    .jan-intro1-title {
+    .homePage-intro1-title {
       background: url("../../assets/svg/intro1.svg") center center no-repeat;
       background-size: cover;
       width: 38rem;
       height: 11rem;
     }
-    .jan-intro1-text {
+    .homePage-intro1-text {
       width: 38rem;
       height: 30rem;
       color: $gray;
@@ -348,7 +351,7 @@ $deepYello: #f5a016;
       font-size: 1.4rem;
       margin-top: 2rem;
       margin-left: 5rem;
-      .jan-intro1-large-text {
+      .homePage-intro1-large-text {
         color: $green;
         font-family: "Noto Sans TC", sans-serif;
         font-size: 2rem;
@@ -356,14 +359,14 @@ $deepYello: #f5a016;
       }
     }
   }
-  .jan-intro1-cards {
+  .homePage-intro1-cards {
     // background-color: #ccc;
     width: 68rem;
     height: 50rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .jan-intro1-card1 {
+    .homePage-intro1-card1 {
       background-color: $lightGray;
       width: 30rem;
       height: 45rem;
@@ -371,7 +374,7 @@ $deepYello: #f5a016;
       box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
       position: relative;
       overflow: hidden;
-      .jan-intro1-farmer1 {
+      .homePage-intro1-farmer1 {
         border-radius: 50%;
         background: url("../../assets/jpg/farmer1.jpg") center center no-repeat;
         background-size: 40rem;
@@ -382,23 +385,23 @@ $deepYello: #f5a016;
         display: flex;
         justify-content: center;
       }
-      .jan-intro1-card1-wrap {
+      .homePage-intro1-card1-wrap {
         width: 25rem;
         height: 45rem;
         top: 0;
         right: 2.5rem;
         position: absolute;
-        .jan-intro1-fake-farmer1 {
+        .homePage-intro1-fake-farmer1 {
           width: 15rem;
           height: 15rem;
           margin: 3rem auto 2rem auto;
         }
-        .jan-card1-title {
+        .homePage-card1-title {
           font-family: "Noto Sans TC", sans-serif;
           font-size: 1.8rem;
           font-weight: 600;
         }
-        .jan-card1-text {
+        .homePage-card1-text {
           width: 25rem;
           height: 15rem;
           font-family: "Noto Sans TC", sans-serif;
@@ -406,7 +409,7 @@ $deepYello: #f5a016;
           font-weight: 500;
           margin: 0 auto;
         }
-        .jan-card-arrow {
+        .homePage-card-arrow {
           background: url("../../assets/svg/intro1-arrow.svg") center center no-repeat;
           background-size: cover;
           width: 3rem;
@@ -414,7 +417,7 @@ $deepYello: #f5a016;
           cursor: pointer;
         }
 
-        .jan-card1-viewmore {
+        .homePage-card1-viewmore {
           font-family: "Noto Sans TC", sans-serif;
           color: $gray;
           font-size: 1rem;
@@ -422,8 +425,8 @@ $deepYello: #f5a016;
         }
       }
     }
-    .jan-intro1-card1:hover {
-      .jan-intro1-farmer1 {
+    .homePage-intro1-card1:hover {
+      .homePage-intro1-farmer1 {
         margin-left: -15rem;
         margin-top: -7.5rem;
         background: url("../../assets/jpg/farmer1.jpg") center center no-repeat;
@@ -435,7 +438,7 @@ $deepYello: #f5a016;
         width: 60rem;
         height: 60rem;
       }
-      .jan-card-arrow {
+      .homePage-card-arrow {
         animation: myCustomAnimate 0.7s infinite;
       }
       @keyframes myCustomAnimate {
@@ -448,7 +451,7 @@ $deepYello: #f5a016;
       }
     }
 
-    .jan-intro1-card2 {
+    .homePage-intro1-card2 {
       background-color: $lightGray;
       width: 30rem;
       height: 45rem;
@@ -456,7 +459,7 @@ $deepYello: #f5a016;
       box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
       position: relative;
       overflow: hidden;
-      .jan-intro1-farmer2 {
+      .homePage-intro1-farmer2 {
         border-radius: 50%;
         background: url("../../assets/jpg/farmer2.jpg") center center no-repeat;
         background-size: 24rem;
@@ -467,23 +470,23 @@ $deepYello: #f5a016;
         display: flex;
         justify-content: center;
       }
-      .jan-intro1-card2-wrap {
+      .homePage-intro1-card2-wrap {
         width: 25rem;
         height: 45rem;
         top: 0;
         right: 2.5rem;
         position: absolute;
-        .jan-intro1-fake-farmer2 {
+        .homePage-intro1-fake-farmer2 {
           width: 15rem;
           height: 15rem;
           margin: 3rem auto 2rem auto;
         }
-        .jan-card2-title {
+        .homePage-card2-title {
           font-family: "Noto Sans TC", sans-serif;
           font-size: 1.8rem;
           font-weight: 600;
         }
-        .jan-card2-text {
+        .homePage-card2-text {
           width: 25rem;
           height: 15rem;
           font-family: "Noto Sans TC", sans-serif;
@@ -491,22 +494,22 @@ $deepYello: #f5a016;
           font-weight: 500;
           margin: 0 auto;
         }
-        .jan-card-arrow {
+        .homePage-card-arrow {
           background: url("../../assets/svg/intro1-arrow.svg") center center no-repeat;
           background-size: cover;
           width: 3rem;
           height: 2.2rem;
           cursor: pointer;
         }
-        .jan-card2-viewmore {
+        .homePage-card2-viewmore {
           font-family: "Noto Sans TC", sans-serif;
           color: $gray;
           font-size: 1rem;
           // margin-right: 2.5rem;
         }
       }
-      .jan-intro1-card2:hover {
-        .jan-intro1-farmer2 {
+      .homePage-intro1-card2:hover {
+        .homePage-intro1-farmer2 {
           margin-left: -15rem;
           margin-top: -7.5rem;
           background: url("../../assets/jpg/farmer2.jpg") center center no-repeat;
@@ -518,7 +521,7 @@ $deepYello: #f5a016;
           width: 60rem;
           height: 60rem;
         }
-        .jan-card-arrow {
+        .homePage-card-arrow {
           animation: myCustomAnimate 0.7s infinite;
         }
         @keyframes myCustomAnimate {
@@ -534,7 +537,7 @@ $deepYello: #f5a016;
   }
 }
 
-.jan-intro2 {
+.homePage-intro2 {
   margin: auto;
   max-width: 117rem;
   height: 55rem;
@@ -543,19 +546,19 @@ $deepYello: #f5a016;
   // display: block;
   justify-content: space-around;
   align-items: center;
-  .jan-intro2-wrap {
+  .homePage-intro2-wrap {
     // background-color: #bbb;
     width: 44rem;
     height: 50rem;
 
-    .jan-intro2-title {
+    .homePage-intro2-title {
       background: url("../../assets/svg/intro2.svg") center center no-repeat;
       background-size: cover;
       width: 43rem;
       height: 11rem;
     }
   }
-  .jan-intro2-text {
+  .homePage-intro2-text {
     width: 38rem;
     height: 30rem;
     color: $gray;
@@ -563,14 +566,14 @@ $deepYello: #f5a016;
     font-size: 1.4rem;
     margin-top: 6rem;
     margin-left: 5rem;
-    .jan-intro2-large-text {
+    .homePage-intro2-large-text {
       color: $deepYello;
       font-family: "Noto Sans TC", sans-serif;
       font-size: 2rem;
       font-weight: 600;
     }
   }
-  .jan-intro2-cards {
+  .homePage-intro2-cards {
     // background-color: #ccc;
     width: 68rem;
     height: 50rem;
@@ -579,7 +582,7 @@ $deepYello: #f5a016;
   }
 }
 
-.jan-intro3 {
+.homePage-intro3 {
   margin: auto;
   max-width: 117rem;
   height: 55rem;
@@ -588,19 +591,19 @@ $deepYello: #f5a016;
   // display: block;
   justify-content: space-around;
   align-items: center;
-  .jan-intro3-wrap {
+  .homePage-intro3-wrap {
     // background-color: #bbb;
     width: 44rem;
     height: 50rem;
 
-    .jan-intro3-title {
+    .homePage-intro3-title {
       background: url("../../assets/svg/intro3.svg") center center no-repeat;
       background-size: cover;
       width: 35rem;
       height: 11rem;
     }
   }
-  .jan-intro3-text {
+  .homePage-intro3-text {
     width: 38rem;
     height: 30rem;
     color: $gray;
@@ -608,14 +611,14 @@ $deepYello: #f5a016;
     font-size: 1.4rem;
     margin-top: 6rem;
     margin-left: 5rem;
-    .jan-intro3-large-text {
+    .homePage-intro3-large-text {
       color: $deepYello;
       font-family: "Noto Sans TC", sans-serif;
       font-size: 2rem;
       font-weight: 600;
     }
   }
-  .jan-intro3-cards {
+  .homePage-intro3-cards {
     // background-color: #ccc;
     width: 68rem;
     height: 50rem;
@@ -625,7 +628,7 @@ $deepYello: #f5a016;
   }
 }
 
-.jan-intro4 {
+.homePage-intro4 {
   // background-color: #ddd;
   margin: auto;
   max-width: 117rem;
@@ -635,19 +638,19 @@ $deepYello: #f5a016;
   // display: block;
   justify-content: space-around;
   align-items: center;
-  .jan-intro4-wrap {
+  .homePage-intro4-wrap {
     // background-color: #bbb;
     width: 44rem;
     height: 50rem;
 
-    .jan-intro4-title {
+    .homePage-intro4-title {
       background: url("../../assets/svg/intro4.svg") center center no-repeat;
       background-size: cover;
       width: 43rem;
       height: 11rem;
     }
   }
-  .jan-intro4-text {
+  .homePage-intro4-text {
     width: 38rem;
     height: 30rem;
     color: $gray;
@@ -655,14 +658,14 @@ $deepYello: #f5a016;
     font-size: 1.4rem;
     margin-top: 6rem;
     margin-left: 5rem;
-    .jan-intro4-large-text {
+    .homePage-intro4-large-text {
       color: $deepYello;
       font-family: "Noto Sans TC", sans-serif;
       font-size: 2rem;
       font-weight: 600;
     }
   }
-  .jan-intro4-cards {
+  .homePage-intro4-cards {
     background: url("../../assets/jpg/networkintro4.jpg") center center no-repeat;
     width: 68rem;
     height: 50rem;
@@ -670,7 +673,7 @@ $deepYello: #f5a016;
   }
 }
 
-.jan-intro5 {
+.homePage-intro5 {
   // background-color: #ddd;
   margin: auto;
   max-width: 117rem;
@@ -680,19 +683,19 @@ $deepYello: #f5a016;
   // display: block;
   justify-content: space-around;
   align-items: center;
-  .jan-intro5-wrap {
+  .homePage-intro5-wrap {
     // background-color: #bbb;
     width: 44rem;
     height: 50rem;
 
-    .jan-intro5-title {
+    .homePage-intro5-title {
       background: url("../../assets/svg/intro5.svg") center center no-repeat;
       background-size: cover;
       width: 43rem;
       height: 11rem;
     }
   }
-  .jan-intro5-text {
+  .homePage-intro5-text {
     width: 38rem;
     height: 30rem;
     color: $gray;
@@ -700,14 +703,14 @@ $deepYello: #f5a016;
     font-size: 1.4rem;
     margin-top: 6rem;
     margin-left: 5rem;
-    .jan-intro5-large-text {
+    .homePage-intro5-large-text {
       color: $deepYello;
       font-family: "Noto Sans TC", sans-serif;
       font-size: 2rem;
       font-weight: 600;
     }
   }
-  .jan-intro5-cards {
+  .homePage-intro5-cards {
     background: url("../../assets/png/kcalintro5.png") center center no-repeat;
     width: 68rem;
     height: 50rem;
@@ -716,30 +719,30 @@ $deepYello: #f5a016;
 }
 
 // 今日推薦
-.jan-recommend {
+.homePage-recommend {
   background: url("../../assets/svg/rice.svg") center center no-repeat;
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
   height: 78rem;
-  .jan-recommend-wrap {
+  .homePage-recommend-wrap {
     margin-top: 4rem;
     width: 100%;
     height: 100%;
   }
-  .jan-recommend-cards {
-    .jan-card-container {
+  .homePage-recommend-cards {
+    .homePage-card-container {
       box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
       background-color: $lightGray;
       border-radius: 20px;
       width: 30rem;
       height: 45rem;
-      .jan-card-img-warp {
+      .homePage-card-img-warp {
         height: 30rem;
         position: relative;
         overflow: hidden;
         transition: 0.5s;
-        .jan-card-img1 {
+        .homePage-card-img1 {
           border-radius: 20px 20px 0 0;
           width: 100%;
           height: 100%;
@@ -749,7 +752,7 @@ $deepYello: #f5a016;
           background-repeat: no-repeat;
           cursor: pointer;
         }
-        .jan-card-img2 {
+        .homePage-card-img2 {
           border-radius: 20px 20px 0 0;
           width: 100%;
           height: 100%;
@@ -759,7 +762,7 @@ $deepYello: #f5a016;
           background-repeat: no-repeat;
           cursor: pointer;
         }
-        .jan-card-img3 {
+        .homePage-card-img3 {
           border-radius: 20px 20px 0 0;
           width: 100%;
           height: 100%;
@@ -769,7 +772,7 @@ $deepYello: #f5a016;
           background-repeat: no-repeat;
           cursor: pointer;
         }
-        .jan-ingredient {
+        .homePage-ingredient {
           border-radius: 20px 20px 0 0;
           display: none;
           width: 100%;
@@ -777,10 +780,10 @@ $deepYello: #f5a016;
           backdrop-filter: blur(3px);
         }
       }
-      .jan-card-img-warp:hover {
+      .homePage-card-img-warp:hover {
         transition: 0.5s;
         text-decoration: none;
-        .jan-ingredient {
+        .homePage-ingredient {
           border-radius: 20px 20px 0 0;
           display: block;
           display: flex;
@@ -791,7 +794,7 @@ $deepYello: #f5a016;
           font-family: "Noto Sans TC", sans-serif;
           font-weight: 300;
           transition: 0.5s;
-          .jan-ingredient-content {
+          .homePage-ingredient-content {
             margin-top: 5rem;
             letter-spacing: 5px;
             line-height: 30px;
@@ -802,14 +805,14 @@ $deepYello: #f5a016;
         }
       }
     }
-    .jan-card-info {
+    .homePage-card-info {
       h3 {
         font-family: "Noto Sans TC", sans-serif;
         font-weight: 400;
         text-align: center;
         margin: 2.5rem 0;
       }
-      .jan-card-hr {
+      .homePage-card-hr {
         width: 25rem;
         height: 100%;
         border-top: 1px solid $lightBrown;
@@ -818,7 +821,7 @@ $deepYello: #f5a016;
           font-family: "Noto Sans TC", sans-serif;
           margin: 0 1rem;
         }
-        .jan-card-star {
+        .homePage-card-star {
           margin: 0px 2px;
           width: 1.4rem;
         }
@@ -828,49 +831,49 @@ $deepYello: #f5a016;
 }
 
 // 專屬優惠
-.jan-discount {
+.homePage-discount {
   background-color: $skin;
   width: 100%;
   height: 80rem;
 }
-.jan-event {
+.homePage-event {
   width: 85rem;
   height: 40rem;
   background-color: $lightGray;
   border-radius: 20px;
   box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
   overflow: hidden;
-  .jan-event-img {
+  .homePage-event-img {
     width: 40rem;
     height: 40rem;
     background: url("../../assets/png/event1.png") center center no-repeat;
     background-size: cover;
   }
 }
-.jan-event-text {
+.homePage-event-text {
   width: 35rem;
   height: 30rem;
 }
-.jan-event-title {
+.homePage-event-title {
   font-size: 1.8rem;
   font-family: "Noto Serif TC", serif;
   color: $orange;
   line-height: 13px;
   font-weight: 700;
 }
-.jan-event-title2 {
+.homePage-event-title2 {
   display: none;
 }
-.jan-event-title3 {
+.homePage-event-title3 {
   display: none;
 }
-.jan-event-content2 {
+.homePage-event-content2 {
   display: none;
 }
-.jan-event-content3 {
+.homePage-event-content3 {
   display: none;
 }
-.jan-event-content {
+.homePage-event-content {
   font-size: 1.3rem;
   font-family: "Noto Sans TC", sans-serif;
   color: $gray;
@@ -878,16 +881,16 @@ $deepYello: #f5a016;
   p {
     line-height: 15px;
   }
-  .jan-call-to-action {
+  .homePage-call-to-action {
     color: $orange;
   }
 }
-.jan-event-date {
+.homePage-event-date {
   font-size: 1rem;
   font-family: "Noto Sans TC", sans-serif;
   color: $gray;
 }
-.jan-img-select {
+.homePage-img-select {
   width: 140rem;
   height: 17rem;
   .img-row {
@@ -915,7 +918,7 @@ $deepYello: #f5a016;
 }
 
 // 購物流程背景樣式
-.jan-shopping-process {
+.homePage-shopping-process {
   background: url("../../assets/jpg/bentos.jpg") center center no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -923,12 +926,12 @@ $deepYello: #f5a016;
   height: 78rem;
   margin: 0 1.5rem;
   overflow: hidden;
-  .jan-blur {
+  .homePage-blur {
     background-color: rgba(255, 255, 255, 0.235);
     width: 100vw;
     height: 78rem;
     backdrop-filter: blur(5px) brightness(1.2);
-    .jan-black-blur {
+    .homePage-black-blur {
       height: 45rem;
       width: 100vw;
       background-color: rgba(0, 0, 0, 0.2);
@@ -936,7 +939,7 @@ $deepYello: #f5a016;
   }
 }
 // 購物五步驟
-.jan-step-circle {
+.homePage-step-circle {
   margin-top: 6rem;
   p {
     font-size: 1.8rem;
@@ -945,31 +948,31 @@ $deepYello: #f5a016;
     color: $skin;
     margin-top: 14rem;
   }
-  .jan-step1 {
+  .homePage-step1 {
     background: url("../../assets/svg/step1.svg") center center no-repeat;
     width: 12rem;
     height: 12rem;
     background-size: cover;
   }
-  .jan-step2 {
+  .homePage-step2 {
     background: url("../../assets/svg/step2.svg") center center no-repeat;
     width: 12rem;
     height: 12rem;
     background-size: cover;
   }
-  .jan-step3 {
+  .homePage-step3 {
     background: url("../../assets/svg/step3.svg") center center no-repeat;
     width: 12rem;
     height: 12rem;
     background-size: cover;
   }
-  .jan-step4 {
+  .homePage-step4 {
     background: url("../../assets/svg/step4.svg") center center no-repeat;
     width: 12rem;
     height: 12rem;
     background-size: cover;
   }
-  .jan-step5 {
+  .homePage-step5 {
     background: url("../../assets/svg/step5.svg") center center no-repeat;
     width: 12rem;
     height: 12rem;
@@ -979,14 +982,14 @@ $deepYello: #f5a016;
 
 // 地圖
 // 米粒底圖
-.jan-map {
+.homePage-map {
   background: url("../../assets/svg/rice.svg") center center no-repeat;
   background-size: cover;
   width: 100%;
   height: 75rem;
   position: relative;
   // 表單背景色
-  .jan-map-form-bcc {
+  .homePage-map-form-bcc {
     background-color: $skin;
     width: 70%;
     height: 75rem;
@@ -994,39 +997,39 @@ $deepYello: #f5a016;
     margin-top: -3rem;
     left: 0;
     top: 0;
-    .jan-map-form-wrap {
+    .homePage-map-form-wrap {
       margin-left: 20%;
       // margin-left: 25rem;
     }
-    .jan-adress-form-wrap {
+    .homePage-adress-form-wrap {
       margin-left: 2rem;
       width: 38rem;
       height: 52rem;
-      .jan-form-announce {
+      .homePage-form-announce {
         font-family: "Noto Sans TC", sans-serif;
         font-size: 2rem;
         font-weight: 400;
         color: $deepYello;
       }
-      .jan-adress-radio {
+      .homePage-adress-radio {
         color: $brown;
         font-size: 1.6rem;
         font-family: "Noto Sans TC", sans-serif;
         font-weight: 400;
       }
-      .jan-map-results {
+      .homePage-map-results {
         color: $brown;
         font-size: 1.6rem;
         font-family: "Noto Sans TC", sans-serif;
         font-weight: 400;
       }
-      // .jan-map-buttons {
+      // .homePage-map-buttons {
       //   text-align: right;
       //   margin: 0px 0 0px auto;
       // }
     }
     // 地圖區域
-    .jan-map-view {
+    .homePage-map-view {
       width: 55%;
       height: 70%;
       // border: 0.1rem solid $yellow;
@@ -1038,7 +1041,7 @@ $deepYello: #f5a016;
     }
   }
 }
-.jan-form-wrap2 {
+.homePage-form-wrap2 {
   width: 38rem;
 }
 
@@ -1232,14 +1235,14 @@ $deepYello: #f5a016;
 }
 
 @media screen and (max-width: 376px) {
-  .jan-adress-select select {
+  .homePage-adress-select select {
     font-size: 1.4rem;
     border-radius: 1.5rem;
     height: 3rem;
   }
 }
 
-.jan-adress-select .iris-mainpage-whitebox {
+.homePage-adress-select .iris-mainpage-whitebox {
   border-radius: 2.5rem;
   height: 4.6rem;
   width: 4.6rem;
@@ -1252,7 +1255,7 @@ $deepYello: #f5a016;
 }
 
 @media screen and (max-width: 376px) {
-  .jan-adress-select .iris-mainpage-whitebox {
+  .homePage-adress-select .iris-mainpage-whitebox {
     border-radius: 1.5rem;
     height: 2.6rem;
     width: 2.7rem;
@@ -1265,7 +1268,7 @@ $deepYello: #f5a016;
   }
 }
 
-.jan-adress-select .iris-selectbar-wrapper .iris-mainpage-trianglearrow {
+.homePage-adress-select .iris-selectbar-wrapper .iris-mainpage-trianglearrow {
   background: url("../../assets/svg/triangleArrow.svg") cover center no-repeat;
   background-size: auto;
   position: absolute;
@@ -1275,7 +1278,7 @@ $deepYello: #f5a016;
   fill: #c9c9c9;
 }
 @media screen and (max-width: 376px) {
-  .jan-adress-select > .iris-mainpage-select-wrapper > .iris-selectbar-wrapper > .iris-mainpage-trianglearrow {
+  .homePage-adress-select > .iris-mainpage-select-wrapper > .iris-selectbar-wrapper > .iris-mainpage-trianglearrow {
     position: absolute;
     right: 1.5rem;
     top: 1em;
@@ -1284,19 +1287,19 @@ $deepYello: #f5a016;
   }
 }
 
-.jan-adress-select > .iris-mainpage-select-wrapper > .iris-selectbar-wrapper {
+.homePage-adress-select > .iris-mainpage-select-wrapper > .iris-selectbar-wrapper {
   width: 16.7rem;
   position: relative;
 }
 
-.jan-adress-input .iris-inputH50 {
+.homePage-adress-input .iris-inputH50 {
   font-size: 2rem;
   border-radius: 2.5rem;
   height: 5rem;
 }
 
 @media screen and (max-width: 376px) {
-  .jan-adress-input > .iris-inputH50 {
+  .homePage-adress-input > .iris-inputH50 {
     font-size: 1.4rem;
     border-radius: 1.5rem;
     height: 3rem;
@@ -1304,39 +1307,39 @@ $deepYello: #f5a016;
 }
 
 // 好文推薦
-.jan-article {
+.homePage-article {
   background-color: #fff;
   width: 100%;
   height: 62rem;
   position: relative;
-  .jan-article-sbcc {
+  .homePage-article-sbcc {
     background-color: $lightGray;
     width: 20rem;
     height: 28rem;
     border-radius: 20px;
     box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
   }
-  .jan-article-bcc {
+  .homePage-article-bcc {
     background-color: $lightGray;
     width: 30rem;
     height: 45rem;
     border-radius: 20px;
     box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
-    .jan-article-img1 {
+    .homePage-article-img1 {
       background: url("../../assets/jpg/article-img1.jpg") center center no-repeat;
       width: 15rem;
       height: 15rem;
       border-radius: 50%;
       margin: 2rem auto 1rem auto;
     }
-    .jan-article-img2 {
+    .homePage-article-img2 {
       background: url("../../assets/jpg/article-img2.jpg") center center no-repeat;
       width: 15rem;
       height: 15rem;
       border-radius: 50%;
       margin: 2rem auto 1rem auto;
     }
-    .jan-article-img3 {
+    .homePage-article-img3 {
       background: url("../../assets/jpg/article-img4.jpg") center center no-repeat;
       background-size: cover;
       width: 15rem;
@@ -1344,12 +1347,12 @@ $deepYello: #f5a016;
       border-radius: 50%;
       margin: 2rem auto 1rem auto;
     }
-    .jan-article-text-area {
+    .homePage-article-text-area {
       width: 25rem;
       height: 25rem;
       border-top: 1px solid $lightBrown;
       margin: 0 auto;
-      .jan-article-name {
+      .homePage-article-name {
         font-family: "Noto Sans TC", sans-serif;
         font-size: 2rem;
         font-weight: 600;
@@ -1357,7 +1360,7 @@ $deepYello: #f5a016;
         margin: 1rem auto;
         text-align: center;
       }
-      .jan-article-text {
+      .homePage-article-text {
         font-family: "Noto Sans TC", sans-serif;
         font-size: 1.4rem;
         font-weight: 400;
@@ -1367,11 +1370,11 @@ $deepYello: #f5a016;
     }
   }
 }
-.jan-article-left-blur {
+.homePage-article-left-blur {
   width: 20rem;
   height: 28rem;
   filter: blur(5px);
-  .jan-article-img {
+  .homePage-article-img {
     background: url("../../assets/jpg/article-img1.jpg") center center no-repeat;
     background-size: cover;
     width: 10rem;
@@ -1379,11 +1382,11 @@ $deepYello: #f5a016;
     border-radius: 50%;
     margin: 1.5rem auto 1rem auto;
   }
-  .jan-article-text-area {
+  .homePage-article-text-area {
     width: 21rem;
     height: 22rem;
     margin: 0 auto;
-    .jan-article-name {
+    .homePage-article-name {
       font-family: "Noto Sans TC", sans-serif;
       font-size: 1.2rem;
       font-weight: 600;
@@ -1391,7 +1394,7 @@ $deepYello: #f5a016;
       margin: 1rem auto;
       text-align: center;
     }
-    .jan-article-text {
+    .homePage-article-text {
       font-family: "Noto Sans TC", sans-serif;
       font-size: 0.8rem;
       font-weight: 400;
@@ -1400,11 +1403,11 @@ $deepYello: #f5a016;
     }
   }
 }
-.jan-article-right-blur {
+.homePage-article-right-blur {
   width: 25rem;
   height: 35rem;
   filter: blur(5px);
-  .jan-article-img {
+  .homePage-article-img {
     background: url("../../assets/jpg/article-img2.jpg") center center no-repeat;
     background-size: cover;
     width: 10rem;
@@ -1412,11 +1415,11 @@ $deepYello: #f5a016;
     border-radius: 50%;
     margin: 1.5rem auto 1rem auto;
   }
-  .jan-article-text-area {
+  .homePage-article-text-area {
     width: 21rem;
     height: 22rem;
     margin: 0 auto;
-    .jan-article-name {
+    .homePage-article-name {
       font-family: "Noto Sans TC", sans-serif;
       font-size: 1.2rem;
       font-weight: 600;
@@ -1424,7 +1427,7 @@ $deepYello: #f5a016;
       margin: 1rem auto;
       text-align: center;
     }
-    .jan-article-text {
+    .homePage-article-text {
       font-family: "Noto Sans TC", sans-serif;
       font-size: 0.8rem;
       font-weight: 400;
@@ -1433,12 +1436,12 @@ $deepYello: #f5a016;
     }
   }
 }
-.jan-article-arrowR {
+.homePage-article-arrowR {
   position: absolute;
   top: 30rem;
   right: 25rem;
 }
-.jan-article-arrowL {
+.homePage-article-arrowL {
   position: absolute;
   top: 30rem;
   left: 25rem;

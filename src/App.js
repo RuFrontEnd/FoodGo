@@ -83,7 +83,6 @@ function App() {
   // setTextTownship(turnTown);
 
   useEffect(async () => {
-    console.log('a');
     const accessToken = localStorage.getItem('accessToken');
     const currentCartNumber =
       JSON.parse(localStorage.getItem('cartNumber')) || 0;
