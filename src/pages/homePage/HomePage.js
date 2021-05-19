@@ -311,8 +311,7 @@ function HomePage(props) {
             </div>
             <div>
               <div className="homepage-banner-wrap">
-                <div className="banner2 d-flex flex-column text-left">
-                </div>
+                <div className="banner2 d-flex flex-column text-left"></div>
               </div>
             </div>
             <div>
@@ -350,11 +349,11 @@ function HomePage(props) {
 
       {/* 品牌特色*/}
       <section className="container homePage-p0 position-relative">
-        <div className="row homePage-index-feature d-flex align-items-center justify-content-center">
+        <div className="row homePage-index-feature d-flex flex-column align-items-center justify-content-space-between">
           {/* 標題 */}
-          <div className="mt-4 mb-4 d-flex align-items-center">
+          <div className="homePage-feature-wrap d-flex align-items-center">
             <img alt="" src={titleLeft} />
-            <p className=" homePage-feature-title">品牌特色</p>
+            <p className="homePage-feature-title">品牌特色</p>
             <img alt="" src={titleRight} />
           </div>
           {/* circles */}
@@ -374,7 +373,7 @@ function HomePage(props) {
             {/* circle3 */}
             <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div onClick={intro3} className="homePage-choices-icon"></div>
-              <p className="homePage-circle-title">客製化便當</p>
+              <p className="homePage-circle-title homePage-circle-title-customize">客製化便當</p>
             </div>
             <div className="homePage-index-feature-smcircle"></div>
             {/* circle4 */}

@@ -27,6 +27,11 @@ $deepYello: #f5a016;
   padding: 0 !important;
 }
 
+.homePage-feature-wrap {
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
 // 標題宋體樣式
 .homePage-feature-title {
   font-size: 3.2rem;
@@ -215,12 +220,10 @@ $deepYello: #f5a016;
 
 // 特色專區-切換區域
 .homePage-index-feature {
-  max-width: 117rem;
-  height: 23rem;
   background-color: #fff;
   // 圓圈們
   .homePage-circles {
-    width: 117rem;
+    width: 100%;
     // 分隔橘色小圓圈
     .homePage-index-feature-smcircle {
       background-color: $orange;
@@ -230,12 +233,25 @@ $deepYello: #f5a016;
     }
     // skin底色
     .homePage-index-feature-circle {
+      position: relative;
       background-color: $skin;
-      width: 13rem;
-      height: 13rem;
+      width: 16rem;
+      height: 16rem;
       border-radius: 50%;
       // 特色文字樣式
       .homePage-circle-title {
+        position: absolute;
+        bottom: 0px;
+        left: calc(50% - 40px);
+        font-size: 2rem;
+        font-family: "Noto Sans TC", sans-serif;
+        color: $brown;
+        margin-bottom: 0;
+      }
+      .homePage-circle-title-customize {
+        position: absolute;
+        bottom: 0px;
+        left: calc(50% - 50px);
         font-size: 2rem;
         font-family: "Noto Sans TC", sans-serif;
         color: $brown;
@@ -248,7 +264,6 @@ $deepYello: #f5a016;
         // background-size: 8rem 8rem;
         width: 9.5rem;
         height: 9.5rem;
-        margin: 1.5rem 0 0.5rem 0;
         cursor: pointer;
       }
       .homePage-farmer-icon:hover {
@@ -260,7 +275,6 @@ $deepYello: #f5a016;
         background-size: 8rem 8rem;
         width: 9.5rem;
         height: 9.5rem;
-        margin: 1.5rem 0 0.5rem 0.5rem;
         cursor: pointer;
       }
       .homePage-diet-icon:hover {
@@ -272,7 +286,6 @@ $deepYello: #f5a016;
         background-size: 7.5rem 7.5rem;
         width: 9.5rem;
         height: 9.5rem;
-        margin: 2rem 0 0 0;
         cursor: pointer;
       }
       .homePage-choices-icon:hover {
@@ -284,7 +297,6 @@ $deepYello: #f5a016;
         background-size: 8rem 8rem;
         width: 9.5rem;
         height: 9.5rem;
-        margin: 1.8rem 0 0.2rem 0.2rem;
         cursor: pointer;
       }
       .homePage-network-icon:hover {
@@ -296,7 +308,6 @@ $deepYello: #f5a016;
         background-size: 8rem 8rem;
         width: 9.5rem;
         height: 9.5rem;
-        margin: 2rem 0 0 0;
         cursor: pointer;
       }
       .homePage-kcal-icon:hover {
@@ -314,7 +325,7 @@ $deepYello: #f5a016;
   border-color: transparent transparent $skin transparent;
   margin-top: 2rem;
   left: 6rem;
-  top: 23rem;
+  bottom: -4rem;
 }
 // 特色內容
 .homePage-intro-area {
