@@ -223,14 +223,48 @@ function HomePage(props) {
     const featurePadding =
       (homePageCirclesWidth - featureCircleWidth * 5 - featureDotWidth * 4) /
       18;
-    const _featureTriangleLeft =
-      featurePadding + featureCircleWidth / 2 - featureTriangleWidth;
-    setFeatureTriangleLeft(_featureTriangleLeft);
-  }, []);
-
-  useEffect(() => {
-    console.log('featureTriangleLeft', featureTriangleLeft);
-  }, [featureTriangleLeft]);
+    const gap = featureCircleWidth + featurePadding * 4 + featureDotWidth;
+    if (isFarmerFeatureActive === true) {
+      const _featureTriangleLeft =
+        featurePadding + featureCircleWidth / 2 - featureTriangleWidth;
+      return setFeatureTriangleLeft(_featureTriangleLeft);
+    }
+    if (isDietFeatureActive === true) {
+      const _featureTriangleLeft =
+        featurePadding + featureCircleWidth / 2 - featureTriangleWidth + gap;
+      return setFeatureTriangleLeft(_featureTriangleLeft);
+    }
+    if (isChoicesFeatureActive === true) {
+      const _featureTriangleLeft =
+        featurePadding +
+        featureCircleWidth / 2 -
+        featureTriangleWidth +
+        gap * 2;
+      return setFeatureTriangleLeft(_featureTriangleLeft);
+    }
+    if (isNetworkFeatureActive === true) {
+      const _featureTriangleLeft =
+        featurePadding +
+        featureCircleWidth / 2 -
+        featureTriangleWidth +
+        gap * 3;
+      return setFeatureTriangleLeft(_featureTriangleLeft);
+    }
+    if (isKcalFeatureActive === true) {
+      const _featureTriangleLeft =
+        featurePadding +
+        featureCircleWidth / 2 -
+        featureTriangleWidth +
+        gap * 4;
+      return setFeatureTriangleLeft(_featureTriangleLeft);
+    }
+  }, [
+    isFarmerFeatureActive,
+    isDietFeatureActive,
+    isChoicesFeatureActive,
+    isNetworkFeatureActive,
+    isKcalFeatureActive,
+  ]);
 
   return (
     <>
