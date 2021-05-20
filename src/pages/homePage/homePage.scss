@@ -285,9 +285,21 @@ $deepYello: #f5a016;
         transition: 0.5s;
       }
 
+      .homePage-diet-icon-active {
+        background: url("../../assets/svg/diet-o.svg") center center no-repeat;
+        background-size: 10.5rem 10.5rem;
+        transition: 0.5s;
+      }
+
       // 客製化便當
       .homePage-choices-icon {
         background: url("../../assets/svg/choices.svg") center center no-repeat;
+        background-size: 10.5rem 10.5rem;
+        transition: 0.5s;
+      }
+
+      .homePage-choices-icon-active {
+        background: url("../../assets/svg/choices-o.svg") center center no-repeat;
         background-size: 9.5rem 9.5rem;
         transition: 0.5s;
       }
@@ -299,10 +311,22 @@ $deepYello: #f5a016;
         transition: 0.5s;
       }
 
+      .homePage-network-icon-active {
+        background: url("../../assets/svg/network-o.svg") center center no-repeat;
+        background-size: 10.5rem 10.5rem;
+        transition: 0.5s;
+      }
+
       // 卡路里計算
       .homePage-kcal-icon {
         background: url("../../assets/svg/kcal.svg") center center no-repeat;
         background-size: 9.5rem 9.5rem;
+        transition: 0.5s;
+      }
+
+      .homePage-kcal-icon-active {
+        background: url("../../assets/svg/kcal-o.svg") center center no-repeat;
+        background-size: 10.5rem 10.5rem;
         transition: 0.5s;
       }
     }
@@ -310,15 +334,16 @@ $deepYello: #f5a016;
 }
 // 切換指示的三角形
 .homePage-index-feature-triangle {
+  display: flex;
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 0 15px 22px 15px;
   border-color: transparent transparent $skin transparent;
   margin-top: 2rem;
-  left: 6rem;
   bottom: -4rem;
 }
+
 // 特色內容
 .homePage-intro-area {
   margin-top: 4rem;
@@ -327,13 +352,14 @@ $deepYello: #f5a016;
   background-color: $skin;
 }
 .homePage-intro1 {
+  display: none;
   margin: auto;
   max-width: 117rem;
   height: 55rem;
-  display: flex;
   // display: none;
   justify-content: space-around;
   align-items: center;
+  transition: 0.3s;
   .homePage-intro1-wrap {
     // background-color: #bbb;
     width: 44rem;
@@ -538,15 +564,20 @@ $deepYello: #f5a016;
   }
 }
 
+.homePage-intro1-active {
+  display: flex;
+  transition: 0.3s;
+}
+
 .homePage-intro2 {
+  display: none;
   margin: auto;
   max-width: 117rem;
   height: 55rem;
-  display: flex;
-  display: none;
   // display: block;
   justify-content: space-around;
   align-items: center;
+  transition: 0.3s;
   .homePage-intro2-wrap {
     // background-color: #bbb;
     width: 44rem;
@@ -583,15 +614,20 @@ $deepYello: #f5a016;
   }
 }
 
+.homePage-intro2-active {
+  display: flex;
+  transition: 0.3s;
+}
+
 .homePage-intro3 {
+  display: none;
   margin: auto;
   max-width: 117rem;
   height: 55rem;
-  display: flex;
-  display: none;
   // display: block;
   justify-content: space-around;
   align-items: center;
+  transition: 0.5s;
   .homePage-intro3-wrap {
     // background-color: #bbb;
     width: 44rem;
@@ -629,16 +665,21 @@ $deepYello: #f5a016;
   }
 }
 
+.homePage-intro3-active {
+  display: flex;
+  transition: 0.3s;
+}
+
 .homePage-intro4 {
+  display: none;
   // background-color: #ddd;
   margin: auto;
   max-width: 117rem;
   height: 55rem;
-  display: flex;
-  display: none;
   // display: block;
   justify-content: space-around;
   align-items: center;
+  transition: 0.5s;
   .homePage-intro4-wrap {
     // background-color: #bbb;
     width: 44rem;
@@ -674,16 +715,21 @@ $deepYello: #f5a016;
   }
 }
 
+.homePage-intro4-active {
+  display: flex;
+  transition: 0.3s;
+}
+
 .homePage-intro5 {
+  display: none;
   // background-color: #ddd;
   margin: auto;
   max-width: 117rem;
   height: 55rem;
-  display: flex;
-  display: none;
   // display: block;
   justify-content: space-around;
   align-items: center;
+  transition: 0.5s;
   .homePage-intro5-wrap {
     // background-color: #bbb;
     width: 44rem;
@@ -717,6 +763,11 @@ $deepYello: #f5a016;
     height: 50rem;
     background-size: cover;
   }
+}
+
+.homePage-intro5-active {
+  display: flex;
+  transition: 0.3s;
 }
 
 // 今日推薦

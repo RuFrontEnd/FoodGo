@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import 'pages/homePage/homePage.scss';
 import { Carousel } from 'antd';
 import { Link } from 'react-router-dom';
@@ -75,9 +75,18 @@ function HomePage(props) {
     address,
     setAddress,
   } = props;
+  const $featureCircle = useRef();
+  const $featureDot = useRef();
+  const $homePageCircles = useRef();
+  const $featureTriangle = useRef();
   const [price, setPrice] = useState(-1);
   const [activeItemIndex, setActiveItemIndex] = useState(0);
-  const [farmerIconActive, setIsFarmerIconActive] = useState(true);
+  const [isFarmerFeatureActive, setIsFarmerFeatureActive] = useState(true);
+  const [isDietFeatureActive, setIsDietFeatureActive] = useState(false);
+  const [isChoicesFeatureActive, setIsChoicesFeatureActive] = useState(false);
+  const [isNetworkFeatureActive, setIsNetworkFeatureActive] = useState(false);
+  const [isKcalFeatureActive, setIsKcalFeatureActive] = useState(false);
+  const [featureTriangleLeft, setFeatureTriangleLeft] = useState(0);
 
   useEffect(() => {
     setShowBar(true);
@@ -91,108 +100,33 @@ function HomePage(props) {
   //   background: '#2638891',
   // };
 
-  //品牌特色切換
-  function intro1() {
-    //   // console.log('hi')
-    //   document.querySelector('.homePage-farmer-icon').style =
-    //     'background: url("./Images/Svg/farmer-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
-    //   document.querySelector('.homePage-diet-icon').style =
-    //     'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-choices-icon').style =
-    //     'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
-    //   document.querySelector('.homePage-network-icon').style =
-    //     'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-kcal-icon').style =
-    //     'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-index-feature-triangle').style =
-    //     'left:5.2%;transition:0.3s';
-    //   document.querySelector('.homePage-intro1').style =
-    //     'display:flex;transition:0.3s';
-    //   document.querySelector('.homePage-intro2').style = 'display:none';
-    //   document.querySelector('.homePage-intro3').style = 'display:none';
-    //   document.querySelector('.homePage-intro4').style = 'display:none';
-    //   document.querySelector('.homePage-intro5').style = 'display:none';
-  }
-  function intro2() {
-    //   document.querySelector('.homePage-farmer-icon').style =
-    //     'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-diet-icon').style =
-    //     'background: url("./Images/Svg/diet-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
-    //   document.querySelector('.homePage-choices-icon').style =
-    //     'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
-    //   document.querySelector('.homePage-network-icon').style =
-    //     'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-kcal-icon').style =
-    //     'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-index-feature-triangle').style =
-    //     'left:27%;transition:0.3s';
-    //   document.querySelector('.homePage-intro1').style = 'display:none';
-    //   document.querySelector('.homePage-intro2').style =
-    //     'display:flex;transition:0.3s';
-    //   document.querySelector('.homePage-intro3').style = 'display:none';
-    //   document.querySelector('.homePage-intro4').style = 'display:none';
-    //   document.querySelector('.homePage-intro5').style = 'display:none';
-  }
-  function intro3() {
-    //   document.querySelector('.homePage-farmer-icon').style =
-    //     'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-diet-icon').style =
-    //     'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-choices-icon').style =
-    //     'background: url("./Images/Svg/choices-o.svg") center center no-repeat;background-size: 9rem 9rem;transition:0.5s';
-    //   document.querySelector('.homePage-network-icon').style =
-    //     'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-kcal-icon').style =
-    //     'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-index-feature-triangle').style =
-    //     'left:48.5%;transition:0.3s';
-    //   document.querySelector('.homePage-intro1').style = 'display:none';
-    //   document.querySelector('.homePage-intro2').style = 'display:none';
-    //   document.querySelector('.homePage-intro3').style =
-    //     'display:flex;transition:0.3s';
-    //   document.querySelector('.homePage-intro4').style = 'display:none';
-    //   document.querySelector('.homePage-intro5').style = 'display:none';
-  }
-  function intro4() {
-    //   document.querySelector('.homePage-farmer-icon').style =
-    //     'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-diet-icon').style =
-    //     'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-choices-icon').style =
-    //     'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
-    //   document.querySelector('.homePage-network-icon').style =
-    //     'background: url("./Images/Svg/network-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
-    //   document.querySelector('.homePage-kcal-icon').style =
-    //     'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-index-feature-triangle').style =
-    //     'left:70.5%;transition:0.3s';
-    //   document.querySelector('.homePage-intro1').style = 'display:none';
-    //   document.querySelector('.homePage-intro2').style = 'display:none';
-    //   document.querySelector('.homePage-intro3').style = 'display:none';
-    //   document.querySelector('.homePage-intro4').style =
-    //     'display:flex;transition:0.3s';
-    //   document.querySelector('.homePage-intro5').style = 'display:none';
-  }
-  function intro5() {
-    //   document.querySelector('.homePage-farmer-icon').style =
-    //     'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-diet-icon').style =
-    //     'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-choices-icon').style =
-    //     'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
-    //   document.querySelector('.homePage-network-icon').style =
-    //     'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    //   document.querySelector('.homePage-kcal-icon').style =
-    //     'background: url("./Images/Svg/kcal-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
-    //   document.querySelector('.homePage-index-feature-triangle').style =
-    //     'left:92%;transition:0.3s;';
-    //   document.querySelector('.homePage-intro1').style = 'display:none';
-    //   document.querySelector('.homePage-intro2').style = 'display:none';
-    //   document.querySelector('.homePage-intro3').style = 'display:none';
-    //   document.querySelector('.homePage-intro4').style = 'display:none';
-    //   document.querySelector('.homePage-intro5').style =
-    //     'display:flex;transition:0.3s';
-  }
+  // 品牌特色切換
+  const switchFeatureArea = (e) => {
+    console.log(e.target.id);
+    setIsFarmerFeatureActive(false);
+    setIsDietFeatureActive(false);
+    setIsChoicesFeatureActive(false);
+    setIsNetworkFeatureActive(false);
+    setIsKcalFeatureActive(false);
+    if (e.target.id === 'homePage-farmer-svg') {
+      setIsFarmerFeatureActive(true);
+      setFeatureTriangleLeft(10);
+      return;
+    }
+    if (e.target.id === 'homePage-diet-svg') {
+      setIsDietFeatureActive(true);
+      return;
+    }
+    if (e.target.id === 'homePage-choices-svg') {
+      return setIsChoicesFeatureActive(true);
+    }
+    if (e.target.id === 'homePage-network-svg') {
+      return setIsNetworkFeatureActive(true);
+    }
+    if (e.target.id === 'homePage-kcal-svg') {
+      return setIsKcalFeatureActive(true);
+    }
+  };
 
   //監聽應用程式滾動
   function downloadIcon() {
@@ -281,6 +215,23 @@ function HomePage(props) {
       'visibility: visible';
   };
 
+  useEffect(() => {
+    const featureCircleWidth = $featureCircle.current.scrollWidth;
+    const featureDotWidth = $featureDot.current.scrollWidth;
+    const homePageCirclesWidth = $homePageCircles.current.scrollWidth;
+    const featureTriangleWidth = $featureTriangle.current.clientLeft * 2;
+    const featurePadding =
+      (homePageCirclesWidth - featureCircleWidth * 5 - featureDotWidth * 4) /
+      18;
+    const _featureTriangleLeft =
+      featurePadding + featureCircleWidth / 2 - featureTriangleWidth;
+    setFeatureTriangleLeft(_featureTriangleLeft);
+  }, []);
+
+  useEffect(() => {
+    console.log('featureTriangleLeft', featureTriangleLeft);
+  }, [featureTriangleLeft]);
+
   return (
     <>
       {/* <VNavbar
@@ -358,23 +309,40 @@ function HomePage(props) {
             <img alt="" src={titleRight} />
           </div>
           {/* circles */}
-          <div className="d-flex homePage-circles justify-content-around align-items-center">
+          <div
+            className="d-flex homePage-circles justify-content-around align-items-center"
+            ref={$homePageCircles}
+          >
             {/* circle1 */}
-            <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
+            <div
+              className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center"
+              ref={$featureCircle}
+            >
               <div
-                onClick={intro1}
+                onClick={(e) => {
+                  switchFeatureArea(e);
+                }}
+                id={'homePage-farmer-svg'}
                 className={`homePage-feature-icon homePage-farmer-icon ${
-                  farmerIconActive && 'homePage-farmer-icon-active'
+                  isFarmerFeatureActive && 'homePage-farmer-icon-active'
                 }`}
               ></div>
               <p className="homePage-circle-title">在地小農</p>
             </div>
-            <div className="homePage-index-feature-smcircle"></div>
+            <div
+              className="homePage-index-feature-smcircle"
+              ref={$featureDot}
+            ></div>
             {/* circle2 */}
             <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
-                onClick={intro2}
-                className="homePage-feature-icon homePage-diet-icon"
+                onClick={(e) => {
+                  switchFeatureArea(e);
+                }}
+                id={'homePage-diet-svg'}
+                className={`homePage-feature-icon homePage-diet-icon ${
+                  isDietFeatureActive && 'homePage-diet-icon-active'
+                }`}
               ></div>
               <p className="homePage-circle-title">產銷履歷</p>
             </div>
@@ -382,8 +350,13 @@ function HomePage(props) {
             {/* circle3 */}
             <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
-                onClick={intro3}
-                className="homePage-feature-icon homePage-choices-icon"
+                onClick={(e) => {
+                  switchFeatureArea(e);
+                }}
+                id={'homePage-choices-svg'}
+                className={`homePage-feature-icon homePage-choices-icon  ${
+                  isChoicesFeatureActive && 'homePage-choices-icon-active'
+                }`}
               ></div>
               <p className="homePage-circle-title homePage-circle-title-customize">
                 客製化便當
@@ -393,8 +366,13 @@ function HomePage(props) {
             {/* circle4 */}
             <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
-                onClick={intro4}
-                className="homePage-feature-icon homePage-network-icon"
+                onClick={(e) => {
+                  switchFeatureArea(e);
+                }}
+                id={'homePage-network-svg'}
+                className={`homePage-feature-icon homePage-network-icon ${
+                  isNetworkFeatureActive && 'homePage-network-icon-active'
+                }`}
               ></div>
               <p className="homePage-circle-title">揪團訂購</p>
             </div>
@@ -402,20 +380,33 @@ function HomePage(props) {
             {/* circle5 */}
             <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
-                onClick={intro5}
-                className="homePage-feature-icon homePage-kcal-icon"
+                onClick={(e) => {
+                  switchFeatureArea(e);
+                }}
+                id={'homePage-kcal-svg'}
+                className={`homePage-feature-icon homePage-kcal-icon ${
+                  isKcalFeatureActive && 'homePage-kcal-icon-active'
+                }`}
               ></div>
               <p className="homePage-circle-title">營養標示</p>
             </div>
           </div>
         </div>
-        <div className="homePage-index-feature-triangle position-absolute"></div>
+        <div
+          style={{ left: `${featureTriangleLeft}px` }}
+          className="homePage-index-feature-triangle position-absolute"
+          ref={$featureTriangle}
+        ></div>
       </section>
 
       {/* intros */}
       <section className="container-fluid homePage-p0 homePage-intro-area">
         {/* 在地小農 */}
-        <div className="homePage-intro1">
+        <div
+          className={`homePage-intro1 ${
+            isFarmerFeatureActive && 'homePage-intro1-active'
+          }`}
+        >
           {/* 介紹欄位 */}
           <div className="homePage-intro1-wrap">
             <div className="homePage-intro1-title"></div>
@@ -489,7 +480,11 @@ function HomePage(props) {
           </div>
         </div>
         {/* 產銷履歷 */}
-        <div className="homePage-intro2">
+        <div
+          className={`homePage-intro2 ${
+            isDietFeatureActive && 'homePage-intro2-active'
+          }`}
+        >
           <div className="homePage-intro2-wrap">
             <div className="homePage-intro2-title"></div>
             <div className="homePage-intro2-text mt-5">
@@ -510,7 +505,11 @@ function HomePage(props) {
           <div className="homePage-intro2-cards"></div>
         </div>
         {/* 客製化便當 */}
-        <div className="homePage-intro3">
+        <div
+          className={`homePage-intro3 ${
+            isChoicesFeatureActive && 'homePage-intro3-active'
+          }`}
+        >
           <div className="homePage-intro3-wrap">
             <div className="homePage-intro3-title"></div>
             <div className="homePage-intro3-text mt-5">
@@ -550,7 +549,11 @@ function HomePage(props) {
           </div>
         </div>
         {/* 揪團訂購 */}
-        <div className="homePage-intro4">
+        <div
+          className={`homePage-intro4 ${
+            isNetworkFeatureActive && 'homePage-intro4-active'
+          }`}
+        >
           <div className="homePage-intro4-wrap">
             <div className="homePage-intro4-title"></div>
             <div className="homePage-intro4-text mt-5">
@@ -576,7 +579,11 @@ function HomePage(props) {
           <div className="homePage-intro4-cards"></div>
         </div>
         {/* 營養標示 */}
-        <div className="homePage-intro5">
+        <div
+          className={`homePage-intro5 ${
+            isKcalFeatureActive && 'homePage-intro5-active'
+          }`}
+        >
           <div className="homePage-intro5-wrap">
             <div className="homePage-intro5-title"></div>
             <div className="homePage-intro5-text mt-5">
