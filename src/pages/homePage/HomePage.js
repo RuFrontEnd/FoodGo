@@ -80,6 +80,7 @@ function HomePage(props) {
   const $homePageCircles = useRef();
   const $featureTriangle = useRef();
   const [price, setPrice] = useState(-1);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const [isFarmerFeatureActive, setIsFarmerFeatureActive] = useState(true);
   const [isDietFeatureActive, setIsDietFeatureActive] = useState(false);
@@ -88,8 +89,21 @@ function HomePage(props) {
   const [isKcalFeatureActive, setIsKcalFeatureActive] = useState(false);
   const [featureTriangleLeft, setFeatureTriangleLeft] = useState(0);
 
+  window.addEventListener('resize', () => {
+    if (window.innerWidth === 1200) {
+      setWindowWidth(window.innerWidth);
+    }
+    // if (window.innerWidth <= 1024 && window.innerWidth >= 768) {
+    //   setWindowWidth(window.innerWidth);
+    // }
+    // if (window.innerWidth <= 768 && window.innerWidth >= 576) {
+    //   setWindowWidth(window.innerWidth);
+    // }
+  });
+
   useEffect(() => {
     setShowBar(true);
+    console.log(window);
   }, []);
 
   // const contentStyle = {
@@ -216,14 +230,14 @@ function HomePage(props) {
   };
 
   useEffect(() => {
-    const featureCircleWidth = $featureCircle.current.scrollWidth;
-    const featureDotWidth = $featureDot.current.scrollWidth;
-    const homePageCirclesWidth = $homePageCircles.current.scrollWidth;
-    const featureTriangleWidth = $featureTriangle.current.clientLeft * 2;
+    const featureCircleWidth = $featureCircle.current.scrollWidth; // 功能區圓圈寬度
+    const featureDotWidth = $featureDot.current.scrollWidth; // 功能區橘點寬度
+    const homePageCirclesWidth = $homePageCircles.current.scrollWidth; // 功能區容器總寬
+    const featureTriangleWidth = $featureTriangle.current.clientLeft * 2; // 功能區三角形寬度
     const featurePadding =
       (homePageCirclesWidth - featureCircleWidth * 5 - featureDotWidth * 4) /
-      18;
-    const gap = featureCircleWidth + featurePadding * 4 + featureDotWidth;
+      18; // 功能區padding
+    const gap = featureCircleWidth + featurePadding * 4 + featureDotWidth; // 功能區圓圈中心點到下一個圓圈中心點距離
     if (isFarmerFeatureActive === true) {
       const _featureTriangleLeft =
         featurePadding + featureCircleWidth / 2 - featureTriangleWidth;
@@ -264,6 +278,7 @@ function HomePage(props) {
     isChoicesFeatureActive,
     isNetworkFeatureActive,
     isKcalFeatureActive,
+    windowWidth,
   ]);
 
   return (
