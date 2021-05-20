@@ -241,7 +241,7 @@ $deepYello: #f5a016;
       // 特色文字樣式
       .homePage-circle-title {
         position: absolute;
-        bottom: 0px;
+        bottom: -10px;
         left: calc(50% - 40px);
         font-size: 2rem;
         font-family: "Noto Sans TC", sans-serif;
@@ -259,46 +259,51 @@ $deepYello: #f5a016;
       }
 
       .homePage-feature-icon {
-        background-size: 9.5rem 9.5rem;
-        width: 9.5rem;
-        height: 9.5rem;
+        width: 100%;
+        height: 100%;
         cursor: pointer;
-      }
-
-      .homePage-feature-icon:hover {
-        background-size: 9.5rem 9.5rem;
+        transition: 0.5s;
       }
 
       // 在地小農
       .homePage-farmer-icon {
+        background: url("../../assets/svg/farmer.svg") center center no-repeat;
+        background-size: 9.5rem 9.5rem;
+        transition: 0.5s;
+      }
+
+      .homePage-farmer-icon-active {
         background: url("../../assets/svg/farmer-o.svg") center center no-repeat;
+        background-size: 10.5rem 10.5rem;
+        transition: 0.5s;
       }
 
       // 產銷履歷
       .homePage-diet-icon {
         background: url("../../assets/svg/diet.svg") center center no-repeat;
+        background-size: 9.5rem 9.5rem;
+        transition: 0.5s;
       }
 
       // 客製化便當
       .homePage-choices-icon {
         background: url("../../assets/svg/choices.svg") center center no-repeat;
+        background-size: 9.5rem 9.5rem;
+        transition: 0.5s;
       }
 
       // 揪團訂餐
       .homePage-network-icon {
         background: url("../../assets/svg/network.svg") center center no-repeat;
+        background-size: 9.5rem 9.5rem;
+        transition: 0.5s;
       }
 
       // 卡路里計算
       .homePage-kcal-icon {
         background: url("../../assets/svg/kcal.svg") center center no-repeat;
-        background-size: 8rem 8rem;
-        width: 9.5rem;
-        height: 9.5rem;
-        cursor: pointer;
-      }
-      .homePage-kcal-icon:hover {
         background-size: 9.5rem 9.5rem;
+        transition: 0.5s;
       }
     }
   }

@@ -77,6 +77,7 @@ function HomePage(props) {
   } = props;
   const [price, setPrice] = useState(-1);
   const [activeItemIndex, setActiveItemIndex] = useState(0);
+  const [farmerIconActive, setIsFarmerIconActive] = useState(true);
 
   useEffect(() => {
     setShowBar(true);
@@ -92,105 +93,105 @@ function HomePage(props) {
 
   //品牌特色切換
   function intro1() {
-    // console.log('hi')
-    document.querySelector('.homePage-farmer-icon').style =
-      'background: url("./Images/Svg/farmer-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
-    document.querySelector('.homePage-diet-icon').style =
-      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-choices-icon').style =
-      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
-    document.querySelector('.homePage-network-icon').style =
-      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-kcal-icon').style =
-      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-index-feature-triangle').style =
-      'left:5.2%;transition:0.3s';
-    document.querySelector('.homePage-intro1').style =
-      'display:flex;transition:0.3s';
-    document.querySelector('.homePage-intro2').style = 'display:none';
-    document.querySelector('.homePage-intro3').style = 'display:none';
-    document.querySelector('.homePage-intro4').style = 'display:none';
-    document.querySelector('.homePage-intro5').style = 'display:none';
+    //   // console.log('hi')
+    //   document.querySelector('.homePage-farmer-icon').style =
+    //     'background: url("./Images/Svg/farmer-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
+    //   document.querySelector('.homePage-diet-icon').style =
+    //     'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-choices-icon').style =
+    //     'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
+    //   document.querySelector('.homePage-network-icon').style =
+    //     'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-kcal-icon').style =
+    //     'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-index-feature-triangle').style =
+    //     'left:5.2%;transition:0.3s';
+    //   document.querySelector('.homePage-intro1').style =
+    //     'display:flex;transition:0.3s';
+    //   document.querySelector('.homePage-intro2').style = 'display:none';
+    //   document.querySelector('.homePage-intro3').style = 'display:none';
+    //   document.querySelector('.homePage-intro4').style = 'display:none';
+    //   document.querySelector('.homePage-intro5').style = 'display:none';
   }
   function intro2() {
-    document.querySelector('.homePage-farmer-icon').style =
-      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-diet-icon').style =
-      'background: url("./Images/Svg/diet-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
-    document.querySelector('.homePage-choices-icon').style =
-      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
-    document.querySelector('.homePage-network-icon').style =
-      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-kcal-icon').style =
-      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-index-feature-triangle').style =
-      'left:27%;transition:0.3s';
-    document.querySelector('.homePage-intro1').style = 'display:none';
-    document.querySelector('.homePage-intro2').style =
-      'display:flex;transition:0.3s';
-    document.querySelector('.homePage-intro3').style = 'display:none';
-    document.querySelector('.homePage-intro4').style = 'display:none';
-    document.querySelector('.homePage-intro5').style = 'display:none';
+    //   document.querySelector('.homePage-farmer-icon').style =
+    //     'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-diet-icon').style =
+    //     'background: url("./Images/Svg/diet-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
+    //   document.querySelector('.homePage-choices-icon').style =
+    //     'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
+    //   document.querySelector('.homePage-network-icon').style =
+    //     'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-kcal-icon').style =
+    //     'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-index-feature-triangle').style =
+    //     'left:27%;transition:0.3s';
+    //   document.querySelector('.homePage-intro1').style = 'display:none';
+    //   document.querySelector('.homePage-intro2').style =
+    //     'display:flex;transition:0.3s';
+    //   document.querySelector('.homePage-intro3').style = 'display:none';
+    //   document.querySelector('.homePage-intro4').style = 'display:none';
+    //   document.querySelector('.homePage-intro5').style = 'display:none';
   }
   function intro3() {
-    document.querySelector('.homePage-farmer-icon').style =
-      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-diet-icon').style =
-      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-choices-icon').style =
-      'background: url("./Images/Svg/choices-o.svg") center center no-repeat;background-size: 9rem 9rem;transition:0.5s';
-    document.querySelector('.homePage-network-icon').style =
-      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-kcal-icon').style =
-      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-index-feature-triangle').style =
-      'left:48.5%;transition:0.3s';
-    document.querySelector('.homePage-intro1').style = 'display:none';
-    document.querySelector('.homePage-intro2').style = 'display:none';
-    document.querySelector('.homePage-intro3').style =
-      'display:flex;transition:0.3s';
-    document.querySelector('.homePage-intro4').style = 'display:none';
-    document.querySelector('.homePage-intro5').style = 'display:none';
+    //   document.querySelector('.homePage-farmer-icon').style =
+    //     'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-diet-icon').style =
+    //     'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-choices-icon').style =
+    //     'background: url("./Images/Svg/choices-o.svg") center center no-repeat;background-size: 9rem 9rem;transition:0.5s';
+    //   document.querySelector('.homePage-network-icon').style =
+    //     'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-kcal-icon').style =
+    //     'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-index-feature-triangle').style =
+    //     'left:48.5%;transition:0.3s';
+    //   document.querySelector('.homePage-intro1').style = 'display:none';
+    //   document.querySelector('.homePage-intro2').style = 'display:none';
+    //   document.querySelector('.homePage-intro3').style =
+    //     'display:flex;transition:0.3s';
+    //   document.querySelector('.homePage-intro4').style = 'display:none';
+    //   document.querySelector('.homePage-intro5').style = 'display:none';
   }
   function intro4() {
-    document.querySelector('.homePage-farmer-icon').style =
-      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-diet-icon').style =
-      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-choices-icon').style =
-      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
-    document.querySelector('.homePage-network-icon').style =
-      'background: url("./Images/Svg/network-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
-    document.querySelector('.homePage-kcal-icon').style =
-      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-index-feature-triangle').style =
-      'left:70.5%;transition:0.3s';
-    document.querySelector('.homePage-intro1').style = 'display:none';
-    document.querySelector('.homePage-intro2').style = 'display:none';
-    document.querySelector('.homePage-intro3').style = 'display:none';
-    document.querySelector('.homePage-intro4').style =
-      'display:flex;transition:0.3s';
-    document.querySelector('.homePage-intro5').style = 'display:none';
+    //   document.querySelector('.homePage-farmer-icon').style =
+    //     'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-diet-icon').style =
+    //     'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-choices-icon').style =
+    //     'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
+    //   document.querySelector('.homePage-network-icon').style =
+    //     'background: url("./Images/Svg/network-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
+    //   document.querySelector('.homePage-kcal-icon').style =
+    //     'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-index-feature-triangle').style =
+    //     'left:70.5%;transition:0.3s';
+    //   document.querySelector('.homePage-intro1').style = 'display:none';
+    //   document.querySelector('.homePage-intro2').style = 'display:none';
+    //   document.querySelector('.homePage-intro3').style = 'display:none';
+    //   document.querySelector('.homePage-intro4').style =
+    //     'display:flex;transition:0.3s';
+    //   document.querySelector('.homePage-intro5').style = 'display:none';
   }
   function intro5() {
-    document.querySelector('.homePage-farmer-icon').style =
-      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-diet-icon').style =
-      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-choices-icon').style =
-      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
-    document.querySelector('.homePage-network-icon').style =
-      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
-    document.querySelector('.homePage-kcal-icon').style =
-      'background: url("./Images/Svg/kcal-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
-    document.querySelector('.homePage-index-feature-triangle').style =
-      'left:92%;transition:0.3s;';
-    document.querySelector('.homePage-intro1').style = 'display:none';
-    document.querySelector('.homePage-intro2').style = 'display:none';
-    document.querySelector('.homePage-intro3').style = 'display:none';
-    document.querySelector('.homePage-intro4').style = 'display:none';
-    document.querySelector('.homePage-intro5').style =
-      'display:flex;transition:0.3s';
+    //   document.querySelector('.homePage-farmer-icon').style =
+    //     'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-diet-icon').style =
+    //     'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-choices-icon').style =
+    //     'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
+    //   document.querySelector('.homePage-network-icon').style =
+    //     'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
+    //   document.querySelector('.homePage-kcal-icon').style =
+    //     'background: url("./Images/Svg/kcal-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
+    //   document.querySelector('.homePage-index-feature-triangle').style =
+    //     'left:92%;transition:0.3s;';
+    //   document.querySelector('.homePage-intro1').style = 'display:none';
+    //   document.querySelector('.homePage-intro2').style = 'display:none';
+    //   document.querySelector('.homePage-intro3').style = 'display:none';
+    //   document.querySelector('.homePage-intro4').style = 'display:none';
+    //   document.querySelector('.homePage-intro5').style =
+    //     'display:flex;transition:0.3s';
   }
 
   //監聽應用程式滾動
@@ -360,31 +361,50 @@ function HomePage(props) {
           <div className="d-flex homePage-circles justify-content-around align-items-center">
             {/* circle1 */}
             <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
-              <div onClick={intro1} className="homePage-feature-icon homePage-farmer-icon"></div>
+              <div
+                onClick={intro1}
+                className={`homePage-feature-icon homePage-farmer-icon ${
+                  farmerIconActive && 'homePage-farmer-icon-active'
+                }`}
+              ></div>
               <p className="homePage-circle-title">在地小農</p>
             </div>
             <div className="homePage-index-feature-smcircle"></div>
             {/* circle2 */}
             <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
-              <div onClick={intro2} className="homePage-feature-icon homePage-diet-icon"></div>
+              <div
+                onClick={intro2}
+                className="homePage-feature-icon homePage-diet-icon"
+              ></div>
               <p className="homePage-circle-title">產銷履歷</p>
             </div>
             <div className="homePage-index-feature-smcircle"></div>
             {/* circle3 */}
             <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
-              <div onClick={intro3} className="homePage-feature-icon homePage-choices-icon"></div>
-              <p className="homePage-circle-title homePage-circle-title-customize">客製化便當</p>
+              <div
+                onClick={intro3}
+                className="homePage-feature-icon homePage-choices-icon"
+              ></div>
+              <p className="homePage-circle-title homePage-circle-title-customize">
+                客製化便當
+              </p>
             </div>
             <div className="homePage-index-feature-smcircle"></div>
             {/* circle4 */}
             <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
-              <div onClick={intro4} className="homePage-feature-icon homePage-network-icon"></div>
+              <div
+                onClick={intro4}
+                className="homePage-feature-icon homePage-network-icon"
+              ></div>
               <p className="homePage-circle-title">揪團訂購</p>
             </div>
             <div className="homePage-index-feature-smcircle"></div>
             {/* circle5 */}
             <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
-              <div onClick={intro5} className="homePage-kcal-icon"></div>
+              <div
+                onClick={intro5}
+                className="homePage-feature-icon homePage-kcal-icon"
+              ></div>
               <p className="homePage-circle-title">營養標示</p>
             </div>
           </div>
