@@ -80,7 +80,6 @@ function HomePage(props) {
   const $homePageCircles = useRef();
   const $featureTriangle = useRef();
   const [price, setPrice] = useState(-1);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const [isFarmerFeatureActive, setIsFarmerFeatureActive] = useState(true);
   const [isDietFeatureActive, setIsDietFeatureActive] = useState(false);
