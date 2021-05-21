@@ -87,19 +87,9 @@ function HomePage(props) {
   const [isChoicesFeatureActive, setIsChoicesFeatureActive] = useState(false);
   const [isNetworkFeatureActive, setIsNetworkFeatureActive] = useState(false);
   const [isKcalFeatureActive, setIsKcalFeatureActive] = useState(false);
-  const [featureTriangleLeft, setFeatureTriangleLeft] = useState(0);
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth === 1200) {
-      setWindowWidth(window.innerWidth);
-    }
-    // if (window.innerWidth <= 1024 && window.innerWidth >= 768) {
-    //   setWindowWidth(window.innerWidth);
-    // }
-    // if (window.innerWidth <= 768 && window.innerWidth >= 576) {
-    //   setWindowWidth(window.innerWidth);
-    // }
-  });
+  const [featureTriangleClassName, setFeatureTriangleClassName] = useState(
+    'homePage-index-feature-triangle-active-farmer'
+  );
 
   useEffect(() => {
     setShowBar(true);
@@ -124,20 +114,34 @@ function HomePage(props) {
     setIsKcalFeatureActive(false);
     if (e.target.id === 'homePage-farmer-svg') {
       setIsFarmerFeatureActive(true);
-      setFeatureTriangleLeft(10);
+      setFeatureTriangleClassName(
+        'homePage-index-feature-triangle-active-farmer'
+      );
       return;
     }
     if (e.target.id === 'homePage-diet-svg') {
       setIsDietFeatureActive(true);
+      setFeatureTriangleClassName(
+        'homePage-index-feature-triangle-active-diet'
+      );
       return;
     }
     if (e.target.id === 'homePage-choices-svg') {
+      setFeatureTriangleClassName(
+        'homePage-index-feature-triangle-active-choices'
+      );
       return setIsChoicesFeatureActive(true);
     }
     if (e.target.id === 'homePage-network-svg') {
+      setFeatureTriangleClassName(
+        'homePage-index-feature-triangle-active-network'
+      );
       return setIsNetworkFeatureActive(true);
     }
     if (e.target.id === 'homePage-kcal-svg') {
+      setFeatureTriangleClassName(
+        'homePage-index-feature-triangle-active-kcal'
+      );
       return setIsKcalFeatureActive(true);
     }
   };
@@ -228,58 +232,6 @@ function HomePage(props) {
     document.querySelector('.homePage-map-results').style =
       'visibility: visible';
   };
-
-  useEffect(() => {
-    const featureCircleWidth = $featureCircle.current.scrollWidth; // 功能區圓圈寬度
-    const featureDotWidth = $featureDot.current.scrollWidth; // 功能區橘點寬度
-    const homePageCirclesWidth = $homePageCircles.current.scrollWidth; // 功能區容器總寬
-    const featureTriangleWidth = $featureTriangle.current.clientLeft * 2; // 功能區三角形寬度
-    const featurePadding =
-      (homePageCirclesWidth - featureCircleWidth * 5 - featureDotWidth * 4) /
-      18; // 功能區padding
-    const gap = featureCircleWidth + featurePadding * 4 + featureDotWidth; // 功能區圓圈中心點到下一個圓圈中心點距離
-    if (isFarmerFeatureActive === true) {
-      const _featureTriangleLeft =
-        featurePadding + featureCircleWidth / 2 - featureTriangleWidth;
-      return setFeatureTriangleLeft(_featureTriangleLeft);
-    }
-    if (isDietFeatureActive === true) {
-      const _featureTriangleLeft =
-        featurePadding + featureCircleWidth / 2 - featureTriangleWidth + gap;
-      return setFeatureTriangleLeft(_featureTriangleLeft);
-    }
-    if (isChoicesFeatureActive === true) {
-      const _featureTriangleLeft =
-        featurePadding +
-        featureCircleWidth / 2 -
-        featureTriangleWidth +
-        gap * 2;
-      return setFeatureTriangleLeft(_featureTriangleLeft);
-    }
-    if (isNetworkFeatureActive === true) {
-      const _featureTriangleLeft =
-        featurePadding +
-        featureCircleWidth / 2 -
-        featureTriangleWidth +
-        gap * 3;
-      return setFeatureTriangleLeft(_featureTriangleLeft);
-    }
-    if (isKcalFeatureActive === true) {
-      const _featureTriangleLeft =
-        featurePadding +
-        featureCircleWidth / 2 -
-        featureTriangleWidth +
-        gap * 4;
-      return setFeatureTriangleLeft(_featureTriangleLeft);
-    }
-  }, [
-    isFarmerFeatureActive,
-    isDietFeatureActive,
-    isChoicesFeatureActive,
-    isNetworkFeatureActive,
-    isKcalFeatureActive,
-    windowWidth,
-  ]);
 
   return (
     <>
@@ -442,8 +394,8 @@ function HomePage(props) {
           </div>
         </div>
         <div
-          style={{ left: `${featureTriangleLeft}px` }}
-          className="homePage-index-feature-triangle position-absolute"
+          // style={{ left: `${featureTriangleLeft}px` }}
+          className={`homePage-index-feature-triangle position-absolute ${featureTriangleClassName}`}
           ref={$featureTriangle}
         ></div>
       </section>
