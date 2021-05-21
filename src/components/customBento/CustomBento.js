@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import 'components/customBento/customBento.scss';
-import Carousel, {
-  slidesToShowPlugin,
-  slidesToScrollPlugin,
-} from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
-
 import RuArrowLeft from 'Ru/Components/RuArrowLeft/RuArrowLeft';
 import RuArrowRight from 'Ru/Components/RuArrowRight/RuArrowRight';
 import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
@@ -35,7 +29,6 @@ import redQuinoaAfter from './Images/redQuinoaAfter.svg';
 import chickenBreastAfter from './Images/chickenBreastAfter.svg';
 import chickenLegAfter from './Images/chickenLegAfter.svg';
 import shrimpAfter from './Images/shrimpAfter.svg';
-import whiteRice from 'assets/svg/whiteRice.svg';
 
 // 品項放置後 e
 import hintA from './Images/hintA.svg';
@@ -48,10 +41,17 @@ import hintF from './Images/hintF.svg';
 // 引用圖片
 import background from './Images/background.png';
 import { ReactComponent as LunchBox } from './Images/lunchBox.svg'; // 將svg以元件方式引入
-import { filterGridStateSelector } from '@material-ui/data-grid';
 
 function CustomBento(props) {
-  const { handleCartNumber, amount, setAmount, count, setCount } = props;
+  const {
+    handleCartNumber,
+    amount,
+    setAmount,
+    count,
+    setCount,
+  } = props;
+
+  console.log(props)
   const [moveX, setMoveX] = useState(0); // 選項區滑動變亮(RuArrowRight / RuArrowLeft 調整)
   const [isPrice, setIsPrice] = useState(true); // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false); // 是否開啟營養標示
@@ -142,6 +142,8 @@ function CustomBento(props) {
   }, []);
 
   useEffect(() => {
+    // console.log(data)
+    // console.log('執行useEffect')
     // 品項置入便當盒 邏輯
     if (!data) {
       // 以下都等抓完fetch才執行
@@ -153,7 +155,7 @@ function CustomBento(props) {
     const img = document.querySelector('#ru-areaF .ru-put');
     // console.log(puts)
     const $dropTarget = document.getElementById('ru-dropArea');
-    console.log('$dropTarget', $dropTarget);
+    console.log($dropTarget);
     const boxA = document.getElementById('ru-areaA');
     const boxB = document.getElementById('ru-areaB');
     const boxC = document.getElementById('ru-areaC');
@@ -210,12 +212,10 @@ function CustomBento(props) {
     // 目的地 - 放下時
     function dropped(e) {
       //增刪元素
-      console.log(
-        'e.dataTransfer',
-        e.dataTransfer.getData('text/plain', e.target.id)
-      ); // 拿到dragStart事件的id
+      // console.log(e.dataTransfer.getData('text/plain', e.target.id)) // 拿到dragStart事件的id
       setPriority('0'); // 白飯容器優先結束
       // 宣告已經放在配菜區內的元素
+
       const boxer = document.getElementById(
         e.dataTransfer.getData('text/plain', e.target.id)
       );
@@ -465,7 +465,6 @@ function CustomBento(props) {
           e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
         ) {
           case 'ru-rice-1': // 'ru-rice-1'
-            console.log('ABC');
             setImgD(riceAfter); // 就放入放置後圖片
             setRiceName(data[0].productName);
             setRicePrice(data[0].price);
@@ -868,98 +867,13 @@ function CustomBento(props) {
                   />
                 </div>
               </div>
-              {/* <div
-                className="ru-species-img"
-                id="ru-item1"
-                style={{ zIndex: '10000' }}
-              >
-                <img
-                  src={whiteRice}
-                  draggable={true}
-                  className="ru-items ru-rice"
-                  id="ru-rice-1"
-                  onDragStart={() => {
-                    // console.log('b');
-                  }}
-                ></img>
-              </div> */}
               <div className="ru-arrow-container" style={{ display: 'flex' }}>
-                <Carousel
-                  draggable={false}
-                  plugins={[
-                    // 'centered',
-                    'infinite',
-                    'arrows',
-                    // 'fastSwipe',
-                    {
-                      resolve: slidesToShowPlugin,
-                      options: {
-                        numberOfSlides: 3, // 一次要秀幾張
-                      },
-                    },
-                    {
-                      resolve: slidesToScrollPlugin,
-                      options: {
-                        numberOfSlides: 1, //
-                      },
-                    },
-                  ]}
-                >
-                  <div
-                    className="ru-species-img"
-                    id="ru-item1"
-                    style={{ zIndex: '10000' }}
-                  >
-                    <img
-                      src={whiteRice}
-                      draggable={true}
-                      className="ru-items ru-rice"
-                      id="ru-rice-1"
-                      onDragStart={() => {
-                        // console.log('b');
-                      }}
-                    ></img>
-                  </div>
-                  <div
-                    className="ru-species-img"
-                    id="ru-item1"
-                    style={{ zIndex: '10000' }}
-                  >
-                    <img
-                      src={whiteRice}
-                      className="ru-items ru-rice"
-                      id="ru-rice-1"
-                      draggable={false}
-                      onDragStart={() => {
-                        // console.log('b');
-                      }}
-                    ></img>
-                  </div>
-                  <div
-                    className="ru-species-img"
-                    id="ru-item1"
-                    style={{ zIndex: '10000' }}
-                  >
-                    <img
-                      src={whiteRice}
-                      className="ru-items ru-rice"
-                      id="ru-rice-1"
-                      // onClick={() => {
-                      //   console.log('a');
-                      // }}
-                      draggable={false}
-                      onDragStart={() => {
-                        // console.log('b');
-                      }}
-                    ></img>
-                  </div>
-                </Carousel>
-                {/* <RuArrowLeft moveX={moveX} setMoveX={setMoveX} />
-                <div className="ru-species-container"> */}
-                {/* 副食 / 主食 / 配菜 / 蛋 的元件 s*/}
-                {/* <div className="ru-species-warp"> */}
-                {/* 移動區 s */}
-                {/* <ul
+                <RuArrowLeft moveX={moveX} setMoveX={setMoveX} />
+                <div className="ru-species-container">
+                  {/* 副食 / 主食 / 配菜 / 蛋 的元件 s*/}
+                  <div className="ru-species-warp">
+                    {/* 移動區 s */}
+                    <ul
                       id="moveArea1"
                       style={{ transform: `translateX(${moveX}px)` }}
                     >
@@ -975,18 +889,18 @@ function CustomBento(props) {
                           veg5available={veg5available}
                         />
                       )}
-                      {selection === 'egg' && <RuEggA data={data} />} */}
-                {/*  副食 / 主食 / 配菜 / 蛋 的元件 e*/}
-                {/* </ul> */}
-                {/* 移動區 e */}
-                {/* </div>
+                      {selection === 'egg' && <RuEggA data={data} />}
+                      {/*  副食 / 主食 / 配菜 / 蛋 的元件 e*/}
+                    </ul>
+                    {/* 移動區 e */}
+                  </div>
                 </div>
                 <RuArrowRight
                   moveX={moveX}
                   setMoveX={setMoveX}
                   limitX={limitX}
                   setLimitX={setLimitX}
-                /> */}
+                />
               </div>
             </div>
           </div>
