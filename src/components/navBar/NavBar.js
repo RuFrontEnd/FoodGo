@@ -74,7 +74,7 @@ function NavBar(props) {
     { linkTo: '/productList', content: '低GI便當' },
     { linkTo: '/productList', content: '美味沙拉' },
     { linkTo: '/vegBox', content: ' 蔬菜箱' },
-    { linkTo: '/productListCustom', content: '客製化便當' },
+    { linkTo: '/productList', content: '客製化便當' },
     { linkTo: '/', content: '外送服務' },
   ];
   const memberSideBarItems = [
@@ -83,7 +83,7 @@ function NavBar(props) {
     { linkTo: '/myFav', content: '我的最愛' },
     { linkTo: '/beastiePoint', content: ' 我的怪獸' },
     {
-      linkTo: '/productListCustom',
+      linkTo: '/',
       content: '登出',
       handleItemEvent: () => {
         handleLogout();
@@ -176,12 +176,24 @@ function NavBar(props) {
                   <div className="navBar-dropdown-item-wrap">
                     <div className="navBar-triangle"></div>
                     <li className="navBar-dropdown-item">
-                      <Nav.Link as={NavLink} to="/productList">
+                      <Nav.Link
+                        as={NavLink}
+                        to={{
+                          pathname: '/productList',
+                          state: { currentOption: 'bento' },
+                        }}
+                      >
                         低GI便當
                       </Nav.Link>
                     </li>
                     <li className="navBar-dropdown-item">
-                      <Nav.Link as={NavLink} to="/productListSalad">
+                      <Nav.Link
+                        as={NavLink}
+                        to={{
+                          pathname: '/productList',
+                          state: { currentOption: 'salad' },
+                        }}
+                      >
                         美味沙拉
                       </Nav.Link>
                     </li>
@@ -191,7 +203,13 @@ function NavBar(props) {
                       </Nav.Link>
                     </li>
                     <li className="navBar-dropdown-item">
-                      <Nav.Link as={NavLink} to="/productListCustom">
+                      <Nav.Link
+                        as={NavLink}
+                        to={{
+                          pathname: '/productList',
+                          state: { currentOption: 'custom' },
+                        }}
+                      >
                         客製化便當
                       </Nav.Link>
                     </li>
@@ -363,49 +381,6 @@ function NavBar(props) {
         listNavigationItems={memberSideBarItems}
         id={'member-sideBar'}
       />
-      {/* <aside id={sideBarMenuId} className="navBar-sideBar navBar-sub-sideBar">
-        <li id="navBar-listNavigation-back">
-          <BackArrow
-            className="navBar-backArrow"
-            onClick={() => {
-              toggleSideBarMenuId();
-            }}
-          />
-        </li>
-        <li className="navBar-listNavigation-item">
-          <h3>尋找美味</h3>
-        </li>
-        <li className="navBar-listNavigation-item">
-          <Nav.Link as={NavLink} to="/menu">
-            菜單介紹
-          </Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item">
-          <Nav.Link as={NavLink} to="/productList">
-            低GI便當
-          </Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item">
-          <Nav.Link as={NavLink} to="/productList">
-            美味沙拉
-          </Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item">
-          <Nav.Link as={NavLink} to="/vegBox">
-            蔬菜箱
-          </Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item">
-          <Nav.Link as={NavLink} to="/productListCustom">
-            客製化便當
-          </Nav.Link>
-        </li>
-        <li className="navBar-listNavigation-item">
-          <Nav.Link as={NavLink} to="/">
-            外送服務
-          </Nav.Link>
-        </li>
-      </aside> */}
     </nav>
   );
 }

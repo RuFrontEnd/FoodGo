@@ -5,6 +5,7 @@ import CustomBento from 'components/customBento/CustomBento';
 import SearchBar from 'components/searchBar/SearchBar';
 import axios from 'axios';
 import 'pages/productList/productList.scss';
+import { useLocation } from 'react-router-dom';
 
 // 引用共用元件
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
@@ -13,12 +14,14 @@ import line from './Images/line.png';
 
 function ProductList(props) {
   const { handleCartNumber, currentUser, amount, setAmount } = props;
+  let location = useLocation(); // react-bootStrap-hook => get Nav.link state
+  const { currentOption } = location.state;
   const [commodities, setCommodities] = useState([]);
   const [favorites, setFavorites] = useState('');
   const [count, setCount] = useState(1);
   const [searchInput, setSearchInput] = useState('');
   const [selectedTypes, setSelectedTypes] = useState([
-    true,
+    false,
     false,
     false,
     false,
@@ -85,6 +88,21 @@ function ProductList(props) {
       });
     }
   };
+
+  useEffect(() => {
+    if (currentOption === undefined) {
+      return;
+    }
+    if (currentOption === 'bento') {
+      return setSelectedTypes([true, false, false, false]);
+    }
+    if (currentOption === 'salad') {
+      return setSelectedTypes([false, true, false, false]);
+    }
+    if (currentOption === 'custom') {
+      return setSelectedTypes([false, false, true, false]);
+    }
+  }, []);
 
   useEffect(() => {
     if (selectedTypes[0] === true) {

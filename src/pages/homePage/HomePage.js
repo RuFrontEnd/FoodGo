@@ -526,7 +526,7 @@ function HomePage(props) {
             <div className="homePage-index-button float-right mt-3">
               <Link
                 style={{ 'text-decoration': 'none' }}
-                to="/productListCustom"
+                to="/productList"
               >
                 <Button className="button-btn" text="客製化便當" />
               </Link>

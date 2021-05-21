@@ -217,26 +217,6 @@ function App() {
                 setAmount={setAmount}
               />
             </Route>
-            <Route exact path="/productListCustom">
-              <RuProudctListCustom
-                setShowBar={setShowBar}
-                handleCartNumber={handleCartNumber}
-                amount={amount}
-                setAmount={setAmount}
-                county={county}
-                setCounty={setCounty}
-                township={township}
-                setTownship={setTownship}
-                address={address}
-                setAddress={setAddress}
-                takeOrNot={takeOrNot}
-                setTakeOrNot={setTakeOrNot}
-                selectDate={selectDate}
-                setSelectDate={setSelectDate}
-                slecteTime={slecteTime}
-                setSelectTime={setSelectTime}
-              />
-            </Route>
             {/* cha */}
             <Route exact path="/cart">
               <ChaCart
