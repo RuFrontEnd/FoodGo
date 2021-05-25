@@ -17,6 +17,8 @@ function Carousel(props) {
   const $slider = useRef();
   const $carousel = useRef();
 
+  // console.log('CarouselItems', CarouselItems);
+
   const [direction, setDirection] = useState(-1);
   const [items, setItems] = useState(CarouselItems);
   const [carouselBWidth, setCarouselBWidth] = useState(width);
@@ -67,11 +69,15 @@ function Carousel(props) {
   });
 
   useEffect(() => {
+    setItems(CarouselItems);
+  }, [CarouselItems]);
+
+  useEffect(() => {
     if (carouselBWidth) {
       setCarouselBSliderWidth(carouselItemWidth * items.length);
       setCarouselBSliderLeft(carouselItemWidth * ((items.length - 3) / 2));
     }
-  }, [carouselBWidth]);
+  }, [carouselBWidth, items]);
 
   // inline style
   const carouselBContainerStyle = {
