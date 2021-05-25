@@ -139,17 +139,12 @@ function CustomBento(props) {
   }, []);
 
   useEffect(() => {
-    console.log('data', data);
     if (!data) {
       return;
     }
     const _vegetableItems = data.map((_dataItem) => '123');
     setVegetableItems(_vegetableItems);
   }, [data]);
-
-  useEffect(() => {
-    console.log('vegetableItems', vegetableItems);
-  }, [vegetableItems]);
 
   useEffect(() => {
     // console.log(data)
@@ -557,7 +552,7 @@ function CustomBento(props) {
     }
   }, [ricePrice, meetPrice, eggPrice, vegPriceA, vegPriceB, vegPriceC]);
 
-  if (!data && vegetableItems.length > 0) {
+  if (!data) {
     // 以下都等抓完fetch才執行
     return <></>;
   }
