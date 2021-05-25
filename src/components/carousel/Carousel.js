@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import 'components/carousel/carousel.scss';
 import Radium from 'radium'; // 可以使inline-style有media-qurey功能
-import { ReactComponent as FoodGoArrow } from 'assets/svg/arrow.svg';
+import { ReactComponent as Arrow } from 'assets/svg/arrow.svg';
 
 function Carousel(props) {
   const {
@@ -89,13 +89,13 @@ function Carousel(props) {
     left: `-${carouselBSliderLeft}px`,
   };
 
-  const handlePrev = () => {
+  const handlePrev = (e) => {
     setDirection(1);
     $slider.current.style.transition = '0.3s';
     $slider.current.style.transform = `translate(${carouselItemWidth}px)`;
   };
 
-  const handleNext = () => {
+  const handleNext = (e) => {
     setDirection(-1);
     $slider.current.style.transition = '0.3s';
     $slider.current.style.transform = `translate(-${carouselItemWidth}px)`;
@@ -142,12 +142,12 @@ function Carousel(props) {
               onClick={handlePrev}
               style={{ top: `calc(50% - ${btnSize / 2}px)` }}
             >
-              <FoodGoArrow
+              <Arrow
                 style={{
                   width: btnSize,
                   height: btnSize,
                 }}
-              ></FoodGoArrow>
+              ></Arrow>
             </div>
             <div
               id="carouselB-next"
@@ -155,13 +155,13 @@ function Carousel(props) {
               onClick={handleNext}
               style={{ top: `calc(50% - ${btnSize / 2}px)` }}
             >
-              <FoodGoArrow
+              <Arrow
                 style={{
                   width: btnSize,
                   height: btnSize,
                   transform: 'scaleX(-1)',
                 }}
-              ></FoodGoArrow>
+              ></Arrow>
             </div>
           </div>
         </div>

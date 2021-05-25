@@ -102,6 +102,10 @@ function CustomBento(props) {
   const [putBclass, setPutBclass] = useState('ru-put');
   const [putCclass, setPutCclass] = useState('ru-put');
 
+  window.addEventListener('click', (e) => {
+    console.log(e.target);
+  });
+
   // 是否可以購買
   const [isCanBuy, setIsCanBuy] = useState(false);
 
@@ -1040,7 +1044,7 @@ function CustomBento(props) {
         {/* rwd 詳細資訊 e */}
 
         {/* 背景米圖 s */}
-        <img src={background}></img>
+        <img id="customBento-background" src={background}></img>
         {/* 背景米圖 e */}
       </div>
       {/* 商品區 - 網頁版 e */}
