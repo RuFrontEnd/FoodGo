@@ -12,6 +12,7 @@ import RuMeetA from 'Ru/Components/RuFoodItems/RuMeetA/RuMeetA';
 import RuVegetableA from 'Ru/Components/RuFoodItems/RuVegetableA/RuVegetableA';
 import RuEggA from 'Ru/Components/RuFoodItems/RuEggA/RuEggA';
 import RuCutsomHint from 'Ru/Components/RuCutsomHint/RuCutsomHint';
+import Carousel from 'components/carousel/Carousel';
 
 // 引用共用元件
 import cauliflower from './Images/cauliflower.svg'; // rwd暫放(待刪)
@@ -40,18 +41,12 @@ import hintF from './Images/hintF.svg';
 
 // 引用圖片
 import background from './Images/background.png';
-import { ReactComponent as LunchBox } from './Images/lunchBox.svg'; // 將svg以元件方式引入
+import { ReactComponent as LunchBox } from 'assets/svg/lunchBox.svg'; // 將svg以元件方式引入
 
 function CustomBento(props) {
-  const {
-    handleCartNumber,
-    amount,
-    setAmount,
-    count,
-    setCount,
-  } = props;
+  const { handleCartNumber, amount, setAmount, count, setCount } = props;
+  const [vegetableItems, setVegetableItems] = useState([]);
 
-  console.log(props)
   const [moveX, setMoveX] = useState(0); // 選項區滑動變亮(RuArrowRight / RuArrowLeft 調整)
   const [isPrice, setIsPrice] = useState(true); // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false); // 是否開啟營養標示
@@ -130,16 +125,22 @@ function CustomBento(props) {
   // 向後端請求資料
   useEffect(() => {
     fetch('http://localhost:5000/product/custom_list') // 非同步
-      .then(function (response) {
-        return response.json();
+      .then(function (res) {
+        return res.json();
       })
-      .then(function (myJson) {
-        // console.log(myJson)
-        const copyJson = [...myJson];
-        setData(copyJson);
+      .then(function (res) {
+        const _data = [...res];
+        setData(_data);
       });
-    return () => {};
   }, []);
+
+  useEffect(() => {
+    if (!data) {
+      return;
+    }
+    const _vegetableItems = data.map((_dataItem) => <div>123</div>);
+    setVegetableItems(_vegetableItems);
+  }, [data]);
 
   useEffect(() => {
     // console.log(data)
@@ -519,8 +520,6 @@ function CustomBento(props) {
     function dragleave(e) {
       // console.log('dragleave')
     }
-
-    return () => {};
   }, [imgA, imgB, imgC, imgD, imgE, imgF, selection, isCanBuy, data]); // 要加入selection, 不然切換菜色選區後抓不到真實DOM
 
   // 購物車選購完畢開啟加入購物車按鈕邏輯
@@ -547,8 +546,6 @@ function CustomBento(props) {
     ) {
       setIsCanBuy(false);
     }
-
-    return () => {};
   }, [ricePrice, meetPrice, eggPrice, vegPriceA, vegPriceB, vegPriceC]);
 
   if (!data) {
@@ -867,13 +864,25 @@ function CustomBento(props) {
                   />
                 </div>
               </div>
-              <div className="ru-arrow-container" style={{ display: 'flex' }}>
-                <RuArrowLeft moveX={moveX} setMoveX={setMoveX} />
-                <div className="ru-species-container">
-                  {/* 副食 / 主食 / 配菜 / 蛋 的元件 s*/}
-                  <div className="ru-species-warp">
-                    {/* 移動區 s */}
-                    <ul
+              <Carousel
+                CarouselItems={vegetableItems}
+                width={1170}
+                height={700}
+                buttonSize={100}
+                breakpoints={{
+                  s: { point: 576, width: 400 },
+                  m: { point: 768, width: 800 },
+                  l: { point: 1024, width: 960 },
+                  xl: { point: 1200, width: 1170 },
+                  xxl: { point: 1440, width: 1170 },
+                }}
+              />
+              {/* <RuArrowLeft moveX={moveX} setMoveX={setMoveX} />
+                <div className="ru-species-container"> */}
+              {/* 副食 / 主食 / 配菜 / 蛋 的元件 s*/}
+              {/* <div className="ru-species-warp"> */}
+              {/* 移動區 s */}
+              {/* <ul
                       id="moveArea1"
                       style={{ transform: `translateX(${moveX}px)` }}
                     >
@@ -889,19 +898,18 @@ function CustomBento(props) {
                           veg5available={veg5available}
                         />
                       )}
-                      {selection === 'egg' && <RuEggA data={data} />}
-                      {/*  副食 / 主食 / 配菜 / 蛋 的元件 e*/}
-                    </ul>
-                    {/* 移動區 e */}
-                  </div>
+                      {selection === 'egg' && <RuEggA data={data} />} */}
+              {/*  副食 / 主食 / 配菜 / 蛋 的元件 e*/}
+              {/* </ul> */}
+              {/* 移動區 e */}
+              {/* </div>
                 </div>
                 <RuArrowRight
                   moveX={moveX}
                   setMoveX={setMoveX}
                   limitX={limitX}
                   setLimitX={setLimitX}
-                />
-              </div>
+                /> */}
             </div>
           </div>
           {/* rwd 詳細資訊 s */}
