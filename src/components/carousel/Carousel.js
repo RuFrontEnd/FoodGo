@@ -82,7 +82,6 @@ function Carousel(props) {
   // inline style
   const carouselBContainerStyle = {
     width: `${carouselBWidth}px`,
-    height: `${height}px`,
   };
   const carouselBSliderStyle = {
     width: `${carouselBSliderWidth}px`,

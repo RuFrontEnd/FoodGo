@@ -315,7 +315,11 @@
   width: 10.145%;
 }
 
-#customBento-background{
+#customBento-carousel {
+  height: 200px;
+}
+
+#customBento-background {
   user-select: none;
 }
 
@@ -476,7 +480,7 @@
     margin: 0px;
   }
 
-  .ru-species-container{
+  .ru-species-container {
     height: 300px;
   }
 
@@ -487,25 +491,25 @@
     @include flex($df, $fdr, $jcs, $alc);
   }
 
-  #moveArea1 li{
+  #moveArea1 li {
     flex-direction: column;
     text-align: center;
   }
 
-  #moveArea1 li .ru-species-img{
+  #moveArea1 li .ru-species-img {
     height: 45%;
   }
 
-  #moveArea1 li .ru-species-info{
+  #moveArea1 li .ru-species-info {
     margin: 0px;
   }
 
-  #moveArea1 li .ru-species-info h4{
+  #moveArea1 li .ru-species-info h4 {
     display: flex;
     flex-direction: column;
   }
 
-  .ru-box-warp .ru-hint-warp h3{
+  .ru-box-warp .ru-hint-warp h3 {
     font-size: 18px;
   }
   // 切換商品區 ----------

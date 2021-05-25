@@ -874,9 +874,9 @@ function CustomBento(props) {
                 </div>
               </div>
               <Carousel
+                id={'customBento-carousel'}
                 CarouselItems={vegetableItems}
                 width={1170}
-                height={700}
                 buttonSize={100}
                 breakpoints={{
                   s: { point: 576, width: 400 },
