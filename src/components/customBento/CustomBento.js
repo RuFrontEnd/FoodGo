@@ -879,11 +879,11 @@ function CustomBento(props) {
                 width={1170}
                 buttonSize={100}
                 breakpoints={{
-                  s: { point: 576, width: 400 },
-                  m: { point: 768, width: 800 },
-                  l: { point: 1024, width: 960 },
-                  xl: { point: 1200, width: 1170 },
-                  xxl: { point: 1440, width: 1170 },
+                  s: { point: 576, width: 400, btnsize:100 },
+                  m: { point: 768, width: 800, btnsize:100 },
+                  l: { point: 1024, width: 960, btnsize:100 },
+                  xl: { point: 1200, width: 1170, btnsize:100 },
+                  xxl: { point: 1440, width: 1170, btnsize:100 },
                 }}
               />
               {/* <RuArrowLeft moveX={moveX} setMoveX={setMoveX} />
