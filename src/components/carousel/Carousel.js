@@ -10,7 +10,6 @@ function Carousel(props) {
     style,
     CarouselItems,
     width,
-    height = '100%',
     buttonSize,
     breakpoints,
   } = props;
