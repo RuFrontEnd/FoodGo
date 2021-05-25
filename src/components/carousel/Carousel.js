@@ -125,10 +125,10 @@ function Carousel(props) {
   return (
     <>
       <section id={id} className={className} style={style}>
-        <div id="carouselB-container" style={carouselBContainerStyle}>
-          <div id="carouselB-wrap" ref={$carousel}>
+        <div id="carousel-container" style={carouselBContainerStyle}>
+          <div id="carousel-wrap" ref={$carousel}>
             <ul
-              id="carouselB-slider"
+              id="carousel-slider"
               onTransitionEnd={shiftItem}
               style={carouselBSliderStyle}
               ref={$slider}
@@ -140,8 +140,8 @@ function Carousel(props) {
               ))}
             </ul>
             <div
-              id="carouselB-prev"
-              className="carouselB-btn"
+              id="carousel-prev"
+              className="carousel-btn"
               onClick={handlePrev}
               style={{ top: `calc(50% - ${btnSize / 2}px)` }}
             >
@@ -153,8 +153,8 @@ function Carousel(props) {
               ></Arrow>
             </div>
             <div
-              id="carouselB-next"
-              className="carouselB-btn"
+              id="carousel-next"
+              className="carousel-btn"
               onClick={handleNext}
               style={{ top: `calc(50% - ${btnSize / 2}px)` }}
             >

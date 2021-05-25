@@ -1,8 +1,8 @@
-#carouselB-container {
+#carousel-container {
   height: 100%;
 }
 
-#carouselB-wrap {
+#carousel-wrap {
   position: relative;
   width: 100%;
   height: 100%;
@@ -12,7 +12,7 @@
   overflow: hidden;
 }
 
-#carouselB-slider {
+#carousel-slider {
   position: absolute;
   margin-bottom: 0px;
   height: 100%;
@@ -22,7 +22,7 @@
   top: 0px;
 }
 
-#carouselB-slider > li {
+#carousel-slider > li {
   flex-basis: 100%;
   font-size: 30px;
   // outline: solid 1px rgb(174, 189, 255);
@@ -31,15 +31,15 @@
   justify-content: center;
 }
 
-.carouselB-btn {
+.carousel-btn {
   cursor: pointer;
   position: absolute;
 }
 
-#carouselB-prev {
+#carousel-prev {
   left: 0%;
 }
 
-#carouselB-next {
+#carousel-next {
   right: 0%;
 }

@@ -102,10 +102,6 @@ function CustomBento(props) {
   const [putBclass, setPutBclass] = useState('ru-put');
   const [putCclass, setPutCclass] = useState('ru-put');
 
-  window.addEventListener('click', (e) => {
-    console.log(e.target);
-  });
-
   // 是否可以購買
   const [isCanBuy, setIsCanBuy] = useState(false);
 
