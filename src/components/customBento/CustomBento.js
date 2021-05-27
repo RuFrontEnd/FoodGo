@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import 'components/customBento/customBento.scss';
 import RuArrowLeft from 'Ru/Components/RuArrowLeft/RuArrowLeft';
 import RuArrowRight from 'Ru/Components/RuArrowRight/RuArrowRight';
@@ -46,7 +46,6 @@ import { ReactComponent as LunchBox } from 'assets/svg/lunchBox.svg'; // 將svg�
 
 function CustomBento(props) {
   const { handleCartNumber, amount, setAmount, count, setCount } = props;
-  const [vegetableItems, setVegetableItems] = useState([]);
 
   const [moveX, setMoveX] = useState(0); // 選項區滑動變亮(RuArrowRight / RuArrowLeft 調整)
   const [isPrice, setIsPrice] = useState(true); // 是否開啟價格標示
@@ -114,6 +113,8 @@ function CustomBento(props) {
   let today = +new Date();
   const [todayId, setTodayId] = useState(today);
 
+  const $dragTargetRef = useRef();
+
   // 切換售價與營養標示
   function switchPrice() {
     setIsPrice(true);
@@ -142,36 +143,69 @@ function CustomBento(props) {
     }
     if (selection === 'rice') {
       const rices = data.filter((dataItem) => dataItem.categories === 'rice');
-      const _foodItems = rices.map((rice) => <FoodItem foodItem={rice} />);
+      const _foodItems = rices.map((rice, riceIndex) => (
+        <FoodItem
+          foodItem={rice}
+          ref={$dragTargetRef}
+          dragTargetId={`ru-rice-${riceIndex + 1}`}
+          dragTargetClassName={'ru-items'}
+        />
+      ));
       return setFoodItems(_foodItems);
     }
     if (selection === 'vegetable') {
       const vegtables = data.filter(
         (dataItem) => dataItem.categories === 'vegetable'
       );
-      const _foodItems = vegtables.map((vegtable) => (
-        <FoodItem foodItem={vegtable} />
+      const _foodItems = vegtables.map((vegtable, vegtableItem) => (
+        <FoodItem
+          foodItem={vegtable}
+          ref={$dragTargetRef}
+          dragTargetId={`ru-vegtable-${vegtableItem + 1}`}
+          dragTargetClassName={'ru-items'}
+        />
       ));
       return setFoodItems(_foodItems);
     }
-
+    if (selection === 'meet') {
+      const meets = data.filter((dataItem) => dataItem.categories === 'meet');
+      const _foodItems = meets.map((meet, meetIndex) => (
+        <FoodItem
+          foodItem={meet}
+          ref={$dragTargetRef}
+          dragTargetId={`ru-meet-${meetIndex + 1}`}
+          dragTargetClassName={'ru-items'}
+        />
+      ));
+      return setFoodItems(_foodItems);
+    }
+    if (selection === 'egg') {
+      const eggs = data.filter((dataItem) => dataItem.categories === 'egg');
+      const _foodItems = eggs.map((egg, eggIndex) => (
+        <FoodItem
+          foodItem={egg}
+          ref={$dragTargetRef}
+          dragTargetId={`ru-egg-${eggIndex + 1}`}
+          dragTargetClassName={'ru-items'}
+        />
+      ));
+      return setFoodItems(_foodItems);
+    }
   }, [data, selection]);
 
   useEffect(() => {
-    // console.log(data)
-    // console.log('執行useEffect')
     // 品項置入便當盒 邏輯
-    if (!data) {
-      // 以下都等抓完fetch才執行
+    if (!data && !foodItems) {
       return;
     }
+    // console.log($dragTargetRef);
     const items = document.querySelectorAll('.ru-items');
-    //  console.log(items)
+    // console.log(items);
     const puts = document.querySelectorAll('.ru-put');
     const img = document.querySelector('#ru-areaF .ru-put');
     // console.log(puts)
     const $dropTarget = document.getElementById('ru-dropArea');
-    console.log($dropTarget);
+    // console.log($dropTarget);
     const boxA = document.getElementById('ru-areaA');
     const boxB = document.getElementById('ru-areaB');
     const boxC = document.getElementById('ru-areaC');
@@ -196,7 +230,7 @@ function CustomBento(props) {
 
     // 來源 - 開始拖曳時
     function dragStart(e) {
-      // console.log('dragStart', e.target.id)
+      // console.log('e.target.id', e.target.id);
       if (e.target.classList.contains('ru-rice')) {
         // 如果是白飯選區內的選項
         setPriority('100'); // 白飯容器就優先
@@ -477,6 +511,7 @@ function CustomBento(props) {
       ) {
         // 白飯區
         setIsShowHint(false); // 東西放完就關閉示字樣
+        // console.log(e.dataTransfer.getData('text/plain', e.target.id));
         switch (
           e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
         ) {
@@ -535,7 +570,18 @@ function CustomBento(props) {
     function dragleave(e) {
       // console.log('dragleave')
     }
-  }, [imgA, imgB, imgC, imgD, imgE, imgF, selection, isCanBuy, data]); // 要加入selection, 不然切換菜色選區後抓不到真實DOM
+  }, [
+    imgA,
+    imgB,
+    imgC,
+    imgD,
+    imgE,
+    imgF,
+    selection,
+    isCanBuy,
+    data,
+    foodItems,
+  ]); // 要加入selection, 不然切換菜色選區後抓不到真實DOM
 
   // 購物車選購完畢開啟加入購物車按鈕邏輯
   useEffect(() => {
@@ -563,7 +609,7 @@ function CustomBento(props) {
     }
   }, [ricePrice, meetPrice, eggPrice, vegPriceA, vegPriceB, vegPriceC]);
 
-  if (!data) {
+  if (!data && !foodItems) {
     // 以下都等抓完fetch才執行
     return <></>;
   }

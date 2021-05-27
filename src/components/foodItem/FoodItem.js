@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'components/foodItem/foodItem.scss';
 
 // 網頁版 配菜 選項
-function FoodItem(props) {
+const FoodItem = React.forwardRef((props, ref) => {
   const {
     foodItem = {},
     isAvailable = true,
     className,
     style,
     dragTargetId = '',
+    dragTargetClassName = '',
   } = props;
 
   return (
@@ -19,12 +20,16 @@ function FoodItem(props) {
           {isAvailable ? (
             <img
               src={`http://localhost:5000/svg/${foodItem.image}`}
+              ref={ref}
               id={`${dragTargetId}`}
+              className={dragTargetClassName}
             ></img>
           ) : (
             <img
               src={`http://localhost:5000/svg/${foodItem.image}`}
+              ref={ref}
               id={`${dragTargetId}`}
+              className={dragTargetClassName}
               style={{ pointerEvents: 'none', filter: 'grayscale(100%)' }}
             ></img>
           )}
@@ -48,6 +53,6 @@ function FoodItem(props) {
       </div>
     </section>
   );
-}
+});
 
 export default FoodItem;

@@ -77,8 +77,12 @@ function Carousel(props) {
   }, [CarouselItems]);
 
   useEffect(() => {
+    const _carouselBSliderLeft =
+      carouselItemWidth * ((items.length - 3) / 2) > 0
+        ? carouselItemWidth * ((items.length - 3) / 2)
+        : 0;
     setCarouselBSliderWidth(carouselItemWidth * items.length);
-    setCarouselBSliderLeft(carouselItemWidth * ((items.length - 3) / 2));
+    setCarouselBSliderLeft(_carouselBSliderLeft);
     setIsLoading(false);
   }, [carouselBWidth, items]);
 
