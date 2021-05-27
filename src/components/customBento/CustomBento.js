@@ -60,10 +60,10 @@ function CustomBento(props) {
   const [limitX, setLimitX] = useState(0); // 右滑極限值 => 白飯選區為初始值 (RuButtonB可以調不同選項區的極限值)
   const [vegBoxLeftImg, setVegBoxLeftImg] = useState();
   const [vegBoxMiddleImg, setVegBoxMiddleImg] = useState();
-  const [imgC, setImgC] = useState();
-  const [imgD, setImgD] = useState();
-  const [imgE, setImgE] = useState();
-  const [imgF, setImgF] = useState();
+  const [vegBoxRightImg, setvegBoxRightImg] = useState();
+  const [riceImg, setRiceImg] = useState();
+  const [meetImg, setMeetImg] = useState();
+  const [eggImg, setEggImg] = useState();
   // 設定飯類容器的優先權
   const [priority, setPriority] = useState('');
 
@@ -132,9 +132,6 @@ function CustomBento(props) {
 
   // 開始拖曳品項
   const onDragStart = (e) => {
-    if (e.target.classList.contains('ru-rice')) {
-      setPriority('100'); // 如果是白飯選區內的選項, 白飯容器就優先
-    }
     e.dataTransfer.setData('text/plain', e.target.dataset.sid);
   };
 
@@ -142,15 +139,14 @@ function CustomBento(props) {
   const onDrop = (e) => {
     setPriority('0'); // 白飯容器優先結束
     setIsShowHint(false); // 東西放完就關閉示字樣
-    // 放置容器是左蔬菜區
     let targetSid = Number(
       e.dataTransfer.getData('text/plain', e.target.dataset.sid)
     );
+
     let _foods = [...foods];
     if (e.target.id === $vegBoxLeft.current.id) {
       _foods.forEach((_food) => {
         if (targetSid === _food.sid) {
-          console.log('_food.sid', _food.sid);
           setVegBoxLeftImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
           setVegNameA(_food.productName);
           setVegPriceA(_food.price);
@@ -159,21 +155,67 @@ function CustomBento(props) {
           _food.isAvailable = false;
         }
       });
-    }
+    } // 左邊蔬菜區
+
     if (e.target.id === $vegBoxMiddle.current.id) {
       _foods.forEach((_food) => {
         if (targetSid === _food.sid) {
-          console.log('_food.sid', _food.sid);
-          console.log('targetSid', targetSid);
           setVegBoxMiddleImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
           setVegNameB(_food.productName);
           setVegPriceB(_food.price);
           setVegCalB(_food.calories);
-          setPutAclass('ru-put ru-put-veg-2');
+          setPutBclass('ru-put ru-put-veg-2');
           _food.isAvailable = false;
         }
       });
-    }
+    } // 中間蔬菜區
+
+    if (e.target.id === $vegBoxRight.current.id) {
+      _foods.forEach((_food) => {
+        if (targetSid === _food.sid) {
+          setvegBoxRightImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
+          setVegNameC(_food.productName);
+          setVegPriceC(_food.price);
+          setVegCalC(_food.calories);
+          setPutBclass('ru-put ru-put-veg-3');
+          _food.isAvailable = false;
+        }
+      });
+    } // 右邊蔬菜區
+
+    if (e.target.id === $riceBox.current.id) {
+      _foods.forEach((_food) => {
+        if (targetSid === _food.sid) {
+          setRiceImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
+          setRiceName(_food.productName);
+          setRicePrice(_food.price);
+          setRiceCal(_food.calories);
+        }
+      });
+    } // 白飯區
+
+    if (e.target.id === $meetBox.current.id) {
+      _foods.forEach((_food) => {
+        if (targetSid === _food.sid) {
+          setMeetImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
+          setMeetName(_food.productName);
+          setMeetPrice(_food.price);
+          setMeetCal(_food.calories);
+        }
+      });
+    } // 主食區
+
+    if (e.target.id === $eggBox.current.id) {
+      _foods.forEach((_food) => {
+        if (targetSid === _food.sid) {
+          setEggImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
+          setEggName(_food.productName);
+          setEggPrice(_food.price);
+          setEggCal(_food.calories);
+        }
+      });
+    } // 蛋區
+
     setFoods(_foods);
   };
 
@@ -195,17 +237,21 @@ function CustomBento(props) {
     }
     let filterFoods = [];
     if (selection === 'rice') {
+      setPriority('100');
       filterFoods = data.filter((dataItem) => dataItem.categories === 'rice');
     }
     if (selection === 'vegetable') {
+      setPriority('0');
       filterFoods = data.filter(
         (dataItem) => dataItem.categories === 'vegetable'
       );
     }
     if (selection === 'meet') {
+      setPriority('0');
       filterFoods = data.filter((dataItem) => dataItem.categories === 'meet');
     }
     if (selection === 'egg') {
+      setPriority('0');
       filterFoods = data.filter((dataItem) => dataItem.categories === 'egg');
     }
     const _foods = filterFoods.map((filterFood) => ({
@@ -369,7 +415,7 @@ function CustomBento(props) {
       //         }
       //         break;
       //       case 'ru-put-3': // 觸發事件在第三個盒子
-      //         setImgC();
+      //         setVegBoxRightImg();
       //         setVegNameC();
       //         setVegPriceC(0);
       //         setVegCalC(0);
@@ -388,19 +434,19 @@ function CustomBento(props) {
       //         }
       //         break;
       //       case 'ru-put-4': // 觸發事件在第四個盒子
-      //         setImgD();
+      //         setRiceImg();
       //         setRiceName();
       //         setRicePrice(0);
       //         setRiceCal(0);
       //         break;
       //       case 'ru-put-5': // 觸發事件在第五個盒子
-      //         setImgE();
+      //         setMeetImg();
       //         setEggName();
       //         setEggPrice(0);
       //         setEggCal(0);
       //         break;
       //       case 'ru-put-6': // 觸發事件在第六個盒子
-      //         setImgF();
+      //         setEggImg();
       //         setMeetName();
       //         setMeetPrice(0);
       //         setMeetPrice(0);
@@ -510,7 +556,7 @@ function CustomBento(props) {
       //       e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
       //     ) {
       //       case 'ru-veg-1': // 'ru-veg-1'
-      //         setImgC(cauliflowerAfter); // 就改變state值
+      //         setVegBoxRightImg(cauliflowerAfter); // 就改變state值
       //         setVegNameC(data[8].productName);
       //         setVegPriceC(data[8].price);
       //         setVegCalC(data[8].calories);
@@ -518,7 +564,7 @@ function CustomBento(props) {
       //         setPutCclass('ru-put ru-put-veg-1');
       //         break;
       //       case 'ru-veg-2':
-      //         setImgC(cabageAfter);
+      //         setVegBoxRightImg(cabageAfter);
       //         setVegNameC(data[9].productName);
       //         setVegPriceC(data[9].price);
       //         setVegCalC(data[9].calories);
@@ -526,7 +572,7 @@ function CustomBento(props) {
       //         setPutCclass('ru-put ru-put-veg-2');
       //         break;
       //       case 'ru-veg-3':
-      //         setImgC(cornAfter);
+      //         setVegBoxRightImg(cornAfter);
       //         setVegNameC(data[10].productName);
       //         setVegPriceC(data[10].price);
       //         setVegCalC(data[10].calories);
@@ -534,7 +580,7 @@ function CustomBento(props) {
       //         setPutCclass('ru-put ru-put-veg-3');
       //         break;
       //       case 'ru-veg-4':
-      //         setImgC(qingjiangAfter);
+      //         setVegBoxRightImg(qingjiangAfter);
       //         setVegNameC(data[11].productName);
       //         setVegPriceC(data[11].price);
       //         setVegCalC(data[11].calories);
@@ -542,7 +588,7 @@ function CustomBento(props) {
       //         setPutCclass('ru-put ru-put-veg-4');
       //         break;
       //       case 'ru-veg-5':
-      //         setImgC(eggplantAfter);
+      //         setVegBoxRightImg(eggplantAfter);
       //         setVegNameC(data[12].productName);
       //         setVegPriceC(data[12].price);
       //         setVegCalC(data[12].calories);
@@ -563,49 +609,49 @@ function CustomBento(props) {
       //       e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
       //     ) {
       //       case 'ru-rice-1': // 'ru-rice-1'
-      //         setImgD(riceAfter); // 就放入放置後圖片
+      //         setRiceImg(riceAfter); // 就放入放置後圖片
       //         setRiceName(data[0].productName);
       //         setRicePrice(data[0].price);
       //         setRiceCal(data[0].calories);
       //         break;
       //       case 'ru-rice-2':
-      //         setImgD(grainRiceAfter);
+      //         setRiceImg(grainRiceAfter);
       //         setRiceName(data[1].productName);
       //         setRicePrice(data[1].price);
       //         setRiceCal(data[1].calories);
       //         break;
       //       case 'ru-rice-3':
-      //         setImgD(redQuinoaAfter);
+      //         setRiceImg(redQuinoaAfter);
       //         setRiceName(data[2].productName);
       //         setRicePrice(data[2].price);
       //         setRiceCal(data[2].calories);
       //         break;
       //       case 'ru-egg-1': // 'ru-egg-1'
-      //         setImgE(eggAfter); // 就放入放置後圖片
+      //         setMeetImg(eggAfter); // 就放入放置後圖片
       //         setEggName(data[6].productName);
       //         setEggPrice(data[6].price);
       //         setEggCal(data[6].calories);
       //         break;
       //       case 'ru-egg-2':
-      //         setImgE(poachedEggAfter);
+      //         setMeetImg(poachedEggAfter);
       //         setEggName(data[7].productName);
       //         setEggPrice(data[7].price);
       //         setEggCal(data[7].calories);
       //         break;
       //       case 'ru-meet-1': // 'ru-meet-1'
-      //         setImgF(chickenBreastAfter); // 就放入放置後圖片
+      //         setEggImg(chickenBreastAfter); // 就放入放置後圖片
       //         setMeetName(data[3].productName);
       //         setMeetPrice(data[3].price);
       //         setMeetCal(data[3].calories);
       //         break;
       //       case 'ru-meet-2':
-      //         setImgF(chickenLegAfter);
+      //         setEggImg(chickenLegAfter);
       //         setMeetName(data[4].productName);
       //         setMeetPrice(data[4].price);
       //         setMeetCal(data[4].calories);
       //         break;
       //       case 'ru-meet-3':
-      //         setImgF(shrimpAfter);
+      //         setEggImg(shrimpAfter);
       //         setMeetName(data[5].productName);
       //         setMeetPrice(data[5].price);
       //         setMeetCal(data[5].calories);
@@ -620,10 +666,10 @@ function CustomBento(props) {
   }, [
     vegBoxLeftImg,
     vegBoxMiddleImg,
-    imgC,
-    imgD,
-    imgE,
-    imgF,
+    vegBoxRightImg,
+    riceImg,
+    meetImg,
+    eggImg,
     selection,
     isCanBuy,
     data,
@@ -709,7 +755,7 @@ function CustomBento(props) {
 
                   <div id="ru-areaC" ref={$vegBoxRight} onDrop={onDrop}>
                     <img
-                      src={imgC}
+                      src={vegBoxRightImg}
                       draggable="true"
                       className={putCclass}
                       id="ru-put-3"
@@ -727,7 +773,7 @@ function CustomBento(props) {
                     onDrop={onDrop}
                   >
                     <img
-                      src={imgD}
+                      src={riceImg}
                       draggable="true"
                       className="ru-put"
                       id="ru-put-4"
@@ -741,7 +787,7 @@ function CustomBento(props) {
 
                   <div id="ru-areaE" ref={$eggBox} onDrop={onDrop}>
                     <img
-                      src={imgE}
+                      src={eggImg}
                       draggable="true"
                       className="ru-put"
                       id="ru-put-5"
@@ -755,7 +801,7 @@ function CustomBento(props) {
 
                   <div id="ru-areaF" ref={$meetBox} onDrop={onDrop}>
                     <img
-                      src={imgF}
+                      src={meetImg}
                       draggable="true"
                       className="ru-put"
                       id="ru-put-6"
