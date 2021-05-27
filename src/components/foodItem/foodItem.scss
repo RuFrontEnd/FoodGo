@@ -1,22 +1,33 @@
 @import "variable/variable.scss";
 
 // 網頁版
+#foodItem-container {
+  width: 100%;
+  height: 100%;
+}
+
 #foodItem-wrap {
-  flex-basis: 350px;
+  width: 100%;
   height: 100%;
   @include flex($df, $fdr, $jcs, $alc);
 }
 
-#foodItem-img {
+#foodItem-img-wrap {
   cursor: grab;
-  width: 35%;
+  width: 100%;
+  height: 100%;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+#foodItem-img-wrap img {
+  cursor: grab;
+  width: 70%;
   height: 100%;
   @include flex($df, $fdc, $jcc, $alc);
 }
 
 #foodItem-info {
-  width: 65%;
-  margin-left: 15px;
+  width: 100%;
 }
 
 #foodItem-info ul {
