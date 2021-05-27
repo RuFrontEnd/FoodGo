@@ -58,8 +58,8 @@ function CustomBento(props) {
   const [isCal, setIsCal] = useState(false); // 是否開啟營養標示
   const [selection, setSelection] = useState('rice'); // 選擇開啟哪個菜色選區
   const [limitX, setLimitX] = useState(0); // 右滑極限值 => 白飯選區為初始值 (RuButtonB可以調不同選項區的極限值)
-  const [vegBoxLeftImg, VegBoxLeftImg] = useState();
-  const [imgB, setImgB] = useState();
+  const [vegBoxLeftImg, setVegBoxLeftImg] = useState();
+  const [vegBoxMiddleImg, setVegBoxMiddleImg] = useState();
   const [imgC, setImgC] = useState();
   const [imgD, setImgD] = useState();
   const [imgE, setImgE] = useState();
@@ -113,7 +113,7 @@ function CustomBento(props) {
 
   // 包後端資料的state
   const [data, setData] = useState('');
-  const [filteredData, setFilteredData] = useState([]);
+  const [foods, setFoods] = useState([]);
   const [foodItems, setFoodItems] = useState([]);
 
   // 給localStorage的id
@@ -141,65 +141,40 @@ function CustomBento(props) {
   // 品項放到目標容器
   const onDrop = (e) => {
     setPriority('0'); // 白飯容器優先結束
-    console.log('$vegBoxLeft', $vegBoxLeft);
-
+    setIsShowHint(false); // 東西放完就關閉示字樣
     // 放置容器是左蔬菜區
+    let targetSid = Number(
+      e.dataTransfer.getData('text/plain', e.target.dataset.sid)
+    );
+    let _foods = [...foods];
     if (e.target.id === $vegBoxLeft.current.id) {
-      setIsShowHint(false); // 東西放完就關閉示字樣
-      // console.log('filteredData', filteredData);
-      filteredData.forEach((dataItem) => {
-        let targetSid = Number(
-          e.dataTransfer.getData('text/plain', e.target.dataset.sid)
-        );
-        if (targetSid === dataItem.sid) {
-          console.log('dataItem.sid', dataItem.sid);
-          VegBoxLeftImg(`http://localhost:5000/svg/${dataItem.unfoldImage}`);
+      _foods.forEach((_food) => {
+        if (targetSid === _food.sid) {
+          console.log('_food.sid', _food.sid);
+          setVegBoxLeftImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
+          setVegNameA(_food.productName);
+          setVegPriceA(_food.price);
+          setVegCalA(_food.calories);
+          setPutAclass('ru-put ru-put-veg-1');
+          _food.isAvailable = false;
         }
       });
-
-      // switch (e.dataTransfer.getData('text/plain', e.target.id)) {
-      //   case 'ru-veg-1': // 'ru-veg-1'
-      //     VegBoxLeftImg(cauliflowerAfter);
-      //     // setVegNameA(data[8].productName);
-      //     // setVegPriceA(data[8].price);
-      //     // setVegCalA(data[8].calories);
-      //     // setVeg1available(false);
-      //     // setPutAclass('ru-put ru-put-veg-1');
-      //     break;
-      //   case 'ru-veg-2':
-      //     VegBoxLeftImg(cabageAfter);
-      //     // setVegNameA(data[9].productName);
-      //     // setVegPriceA(data[9].price);
-      //     // setVegCalA(data[9].calories);
-      //     // setVeg2available(false);
-      //     // setPutAclass('ru-put ru-put-veg-2');
-      //     break;
-      //   case 'ru-veg-3':
-      //     VegBoxLeftImg(cornAfter);
-      //     // setVegNameA(data[10].productName);
-      //     // setVegPriceA(data[10].price);
-      //     // setVegCalA(data[10].calories);
-      //     // setVeg3available(false);
-      //     // setPutAclass('ru-put ru-put-veg-3');
-      //     break;
-      //   case 'ru-veg-4':
-      //     VegBoxLeftImg(qingjiangAfter);
-      //     // setVegNameA(data[11].productName);
-      //     // setVegPriceA(data[11].price);
-      //     // setVegCalA(data[11].calories);
-      //     // setVeg4available(false);
-      //     // setPutAclass('ru-put ru-put-veg-4');
-      //     break;
-      //   case 'ru-veg-5':
-      //     VegBoxLeftImg(eggplantAfter);
-      //     // setVegNameA(data[12].productName);
-      //     // setVegPriceA(data[12].price);
-      //     // setVegCalA(data[12].calories);
-      //     // setVeg5available(false);
-      //     // setPutAclass('ru-put ru-put-veg-5');
-      //     break;
-      // }
     }
+    if (e.target.id === $vegBoxMiddle.current.id) {
+      _foods.forEach((_food) => {
+        if (targetSid === _food.sid) {
+          console.log('_food.sid', _food.sid);
+          console.log('targetSid', targetSid);
+          setVegBoxMiddleImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
+          setVegNameB(_food.productName);
+          setVegPriceB(_food.price);
+          setVegCalB(_food.calories);
+          setPutAclass('ru-put ru-put-veg-2');
+          _food.isAvailable = false;
+        }
+      });
+    }
+    setFoods(_foods);
   };
 
   // 向後端請求資料
@@ -218,23 +193,38 @@ function CustomBento(props) {
     if (!data) {
       return;
     }
-    let foods = [];
+    let filterFoods = [];
     if (selection === 'rice') {
-      foods = data.filter((dataItem) => dataItem.categories === 'rice');
-      setFilteredData(foods);
+      filterFoods = data.filter((dataItem) => dataItem.categories === 'rice');
     }
     if (selection === 'vegetable') {
-      foods = data.filter((dataItem) => dataItem.categories === 'vegetable');
-      setFilteredData(foods);
+      filterFoods = data.filter(
+        (dataItem) => dataItem.categories === 'vegetable'
+      );
     }
     if (selection === 'meet') {
-      foods = data.filter((dataItem) => dataItem.categories === 'meet');
-      setFilteredData(foods);
+      filterFoods = data.filter((dataItem) => dataItem.categories === 'meet');
     }
     if (selection === 'egg') {
-      foods = data.filter((dataItem) => dataItem.categories === 'egg');
-      setFilteredData(foods);
+      filterFoods = data.filter((dataItem) => dataItem.categories === 'egg');
     }
+    const _foods = filterFoods.map((filterFood) => ({
+      sid: filterFood.sid,
+      productName: filterFood.productName,
+      categories: filterFood.categories,
+      price: filterFood.price,
+      protein: filterFood.protein,
+      fat: filterFood.fat,
+      cabohydrate: filterFood.cabohydrate,
+      calories: filterFood.calories,
+      image: filterFood.image,
+      unfoldImage: filterFood.unfoldImage,
+      isAvailable: true,
+    }));
+    setFoods(_foods);
+  }, [data, selection]);
+
+  useEffect(() => {
     const _foodItems = foods.map((food, foodsIndex) => (
       <FoodItem
         foodItem={food}
@@ -243,10 +233,11 @@ function CustomBento(props) {
         dragTargetClassName={'ru-items'}
         onDragStart={onDragStart}
         dragDataSid={food.sid}
+        isAvailable={food.isAvailable}
       />
     ));
     setFoodItems(_foodItems);
-  }, [data, selection]);
+  }, [foods]);
 
   useEffect(() => {
     // 品項置入便當盒 邏輯
@@ -315,313 +306,312 @@ function CustomBento(props) {
 
     // 目的地 - 放下時
     function dropped(e) {
-      if (selection !== 'dagfegaeh') {
-        return;
-      }
-      //增刪元素
-      // console.log(e.dataTransfer.getData('text/plain', e.target.id)) // 拿到dragStart事件的id
-      setPriority('0'); // 白飯容器優先結束
-      // 宣告已經放在配菜區內的元素
-
-      const boxer = document.getElementById(
-        e.dataTransfer.getData('text/plain', e.target.id)
-      );
-      // 丟棄邏輯 - 放到這些區域可以丟棄該品項
-      if (
-        e.target !== boxA &&
-        e.target !== boxB &&
-        e.target !== boxC &&
-        e.target !== boxD &&
-        e.target !== boxE &&
-        e.target !== boxF
-      ) {
-        switch (e.dataTransfer.getData('text/plain', e.target.id)) {
-          case 'ru-put-1': // 觸發事件在第一個盒子
-            // console.log(e.target.className)
-            VegBoxLeftImg();
-            setVegNameA();
-            setVegPriceA(0);
-            setVegCalA(0);
-            // 復原可控物件邏輯
-            // 宣告待會從盒子內取出的目標含有哪些class
-            if (
-              // 如果配菜區內的既有菜色者的classList包含('ru-put-veg-1')
-              boxer.classList.contains('ru-put-veg-1')
-            ) {
-              setVeg1available(true); // 那被丟棄後就讓選菜區變回可控物件
-            } else if (boxer.classList.contains('ru-put-veg-2')) {
-              setVeg2available(true);
-            } else if (boxer.classList.contains('ru-put-veg-3')) {
-              setVeg3available(true);
-            } else if (boxer.classList.contains('ru-put-veg-4')) {
-              setVeg4available(true);
-            } else if (boxer.classList.contains('ru-put-veg-5')) {
-              setVeg5available(true);
-            }
-            break;
-          case 'ru-put-2': // 觸發事件在第二個盒子
-            setImgB();
-            setVegNameB();
-            setVegPriceB(0);
-            setVegCalB(0);
-            // 復原可控物件邏輯
-            if (boxer.classList.contains('ru-put-veg-1')) {
-              // 如果目標classList含有'ru-put-veg-1'
-              setVeg1available(true); // 那被丟棄後就讓選菜區變回可控物件
-            } else if (boxer.classList.contains('ru-put-veg-2')) {
-              setVeg2available(true);
-            } else if (boxer.classList.contains('ru-put-veg-3')) {
-              setVeg3available(true);
-            } else if (boxer.classList.contains('ru-put-veg-4')) {
-              setVeg4available(true);
-            } else if (boxer.classList.contains('ru-put-veg-5')) {
-              setVeg5available(true);
-            }
-            break;
-          case 'ru-put-3': // 觸發事件在第三個盒子
-            setImgC();
-            setVegNameC();
-            setVegPriceC(0);
-            setVegCalC(0);
-            // 復原可控物件邏輯
-            if (boxer.classList.contains('ru-put-veg-1')) {
-              // 如果目標classList含有'ru-put-veg-1'
-              setVeg1available(true); // 那被丟棄後就讓選菜區變回可控物件
-            } else if (boxer.classList.contains('ru-put-veg-2')) {
-              setVeg2available(true);
-            } else if (boxer.classList.contains('ru-put-veg-3')) {
-              setVeg3available(true);
-            } else if (boxer.classList.contains('ru-put-veg-4')) {
-              setVeg4available(true);
-            } else if (boxer.classList.contains('ru-put-veg-5')) {
-              setVeg5available(true);
-            }
-            break;
-          case 'ru-put-4': // 觸發事件在第四個盒子
-            setImgD();
-            setRiceName();
-            setRicePrice(0);
-            setRiceCal(0);
-            break;
-          case 'ru-put-5': // 觸發事件在第五個盒子
-            setImgE();
-            setEggName();
-            setEggPrice(0);
-            setEggCal(0);
-            break;
-          case 'ru-put-6': // 觸發事件在第六個盒子
-            setImgF();
-            setMeetName();
-            setMeetPrice(0);
-            setMeetPrice(0);
-            setMeetCal(0);
-            break;
-        }
-      } else if (e.target === boxA) {
-        setIsShowHint(false); // 東西放完就關閉示字樣
-        // 配菜A區
-        // 如果放開滑鼠的地方是在 boxA 身上
-        switch (e.dataTransfer.getData('text/plain', e.target.id)) {
-          case 'ru-veg-1': // 'ru-veg-1'
-            VegBoxLeftImg(cauliflowerAfter);
-            // setVegNameA(data[6].productName)
-            // setVegPriceA(data[6].price)
-            // setVegCalA(data[6].calories)
-            setVegNameA(data[8].productName);
-            setVegPriceA(data[8].price);
-            setVegCalA(data[8].calories);
-            setVeg1available(false);
-            setPutAclass('ru-put ru-put-veg-1');
-            break;
-          case 'ru-veg-2':
-            VegBoxLeftImg(cabageAfter);
-            setVegNameA(data[9].productName);
-            setVegPriceA(data[9].price);
-            setVegCalA(data[9].calories);
-            setVeg2available(false);
-            setPutAclass('ru-put ru-put-veg-2');
-            break;
-          case 'ru-veg-3':
-            VegBoxLeftImg(cornAfter);
-            setVegNameA(data[10].productName);
-            setVegPriceA(data[10].price);
-            setVegCalA(data[10].calories);
-            setVeg3available(false);
-            setPutAclass('ru-put ru-put-veg-3');
-            break;
-          case 'ru-veg-4':
-            VegBoxLeftImg(qingjiangAfter);
-            setVegNameA(data[11].productName);
-            setVegPriceA(data[11].price);
-            setVegCalA(data[11].calories);
-            setVeg4available(false);
-            setPutAclass('ru-put ru-put-veg-4');
-            break;
-          case 'ru-veg-5':
-            VegBoxLeftImg(eggplantAfter);
-            setVegNameA(data[12].productName);
-            setVegPriceA(data[12].price);
-            setVegCalA(data[12].calories);
-            setVeg5available(false);
-            setPutAclass('ru-put ru-put-veg-5');
-            break;
-        }
-      } else if (e.target === boxB) {
-        setIsShowHint(false); // 東西放完就關閉示字樣
-        // 配菜B區
-        // 如果放開滑鼠的地方是在 boxB 身上
-        switch (e.dataTransfer.getData('text/plain', e.target.id)) {
-          case 'ru-veg-1': // 'ru-veg-1'
-            setImgB(cauliflowerAfter);
-            setVegNameB(data[8].productName);
-            setVegPriceB(data[8].price);
-            setVegCalB(data[8].calories);
-            setVeg1available(false);
-            setPutBclass('ru-put ru-put-veg-1');
-            break;
-          case 'ru-veg-2':
-            setImgB(cabageAfter);
-            setVegNameB(data[9].productName);
-            setVegPriceB(data[9].price);
-            setVegCalB(data[9].calories);
-            setVeg2available(false);
-            setPutBclass('ru-put ru-put-veg-2');
-            break;
-          case 'ru-veg-3':
-            setImgB(cornAfter);
-            setVegNameB(data[10].productName);
-            setVegPriceB(data[10].price);
-            setVegCalB(data[10].calories);
-            setVeg3available(false);
-            setPutBclass('ru-put ru-put-veg-3');
-            break;
-          case 'ru-veg-4':
-            setImgB(qingjiangAfter);
-            setVegNameB(data[11].productName);
-            setVegPriceB(data[11].price);
-            setVegCalB(data[11].calories);
-            setVeg4available(false);
-            setPutBclass('ru-put ru-put-veg-4');
-            break;
-          case 'ru-veg-5':
-            setImgB(eggplantAfter);
-            setVegNameB(data[12].productName);
-            setVegPriceB(data[12].price);
-            setVegCalB(data[12].calories);
-            setVeg5available(false);
-            setPutBclass('ru-put ru-put-veg-5');
-            break;
-        }
-      } else if (e.target === boxC) {
-        setIsShowHint(false); // 東西放完就關閉示字樣
-        // 配菜C區
-        // 如果放開滑鼠的地方是在 boxC 身上
-        switch (
-          e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
-        ) {
-          case 'ru-veg-1': // 'ru-veg-1'
-            setImgC(cauliflowerAfter); // 就改變state值
-            setVegNameC(data[8].productName);
-            setVegPriceC(data[8].price);
-            setVegCalC(data[8].calories);
-            setVeg1available(false);
-            setPutCclass('ru-put ru-put-veg-1');
-            break;
-          case 'ru-veg-2':
-            setImgC(cabageAfter);
-            setVegNameC(data[9].productName);
-            setVegPriceC(data[9].price);
-            setVegCalC(data[9].calories);
-            setVeg2available(false);
-            setPutCclass('ru-put ru-put-veg-2');
-            break;
-          case 'ru-veg-3':
-            setImgC(cornAfter);
-            setVegNameC(data[10].productName);
-            setVegPriceC(data[10].price);
-            setVegCalC(data[10].calories);
-            setVeg3available(false);
-            setPutCclass('ru-put ru-put-veg-3');
-            break;
-          case 'ru-veg-4':
-            setImgC(qingjiangAfter);
-            setVegNameC(data[11].productName);
-            setVegPriceC(data[11].price);
-            setVegCalC(data[11].calories);
-            setVeg4available(false);
-            setPutCclass('ru-put ru-put-veg-4');
-            break;
-          case 'ru-veg-5':
-            setImgC(eggplantAfter);
-            setVegNameC(data[12].productName);
-            setVegPriceC(data[12].price);
-            setVegCalC(data[12].calories);
-            setVeg5available(false);
-            setPutCclass('ru-put ru-put-veg-5');
-            break;
-        }
-      } else if (
-        e.target === boxD ||
-        e.target === boxE ||
-        e.target === boxF ||
-        e.target === img
-      ) {
-        // 白飯區
-        setIsShowHint(false); // 東西放完就關閉示字樣
-        // console.log(e.dataTransfer.getData('text/plain', e.target.id));
-        switch (
-          e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
-        ) {
-          case 'ru-rice-1': // 'ru-rice-1'
-            setImgD(riceAfter); // 就放入放置後圖片
-            setRiceName(data[0].productName);
-            setRicePrice(data[0].price);
-            setRiceCal(data[0].calories);
-            break;
-          case 'ru-rice-2':
-            setImgD(grainRiceAfter);
-            setRiceName(data[1].productName);
-            setRicePrice(data[1].price);
-            setRiceCal(data[1].calories);
-            break;
-          case 'ru-rice-3':
-            setImgD(redQuinoaAfter);
-            setRiceName(data[2].productName);
-            setRicePrice(data[2].price);
-            setRiceCal(data[2].calories);
-            break;
-          case 'ru-egg-1': // 'ru-egg-1'
-            setImgE(eggAfter); // 就放入放置後圖片
-            setEggName(data[6].productName);
-            setEggPrice(data[6].price);
-            setEggCal(data[6].calories);
-            break;
-          case 'ru-egg-2':
-            setImgE(poachedEggAfter);
-            setEggName(data[7].productName);
-            setEggPrice(data[7].price);
-            setEggCal(data[7].calories);
-            break;
-          case 'ru-meet-1': // 'ru-meet-1'
-            setImgF(chickenBreastAfter); // 就放入放置後圖片
-            setMeetName(data[3].productName);
-            setMeetPrice(data[3].price);
-            setMeetCal(data[3].calories);
-            break;
-          case 'ru-meet-2':
-            setImgF(chickenLegAfter);
-            setMeetName(data[4].productName);
-            setMeetPrice(data[4].price);
-            setMeetCal(data[4].calories);
-            break;
-          case 'ru-meet-3':
-            setImgF(shrimpAfter);
-            setMeetName(data[5].productName);
-            setMeetPrice(data[5].price);
-            setMeetCal(data[5].calories);
-            break;
-        }
-      }
+      //   if (selection !== 'dagfegaeh') {
+      //     return;
+      //   }
+      //   //增刪元素
+      //   // console.log(e.dataTransfer.getData('text/plain', e.target.id)) // 拿到dragStart事件的id
+      //   setPriority('0'); // 白飯容器優先結束
+      //   // 宣告已經放在配菜區內的元素
+      //   const boxer = document.getElementById(
+      //     e.dataTransfer.getData('text/plain', e.target.id)
+      //   );
+      //   // 丟棄邏輯 - 放到這些區域可以丟棄該品項
+      //   if (
+      //     e.target !== boxA &&
+      //     e.target !== boxB &&
+      //     e.target !== boxC &&
+      //     e.target !== boxD &&
+      //     e.target !== boxE &&
+      //     e.target !== boxF
+      //   ) {
+      //     switch (e.dataTransfer.getData('text/plain', e.target.id)) {
+      //       case 'ru-put-1': // 觸發事件在第一個盒子
+      //         // console.log(e.target.className)
+      //         VegBoxLeftImg();
+      //         setVegNameA();
+      //         setVegPriceA(0);
+      //         setVegCalA(0);
+      //         // 復原可控物件邏輯
+      //         // 宣告待會從盒子內取出的目標含有哪些class
+      //         if (
+      //           // 如果配菜區內的既有菜色者的classList包含('ru-put-veg-1')
+      //           boxer.classList.contains('ru-put-veg-1')
+      //         ) {
+      //           setVeg1available(true); // 那被丟棄後就讓選菜區變回可控物件
+      //         } else if (boxer.classList.contains('ru-put-veg-2')) {
+      //           setVeg2available(true);
+      //         } else if (boxer.classList.contains('ru-put-veg-3')) {
+      //           setVeg3available(true);
+      //         } else if (boxer.classList.contains('ru-put-veg-4')) {
+      //           setVeg4available(true);
+      //         } else if (boxer.classList.contains('ru-put-veg-5')) {
+      //           setVeg5available(true);
+      //         }
+      //         break;
+      //       case 'ru-put-2': // 觸發事件在第二個盒子
+      //         setVegBoxMiddleImg();
+      //         setVegNameB();
+      //         setVegPriceB(0);
+      //         setVegCalB(0);
+      //         // 復原可控物件邏輯
+      //         if (boxer.classList.contains('ru-put-veg-1')) {
+      //           // 如果目標classList含有'ru-put-veg-1'
+      //           setVeg1available(true); // 那被丟棄後就讓選菜區變回可控物件
+      //         } else if (boxer.classList.contains('ru-put-veg-2')) {
+      //           setVeg2available(true);
+      //         } else if (boxer.classList.contains('ru-put-veg-3')) {
+      //           setVeg3available(true);
+      //         } else if (boxer.classList.contains('ru-put-veg-4')) {
+      //           setVeg4available(true);
+      //         } else if (boxer.classList.contains('ru-put-veg-5')) {
+      //           setVeg5available(true);
+      //         }
+      //         break;
+      //       case 'ru-put-3': // 觸發事件在第三個盒子
+      //         setImgC();
+      //         setVegNameC();
+      //         setVegPriceC(0);
+      //         setVegCalC(0);
+      //         // 復原可控物件邏輯
+      //         if (boxer.classList.contains('ru-put-veg-1')) {
+      //           // 如果目標classList含有'ru-put-veg-1'
+      //           setVeg1available(true); // 那被丟棄後就讓選菜區變回可控物件
+      //         } else if (boxer.classList.contains('ru-put-veg-2')) {
+      //           setVeg2available(true);
+      //         } else if (boxer.classList.contains('ru-put-veg-3')) {
+      //           setVeg3available(true);
+      //         } else if (boxer.classList.contains('ru-put-veg-4')) {
+      //           setVeg4available(true);
+      //         } else if (boxer.classList.contains('ru-put-veg-5')) {
+      //           setVeg5available(true);
+      //         }
+      //         break;
+      //       case 'ru-put-4': // 觸發事件在第四個盒子
+      //         setImgD();
+      //         setRiceName();
+      //         setRicePrice(0);
+      //         setRiceCal(0);
+      //         break;
+      //       case 'ru-put-5': // 觸發事件在第五個盒子
+      //         setImgE();
+      //         setEggName();
+      //         setEggPrice(0);
+      //         setEggCal(0);
+      //         break;
+      //       case 'ru-put-6': // 觸發事件在第六個盒子
+      //         setImgF();
+      //         setMeetName();
+      //         setMeetPrice(0);
+      //         setMeetPrice(0);
+      //         setMeetCal(0);
+      //         break;
+      //     }
+      //   } else if (e.target === boxA) {
+      //     setIsShowHint(false); // 東西放完就關閉示字樣
+      //     // 配菜A區
+      //     // 如果放開滑鼠的地方是在 boxA 身上
+      //     switch (e.dataTransfer.getData('text/plain', e.target.id)) {
+      //       case 'ru-veg-1': // 'ru-veg-1'
+      //         VegBoxLeftImg(cauliflowerAfter);
+      //         // setVegNameA(data[6].productName)
+      //         // setVegPriceA(data[6].price)
+      //         // setVegCalA(data[6].calories)
+      //         setVegNameA(data[8].productName);
+      //         setVegPriceA(data[8].price);
+      //         setVegCalA(data[8].calories);
+      //         setVeg1available(false);
+      //         setPutAclass('ru-put ru-put-veg-1');
+      //         break;
+      //       case 'ru-veg-2':
+      //         VegBoxLeftImg(cabageAfter);
+      //         setVegNameA(data[9].productName);
+      //         setVegPriceA(data[9].price);
+      //         setVegCalA(data[9].calories);
+      //         setVeg2available(false);
+      //         setPutAclass('ru-put ru-put-veg-2');
+      //         break;
+      //       case 'ru-veg-3':
+      //         VegBoxLeftImg(cornAfter);
+      //         setVegNameA(data[10].productName);
+      //         setVegPriceA(data[10].price);
+      //         setVegCalA(data[10].calories);
+      //         setVeg3available(false);
+      //         setPutAclass('ru-put ru-put-veg-3');
+      //         break;
+      //       case 'ru-veg-4':
+      //         VegBoxLeftImg(qingjiangAfter);
+      //         setVegNameA(data[11].productName);
+      //         setVegPriceA(data[11].price);
+      //         setVegCalA(data[11].calories);
+      //         setVeg4available(false);
+      //         setPutAclass('ru-put ru-put-veg-4');
+      //         break;
+      //       case 'ru-veg-5':
+      //         VegBoxLeftImg(eggplantAfter);
+      //         setVegNameA(data[12].productName);
+      //         setVegPriceA(data[12].price);
+      //         setVegCalA(data[12].calories);
+      //         setVeg5available(false);
+      //         setPutAclass('ru-put ru-put-veg-5');
+      //         break;
+      //     }
+      //   } else if (e.target === boxB) {
+      //     setIsShowHint(false); // 東西放完就關閉示字樣
+      //     // 配菜B區
+      //     // 如果放開滑鼠的地方是在 boxB 身上
+      //     switch (e.dataTransfer.getData('text/plain', e.target.id)) {
+      //       case 'ru-veg-1': // 'ru-veg-1'
+      //         setVegBoxMiddleImg(cauliflowerAfter);
+      //         setVegNameB(data[8].productName);
+      //         setVegPriceB(data[8].price);
+      //         setVegCalB(data[8].calories);
+      //         setVeg1available(false);
+      //         setPutBclass('ru-put ru-put-veg-1');
+      //         break;
+      //       case 'ru-veg-2':
+      //         setVegBoxMiddleImg(cabageAfter);
+      //         setVegNameB(data[9].productName);
+      //         setVegPriceB(data[9].price);
+      //         setVegCalB(data[9].calories);
+      //         setVeg2available(false);
+      //         setPutBclass('ru-put ru-put-veg-2');
+      //         break;
+      //       case 'ru-veg-3':
+      //         setVegBoxMiddleImg(cornAfter);
+      //         setVegNameB(data[10].productName);
+      //         setVegPriceB(data[10].price);
+      //         setVegCalB(data[10].calories);
+      //         setVeg3available(false);
+      //         setPutBclass('ru-put ru-put-veg-3');
+      //         break;
+      //       case 'ru-veg-4':
+      //         setVegBoxMiddleImg(qingjiangAfter);
+      //         setVegNameB(data[11].productName);
+      //         setVegPriceB(data[11].price);
+      //         setVegCalB(data[11].calories);
+      //         setVeg4available(false);
+      //         setPutBclass('ru-put ru-put-veg-4');
+      //         break;
+      //       case 'ru-veg-5':
+      //         setVegBoxMiddleImg(eggplantAfter);
+      //         setVegNameB(data[12].productName);
+      //         setVegPriceB(data[12].price);
+      //         setVegCalB(data[12].calories);
+      //         setVeg5available(false);
+      //         setPutBclass('ru-put ru-put-veg-5');
+      //         break;
+      //     }
+      //   } else if (e.target === boxC) {
+      //     setIsShowHint(false); // 東西放完就關閉示字樣
+      //     // 配菜C區
+      //     // 如果放開滑鼠的地方是在 boxC 身上
+      //     switch (
+      //       e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
+      //     ) {
+      //       case 'ru-veg-1': // 'ru-veg-1'
+      //         setImgC(cauliflowerAfter); // 就改變state值
+      //         setVegNameC(data[8].productName);
+      //         setVegPriceC(data[8].price);
+      //         setVegCalC(data[8].calories);
+      //         setVeg1available(false);
+      //         setPutCclass('ru-put ru-put-veg-1');
+      //         break;
+      //       case 'ru-veg-2':
+      //         setImgC(cabageAfter);
+      //         setVegNameC(data[9].productName);
+      //         setVegPriceC(data[9].price);
+      //         setVegCalC(data[9].calories);
+      //         setVeg2available(false);
+      //         setPutCclass('ru-put ru-put-veg-2');
+      //         break;
+      //       case 'ru-veg-3':
+      //         setImgC(cornAfter);
+      //         setVegNameC(data[10].productName);
+      //         setVegPriceC(data[10].price);
+      //         setVegCalC(data[10].calories);
+      //         setVeg3available(false);
+      //         setPutCclass('ru-put ru-put-veg-3');
+      //         break;
+      //       case 'ru-veg-4':
+      //         setImgC(qingjiangAfter);
+      //         setVegNameC(data[11].productName);
+      //         setVegPriceC(data[11].price);
+      //         setVegCalC(data[11].calories);
+      //         setVeg4available(false);
+      //         setPutCclass('ru-put ru-put-veg-4');
+      //         break;
+      //       case 'ru-veg-5':
+      //         setImgC(eggplantAfter);
+      //         setVegNameC(data[12].productName);
+      //         setVegPriceC(data[12].price);
+      //         setVegCalC(data[12].calories);
+      //         setVeg5available(false);
+      //         setPutCclass('ru-put ru-put-veg-5');
+      //         break;
+      //     }
+      //   } else if (
+      //     e.target === boxD ||
+      //     e.target === boxE ||
+      //     e.target === boxF ||
+      //     e.target === img
+      //   ) {
+      //     // 白飯區
+      //     setIsShowHint(false); // 東西放完就關閉示字樣
+      //     // console.log(e.dataTransfer.getData('text/plain', e.target.id));
+      //     switch (
+      //       e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
+      //     ) {
+      //       case 'ru-rice-1': // 'ru-rice-1'
+      //         setImgD(riceAfter); // 就放入放置後圖片
+      //         setRiceName(data[0].productName);
+      //         setRicePrice(data[0].price);
+      //         setRiceCal(data[0].calories);
+      //         break;
+      //       case 'ru-rice-2':
+      //         setImgD(grainRiceAfter);
+      //         setRiceName(data[1].productName);
+      //         setRicePrice(data[1].price);
+      //         setRiceCal(data[1].calories);
+      //         break;
+      //       case 'ru-rice-3':
+      //         setImgD(redQuinoaAfter);
+      //         setRiceName(data[2].productName);
+      //         setRicePrice(data[2].price);
+      //         setRiceCal(data[2].calories);
+      //         break;
+      //       case 'ru-egg-1': // 'ru-egg-1'
+      //         setImgE(eggAfter); // 就放入放置後圖片
+      //         setEggName(data[6].productName);
+      //         setEggPrice(data[6].price);
+      //         setEggCal(data[6].calories);
+      //         break;
+      //       case 'ru-egg-2':
+      //         setImgE(poachedEggAfter);
+      //         setEggName(data[7].productName);
+      //         setEggPrice(data[7].price);
+      //         setEggCal(data[7].calories);
+      //         break;
+      //       case 'ru-meet-1': // 'ru-meet-1'
+      //         setImgF(chickenBreastAfter); // 就放入放置後圖片
+      //         setMeetName(data[3].productName);
+      //         setMeetPrice(data[3].price);
+      //         setMeetCal(data[3].calories);
+      //         break;
+      //       case 'ru-meet-2':
+      //         setImgF(chickenLegAfter);
+      //         setMeetName(data[4].productName);
+      //         setMeetPrice(data[4].price);
+      //         setMeetCal(data[4].calories);
+      //         break;
+      //       case 'ru-meet-3':
+      //         setImgF(shrimpAfter);
+      //         setMeetName(data[5].productName);
+      //         setMeetPrice(data[5].price);
+      //         setMeetCal(data[5].calories);
+      //         break;
+      //     }
+      //   }
     }
 
     function dragleave(e) {
@@ -629,7 +619,7 @@ function CustomBento(props) {
     }
   }, [
     vegBoxLeftImg,
-    imgB,
+    vegBoxMiddleImg,
     imgC,
     imgD,
     imgE,
@@ -705,7 +695,7 @@ function CustomBento(props) {
 
                   <div id="ru-areaB" ref={$vegBoxMiddle} onDrop={onDrop}>
                     <img
-                      src={imgB}
+                      src={vegBoxMiddleImg}
                       draggable="true"
                       className={putBclass}
                       id="ru-put-2"
