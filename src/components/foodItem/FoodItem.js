@@ -10,6 +10,8 @@ const FoodItem = React.forwardRef((props, ref) => {
     style,
     dragTargetId = '',
     dragTargetClassName = '',
+    onDragStart = () => {},
+    dragDataSid,
   } = props;
 
   return (
@@ -20,17 +22,20 @@ const FoodItem = React.forwardRef((props, ref) => {
           {isAvailable ? (
             <img
               src={`http://localhost:5000/svg/${foodItem.image}`}
-              ref={ref}
               id={`${dragTargetId}`}
               className={dragTargetClassName}
+              ref={ref}
+              onDragStart={onDragStart}
+              data-sid={dragDataSid}
             ></img>
           ) : (
             <img
               src={`http://localhost:5000/svg/${foodItem.image}`}
-              ref={ref}
               id={`${dragTargetId}`}
               className={dragTargetClassName}
               style={{ pointerEvents: 'none', filter: 'grayscale(100%)' }}
+              ref={ref}
+              data-sid={dragDataSid}
             ></img>
           )}
           {/* 可否選擇邏輯 e */}

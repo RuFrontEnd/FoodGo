@@ -46,7 +46,13 @@ import { ReactComponent as LunchBox } from 'assets/svg/lunchBox.svg'; // 將svg�
 
 function CustomBento(props) {
   const { handleCartNumber, amount, setAmount, count, setCount } = props;
-
+  const $dragTarget = useRef();
+  const $vegBoxLeft = useRef();
+  const $vegBoxMiddle = useRef();
+  const $vegBoxRight = useRef();
+  const $riceBox = useRef();
+  const $eggBox = useRef();
+  const $meetBox = useRef();
   const [moveX, setMoveX] = useState(0); // 選項區滑動變亮(RuArrowRight / RuArrowLeft 調整)
   const [isPrice, setIsPrice] = useState(true); // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false); // 是否開啟營養標示
@@ -107,13 +113,12 @@ function CustomBento(props) {
 
   // 包後端資料的state
   const [data, setData] = useState('');
+  const [filteredData, setFilteredData] = useState([]);
   const [foodItems, setFoodItems] = useState([]);
 
   // 給localStorage的id
   let today = +new Date();
   const [todayId, setTodayId] = useState(today);
-
-  const $dragTargetRef = useRef();
 
   // 切換售價與營養標示
   function switchPrice() {
@@ -124,6 +129,78 @@ function CustomBento(props) {
     setIsPrice(false);
     setIsCal(true);
   }
+
+  // 開始拖曳品項
+  const onDragStart = (e) => {
+    if (e.target.classList.contains('ru-rice')) {
+      setPriority('100'); // 如果是白飯選區內的選項, 白飯容器就優先
+    }
+    e.dataTransfer.setData('text/plain', e.target.dataset.sid);
+  };
+
+  // 品項放到目標容器
+  const onDrop = (e) => {
+    setPriority('0'); // 白飯容器優先結束
+    console.log('$vegBoxLeft', $vegBoxLeft);
+
+    // 放置容器是左蔬菜區
+    if (e.target.id === $vegBoxLeft.current.id) {
+      setIsShowHint(false); // 東西放完就關閉示字樣
+      // console.log('filteredData', filteredData);
+      filteredData.forEach((dataItem) => {
+        let targetSid = Number(
+          e.dataTransfer.getData('text/plain', e.target.dataset.sid)
+        );
+        if (targetSid === dataItem.sid) {
+          console.log('dataItem.sid', dataItem.sid);
+          
+        }
+      });
+
+      // switch (e.dataTransfer.getData('text/plain', e.target.id)) {
+      //   case 'ru-veg-1': // 'ru-veg-1'
+      //     setImgA(cauliflowerAfter);
+      //     // setVegNameA(data[8].productName);
+      //     // setVegPriceA(data[8].price);
+      //     // setVegCalA(data[8].calories);
+      //     // setVeg1available(false);
+      //     // setPutAclass('ru-put ru-put-veg-1');
+      //     break;
+      //   case 'ru-veg-2':
+      //     setImgA(cabageAfter);
+      //     // setVegNameA(data[9].productName);
+      //     // setVegPriceA(data[9].price);
+      //     // setVegCalA(data[9].calories);
+      //     // setVeg2available(false);
+      //     // setPutAclass('ru-put ru-put-veg-2');
+      //     break;
+      //   case 'ru-veg-3':
+      //     setImgA(cornAfter);
+      //     // setVegNameA(data[10].productName);
+      //     // setVegPriceA(data[10].price);
+      //     // setVegCalA(data[10].calories);
+      //     // setVeg3available(false);
+      //     // setPutAclass('ru-put ru-put-veg-3');
+      //     break;
+      //   case 'ru-veg-4':
+      //     setImgA(qingjiangAfter);
+      //     // setVegNameA(data[11].productName);
+      //     // setVegPriceA(data[11].price);
+      //     // setVegCalA(data[11].calories);
+      //     // setVeg4available(false);
+      //     // setPutAclass('ru-put ru-put-veg-4');
+      //     break;
+      //   case 'ru-veg-5':
+      //     setImgA(eggplantAfter);
+      //     // setVegNameA(data[12].productName);
+      //     // setVegPriceA(data[12].price);
+      //     // setVegCalA(data[12].calories);
+      //     // setVeg5available(false);
+      //     // setPutAclass('ru-put ru-put-veg-5');
+      //     break;
+      // }
+    }
+  };
 
   // 向後端請求資料
   useEffect(() => {
@@ -141,56 +218,34 @@ function CustomBento(props) {
     if (!data) {
       return;
     }
+    let foods = [];
     if (selection === 'rice') {
-      const rices = data.filter((dataItem) => dataItem.categories === 'rice');
-      const _foodItems = rices.map((rice, riceIndex) => (
-        <FoodItem
-          foodItem={rice}
-          ref={$dragTargetRef}
-          dragTargetId={`ru-rice-${riceIndex + 1}`}
-          dragTargetClassName={'ru-items'}
-        />
-      ));
-      return setFoodItems(_foodItems);
+      foods = data.filter((dataItem) => dataItem.categories === 'rice');
+      setFilteredData(foods);
     }
     if (selection === 'vegetable') {
-      const vegtables = data.filter(
-        (dataItem) => dataItem.categories === 'vegetable'
-      );
-      const _foodItems = vegtables.map((vegtable, vegtableItem) => (
-        <FoodItem
-          foodItem={vegtable}
-          ref={$dragTargetRef}
-          dragTargetId={`ru-vegtable-${vegtableItem + 1}`}
-          dragTargetClassName={'ru-items'}
-        />
-      ));
-      return setFoodItems(_foodItems);
+      foods = data.filter((dataItem) => dataItem.categories === 'vegetable');
+      setFilteredData(foods);
     }
     if (selection === 'meet') {
-      const meets = data.filter((dataItem) => dataItem.categories === 'meet');
-      const _foodItems = meets.map((meet, meetIndex) => (
-        <FoodItem
-          foodItem={meet}
-          ref={$dragTargetRef}
-          dragTargetId={`ru-meet-${meetIndex + 1}`}
-          dragTargetClassName={'ru-items'}
-        />
-      ));
-      return setFoodItems(_foodItems);
+      foods = data.filter((dataItem) => dataItem.categories === 'meet');
+      setFilteredData(foods);
     }
     if (selection === 'egg') {
-      const eggs = data.filter((dataItem) => dataItem.categories === 'egg');
-      const _foodItems = eggs.map((egg, eggIndex) => (
-        <FoodItem
-          foodItem={egg}
-          ref={$dragTargetRef}
-          dragTargetId={`ru-egg-${eggIndex + 1}`}
-          dragTargetClassName={'ru-items'}
-        />
-      ));
-      return setFoodItems(_foodItems);
+      foods = data.filter((dataItem) => dataItem.categories === 'egg');
+      setFilteredData(foods);
     }
+    const _foodItems = foods.map((food, foodsIndex) => (
+      <FoodItem
+        foodItem={food}
+        ref={$dragTarget}
+        dragTargetId={`${selection}-${foodsIndex + 1}`}
+        dragTargetClassName={'ru-items'}
+        onDragStart={onDragStart}
+        dragDataSid={food.sid}
+      />
+    ));
+    setFoodItems(_foodItems);
   }, [data, selection]);
 
   useEffect(() => {
@@ -198,7 +253,6 @@ function CustomBento(props) {
     if (!data && !foodItems) {
       return;
     }
-    // console.log($dragTargetRef);
     const items = document.querySelectorAll('.ru-items');
     // console.log(items);
     const puts = document.querySelectorAll('.ru-put');
@@ -261,6 +315,9 @@ function CustomBento(props) {
 
     // 目的地 - 放下時
     function dropped(e) {
+      if (selection !== 'dagfegaeh') {
+        return;
+      }
       //增刪元素
       // console.log(e.dataTransfer.getData('text/plain', e.target.id)) // 拿到dragStart事件的id
       setPriority('0'); // 白飯容器優先結束
@@ -628,7 +685,11 @@ function CustomBento(props) {
                   <div id="ru-hintA">
                     {isShowHintA && <img src={hintA}></img>}
                   </div>
-                  <div id="ru-areaA">
+                  <div
+                    id="custom-bento-vegBox-left"
+                    ref={$vegBoxLeft}
+                    onDrop={onDrop}
+                  >
                     <img
                       src={imgA}
                       draggable="true"
@@ -642,7 +703,7 @@ function CustomBento(props) {
                     {isShowHintB && <img src={hintB}></img>}
                   </div>
 
-                  <div id="ru-areaB">
+                  <div id="ru-areaB" ref={$vegBoxMiddle} onDrop={onDrop}>
                     <img
                       src={imgB}
                       draggable="true"
@@ -656,7 +717,7 @@ function CustomBento(props) {
                     {isShowHintC && <img src={hintC}></img>}
                   </div>
 
-                  <div id="ru-areaC">
+                  <div id="ru-areaC" ref={$vegBoxRight} onDrop={onDrop}>
                     <img
                       src={imgC}
                       draggable="true"
@@ -669,7 +730,12 @@ function CustomBento(props) {
                   <div id="ru-hintD">
                     {isShowHintD && <img src={hintD}></img>}
                   </div>
-                  <div id="ru-areaD" style={{ zIndex: priority }}>
+                  <div
+                    id="ru-areaD"
+                    ref={$riceBox}
+                    style={{ zIndex: priority }}
+                    onDrop={onDrop}
+                  >
                     <img
                       src={imgD}
                       draggable="true"
@@ -683,7 +749,7 @@ function CustomBento(props) {
                     {isShowHintE && <img src={hintE}></img>}
                   </div>
 
-                  <div id="ru-areaE">
+                  <div id="ru-areaE" ref={$eggBox} onDrop={onDrop}>
                     <img
                       src={imgE}
                       draggable="true"
@@ -697,7 +763,7 @@ function CustomBento(props) {
                     {isShowHintF && <img src={hintF}></img>}
                   </div>
 
-                  <div id="ru-areaF">
+                  <div id="ru-areaF" ref={$meetBox} onDrop={onDrop}>
                     <img
                       src={imgF}
                       draggable="true"
