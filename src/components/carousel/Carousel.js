@@ -16,8 +16,6 @@ function Carousel(props) {
   const $slider = useRef();
   const $carousel = useRef();
 
-  // console.log('CarouselItems', CarouselItems);
-
   const [direction, setDirection] = useState(-1);
   const [items, setItems] = useState(CarouselItems);
   const [carouselBWidth, setCarouselBWidth] = useState(width);
@@ -29,6 +27,7 @@ function Carousel(props) {
     carouselItemWidth * ((items.length - 3) / 2)
   );
   const [btnSize, setBtnSize] = useState(buttonSize);
+  const [isLoading, setIsLoading] = useState(false);
 
   window.addEventListener('resize', () => {
     // 優化效能
@@ -73,14 +72,14 @@ function Carousel(props) {
   });
 
   useEffect(() => {
+    setIsLoading(true);
     setItems(CarouselItems);
   }, [CarouselItems]);
 
   useEffect(() => {
-    if (carouselBWidth) {
-      setCarouselBSliderWidth(carouselItemWidth * items.length);
-      setCarouselBSliderLeft(carouselItemWidth * ((items.length - 3) / 2));
-    }
+    setCarouselBSliderWidth(carouselItemWidth * items.length);
+    setCarouselBSliderLeft(carouselItemWidth * ((items.length - 3) / 2));
+    setIsLoading(false);
   }, [carouselBWidth, items]);
 
   // inline style
@@ -134,9 +133,7 @@ function Carousel(props) {
               ref={$slider}
             >
               {items.map((item, index) => (
-                <>
-                  <li key={index}>{item}</li>
-                </>
+                <>{isLoading ? <></> : <li key={index}>{item}</li>}</>
               ))}
             </ul>
             <div
@@ -145,12 +142,14 @@ function Carousel(props) {
               onClick={handlePrev}
               style={{ top: `calc(50% - ${btnSize / 2}px)` }}
             >
-              <Arrow
-                style={{
-                  width: btnSize,
-                  height: btnSize,
-                }}
-              ></Arrow>
+              {CarouselItems.length > 3 && (
+                <Arrow
+                  style={{
+                    width: btnSize,
+                    height: btnSize,
+                  }}
+                ></Arrow>
+              )}
             </div>
             <div
               id="carousel-next"
@@ -158,13 +157,15 @@ function Carousel(props) {
               onClick={handleNext}
               style={{ top: `calc(50% - ${btnSize / 2}px)` }}
             >
-              <Arrow
-                style={{
-                  width: btnSize,
-                  height: btnSize,
-                  transform: 'scaleX(-1)',
-                }}
-              ></Arrow>
+              {CarouselItems.length > 3 && (
+                <Arrow
+                  style={{
+                    width: btnSize,
+                    height: btnSize,
+                    transform: 'scaleX(-1)',
+                  }}
+                ></Arrow>
+              )}
             </div>
           </div>
         </div>

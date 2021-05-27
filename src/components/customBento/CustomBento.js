@@ -13,6 +13,7 @@ import RuVegetableA from 'Ru/Components/RuFoodItems/RuVegetableA/RuVegetableA';
 import RuEggA from 'Ru/Components/RuFoodItems/RuEggA/RuEggA';
 import RuCutsomHint from 'Ru/Components/RuCutsomHint/RuCutsomHint';
 import Carousel from 'components/carousel/Carousel';
+import FoodItem from 'components/foodItem/FoodItem';
 
 // 引用共用元件
 import cauliflower from './Images/cauliflower.svg'; // rwd暫放(待刪)
@@ -107,6 +108,7 @@ function CustomBento(props) {
 
   // 包後端資料的state
   const [data, setData] = useState('');
+  const [foodItems, setFoodItems] = useState([]);
 
   // 給localStorage的id
   let today = +new Date();
@@ -138,9 +140,22 @@ function CustomBento(props) {
     if (!data) {
       return;
     }
-    const _vegetableItems = data.map((_dataItem) => '123');
-    setVegetableItems(_vegetableItems);
-  }, [data]);
+    if (selection === 'rice') {
+      const rices = data.filter((dataItem) => dataItem.categories === 'rice');
+      const _foodItems = rices.map((rice) => <FoodItem foodItem={rice} />);
+      return setFoodItems(_foodItems);
+    }
+    if (selection === 'vegetable') {
+      const vegtables = data.filter(
+        (dataItem) => dataItem.categories === 'vegetable'
+      );
+      const _foodItems = vegtables.map((vegtable) => (
+        <FoodItem foodItem={vegtable} />
+      ));
+      return setFoodItems(_foodItems);
+    }
+
+  }, [data, selection]);
 
   useEffect(() => {
     // console.log(data)
@@ -866,15 +881,15 @@ function CustomBento(props) {
               </div>
               <Carousel
                 id={'customBento-carousel'}
-                CarouselItems={vegetableItems}
+                CarouselItems={foodItems}
                 width={1170}
                 buttonSize={100}
                 breakpoints={{
-                  s: { point: 576, width: 400, btnsize:100 },
-                  m: { point: 768, width: 800, btnsize:100 },
-                  l: { point: 1024, width: 960, btnsize:100 },
-                  xl: { point: 1200, width: 1170, btnsize:100 },
-                  xxl: { point: 1440, width: 1170, btnsize:100 },
+                  s: { point: 576, width: 400, btnsize: 100 },
+                  m: { point: 768, width: 800, btnsize: 100 },
+                  l: { point: 1024, width: 960, btnsize: 100 },
+                  xl: { point: 1200, width: 1170, btnsize: 100 },
+                  xxl: { point: 1440, width: 1170, btnsize: 100 },
                 }}
               />
               {/* <RuArrowLeft moveX={moveX} setMoveX={setMoveX} />
