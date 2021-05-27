@@ -1,5 +1,5 @@
 import React from 'react';
-import 'components/foodItem/foodItem.scss'; // 單獨
+import 'components/foodItem/foodItem.scss';
 
 // 網頁版 配菜 選項
 function FoodItem(props) {
