@@ -58,7 +58,7 @@ function CustomBento(props) {
   const [isCal, setIsCal] = useState(false); // 是否開啟營養標示
   const [selection, setSelection] = useState('rice'); // 選擇開啟哪個菜色選區
   const [limitX, setLimitX] = useState(0); // 右滑極限值 => 白飯選區為初始值 (RuButtonB可以調不同選項區的極限值)
-  const [imgA, setImgA] = useState();
+  const [vegBoxLeftImg, VegBoxLeftImg] = useState();
   const [imgB, setImgB] = useState();
   const [imgC, setImgC] = useState();
   const [imgD, setImgD] = useState();
@@ -153,13 +153,13 @@ function CustomBento(props) {
         );
         if (targetSid === dataItem.sid) {
           console.log('dataItem.sid', dataItem.sid);
-          
+          VegBoxLeftImg(`http://localhost:5000/svg/${dataItem.unfoldImage}`);
         }
       });
 
       // switch (e.dataTransfer.getData('text/plain', e.target.id)) {
       //   case 'ru-veg-1': // 'ru-veg-1'
-      //     setImgA(cauliflowerAfter);
+      //     VegBoxLeftImg(cauliflowerAfter);
       //     // setVegNameA(data[8].productName);
       //     // setVegPriceA(data[8].price);
       //     // setVegCalA(data[8].calories);
@@ -167,7 +167,7 @@ function CustomBento(props) {
       //     // setPutAclass('ru-put ru-put-veg-1');
       //     break;
       //   case 'ru-veg-2':
-      //     setImgA(cabageAfter);
+      //     VegBoxLeftImg(cabageAfter);
       //     // setVegNameA(data[9].productName);
       //     // setVegPriceA(data[9].price);
       //     // setVegCalA(data[9].calories);
@@ -175,7 +175,7 @@ function CustomBento(props) {
       //     // setPutAclass('ru-put ru-put-veg-2');
       //     break;
       //   case 'ru-veg-3':
-      //     setImgA(cornAfter);
+      //     VegBoxLeftImg(cornAfter);
       //     // setVegNameA(data[10].productName);
       //     // setVegPriceA(data[10].price);
       //     // setVegCalA(data[10].calories);
@@ -183,7 +183,7 @@ function CustomBento(props) {
       //     // setPutAclass('ru-put ru-put-veg-3');
       //     break;
       //   case 'ru-veg-4':
-      //     setImgA(qingjiangAfter);
+      //     VegBoxLeftImg(qingjiangAfter);
       //     // setVegNameA(data[11].productName);
       //     // setVegPriceA(data[11].price);
       //     // setVegCalA(data[11].calories);
@@ -191,7 +191,7 @@ function CustomBento(props) {
       //     // setPutAclass('ru-put ru-put-veg-4');
       //     break;
       //   case 'ru-veg-5':
-      //     setImgA(eggplantAfter);
+      //     VegBoxLeftImg(eggplantAfter);
       //     // setVegNameA(data[12].productName);
       //     // setVegPriceA(data[12].price);
       //     // setVegCalA(data[12].calories);
@@ -338,7 +338,7 @@ function CustomBento(props) {
         switch (e.dataTransfer.getData('text/plain', e.target.id)) {
           case 'ru-put-1': // 觸發事件在第一個盒子
             // console.log(e.target.className)
-            setImgA();
+            VegBoxLeftImg();
             setVegNameA();
             setVegPriceA(0);
             setVegCalA(0);
@@ -423,7 +423,7 @@ function CustomBento(props) {
         // 如果放開滑鼠的地方是在 boxA 身上
         switch (e.dataTransfer.getData('text/plain', e.target.id)) {
           case 'ru-veg-1': // 'ru-veg-1'
-            setImgA(cauliflowerAfter);
+            VegBoxLeftImg(cauliflowerAfter);
             // setVegNameA(data[6].productName)
             // setVegPriceA(data[6].price)
             // setVegCalA(data[6].calories)
@@ -434,7 +434,7 @@ function CustomBento(props) {
             setPutAclass('ru-put ru-put-veg-1');
             break;
           case 'ru-veg-2':
-            setImgA(cabageAfter);
+            VegBoxLeftImg(cabageAfter);
             setVegNameA(data[9].productName);
             setVegPriceA(data[9].price);
             setVegCalA(data[9].calories);
@@ -442,7 +442,7 @@ function CustomBento(props) {
             setPutAclass('ru-put ru-put-veg-2');
             break;
           case 'ru-veg-3':
-            setImgA(cornAfter);
+            VegBoxLeftImg(cornAfter);
             setVegNameA(data[10].productName);
             setVegPriceA(data[10].price);
             setVegCalA(data[10].calories);
@@ -450,7 +450,7 @@ function CustomBento(props) {
             setPutAclass('ru-put ru-put-veg-3');
             break;
           case 'ru-veg-4':
-            setImgA(qingjiangAfter);
+            VegBoxLeftImg(qingjiangAfter);
             setVegNameA(data[11].productName);
             setVegPriceA(data[11].price);
             setVegCalA(data[11].calories);
@@ -458,7 +458,7 @@ function CustomBento(props) {
             setPutAclass('ru-put ru-put-veg-4');
             break;
           case 'ru-veg-5':
-            setImgA(eggplantAfter);
+            VegBoxLeftImg(eggplantAfter);
             setVegNameA(data[12].productName);
             setVegPriceA(data[12].price);
             setVegCalA(data[12].calories);
@@ -628,7 +628,7 @@ function CustomBento(props) {
       // console.log('dragleave')
     }
   }, [
-    imgA,
+    vegBoxLeftImg,
     imgB,
     imgC,
     imgD,
@@ -691,7 +691,7 @@ function CustomBento(props) {
                     onDrop={onDrop}
                   >
                     <img
-                      src={imgA}
+                      src={vegBoxLeftImg}
                       draggable="true"
                       className={putAclass}
                       id="ru-put-1"
