@@ -7,10 +7,10 @@ function Footer() {
   return (
     <>
       <div style={{paddingTop:"150px"}}></div>
-      <section className="footer-container">
-        <div className="footer-wrap">
-          <div className="footer-text-box">
-            <div className="footer-text">
+      <section id="footer-container">
+        <div id="footer-wrap">
+          <div id="footer-text-box">
+            <div id="footer-text">
               <a href="#">
                 <p>常見問題</p>
               </a>
@@ -25,7 +25,7 @@ function Footer() {
               </a>
             </div>
           </div>
-          <div className="footer-icons">
+          <div id="footer-icons">
             <a>
               <img src={Facebook} />
             </a>
@@ -33,8 +33,8 @@ function Footer() {
               <img src={Instagram} />
             </a>
           </div>
-          <div className="footer-copyright">
-            <p>Copyright © 2020 拾餐便當. All rights reserved.</p>
+          <div id="footer-copyright">
+            <p>Copyright © 2021 拾餐便當. All rights reserved.</p>
           </div>
         </div>
       </section>
