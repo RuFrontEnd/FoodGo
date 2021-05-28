@@ -117,6 +117,7 @@ function CustomBento(props) {
     setIsPrice(true);
     setIsCal(false);
   }
+  
   function switchCal() {
     setIsPrice(false);
     setIsCal(true);
@@ -356,80 +357,6 @@ function CustomBento(props) {
     ));
     setFoodItems(_foodItems);
   }, [foods]);
-
-  useEffect(() => {
-    // 品項置入便當盒 邏輯
-    if (!data && !foodItems) {
-      return;
-    }
-    const items = document.querySelectorAll('.ru-items');
-    // console.log(items);
-    const puts = document.querySelectorAll('.ru-put');
-    // console.log(puts)
-    const $dropTarget = document.getElementById('ru-dropArea');
-
-    items.forEach((i) => {
-      i.addEventListener('dragstart', dragStart); // drag
-    });
-    puts.forEach((i) => {
-      i.addEventListener('dragstart', dragStart); // drag
-    });
-    // $dragSource.addEventListener('drag', drag) // drag
-    // $dragSource.addEventListener('dragend', dragend) // drag
-    $dropTarget.addEventListener('dragenter', dragenter); // drop
-    $dropTarget.addEventListener('dragover', dragover); // drop
-    $dropTarget.addEventListener('dragleave', dragleave); // drag
-    $dropTarget.addEventListener('drop', dropped); // drop
-
-    // 來源 - 開始拖曳時
-    function dragStart(e) {
-      // console.log('e.target.id', e.target.id);
-      if (e.target.classList.contains('ru-rice')) {
-        // 如果是白飯選區內的選項
-        setPriority('100'); // 白飯容器就優先
-      }
-      e.dataTransfer.setData('text/plain', e.target.id); // 把 source 的id往drop事件傳遞
-    }
-
-    // 來源 - 拖曳中時
-    function drag(e) {}
-
-    // 來源 - 拖曳結束時
-    function dragend(e) {}
-
-    // 目的地 - 進到放置區時
-    function dragenter(e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-
-    // 目的地 - 進到放置區時拖動(反覆觸發)
-    function dragover(e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-
-    // 目的地 - 離開放置區時
-    function dragleave(e) {}
-
-    // 目的地 - 放下時
-    function dropped(e) {}
-
-    function dragleave(e) {
-      // console.log('dragleave')
-    }
-  }, [
-    vegBoxLeftImg,
-    vegBoxMiddleImg,
-    vegBoxRightImg,
-    riceImg,
-    meetImg,
-    eggImg,
-    selection,
-    isCanBuy,
-    data,
-    foodItems,
-  ]); // 要加入selection, 不然切換菜色選區後抓不到真實DOM
 
   // 購物車選購完畢開啟加入購物車按鈕邏輯
   useEffect(() => {
