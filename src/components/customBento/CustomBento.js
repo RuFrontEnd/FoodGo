@@ -221,47 +221,47 @@ function CustomBento(props) {
   const handleDropBoxItem = (e) => {
     const targetId = e.dataTransfer.getData('text/plain', e.target.id);
 
-    if (targetId === 'customBento-foodItem-vegBoxLeft') {
+    if (targetId === 'customBento-boxItem-vegBoxLeft') {
       setVegBoxLeftImg();
       setVegNameA();
       setVegPriceA();
       setVegCalA();
     } // 左邊蔬菜區
 
-    if (targetId === 'customBento-foodItem-vegBoxMiddle') {
+    if (targetId === 'customBento-boxItem-vegBoxMiddle') {
       setVegBoxMiddleImg();
       setVegNameB();
       setVegPriceB();
       setVegCalB();
     } // 中間蔬菜區
 
-    if (targetId === 'customBento-foodItem-vegBoxRight') {
+    if (targetId === 'customBento-boxItem-vegBoxRight') {
       setvegBoxRightImg();
       setVegNameC();
       setVegPriceC();
       setVegCalC();
     } // 右邊蔬菜區
 
-    if (targetId === 'customBento-foodItem-rice') {
+    if (targetId === 'customBento-boxItem-rice') {
       setRiceImg();
       setRiceName();
       setRicePrice();
       setRiceCal();
     } // 白飯區
 
-    if (targetId === 'customBento-foodItem-egg') {
+    if (targetId === 'customBento-boxItem-meet') {
       setMeetImg();
       setMeetName();
       setMeetPrice();
       setMeetCal();
-    } // 主食區
+    } // 蛋區
 
-    if (targetId === 'customBento-foodItem-meet') {
+    if (targetId === 'customBento-boxItem-egg') {
       setEggImg();
       setEggName();
       setEggPrice();
       setEggCal();
-    } // 蛋區
+    } // 主食區
   };
 
   // 向後端請求資料
@@ -462,7 +462,7 @@ function CustomBento(props) {
                       src={vegBoxLeftImg}
                       draggable="true"
                       className="customBento-put-container"
-                      id="customBento-foodItem-vegBoxLeft"
+                      id="customBento-boxItem-vegBoxLeft"
                       onDragStart={handleDragBoxItem}
                     ></img>
                   </div>
@@ -481,7 +481,7 @@ function CustomBento(props) {
                       src={vegBoxMiddleImg}
                       draggable="true"
                       className="customBento-put-container"
-                      id="customBento-foodItem-vegBoxMiddle"
+                      id="customBento-boxItem-vegBoxMiddle"
                       onDragStart={handleDragBoxItem}
                     ></img>
                   </div>
@@ -500,7 +500,7 @@ function CustomBento(props) {
                       src={vegBoxRightImg}
                       draggable="true"
                       className="customBento-put-container"
-                      id="customBento-foodItem-vegBoxRight"
+                      id="customBento-boxItem-vegBoxRight"
                       onDragStart={handleDragBoxItem}
                     ></img>
                   </div>
@@ -519,7 +519,7 @@ function CustomBento(props) {
                       src={riceImg}
                       draggable="true"
                       className="customBento-put-container"
-                      id="customBento-foodItem-rice"
+                      id="customBento-boxItem-rice"
                       onDragStart={handleDragBoxItem}
                     ></img>
                   </div>
@@ -534,7 +534,7 @@ function CustomBento(props) {
                       src={eggImg}
                       draggable="true"
                       className="customBento-put-container"
-                      id="customBento-foodItem-egg"
+                      id="customBento-boxItem-egg"
                       onDragStart={handleDragBoxItem}
                     ></img>
                   </div>
@@ -549,7 +549,7 @@ function CustomBento(props) {
                       src={meetImg}
                       draggable="true"
                       className="customBento-put-container"
-                      id="customBento-foodItem-meet"
+                      id="customBento-boxItem-meet"
                       onDragStart={handleDragBoxItem}
                     ></img>
                   </div>
