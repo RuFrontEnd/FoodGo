@@ -39,35 +39,35 @@ function Carousel(props) {
     // 判斷響應式width
     if (window.innerWidth >= breakpoints.xxl.point) {
       setCarouselBWidth(breakpoints.xxl.width);
-      setBtnSize(breakpoints.xxl.btnSize);
+      // setBtnSize(breakpoints.xxl.btnSize);
     }
     if (
       window.innerWidth < breakpoints.xxl.point &&
       window.innerWidth >= breakpoints.xl.point
     ) {
       setCarouselBWidth(breakpoints.xl.width);
-      setBtnSize(breakpoints.xxl.btnSize);
+      // setBtnSize(breakpoints.xxl.btnSize);
     }
     if (
       window.innerWidth < breakpoints.xl.point &&
       window.innerWidth >= breakpoints.l.point
     ) {
       setCarouselBWidth(breakpoints.l.width);
-      setBtnSize(breakpoints.xxl.btnSize);
+      // setBtnSize(breakpoints.xxl.btnSize);
     }
     if (
       window.innerWidth < breakpoints.l.point &&
       window.innerWidth >= breakpoints.m.point
     ) {
       setCarouselBWidth(breakpoints.m.width);
-      setBtnSize(breakpoints.xxl.btnSize);
+      // setBtnSize(breakpoints.xxl.btnSize);
     }
     if (
       window.innerWidth < breakpoints.m.point &&
       window.innerWidth >= breakpoints.s.point
     ) {
       setCarouselBWidth(breakpoints.s.width);
-      setBtnSize(breakpoints.xxl.btnSize);
+      // setBtnSize(breakpoints.xxl.btnSize);
     }
   });
 
