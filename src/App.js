@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // components
 import Navbar from 'components/navBar/NavBar';
-import Footer from 'Share/Components/Footer/Footer';
+import Footer from 'components/footer/Footer';
 import LoginModal from 'components/loginModal/LoginModal';
 
 // 引入 所有人的總元件

@@ -1,12 +1,11 @@
 import React from 'react';
-import './Footer.scss';
-import Facebook from '../Images/SVG/facebook.svg';
-import Instagram from '../Images/SVG/instagram.svg';
+import 'components/footer/footer.scss';
+import Facebook from 'assets/svg/facebook.svg';
+import Instagram from 'assets/svg/instagram.svg';
 
 function Footer() {
   return (
     <>
-      <div style={{paddingTop:"150px"}}></div>
       <section id="footer-container">
         <div id="footer-wrap">
           <div id="footer-text-box">
