@@ -131,27 +131,26 @@ function CustomBento(props) {
   }
 
   // 開始拖曳品項
-  const onDragStart = (e) => {
+  const handleDragFoodItem = (e) => {
     e.dataTransfer.setData('text/plain', e.target.dataset.sid);
   };
 
   // 品項放到目標容器
-  const onDrop = (e) => {
+  const handleDropFoodItem = (e) => {
     setPriority('0'); // 白飯容器優先結束
     setIsShowHint(false); // 東西放完就關閉示字樣
-    let targetSid = Number(
+    let datasetSid = Number(
       e.dataTransfer.getData('text/plain', e.target.dataset.sid)
     );
 
     let _foods = [...foods];
     if (e.target.id === $vegBoxLeft.current.id) {
       _foods.forEach((_food) => {
-        if (targetSid === _food.sid) {
+        if (datasetSid === _food.sid) {
           setVegBoxLeftImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
           setVegNameA(_food.productName);
           setVegPriceA(_food.price);
           setVegCalA(_food.calories);
-          setPutAclass('ru-put ru-put-veg-1');
           _food.isAvailable = false;
         }
       });
@@ -159,33 +158,29 @@ function CustomBento(props) {
 
     if (e.target.id === $vegBoxMiddle.current.id) {
       _foods.forEach((_food) => {
-        if (targetSid === _food.sid) {
+        if (datasetSid === _food.sid) {
           setVegBoxMiddleImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
           setVegNameB(_food.productName);
           setVegPriceB(_food.price);
           setVegCalB(_food.calories);
-          setPutBclass('ru-put ru-put-veg-2');
-          _food.isAvailable = false;
         }
       });
     } // 中間蔬菜區
 
     if (e.target.id === $vegBoxRight.current.id) {
       _foods.forEach((_food) => {
-        if (targetSid === _food.sid) {
+        if (datasetSid === _food.sid) {
           setvegBoxRightImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
           setVegNameC(_food.productName);
           setVegPriceC(_food.price);
           setVegCalC(_food.calories);
-          setPutBclass('ru-put ru-put-veg-3');
-          _food.isAvailable = false;
         }
       });
     } // 右邊蔬菜區
 
     if (e.target.id === $riceBox.current.id) {
       _foods.forEach((_food) => {
-        if (targetSid === _food.sid) {
+        if (datasetSid === _food.sid) {
           setRiceImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
           setRiceName(_food.productName);
           setRicePrice(_food.price);
@@ -196,7 +191,7 @@ function CustomBento(props) {
 
     if (e.target.id === $meetBox.current.id) {
       _foods.forEach((_food) => {
-        if (targetSid === _food.sid) {
+        if (datasetSid === _food.sid) {
           setMeetImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
           setMeetName(_food.productName);
           setMeetPrice(_food.price);
@@ -207,7 +202,7 @@ function CustomBento(props) {
 
     if (e.target.id === $eggBox.current.id) {
       _foods.forEach((_food) => {
-        if (targetSid === _food.sid) {
+        if (datasetSid === _food.sid) {
           setEggImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
           setEggName(_food.productName);
           setEggPrice(_food.price);
@@ -217,6 +212,21 @@ function CustomBento(props) {
     } // 蛋區
 
     setFoods(_foods);
+  };
+
+  const handleDragBoxItem = (e) => {
+    e.dataTransfer.setData('text/plain', e.target.id);
+  };
+
+  const handleDropBoxItem = (e) => {
+    // console.log(e.target.id !== $vegBoxLeft.current.id);
+    const targetId = e.dataTransfer.getData('text/plain', e.target.id);
+    if (targetId === 'customBento-foodItem-vegBoxLeft') {
+      setVegBoxLeftImg();
+      setVegNameA();
+      setVegPriceA();
+      setVegCalA();
+    }
   };
 
   // 向後端請求資料
@@ -277,7 +287,7 @@ function CustomBento(props) {
         ref={$dragTarget}
         dragTargetId={`${selection}-${foodsIndex + 1}`}
         dragTargetClassName={'ru-items'}
-        onDragStart={onDragStart}
+        onDragStart={handleDragFoodItem}
         dragDataSid={food.sid}
         isAvailable={food.isAvailable}
       />
@@ -293,18 +303,8 @@ function CustomBento(props) {
     const items = document.querySelectorAll('.ru-items');
     // console.log(items);
     const puts = document.querySelectorAll('.ru-put');
-    const img = document.querySelector('#ru-areaF .ru-put');
     // console.log(puts)
     const $dropTarget = document.getElementById('ru-dropArea');
-    // console.log($dropTarget);
-    const boxA = document.getElementById('ru-areaA');
-    const boxB = document.getElementById('ru-areaB');
-    const boxC = document.getElementById('ru-areaC');
-    const boxD = document.getElementById('ru-areaD');
-    const boxE = document.getElementById('ru-areaE');
-    const boxF = document.getElementById('ru-areaF');
-    // console.log($dragSource)
-    // console.log($dropTarget)
 
     items.forEach((i) => {
       i.addEventListener('dragstart', dragStart); // drag
@@ -351,314 +351,7 @@ function CustomBento(props) {
     function dragleave(e) {}
 
     // 目的地 - 放下時
-    function dropped(e) {
-      //   if (selection !== 'dagfegaeh') {
-      //     return;
-      //   }
-      //   //增刪元素
-      //   // console.log(e.dataTransfer.getData('text/plain', e.target.id)) // 拿到dragStart事件的id
-      //   setPriority('0'); // 白飯容器優先結束
-      //   // 宣告已經放在配菜區內的元素
-      //   const boxer = document.getElementById(
-      //     e.dataTransfer.getData('text/plain', e.target.id)
-      //   );
-      //   // 丟棄邏輯 - 放到這些區域可以丟棄該品項
-      //   if (
-      //     e.target !== boxA &&
-      //     e.target !== boxB &&
-      //     e.target !== boxC &&
-      //     e.target !== boxD &&
-      //     e.target !== boxE &&
-      //     e.target !== boxF
-      //   ) {
-      //     switch (e.dataTransfer.getData('text/plain', e.target.id)) {
-      //       case 'ru-put-1': // 觸發事件在第一個盒子
-      //         // console.log(e.target.className)
-      //         VegBoxLeftImg();
-      //         setVegNameA();
-      //         setVegPriceA(0);
-      //         setVegCalA(0);
-      //         // 復原可控物件邏輯
-      //         // 宣告待會從盒子內取出的目標含有哪些class
-      //         if (
-      //           // 如果配菜區內的既有菜色者的classList包含('ru-put-veg-1')
-      //           boxer.classList.contains('ru-put-veg-1')
-      //         ) {
-      //           setVeg1available(true); // 那被丟棄後就讓選菜區變回可控物件
-      //         } else if (boxer.classList.contains('ru-put-veg-2')) {
-      //           setVeg2available(true);
-      //         } else if (boxer.classList.contains('ru-put-veg-3')) {
-      //           setVeg3available(true);
-      //         } else if (boxer.classList.contains('ru-put-veg-4')) {
-      //           setVeg4available(true);
-      //         } else if (boxer.classList.contains('ru-put-veg-5')) {
-      //           setVeg5available(true);
-      //         }
-      //         break;
-      //       case 'ru-put-2': // 觸發事件在第二個盒子
-      //         setVegBoxMiddleImg();
-      //         setVegNameB();
-      //         setVegPriceB(0);
-      //         setVegCalB(0);
-      //         // 復原可控物件邏輯
-      //         if (boxer.classList.contains('ru-put-veg-1')) {
-      //           // 如果目標classList含有'ru-put-veg-1'
-      //           setVeg1available(true); // 那被丟棄後就讓選菜區變回可控物件
-      //         } else if (boxer.classList.contains('ru-put-veg-2')) {
-      //           setVeg2available(true);
-      //         } else if (boxer.classList.contains('ru-put-veg-3')) {
-      //           setVeg3available(true);
-      //         } else if (boxer.classList.contains('ru-put-veg-4')) {
-      //           setVeg4available(true);
-      //         } else if (boxer.classList.contains('ru-put-veg-5')) {
-      //           setVeg5available(true);
-      //         }
-      //         break;
-      //       case 'ru-put-3': // 觸發事件在第三個盒子
-      //         setVegBoxRightImg();
-      //         setVegNameC();
-      //         setVegPriceC(0);
-      //         setVegCalC(0);
-      //         // 復原可控物件邏輯
-      //         if (boxer.classList.contains('ru-put-veg-1')) {
-      //           // 如果目標classList含有'ru-put-veg-1'
-      //           setVeg1available(true); // 那被丟棄後就讓選菜區變回可控物件
-      //         } else if (boxer.classList.contains('ru-put-veg-2')) {
-      //           setVeg2available(true);
-      //         } else if (boxer.classList.contains('ru-put-veg-3')) {
-      //           setVeg3available(true);
-      //         } else if (boxer.classList.contains('ru-put-veg-4')) {
-      //           setVeg4available(true);
-      //         } else if (boxer.classList.contains('ru-put-veg-5')) {
-      //           setVeg5available(true);
-      //         }
-      //         break;
-      //       case 'ru-put-4': // 觸發事件在第四個盒子
-      //         setRiceImg();
-      //         setRiceName();
-      //         setRicePrice(0);
-      //         setRiceCal(0);
-      //         break;
-      //       case 'ru-put-5': // 觸發事件在第五個盒子
-      //         setMeetImg();
-      //         setEggName();
-      //         setEggPrice(0);
-      //         setEggCal(0);
-      //         break;
-      //       case 'ru-put-6': // 觸發事件在第六個盒子
-      //         setEggImg();
-      //         setMeetName();
-      //         setMeetPrice(0);
-      //         setMeetPrice(0);
-      //         setMeetCal(0);
-      //         break;
-      //     }
-      //   } else if (e.target === boxA) {
-      //     setIsShowHint(false); // 東西放完就關閉示字樣
-      //     // 配菜A區
-      //     // 如果放開滑鼠的地方是在 boxA 身上
-      //     switch (e.dataTransfer.getData('text/plain', e.target.id)) {
-      //       case 'ru-veg-1': // 'ru-veg-1'
-      //         VegBoxLeftImg(cauliflowerAfter);
-      //         // setVegNameA(data[6].productName)
-      //         // setVegPriceA(data[6].price)
-      //         // setVegCalA(data[6].calories)
-      //         setVegNameA(data[8].productName);
-      //         setVegPriceA(data[8].price);
-      //         setVegCalA(data[8].calories);
-      //         setVeg1available(false);
-      //         setPutAclass('ru-put ru-put-veg-1');
-      //         break;
-      //       case 'ru-veg-2':
-      //         VegBoxLeftImg(cabageAfter);
-      //         setVegNameA(data[9].productName);
-      //         setVegPriceA(data[9].price);
-      //         setVegCalA(data[9].calories);
-      //         setVeg2available(false);
-      //         setPutAclass('ru-put ru-put-veg-2');
-      //         break;
-      //       case 'ru-veg-3':
-      //         VegBoxLeftImg(cornAfter);
-      //         setVegNameA(data[10].productName);
-      //         setVegPriceA(data[10].price);
-      //         setVegCalA(data[10].calories);
-      //         setVeg3available(false);
-      //         setPutAclass('ru-put ru-put-veg-3');
-      //         break;
-      //       case 'ru-veg-4':
-      //         VegBoxLeftImg(qingjiangAfter);
-      //         setVegNameA(data[11].productName);
-      //         setVegPriceA(data[11].price);
-      //         setVegCalA(data[11].calories);
-      //         setVeg4available(false);
-      //         setPutAclass('ru-put ru-put-veg-4');
-      //         break;
-      //       case 'ru-veg-5':
-      //         VegBoxLeftImg(eggplantAfter);
-      //         setVegNameA(data[12].productName);
-      //         setVegPriceA(data[12].price);
-      //         setVegCalA(data[12].calories);
-      //         setVeg5available(false);
-      //         setPutAclass('ru-put ru-put-veg-5');
-      //         break;
-      //     }
-      //   } else if (e.target === boxB) {
-      //     setIsShowHint(false); // 東西放完就關閉示字樣
-      //     // 配菜B區
-      //     // 如果放開滑鼠的地方是在 boxB 身上
-      //     switch (e.dataTransfer.getData('text/plain', e.target.id)) {
-      //       case 'ru-veg-1': // 'ru-veg-1'
-      //         setVegBoxMiddleImg(cauliflowerAfter);
-      //         setVegNameB(data[8].productName);
-      //         setVegPriceB(data[8].price);
-      //         setVegCalB(data[8].calories);
-      //         setVeg1available(false);
-      //         setPutBclass('ru-put ru-put-veg-1');
-      //         break;
-      //       case 'ru-veg-2':
-      //         setVegBoxMiddleImg(cabageAfter);
-      //         setVegNameB(data[9].productName);
-      //         setVegPriceB(data[9].price);
-      //         setVegCalB(data[9].calories);
-      //         setVeg2available(false);
-      //         setPutBclass('ru-put ru-put-veg-2');
-      //         break;
-      //       case 'ru-veg-3':
-      //         setVegBoxMiddleImg(cornAfter);
-      //         setVegNameB(data[10].productName);
-      //         setVegPriceB(data[10].price);
-      //         setVegCalB(data[10].calories);
-      //         setVeg3available(false);
-      //         setPutBclass('ru-put ru-put-veg-3');
-      //         break;
-      //       case 'ru-veg-4':
-      //         setVegBoxMiddleImg(qingjiangAfter);
-      //         setVegNameB(data[11].productName);
-      //         setVegPriceB(data[11].price);
-      //         setVegCalB(data[11].calories);
-      //         setVeg4available(false);
-      //         setPutBclass('ru-put ru-put-veg-4');
-      //         break;
-      //       case 'ru-veg-5':
-      //         setVegBoxMiddleImg(eggplantAfter);
-      //         setVegNameB(data[12].productName);
-      //         setVegPriceB(data[12].price);
-      //         setVegCalB(data[12].calories);
-      //         setVeg5available(false);
-      //         setPutBclass('ru-put ru-put-veg-5');
-      //         break;
-      //     }
-      //   } else if (e.target === boxC) {
-      //     setIsShowHint(false); // 東西放完就關閉示字樣
-      //     // 配菜C區
-      //     // 如果放開滑鼠的地方是在 boxC 身上
-      //     switch (
-      //       e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
-      //     ) {
-      //       case 'ru-veg-1': // 'ru-veg-1'
-      //         setVegBoxRightImg(cauliflowerAfter); // 就改變state值
-      //         setVegNameC(data[8].productName);
-      //         setVegPriceC(data[8].price);
-      //         setVegCalC(data[8].calories);
-      //         setVeg1available(false);
-      //         setPutCclass('ru-put ru-put-veg-1');
-      //         break;
-      //       case 'ru-veg-2':
-      //         setVegBoxRightImg(cabageAfter);
-      //         setVegNameC(data[9].productName);
-      //         setVegPriceC(data[9].price);
-      //         setVegCalC(data[9].calories);
-      //         setVeg2available(false);
-      //         setPutCclass('ru-put ru-put-veg-2');
-      //         break;
-      //       case 'ru-veg-3':
-      //         setVegBoxRightImg(cornAfter);
-      //         setVegNameC(data[10].productName);
-      //         setVegPriceC(data[10].price);
-      //         setVegCalC(data[10].calories);
-      //         setVeg3available(false);
-      //         setPutCclass('ru-put ru-put-veg-3');
-      //         break;
-      //       case 'ru-veg-4':
-      //         setVegBoxRightImg(qingjiangAfter);
-      //         setVegNameC(data[11].productName);
-      //         setVegPriceC(data[11].price);
-      //         setVegCalC(data[11].calories);
-      //         setVeg4available(false);
-      //         setPutCclass('ru-put ru-put-veg-4');
-      //         break;
-      //       case 'ru-veg-5':
-      //         setVegBoxRightImg(eggplantAfter);
-      //         setVegNameC(data[12].productName);
-      //         setVegPriceC(data[12].price);
-      //         setVegCalC(data[12].calories);
-      //         setVeg5available(false);
-      //         setPutCclass('ru-put ru-put-veg-5');
-      //         break;
-      //     }
-      //   } else if (
-      //     e.target === boxD ||
-      //     e.target === boxE ||
-      //     e.target === boxF ||
-      //     e.target === img
-      //   ) {
-      //     // 白飯區
-      //     setIsShowHint(false); // 東西放完就關閉示字樣
-      //     // console.log(e.dataTransfer.getData('text/plain', e.target.id));
-      //     switch (
-      //       e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
-      //     ) {
-      //       case 'ru-rice-1': // 'ru-rice-1'
-      //         setRiceImg(riceAfter); // 就放入放置後圖片
-      //         setRiceName(data[0].productName);
-      //         setRicePrice(data[0].price);
-      //         setRiceCal(data[0].calories);
-      //         break;
-      //       case 'ru-rice-2':
-      //         setRiceImg(grainRiceAfter);
-      //         setRiceName(data[1].productName);
-      //         setRicePrice(data[1].price);
-      //         setRiceCal(data[1].calories);
-      //         break;
-      //       case 'ru-rice-3':
-      //         setRiceImg(redQuinoaAfter);
-      //         setRiceName(data[2].productName);
-      //         setRicePrice(data[2].price);
-      //         setRiceCal(data[2].calories);
-      //         break;
-      //       case 'ru-egg-1': // 'ru-egg-1'
-      //         setMeetImg(eggAfter); // 就放入放置後圖片
-      //         setEggName(data[6].productName);
-      //         setEggPrice(data[6].price);
-      //         setEggCal(data[6].calories);
-      //         break;
-      //       case 'ru-egg-2':
-      //         setMeetImg(poachedEggAfter);
-      //         setEggName(data[7].productName);
-      //         setEggPrice(data[7].price);
-      //         setEggCal(data[7].calories);
-      //         break;
-      //       case 'ru-meet-1': // 'ru-meet-1'
-      //         setEggImg(chickenBreastAfter); // 就放入放置後圖片
-      //         setMeetName(data[3].productName);
-      //         setMeetPrice(data[3].price);
-      //         setMeetCal(data[3].calories);
-      //         break;
-      //       case 'ru-meet-2':
-      //         setEggImg(chickenLegAfter);
-      //         setMeetName(data[4].productName);
-      //         setMeetPrice(data[4].price);
-      //         setMeetCal(data[4].calories);
-      //         break;
-      //       case 'ru-meet-3':
-      //         setEggImg(shrimpAfter);
-      //         setMeetName(data[5].productName);
-      //         setMeetPrice(data[5].price);
-      //         setMeetCal(data[5].calories);
-      //         break;
-      //     }
-      //   }
-    }
+    function dropped(e) {}
 
     function dragleave(e) {
       // console.log('dragleave')
@@ -710,7 +403,11 @@ function CustomBento(props) {
     <>
       {/* <div>{data[3].sid}</div> */}
       {/* 商品區 - 網頁版 s */}
-      <div className="ru-custom-container" id="ru-dropArea">
+      <div
+        className="ru-custom-container"
+        id="ru-dropArea"
+        onDrop={handleDropBoxItem}
+      >
         <div className="ru-custom-warp" id="ru-dropOutAreaA">
           <div className="ru-drop-container" id="ru-dropOutAreaB">
             <div className="ru-drop-warp" id="ru-dropOutAreaC">
@@ -724,13 +421,14 @@ function CustomBento(props) {
                   <div
                     id="custom-bento-vegBox-left"
                     ref={$vegBoxLeft}
-                    onDrop={onDrop}
+                    onDrop={handleDropFoodItem}
                   >
                     <img
                       src={vegBoxLeftImg}
                       draggable="true"
-                      className={putAclass}
-                      id="ru-put-1"
+                      className="customBento-put-container"
+                      id="customBento-foodItem-vegBoxLeft"
+                      onDragStart={handleDragBoxItem}
                     ></img>
                   </div>
                   {/* 放置菜色A區vegA e*/}
@@ -739,12 +437,17 @@ function CustomBento(props) {
                     {isShowHintB && <img src={hintB}></img>}
                   </div>
 
-                  <div id="ru-areaB" ref={$vegBoxMiddle} onDrop={onDrop}>
+                  <div
+                    id="ru-areaB"
+                    ref={$vegBoxMiddle}
+                    onDrop={handleDropFoodItem}
+                  >
                     <img
                       src={vegBoxMiddleImg}
                       draggable="true"
-                      className={putBclass}
-                      id="ru-put-2"
+                      className="customBento-put-container"
+                      id="customBento-foodItem-vegBoxMiddle"
+                      onDragStart={handleDragBoxItem}
                     ></img>
                   </div>
                   {/* 放置菜色B區vegB e*/}
@@ -753,12 +456,17 @@ function CustomBento(props) {
                     {isShowHintC && <img src={hintC}></img>}
                   </div>
 
-                  <div id="ru-areaC" ref={$vegBoxRight} onDrop={onDrop}>
+                  <div
+                    id="ru-areaC"
+                    ref={$vegBoxRight}
+                    onDrop={handleDropFoodItem}
+                  >
                     <img
                       src={vegBoxRightImg}
                       draggable="true"
-                      className={putCclass}
-                      id="ru-put-3"
+                      className="customBento-put-container"
+                      id="customBento-foodItem-vegBoxRight"
+                      onDragStart={handleDragBoxItem}
                     ></img>
                   </div>
                   {/* 放置菜色C區vegC e*/}
@@ -770,13 +478,14 @@ function CustomBento(props) {
                     id="ru-areaD"
                     ref={$riceBox}
                     style={{ zIndex: priority }}
-                    onDrop={onDrop}
+                    onDrop={handleDropFoodItem}
                   >
                     <img
                       src={riceImg}
                       draggable="true"
-                      className="ru-put"
-                      id="ru-put-4"
+                      className="customBento-put-container"
+                      id="customBento-foodItem-rice"
+                      onDragStart={handleDragBoxItem}
                     ></img>
                   </div>
                   {/* 放置菜色D區rice e*/}
@@ -785,12 +494,13 @@ function CustomBento(props) {
                     {isShowHintE && <img src={hintE}></img>}
                   </div>
 
-                  <div id="ru-areaE" ref={$eggBox} onDrop={onDrop}>
+                  <div id="ru-areaE" ref={$eggBox} onDrop={handleDropFoodItem}>
                     <img
                       src={eggImg}
                       draggable="true"
-                      className="ru-put"
-                      id="ru-put-5"
+                      className="customBento-put-container"
+                      id="customBento-foodItem-egg"
+                      onDragStart={handleDragBoxItem}
                     ></img>
                   </div>
                   {/* 放置菜色E區egg e*/}
@@ -799,12 +509,13 @@ function CustomBento(props) {
                     {isShowHintF && <img src={hintF}></img>}
                   </div>
 
-                  <div id="ru-areaF" ref={$meetBox} onDrop={onDrop}>
+                  <div id="ru-areaF" ref={$meetBox} onDrop={handleDropFoodItem}>
                     <img
                       src={meetImg}
                       draggable="true"
-                      className="ru-put"
-                      id="ru-put-6"
+                      className="customBento-put-container"
+                      id="customBento-foodItem-meet"
+                      onDragStart={handleDragBoxItem}
                     ></img>
                   </div>
                   {/* 放置菜色F區meet e*/}
@@ -1040,39 +751,6 @@ function CustomBento(props) {
                   xxl: { point: 1440, width: 1170, btnsize: 100 },
                 }}
               />
-              {/* <RuArrowLeft moveX={moveX} setMoveX={setMoveX} />
-                <div className="ru-species-container"> */}
-              {/* 副食 / 主食 / 配菜 / 蛋 的元件 s*/}
-              {/* <div className="ru-species-warp"> */}
-              {/* 移動區 s */}
-              {/* <ul
-                      id="moveArea1"
-                      style={{ transform: `translateX(${moveX}px)` }}
-                    >
-                      {selection === 'rice' && <RuRiceA data={data} />}
-                      {selection === 'meet' && <RuMeetA data={data} />}
-                      {selection === 'vegetable' && (
-                        <RuVegetableA
-                          data={data}
-                          veg1available={veg1available}
-                          veg2available={veg2available}
-                          veg3available={veg3available}
-                          veg4available={veg4available}
-                          veg5available={veg5available}
-                        />
-                      )}
-                      {selection === 'egg' && <RuEggA data={data} />} */}
-              {/*  副食 / 主食 / 配菜 / 蛋 的元件 e*/}
-              {/* </ul> */}
-              {/* 移動區 e */}
-              {/* </div>
-                </div>
-                <RuArrowRight
-                  moveX={moveX}
-                  setMoveX={setMoveX}
-                  limitX={limitX}
-                  setLimitX={setLimitX}
-                /> */}
             </div>
           </div>
           {/* rwd 詳細資訊 s */}
