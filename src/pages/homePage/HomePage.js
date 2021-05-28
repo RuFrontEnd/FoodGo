@@ -243,11 +243,14 @@ function HomePage(props) {
         address={address}
         setAddress={setAddress}
       /> */}
-      {/* <section className="homePage-fake-nav d-flex justify-content-center align-items-center">
+      <section className="homePage-fake-nav d-flex justify-content-center align-items-center">
         navbar的高度
-      </section> */}
+      </section>
       {/* 輪播牆 */}
-      {/* <section className="container-fluid homePage-p0">
+      <section
+        id="homePage-carousel-container"
+        className="container-fluid homePage-p0"
+      >
         <div className="homePage-index-carousel-wrap position-relative">
           <Carousel autoplay>
             <div>
@@ -276,12 +279,12 @@ function HomePage(props) {
                 <div className="banner4"></div>
               </div>
             </div>
-          </Carousel> */}
-      {/* 應用程式下載 */}
-      {/* 橘底 */}
-      {/* <div className="position-absolute position-fixed homePage-download-area d-flex justify-content-center"> */}
-      {/* AppLogo＋應用程式icon */}
-      {/* <div className="homePage-app-logo"></div>
+          </Carousel>
+          {/* 應用程式下載 */}
+          {/* 橘底 */}
+          <div className="position-absolute position-fixed homePage-download-area d-flex justify-content-center">
+            {/* AppLogo＋應用程式icon */}
+            <div className="homePage-app-logo"></div>
             <div className="homePage-app-info">
               <p className="mt-1">點擊此處下載應用程式</p>
               <div className="homePage-download-buttonsm d-flex justify-content-center">
@@ -290,31 +293,36 @@ function HomePage(props) {
               </div>
             </div>
             <div className="homePage-col-download"></div>
-          </div> */}
-      {/* 滾動提示 */}
-      {/* <button className="position-absolute homePage-mouse"></button>
+          </div>
+          {/* 滾動提示 */}
+          {/* <button className="position-absolute homePage-mouse"></button>
           <div className="position-absolute homePage-mouse-arrow"></div> */}
-      {/* 切換鈕 */}
-      {/* </div> */}
-      {/* </div> */}
-      {/* </section> */}
+          {/* 切換鈕 */}
+        </div>
+      </section>
 
       {/* 品牌特色*/}
-      {/* <section className="container homePage-p0 position-relative">
-        <div className="row homePage-index-feature d-flex flex-column align-items-center justify-content-space-between"> */}
-      {/* 標題 */}
-      {/* <div className="homePage-feature-wrap d-flex align-items-center">
+      <section
+        id="homePage-feature-container"
+        className="container homePage-p0 position-relative"
+      >
+        <div
+          id="homePage-feature-wrap"
+          className="row homePage-index-feature d-flex flex-column align-items-center justify-content-space-between"
+        >
+          {/* 標題 */}
+          <div className="homePage-feature-wrap d-flex align-items-center">
             <img alt="" src={titleLeft} />
             <p className="homePage-feature-title">品牌特色</p>
             <img alt="" src={titleRight} />
-          </div> */}
-      {/* circles */}
-      {/* <div
+          </div>
+          {/* circles */}
+          <div
             className="d-flex homePage-circles justify-content-around align-items-center"
             ref={$homePageCircles}
-          > */}
-      {/* circle1 */}
-      {/* <div
+          >
+            {/* circle1 */}
+            <div
               className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center"
               ref={$featureCircle}
             >
@@ -322,7 +330,7 @@ function HomePage(props) {
                 onClick={(e) => {
                   switchFeatureArea(e);
                 }}
-                id={'homePage-farmer-svg'}
+                id="homePage-farmer-svg"
                 className={`homePage-feature-icon homePage-farmer-icon ${
                   isFarmerFeatureActive && 'homePage-farmer-icon-active'
                 }`}
@@ -332,9 +340,9 @@ function HomePage(props) {
             <div
               className="homePage-index-feature-smcircle"
               ref={$featureDot}
-            ></div> */}
-      {/* circle2 */}
-      {/* <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
+            ></div>
+            {/* circle2 */}
+            <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
                 onClick={(e) => {
                   switchFeatureArea(e);
@@ -346,9 +354,9 @@ function HomePage(props) {
               ></div>
               <p className="homePage-circle-title">產銷履歷</p>
             </div>
-            <div className="homePage-index-feature-smcircle"></div> */}
-      {/* circle3 */}
-      {/* <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
+            <div className="homePage-index-feature-smcircle"></div>
+            {/* circle3 */}
+            <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
                 onClick={(e) => {
                   switchFeatureArea(e);
@@ -362,9 +370,9 @@ function HomePage(props) {
                 客製化便當
               </p>
             </div>
-            <div className="homePage-index-feature-smcircle"></div> */}
-      {/* circle4 */}
-      {/* <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
+            <div className="homePage-index-feature-smcircle"></div>
+            {/* circle4 */}
+            <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
                 onClick={(e) => {
                   switchFeatureArea(e);
@@ -376,9 +384,9 @@ function HomePage(props) {
               ></div>
               <p className="homePage-circle-title">揪團訂購</p>
             </div>
-            <div className="homePage-index-feature-smcircle"></div> */}
-      {/* circle5 */}
-      {/* <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
+            <div className="homePage-index-feature-smcircle"></div>
+            {/* circle5 */}
+            <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
                 onClick={(e) => {
                   switchFeatureArea(e);
@@ -391,13 +399,13 @@ function HomePage(props) {
               <p className="homePage-circle-title">營養標示</p>
             </div>
           </div>
-        </div> */}
-      {/* <div
+        </div>
+        <div
           // style={{ left: `${featureTriangleLeft}px` }}
           className={`homePage-index-feature-triangle position-absolute ${featureTriangleClassName}`}
           ref={$featureTriangle}
         ></div>
-      </section> */}
+      </section>
 
       {/* intros */}
       {/* <section className="container-fluid homePage-p0 homePage-intro-area"> */}
