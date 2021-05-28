@@ -77,13 +77,16 @@ function CustomBento(props) {
   const [isShowHintE, setIsShowHintE] = useState(false);
   const [isShowHintF, setIsShowHintF] = useState(false);
 
-  // 設定 今日菜色(價格) 資訊
+  // 標記蔬菜區sid 以及 設定今日菜色(價格)資訊
+  const [vegSidA, setVegSidA] = useState(0);
   const [vegNameA, setVegNameA] = useState('');
   const [vegPriceA, setVegPriceA] = useState(0);
   const [vegCalA, setVegCalA] = useState(0);
+  const [vegSidB, setVegSidB] = useState(0);
   const [vegNameB, setVegNameB] = useState('');
   const [vegPriceB, setVegPriceB] = useState(0);
   const [vegCalB, setVegCalB] = useState(0);
+  const [vegSidC, setVegSidC] = useState(0);
   const [vegNameC, setVegNameC] = useState('');
   const [vegPriceC, setVegPriceC] = useState(0);
   const [vegCalC, setVegCalC] = useState(0);
@@ -96,18 +99,6 @@ function CustomBento(props) {
   const [meetName, setMeetName] = useState('');
   const [meetPrice, setMeetPrice] = useState(0);
   const [meetCal, setMeetCal] = useState(0);
-
-  // 配菜區還可否被選擇
-  const [veg1available, setVeg1available] = useState(true);
-  const [veg2available, setVeg2available] = useState(true);
-  const [veg3available, setVeg3available] = useState(true);
-  const [veg4available, setVeg4available] = useState(true);
-  const [veg5available, setVeg5available] = useState(true);
-
-  // 標記入box內的是哪種蔬菜
-  const [putAclass, setPutAclass] = useState('ru-put');
-  const [putBclass, setPutBclass] = useState('ru-put');
-  const [putCclass, setPutCclass] = useState('ru-put');
 
   // 是否可以購買
   const [isCanBuy, setIsCanBuy] = useState(false);
@@ -149,10 +140,10 @@ function CustomBento(props) {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setVegBoxLeftImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
+          setVegSidA(_food.sid);
           setVegNameA(_food.productName);
           setVegPriceA(_food.price);
           setVegCalA(_food.calories);
-          _food.isAvailable = false;
         }
       });
     } // 左邊蔬菜區
@@ -161,6 +152,7 @@ function CustomBento(props) {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setVegBoxMiddleImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
+          setVegSidB(_food.sid);
           setVegNameB(_food.productName);
           setVegPriceB(_food.price);
           setVegCalB(_food.calories);
@@ -172,6 +164,7 @@ function CustomBento(props) {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setvegBoxRightImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
+          setVegSidC(_food.sid);
           setVegNameC(_food.productName);
           setVegPriceC(_food.price);
           setVegCalC(_food.calories);
@@ -224,6 +217,7 @@ function CustomBento(props) {
 
     if (targetId === 'customBento-boxItem-vegBoxLeft') {
       setVegBoxLeftImg();
+      setVegSidA(0);
       setVegNameA('');
       setVegPriceA(0);
       setVegCalA(0);
@@ -231,6 +225,7 @@ function CustomBento(props) {
 
     if (targetId === 'customBento-boxItem-vegBoxMiddle') {
       setVegBoxMiddleImg();
+      setVegSidB(0);
       setVegNameB('');
       setVegPriceB(0);
       setVegCalB(0);
@@ -238,6 +233,7 @@ function CustomBento(props) {
 
     if (targetId === 'customBento-boxItem-vegBoxRight') {
       setvegBoxRightImg();
+      setVegSidC(0);
       setVegNameC('');
       setVegPriceC(0);
       setVegCalC(0);
@@ -282,25 +278,24 @@ function CustomBento(props) {
       return;
     }
     let filterFoods = [];
+    let _foods = [];
+
     if (selection === 'rice') {
       setPriority('100');
       filterFoods = data.filter((dataItem) => dataItem.categories === 'rice');
     }
-    if (selection === 'vegetable') {
-      setPriority('0');
-      filterFoods = data.filter(
-        (dataItem) => dataItem.categories === 'vegetable'
-      );
-    }
+
     if (selection === 'meet') {
       setPriority('0');
       filterFoods = data.filter((dataItem) => dataItem.categories === 'meet');
     }
+
     if (selection === 'egg') {
       setPriority('0');
       filterFoods = data.filter((dataItem) => dataItem.categories === 'egg');
     }
-    const _foods = filterFoods.map((filterFood) => ({
+
+    _foods = filterFoods.map((filterFood) => ({
       sid: filterFood.sid,
       productName: filterFood.productName,
       categories: filterFood.categories,
@@ -313,8 +308,39 @@ function CustomBento(props) {
       unfoldImage: filterFood.unfoldImage,
       isAvailable: true,
     }));
+
+    if (selection === 'vegetable') {
+      setPriority('0');
+      filterFoods = data.filter(
+        (dataItem) => dataItem.categories === 'vegetable'
+      );
+      _foods = filterFoods.map((filterFood) => {
+        let _isAvailable = true;
+        if (
+          filterFood.sid === vegSidA ||
+          filterFood.sid === vegSidB ||
+          filterFood.sid === vegSidC
+        ) {
+          _isAvailable = false;
+        }
+        return {
+          sid: filterFood.sid,
+          productName: filterFood.productName,
+          categories: filterFood.categories,
+          price: filterFood.price,
+          protein: filterFood.protein,
+          fat: filterFood.fat,
+          cabohydrate: filterFood.cabohydrate,
+          calories: filterFood.calories,
+          image: filterFood.image,
+          unfoldImage: filterFood.unfoldImage,
+          isAvailable: _isAvailable,
+        };
+      });
+    }
+
     setFoods(_foods);
-  }, [data, selection]);
+  }, [data, selection, vegSidA, vegSidB, vegSidC]);
 
   useEffect(() => {
     const _foodItems = foods.map((food, foodsIndex) => (
@@ -462,7 +488,7 @@ function CustomBento(props) {
                     <img
                       src={vegBoxLeftImg}
                       draggable="true"
-                      className="customBento-put-container"
+                      className="customBento-box-container"
                       id="customBento-boxItem-vegBoxLeft"
                       onDragStart={handleDragBoxItem}
                     ></img>
@@ -481,7 +507,7 @@ function CustomBento(props) {
                     <img
                       src={vegBoxMiddleImg}
                       draggable="true"
-                      className="customBento-put-container"
+                      className="customBento-box-container"
                       id="customBento-boxItem-vegBoxMiddle"
                       onDragStart={handleDragBoxItem}
                     ></img>
@@ -500,7 +526,7 @@ function CustomBento(props) {
                     <img
                       src={vegBoxRightImg}
                       draggable="true"
-                      className="customBento-put-container"
+                      className="customBento-box-container"
                       id="customBento-boxItem-vegBoxRight"
                       onDragStart={handleDragBoxItem}
                     ></img>
@@ -519,7 +545,7 @@ function CustomBento(props) {
                     <img
                       src={riceImg}
                       draggable="true"
-                      className="customBento-put-container"
+                      className="customBento-box-container"
                       id="customBento-boxItem-rice"
                       onDragStart={handleDragBoxItem}
                     ></img>
@@ -534,7 +560,7 @@ function CustomBento(props) {
                     <img
                       src={eggImg}
                       draggable="true"
-                      className="customBento-put-container"
+                      className="customBento-box-container"
                       id="customBento-boxItem-egg"
                       onDragStart={handleDragBoxItem}
                     ></img>
@@ -549,7 +575,7 @@ function CustomBento(props) {
                     <img
                       src={meetImg}
                       draggable="true"
-                      className="customBento-put-container"
+                      className="customBento-box-container"
                       id="customBento-boxItem-meet"
                       onDragStart={handleDragBoxItem}
                     ></img>
