@@ -16,7 +16,7 @@ function NavBar(props) {
     setIsOpen = () => {},
     style = {},
     className = '',
-    id = '',
+    id = 'sideBar-container',
     title = '',
     listNavigationItems = [
       { linkTo: '/', content: '項目', isDropArrow: false },
@@ -33,7 +33,7 @@ function NavBar(props) {
         isOpen ? 'sideBar-container-active' : 'sideBar-container-disActive')
       }
     >
-      <ul id="sideBar-warp">
+      <ul id="sideBar-wrap">
         <li id="sideBar-leftIcon-wrap">
           {!handleGoBack && (
             <Cancel

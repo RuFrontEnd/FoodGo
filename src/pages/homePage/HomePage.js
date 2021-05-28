@@ -243,11 +243,11 @@ function HomePage(props) {
         address={address}
         setAddress={setAddress}
       /> */}
-      <section className="homePage-fake-nav d-flex justify-content-center align-items-center">
+      {/* <section className="homePage-fake-nav d-flex justify-content-center align-items-center">
         navbar的高度
-      </section>
+      </section> */}
       {/* 輪播牆 */}
-      <section className="container-fluid homePage-p0">
+      {/* <section className="container-fluid homePage-p0">
         <div className="homePage-index-carousel-wrap position-relative">
           <Carousel autoplay>
             <div>
@@ -276,12 +276,12 @@ function HomePage(props) {
                 <div className="banner4"></div>
               </div>
             </div>
-          </Carousel>
-          {/* 應用程式下載 */}
-          {/* 橘底 */}
-          <div className="position-absolute position-fixed homePage-download-area d-flex justify-content-center">
-            {/* AppLogo＋應用程式icon */}
-            <div className="homePage-app-logo"></div>
+          </Carousel> */}
+      {/* 應用程式下載 */}
+      {/* 橘底 */}
+      {/* <div className="position-absolute position-fixed homePage-download-area d-flex justify-content-center"> */}
+      {/* AppLogo＋應用程式icon */}
+      {/* <div className="homePage-app-logo"></div>
             <div className="homePage-app-info">
               <p className="mt-1">點擊此處下載應用程式</p>
               <div className="homePage-download-buttonsm d-flex justify-content-center">
@@ -290,31 +290,31 @@ function HomePage(props) {
               </div>
             </div>
             <div className="homePage-col-download"></div>
-          </div>
-          {/* 滾動提示 */}
-          {/* <button className="position-absolute homePage-mouse"></button>
+          </div> */}
+      {/* 滾動提示 */}
+      {/* <button className="position-absolute homePage-mouse"></button>
           <div className="position-absolute homePage-mouse-arrow"></div> */}
-          {/* 切換鈕 */}
-        </div>
-        {/* </div> */}
-      </section>
+      {/* 切換鈕 */}
+      {/* </div> */}
+      {/* </div> */}
+      {/* </section> */}
 
       {/* 品牌特色*/}
-      <section className="container homePage-p0 position-relative">
-        <div className="row homePage-index-feature d-flex flex-column align-items-center justify-content-space-between">
-          {/* 標題 */}
-          <div className="homePage-feature-wrap d-flex align-items-center">
+      {/* <section className="container homePage-p0 position-relative">
+        <div className="row homePage-index-feature d-flex flex-column align-items-center justify-content-space-between"> */}
+      {/* 標題 */}
+      {/* <div className="homePage-feature-wrap d-flex align-items-center">
             <img alt="" src={titleLeft} />
             <p className="homePage-feature-title">品牌特色</p>
             <img alt="" src={titleRight} />
-          </div>
-          {/* circles */}
-          <div
+          </div> */}
+      {/* circles */}
+      {/* <div
             className="d-flex homePage-circles justify-content-around align-items-center"
             ref={$homePageCircles}
-          >
-            {/* circle1 */}
-            <div
+          > */}
+      {/* circle1 */}
+      {/* <div
               className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center"
               ref={$featureCircle}
             >
@@ -332,9 +332,9 @@ function HomePage(props) {
             <div
               className="homePage-index-feature-smcircle"
               ref={$featureDot}
-            ></div>
-            {/* circle2 */}
-            <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
+            ></div> */}
+      {/* circle2 */}
+      {/* <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
                 onClick={(e) => {
                   switchFeatureArea(e);
@@ -346,9 +346,9 @@ function HomePage(props) {
               ></div>
               <p className="homePage-circle-title">產銷履歷</p>
             </div>
-            <div className="homePage-index-feature-smcircle"></div>
-            {/* circle3 */}
-            <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
+            <div className="homePage-index-feature-smcircle"></div> */}
+      {/* circle3 */}
+      {/* <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
                 onClick={(e) => {
                   switchFeatureArea(e);
@@ -362,9 +362,9 @@ function HomePage(props) {
                 客製化便當
               </p>
             </div>
-            <div className="homePage-index-feature-smcircle"></div>
-            {/* circle4 */}
-            <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
+            <div className="homePage-index-feature-smcircle"></div> */}
+      {/* circle4 */}
+      {/* <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
                 onClick={(e) => {
                   switchFeatureArea(e);
@@ -376,9 +376,9 @@ function HomePage(props) {
               ></div>
               <p className="homePage-circle-title">揪團訂購</p>
             </div>
-            <div className="homePage-index-feature-smcircle"></div>
-            {/* circle5 */}
-            <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
+            <div className="homePage-index-feature-smcircle"></div> */}
+      {/* circle5 */}
+      {/* <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
                 onClick={(e) => {
                   switchFeatureArea(e);
@@ -391,24 +391,24 @@ function HomePage(props) {
               <p className="homePage-circle-title">營養標示</p>
             </div>
           </div>
-        </div>
-        <div
+        </div> */}
+      {/* <div
           // style={{ left: `${featureTriangleLeft}px` }}
           className={`homePage-index-feature-triangle position-absolute ${featureTriangleClassName}`}
           ref={$featureTriangle}
         ></div>
-      </section>
+      </section> */}
 
       {/* intros */}
-      <section className="container-fluid homePage-p0 homePage-intro-area">
-        {/* 在地小農 */}
-        <div
+      {/* <section className="container-fluid homePage-p0 homePage-intro-area"> */}
+      {/* 在地小農 */}
+      {/* <div
           className={`homePage-intro1 ${
             isFarmerFeatureActive && 'homePage-intro1-active'
           }`}
-        >
-          {/* 介紹欄位 */}
-          <div className="homePage-intro1-wrap">
+        > */}
+      {/* 介紹欄位 */}
+      {/* <div className="homePage-intro1-wrap">
             <div className="homePage-intro1-title"></div>
             <div className="homePage-intro1-text mt-5">
               <p>嚴選在地農產品</p>
@@ -427,11 +427,11 @@ function HomePage(props) {
                 <Button className="button-btn-g" text="小農地圖" />
               </div>
             </Link>
-          </div>
-          {/* 小農欄位 */}
-          <div className="homePage-intro1-cards p-5">
-            {/* 萱草園．農友張武增 */}
-            <div className="homePage-intro1-card1">
+          </div> */}
+      {/* 小農欄位 */}
+      {/* <div className="homePage-intro1-cards p-5"> */}
+      {/* 萱草園．農友張武增 */}
+      {/* <div className="homePage-intro1-card1">
               <div className="homePage-intro1-farmer1 d-flex justify-content-center"></div>
               <div className="homePage-intro1-card1-wrap flex-column">
                 <div className="homePage-intro1-fake-farmer1"></div>
@@ -450,10 +450,10 @@ function HomePage(props) {
                   </div>
                 </Link>
               </div>
-            </div>
+            </div> */}
 
-            {/* 青翠園有機農場・農友莊翠蘭 */}
-            <div className="homePage-intro1-card2">
+      {/* 青翠園有機農場・農友莊翠蘭 */}
+      {/* <div className="homePage-intro1-card2">
               <div className="homePage-intro1-card2">
                 <div className="homePage-intro1-farmer2"></div>
                 <div className="homePage-intro1-card2-wrap flex-column">
@@ -478,9 +478,9 @@ function HomePage(props) {
               </div>
             </div>
           </div>
-        </div>
-        {/* 產銷履歷 */}
-        <div
+        </div> */}
+      {/* 產銷履歷 */}
+      {/* <div
           className={`homePage-intro2 ${
             isDietFeatureActive && 'homePage-intro2-active'
           }`}
@@ -503,9 +503,9 @@ function HomePage(props) {
             </Link>
           </div>
           <div className="homePage-intro2-cards"></div>
-        </div>
-        {/* 客製化便當 */}
-        <div
+        </div> */}
+      {/* 客製化便當 */}
+      {/* <div
           className={`homePage-intro3 ${
             isChoicesFeatureActive && 'homePage-intro3-active'
           }`}
@@ -524,10 +524,7 @@ function HomePage(props) {
             </div>
 
             <div className="homePage-index-button float-right mt-3">
-              <Link
-                style={{ 'text-decoration': 'none' }}
-                to="/productList"
-              >
+              <Link style={{ 'text-decoration': 'none' }} to="/productList">
                 <Button className="button-btn" text="客製化便當" />
               </Link>
             </div>
@@ -547,9 +544,9 @@ function HomePage(props) {
               ></source>
             </video>
           </div>
-        </div>
-        {/* 揪團訂購 */}
-        <div
+        </div> */}
+      {/* 揪團訂購 */}
+      {/* <div
           className={`homePage-intro4 ${
             isNetworkFeatureActive && 'homePage-intro4-active'
           }`}
@@ -577,9 +574,9 @@ function HomePage(props) {
             </Link>
           </div>
           <div className="homePage-intro4-cards"></div>
-        </div>
-        {/* 營養標示 */}
-        <div
+        </div> */}
+      {/* 營養標示 */}
+      {/* <div
           className={`homePage-intro5 ${
             isKcalFeatureActive && 'homePage-intro5-active'
           }`}
@@ -604,29 +601,29 @@ function HomePage(props) {
           </div>
           <div className="homePage-intro5-cards"></div>
         </div>
-      </section>
+      </section> */}
 
       {/* 今日推薦 */}
-      <section className="container-fluid homePage-p0 homePage-recommend ">
+      {/* <section className="container-fluid homePage-p0 homePage-recommend ">
         <div className="homePage-recommend-wrap">
-          <div className="container flex-column homePage-p0">
-            {/* 今日推薦 */}
-            <div className="row col-6">
+          <div className="container flex-column homePage-p0"> */}
+      {/* 今日推薦 */}
+      {/* <div className="row col-6">
               <img style={{ width: '300rem' }} alt="" src={recommend} />
-            </div>
-            {/* 你一定要試試 */}
-            {/* <div className="row col-6 homePage-recommend2">
+            </div> */}
+      {/* 你一定要試試 */}
+      {/* <div className="row col-6 homePage-recommend2">
               <img alt="" src={recommend2} />
             </div> */}
-          </div>
+      {/* </div> */}
 
-          {/* 商品卡片 */}
-          <div className="mt-5 container homePage-recommend-cards">
-            <div className="d-flex justify-content-between">
-              {/* <Card1 /> */}
-              <div className="homePage-card-container">
-                {/* item圖片 */}
-                <Link style={{ 'text-decoration': 'none' }} to="/bento/1">
+      {/* 商品卡片 */}
+      {/* <div className="mt-5 container homePage-recommend-cards">
+            <div className="d-flex justify-content-between"> */}
+      {/* <Card1 /> */}
+      {/* <div className="homePage-card-container"> */}
+      {/* item圖片 */}
+      {/* <Link style={{ 'text-decoration': 'none' }} to="/bento/1">
                   <section className="homePage-card-img-warp">
                     <div className="homePage-card-img1">
                       <div className="homePage-ingredient">
@@ -640,9 +637,9 @@ function HomePage(props) {
 
                 <section className="homePage-card-info-warp d-flex justify-content-center">
                   <div className="homePage-card-info d-flex flex-column">
-                    <h3>中歐香料嫩雞胸</h3>
-                    {/* 分隔線 */}
-                    <section>
+                    <h3>中歐香料嫩雞胸</h3> */}
+      {/* 分隔線 */}
+      {/* <section>
                       <div className="homePage-card-hr d-flex flex-column justify-content-center align-items-center">
                         <div className="mt-3  mb-2 homePage-card-star-warp">
                           <img
@@ -679,11 +676,11 @@ function HomePage(props) {
                     </section>
                   </div>
                 </section>
-              </div>
-              {/* <Card2 /> */}
-              <div className="homePage-card-container">
-                {/* item圖片 */}
-                <Link style={{ 'text-decoration': 'none' }} to="/bento/3">
+              </div> */}
+      {/* <Card2 /> */}
+      {/* <div className="homePage-card-container"> */}
+      {/* item圖片 */}
+      {/* <Link style={{ 'text-decoration': 'none' }} to="/bento/3">
                   <section className="homePage-card-img-warp">
                     <div className="homePage-card-img2">
                       <div className="homePage-ingredient ">
@@ -697,9 +694,9 @@ function HomePage(props) {
 
                 <section className="homePage-card-info-warp d-flex justify-content-center">
                   <div className="homePage-card-info d-flex flex-column">
-                    <h3>熱帶火烤萊姆蝦</h3>
-                    {/* 分隔線 */}
-                    <section>
+                    <h3>熱帶火烤萊姆蝦</h3> */}
+      {/* 分隔線 */}
+      {/* <section>
                       <div className="homePage-card-hr d-flex flex-column justify-content-center align-items-center">
                         <div className="mt-3  mb-2 homePage-card-star-warp">
                           <img
@@ -736,11 +733,11 @@ function HomePage(props) {
                     </section>
                   </div>
                 </section>
-              </div>
-              {/* Card3 */}
-              <div className="homePage-card-container">
-                {/* item圖片 */}
-                <Link style={{ 'text-decoration': 'none' }} to="/bento/4">
+              </div> */}
+      {/* Card3 */}
+      {/* <div className="homePage-card-container"> */}
+      {/* item圖片 */}
+      {/* <Link style={{ 'text-decoration': 'none' }} to="/bento/4">
                   <section className="homePage-card-img-warp">
                     <div className="homePage-card-img3">
                       <div className="homePage-ingredient ">
@@ -750,13 +747,13 @@ function HomePage(props) {
                       </div>
                     </div>
                   </section>
-                </Link>
+                </Link> */}
 
-                <section className="homePage-card-info-warp d-flex justify-content-center">
+      {/* <section className="homePage-card-info-warp d-flex justify-content-center">
                   <div className="homePage-card-info d-flex flex-column">
-                    <h3>麴塩五香松阪豬</h3>
-                    {/* 分隔線 */}
-                    <section>
+                    <h3>麴塩五香松阪豬</h3> */}
+      {/* 分隔線 */}
+      {/* <section>
                       <div className="homePage-card-hr d-flex flex-column justify-content-center align-items-center">
                         <div className="mt-3  mb-2 homePage-card-star-warp">
                           <img
@@ -795,29 +792,29 @@ function HomePage(props) {
                 </section>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          {/* 商品列表按鈕 */}
-          <Link style={{ 'text-decoration': 'none' }} to="/productList">
+      {/* 商品列表按鈕 */}
+      {/* <Link style={{ 'text-decoration': 'none' }} to="/productList">
             <div className="mt-5 container homePage-index-button d-flex justify-content-center">
               <Button className="button-btn" text="商品列表" />
             </div>
           </Link>
         </div>
-      </section>
+      </section> */}
 
       {/* 專屬優惠 */}
-      <section className="container-fluid homePage-p0  homePage-discount">
+      {/* <section className="container-fluid homePage-p0  homePage-discount">
         <div className="container homePage-p0">
-          <div className="row homePage-p0  d-flex justify-content-center">
-            {/* 專屬優惠標題 */}
-            <div className="mt-5 mb-5 d-flex align-items-center mt-4 mb-3">
+          <div className="row homePage-p0  d-flex justify-content-center"> */}
+      {/* 專屬優惠標題 */}
+      {/* <div className="mt-5 mb-5 d-flex align-items-center mt-4 mb-3">
               <img alt="" src={titleLeft} />
               <p className="homePage-feature-title">專屬優惠</p>
               <img alt="" src={titleRight} />
-            </div>
-            {/* 活動卡片 */}
-            <div className="container">
+            </div> */}
+      {/* 活動卡片 */}
+      {/* <div className="container">
               <div className="row">
                 <div className="col-12 d-flex justify-content-center">
                   <div className="homePage-event d-flex ">
@@ -934,9 +931,9 @@ function HomePage(props) {
                         <div onClick={event1C} className="img-row">
                           <img alt="" src={event1} />
                         </div>
-                        <div onClick={event2C} className="img-row">
-                          {/* <div className="img-row-infor"></div> */}
-                          <img alt="" src={event2} />
+                        <div onClick={event2C} className="img-row"> */}
+      {/* <div className="img-row-infor"></div> */}
+      {/* <img alt="" src={event2} />
                         </div>
                         <div onClick={event3C} className="img-row">
                           <img alt="" src={event3} />
@@ -961,18 +958,18 @@ function HomePage(props) {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 購物流程 */}
       {/* 背景圖 */}
-      <section className="container-fluid homePage-p0 homePage-shopping-process m-0">
-        {/* 模糊效果 */}
-        <div className="homePage-blur d-flex align-items-center">
-          {/* 黑灰文字區塊 */}
-          <div className="homePage-p0 homePage-black-blur">
-            <div className="d-flex justify-content-center align-items-center flex-column">
-              {/* 購物流程標題-淺色 */}
-              <div className="d-flex align-items-center mt-5">
+      {/* <section className="container-fluid homePage-p0 homePage-shopping-process m-0"> */}
+      {/* 模糊效果 */}
+      {/* <div className="homePage-blur d-flex align-items-center"> */}
+      {/* 黑灰文字區塊 */}
+      {/* <div className="homePage-p0 homePage-black-blur">
+            <div className="d-flex justify-content-center align-items-center flex-column"> */}
+      {/* 購物流程標題-淺色 */}
+      {/* <div className="d-flex align-items-center mt-5">
                 <img alt="" src={titleLeftLight} />
                 <p
                   className="homePage-feature-title "
@@ -981,35 +978,35 @@ function HomePage(props) {
                   購物流程
                 </p>
                 <img alt="" src={titleRightLight} />
-              </div>
-              {/* 五個步驟 */}
-              <div className="container homePage-p0 homePage-step-circle d-flex justify-content-between">
-                {/* step1 */}
-                <div className="homePage-step1 d-flex flex-wrap justify-content-center align-items-center">
+              </div> */}
+      {/* 五個步驟 */}
+      {/* <div className="container homePage-p0 homePage-step-circle d-flex justify-content-between"> */}
+      {/* step1 */}
+      {/* <div className="homePage-step1 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="homePage-step1-icon"></div>
                   <p>選購商品</p>
                 </div>
-                <img alt="" src={stepArrow} />
-                {/* step2 */}
-                <div className="homePage-step2 d-flex flex-wrap justify-content-center align-items-center">
+                <img alt="" src={stepArrow} /> */}
+      {/* step2 */}
+      {/* <div className="homePage-step2 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="homePage-step2-icon"></div>
                   <p className="">加入購物車</p>
                 </div>
-                <img alt="" src={stepArrow} />
-                {/* step3 */}
-                <div className="homePage-step3 d-flex flex-wrap justify-content-center align-items-center">
+                <img alt="" src={stepArrow} /> */}
+      {/* step3 */}
+      {/* <div className="homePage-step3 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="homePage-step3-icon"></div>
                   <p>會員登入</p>
                 </div>
-                <img alt="" src={stepArrow} />
-                {/* step4 */}
-                <div className="homePage-step4 d-flex flex-wrap justify-content-center align-items-center">
+                <img alt="" src={stepArrow} /> */}
+      {/* step4 */}
+      {/* <div className="homePage-step4 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="homePage-step4-icon"></div>
                   <p>確認結帳</p>
                 </div>
-                <img alt="" src={stepArrow} />
-                {/* step5 */}
-                <div className="homePage-step5 d-flex flex-wrap justify-content-center align-items-center">
+                <img alt="" src={stepArrow} /> */}
+      {/* step5 */}
+      {/* <div className="homePage-step5 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="homePage-step5-icon"></div>
                   <p>領取餐點</p>
                 </div>
@@ -1017,23 +1014,23 @@ function HomePage(props) {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 地圖 */}
-      <section className="container-fluid homePage-p0 homePage-map mt-5">
-        {/* 橘色底色 */}
-        <div className="container flex-column align-items-center homePage-map-form-bcc">
+      {/* <section className="container-fluid homePage-p0 homePage-map mt-5"> */}
+      {/* 橘色底色 */}
+      {/* <div className="container flex-column align-items-center homePage-map-form-bcc">
           <div className="flex-column homePage-map-form-wrap">
-            <br />
-            {/* 標題 */}
-            <div className="mt-5">
+            <br /> */}
+      {/* 標題 */}
+      {/* <div className="mt-5">
               <img style={{ height: '10rem' }} alt="" src={map1} />
               <br />
               <img style={{ height: '10rem' }} alt="" src={map2} />
-            </div>
+            </div> */}
 
-            {/* 表單 */}
-            <div className="homePage-adress-form-wrap d-flex justify-content-center align-items-center">
+      {/* 表單 */}
+      {/* <div className="homePage-adress-form-wrap d-flex justify-content-center align-items-center">
               <div className="homePage-form-wrap2 d-flex flex-column m-0">
                 <div className="mb-4">
                   <form name="homePage-adress-form" id="homePage-adress-form">
@@ -1139,19 +1136,19 @@ function HomePage(props) {
                 <div className="homePage-map-results mt-4">
                   <p>
                     所在地點，符合滿
-                    <span className="homePage-price homePage-tabs-highlight">
-                      {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
-                      {/* `條件 && 呈現` 是 `if(條件){呈現}` 的簡寫法，只在React JSX中可以使用 */}
-                      {county > -1 &&
+                    <span className="homePage-price homePage-tabs-highlight"> */}
+      {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
+      {/* `條件 && 呈現` 是 `if(條件){呈現}` 的簡寫法，只在React JSX中可以使用 */}
+      {/* {county > -1 &&
                         township > -1 &&
                         dataprice[county][township]}
                     </span>
                     <span className="homePage-tabs-highlight">元</span>免運費
-                  </p>
-                  {/* <p>
+                  </p> */}
+      {/* <p>
                     最近的自取地點是大安門市<span>（查看其他門市）</span>
                   </p> */}
-                </div>
+      {/* </div>
                 <div className="homePage-map-buttons d-flex justify-content-between mt-4">
                   <Link style={{ 'text-decoration': 'none' }} to="/productList">
                     <div className="homePage-index-button">
@@ -1174,10 +1171,10 @@ function HomePage(props) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          {/* 地圖 */}
-          <div className="homePage-map-view">
+      {/* 地圖 */}
+      {/* <div className="homePage-map-view">
             <iframe
               title="indexDataMap"
               src="https://plotdb.io/v/chart/27933"
@@ -1188,27 +1185,27 @@ function HomePage(props) {
             ></iframe>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 好文推薦 */}
-      <section className="container-fluid homePage-p0 homePage-article">
-        <div className="homePage-p0 flex-colunm justify-content-center">
-          {/* 標題 */}
-          <div className="mb-5 d-flex justify-content-center">
+      {/* <section className="container-fluid homePage-p0 homePage-article">
+        <div className="homePage-p0 flex-colunm justify-content-center"> */}
+      {/* 標題 */}
+      {/* <div className="mb-5 d-flex justify-content-center">
             <img alt="" src={titleLeft} />
             <p className="mt-2 homePage-feature-title">好文推薦</p>
             <img alt="" src={titleRight} />
-          </div>
+          </div> */}
 
-          {/* 推薦文章卡片 */}
-          <div className="p-2 d-flex justify-content-center align-items-center">
-            {/* 左邊模糊卡片 */}
-            {/* <div className="col-3">
+      {/* 推薦文章卡片 */}
+      {/* <div className="p-2 d-flex justify-content-center align-items-center"> */}
+      {/* 左邊模糊卡片 */}
+      {/* <div className="col-3">
               <div className="m-auto d-flex justify-content-center flex-wrap homePage-article-bcc  homePage-article-left-blur"> */}
-            {/* 圖片 */}
-            {/* <div className="homePage-article-img"></div> */}
-            {/* 文字 */}
-            {/* <div className="homePage-article-text-area">
+      {/* 圖片 */}
+      {/* <div className="homePage-article-img"></div> */}
+      {/* 文字 */}
+      {/* <div className="homePage-article-text-area">
                   <p className="homePage-article-name">Alice Yong</p>
                   <p className="homePage-article-text">
                     以前勤勞的時候天天煮低卡便當，但是發覺實在很累。兩個人的食材份量很難拿捏，還要採買、準備、收拾清潔，後來乾脆直接放棄。你們的出現真的是一大救星~低卡方便又超好吃，偶爾想下廚也有菜箱寄送服務，而且還看得到產銷履歷，真的讓人很安心！
@@ -1217,9 +1214,9 @@ function HomePage(props) {
               </div>
             </div> */}
 
-            {/* 中間兩張卡片 */}
-            <div className="col-9 d-flex justify-content-around">
-              {/* <ItemsCarousel
+      {/* 中間兩張卡片 */}
+      {/* <div className="col-9 d-flex justify-content-around"> */}
+      {/* <ItemsCarousel
                 infiniteLoop={false}
                 requestToChangeActive={setActiveItemIndex}
                 activeItemIndex={activeItemIndex}
@@ -1236,23 +1233,23 @@ function HomePage(props) {
                 rightChevron={<ArrowRight />}
                 leftChevron={<ArrowLeft />}
               > */}
-              <div className="d-flex justify-content-center flex-wrap homePage-article-bcc">
-                {/* 圖片 */}
-                <div className="homePage-article-img1"></div>
-                {/* 文字 */}
-                <div className="homePage-article-text-area">
+      {/* <div className="d-flex justify-content-center flex-wrap homePage-article-bcc"> */}
+      {/* 圖片 */}
+      {/* <div className="homePage-article-img1"></div> */}
+      {/* 文字 */}
+      {/* <div className="homePage-article-text-area">
                   <p className="homePage-article-name">Alice Yong</p>
                   <p className="homePage-article-text">
                     以前勤勞的時候天天煮低卡便當，但是發覺實在很累。兩個人的食材份量很難拿捏，還要採買、準備、收拾清潔，後來乾脆直接放棄。你們的出現真的是一大救星~低卡方便又超好吃，偶爾想下廚也有菜箱寄送服務，而且還看得到產銷履歷，真的讓人很安心！
                   </p>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="d-flex justify-content-center flex-wrap homePage-article-bcc">
-                {/* 圖片 */}
-                <div className="homePage-article-img2"></div>
-                {/* 文字 */}
-                <div className="homePage-article-text-area">
+      {/* <div className="d-flex justify-content-center flex-wrap homePage-article-bcc"> */}
+      {/* 圖片 */}
+      {/* <div className="homePage-article-img2"></div> */}
+      {/* 文字 */}
+      {/* <div className="homePage-article-text-area">
                   <p className="homePage-article-name">小傑</p>
                   <p className="homePage-article-text">
                     我一直都有健身的習慣，也有在喝高蛋白，對於飲食基本上我沒有甚麼克制。很感謝你們讓我可以體驗到好吃又健康吃不膩的水煮餐，真的滿適合健身的我這樣吃！
@@ -1262,27 +1259,27 @@ function HomePage(props) {
                 </div>
               </div>
 
-              <div className="d-flex justify-content-center flex-wrap homePage-article-bcc">
-                {/* 圖片 */}
-                <div className="homePage-article-img3"></div>
-                {/* 文字 */}
-                <div className="homePage-article-text-area">
+              <div className="d-flex justify-content-center flex-wrap homePage-article-bcc"> */}
+      {/* 圖片 */}
+      {/* <div className="homePage-article-img3"></div> */}
+      {/* 文字 */}
+      {/* <div className="homePage-article-text-area">
                   <p className="homePage-article-name">佳惠</p>
                   <p className="homePage-article-text">
                     拾餐的便當口味多變、熱量又低，而且配菜也會隨著主餐不同而有調整。主餐及配料調味剛剛好，不油不膩還減鹽少糖。一改過去對於便當的既有印象，讓人能吃出健康又能吃飽。另外他們的沙拉，也是很用心的料理！蔬菜新鮮、醬料好吃、配菜豐富！給出門在外工作上班上課的人提供了一份很健康的午餐！覺得很感恩！
                   </p>
                 </div>
-              </div>
-              {/* </ItemsCarousel> */}
-            </div>
+              </div> */}
+      {/* </ItemsCarousel> */}
+      {/* </div> */}
 
-            {/* 右邊模糊卡片 */}
-            {/* <div className="col-3">
+      {/* 右邊模糊卡片 */}
+      {/* <div className="col-3">
               <div className="m-auto d-flex justify-content-center flex-wrap homePage-article-sbcc homePage-article-right-blur"> */}
-            {/* 圖片 */}
-            {/* <div className="homePage-article-img"></div> */}
-            {/* 文字 */}
-            {/* <div className="homePage-article-text-area">
+      {/* 圖片 */}
+      {/* <div className="homePage-article-img"></div> */}
+      {/* 文字 */}
+      {/* <div className="homePage-article-text-area">
                   <p className="homePage-article-name">小傑</p>
                   <p className="homePage-article-text">
                     我一直都有健身的習慣，也有在喝高蛋白，對於飲食基本上我沒有甚麼克制。很感謝你們讓我可以體驗到好吃又健康吃不膩的水煮餐，真的滿適合健身的我這樣吃！
@@ -1292,9 +1289,9 @@ function HomePage(props) {
                 </div>
               </div>
             </div> */}
-          </div>
+      {/* </div>
         </div>
-      </section>
+      </section> */}
       <ToToop />
     </>
   );

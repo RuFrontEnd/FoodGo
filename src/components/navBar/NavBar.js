@@ -258,7 +258,7 @@ function NavBar(props) {
                 </li>
               )}
               {isLogin && (
-                <li className="navBar-navigation-item">
+                <li className="navBar-navigation-item navBar-navigation-item-member">
                   <Nav.Link
                     as={NavLink}
                     to="/memberUserprofile"

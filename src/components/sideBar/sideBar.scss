@@ -7,12 +7,20 @@
 // 引入字體
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap");
 
+#sideBar-container {
+  height: 100vh;
+}
+
+#sideBar-wrap {
+  height: 100%;
+  padding: 30px 80px;
+  margin-bottom: 0px;
+}
+
 .sideBar-container-active {
   background-color: white;
   position: fixed;
-  height: 100vh;
   box-shadow: 0.3rem 0 1rem #cfcfcf;
-  padding: 30px 50px;
   left: 0%;
   transition: 0.6s;
 }
@@ -20,9 +28,7 @@
 .sideBar-container-disActive {
   background-color: white;
   position: fixed;
-  height: 100vh;
   box-shadow: 0.3rem 0 1rem #cfcfcf;
-  padding: 30px 50px;
   left: -100%;
   transition: 0.8s;
 }
@@ -95,31 +101,56 @@
 }
 
 @media screen and (max-width: 768px) {
+  #sideBar-wrap {
+    padding: 30px 60px;
+  }
+
   .sideBar-item {
     padding: 20px 20px;
-  }
-
-  .sideBar-container-active {
-    padding: 30px 40px;
-  }
-
-  .sideBar-container-disActive {
-    padding: 30px 40px;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .sideBar-container-active {
-    padding: 30px 25px;
-  }
-
-  .sideBar-container-disActive {
-    padding: 30px 25px;
+  #sideBar-wrap {
+    width: 100vw;
+    padding: 30px 30px;
   }
 
   .sideBar-item {
     font-size: 1.6rem;
     padding: 20px 10px;
     margin: 0px 30px;
+  }
+}
+
+@media screen and (max-width: 576px) and (max-height: 700px) {
+  #sideBar-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px 30px;
+  }
+
+  .sideBar-item {
+    padding: 20px 0px;
+  }
+}
+
+@media screen and (max-width: 576px) and (max-height: 600px) {
+  #sideBar-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px 30px;
+  }
+
+  .sideBar-item {
+    padding: 15px 0px;
+  }
+}
+
+@media screen and (max-width: 576px) and (max-height: 500px) {
+  .sideBar-item {
+    padding: 5px 0px;
   }
 }
