@@ -219,14 +219,49 @@ function CustomBento(props) {
   };
 
   const handleDropBoxItem = (e) => {
-    // console.log(e.target.id !== $vegBoxLeft.current.id);
     const targetId = e.dataTransfer.getData('text/plain', e.target.id);
+
     if (targetId === 'customBento-foodItem-vegBoxLeft') {
       setVegBoxLeftImg();
       setVegNameA();
       setVegPriceA();
       setVegCalA();
-    }
+    } // 左邊蔬菜區
+
+    if (targetId === 'customBento-foodItem-vegBoxMiddle') {
+      setVegBoxMiddleImg();
+      setVegNameB();
+      setVegPriceB();
+      setVegCalB();
+    } // 中間蔬菜區
+
+    if (targetId === 'customBento-foodItem-vegBoxRight') {
+      setvegBoxRightImg();
+      setVegNameC();
+      setVegPriceC();
+      setVegCalC();
+    } // 右邊蔬菜區
+
+    if (targetId === 'customBento-foodItem-rice') {
+      setRiceImg();
+      setRiceName();
+      setRicePrice();
+      setRiceCal();
+    } // 白飯區
+
+    if (targetId === 'customBento-foodItem-egg') {
+      setMeetImg();
+      setMeetName();
+      setMeetPrice();
+      setMeetCal();
+    } // 主食區
+
+    if (targetId === 'customBento-foodItem-meet') {
+      setEggImg();
+      setEggName();
+      setEggPrice();
+      setEggCal();
+    } // 蛋區
   };
 
   // 向後端請求資料
