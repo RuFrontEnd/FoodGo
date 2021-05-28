@@ -117,7 +117,6 @@ function CustomBento(props) {
     setIsPrice(true);
     setIsCal(false);
   }
-  
   function switchCal() {
     setIsPrice(false);
     setIsCal(true);
@@ -211,6 +210,10 @@ function CustomBento(props) {
 
   const handleDragBoxItem = (e) => {
     e.dataTransfer.setData('text/plain', e.target.id);
+  };
+
+  const allowDrop = (e) => {
+    e.preventDefault();
   };
 
   const handleDropBoxItem = (e) => {
@@ -396,6 +399,7 @@ function CustomBento(props) {
         className="ru-custom-container"
         id="ru-dropArea"
         onDrop={handleDropBoxItem}
+        onDragOver={allowDrop}
       >
         <div className="ru-custom-warp" id="ru-dropOutAreaA">
           <div className="ru-drop-container" id="ru-dropOutAreaB">
