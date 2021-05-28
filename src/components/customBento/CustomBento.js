@@ -53,6 +53,7 @@ function CustomBento(props) {
   const $riceBox = useRef();
   const $eggBox = useRef();
   const $meetBox = useRef();
+
   const [moveX, setMoveX] = useState(0); // 選項區滑動變亮(RuArrowRight / RuArrowLeft 調整)
   const [isPrice, setIsPrice] = useState(true); // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false); // 是否開啟營養標示
@@ -77,15 +78,6 @@ function CustomBento(props) {
   const [isShowHintF, setIsShowHintF] = useState(false);
 
   // 設定 今日菜色(價格) 資訊
-  const [riceName, setRiceName] = useState('');
-  const [ricePrice, setRicePrice] = useState(0);
-  const [riceCal, setRiceCal] = useState(0);
-  const [meetName, setMeetName] = useState('');
-  const [meetPrice, setMeetPrice] = useState(0);
-  const [meetCal, setMeetCal] = useState(0);
-  const [eggName, setEggName] = useState('');
-  const [eggPrice, setEggPrice] = useState(0);
-  const [eggCal, setEggCal] = useState(0);
   const [vegNameA, setVegNameA] = useState('');
   const [vegPriceA, setVegPriceA] = useState(0);
   const [vegCalA, setVegCalA] = useState(0);
@@ -95,6 +87,15 @@ function CustomBento(props) {
   const [vegNameC, setVegNameC] = useState('');
   const [vegPriceC, setVegPriceC] = useState(0);
   const [vegCalC, setVegCalC] = useState(0);
+  const [riceName, setRiceName] = useState('');
+  const [ricePrice, setRicePrice] = useState(0);
+  const [riceCal, setRiceCal] = useState(0);
+  const [eggName, setEggName] = useState('');
+  const [eggPrice, setEggPrice] = useState(0);
+  const [eggCal, setEggCal] = useState(0);
+  const [meetName, setMeetName] = useState('');
+  const [meetPrice, setMeetPrice] = useState(0);
+  const [meetCal, setMeetCal] = useState(0);
 
   // 配菜區還可否被選擇
   const [veg1available, setVeg1available] = useState(true);
@@ -223,44 +224,44 @@ function CustomBento(props) {
 
     if (targetId === 'customBento-boxItem-vegBoxLeft') {
       setVegBoxLeftImg();
-      setVegNameA();
-      setVegPriceA();
-      setVegCalA();
+      setVegNameA('');
+      setVegPriceA(0);
+      setVegCalA(0);
     } // 左邊蔬菜區
 
     if (targetId === 'customBento-boxItem-vegBoxMiddle') {
       setVegBoxMiddleImg();
-      setVegNameB();
-      setVegPriceB();
-      setVegCalB();
+      setVegNameB('');
+      setVegPriceB(0);
+      setVegCalB(0);
     } // 中間蔬菜區
 
     if (targetId === 'customBento-boxItem-vegBoxRight') {
       setvegBoxRightImg();
-      setVegNameC();
-      setVegPriceC();
-      setVegCalC();
+      setVegNameC('');
+      setVegPriceC(0);
+      setVegCalC(0);
     } // 右邊蔬菜區
 
     if (targetId === 'customBento-boxItem-rice') {
       setRiceImg();
-      setRiceName();
-      setRicePrice();
-      setRiceCal();
+      setRiceName('');
+      setRicePrice(0);
+      setRiceCal(0);
     } // 白飯區
 
     if (targetId === 'customBento-boxItem-meet') {
       setMeetImg();
-      setMeetName();
-      setMeetPrice();
-      setMeetCal();
+      setMeetName('');
+      setMeetPrice(0);
+      setMeetCal(0);
     } // 蛋區
 
     if (targetId === 'customBento-boxItem-egg') {
       setEggImg();
-      setEggName();
-      setEggPrice();
-      setEggCal();
+      setEggName('');
+      setEggPrice(0);
+      setEggCal(0);
     } // 主食區
   };
 
