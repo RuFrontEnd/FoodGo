@@ -29,10 +29,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   padding: 0 !important;
 }
 
-.homePage-feature-wrap {
-  margin-bottom: 30px;
-}
-
 // 標題宋體樣式
 .homePage-feature-title {
   font-size: 3.2rem;
@@ -221,7 +217,11 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
 // 特色專區-切換區域
 #homePage-feature-wrap {
-  padding: 60px 0px 30px 0px;
+  padding: 60px 20px 30px 20px;
+}
+
+#homePage-feature-title-wrap {
+  margin-bottom: 30px;
 }
 
 .homePage-index-feature {
@@ -1351,7 +1351,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
         .homePage-network-icon-active {
           background-size: 9rem 9rem;
         }
-        
+
         .homePage-kcal-icon {
           background-size: 8rem 8rem;
         }
@@ -1364,14 +1364,59 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .homePage-index-feature .homePage-circles .homePage-index-feature-circle {
-    width: 13rem;
-    height: 13rem;
-  }
+@media screen and (max-width: 992px) {
+  .homePage-index-feature {
+    .homePage-circles {
+      .homePage-index-feature-smcircle {
+        width: 1rem;
+        height: 1rem;
+      }
+      .homePage-index-feature-circle {
+        width: 11rem;
+        height: 11rem;
+        border-radius: 50%;
 
-  .homePage-index-feature .homePage-circles .homePage-index-feature-circle .homePage-farmer-icon {
-    background-size: 6.5rem 6.5rem;
+        .homePage-farmer-icon {
+          background-size: 6rem 6rem;
+        }
+
+        .homePage-farmer-icon-active {
+          background-size: 7rem 7rem;
+        }
+
+        .homePage-diet-icon {
+          background-size: 6rem 6rem;
+        }
+
+        .homePage-diet-icon-active {
+          background-size: 7rem 7rem;
+        }
+
+        .homePage-choices-icon {
+          background-size: 6rem 6rem;
+        }
+
+        .homePage-choices-icon-active {
+          background-size: 7rem 7rem;
+        }
+
+        .homePage-network-icon {
+          background-size: 6rem 6rem;
+        }
+
+        .homePage-network-icon-active {
+          background-size: 7rem 7rem;
+        }
+
+        .homePage-kcal-icon {
+          background-size: 6rem 6rem;
+        }
+
+        .homePage-kcal-icon-active {
+          background-size: 7rem 7rem;
+        }
+      }
+    }
   }
 }
 

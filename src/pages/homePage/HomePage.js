@@ -311,7 +311,7 @@ function HomePage(props) {
           className="row homePage-index-feature d-flex flex-column align-items-center justify-content-space-between"
         >
           {/* 標題 */}
-          <div className="homePage-feature-wrap d-flex align-items-center">
+          <div id="homePage-feature-title-wrap" className="d-flex align-items-center">
             <img alt="" src={titleLeft} />
             <p className="homePage-feature-title">品牌特色</p>
             <img alt="" src={titleRight} />
@@ -400,11 +400,10 @@ function HomePage(props) {
             </div>
           </div>
         </div>
-        <div
-          // style={{ left: `${featureTriangleLeft}px` }}
+        {/* <div
           className={`homePage-index-feature-triangle position-absolute ${featureTriangleClassName}`}
           ref={$featureTriangle}
-        ></div>
+        ></div> */}
       </section>
 
       {/* intros */}
