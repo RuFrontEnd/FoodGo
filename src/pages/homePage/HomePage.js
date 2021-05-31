@@ -617,7 +617,7 @@ function HomePage(props) {
       </section>
 
       {/* 今日推薦 */}
-      <section className="container-fluid homePage-p0 homePage-recommend ">
+      <section className="container homePage-p0 homePage-recommend ">
         <div className="homePage-recommend-wrap">
           <div className="container flex-column homePage-p0">
             {/* 今日推薦 */}
@@ -627,7 +627,7 @@ function HomePage(props) {
           </div>
 
           {/* 商品卡片 */}
-          <div className="mt-5 container homePage-recommend-cards">
+          <div className="mt-5 homePage-recommend-cards">
             <div className="d-flex justify-content-between">
               {/* <Card1 /> */}
               <RecommendCard
