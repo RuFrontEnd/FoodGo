@@ -595,11 +595,9 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   .homePage-intro2-wrap {
     // background-color: #bbb;
     width: 44rem;
-
     .homePage-intro2-title {
       background: url("../../assets/svg/intro2.svg") center center no-repeat;
       background-size: cover;
-      width: 43rem;
       height: 11rem;
     }
   }
@@ -1388,11 +1386,11 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
 @media screen and (max-width: 767.98px) {
   .homePage-intro1-container .homePage-intro1-cards {
-    flex-direction: column
+    flex-direction: column;
   }
 
-  .homePage-intro1-container .homePage-intro1-cards .homePage-intro1-card1{
-    margin-right:0px ;
+  .homePage-intro1-container .homePage-intro1-cards .homePage-intro1-card1 {
+    margin-right: 0px;
     margin-bottom: 20px;
   }
 
@@ -1549,7 +1547,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     width: 300px;
   }
 
-  .homePage-intro1-container .homePage-intro1-cards .homePage-intro1-card1{
+  .homePage-intro1-container .homePage-intro1-cards .homePage-intro1-card1 {
     margin-top: 20px;
   }
 
@@ -1568,26 +1566,34 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
   .homePage-intro-card {
     width: 397px;
-    height: 3px;
+    height: 315px;
     background-size: cover;
   }
 
-  .homePage-intro2-container .homePage-intro2-wrap .homePage-intro2-title {
-    margin: auto;
-  }
-
-  .homePage-intro2-container .homePage-intro2-wrap .homePage-intro2-title {
-    width: 28rem;
-    height: 6rem;
-  }
-
-  .homePage-intro1-container .homePage-intro1-wrap .homePage-intro1-title{
+  .homePage-intro1-container .homePage-intro1-wrap .homePage-intro1-title {
     height: 7rem;
   }
 
-  .homePage-intro1-container .homePage-intro1-wrap .homePage-intro1-text{
+  .homePage-intro1-container .homePage-intro1-wrap .homePage-intro1-text {
     margin-left: 0rem;
   }
+
+  .homePage-intro2-container .homePage-intro2-wrap .homePage-intro2-title {
+    height: 6rem;
+    width: 25rem;
+    margin: auto;
+  }
+
+  .homePage-intro2-container .homePage-intro2-wrap {
+    width: 100%;
+  }
+
+  .homePage-intro2-container .homePage-intro2-text{
+    width: 100%;
+    height: 100%;
+    margin-left: 0rem;
+  }
+  
 }
 
 // @media screen and (max-width: 376px) {

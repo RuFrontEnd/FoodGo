@@ -27,6 +27,7 @@ import ArrowLeft from 'Share/Components/ArrowLeft/ArrowLeft';
 import ArrowRight from 'Share/Components/ArrowRight/ArrowRight';
 import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import ToToop from 'Share/Components/ToTopButton/ScrollButton';
+import RecommendCard from 'components/recommendCard/RecommendCard';
 
 const data = {
   台北市: {
@@ -616,83 +617,33 @@ function HomePage(props) {
       </section>
 
       {/* 今日推薦 */}
-      {/* <section className="container-fluid homePage-p0 homePage-recommend ">
+      <section className="container-fluid homePage-p0 homePage-recommend ">
         <div className="homePage-recommend-wrap">
-          <div className="container flex-column homePage-p0"> */}
-      {/* 今日推薦 */}
-      {/* <div className="row col-6">
+          <div className="container flex-column homePage-p0">
+            {/* 今日推薦 */}
+            <div className="row col-6">
               <img style={{ width: '300rem' }} alt="" src={recommend} />
-            </div> */}
-      {/* 你一定要試試 */}
-      {/* <div className="row col-6 homePage-recommend2">
-              <img alt="" src={recommend2} />
             </div>
-          </div> */}
+          </div>
 
-      {/* 商品卡片 */}
-      {/* <div className="mt-5 container homePage-recommend-cards">
-            <div className="d-flex justify-content-between"> */}
-      {/* <Card1 /> */}
-      {/* <div className="homePage-card-container"> */}
-      {/* item圖片 */}
-      {/* <Link style={{ 'text-decoration': 'none' }} to="/bento/1">
-                  <section className="homePage-card-img-warp">
-                    <div className="homePage-card-img1">
-                      <div className="homePage-ingredient">
-                        <div className="homePage-ingredient-content">
-                          簡單卻迷人的迷迭香風味，經過真空舒肥的肉質軟嫩又Juicy，特別加入研磨風乾大蒜，濃郁香氣，清爽不膩。
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                </Link>
-
-                <section className="homePage-card-info-warp d-flex justify-content-center">
-                  <div className="homePage-card-info d-flex flex-column">
-                    <h3>中歐香料嫩雞胸</h3> */}
-      {/* 分隔線 */}
-      {/* <section>
-                      <div className="homePage-card-hr d-flex flex-column justify-content-center align-items-center">
-                        <div className="mt-3  mb-2 homePage-card-star-warp">
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                        </div>
-                        <span className="d-flex justify-content-center">
-                          <p>232 則評論 </p>
-                          <p>250 已購買</p>
-                        </span>
-                      </div>
-                    </section>
-                  </div>
-                </section>
-              </div> */}
-      {/* <Card2 /> */}
-      {/* <div className="homePage-card-container"> */}
-      {/* item圖片 */}
-      {/* <Link style={{ 'text-decoration': 'none' }} to="/bento/3">
+          {/* 商品卡片 */}
+          <div className="mt-5 container homePage-recommend-cards">
+            <div className="d-flex justify-content-between">
+              {/* <Card1 /> */}
+              <RecommendCard
+                linkTo={'/bento/1'}
+                instruction={
+                  '簡單卻迷人的迷迭香風味，經過真空舒肥的肉質軟嫩又Juicy，特別加入研磨風乾大蒜，濃郁香氣，清爽不膩。'
+                }
+                productName={'中歐香料嫩雞胸'}
+                starCounts={5}
+                commentCounts={232}
+                buyCounts={250}
+              ></RecommendCard>
+              {/* <Card2 /> */}
+              <div className="homePage-card-container">
+                {/* item圖片 */}
+                <Link style={{ 'text-decoration': 'none' }} to="/bento/3">
                   <section className="homePage-card-img-warp">
                     <div className="homePage-card-img2">
                       <div className="homePage-ingredient ">
@@ -706,9 +657,9 @@ function HomePage(props) {
 
                 <section className="homePage-card-info-warp d-flex justify-content-center">
                   <div className="homePage-card-info d-flex flex-column">
-                    <h3>熱帶火烤萊姆蝦</h3> */}
-      {/* 分隔線 */}
-      {/* <section>
+                    <h3>熱帶火烤萊姆蝦</h3>
+                    {/* 分隔線 */}
+                    <section>
                       <div className="homePage-card-hr d-flex flex-column justify-content-center align-items-center">
                         <div className="mt-3  mb-2 homePage-card-star-warp">
                           <img
@@ -745,11 +696,11 @@ function HomePage(props) {
                     </section>
                   </div>
                 </section>
-              </div> */}
-      {/* Card3 */}
-      {/* <div className="homePage-card-container"> */}
-      {/* item圖片 */}
-      {/* <Link style={{ 'text-decoration': 'none' }} to="/bento/4">
+              </div>
+              {/* Card3 */}
+              <div className="homePage-card-container">
+                {/* item圖片 */}
+                <Link style={{ 'text-decoration': 'none' }} to="/bento/4">
                   <section className="homePage-card-img-warp">
                     <div className="homePage-card-img3">
                       <div className="homePage-ingredient ">
@@ -763,9 +714,9 @@ function HomePage(props) {
 
                 <section className="homePage-card-info-warp d-flex justify-content-center">
                   <div className="homePage-card-info d-flex flex-column">
-                    <h3>麴塩五香松阪豬</h3> */}
-      {/* 分隔線 */}
-      {/* <section>
+                    <h3>麴塩五香松阪豬</h3>
+                    {/* 分隔線 */}
+                    <section>
                       <div className="homePage-card-hr d-flex flex-column justify-content-center align-items-center">
                         <div className="mt-3  mb-2 homePage-card-star-warp">
                           <img
@@ -804,16 +755,16 @@ function HomePage(props) {
                 </section>
               </div>
             </div>
-          </div> */}
+          </div>
 
-      {/* 商品列表按鈕 */}
-      {/* <Link style={{ 'text-decoration': 'none' }} to="/productList">
+          {/* 商品列表按鈕 */}
+          <Link style={{ 'text-decoration': 'none' }} to="/productList">
             <div className="mt-5 container homePage-index-button d-flex justify-content-center">
               <Button className="button-btn" text="商品列表" />
             </div>
           </Link>
         </div>
-      </section> */}
+      </section>
 
       {/* 專屬優惠 */}
       {/* <section className="container-fluid homePage-p0  homePage-discount">
