@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import './App.css';
 
 // install react router => npm install react-router-dom
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // components
-import Navbar from 'Share/Components/NavBar/NavBar';
-import Footer from 'Share/Components/Footer/Footer';
+import Navbar from 'components/navBar/NavBar';
+import Footer from 'components/footer/Footer';
 import LoginModal from 'components/loginModal/LoginModal';
 
 // 引入 所有人的總元件
@@ -35,7 +36,7 @@ import ChaCheckpoint from 'Cha/Pages/ChaCheckpoint';
 import ChaProductList from 'Cha/Components-demo/ChaProductList';
 import ChaCartTest from 'Cha/Components-demo/ChaCartTest';
 
-import JanIndex from 'Janice/Pages/JanIndex';
+import HomePage from 'pages/homePage/HomePage';
 import IrisUserprofile from 'Iris/Pages/IrisUserprofile';
 
 // 加入 toTop 按鈕元件
@@ -46,8 +47,14 @@ import {
   datatownships,
 } from '../src/Janice/Components/JanIndexx/data.js';
 
+// 判斷是否 login 的狀態
+import { login } from 'redux/member/memberActions';
+import { logout } from 'redux/member/memberActions';
+
 // 路由表
 function App() {
+  const dispatch = useDispatch();
+  const isLogin = useSelector((state) => state.member.isLogin);
   const [showBar, setShowBar] = useState(true);
   const [cartNumber, setCartNumber] = useState(0);
   const [amount, setAmount] = useState(1);
@@ -55,8 +62,8 @@ function App() {
   // ---------- iris ---------- //
   const [currentUser, setCurrentUser] = useState(''); // 目前用戶
   const [currentUserData, setCurrentUserData] = useState({}); // 目前用戶
-
   const [showLoginModal, setShowLoginModal] = useState(false); //控制是否秀光箱
+  const [showSuccessBox, setShowSuccessBox] = useState(false);
   const [couponStatus, setCouponStatus] = useState([]);
   const [couponOneStatus, setCouponOneStatus] = useState('');
 
@@ -74,6 +81,39 @@ function App() {
   // setTextCounty(turnCon);
   const [textTownship, setTextTownship] = useState('');
   // setTextTownship(turnTown);
+
+  useEffect(async () => {
+    const accessToken = localStorage.getItem('accessToken');
+    const currentCartNumber =
+      JSON.parse(localStorage.getItem('cartNumber')) || 0;
+    if (accessToken) {
+      const token = { accessToken: accessToken };
+      await fetch('http://localhost:5000/member/login', {
+        method: 'POST',
+        body: JSON.stringify(token),
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${accessToken}`,
+        }),
+      })
+        .then((res) => res.json())
+        .then((jsonData) => {
+          if (jsonData.status) {
+            dispatch(login());
+          }
+        });
+    }
+    if (!accessToken) {
+      dispatch(logout());
+    }
+
+    setCartNumber(currentCartNumber);
+
+    if (JSON.parse(localStorage.getItem('currentUser'))) {
+      setCurrentUser(JSON.parse(localStorage.getItem('currentUser')));
+    }
+  }, []); // 初始判斷會員狀態與資料
 
   useEffect(() => setTextAddress(address), [address]);
   useEffect(() => setTextCounty(county !== -1 ? datacountries[county] : ''), [
@@ -121,24 +161,9 @@ function App() {
   //   }
   // };
 
-  useEffect(() => {
-    const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || 0;
-    setCartNumber(currentCartNumber);
-  }, []);
-
-  useEffect(() => {
-    return () => {};
-  }, [amount]);
-
-  // 若localstorage有user就用user資料
-  useEffect(() => {
-    if (JSON.parse(localStorage.getItem('currentUser'))) {
-      setCurrentUser(JSON.parse(localStorage.getItem('currentUser')));
-      // console.log(localStorage.getItem('currentUser'))
-    }
-  }, []);
-
+  if (isLogin === null) {
+    return <></>;
+  }
   return (
     <Router>
       <>
@@ -148,12 +173,15 @@ function App() {
           cartNumber={cartNumber}
           amount={amount}
           setShowLoginModal={setShowLoginModal}
+          setShowSuccessBox={setShowSuccessBox}
           showLoginModal={showLoginModal}
           currentUser={currentUser}
         />
         <LoginModal
           showLoginModal={showLoginModal}
           setShowLoginModal={setShowLoginModal}
+          showSuccessBox={showSuccessBox}
+          setShowSuccessBox={setShowSuccessBox}
           setCurrentUser={setCurrentUser}
           currentUserData={currentUserData}
           setCurrentUserData={setCurrentUserData}
@@ -187,26 +215,6 @@ function App() {
                 setSelectTime={setSelectTime}
                 amount={amount}
                 setAmount={setAmount}
-              />
-            </Route>
-            <Route exact path="/productListCustom">
-              <RuProudctListCustom
-                setShowBar={setShowBar}
-                handleCartNumber={handleCartNumber}
-                amount={amount}
-                setAmount={setAmount}
-                county={county}
-                setCounty={setCounty}
-                township={township}
-                setTownship={setTownship}
-                address={address}
-                setAddress={setAddress}
-                takeOrNot={takeOrNot}
-                setTakeOrNot={setTakeOrNot}
-                selectDate={selectDate}
-                setSelectDate={setSelectDate}
-                slecteTime={slecteTime}
-                setSelectTime={setSelectTime}
               />
             </Route>
             {/* cha */}
@@ -464,7 +472,7 @@ function App() {
             </Route>
             {/* janice */}
             <Route exact path="/">
-              <JanIndex
+              <HomePage
                 currentUser={currentUser}
                 takeOrNot={takeOrNot}
                 setTakeOrNot={setTakeOrNot}

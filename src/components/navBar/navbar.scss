@@ -1,0 +1,445 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+// 引入字體
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap");
+
+li {
+  list-style: none;
+}
+
+nav {
+  position: relative;
+}
+
+.navBar-hidden {
+  visibility: hidden;
+}
+
+.navBar-container {
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  width: 100%;
+  box-shadow: 0.3rem 0 1rem #cfcfcf;
+  z-index: 1040;
+}
+
+.navBar-wrap {
+  max-width: 144rem;
+  padding: 0px 135px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.navBar-collapse {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+.navBar-collapse ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0px;
+}
+
+.navBar-navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navBar-navigation-1 {
+  display: flex;
+  justify-content: flex-start;
+  flex-basis: 637.5px;
+}
+
+.navBar-navigation-2 {
+  display: flex;
+  justify-content: center;
+  flex-basis: 165px;
+}
+
+.navBar-navigation-3 {
+  flex-basis: 637.5px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navBar-sideBar {
+  display: none;
+  background-color: white;
+  position: fixed;
+  z-index: 1000;
+  height: 100vh;
+  top: 100px;
+  box-shadow: 0.3rem 0 1rem #cfcfcf;
+  padding: 30px 10px;
+}
+
+//text color
+.navBar-container a,
+.navBar-sideBar a {
+  color: #858585;
+  text-decoration: none;
+}
+
+//when text hover
+.navBar-container a:hover,
+.navBar-container a:focus,
+.navBar-container a:active,
+.navBar-sideBar a:hover,
+.navBar-sideBar a:focus,
+.navBar-sideBar a:active {
+  color: #e0611e;
+  text-decoration: none;
+}
+
+// 下拉式選單出現切換
+.navBar-navigation-item {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  padding: 0px 12.5px;
+  transition: 0.5s;
+}
+
+.navBar-navigation-item:hover #back_arrow,
+.navBar-listNavigation-item:hover #back_arrow {
+  fill: #e0611e;
+  transition: 0.5s;
+}
+
+.navBar-navigation-item:hover .navBar-member,
+.navBar-listNavigation-item:hover .navBar-member {
+  fill: #e0611e;
+  transition: 0.5s;
+}
+
+.navBar-navigation-item:hover #_001-shopping-cart,
+.navBar-listNavigation-item:hover #_001-shopping-cart {
+  fill: #e0611e;
+  transition: 0.5s;
+}
+
+#navBar-hamburger-wrap {
+  display: none;
+}
+
+.navBar-navigation-item:hover .navBar-dropdown {
+  display: block;
+}
+
+.navBar-dropdown-item:hover .navBar-monster4 {
+  opacity: 1;
+  left: 16rem;
+}
+
+//下拉式選單 頂部三角形
+.navBar-triangle {
+  width: 0rem;
+  height: 0rem;
+  border-style: solid;
+  border-width: 0 9px 15px 9px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.3) transparent;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  text-align: center;
+}
+
+.navBar-dropdown {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  width: 17rem;
+  margin-top: 3.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  backdrop-filter: blur(3px);
+}
+
+//下拉式選單 hover後效果
+.navBar-dropdown-item:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.navBar-dropdown-item-wrap {
+  position: relative;
+}
+
+.navBar-dropdown-item {
+  padding: 5px 0px;
+  color: rgb(255, 255, 255);
+  line-height: 2.5rem;
+  font-size: 1.8rem;
+}
+
+// 下拉式選單 文字顏色
+.navBar-dropdown-item a {
+  color: rgb(255, 255, 255);
+  line-height: 2.5rem;
+  font-size: 1.8rem;
+}
+
+.navBar-logo {
+  height: 70px;
+}
+
+//right下拉式選單 頂部三角形
+.navBar-triangle2 {
+  width: 0rem;
+  height: 0rem;
+  border-style: solid;
+  border-width: 0 9px 15px 9px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.3) transparent;
+  position: absolute;
+  top: -1.5rem;
+  right: 7.5rem;
+  text-align: center;
+}
+
+//小怪獸的出現效果-我的怪獸
+.navBar-monster4 {
+  position: absolute;
+  left: 14rem;
+  top: 13.5rem;
+  opacity: 0;
+  transition: left 0.5s;
+  transition-timing-function: linear;
+  z-index: -1;
+}
+
+.navbar-icon {
+  z-index: 1050;
+  width: 35px;
+  height: 35px;
+  fill: #858585;
+}
+
+.navBar-shoppingCard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-tag-wrap {
+  position: absolute;
+  top: -12px;
+  left: 37px;
+}
+
+.navbar-tag {
+  position: relative;
+}
+
+//shopping cart number
+.navBar-navbarCartAmount {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.navBar-navbarCartNum {
+  font-family: "Noto Sans TC";
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #ffffff;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  text-align: center;
+}
+
+.navBar-navToggle {
+  clear: both;
+  display: none;
+  font-size: 4rem;
+  position: absolute;
+  left: 2;
+  top: 0;
+}
+
+.navBar-listNavigation-container {
+  // background-color: bisque;
+  padding: 0px 50px;
+  width: 100%;
+}
+
+.navBar-listNavigation-wrap {
+  // background-color: #e0611e;
+  display: flex;
+  justify-content: center;
+}
+
+.navBar-listNavigation-wrap {
+  margin-bottom: 0px;
+}
+
+.navBar-listNavigation-collapse {
+  margin-bottom: 0px;
+}
+
+.navBar-listNavigation-item {
+  color: #858585;
+  margin: 0px 50px;
+  padding: 20px 50px;
+  padding-right: 35px;
+  line-height: 2.5rem;
+  font-size: 1.8rem;
+  border-bottom: 1px solid #85858533;
+}
+
+.navBar-listNavigation-item:last-child {
+  border: none;
+}
+
+.navBar-listNavigation-item a {
+  color: #858585;
+}
+
+.navBar-listNavigation-subItem {
+  background-color: #f6bd6033;
+  padding: 5px 70px;
+}
+
+.navBar-listNavigation-subItem a {
+  margin-left: 15px;
+}
+
+#navBar-listNavigation-menu {
+  position: relative;
+}
+
+.navBar-listDropdown-wrap {
+  background-color: white;
+  position: absolute;
+  padding: 15px;
+  width: 100%;
+  top: 0;
+  left: 250px;
+  box-shadow: 0.3rem 0 1rem #cfcfcf;
+}
+
+#navBar-listDropdown-menu-wrap li {
+  padding: 10px 0px;
+  border-bottom: 1px solid #85858533;
+}
+
+#navBar-listDropdown-menu-wrap li:last-child {
+  border-bottom: none;
+}
+
+#navBar-listNavigation-back {
+  margin-left: 20px;
+}
+
+.navBar-sub-sideBar .navBar-listNavigation-item {
+  padding-right: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.navBar-sub-sideBar .navBar-listNavigation-item:nth-child(2) {
+  border: none;
+}
+
+.navBar-sub-sideBar .navBar-listNavigation-item:nth-child(2) h3 {
+  color: #e0611e;
+  font-size: 2.2rem;
+  margin-bottom: 0px;
+}
+
+#navBar-listNavigation-back {
+  cursor: pointer;
+}
+
+#back-arrow {
+  fill: #858585;
+}
+
+#main-sideBar {
+  display: none;
+  z-index: 1000;
+  top: 100px;
+  height: calc(100vh - 100px);
+}
+
+#menu-sideBar,
+#member-sideBar {
+  display: none;
+  z-index: 1030;
+  top: 100px;
+  height: calc(100vh - 100px);
+}
+
+@media screen and (max-width: 1440px) {
+  .navBar-wrap {
+    padding: 0px 100px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .navBar-wrap {
+    padding: 0px 70px;
+  }
+
+  .navBar-navigation-item {
+    padding: 0px 5px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navBar-navigation-item {
+    padding: 0px 5px;
+  }
+
+  .navBar-navigation-item-txt {
+    display: none;
+  }
+
+  #navBar-hamburger-wrap {
+    display: block;
+  }
+
+  #main-sideBar {
+    display: block;
+  }
+
+  #menu-sideBar,
+  #member-sideBar {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navBar-wrap {
+    padding: 0px 50px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navBar-wrap {
+    padding: 0px 20px;
+  }
+
+  .navBar-logo {
+    width: 100px;
+  }
+
+  .navbar-icon {
+    width: 30px;
+  }
+
+  .navBar-navigation-item-member a {
+    padding: 0px;
+  }
+}

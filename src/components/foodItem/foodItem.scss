@@ -1,0 +1,54 @@
+@import "variable/variable.scss";
+
+// 網頁版
+#foodItem-container {
+  width: 100%;
+  height: 100%;
+}
+
+#foodItem-wrap {
+  width: 100%;
+  height: 100%;
+  @include flex($df, $fdr, $jcs, $alc);
+}
+
+#foodItem-img-wrap {
+  cursor: grab;
+  width: 100%;
+  height: 100%;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+#foodItem-img-wrap img {
+  cursor: grab;
+  width: 70%;
+  height: 100%;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+#foodItem-info {
+  width: 100%;
+}
+
+#foodItem-info ul {
+  width: 100%;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+#foodItem-info ul h4 {
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 5px;
+  @include font($notoSansTC, $minor-heading, $regular, 1.25px, $productName-Color);
+}
+
+#foodItem-info ul h4 span {
+  @include font($notoSansTC, $minor-heading, $bold, 1.25px, $light-orange);
+}
+
+#foodItem-info ul li {
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 5px;
+  @include font($notoSansTC, $content, $regular, 1.25px, $grey);
+}

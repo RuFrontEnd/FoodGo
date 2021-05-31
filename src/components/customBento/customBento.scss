@@ -125,7 +125,7 @@
   pointer-events: none;
 }
 
-#ru-areaA {
+#custom-bento-vegBox-left {
   // background-color: red;
   width: 29.5%;
   height: 38.5%;
@@ -133,6 +133,10 @@
   left: 4.5%;
   position: absolute;
   // opacity: 0.5;
+}
+
+.customBento-box-container{
+  cursor: pointer;
 }
 
 #ru-areaB {
@@ -315,6 +319,17 @@
   width: 10.145%;
 }
 
+#customBento-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+#customBento-background {
+  user-select: none;
+}
+
 // 切換商品區 ----------
 .ru-detail-container-web {
   display: block;
@@ -472,7 +487,7 @@
     margin: 0px;
   }
 
-  .ru-species-container{
+  .ru-species-container {
     height: 300px;
   }
 
@@ -483,25 +498,25 @@
     @include flex($df, $fdr, $jcs, $alc);
   }
 
-  #moveArea1 li{
+  #moveArea1 li {
     flex-direction: column;
     text-align: center;
   }
 
-  #moveArea1 li .ru-species-img{
+  #moveArea1 li .ru-species-img {
     height: 45%;
   }
 
-  #moveArea1 li .ru-species-info{
+  #moveArea1 li .ru-species-info {
     margin: 0px;
   }
 
-  #moveArea1 li .ru-species-info h4{
+  #moveArea1 li .ru-species-info h4 {
     display: flex;
     flex-direction: column;
   }
 
-  .ru-box-warp .ru-hint-warp h3{
+  .ru-box-warp .ru-hint-warp h3 {
     font-size: 18px;
   }
   // 切換商品區 ----------

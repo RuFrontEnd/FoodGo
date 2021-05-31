@@ -8,7 +8,6 @@ import ClaudiaDetailedFarmIntro from '../Components/ClaudiaDetailedFarmIntro/Cla
 import ClaudiaDetailedFarmAdr from '../Components/ClaudiaDetailedFarmAdr/ClaudiaDetailedFarmAdr';
 import ClaudiaDetailedNavButtons from '../Components/ClaudiaDetailedNavButtons/ClaudiaDetailedNavButtons';
 import ClaudiaDetailedRecommended from '../Components/ClaudiaDetailedRecommended/ClaudiaDetailedRecommended';
-import Footer from '../../Share/Components/Footer/Footer';
 import ScrollButtonGreen from '../../Share/Components/ToTopButton/ScrollButtonGreen';
 
 function ClaudiaFarmIntroPage(props) {

@@ -4,13 +4,14 @@ import LoginCard from 'components/loginCard/LoginCard';
 import LoginSuccessBox from 'components/loginSuccessBox/LoginSuccessBox';
 
 function LoginModal(props) {
-  const [showSuccessBox, setShowSuccessBox] = useState(false);
   const {
     showLoginModal,
     setShowLoginModal,
     setCurrentUser,
     currentUserData,
     setCurrentUserData,
+    showSuccessBox,
+    setShowSuccessBox,
   } = props;
 
   // 若ShowLoginModal是true，就秀登入畫面

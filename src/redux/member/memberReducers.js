@@ -2,7 +2,7 @@ import { LOGIN } from 'redux/member/memberTypes';
 import { LOGOUT } from 'redux/member/memberTypes';
 
 const initialState = {
-  isLogin: false,
+  isLogin: null,
 };
 
 const loginReducers = (state = initialState, action) => {
@@ -16,7 +16,7 @@ const loginReducers = (state = initialState, action) => {
       return {
         isLogin: false,
       };
-      
+
     default:
       return state;
   }

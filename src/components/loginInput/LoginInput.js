@@ -4,16 +4,21 @@
 import React, { useState, useEffect } from 'react';
 import './loginInput.scss';
 
-function LoginInput(props) {
-  const { placeholder, type, id, className } = props;
+const LoginInput = React.forwardRef((props, ref) => {
+  const { placeholder, type, id, className, value, setValue } = props;
   return (
     <input
+      value={value}
+      onChange={(e) => {
+        setValue(e.target.value);
+      }}
+      ref={ref}
       id={id}
       className={`LoginInput ${className}`}
       type={type}
       placeholder={placeholder}
     />
   );
-}
+});
 
 export default LoginInput;

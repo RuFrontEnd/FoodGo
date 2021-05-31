@@ -108,10 +108,6 @@ function RuCompSalad(props) {
       {/* to top s */}
       <ScrollButton />
       {/* to top e */}
-
-      {/* <div style={{ height: '222px', backgroundColor: '#FF5151' }}>
-        我是footer
-      </div> */}
     </>
   );
 }

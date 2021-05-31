@@ -22,7 +22,7 @@ function JessMenuB(props) {
 
           <div className="row mt-5 ">
             <div class="col-12 col-sm-6 jess-banner-anim ">
-              <Link to="/productListCustom">
+              <Link to="/productList">
                 <BannerAnim prefixCls="banner-user">
                   <Element
                     key="aaa"
