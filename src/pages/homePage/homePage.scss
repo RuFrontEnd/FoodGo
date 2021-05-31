@@ -759,7 +759,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   background-size: cover;
   width: 100%;
   .homePage-recommend-wrap {
-    margin-top: 4rem;
+    margin: 4rem 0rem;
     width: 100%;
     height: 100%;
   }
@@ -1381,6 +1381,14 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
       }
     }
   }
+
+  .homePage-recommend-card {
+    margin-bottom: 30px;
+  }
+
+  #homePage-recommend-card-wrap {
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width: 767.98px) {
@@ -1460,6 +1468,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     width: 500px;
     height: 397px;
     background-size: cover;
+  }
+
+  #homePage-recommend-card-wrap {
+    justify-content: center !important;
   }
 }
 
@@ -1587,12 +1599,11 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     width: 100%;
   }
 
-  .homePage-intro2-container .homePage-intro2-text{
+  .homePage-intro2-container .homePage-intro2-text {
     width: 100%;
     height: 100%;
     margin-left: 0rem;
   }
-  
 }
 
 // @media screen and (max-width: 376px) {

@@ -5,6 +5,7 @@ import starO from 'assets/svg/star-o.svg';
 
 function RecommendCard(props) {
   const {
+    className = '',
     linkTo = '',
     instruction = '',
     productName = '產品名稱',
@@ -24,7 +25,7 @@ function RecommendCard(props) {
 
   return (
     <>
-      <div id="recommendCard-card-container">
+      <div id="recommendCard-card-container" className={className}>
         {/* item圖片 */}
         <Link style={{ 'text-decoration': 'none' }} to={linkTo}>
           <section id="recommendCard-card-img-warp">
@@ -35,7 +36,6 @@ function RecommendCard(props) {
             </div>
           </section>
         </Link>
-
         <section
           id="recommendCard-card-info-warp"
           className="d-flex justify-content-center"
@@ -49,11 +49,7 @@ function RecommendCard(props) {
               >
                 <div id="recommendCard-card-star-warp" className="mt-3  mb-2">
                   {stars.map((star) => (
-                    <img
-                      alt=""
-                      id="recommendCard-card-star"
-                      src={starO}
-                    />
+                    <img alt="" id="recommendCard-card-star" src={starO} />
                   ))}
                 </div>
                 <span className="d-flex justify-content-center">

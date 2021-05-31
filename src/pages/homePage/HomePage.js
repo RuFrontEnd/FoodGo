@@ -621,16 +621,23 @@ function HomePage(props) {
         <div className="homePage-recommend-wrap">
           <div className="container flex-column homePage-p0">
             {/* 今日推薦 */}
-            <div className="row col-6">
+            <div className="row col-12 col-lg-6">
               <img style={{ width: '300rem' }} alt="" src={recommend} />
             </div>
           </div>
 
           {/* 商品卡片 */}
-          <div className="mt-5 homePage-recommend-cards">
-            <div className="d-flex justify-content-between">
+          <div
+            id="homePage-recommend-card-container"
+            className="mt-5 homePage-recommend-cards"
+          >
+            <div
+              id="homePage-recommend-card-wrap"
+              className="d-flex justify-content-between"
+            >
               {/* <Card1 /> */}
               <RecommendCard
+                className={'homePage-recommend-card'}
                 linkTo={'/bento/1'}
                 instruction={
                   '簡單卻迷人的迷迭香風味，經過真空舒肥的肉質軟嫩又Juicy，特別加入研磨風乾大蒜，濃郁香氣，清爽不膩。'
@@ -642,6 +649,7 @@ function HomePage(props) {
               ></RecommendCard>
               {/* <Card2 /> */}
               <RecommendCard
+                className={'homePage-recommend-card'}
                 linkTo={'/bento/3'}
                 instruction={
                   '只用些許香料，黑胡椒昇華鮮蝦甜味，火烤逼出濃郁鮮味，淋上新鮮萊姆汁，不用剝殼，爽脆口感，忍不住一隻接一隻！'
@@ -652,6 +660,7 @@ function HomePage(props) {
                 buyCounts={250}
               ></RecommendCard>
               <RecommendCard
+                className={'homePage-recommend-card'}
                 linkTo={'/bento/4'}
                 instruction={
                   '均勻抹上日本發酵鹽麴醃製，軟化肉質並提出松阪豬本身鮮甜味，慢熟幾小時才噴火烤出香氣，又香又嫩，不同於一般松阪豬，柔嫩而彈牙，一吃上癮！'
