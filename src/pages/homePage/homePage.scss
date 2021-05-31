@@ -26,7 +26,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 .homePage-p0 {
-  padding: 0 !important;
+  padding: 0px !important;
 }
 
 // 標題宋體樣式
@@ -60,9 +60,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   height: 1.5rem;
   background-color: $lightGray;
   opacity: 0.7;
-}
-
-.ant-carousel .slick-dots-bottom {
 }
 
 .ant-carousel .slick-dots-bottom {
@@ -216,8 +213,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 // 特色專區-切換區域
+
 #homePage-feature-wrap {
-  padding: 60px 20px 30px 20px;
+  // padding: 0px 20px 0px 20px;
+  margin: 60px 0px 70px 0px;
 }
 
 #homePage-feature-title-wrap {
@@ -372,24 +371,24 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
 // 特色內容
 .homePage-intro-area {
-  margin-top: 4rem;
   width: 100%;
-  height: 55rem;
   background-color: $skin;
 }
-.homePage-intro1 {
+
+.homePage-intro {
+  padding: 30px 0px;
+}
+
+.homePage-intro1-container {
   display: none;
   margin: auto;
   max-width: 117rem;
-  height: 55rem;
-  // display: none;
   justify-content: space-around;
   align-items: center;
   transition: 0.3s;
   .homePage-intro1-wrap {
     // background-color: #bbb;
     width: 44rem;
-    height: 50rem;
     .homePage-intro1-title {
       background: url("../../assets/svg/intro1.svg") center center no-repeat;
       background-size: cover;
@@ -590,16 +589,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
 }
 
-.homePage-intro1-active {
-  display: flex;
-  transition: 0.3s;
-}
-
-.homePage-intro2 {
+.homePage-intro2-container {
   display: none;
   margin: auto;
   max-width: 117rem;
-  height: 55rem;
   // display: block;
   justify-content: space-around;
   align-items: center;
@@ -607,7 +600,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   .homePage-intro2-wrap {
     // background-color: #bbb;
     width: 44rem;
-    height: 50rem;
 
     .homePage-intro2-title {
       background: url("../../assets/svg/intro2.svg") center center no-repeat;
@@ -640,16 +632,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
 }
 
-.homePage-intro2-active {
-  display: flex;
-  transition: 0.3s;
-}
-
-.homePage-intro3 {
+.homePage-intro3-container {
   display: none;
   margin: auto;
   max-width: 117rem;
-  height: 55rem;
   // display: block;
   justify-content: space-around;
   align-items: center;
@@ -657,7 +643,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   .homePage-intro3-wrap {
     // background-color: #bbb;
     width: 44rem;
-    height: 50rem;
 
     .homePage-intro3-title {
       background: url("../../assets/svg/intro3.svg") center center no-repeat;
@@ -691,17 +676,11 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
 }
 
-.homePage-intro3-active {
-  display: flex;
-  transition: 0.3s;
-}
-
-.homePage-intro4 {
+.homePage-intro4-container {
   display: none;
   // background-color: #ddd;
   margin: auto;
   max-width: 117rem;
-  height: 55rem;
   // display: block;
   justify-content: space-around;
   align-items: center;
@@ -709,7 +688,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   .homePage-intro4-wrap {
     // background-color: #bbb;
     width: 44rem;
-    height: 50rem;
 
     .homePage-intro4-title {
       background: url("../../assets/svg/intro4.svg") center center no-repeat;
@@ -741,17 +719,11 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
 }
 
-.homePage-intro4-active {
-  display: flex;
-  transition: 0.3s;
-}
-
-.homePage-intro5 {
+.homePage-intro5-container {
   display: none;
   // background-color: #ddd;
   margin: auto;
   max-width: 117rem;
-  height: 55rem;
   // display: block;
   justify-content: space-around;
   align-items: center;
@@ -759,7 +731,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   .homePage-intro5-wrap {
     // background-color: #bbb;
     width: 44rem;
-    height: 50rem;
 
     .homePage-intro5-title {
       background: url("../../assets/svg/intro5.svg") center center no-repeat;
@@ -791,7 +762,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
 }
 
-.homePage-intro5-active {
+.homePage-intro-active {
   display: flex;
   transition: 0.3s;
 }
@@ -1366,6 +1337,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
       }
     }
   }
+
+  .homePage-intro {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 991.98px) {
@@ -1487,13 +1462,15 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
       }
     }
   }
+
+  .homePage-intro5-container .homePage-intro5-cards {
+    background-size: cover;
+    width: 520px;
+    height: 382px;
+  }
 }
 
 @media screen and (max-width: 575.98px) {
-  #homePage-feature-wrap {
-    margin: 0px;
-  }
-
   .homePage-index-feature {
     .homePage-circles {
       .homePage-index-feature-smcircle {
@@ -1555,6 +1532,12 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
         }
       }
     }
+  }
+
+  .homePage-intro5-container .homePage-intro5-cards {
+    background-size: cover;
+    width: 420px;
+    // height: 382px;
   }
 }
 

@@ -304,14 +304,17 @@ function HomePage(props) {
       {/* 品牌特色*/}
       <section
         id="homePage-feature-container"
-        className="container homePage-p0 position-relative"
+        className="container position-relative"
       >
         <div
           id="homePage-feature-wrap"
           className="row homePage-index-feature d-flex flex-column align-items-center justify-content-space-between"
         >
           {/* 標題 */}
-          <div id="homePage-feature-title-wrap" className="d-flex align-items-center">
+          <div
+            id="homePage-feature-title-wrap"
+            className="d-flex align-items-center"
+          >
             <img alt="" src={titleLeft} />
             <p className="homePage-feature-title">品牌特色</p>
             <img alt="" src={titleRight} />
@@ -407,15 +410,16 @@ function HomePage(props) {
       </section>
 
       {/* intros */}
-      {/* <section className="container-fluid homePage-p0 homePage-intro-area"> */}
-      {/* 在地小農 */}
-      {/* <div
-          className={`homePage-intro1 ${
-            isFarmerFeatureActive && 'homePage-intro1-active'
-          }`}
+      {/* <section
+        id="homePage-intro-container"
+        className="container-fluid homePage-p0 homePage-intro-area"
+      > */}
+        {/* 在地小農 */}
+        {/* <div
+          className={`homePage-intro homePage-intro1-container ${isFarmerFeatureActive && 'homePage-intro-active'}`}
         > */}
-      {/* 介紹欄位 */}
-      {/* <div className="homePage-intro1-wrap">
+          {/* 介紹欄位 */}
+          {/* <div className="homePage-intro1-wrap">
             <div className="homePage-intro1-title"></div>
             <div className="homePage-intro1-text mt-5">
               <p>嚴選在地農產品</p>
@@ -435,10 +439,10 @@ function HomePage(props) {
               </div>
             </Link>
           </div> */}
-      {/* 小農欄位 */}
-      {/* <div className="homePage-intro1-cards p-5"> */}
-      {/* 萱草園．農友張武增 */}
-      {/* <div className="homePage-intro1-card1">
+          {/* 小農欄位 */}
+          {/* <div className="homePage-intro1-cards p-5"> */}
+            {/* 萱草園．農友張武增 */}
+            {/* <div className="homePage-intro1-card1">
               <div className="homePage-intro1-farmer1 d-flex justify-content-center"></div>
               <div className="homePage-intro1-card1-wrap flex-column">
                 <div className="homePage-intro1-fake-farmer1"></div>
@@ -459,8 +463,8 @@ function HomePage(props) {
               </div>
             </div> */}
 
-      {/* 青翠園有機農場・農友莊翠蘭 */}
-      {/* <div className="homePage-intro1-card2">
+            {/* 青翠園有機農場・農友莊翠蘭 */}
+            {/* <div className="homePage-intro1-card2">
               <div className="homePage-intro1-card2">
                 <div className="homePage-intro1-farmer2"></div>
                 <div className="homePage-intro1-card2-wrap flex-column">
@@ -486,10 +490,10 @@ function HomePage(props) {
             </div>
           </div>
         </div> */}
-      {/* 產銷履歷 */}
-      {/* <div
-          className={`homePage-intro2 ${
-            isDietFeatureActive && 'homePage-intro2-active'
+        {/* 產銷履歷 */}
+        {/* <div
+          className={`homePage-intro homePage-intro2-container ${
+            isDietFeatureActive && 'homePage-intro-active'
           }`}
         >
           <div className="homePage-intro2-wrap">
@@ -509,12 +513,12 @@ function HomePage(props) {
               </div>
             </Link>
           </div>
-          <div className="homePage-intro2-cards"></div>
+          <div className="homePage-intro2-cards m-5"></div>
         </div> */}
-      {/* 客製化便當 */}
-      {/* <div
-          className={`homePage-intro3 ${
-            isChoicesFeatureActive && 'homePage-intro3-active'
+        {/* 客製化便當 */}
+        {/* <div
+          className={`homePage-intro homePage-intro3-container ${
+            isChoicesFeatureActive && 'homePage-intro-active'
           }`}
         >
           <div className="homePage-intro3-wrap">
@@ -552,10 +556,10 @@ function HomePage(props) {
             </video>
           </div>
         </div> */}
-      {/* 揪團訂購 */}
-      {/* <div
-          className={`homePage-intro4 ${
-            isNetworkFeatureActive && 'homePage-intro4-active'
+        {/* 揪團訂購 */}
+        {/* <div
+          className={`homePage-intro homePage-intro4-container ${
+            isNetworkFeatureActive && 'homePage-intro-active'
           }`}
         >
           <div className="homePage-intro4-wrap">
@@ -580,12 +584,12 @@ function HomePage(props) {
               </div>
             </Link>
           </div>
-          <div className="homePage-intro4-cards"></div>
+          <div className="homePage-intro4-cards m-5"></div>
         </div> */}
-      {/* 營養標示 */}
-      {/* <div
-          className={`homePage-intro5 ${
-            isKcalFeatureActive && 'homePage-intro5-active'
+        {/* 營養標示 */}
+        {/* <div
+          className={`homePage-intro homePage-intro5-container ${
+            isKcalFeatureActive && 'homePage-intro-active'
           }`}
         >
           <div className="homePage-intro5-wrap">
@@ -606,7 +610,7 @@ function HomePage(props) {
               </div>
             </Link>
           </div>
-          <div className="homePage-intro5-cards"></div>
+          <div className="homePage-intro5-cards m-5"></div>
         </div>
       </section> */}
 
