@@ -684,17 +684,17 @@ function HomePage(props) {
       </section>
 
       {/* 專屬優惠 */}
-      {/* <section className="container-fluid homePage-p0  homePage-discount">
+      <section className="container-fluid homePage-p0  homePage-discount">
         <div className="container homePage-p0">
-          <div className="row homePage-p0  d-flex justify-content-center"> */}
-      {/* 專屬優惠標題 */}
-      {/* <div className="mt-5 mb-5 d-flex align-items-center mt-4 mb-3">
+          <div className="row homePage-p0  d-flex justify-content-center">
+            {/* 專屬優惠標題 */}
+            <div className="mt-5 mb-5 d-flex align-items-center mt-4 mb-3">
               <img alt="" src={titleLeft} />
               <p className="homePage-feature-title">專屬優惠</p>
               <img alt="" src={titleRight} />
-            </div> */}
-      {/* 活動卡片 */}
-      {/* <div className="container">
+            </div>
+            {/* 活動卡片 */}
+            <div className="container">
               <div className="row">
                 <div className="col-12 d-flex justify-content-center">
                   <div className="homePage-event d-flex ">
@@ -781,7 +781,7 @@ function HomePage(props) {
                   </div>
                 </div>
                 <div className="col-12 mt-5 ">
-                  <div className="img-wrap d-flex justify-content-between align-items-center">
+                  <div className="img-wrap d-flex justify-content-center align-items-center">
                     <div className="homePage-event-hideArrowL"></div>
                     <div
                       className="homePage-img-select"
@@ -791,7 +791,7 @@ function HomePage(props) {
                         margin: '0 auto',
                       }}
                     >
-                      <ItemsCarousel
+                      {/* <ItemsCarousel
                         infiniteLoop={false}
                         requestToChangeActive={setActiveItemIndex}
                         activeItemIndex={activeItemIndex}
@@ -830,7 +830,7 @@ function HomePage(props) {
                         <div onClick={event7C} className="img-row">
                           <img alt="" src={event7} />
                         </div>
-                      </ItemsCarousel>
+                      </ItemsCarousel> */}
                     </div>
                   </div>
                 </div>
@@ -838,18 +838,18 @@ function HomePage(props) {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* 購物流程 */}
       {/* 背景圖 */}
-      {/* <section className="container-fluid homePage-p0 homePage-shopping-process m-0"> */}
-      {/* 模糊效果 */}
-      {/* <div className="homePage-blur d-flex align-items-center"> */}
-      {/* 黑灰文字區塊 */}
-      {/* <div className="homePage-p0 homePage-black-blur">
-            <div className="d-flex justify-content-center align-items-center flex-column"> */}
-      {/* 購物流程標題-淺色 */}
-      {/* <div className="d-flex align-items-center mt-5">
+      <section className="container-fluid homePage-p0 homePage-shopping-process m-0">
+        {/* 模糊效果 */}
+        <div className="homePage-blur d-flex align-items-center">
+          {/* 黑灰文字區塊 */}
+          <div className="homePage-p0 homePage-black-blur">
+            <div className="d-flex justify-content-center align-items-center flex-column">
+              {/* 購物流程標題-淺色 */}
+              <div className="d-flex align-items-center mt-5">
                 <img alt="" src={titleLeftLight} />
                 <p
                   className="homePage-feature-title "
@@ -858,35 +858,38 @@ function HomePage(props) {
                   購物流程
                 </p>
                 <img alt="" src={titleRightLight} />
-              </div> */}
-      {/* 五個步驟 */}
-      {/* <div className="container homePage-p0 homePage-step-circle d-flex justify-content-between"> */}
-      {/* step1 */}
-      {/* <div className="homePage-step1 d-flex flex-wrap justify-content-center align-items-center">
+              </div>
+              {/* 五個步驟 */}
+              <div
+                id="homePage-steps"
+                className="container homePage-p0 homePage-step-circle d-flex justify-content-between"
+              >
+                {/* step1 */}
+                <div className="homePage-step1 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="homePage-step1-icon"></div>
                   <p>選購商品</p>
                 </div>
-                <img alt="" src={stepArrow} /> */}
-      {/* step2 */}
-      {/* <div className="homePage-step2 d-flex flex-wrap justify-content-center align-items-center">
+                <img alt="" src={stepArrow} />
+                {/* step2 */}
+                <div className="homePage-step2 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="homePage-step2-icon"></div>
                   <p className="">加入購物車</p>
                 </div>
-                <img alt="" src={stepArrow} /> */}
-      {/* step3 */}
-      {/* <div className="homePage-step3 d-flex flex-wrap justify-content-center align-items-center">
+                <img alt="" src={stepArrow} />
+                {/* step3 */}
+                <div className="homePage-step3 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="homePage-step3-icon"></div>
                   <p>會員登入</p>
                 </div>
-                <img alt="" src={stepArrow} /> */}
-      {/* step4 */}
-      {/* <div className="homePage-step4 d-flex flex-wrap justify-content-center align-items-center">
+                <img alt="" src={stepArrow} />
+                {/* step4 */}
+                <div className="homePage-step4 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="homePage-step4-icon"></div>
                   <p>確認結帳</p>
                 </div>
-                <img alt="" src={stepArrow} /> */}
-      {/* step5 */}
-      {/* <div className="homePage-step5 d-flex flex-wrap justify-content-center align-items-center">
+                <img alt="" src={stepArrow} />
+                {/* step5 */}
+                <div className="homePage-step5 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="homePage-step5-icon"></div>
                   <p>領取餐點</p>
                 </div>
@@ -894,7 +897,7 @@ function HomePage(props) {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* 地圖 */}
       {/* <section className="container-fluid homePage-p0 homePage-map mt-5"> */}

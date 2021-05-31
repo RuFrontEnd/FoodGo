@@ -956,16 +956,13 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   background-attachment: fixed;
   background-size: cover;
   width: 100vw;
-  height: 78rem;
   margin: 0 1.5rem;
   overflow: hidden;
   .homePage-blur {
     background-color: rgba(255, 255, 255, 0.235);
     width: 100vw;
-    height: 78rem;
     backdrop-filter: blur(5px) brightness(1.2);
     .homePage-black-blur {
-      height: 45rem;
       width: 100vw;
       background-color: rgba(0, 0, 0, 0.2);
     }
@@ -979,7 +976,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     font-family: "Noto Sans TC", sans-serif;
     font-weight: 700;
     color: $skin;
-    margin-top: 14rem;
   }
   .homePage-step1 {
     background: url("../../assets/svg/step1.svg") center center no-repeat;
@@ -1389,6 +1385,15 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   #homePage-recommend-card-wrap {
     flex-wrap: wrap;
   }
+
+  .homePage-step-circle .homePage-step1,
+  .homePage-step-circle .homePage-step2,
+  .homePage-step-circle .homePage-step3,
+  .homePage-step-circle .homePage-step4,
+  .homePage-step-circle .homePage-step5 {
+    width: 10rem;
+    height: 10rem;
+  }
 }
 
 @media screen and (max-width: 767.98px) {
@@ -1472,6 +1477,15 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
   #homePage-recommend-card-wrap {
     justify-content: center !important;
+  }
+
+  .homePage-step-circle .homePage-step1,
+  .homePage-step-circle .homePage-step2,
+  .homePage-step-circle .homePage-step3,
+  .homePage-step-circle .homePage-step4,
+  .homePage-step-circle .homePage-step5 {
+    width: 8rem;
+    height: 8rem;
   }
 }
 
@@ -1603,6 +1617,15 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     width: 100%;
     height: 100%;
     margin-left: 0rem;
+  }
+
+  #homePage-steps{
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  #homePage-steps img{
+    width: 20px;
   }
 }
 
