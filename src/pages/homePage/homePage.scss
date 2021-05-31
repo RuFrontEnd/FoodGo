@@ -215,7 +215,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 // 特色專區-切換區域
 
 #homePage-feature-wrap {
-  // padding: 0px 20px 0px 20px;
   margin: 60px 0px 70px 0px;
 }
 
@@ -388,15 +387,12 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   transition: 0.3s;
   .homePage-intro1-wrap {
     // background-color: #bbb;
-    width: 44rem;
     .homePage-intro1-title {
       background: url("../../assets/svg/intro1.svg") center center no-repeat;
       background-size: cover;
-      width: 38rem;
       height: 11rem;
     }
     .homePage-intro1-text {
-      width: 38rem;
       height: 30rem;
       color: $gray;
       font-family: "Noto Sans TC", sans-serif;
@@ -413,8 +409,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
   .homePage-intro1-cards {
     // background-color: #ccc;
-    width: 68rem;
-    height: 50rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -624,11 +618,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     }
   }
   .homePage-intro2-cards {
-    // background-color: #ccc;
-    width: 68rem;
-    height: 50rem;
     background: url("../../assets/jpg/intro2.jpg");
-    background-size: cover;
   }
 }
 
@@ -667,9 +657,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     }
   }
   .homePage-intro3-cards {
-    // background-color: #ccc;
-    width: 68rem;
-    height: 50rem;
     video {
       outline: none;
     }
@@ -712,10 +699,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     }
   }
   .homePage-intro4-cards {
-    background: url("../../assets/jpg/networkintro4.jpg") center center no-repeat;
-    width: 68rem;
-    height: 50rem;
-    background-size: cover;
+    background: url("../../assets/jpg/networkintro4.jpg");
   }
 }
 
@@ -729,7 +713,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   align-items: center;
   transition: 0.5s;
   .homePage-intro5-wrap {
-    // background-color: #bbb;
     width: 44rem;
 
     .homePage-intro5-title {
@@ -756,15 +739,18 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
   .homePage-intro5-cards {
     background: url("../../assets/png/kcalintro5.png") center center no-repeat;
-    width: 68rem;
-    height: 50rem;
-    background-size: cover;
   }
 }
 
 .homePage-intro-active {
   display: flex;
   transition: 0.3s;
+}
+
+.homePage-intro-card {
+  width: 680px;
+  height: 500px;
+  background-size: cover;
 }
 
 // 今日推薦
@@ -1463,27 +1449,27 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     }
   }
 
-  .homePage-intro5-container .homePage-intro5-cards {
+  .homePage-intro-card {
+    width: 500px;
+    height: 397px;
     background-size: cover;
-    width: 520px;
-    height: 382px;
   }
 }
 
 @media screen and (max-width: 575.98px) {
   .homePage-index-feature {
     .homePage-circles {
+      flex-direction: column;
       .homePage-index-feature-smcircle {
-        width: 0.7rem;
-        height: 0.7rem;
+        width: 1.5rem;
+        height: 1.5rem;
       }
       .homePage-index-feature-circle {
-        width: 7rem;
-        height: 7rem;
-        border-radius: 50%;
+        width: 16rem;
+        height: 16rem;
 
         .homePage-circle-title {
-          font-size: 1.4rem;
+          font-size: 2rem;
           left: calc(50% - 28px);
         }
         .homePage-circle-title-customize {
@@ -1492,52 +1478,97 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
         }
 
         .homePage-farmer-icon {
-          background-size: 3.5rem 3.5rem;
+          background-size: 9rem 9rem;
         }
 
         .homePage-farmer-icon-active {
-          background-size: 4.5rem 4.5rem;
+          background-size: 10rem 10rem;
         }
 
         .homePage-diet-icon {
-          background-size: 3.5rem 3.5rem;
+          background-size: 9rem 9rem;
         }
 
         .homePage-diet-icon-active {
-          background-size: 4.5rem 4.5rem;
+          background-size: 10rem 10rem;
         }
 
         .homePage-choices-icon {
-          background-size: 3.5rem 3.5rem;
+          background-size: 9rem 9rem;
         }
 
         .homePage-choices-icon-active {
-          background-size: 4.5rem 4.5rem;
+          background-size: 10rem 10rem;
         }
 
         .homePage-network-icon {
-          background-size: 3.5rem 3.5rem;
+          background-size: 9rem 9rem;
         }
 
         .homePage-network-icon-active {
-          background-size: 4.5rem 4.5rem;
+          background-size: 10rem 10rem;
         }
 
         .homePage-kcal-icon {
-          background-size: 3.5rem 3.5rem;
+          background-size: 9rem 9rem;
         }
 
         .homePage-kcal-icon-active {
-          background-size: 4.5rem 4.5rem;
+          background-size: 10rem 10rem;
         }
       }
     }
   }
 
+  .homePage-index-feature .homePage-circles .homePage-index-feature-circle .homePage-circle-title {
+    font-size: 20px;
+    left: calc(50% - 40px);
+  }
+
+  .homePage-index-feature .homePage-circles .homePage-index-feature-circle .homePage-circle-title-customize {
+    font-size: 20px;
+    left: calc(50% - 50px);
+  }
+
+  .homePage-index-feature .homePage-circles .homePage-index-feature-smcircle {
+    margin: 15px 0px;
+  }
+
   .homePage-intro5-container .homePage-intro5-cards {
     background-size: cover;
-    width: 420px;
-    // height: 382px;
+    width: 300px;
+  }
+
+  .homePage-intro1-container .homePage-intro1-cards {
+    flex-direction: column;
+  }
+
+  .homePage-intro1-container .homePage-intro1-cards .homePage-intro1-card2 {
+    margin-top: 20px;
+  }
+
+  .homePage-intro1-container .homePage-intro1-cards {
+    padding: 0px !important;
+  }
+
+  .homePage-intro2-container .homePage-intro2-cards {
+    width: 300px;
+    height: 200px;
+  }
+
+  .homePage-intro-card {
+    width: 397px;
+    height: 3px;
+    background-size: cover;
+  }
+
+  .homePage-intro2-container .homePage-intro2-wrap .homePage-intro2-title {
+    margin: auto;
+  }
+
+  .homePage-intro2-container .homePage-intro2-wrap .homePage-intro2-title {
+    width: 28rem;
+    height: 6rem;
   }
 }
 

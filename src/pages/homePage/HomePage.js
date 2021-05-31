@@ -9,7 +9,7 @@ import titleRight from 'assets/svg/titleRight.svg';
 import titleLeftLight from 'assets/svg/titleLeft-light.svg';
 import titleRightLight from 'assets/svg/titleRight-light.svg';
 import recommend from 'assets/svg/recommend.svg';
-// import recommend2 from 'assets/svg/recommend2.svg';
+import recommend2 from 'assets/svg/recommend2.svg';
 import map1 from 'assets/svg/map1.svg';
 import map2 from 'assets/svg/map2.svg';
 import stepArrow from 'assets/svg/stepArrow.svg';
@@ -410,16 +410,18 @@ function HomePage(props) {
       </section>
 
       {/* intros */}
-      {/* <section
+      <section
         id="homePage-intro-container"
         className="container-fluid homePage-p0 homePage-intro-area"
-      > */}
+      >
         {/* 在地小農 */}
-        {/* <div
-          className={`homePage-intro homePage-intro1-container ${isFarmerFeatureActive && 'homePage-intro-active'}`}
-        > */}
+        <div
+          className={`homePage-intro homePage-intro1-container ${
+            isFarmerFeatureActive && 'homePage-intro-active'
+          }`}
+        >
           {/* 介紹欄位 */}
-          {/* <div className="homePage-intro1-wrap">
+          <div className="homePage-intro1-wrap">
             <div className="homePage-intro1-title"></div>
             <div className="homePage-intro1-text mt-5">
               <p>嚴選在地農產品</p>
@@ -438,11 +440,11 @@ function HomePage(props) {
                 <Button className="button-btn-g" text="小農地圖" />
               </div>
             </Link>
-          </div> */}
+          </div>
           {/* 小農欄位 */}
-          {/* <div className="homePage-intro1-cards p-5"> */}
+          <div className="homePage-intro1-cards p-5">
             {/* 萱草園．農友張武增 */}
-            {/* <div className="homePage-intro1-card1">
+            <div className="homePage-intro1-card1">
               <div className="homePage-intro1-farmer1 d-flex justify-content-center"></div>
               <div className="homePage-intro1-card1-wrap flex-column">
                 <div className="homePage-intro1-fake-farmer1"></div>
@@ -461,10 +463,10 @@ function HomePage(props) {
                   </div>
                 </Link>
               </div>
-            </div> */}
+            </div>
 
             {/* 青翠園有機農場・農友莊翠蘭 */}
-            {/* <div className="homePage-intro1-card2">
+            <div className="homePage-intro1-card2">
               <div className="homePage-intro1-card2">
                 <div className="homePage-intro1-farmer2"></div>
                 <div className="homePage-intro1-card2-wrap flex-column">
@@ -489,9 +491,9 @@ function HomePage(props) {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
         {/* 產銷履歷 */}
-        {/* <div
+        <div
           className={`homePage-intro homePage-intro2-container ${
             isDietFeatureActive && 'homePage-intro-active'
           }`}
@@ -513,10 +515,10 @@ function HomePage(props) {
               </div>
             </Link>
           </div>
-          <div className="homePage-intro2-cards m-5"></div>
-        </div> */}
+          <div className="homePage-intro-card homePage-intro2-cards m-5"></div>
+        </div>
         {/* 客製化便當 */}
-        {/* <div
+        <div
           className={`homePage-intro homePage-intro3-container ${
             isChoicesFeatureActive && 'homePage-intro-active'
           }`}
@@ -540,11 +542,10 @@ function HomePage(props) {
               </Link>
             </div>
           </div>
-          <div className="homePage-intro3-cards">
+          <div className="homePage-intro-card homePage-intro3-cards">
             <video
+              className="homePage-intro-card"
               preload="auto"
-              width="680"
-              height="500"
               loop="true"
               autoplay="autoplay"
               muted="true"
@@ -555,9 +556,9 @@ function HomePage(props) {
               ></source>
             </video>
           </div>
-        </div> */}
+        </div>
         {/* 揪團訂購 */}
-        {/* <div
+        <div
           className={`homePage-intro homePage-intro4-container ${
             isNetworkFeatureActive && 'homePage-intro-active'
           }`}
@@ -584,10 +585,10 @@ function HomePage(props) {
               </div>
             </Link>
           </div>
-          <div className="homePage-intro4-cards m-5"></div>
-        </div> */}
+          <div className="homePage-intro-card homePage-intro4-cards m-5"></div>
+        </div>
         {/* 營養標示 */}
-        {/* <div
+        <div
           className={`homePage-intro homePage-intro5-container ${
             isKcalFeatureActive && 'homePage-intro-active'
           }`}
@@ -610,9 +611,9 @@ function HomePage(props) {
               </div>
             </Link>
           </div>
-          <div className="homePage-intro5-cards m-5"></div>
+          <div className="homePage-intro-card homePage-intro5-cards m-5"></div>
         </div>
-      </section> */}
+      </section>
 
       {/* 今日推薦 */}
       {/* <section className="container-fluid homePage-p0 homePage-recommend ">
@@ -625,8 +626,8 @@ function HomePage(props) {
       {/* 你一定要試試 */}
       {/* <div className="row col-6 homePage-recommend2">
               <img alt="" src={recommend2} />
-            </div> */}
-      {/* </div> */}
+            </div>
+          </div> */}
 
       {/* 商品卡片 */}
       {/* <div className="mt-5 container homePage-recommend-cards">
@@ -758,9 +759,9 @@ function HomePage(props) {
                       </div>
                     </div>
                   </section>
-                </Link> */}
+                </Link>
 
-      {/* <section className="homePage-card-info-warp d-flex justify-content-center">
+                <section className="homePage-card-info-warp d-flex justify-content-center">
                   <div className="homePage-card-info d-flex flex-column">
                     <h3>麴塩五香松阪豬</h3> */}
       {/* 分隔線 */}
@@ -942,9 +943,9 @@ function HomePage(props) {
                         <div onClick={event1C} className="img-row">
                           <img alt="" src={event1} />
                         </div>
-                        <div onClick={event2C} className="img-row"> */}
-      {/* <div className="img-row-infor"></div> */}
-      {/* <img alt="" src={event2} />
+                        <div onClick={event2C} className="img-row">
+                          <div className="img-row-infor"></div>
+                          <img alt="" src={event2} />
                         </div>
                         <div onClick={event3C} className="img-row">
                           <img alt="" src={event3} />
@@ -1149,7 +1150,6 @@ function HomePage(props) {
                     所在地點，符合滿
                     <span className="homePage-price homePage-tabs-highlight"> */}
       {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
-      {/* `條件 && 呈現` 是 `if(條件){呈現}` 的簡寫法，只在React JSX中可以使用 */}
       {/* {county > -1 &&
                         township > -1 &&
                         dataprice[county][township]}
