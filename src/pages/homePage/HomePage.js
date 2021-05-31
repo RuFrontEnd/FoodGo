@@ -641,119 +641,27 @@ function HomePage(props) {
                 buyCounts={250}
               ></RecommendCard>
               {/* <Card2 /> */}
-              <div className="homePage-card-container">
-                {/* item圖片 */}
-                <Link style={{ 'text-decoration': 'none' }} to="/bento/3">
-                  <section className="homePage-card-img-warp">
-                    <div className="homePage-card-img2">
-                      <div className="homePage-ingredient ">
-                        <div className="homePage-ingredient-content ">
-                          只用些許香料，黑胡椒昇華鮮蝦甜味，火烤逼出濃郁鮮味，淋上新鮮萊姆汁，不用剝殼，爽脆口感，忍不住一隻接一隻！
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                </Link>
-
-                <section className="homePage-card-info-warp d-flex justify-content-center">
-                  <div className="homePage-card-info d-flex flex-column">
-                    <h3>熱帶火烤萊姆蝦</h3>
-                    {/* 分隔線 */}
-                    <section>
-                      <div className="homePage-card-hr d-flex flex-column justify-content-center align-items-center">
-                        <div className="mt-3  mb-2 homePage-card-star-warp">
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                        </div>
-                        <span className="d-flex justify-content-center">
-                          <p>232 則評論 </p>
-                          <p>250 已購買</p>
-                        </span>
-                      </div>
-                    </section>
-                  </div>
-                </section>
-              </div>
+              <RecommendCard
+                linkTo={'/bento/3'}
+                instruction={
+                  '只用些許香料，黑胡椒昇華鮮蝦甜味，火烤逼出濃郁鮮味，淋上新鮮萊姆汁，不用剝殼，爽脆口感，忍不住一隻接一隻！'
+                }
+                productName={'熱帶火烤萊姆蝦'}
+                starCounts={5}
+                commentCounts={232}
+                buyCounts={250}
+              ></RecommendCard>
+              <RecommendCard
+                linkTo={'/bento/4'}
+                instruction={
+                  '均勻抹上日本發酵鹽麴醃製，軟化肉質並提出松阪豬本身鮮甜味，慢熟幾小時才噴火烤出香氣，又香又嫩，不同於一般松阪豬，柔嫩而彈牙，一吃上癮！'
+                }
+                productName={'麴塩五香松阪豬'}
+                starCounts={5}
+                commentCounts={232}
+                buyCounts={250}
+              ></RecommendCard>
               {/* Card3 */}
-              <div className="homePage-card-container">
-                {/* item圖片 */}
-                <Link style={{ 'text-decoration': 'none' }} to="/bento/4">
-                  <section className="homePage-card-img-warp">
-                    <div className="homePage-card-img3">
-                      <div className="homePage-ingredient ">
-                        <div className="homePage-ingredient-content ">
-                          均勻抹上日本發酵鹽麴醃製，軟化肉質並提出松阪豬本身鮮甜味，慢熟幾小時才噴火烤出香氣，又香又嫩，不同於一般松阪豬，柔嫩而彈牙，一吃上癮！
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                </Link>
-
-                <section className="homePage-card-info-warp d-flex justify-content-center">
-                  <div className="homePage-card-info d-flex flex-column">
-                    <h3>麴塩五香松阪豬</h3>
-                    {/* 分隔線 */}
-                    <section>
-                      <div className="homePage-card-hr d-flex flex-column justify-content-center align-items-center">
-                        <div className="mt-3  mb-2 homePage-card-star-warp">
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                          <img
-                            alt=""
-                            className="homePage-card-star"
-                            src={starO}
-                          />
-                        </div>
-                        <span className="d-flex justify-content-center">
-                          <p>232 則評論 </p>
-                          <p>250 已購買</p>
-                        </span>
-                      </div>
-                    </section>
-                  </div>
-                </section>
-              </div>
             </div>
           </div>
 

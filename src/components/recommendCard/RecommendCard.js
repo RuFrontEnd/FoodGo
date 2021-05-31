@@ -24,38 +24,41 @@ function RecommendCard(props) {
 
   return (
     <>
-      <div className="recommendCard-card-container">
+      <div id="recommendCard-card-container">
         {/* item圖片 */}
         <Link style={{ 'text-decoration': 'none' }} to={linkTo}>
-          <section className="recommendCard-card-img-warp">
-            <div className="recommendCard-card-img1">
-              <div className="recommendCard-ingredient">
-                <div className="recommendCard-ingredient-content">
-                  {instruction}
-                </div>
+          <section id="recommendCard-card-img-warp">
+            <div id="recommendCard-card-img">
+              <div id="recommendCard-ingredient">
+                <div id="recommendCard-ingredient-content">{instruction}</div>
               </div>
             </div>
           </section>
         </Link>
 
-        <section className="recommendCard-card-info-warp d-flex justify-content-center">
-          <div className="recommendCard-card-info d-flex flex-column">
+        <section
+          id="recommendCard-card-info-warp"
+          className="d-flex justify-content-center"
+        >
+          <div id="recommendCard-card-info" className="d-flex flex-column">
             <h3>{productName}</h3>
-            {/* 分隔線 */}
             <section>
-              <div className="recommendCard-card-hr d-flex flex-column justify-content-center align-items-center">
-                <div className="mt-3  mb-2 recommendCard-card-star-warp">
+              <div
+                id="recommendCard-card-hr"
+                className="d-flex flex-column justify-content-center align-items-center"
+              >
+                <div id="recommendCard-card-star-warp" className="mt-3  mb-2">
                   {stars.map((star) => (
                     <img
                       alt=""
-                      className="recommendCard-card-star"
+                      id="recommendCard-card-star"
                       src={starO}
                     />
                   ))}
                 </div>
                 <span className="d-flex justify-content-center">
                   <p>{commentCounts} 則評論 </p>
-                  <p>{buyCounts} 已購買</p>
+                  <p>{250} 已購買</p>
                 </span>
               </div>
             </section>
