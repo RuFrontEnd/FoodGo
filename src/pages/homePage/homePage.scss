@@ -416,6 +416,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
       background-color: $lightGray;
       width: 30rem;
       height: 45rem;
+      margin-right: 20px;
       border-radius: 20px;
       box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
       position: relative;
@@ -1386,6 +1387,15 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 @media screen and (max-width: 767.98px) {
+  .homePage-intro1-container .homePage-intro1-cards {
+    flex-direction: column
+  }
+
+  .homePage-intro1-container .homePage-intro1-cards .homePage-intro1-card1{
+    margin-right:0px ;
+    margin-bottom: 20px;
+  }
+
   .homePage-index-feature {
     .homePage-circles {
       .homePage-index-feature-smcircle {
@@ -1539,12 +1549,12 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     width: 300px;
   }
 
-  .homePage-intro1-container .homePage-intro1-cards {
-    flex-direction: column;
+  .homePage-intro1-container .homePage-intro1-cards .homePage-intro1-card1{
+    margin-top: 20px;
   }
 
-  .homePage-intro1-container .homePage-intro1-cards .homePage-intro1-card2 {
-    margin-top: 20px;
+  .homePage-intro1-container .homePage-intro1-cards {
+    flex-direction: column;
   }
 
   .homePage-intro1-container .homePage-intro1-cards {
@@ -1569,6 +1579,14 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   .homePage-intro2-container .homePage-intro2-wrap .homePage-intro2-title {
     width: 28rem;
     height: 6rem;
+  }
+
+  .homePage-intro1-container .homePage-intro1-wrap .homePage-intro1-title{
+    height: 7rem;
+  }
+
+  .homePage-intro1-container .homePage-intro1-wrap .homePage-intro1-text{
+    margin-left: 0rem;
   }
 }
 
