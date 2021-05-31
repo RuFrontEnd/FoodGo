@@ -234,7 +234,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
       background-color: $orange;
       width: 1.5rem;
       height: 1.5rem;
-      border-radius: 50vw;
+      border-radius: 50%;
     }
     // skin底色
     .homePage-index-feature-circle {
@@ -1312,9 +1312,13 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   background-color: $dark-yellow;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199.98px) {
   .homePage-index-feature {
     .homePage-circles {
+      .homePage-index-feature-smcircle {
+        width: 1.3rem;
+        height: 1.3rem;
+      }
       .homePage-index-feature-circle {
         width: 14rem;
         height: 14rem;
@@ -1364,12 +1368,12 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991.98px) {
   .homePage-index-feature {
     .homePage-circles {
       .homePage-index-feature-smcircle {
-        width: 1rem;
-        height: 1rem;
+        width: 1.1rem;
+        height: 1.1rem;
       }
       .homePage-index-feature-circle {
         width: 11rem;
@@ -1420,215 +1424,349 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
 }
 
-@media screen and (max-width: 376px) {
-  .homePage-adress-select select {
-    font-size: 1.4rem;
-    border-radius: 1.5rem;
-    height: 3rem;
-  }
-}
-
-.homePage-adress-select .iris-mainpage-whitebox {
-  border-radius: 2.5rem;
-  height: 4.6rem;
-  width: 4.6rem;
-  background-color: #fff;
-  position: absolute;
-  right: 0.3rem;
-  top: 0.2rem;
-  // 點擊會直接穿透whitebox
-  pointer-events: none;
-}
-
-@media screen and (max-width: 376px) {
-  .homePage-adress-select .iris-mainpage-whitebox {
-    border-radius: 1.5rem;
-    height: 2.6rem;
-    width: 2.7rem;
-    background-color: #fff;
-    position: absolute;
-    right: 0.1rem;
-    top: 0.2rem;
-    // 點擊會直接穿透whitebox
-    pointer-events: none;
-  }
-}
-
-.homePage-adress-select .iris-selectbar-wrapper .iris-mainpage-trianglearrow {
-  background: url("../../assets/svg/triangleArrow.svg") cover center no-repeat;
-  background-size: auto;
-  position: absolute;
-  right: 1.9rem;
-  top: 2.1em;
-  pointer-events: none;
-  fill: #c9c9c9;
-}
-@media screen and (max-width: 376px) {
-  .homePage-adress-select > .iris-mainpage-select-wrapper > .iris-selectbar-wrapper > .iris-mainpage-trianglearrow {
-    position: absolute;
-    right: 1.5rem;
-    top: 1em;
-    pointer-events: none;
-    fill: #c9c9c9;
-  }
-}
-
-.homePage-adress-select > .iris-mainpage-select-wrapper > .iris-selectbar-wrapper {
-  width: 16.7rem;
-  position: relative;
-}
-
-.homePage-adress-input .iris-inputH50 {
-  font-size: 2rem;
-  border-radius: 2.5rem;
-  height: 5rem;
-}
-
-@media screen and (max-width: 376px) {
-  .homePage-adress-input > .iris-inputH50 {
-    font-size: 1.4rem;
-    border-radius: 1.5rem;
-    height: 3rem;
-  }
-}
-
-// 好文推薦
-.homePage-article {
-  background-color: #fff;
-  width: 100%;
-  height: 62rem;
-  position: relative;
-  .homePage-article-sbcc {
-    background-color: $lightGray;
-    width: 20rem;
-    height: 28rem;
-    border-radius: 20px;
-    box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
-  }
-  .homePage-article-bcc {
-    background-color: $lightGray;
-    width: 30rem;
-    height: 45rem;
-    border-radius: 20px;
-    box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
-    .homePage-article-img1 {
-      background: url("../../assets/jpg/article-img1.jpg") center center no-repeat;
-      width: 15rem;
-      height: 15rem;
-      border-radius: 50%;
-      margin: 2rem auto 1rem auto;
-    }
-    .homePage-article-img2 {
-      background: url("../../assets/jpg/article-img2.jpg") center center no-repeat;
-      width: 15rem;
-      height: 15rem;
-      border-radius: 50%;
-      margin: 2rem auto 1rem auto;
-    }
-    .homePage-article-img3 {
-      background: url("../../assets/jpg/article-img4.jpg") center center no-repeat;
-      background-size: cover;
-      width: 15rem;
-      height: 15rem;
-      border-radius: 50%;
-      margin: 2rem auto 1rem auto;
-    }
-    .homePage-article-text-area {
-      width: 25rem;
-      height: 25rem;
-      border-top: 1px solid $lightBrown;
-      margin: 0 auto;
-      .homePage-article-name {
-        font-family: "Noto Sans TC", sans-serif;
-        font-size: 2rem;
-        font-weight: 600;
-        color: $gray;
-        margin: 1rem auto;
-        text-align: center;
+@media screen and (max-width: 767.98px) {
+  .homePage-index-feature {
+    .homePage-circles {
+      .homePage-index-feature-smcircle {
+        width: 0.9rem;
+        height: 0.9rem;
       }
-      .homePage-article-text {
-        font-family: "Noto Sans TC", sans-serif;
-        font-size: 1.4rem;
-        font-weight: 400;
-        color: $brown;
-        text-align: center;
+      .homePage-index-feature-circle {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+
+        .homePage-circle-title {
+          font-size: 1.5rem;
+          left: calc(50% - 30px);
+        }
+        .homePage-circle-title-customize {
+          font-size: 1.5rem;
+          left: calc(50% - 37.5px);
+        }
+
+        .homePage-farmer-icon {
+          background-size: 4rem 4rem;
+        }
+
+        .homePage-farmer-icon-active {
+          background-size: 5rem 5rem;
+        }
+
+        .homePage-diet-icon {
+          background-size: 4rem 4rem;
+        }
+
+        .homePage-diet-icon-active {
+          background-size: 5rem 5rem;
+        }
+
+        .homePage-choices-icon {
+          background-size: 4rem 4rem;
+        }
+
+        .homePage-choices-icon-active {
+          background-size: 5rem 5rem;
+        }
+
+        .homePage-network-icon {
+          background-size: 4rem 4rem;
+        }
+
+        .homePage-network-icon-active {
+          background-size: 5rem 5rem;
+        }
+
+        .homePage-kcal-icon {
+          background-size: 4rem 4rem;
+        }
+
+        .homePage-kcal-icon-active {
+          background-size: 5rem 5rem;
+        }
       }
     }
   }
 }
-.homePage-article-left-blur {
-  width: 20rem;
-  height: 28rem;
-  filter: blur(5px);
-  .homePage-article-img {
-    background: url("../../assets/jpg/article-img1.jpg") center center no-repeat;
-    background-size: cover;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    margin: 1.5rem auto 1rem auto;
+
+@media screen and (max-width: 575.98px) {
+  #homePage-feature-wrap {
+    margin: 0px;
   }
-  .homePage-article-text-area {
-    width: 21rem;
-    height: 22rem;
-    margin: 0 auto;
-    .homePage-article-name {
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: $gray;
-      margin: 1rem auto;
-      text-align: center;
-    }
-    .homePage-article-text {
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: $brown;
-      text-align: center;
+
+  .homePage-index-feature {
+    .homePage-circles {
+      .homePage-index-feature-smcircle {
+        width: 0.7rem;
+        height: 0.7rem;
+      }
+      .homePage-index-feature-circle {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+
+        .homePage-circle-title {
+          font-size: 1.4rem;
+          left: calc(50% - 28px);
+        }
+        .homePage-circle-title-customize {
+          font-size: 1.4rem;
+          left: calc(50% - 35px);
+        }
+
+        .homePage-farmer-icon {
+          background-size: 3.5rem 3.5rem;
+        }
+
+        .homePage-farmer-icon-active {
+          background-size: 4.5rem 4.5rem;
+        }
+
+        .homePage-diet-icon {
+          background-size: 3.5rem 3.5rem;
+        }
+
+        .homePage-diet-icon-active {
+          background-size: 4.5rem 4.5rem;
+        }
+
+        .homePage-choices-icon {
+          background-size: 3.5rem 3.5rem;
+        }
+
+        .homePage-choices-icon-active {
+          background-size: 4.5rem 4.5rem;
+        }
+
+        .homePage-network-icon {
+          background-size: 3.5rem 3.5rem;
+        }
+
+        .homePage-network-icon-active {
+          background-size: 4.5rem 4.5rem;
+        }
+
+        .homePage-kcal-icon {
+          background-size: 3.5rem 3.5rem;
+        }
+
+        .homePage-kcal-icon-active {
+          background-size: 4.5rem 4.5rem;
+        }
+      }
     }
   }
 }
-.homePage-article-right-blur {
-  width: 25rem;
-  height: 35rem;
-  filter: blur(5px);
-  .homePage-article-img {
-    background: url("../../assets/jpg/article-img2.jpg") center center no-repeat;
-    background-size: cover;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    margin: 1.5rem auto 1rem auto;
-  }
-  .homePage-article-text-area {
-    width: 21rem;
-    height: 22rem;
-    margin: 0 auto;
-    .homePage-article-name {
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: $gray;
-      margin: 1rem auto;
-      text-align: center;
-    }
-    .homePage-article-text {
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: $brown;
-      text-align: center;
-    }
-  }
-}
-.homePage-article-arrowR {
-  position: absolute;
-  top: 30rem;
-  right: 25rem;
-}
-.homePage-article-arrowL {
-  position: absolute;
-  top: 30rem;
-  left: 25rem;
-}
+
+// @media screen and (max-width: 376px) {
+//   .homePage-adress-select select {
+//     font-size: 1.4rem;
+//     border-radius: 1.5rem;
+//     height: 3rem;
+//   }
+// }
+
+// .homePage-adress-select .iris-mainpage-whitebox {
+//   border-radius: 2.5rem;
+//   height: 4.6rem;
+//   width: 4.6rem;
+//   background-color: #fff;
+//   position: absolute;
+//   right: 0.3rem;
+//   top: 0.2rem;
+//   // 點擊會直接穿透whitebox
+//   pointer-events: none;
+// }
+
+// @media screen and (max-width: 376px) {
+//   .homePage-adress-select .iris-mainpage-whitebox {
+//     border-radius: 1.5rem;
+//     height: 2.6rem;
+//     width: 2.7rem;
+//     background-color: #fff;
+//     position: absolute;
+//     right: 0.1rem;
+//     top: 0.2rem;
+//     // 點擊會直接穿透whitebox
+//     pointer-events: none;
+//   }
+// }
+
+// .homePage-adress-select .iris-selectbar-wrapper .iris-mainpage-trianglearrow {
+//   background: url("../../assets/svg/triangleArrow.svg") cover center no-repeat;
+//   background-size: auto;
+//   position: absolute;
+//   right: 1.9rem;
+//   top: 2.1em;
+//   pointer-events: none;
+//   fill: #c9c9c9;
+// }
+// @media screen and (max-width: 376px) {
+//   .homePage-adress-select > .iris-mainpage-select-wrapper > .iris-selectbar-wrapper > .iris-mainpage-trianglearrow {
+//     position: absolute;
+//     right: 1.5rem;
+//     top: 1em;
+//     pointer-events: none;
+//     fill: #c9c9c9;
+//   }
+// }
+
+// .homePage-adress-select > .iris-mainpage-select-wrapper > .iris-selectbar-wrapper {
+//   width: 16.7rem;
+//   position: relative;
+// }
+
+// .homePage-adress-input .iris-inputH50 {
+//   font-size: 2rem;
+//   border-radius: 2.5rem;
+//   height: 5rem;
+// }
+
+// @media screen and (max-width: 376px) {
+//   .homePage-adress-input > .iris-inputH50 {
+//     font-size: 1.4rem;
+//     border-radius: 1.5rem;
+//     height: 3rem;
+//   }
+// }
+
+// // 好文推薦
+// .homePage-article {
+//   background-color: #fff;
+//   width: 100%;
+//   height: 62rem;
+//   position: relative;
+//   .homePage-article-sbcc {
+//     background-color: $lightGray;
+//     width: 20rem;
+//     height: 28rem;
+//     border-radius: 20px;
+//     box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+//   }
+//   .homePage-article-bcc {
+//     background-color: $lightGray;
+//     width: 30rem;
+//     height: 45rem;
+//     border-radius: 20px;
+//     box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+//     .homePage-article-img1 {
+//       background: url("../../assets/jpg/article-img1.jpg") center center no-repeat;
+//       width: 15rem;
+//       height: 15rem;
+//       border-radius: 50%;
+//       margin: 2rem auto 1rem auto;
+//     }
+//     .homePage-article-img2 {
+//       background: url("../../assets/jpg/article-img2.jpg") center center no-repeat;
+//       width: 15rem;
+//       height: 15rem;
+//       border-radius: 50%;
+//       margin: 2rem auto 1rem auto;
+//     }
+//     .homePage-article-img3 {
+//       background: url("../../assets/jpg/article-img4.jpg") center center no-repeat;
+//       background-size: cover;
+//       width: 15rem;
+//       height: 15rem;
+//       border-radius: 50%;
+//       margin: 2rem auto 1rem auto;
+//     }
+//     .homePage-article-text-area {
+//       width: 25rem;
+//       height: 25rem;
+//       border-top: 1px solid $lightBrown;
+//       margin: 0 auto;
+//       .homePage-article-name {
+//         font-family: "Noto Sans TC", sans-serif;
+//         font-size: 2rem;
+//         font-weight: 600;
+//         color: $gray;
+//         margin: 1rem auto;
+//         text-align: center;
+//       }
+//       .homePage-article-text {
+//         font-family: "Noto Sans TC", sans-serif;
+//         font-size: 1.4rem;
+//         font-weight: 400;
+//         color: $brown;
+//         text-align: center;
+//       }
+//     }
+//   }
+// }
+// .homePage-article-left-blur {
+//   width: 20rem;
+//   height: 28rem;
+//   filter: blur(5px);
+//   .homePage-article-img {
+//     background: url("../../assets/jpg/article-img1.jpg") center center no-repeat;
+//     background-size: cover;
+//     width: 10rem;
+//     height: 10rem;
+//     border-radius: 50%;
+//     margin: 1.5rem auto 1rem auto;
+//   }
+//   .homePage-article-text-area {
+//     width: 21rem;
+//     height: 22rem;
+//     margin: 0 auto;
+//     .homePage-article-name {
+//       font-family: "Noto Sans TC", sans-serif;
+//       font-size: 1.2rem;
+//       font-weight: 600;
+//       color: $gray;
+//       margin: 1rem auto;
+//       text-align: center;
+//     }
+//     .homePage-article-text {
+//       font-family: "Noto Sans TC", sans-serif;
+//       font-size: 0.8rem;
+//       font-weight: 400;
+//       color: $brown;
+//       text-align: center;
+//     }
+//   }
+// }
+// .homePage-article-right-blur {
+//   width: 25rem;
+//   height: 35rem;
+//   filter: blur(5px);
+//   .homePage-article-img {
+//     background: url("../../assets/jpg/article-img2.jpg") center center no-repeat;
+//     background-size: cover;
+//     width: 10rem;
+//     height: 10rem;
+//     border-radius: 50%;
+//     margin: 1.5rem auto 1rem auto;
+//   }
+//   .homePage-article-text-area {
+//     width: 21rem;
+//     height: 22rem;
+//     margin: 0 auto;
+//     .homePage-article-name {
+//       font-family: "Noto Sans TC", sans-serif;
+//       font-size: 1.2rem;
+//       font-weight: 600;
+//       color: $gray;
+//       margin: 1rem auto;
+//       text-align: center;
+//     }
+//     .homePage-article-text {
+//       font-family: "Noto Sans TC", sans-serif;
+//       font-size: 0.8rem;
+//       font-weight: 400;
+//       color: $brown;
+//       text-align: center;
+//     }
+//   }
+// }
+// .homePage-article-arrowR {
+//   position: absolute;
+//   top: 30rem;
+//   right: 25rem;
+// }
+// .homePage-article-arrowL {
+//   position: absolute;
+//   top: 30rem;
+//   left: 25rem;
+// }
