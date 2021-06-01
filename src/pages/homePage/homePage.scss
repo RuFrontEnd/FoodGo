@@ -115,31 +115,33 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   background-size: cover;
 }
 
+#homePage-mouse-wrap {
+  bottom: 10rem;
+  left: calc(50% - 15px);
+}
+
 // 滾動提示
-.homePage-mouse {
+#homePage-mouse {
   width: 3rem;
   height: 5rem;
   background: url("../../assets/svg/mouse.svg") center center no-repeat;
-  bottom: 6rem;
-  left: 49vw;
   cursor: pointer;
 }
 
-.homePage-mouse-arrow {
+#homePage-mouse-arrow {
   width: 3rem;
   height: 1rem;
   background: url("../../assets/svg/mouse-arrow.svg") center center no-repeat;
-  bottom: 2rem;
-  left: 49vw;
   cursor: pointer;
   animation: mouse-arrow 0.7s infinite;
 }
+
 @keyframes mouse-arrow {
   from {
-    bottom: 4.5rem;
+    transform: translateY(-5px);
   }
   to {
-    bottom: 2rem;
+    transform: translateY(15px);
   }
 }
 

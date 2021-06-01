@@ -293,8 +293,10 @@ function HomePage(props) {
             <div id="homePage-col-download"></div>
           </div>
           {/* 滾動提示 */}
-          {/* <button className="position-absolute homePage-mouse"></button>
-          <div className="position-absolute homePage-mouse-arrow"></div> */}
+          <div id="homePage-mouse-wrap" className="position-absolute">
+            <button id="homePage-mouse"></button>
+            <div id="homePage-mouse-arrow"></div>
+          </div>
           {/* 切換鈕 */}
         </div>
       </section>
