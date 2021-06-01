@@ -93,16 +93,7 @@ function HomePage(props) {
 
   useEffect(() => {
     setShowBar(true);
-    console.log(window);
   }, []);
-
-  // const contentStyle = {
-  //   height: '87rem',
-  //   color: '#fff',
-  //   lineHeight: '160px',
-  //   textAlign: 'center',
-  //   background: '#2638891',
-  // };
 
   // 品牌特色切換
   const switchFeatureArea = (e) => {
@@ -148,25 +139,25 @@ function HomePage(props) {
 
   //監聽應用程式滾動
   function downloadIcon() {
-    const downloadArea = document.querySelector('.homePage-download-area');
-    const info = document.querySelector('.homePage-app-info');
-    const downloadIcon = document.querySelector('.homePage-col-download');
-    const janAppIcon = document.querySelector('.homePage-app-logo');
+    const downloadArea = document.querySelector('#homePage-download-wrap');
+    const info = document.querySelector('#homePage-app-info');
+    const downloadIcon = document.querySelector('#homePage-col-download');
+    const janAppIcon = document.querySelector('#homePage-app-logo');
     if (window.scrollY > 0.1 && downloadArea && info && downloadIcon) {
-      downloadArea.style = 'left:-29rem;transition:0.5s';
+      downloadArea.style = 'left:-6rem;transition:0.5s';
       info.style = 'display:none;transition:0.5s';
       downloadIcon.style = 'display:block;transition:0.5s';
       janAppIcon.style = 'visibility: hidden';
     }
     if (window.scrollY === 0 && downloadArea && info && downloadIcon) {
-      downloadArea.style = 'left:0rem;transition:0.5s';
+      downloadArea.style = 'left:5rem;transition:0.5s';
       info.style = 'display:block;transition:0.5s';
       downloadIcon.style = 'display:none;transition:0.5s';
       janAppIcon.style = 'visibility: visible;transition:0.5s';
     }
     if (downloadArea && info && downloadIcon) {
       downloadIcon.addEventListener('click', () => {
-        downloadArea.style = 'left:0rem;transition:0.5s';
+        downloadArea.style = 'left:5rem;transition:0.5s';
         info.style = 'display:block;transition:0.5s';
         downloadIcon.style = 'display:none;transition:0.5s';
         janAppIcon.style = 'visibility: visible;transition:0.5s';
@@ -252,48 +243,54 @@ function HomePage(props) {
         id="homePage-carousel-container"
         className="container-fluid homePage-p0"
       >
-        <div className="homePage-index-carousel-wrap position-relative">
+        <div id="homePage-carousel-wrap" className="position-relative">
           <Carousel autoplay>
             <div>
-              <div
-                className="homepage-banner-wrap"
-                // style={contentStyle}
-              >
-                <div className="banner1 d-flex flex-column align-items-center">
-                  <div className="homePage-fresh"></div>
-                  <div className="homePage-health"></div>
+              <div className="homepage-banner-wrap">
+                <div
+                  id="homePage-banner1"
+                  className="homePage-banner d-flex flex-column align-items-center"
+                >
+                  <div id="homePage-fresh"></div>
+                  <div id="homePage-health"></div>
                 </div>
               </div>
             </div>
             <div>
               <div className="homepage-banner-wrap">
-                <div className="banner2 d-flex flex-column text-left"></div>
+                <div
+                  id="homePage-banner2"
+                  className="homePage-banner d-flex flex-column align-items-center"
+                ></div>
               </div>
             </div>
             <div>
               <div className="homepage-banner-wrap">
-                <div className="banner3"></div>
+                <div id="homePage-banner3" className="homePage-banner"></div>
               </div>
             </div>
             <div>
               <div className="homepage-banner-wrap">
-                <div className="banner4"></div>
+                <div id="homePage-banner4" className="homePage-banner"></div>
               </div>
             </div>
           </Carousel>
           {/* 應用程式下載 */}
           {/* 橘底 */}
-          <div className="position-absolute position-fixed homePage-download-area d-flex justify-content-center">
+          <div
+            id="homePage-download-wrap"
+            className="position-fixed d-flex justify-content-center"
+          >
             {/* AppLogo＋應用程式icon */}
-            <div className="homePage-app-logo"></div>
-            <div className="homePage-app-info">
+            <div id="homePage-app-logo"></div>
+            <div id="homePage-app-info">
               <p className="mt-1">點擊此處下載應用程式</p>
               <div className="homePage-download-buttonsm d-flex justify-content-center">
-                <div className="homePage-ios mr-3"></div>
-                <div className="homePage-android"></div>
+                <div id="homePage-ios" className="mr-3"></div>
+                <div id="homePage-android"></div>
               </div>
             </div>
-            <div className="homePage-col-download"></div>
+            <div id="homePage-col-download"></div>
           </div>
           {/* 滾動提示 */}
           {/* <button className="position-absolute homePage-mouse"></button>
