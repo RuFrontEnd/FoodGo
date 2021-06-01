@@ -900,20 +900,22 @@ function HomePage(props) {
       </section>
 
       {/* 地圖 */}
-      {/* <section className="container-fluid homePage-p0 homePage-map mt-5"> */}
-      {/* 橘色底色 */}
-      {/* <div className="container flex-column align-items-center homePage-map-form-bcc">
+      <section
+        id="hamePage-map-container"
+        className="container-fluid homePage-p0 homePage-map d-flex justify-content-center"
+      >
+        {/* 橘色底色 */}
+        <div className="container d-flex homePage-map-form-bcc">
           <div className="flex-column homePage-map-form-wrap">
-            <br /> */}
-      {/* 標題 */}
-      {/* <div className="mt-5">
+            <br />
+            {/* 標題 */}
+            <div className="mt-5">
               <img style={{ height: '10rem' }} alt="" src={map1} />
               <br />
               <img style={{ height: '10rem' }} alt="" src={map2} />
-            </div> */}
-
-      {/* 表單 */}
-      {/* <div className="homePage-adress-form-wrap d-flex justify-content-center align-items-center">
+            </div>
+            {/* 表單 */}
+            <div className="homePage-adress-form-wrap d-flex justify-content-center align-items-center">
               <div className="homePage-form-wrap2 d-flex flex-column m-0">
                 <div className="mb-4">
                   <form name="homePage-adress-form" id="homePage-adress-form">
@@ -978,7 +980,6 @@ function HomePage(props) {
                         </div>
                       </div>
                     </div>
-
                     <br />
                     <div className="homePage-adress-input">
                       <input
@@ -990,7 +991,6 @@ function HomePage(props) {
                         onChange={(e) => setAddress(e.target.value)}
                       />
                     </div>
-
                     <br />
                     <div className="homePage-index-button float-right">
                       <div
@@ -1019,18 +1019,18 @@ function HomePage(props) {
                 <div className="homePage-map-results mt-4">
                   <p>
                     所在地點，符合滿
-                    <span className="homePage-price homePage-tabs-highlight"> */}
-      {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
-      {/* {county > -1 &&
+                    <span className="homePage-price homePage-tabs-highlight">
+                      {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
+                      {county > -1 &&
                         township > -1 &&
                         dataprice[county][township]}
                     </span>
                     <span className="homePage-tabs-highlight">元</span>免運費
-                  </p> */}
-      {/* <p>
+                  </p>
+                  <p>
                     最近的自取地點是大安門市<span>（查看其他門市）</span>
-                  </p> */}
-      {/* </div>
+                  </p>
+                </div>
                 <div className="homePage-map-buttons d-flex justify-content-between mt-4">
                   <Link style={{ 'text-decoration': 'none' }} to="/productList">
                     <div className="homePage-index-button">
@@ -1053,10 +1053,10 @@ function HomePage(props) {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
 
-      {/* 地圖 */}
-      {/* <div className="homePage-map-view">
+          {/* 地圖 */}
+          {/* <div className="homePage-map-view">
             <iframe
               title="indexDataMap"
               src="https://plotdb.io/v/chart/27933"
@@ -1065,115 +1065,62 @@ function HomePage(props) {
               allowfullscreen="true"
               frameborder="0"
             ></iframe>
-          </div>
+          </div> */}
         </div>
-      </section> */}
+      </section>
 
       {/* 好文推薦 */}
-      {/* <section className="container-fluid homePage-p0 homePage-article">
-        <div className="homePage-p0 flex-colunm justify-content-center"> */}
-      {/* 標題 */}
-      {/* <div className="mb-5 d-flex justify-content-center">
+      <section className="container homePage-p0 homePage-article">
+        <div>
+          {/* 標題 */}
+          <div className="mb-5 d-flex justify-content-center">
             <img alt="" src={titleLeft} />
             <p className="mt-2 homePage-feature-title">好文推薦</p>
             <img alt="" src={titleRight} />
-          </div> */}
+          </div>
 
-      {/* 推薦文章卡片 */}
-      {/* <div className="p-2 d-flex justify-content-center align-items-center"> */}
-      {/* 左邊模糊卡片 */}
-      {/* <div className="col-3">
-              <div className="m-auto d-flex justify-content-center flex-wrap homePage-article-bcc  homePage-article-left-blur"> */}
-      {/* 圖片 */}
-      {/* <div className="homePage-article-img"></div> */}
-      {/* 文字 */}
-      {/* <div className="homePage-article-text-area">
-                  <p className="homePage-article-name">Alice Yong</p>
-                  <p className="homePage-article-text">
-                    以前勤勞的時候天天煮低卡便當，但是發覺實在很累。兩個人的食材份量很難拿捏，還要採買、準備、收拾清潔，後來乾脆直接放棄。你們的出現真的是一大救星~低卡方便又超好吃，偶爾想下廚也有菜箱寄送服務，而且還看得到產銷履歷，真的讓人很安心！
-                  </p>
-                </div>
+          {/* 推薦文章卡片 */}
+          <div id="homepage-articles" className="d-flex justify-content-around">
+            <div className="d-flex justify-content-center flex-wrap homePage-article-bcc">
+              {/* 圖片 */}
+              <div className="homePage-article-img1"></div>
+              {/* 文字 */}
+              <div className="homePage-article-text-area">
+                <p className="homePage-article-name">Alice Yong</p>
+                <p className="homePage-article-text">
+                  以前勤勞的時候天天煮低卡便當，但是發覺實在很累。兩個人的食材份量很難拿捏，還要採買、準備、收拾清潔，後來乾脆直接放棄。你們的出現真的是一大救星~低卡方便又超好吃，偶爾想下廚也有菜箱寄送服務，而且還看得到產銷履歷，真的讓人很安心！
+                </p>
               </div>
-            </div> */}
+            </div>
 
-      {/* 中間兩張卡片 */}
-      {/* <div className="col-9 d-flex justify-content-around"> */}
-      {/* <ItemsCarousel
-                infiniteLoop={false}
-                requestToChangeActive={setActiveItemIndex}
-                activeItemIndex={activeItemIndex}
-                gutter={20}
-                activePosition={'center'}
-                chevronWidth={60}
-                disableSwipe={true}
-                alwaysShowChevrons={false}
-                numberOfCards={4}
-                slidesToScroll={1}
-                outsideChevron={true}
-                showSlither={false}
-                firstAndLastGutter={false}
-                rightChevron={<ArrowRight />}
-                leftChevron={<ArrowLeft />}
-              > */}
-      {/* <div className="d-flex justify-content-center flex-wrap homePage-article-bcc"> */}
-      {/* 圖片 */}
-      {/* <div className="homePage-article-img1"></div> */}
-      {/* 文字 */}
-      {/* <div className="homePage-article-text-area">
-                  <p className="homePage-article-name">Alice Yong</p>
-                  <p className="homePage-article-text">
-                    以前勤勞的時候天天煮低卡便當，但是發覺實在很累。兩個人的食材份量很難拿捏，還要採買、準備、收拾清潔，後來乾脆直接放棄。你們的出現真的是一大救星~低卡方便又超好吃，偶爾想下廚也有菜箱寄送服務，而且還看得到產銷履歷，真的讓人很安心！
-                  </p>
-                </div>
-              </div> */}
-
-      {/* <div className="d-flex justify-content-center flex-wrap homePage-article-bcc"> */}
-      {/* 圖片 */}
-      {/* <div className="homePage-article-img2"></div> */}
-      {/* 文字 */}
-      {/* <div className="homePage-article-text-area">
-                  <p className="homePage-article-name">小傑</p>
-                  <p className="homePage-article-text">
-                    我一直都有健身的習慣，也有在喝高蛋白，對於飲食基本上我沒有甚麼克制。很感謝你們讓我可以體驗到好吃又健康吃不膩的水煮餐，真的滿適合健身的我這樣吃！
-                    吃得飽又吃得健康，現在的人太常外食很硬攝取到高熱量、高油脂的食物，會造成身體負擔。
-                    但有了這樣的餐盒產生，就可以減少這一些麻煩了！
-                  </p>
-                </div>
+            <div className="d-flex justify-content-center flex-wrap homePage-article-bcc">
+              {/* 圖片 */}
+              <div className="homePage-article-img2"></div>
+              {/* 文字 */}
+              <div className="homePage-article-text-area">
+                <p className="homePage-article-name">小傑</p>
+                <p className="homePage-article-text">
+                  我一直都有健身的習慣，也有在喝高蛋白，對於飲食基本上我沒有甚麼克制。很感謝你們讓我可以體驗到好吃又健康吃不膩的水煮餐，真的滿適合健身的我這樣吃！
+                  吃得飽又吃得健康，現在的人太常外食很硬攝取到高熱量、高油脂的食物，會造成身體負擔。
+                  但有了這樣的餐盒產生，就可以減少這一些麻煩了！
+                </p>
               </div>
+            </div>
 
-              <div className="d-flex justify-content-center flex-wrap homePage-article-bcc"> */}
-      {/* 圖片 */}
-      {/* <div className="homePage-article-img3"></div> */}
-      {/* 文字 */}
-      {/* <div className="homePage-article-text-area">
-                  <p className="homePage-article-name">佳惠</p>
-                  <p className="homePage-article-text">
-                    拾餐的便當口味多變、熱量又低，而且配菜也會隨著主餐不同而有調整。主餐及配料調味剛剛好，不油不膩還減鹽少糖。一改過去對於便當的既有印象，讓人能吃出健康又能吃飽。另外他們的沙拉，也是很用心的料理！蔬菜新鮮、醬料好吃、配菜豐富！給出門在外工作上班上課的人提供了一份很健康的午餐！覺得很感恩！
-                  </p>
-                </div>
-              </div> */}
-      {/* </ItemsCarousel> */}
-      {/* </div> */}
-
-      {/* 右邊模糊卡片 */}
-      {/* <div className="col-3">
-              <div className="m-auto d-flex justify-content-center flex-wrap homePage-article-sbcc homePage-article-right-blur"> */}
-      {/* 圖片 */}
-      {/* <div className="homePage-article-img"></div> */}
-      {/* 文字 */}
-      {/* <div className="homePage-article-text-area">
-                  <p className="homePage-article-name">小傑</p>
-                  <p className="homePage-article-text">
-                    我一直都有健身的習慣，也有在喝高蛋白，對於飲食基本上我沒有甚麼克制。很感謝你們讓我可以體驗到好吃又健康吃不膩的水煮餐，真的滿適合健身的我這樣吃！
-                    吃得飽又吃得健康，現在的人太常外食很硬攝取到高熱量、高油脂的食物，會造成身體負擔。
-                    但有了這樣的餐盒產生，就可以減少這一些麻煩了！
-                  </p>
-                </div>
+            <div className="d-flex justify-content-center flex-wrap homePage-article-bcc">
+              {/* 圖片 */}
+              <div className="homePage-article-img3"></div>
+              {/* 文字 */}
+              <div className="homePage-article-text-area">
+                <p className="homePage-article-name">佳惠</p>
+                <p className="homePage-article-text">
+                  拾餐的便當口味多變、熱量又低，而且配菜也會隨著主餐不同而有調整。主餐及配料調味剛剛好，不油不膩還減鹽少糖。一改過去對於便當的既有印象，讓人能吃出健康又能吃飽。另外他們的沙拉，也是很用心的料理！蔬菜新鮮、醬料好吃、配菜豐富！給出門在外工作上班上課的人提供了一份很健康的午餐！覺得很感恩！
+                </p>
               </div>
-            </div> */}
-      {/* </div>
+            </div>
+          </div>
         </div>
-      </section> */}
+      </section>
       <ToToop />
     </>
   );
