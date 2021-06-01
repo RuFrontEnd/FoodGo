@@ -103,33 +103,33 @@ function HomePage(props) {
     setIsChoicesFeatureActive(false);
     setIsNetworkFeatureActive(false);
     setIsKcalFeatureActive(false);
-    if (e.target.id === 'homePage-farmer-svg') {
+    if (e.target.id === 'homePage-farmer-icon') {
       setIsFarmerFeatureActive(true);
       setFeatureTriangleClassName(
         'homePage-index-feature-triangle-active-farmer'
       );
       return;
     }
-    if (e.target.id === 'homePage-diet-svg') {
+    if (e.target.id === 'homePage-diet-icon') {
       setIsDietFeatureActive(true);
       setFeatureTriangleClassName(
         'homePage-index-feature-triangle-active-diet'
       );
       return;
     }
-    if (e.target.id === 'homePage-choices-svg') {
+    if (e.target.id === 'homePage-choices-icon') {
       setFeatureTriangleClassName(
         'homePage-index-feature-triangle-active-choices'
       );
       return setIsChoicesFeatureActive(true);
     }
-    if (e.target.id === 'homePage-network-svg') {
+    if (e.target.id === 'homePage-network-icon') {
       setFeatureTriangleClassName(
         'homePage-index-feature-triangle-active-network'
       );
       return setIsNetworkFeatureActive(true);
     }
-    if (e.target.id === 'homePage-kcal-svg') {
+    if (e.target.id === 'homePage-kcal-icon') {
       setFeatureTriangleClassName(
         'homePage-index-feature-triangle-active-kcal'
       );
@@ -308,7 +308,7 @@ function HomePage(props) {
       >
         <div
           id="homePage-feature-wrap"
-          className="row homePage-index-feature d-flex flex-column align-items-center justify-content-space-between"
+          className="row d-flex flex-column align-items-center justify-content-space-between"
         >
           {/* 標題 */}
           <div
@@ -316,27 +316,30 @@ function HomePage(props) {
             className="d-flex align-items-center"
           >
             <img alt="" src={titleLeft} />
-            <p className="homePage-feature-title">品牌特色</p>
+            <p id="homePage-feature-title">品牌特色</p>
             <img alt="" src={titleRight} />
           </div>
           {/* circles */}
           <div
-            className="d-flex homePage-circles justify-content-around align-items-center"
+            id="homePage-feature-circles"
+            className="d-flex justify-content-around align-items-center"
             ref={$homePageCircles}
           >
             {/* circle1 */}
             <div
-              className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center"
+              className="homePage-feature-circle d-flex flex-wrap justify-content-center align-items-center"
               ref={$featureCircle}
             >
               <div
                 onClick={(e) => {
                   switchFeatureArea(e);
                 }}
-                id="homePage-farmer-svg"
-                className={`homePage-feature-icon homePage-farmer-icon ${
-                  isFarmerFeatureActive && 'homePage-farmer-icon-active'
-                }`}
+                id={
+                  isFarmerFeatureActive
+                    ? 'homePage-farmer-icon-active'
+                    : 'homePage-farmer-icon'
+                }
+                className="homePage-feature-icon"
               ></div>
               <p className="homePage-circle-title">在地小農</p>
             </div>
@@ -345,59 +348,70 @@ function HomePage(props) {
               ref={$featureDot}
             ></div>
             {/* circle2 */}
-            <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
+            <div className="homePage-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
                 onClick={(e) => {
                   switchFeatureArea(e);
                 }}
-                id={'homePage-diet-svg'}
-                className={`homePage-feature-icon homePage-diet-icon ${
-                  isDietFeatureActive && 'homePage-diet-icon-active'
-                }`}
+                id={
+                  isDietFeatureActive
+                    ? 'homePage-diet-icon-active'
+                    : 'homePage-diet-icon'
+                }
+                className="homePage-feature-icon"
               ></div>
               <p className="homePage-circle-title">產銷履歷</p>
             </div>
             <div className="homePage-index-feature-smcircle"></div>
             {/* circle3 */}
-            <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
+            <div className="homePage-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
                 onClick={(e) => {
                   switchFeatureArea(e);
                 }}
-                id={'homePage-choices-svg'}
-                className={`homePage-feature-icon homePage-choices-icon  ${
-                  isChoicesFeatureActive && 'homePage-choices-icon-active'
-                }`}
+                id={
+                  isChoicesFeatureActive
+                    ? 'homePage-choices-icon-active'
+                    : 'homePage-choices-icon'
+                }
+                className={'homePage-feature-icon'}
               ></div>
-              <p className="homePage-circle-title homePage-circle-title-customize">
+              <p
+                id="homePage-circle-title-customize"
+                className="homePage-circle-title"
+              >
                 客製化便當
               </p>
             </div>
             <div className="homePage-index-feature-smcircle"></div>
             {/* circle4 */}
-            <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
+            <div className="homePage-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
                 onClick={(e) => {
                   switchFeatureArea(e);
                 }}
-                id={'homePage-network-svg'}
-                className={`homePage-feature-icon homePage-network-icon ${
-                  isNetworkFeatureActive && 'homePage-network-icon-active'
-                }`}
+                id={
+                  isNetworkFeatureActive
+                    ? 'homePage-network-icon-active'
+                    : 'homePage-network-icon'
+                }
+                className={'homePage-feature-icon'}
               ></div>
               <p className="homePage-circle-title">揪團訂購</p>
             </div>
             <div className="homePage-index-feature-smcircle"></div>
             {/* circle5 */}
-            <div className="homePage-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
+            <div className="homePage-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
                 onClick={(e) => {
                   switchFeatureArea(e);
                 }}
-                id={'homePage-kcal-svg'}
-                className={`homePage-feature-icon homePage-kcal-icon ${
-                  isKcalFeatureActive && 'homePage-kcal-icon-active'
-                }`}
+                id={
+                  isKcalFeatureActive
+                    ? 'homePage-kcal-icon-active'
+                    : 'homePage-kcal-icon'
+                }
+                className={'homePage-feature-icon'}
               ></div>
               <p className="homePage-circle-title">營養標示</p>
             </div>
@@ -412,16 +426,17 @@ function HomePage(props) {
       {/* intros */}
       <section
         id="homePage-intro-container"
-        className="container-fluid homePage-p0 homePage-intro-area"
+        className="container-fluid homePage-p0"
       >
         {/* 在地小農 */}
         <div
-          className={`homePage-intro homePage-intro1-container ${
+          id="homePage-intro1-container"
+          className={`homePage-intro ${
             isFarmerFeatureActive && 'homePage-intro-active'
           }`}
         >
           {/* 介紹欄位 */}
-          <div className="homePage-intro1-wrap">
+          <div id="homePage-intro1-wrap">
             <div className="homePage-intro1-title"></div>
             <div className="homePage-intro1-text mt-5">
               <p>嚴選在地農產品</p>

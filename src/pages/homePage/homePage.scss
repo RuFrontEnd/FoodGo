@@ -29,15 +29,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   padding: 0px !important;
 }
 
-// 標題宋體樣式
-.homePage-feature-title {
-  font-size: 3.2rem;
-  font-family: "Noto Serif TC", serif;
-  color: $gray;
-  margin: 0.5rem 1rem 1rem 1rem;
-  font-weight: 600;
-}
-
 // 共用元件按鈕大小修改
 .homePage-index-button button {
   width: 15rem;
@@ -207,6 +198,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 // 特色專區-切換區域
 
 #homePage-feature-wrap {
+  background-color: #fff;
   margin: 60px 0px 70px 0px;
 }
 
@@ -214,119 +206,120 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   margin-bottom: 30px;
 }
 
-.homePage-index-feature {
-  background-color: #fff;
-  // 圓圈們
-  .homePage-circles {
-    width: 100%;
-    // 分隔橘色小圓圈
-    .homePage-index-feature-smcircle {
-      background-color: $orange;
-      width: 1.5rem;
-      height: 1.5rem;
-      border-radius: 50%;
-    }
-    // skin底色
-    .homePage-index-feature-circle {
-      position: relative;
-      background-color: $skin;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      // 特色文字樣式
-      .homePage-circle-title {
-        position: absolute;
-        bottom: -10px;
-        left: calc(50% - 40px);
-        font-size: 2rem;
-        font-family: "Noto Sans TC", sans-serif;
-        color: $brown;
-        margin-bottom: 0;
-      }
-      .homePage-circle-title-customize {
-        position: absolute;
-        bottom: -10px;
-        left: calc(50% - 50px);
-        font-size: 2rem;
-        font-family: "Noto Sans TC", sans-serif;
-        color: $brown;
-        margin-bottom: 0;
-      }
-
-      .homePage-feature-icon {
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-
-      // 在地小農
-      .homePage-farmer-icon {
-        background: url("../../assets/svg/farmer.svg") center center no-repeat;
-        background-size: 9rem 9rem;
-        transition: 0.3s;
-      }
-
-      .homePage-farmer-icon-active {
-        background: url("../../assets/svg/farmer-o.svg") center center no-repeat;
-        background-size: 10rem 10rem;
-        transition: 0.3s;
-      }
-
-      // 產銷履歷
-      .homePage-diet-icon {
-        background: url("../../assets/svg/diet.svg") center center no-repeat;
-        background-size: 9rem 9rem;
-        transition: 0.3s;
-      }
-
-      .homePage-diet-icon-active {
-        background: url("../../assets/svg/diet-o.svg") center center no-repeat;
-        background-size: 10rem 10rem;
-        transition: 0.3s;
-      }
-
-      // 客製化便當
-      .homePage-choices-icon {
-        background: url("../../assets/svg/choices.svg") center center no-repeat;
-        background-size: 9rem 9rem;
-        transition: 0.3s;
-      }
-
-      .homePage-choices-icon-active {
-        background: url("../../assets/svg/choices-o.svg") center center no-repeat;
-        background-size: 10rem 10rem;
-        transition: 0.3s;
-      }
-
-      // 揪團訂餐
-      .homePage-network-icon {
-        background: url("../../assets/svg/network.svg") center center no-repeat;
-        background-size: 9rem 9rem;
-        transition: 0.3s;
-      }
-
-      .homePage-network-icon-active {
-        background: url("../../assets/svg/network-o.svg") center center no-repeat;
-        background-size: 10rem 10rem;
-        transition: 0.3s;
-      }
-
-      // 卡路里計算
-      .homePage-kcal-icon {
-        background: url("../../assets/svg/kcal.svg") center center no-repeat;
-        background-size: 9rem 9rem;
-        transition: 0.3s;
-      }
-
-      .homePage-kcal-icon-active {
-        background: url("../../assets/svg/kcal-o.svg") center center no-repeat;
-        background-size: 10rem 10rem;
-        transition: 0.3s;
-      }
-    }
-  }
+// 標題宋體樣式
+#homePage-feature-title {
+  font-size: 3.2rem;
+  font-family: "Noto Serif TC", serif;
+  color: $gray;
+  margin: 0.5rem 1rem 1rem 1rem;
+  font-weight: 600;
 }
+
+#homePage-feature-circles {
+  width: 100%;
+}
+
+.homePage-index-feature-smcircle {
+  background-color: $orange;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.homePage-feature-circle {
+  position: relative;
+  background-color: $skin;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+}
+
+.homePage-circle-title {
+  position: absolute;
+  bottom: -10px;
+  left: calc(50% - 40px);
+  font-size: 2rem;
+  font-family: "Noto Sans TC", sans-serif;
+  color: $brown;
+  margin-bottom: 0;
+}
+
+#homePage-circle-title-customize {
+  left: calc(50% - 50px);
+}
+
+.homePage-feature-icon {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+// 在地小農
+#homePage-farmer-icon {
+  background: url("../../assets/svg/farmer.svg") center center no-repeat;
+  background-size: 9rem 9rem;
+  transition: 0.3s;
+}
+
+#homePage-farmer-icon-active {
+  background: url("../../assets/svg/farmer-o.svg") center center no-repeat;
+  background-size: 10rem 10rem;
+  transition: 0.3s;
+}
+
+// 產銷履歷
+#homePage-diet-icon {
+  background: url("../../assets/svg/diet.svg") center center no-repeat;
+  background-size: 9rem 9rem;
+  transition: 0.3s;
+}
+
+#homePage-diet-icon-active {
+  background: url("../../assets/svg/diet-o.svg") center center no-repeat;
+  background-size: 10rem 10rem;
+  transition: 0.3s;
+}
+
+// 客製化便當
+#homePage-choices-icon {
+  background: url("../../assets/svg/choices.svg") center center no-repeat;
+  background-size: 9rem 9rem;
+  transition: 0.3s;
+}
+
+#homePage-choices-icon-active {
+  background: url("../../assets/svg/choices-o.svg") center center no-repeat;
+  background-size: 10rem 10rem;
+  transition: 0.3s;
+}
+
+// 揪團訂餐
+#homePage-network-icon {
+  background: url("../../assets/svg/network.svg") center center no-repeat;
+  background-size: 9rem 9rem;
+  transition: 0.3s;
+}
+
+#homePage-network-icon-active {
+  background: url("../../assets/svg/network-o.svg") center center no-repeat;
+  background-size: 10rem 10rem;
+  transition: 0.3s;
+}
+
+// 卡路里計算
+#homePage-kcal-icon {
+  background: url("../../assets/svg/kcal.svg") center center no-repeat;
+  background-size: 9rem 9rem;
+  transition: 0.3s;
+}
+
+#homePage-kcal-icon-active {
+  background: url("../../assets/svg/kcal-o.svg") center center no-repeat;
+  background-size: 10rem 10rem;
+  transition: 0.3s;
+}
+
 // 切換指示的三角形
 .homePage-index-feature-triangle {
   display: flex;
@@ -361,23 +354,23 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 // 特色內容
-.homePage-intro-area {
+#homePage-intro-container {
   width: 100%;
   background-color: $skin;
 }
 
 .homePage-intro {
+  display: none;
   padding: 30px 0px;
 }
 
-.homePage-intro1-container {
-  display: none;
+#homePage-intro1-container {
   margin: auto;
   max-width: 117rem;
   justify-content: space-around;
   align-items: center;
   transition: 0.3s;
-  .homePage-intro1-wrap {
+  #homePage-intro1-wrap {
     // background-color: #bbb;
     .homePage-intro1-title {
       background: url("../../assets/svg/intro1.svg") center center no-repeat;
@@ -1376,56 +1369,56 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 @media screen and (max-width: 1199.98px) {
+  #homePage-farmer-icon {
+    background-size: 8rem 8rem;
+  }
+
+  #homePage-farmer-icon-active {
+    background-size: 9rem 9rem;
+  }
+
+  #homePage-diet-icon {
+    background-size: 8rem 8rem;
+  }
+
+  #homePage-diet-icon-active {
+    background-size: 9rem 9rem;
+  }
+
+  #homePage-choices-icon {
+    background-size: 8rem 8rem;
+  }
+
+  #homePage-choices-icon-active {
+    background-size: 9rem 9rem;
+  }
+
+  #homePage-network-icon {
+    background-size: 8rem 8rem;
+  }
+
+  #homePage-network-icon-active {
+    background-size: 9rem 9rem;
+  }
+
+  #homePage-kcal-icon {
+    background-size: 8rem 8rem;
+  }
+
+  #homePage-kcal-icon-active {
+    background-size: 9rem 9rem;
+  }
+
   .homePage-index-feature {
-    .homePage-circles {
+    #homePage-feature-circles {
       .homePage-index-feature-smcircle {
         width: 1.3rem;
         height: 1.3rem;
       }
-      .homePage-index-feature-circle {
+      .homePage-feature-circle {
         width: 14rem;
         height: 14rem;
         border-radius: 50%;
-
-        .homePage-farmer-icon {
-          background-size: 8rem 8rem;
-        }
-
-        .homePage-farmer-icon-active {
-          background-size: 9rem 9rem;
-        }
-
-        .homePage-diet-icon {
-          background-size: 8rem 8rem;
-        }
-
-        .homePage-diet-icon-active {
-          background-size: 9rem 9rem;
-        }
-
-        .homePage-choices-icon {
-          background-size: 8rem 8rem;
-        }
-
-        .homePage-choices-icon-active {
-          background-size: 9rem 9rem;
-        }
-
-        .homePage-network-icon {
-          background-size: 8rem 8rem;
-        }
-
-        .homePage-network-icon-active {
-          background-size: 9rem 9rem;
-        }
-
-        .homePage-kcal-icon {
-          background-size: 8rem 8rem;
-        }
-
-        .homePage-kcal-icon-active {
-          background-size: 9rem 9rem;
-        }
       }
     }
   }
@@ -1436,56 +1429,55 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 @media screen and (max-width: 991.98px) {
+  #homePage-farmer-icon {
+    background-size: 6rem 6rem;
+  }
+
+  #homePage-farmer-icon-active {
+    background-size: 7rem 7rem;
+  }
+
+  #homePage-diet-icon {
+    background-size: 6rem 6rem;
+  }
+
+  #homePage-diet-icon-active {
+    background-size: 7rem 7rem;
+  }
+
+  #homePage-choices-icon {
+    background-size: 6rem 6rem;
+  }
+
+  #homePage-choices-icon-active {
+    background-size: 7rem 7rem;
+  }
+
+  #homePage-network-icon {
+    background-size: 6rem 6rem;
+  }
+
+  #homePage-network-icon-active {
+    background-size: 7rem 7rem;
+  }
+
+  #homePage-kcal-icon {
+    background-size: 6rem 6rem;
+  }
+
+  #homePage-kcal-icon-active {
+    background-size: 7rem 7rem;
+  }
   .homePage-index-feature {
-    .homePage-circles {
+    #homePage-feature-circles {
       .homePage-index-feature-smcircle {
         width: 1.1rem;
         height: 1.1rem;
       }
-      .homePage-index-feature-circle {
+      .homePage-feature-circle {
         width: 11rem;
         height: 11rem;
         border-radius: 50%;
-
-        .homePage-farmer-icon {
-          background-size: 6rem 6rem;
-        }
-
-        .homePage-farmer-icon-active {
-          background-size: 7rem 7rem;
-        }
-
-        .homePage-diet-icon {
-          background-size: 6rem 6rem;
-        }
-
-        .homePage-diet-icon-active {
-          background-size: 7rem 7rem;
-        }
-
-        .homePage-choices-icon {
-          background-size: 6rem 6rem;
-        }
-
-        .homePage-choices-icon-active {
-          background-size: 7rem 7rem;
-        }
-
-        .homePage-network-icon {
-          background-size: 6rem 6rem;
-        }
-
-        .homePage-network-icon-active {
-          background-size: 7rem 7rem;
-        }
-
-        .homePage-kcal-icon {
-          background-size: 6rem 6rem;
-        }
-
-        .homePage-kcal-icon-active {
-          background-size: 7rem 7rem;
-        }
       }
     }
   }
@@ -1518,22 +1510,22 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 @media screen and (max-width: 767.98px) {
-  .homePage-intro1-container .homePage-intro1-cards {
+  #homePage-intro1-container .homePage-intro1-cards {
     flex-direction: column;
   }
 
-  .homePage-intro1-container .homePage-intro1-cards .homePage-intro1-card1 {
+  #homePage-intro1-container .homePage-intro1-cards .homePage-intro1-card1 {
     margin-right: 0px;
     margin-bottom: 20px;
   }
 
   .homePage-index-feature {
-    .homePage-circles {
+    #homePage-feature-circles {
       .homePage-index-feature-smcircle {
         width: 0.9rem;
         height: 0.9rem;
       }
-      .homePage-index-feature-circle {
+      .homePage-feature-circle {
         width: 8rem;
         height: 8rem;
         border-radius: 50%;
@@ -1542,48 +1534,48 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
           font-size: 1.5rem;
           left: calc(50% - 30px);
         }
-        .homePage-circle-title-customize {
+        #homePage-circle-title-customize {
           font-size: 1.5rem;
           left: calc(50% - 37.5px);
         }
 
-        .homePage-farmer-icon {
+        #homePage-farmer-icon {
           background-size: 4rem 4rem;
         }
 
-        .homePage-farmer-icon-active {
+        #homePage-farmer-icon-active {
           background-size: 5rem 5rem;
         }
 
-        .homePage-diet-icon {
+        #homePage-diet-icon {
           background-size: 4rem 4rem;
         }
 
-        .homePage-diet-icon-active {
+        #homePage-diet-icon-active {
           background-size: 5rem 5rem;
         }
 
-        .homePage-choices-icon {
+        #homePage-choices-icon {
           background-size: 4rem 4rem;
         }
 
-        .homePage-choices-icon-active {
+        #homePage-choices-icon-active {
           background-size: 5rem 5rem;
         }
 
-        .homePage-network-icon {
+        #homePage-network-icon {
           background-size: 4rem 4rem;
         }
 
-        .homePage-network-icon-active {
+        #homePage-network-icon-active {
           background-size: 5rem 5rem;
         }
 
-        .homePage-kcal-icon {
+        #homePage-kcal-icon {
           background-size: 4rem 4rem;
         }
 
-        .homePage-kcal-icon-active {
+        #homePage-kcal-icon-active {
           background-size: 5rem 5rem;
         }
       }
@@ -1616,13 +1608,13 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
 @media screen and (max-width: 575.98px) {
   .homePage-index-feature {
-    .homePage-circles {
+    #homePage-feature-circles {
       flex-direction: column;
       .homePage-index-feature-smcircle {
         width: 1.5rem;
         height: 1.5rem;
       }
-      .homePage-index-feature-circle {
+      .homePage-feature-circle {
         width: 16rem;
         height: 16rem;
 
@@ -1630,65 +1622,65 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
           font-size: 2rem;
           left: calc(50% - 28px);
         }
-        .homePage-circle-title-customize {
+        #homePage-circle-title-customize {
           font-size: 1.4rem;
           left: calc(50% - 35px);
         }
 
-        .homePage-farmer-icon {
+        #homePage-farmer-icon {
           background-size: 9rem 9rem;
         }
 
-        .homePage-farmer-icon-active {
+        #homePage-farmer-icon-active {
           background-size: 10rem 10rem;
         }
 
-        .homePage-diet-icon {
+        #homePage-diet-icon {
           background-size: 9rem 9rem;
         }
 
-        .homePage-diet-icon-active {
+        #homePage-diet-icon-active {
           background-size: 10rem 10rem;
         }
 
-        .homePage-choices-icon {
+        #homePage-choices-icon {
           background-size: 9rem 9rem;
         }
 
-        .homePage-choices-icon-active {
+        #homePage-choices-icon-active {
           background-size: 10rem 10rem;
         }
 
-        .homePage-network-icon {
+        #homePage-network-icon {
           background-size: 9rem 9rem;
         }
 
-        .homePage-network-icon-active {
+        #homePage-network-icon-active {
           background-size: 10rem 10rem;
         }
 
-        .homePage-kcal-icon {
+        #homePage-kcal-icon {
           background-size: 9rem 9rem;
         }
 
-        .homePage-kcal-icon-active {
+        #homePage-kcal-icon-active {
           background-size: 10rem 10rem;
         }
       }
     }
   }
 
-  .homePage-index-feature .homePage-circles .homePage-index-feature-circle .homePage-circle-title {
+  .homePage-index-feature #homePage-feature-circles .homePage-feature-circle .homePage-circle-title {
     font-size: 20px;
     left: calc(50% - 40px);
   }
 
-  .homePage-index-feature .homePage-circles .homePage-index-feature-circle .homePage-circle-title-customize {
+  .homePage-index-feature #homePage-feature-circles .homePage-feature-circle #homePage-circle-title-customize {
     font-size: 20px;
     left: calc(50% - 50px);
   }
 
-  .homePage-index-feature .homePage-circles .homePage-index-feature-smcircle {
+  .homePage-index-feature #homePage-feature-circles .homePage-index-feature-smcircle {
     margin: 15px 0px;
   }
 
@@ -1697,15 +1689,15 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     width: 300px;
   }
 
-  .homePage-intro1-container .homePage-intro1-cards .homePage-intro1-card1 {
+  #homePage-intro1-container .homePage-intro1-cards .homePage-intro1-card1 {
     margin-top: 20px;
   }
 
-  .homePage-intro1-container .homePage-intro1-cards {
+  #homePage-intro1-container .homePage-intro1-cards {
     flex-direction: column;
   }
 
-  .homePage-intro1-container .homePage-intro1-cards {
+  #homePage-intro1-container .homePage-intro1-cards {
     padding: 0px !important;
   }
 
@@ -1720,11 +1712,11 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     background-size: cover;
   }
 
-  .homePage-intro1-container .homePage-intro1-wrap .homePage-intro1-title {
+  #homePage-intro1-container #homePage-intro1-wrap .homePage-intro1-title {
     height: 7rem;
   }
 
-  .homePage-intro1-container .homePage-intro1-wrap .homePage-intro1-text {
+  #homePage-intro1-container #homePage-intro1-wrap .homePage-intro1-text {
     margin-left: 0rem;
   }
 
