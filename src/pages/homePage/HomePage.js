@@ -437,13 +437,11 @@ function HomePage(props) {
         >
           {/* 介紹欄位 */}
           <div id="homePage-intro1-wrap">
-            <div className="homePage-intro1-title"></div>
-            <div className="homePage-intro1-text mt-5">
+            <div id="homePage-intro1-title"></div>
+            <div id="homePage-intro1-text" className="mt-5">
               <p>嚴選在地農產品</p>
               <p>透過小農地圖</p>
-              <p className="homePage-intro1-large-text">
-                “拾餐“帶你從餐桌看見台灣
-              </p>
+              <p id="homePage-intro1-large-text">"拾餐"帶你從餐桌看見台灣</p>
               <p>走訪這些在地小農</p>
               <p>打開感官體驗</p>
               <p>拾餐也提供蔬菜箱寄送</p>
@@ -451,26 +449,29 @@ function HomePage(props) {
               <p>不用出門也能品嘗到安心的美味</p>
             </div>
             <Link style={{ 'text-decoration': 'none' }} to="/farmMap">
-              <div className="homePage-index-button float-right mt-3">
+              <div id="homePage-index-button" className="float-right mt-3">
                 <Button className="button-btn-g" text="小農地圖" />
               </div>
             </Link>
           </div>
           {/* 小農欄位 */}
-          <div className="homePage-intro1-cards p-5">
+          <div id="homePage-intro1-cards" className="p-5">
             {/* 萱草園．農友張武增 */}
-            <div className="homePage-intro1-card1">
-              <div className="homePage-intro1-farmer1 d-flex justify-content-center"></div>
-              <div className="homePage-intro1-card1-wrap flex-column">
-                <div className="homePage-intro1-fake-farmer1"></div>
-                <p className="homePage-card1-title">萱草園．農友張武增</p>
-                <p className="homePage-card1-text ">
+            <div id="homePage-intro1-card1">
+              <div
+                id="homePage-intro1-farmer1"
+                className="d-flex justify-content-center"
+              ></div>
+              <div id="homePage-intro1-card1-wrap" className="flex-column">
+                <div id="homePage-intro1-fake-farmer1"></div>
+                <p id="homePage-card1-title">萱草園．農友張武增</p>
+                <p id="homePage-card1-text">
                   張武增張大哥，生於花蓮赤柯山 田地保育山羌，通過綠色保育標章
                   「安心金針」甘甜風味受好評 友善耕種，堅持不使用農藥、化肥
                   熱風烘乾，堅持提供無硫金針。
                 </p>
                 <Link style={{ 'text-decoration': 'none' }} to="/farmIntro">
-                  <div className="homePage-card-arrow float-right"></div>
+                  <div id="" className="homePage-card-arrow float-right"></div>
                   <br />
                   <br />
                   <div className="homePage-card1-viewmore float-right">
