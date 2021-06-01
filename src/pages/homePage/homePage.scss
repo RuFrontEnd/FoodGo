@@ -42,7 +42,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 // 共用元件按鈕大小修改
-#homePage-index-button button {
+.homePage-index-button button {
   width: 15rem;
   height: 5rem;
   font-size: 1.8rem;
@@ -264,7 +264,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   width: 100%;
   height: 100%;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 // 在地小農
@@ -276,7 +275,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
 #homePage-farmer-icon-active {
   background: url("../../assets/svg/farmer-o.svg") center center no-repeat;
-  background-size: $featureIconSize_xxl_active;
+  background-size: $featureIconSize_xxl_active $featureIconSize_xxl_active;
   transition: 0.3s;
 }
 
@@ -289,7 +288,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
 #homePage-diet-icon-active {
   background: url("../../assets/svg/diet-o.svg") center center no-repeat;
-  background-size: $featureIconSize_xxl_active;
+  background-size: $featureIconSize_xxl_active $featureIconSize_xxl_active;
   transition: 0.3s;
 }
 
@@ -302,7 +301,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
 #homePage-choices-icon-active {
   background: url("../../assets/svg/choices-o.svg") center center no-repeat;
-  background-size: $featureIconSize_xxl_active;
+  background-size: $featureIconSize_xxl_active $featureIconSize_xxl_active;
   transition: 0.3s;
 }
 
@@ -315,7 +314,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
 #homePage-network-icon-active {
   background: url("../../assets/svg/network-o.svg") center center no-repeat;
-  background-size: $featureIconSize_xxl_active;
+  background-size: $featureIconSize_xxl_active $featureIconSize_xxl_active;
   transition: 0.3s;
 }
 
@@ -328,7 +327,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
 #homePage-kcal-icon-active {
   background: url("../../assets/svg/kcal-o.svg") center center no-repeat;
-  background-size: $featureIconSize_xxl_active;
+  background-size: $featureIconSize_xxl_active $featureIconSize_xxl_active;
   transition: 0.3s;
 }
 
@@ -453,7 +452,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
           font-weight: 500;
           margin: 0 auto;
         }
-        .homePage-card-arrow {
+        #homePage-card-arrow {
           background: url("../../assets/svg/intro1-arrow.svg") center center no-repeat;
           background-size: cover;
           width: 3rem;
@@ -482,7 +481,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
         width: 60rem;
         height: 60rem;
       }
-      .homePage-card-arrow {
+      #homePage-card-arrow {
         animation: myCustomAnimate 0.7s infinite;
       }
       @keyframes myCustomAnimate {
@@ -495,7 +494,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
       }
     }
 
-    .homePage-intro1-card2 {
+    #homePage-intro1-card2 {
       background-color: $lightGray;
       width: 30rem;
       height: 45rem;
@@ -503,7 +502,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
       box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
       position: relative;
       overflow: hidden;
-      .homePage-intro1-farmer2 {
+      #homePage-intro1-farmer2 {
         border-radius: 50%;
         background: url("../../assets/jpg/farmer2.jpg") center center no-repeat;
         background-size: 24rem;
@@ -514,23 +513,23 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
         display: flex;
         justify-content: center;
       }
-      .homePage-intro1-card2-wrap {
+      #homePage-intro1-card2-wrap {
         width: 25rem;
         height: 45rem;
         top: 0;
         right: 2.5rem;
         position: absolute;
-        .homePage-intro1-fake-farmer2 {
+        #homePage-intro1-fake-farmer2 {
           width: 15rem;
           height: 15rem;
           margin: 3rem auto 2rem auto;
         }
-        .homePage-card2-title {
+        #homePage-card2-title {
           font-family: "Noto Sans TC", sans-serif;
           font-size: 1.8rem;
           font-weight: 600;
         }
-        .homePage-card2-text {
+        #homePage-card2-text {
           width: 25rem;
           height: 15rem;
           font-family: "Noto Sans TC", sans-serif;
@@ -538,22 +537,22 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
           font-weight: 500;
           margin: 0 auto;
         }
-        .homePage-card-arrow {
+        #homePage-card-arrow {
           background: url("../../assets/svg/intro1-arrow.svg") center center no-repeat;
           background-size: cover;
           width: 3rem;
           height: 2.2rem;
           cursor: pointer;
         }
-        .homePage-card2-viewmore {
+        #homePage-card2-viewmore {
           font-family: "Noto Sans TC", sans-serif;
           color: $gray;
           font-size: 1rem;
           // margin-right: 2.5rem;
         }
       }
-      .homePage-intro1-card2:hover {
-        .homePage-intro1-farmer2 {
+      #homePage-intro1-card2:hover {
+        #homePage-intro1-farmer2 {
           margin-left: -15rem;
           margin-top: -7.5rem;
           background: url("../../assets/jpg/farmer2.jpg") center center no-repeat;
@@ -565,7 +564,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
           width: 60rem;
           height: 60rem;
         }
-        .homePage-card-arrow {
+        #homePage-card-arrow {
           animation: myCustomAnimate 0.7s infinite;
         }
         @keyframes myCustomAnimate {
@@ -581,24 +580,23 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
 }
 
-.homePage-intro2-container {
-  display: none;
+#homePage-intro2-container {
   margin: auto;
   max-width: 117rem;
   // display: block;
   justify-content: space-around;
   align-items: center;
   transition: 0.3s;
-  .homePage-intro2-wrap {
+  #homePage-intro2-wrap {
     // background-color: #bbb;
     width: 44rem;
-    .homePage-intro2-title {
+    #homePage-intro2-title {
       background: url("../../assets/svg/intro2.svg") center center no-repeat;
       background-size: cover;
       height: 11rem;
     }
   }
-  .homePage-intro2-text {
+  #homePage-intro2-text {
     width: 38rem;
     height: 30rem;
     color: $gray;
@@ -1706,7 +1704,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     padding: 0px !important;
   }
 
-  .homePage-intro2-container .homePage-intro2-cards {
+  #homePage-intro2-container .homePage-intro2-cards {
     width: 300px;
     height: 200px;
   }
@@ -1725,17 +1723,17 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     margin-left: 0rem;
   }
 
-  .homePage-intro2-container .homePage-intro2-wrap .homePage-intro2-title {
+  #homePage-intro2-container #homePage-intro2-wrap #homePage-intro2-title {
     height: 6rem;
     width: 25rem;
     margin: auto;
   }
 
-  .homePage-intro2-container .homePage-intro2-wrap {
+  #homePage-intro2-container #homePage-intro2-wrap {
     width: 100%;
   }
 
-  .homePage-intro2-container .homePage-intro2-text {
+  #homePage-intro2-container #homePage-intro2-text {
     width: 100%;
     height: 100%;
     margin-left: 0rem;

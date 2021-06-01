@@ -449,7 +449,7 @@ function HomePage(props) {
               <p>不用出門也能品嘗到安心的美味</p>
             </div>
             <Link style={{ 'text-decoration': 'none' }} to="/farmMap">
-              <div id="homePage-index-button" className="float-right mt-3">
+              <div className="homePage-index-button float-right mt-3">
                 <Button className="button-btn-g" text="小農地圖" />
               </div>
             </Link>
@@ -482,41 +482,38 @@ function HomePage(props) {
             </div>
 
             {/* 青翠園有機農場・農友莊翠蘭 */}
-            <div className="homePage-intro1-card2">
-              <div className="homePage-intro1-card2">
-                <div className="homePage-intro1-farmer2"></div>
-                <div className="homePage-intro1-card2-wrap flex-column">
-                  <div className="homePage-intro1-fake-farmer2"></div>
-                  <p className="homePage-card2-title">
-                    青翠園有機農場・農友莊翠蘭
+            <div id="homePage-intro1-card2">
+              <div id="homePage-intro1-farmer2"></div>
+              <div id="homePage-intro1-card2-wrap" className="flex-column">
+                <div id="homePage-intro1-fake-farmer2"></div>
+                <p id="homePage-card2-title">青翠園有機農場・農友莊翠蘭</p>
+                <p id="homePage-card2-text">
+                  堅持至今的信念是個好： 「對自己身體好，對消費者的身體好，
+                  對土地好，對天地萬物好」。 她的心願是，「如果土地會說話，
+                  希望他們會說：『嗯，我很舒服』， 這樣就太好了！」
+                </p>
+                <Link to="/farmIntro">
+                  <div id="homePage-card-arrow" className="float-right"></div>
+                  <br />
+                  <br />
+                  <p id="homePage-card2-viewmore" className="m-0 float-right">
+                    view more
                   </p>
-                  <p className="homePage-card2-text ">
-                    堅持至今的信念是個好： 「對自己身體好，對消費者的身體好，
-                    對土地好，對天地萬物好」。 她的心願是，「如果土地會說話，
-                    希望他們會說：『嗯，我很舒服』， 這樣就太好了！」
-                  </p>
-                  <Link to="/farmIntro">
-                    <div className="homePage-card-arrow float-right"></div>
-                    <br />
-                    <br />
-                    <p className="m-0 homePage-card2-viewmore float-right">
-                      view more
-                    </p>
-                  </Link>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
         </div>
         {/* 產銷履歷 */}
         <div
-          className={`homePage-intro homePage-intro2-container ${
+          id="homePage-intro2-container"
+          className={`homePage-intro ${
             isDietFeatureActive && 'homePage-intro-active'
           }`}
         >
-          <div className="homePage-intro2-wrap">
-            <div className="homePage-intro2-title"></div>
-            <div className="homePage-intro2-text mt-5">
+          <div id="homePage-intro2-wrap">
+            <div id="homePage-intro2-title"></div>
+            <div id="homePage-intro2-text" className="mt-5">
               <p>農產品產銷履歷制度</p>
               <p>是一種農產品從農場到餐桌</p>
               <p>在生產、加工、運輸、銷售過程</p>
