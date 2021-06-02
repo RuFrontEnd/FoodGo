@@ -24,7 +24,7 @@ nav {
   position: fixed;
   width: 100%;
   box-shadow: 0.3rem 0 1rem #cfcfcf;
-  z-index: 1040;
+  z-index: 10400;
 }
 
 .navBar-wrap {
@@ -73,7 +73,7 @@ nav {
   display: none;
   background-color: white;
   position: fixed;
-  z-index: 1000;
+  z-index: 10000;
   height: 100vh;
   top: 100px;
   box-shadow: 0.3rem 0 1rem #cfcfcf;
@@ -220,7 +220,7 @@ nav {
 }
 
 .navbar-icon {
-  z-index: 1050;
+  z-index: 10500;
   width: 35px;
   height: 35px;
   fill: #858585;
@@ -368,7 +368,7 @@ nav {
 
 #main-sideBar {
   display: none;
-  z-index: 1000;
+  z-index: 10000;
   top: 100px;
   height: calc(100vh - 100px);
 }
@@ -376,7 +376,7 @@ nav {
 #menu-sideBar,
 #member-sideBar {
   display: none;
-  z-index: 1030;
+  z-index: 10300;
   top: 100px;
   height: calc(100vh - 100px);
 }
