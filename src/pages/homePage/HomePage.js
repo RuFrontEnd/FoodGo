@@ -3,6 +3,7 @@ import 'pages/homePage/homePage.scss';
 import { Carousel } from 'antd';
 import { Link } from 'react-router-dom';
 import ItemsCarousel from 'react-items-carousel';
+import { Container } from 'react-bootstrap';
 
 import titleLeft from 'assets/svg/titleLeft.svg';
 import titleRight from 'assets/svg/titleRight.svg';
@@ -31,7 +32,7 @@ import ArrowRight from 'Share/Components/ArrowRight/ArrowRight';
 import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import ToToop from 'Share/Components/ToTopButton/ScrollButton';
 import RecommendCard from 'components/recommendCard/RecommendCard';
-import { Container } from 'react-bootstrap';
+import IntroCard from 'components/introCard/IntroCard';
 
 const data = {
   台北市: {
@@ -1153,6 +1154,7 @@ function HomePage(props) {
           </div>
         </div>
       </section>
+      <IntroCard></IntroCard>
       <ToToop />
     </>
   );
