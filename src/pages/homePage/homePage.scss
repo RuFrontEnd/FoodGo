@@ -673,10 +673,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   font-weight: 600;
 }
 
-.homePage-intro4-cards {
-  background: url("../../assets/jpg/networkintro4.jpg");
-}
-
 .homePage-intro4-text {
   width: 38rem;
   height: 30rem;
@@ -697,10 +693,18 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 .homePage-intro-title {
+  width: 50rem;
+  height: 15rem;
+}
+
+#homePage-intro-title-4 {
+  background: url("../../assets/svg/intro4.svg") center center no-repeat;
+  background-size: contain;
+}
+
+#homePage-intro-title-5 {
   background: url("../../assets/svg/intro5.svg") center center no-repeat;
-  background-size: cover;
-  width: 43rem;
-  height: 11rem;
+  background-size: contain;
 }
 
 // .homePage-intro5-cards {
@@ -743,6 +747,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   margin: 25px;
   width: 100%;
   height: 500px;
+}
+
+#homePage-intro-card-4 {
+  background-image: url("../../assets/jpg/networkintro4.jpg");
 }
 
 #homePage-intro-card-5 {

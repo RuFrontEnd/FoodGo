@@ -576,33 +576,34 @@ function HomePage(props) {
         </div>
         {/* 揪團訂購 */}
         <div
-          className={`homePage-intro-wrap homePage-intro ${
+          className={`container homePage-intro-wrap homePage-intro ${
             isNetworkFeatureActive && 'homePage-intro-active'
           }`}
         >
-          <div className="homePage-intro4-wrap">
-            <div className="homePage-intro4-title"></div>
-            <div className="homePage-intro4-text mt-5">
+          <div>
+            <div
+              id="homePage-intro-title-4"
+              className="homePage-intro-title"
+            ></div>
+            <div className="homePage-intro-text mt-5">
               <p>“拾餐”讓您和您的親朋好友更容易揪團</p>
               <p>您不需要為了訂哪一種口味的餐點</p>
               <p>而在費心的喬團友了</p>
               <p>有了點餐網址從此輕鬆選餐</p>
               <p>分開結帳功能</p>
               <p>團主不再為收錢煩惱</p>
-              <p className="homePage-intro4-large-text">
+              <p className="homePage-intro-large-text">
                 快來享受ㄧ站購足的訂餐便利吧！
               </p>
             </div>
-            <Link
-              style={{ 'text-decoration': 'none' }}
-              to="/groupOrder/groupOrderCreate"
-            >
-              <div className="homePage-index-button float-right mt-3">
-                <Button className="button-btn" text="作伙揪團" />
-              </div>
-            </Link>
+            <OptionButton
+              className={'homePage-index-button  float-right mt-3'}
+              type={'origin'}
+              text={'作伙揪團'}
+              routes={'/groupOrder/groupOrderCreate'}
+            />
           </div>
-          <div className="homePage-intro-card homePage-intro4-cards m-5"></div>
+          <div id="homePage-intro-card-4" className="homePage-intro-card"></div>
         </div>
         {/* 營養標示 */}
         <div
@@ -611,7 +612,10 @@ function HomePage(props) {
           }`}
         >
           <div>
-            <div className="homePage-intro-title"></div>
+            <div
+              id="homePage-intro-title-5"
+              className="homePage-intro-title"
+            ></div>
             <div className="homePage-intro-text mt-5">
               <p>以均衡飲食為設計基礎</p>
               <p>除了注重食材來源</p>
@@ -623,9 +627,9 @@ function HomePage(props) {
               <p>更能夠吃進健康</p>
             </div>
             <OptionButton
-              className="homePage-index-button  float-right mt-3"
-              type="origin"
-              text="商品列表"
+              className={'homePage-index-button  float-right mt-3'}
+              type={'origin'}
+              text={'商品列表'}
               routes={'/productList'}
             />
           </div>
