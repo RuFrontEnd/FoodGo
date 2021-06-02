@@ -24,6 +24,9 @@ import event5 from 'assets/jpg/event5.jpg';
 import event6 from 'assets/jpg/event6.jpg';
 import farmerPhoto1 from 'assets/jpg/farmer1.jpg';
 import farmerPhoto2 from 'assets/jpg/farmer2.jpg';
+import articlePhoto1 from 'assets/jpg/article-img1.jpg';
+import articlePhoto2 from 'assets/jpg/article-img2.jpg';
+import articlePhoto3 from 'assets/jpg/article-img3.jpg';
 
 import customVideo from 'assets/mp4/customFinalVideo.mp4';
 
@@ -1086,47 +1089,30 @@ function HomePage(props) {
 
           {/* 推薦文章卡片 */}
           <div id="homepage-articles" className="d-flex justify-content-around">
-            <div className="d-flex justify-content-center flex-wrap homePage-article-bcc">
-              {/* 圖片 */}
-              <div className="homePage-article-img1"></div>
-              {/* 文字 */}
-              <div className="homePage-article-text-area">
-                <p className="homePage-article-name">Alice Yong</p>
-                <p className="homePage-article-text">
-                  以前勤勞的時候天天煮低卡便當，但是發覺實在很累。兩個人的食材份量很難拿捏，還要採買、準備、收拾清潔，後來乾脆直接放棄。你們的出現真的是一大救星~低卡方便又超好吃，偶爾想下廚也有菜箱寄送服務，而且還看得到產銷履歷，真的讓人很安心！
-                </p>
-              </div>
-            </div>
-
-            <div className="d-flex justify-content-center flex-wrap homePage-article-bcc">
-              {/* 圖片 */}
-              <div className="homePage-article-img2"></div>
-              {/* 文字 */}
-              <div className="homePage-article-text-area">
-                <p className="homePage-article-name">小傑</p>
-                <p className="homePage-article-text">
-                  我一直都有健身的習慣，也有在喝高蛋白，對於飲食基本上我沒有甚麼克制。很感謝你們讓我可以體驗到好吃又健康吃不膩的水煮餐，真的滿適合健身的我這樣吃！
-                  吃得飽又吃得健康，現在的人太常外食很硬攝取到高熱量、高油脂的食物，會造成身體負擔。
-                  但有了這樣的餐盒產生，就可以減少這一些麻煩了！
-                </p>
-              </div>
-            </div>
-
-            <div className="d-flex justify-content-center flex-wrap homePage-article-bcc">
-              {/* 圖片 */}
-              <div className="homePage-article-img3"></div>
-              {/* 文字 */}
-              <div className="homePage-article-text-area">
-                <p className="homePage-article-name">佳惠</p>
-                <p className="homePage-article-text">
-                  拾餐的便當口味多變、熱量又低，而且配菜也會隨著主餐不同而有調整。主餐及配料調味剛剛好，不油不膩還減鹽少糖。一改過去對於便當的既有印象，讓人能吃出健康又能吃飽。另外他們的沙拉，也是很用心的料理！蔬菜新鮮、醬料好吃、配菜豐富！給出門在外工作上班上課的人提供了一份很健康的午餐！覺得很感恩！
-                </p>
-              </div>
-            </div>
+            <ArticleCard
+              photo={articlePhoto1}
+              author={'Alice Yong'}
+              content={
+                '以前勤勞的時候天天煮低卡便當，但是發覺實在很累。兩個人的食材份量很難拿捏，還要採買、準備、收拾清潔，後來乾脆直接放棄。你們的出現真的是一大救星~低卡方便又超好吃，偶爾想下廚也有菜箱寄送服務，而且還看得到產銷履歷，真的讓人很安心！'
+              }
+            />
+            <ArticleCard
+              photo={articlePhoto2}
+              author={'小傑'}
+              content={
+                '我一直都有健身的習慣，也有在喝高蛋白，對於飲食基本上我沒有甚麼克制。很感謝你們讓我可以體驗到好吃又健康吃不膩的水煮餐，真的滿適合健身的我這樣吃！吃得飽又吃得健康，現在的人太常外食很硬攝取到高熱量、高油脂的食物，會造成身體負擔。但有了這樣的餐盒產生，就可以減少這一些麻煩了！'
+              }
+            />
+            <ArticleCard
+              photo={articlePhoto3}
+              author={'佳惠'}
+              content={
+                '拾餐的便當口味多變、熱量又低，而且配菜也會隨著主餐不同而有調整。主餐及配料調味剛剛好，不油不膩還減鹽少糖。一改過去對於便當的既有印象，讓人能吃出健康又能吃飽。另外他們的沙拉，也是很用心的料理！蔬菜新鮮、醬料好吃、配菜豐富！給出門在外工作上班上課的人提供了一份很健康的午餐！覺得很感恩！'
+              }
+            />
           </div>
         </div>
       </section>
-      <ArticleCard />
       <ToToop />
     </>
   );
