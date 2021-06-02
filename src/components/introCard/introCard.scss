@@ -10,85 +10,68 @@ $deepOrange: #e0611e;
 $yellow: #f6bd60;
 $deepYellow: #f5a016;
 
-$featureIconSize_xxl: 9rem;
-$featureIconSize_xxl_active: 10rem;
-$featureIconSize_xl: 8rem;
-$featureIconSize_xl_active: 9rem;
-$featureIconSize_xl: 6rem;
-$featureIconSize_xl_active: 7rem;
-$featureIconSize_md: 4rem;
-$featureIconSize_md_active: 5rem;
-$featureIconSize_sm: 8rem;
-$featureIconSize_sm_active: 9rem;
-
-$featureCircleWidth: 160px;
-$featureDotWidth: 15px;
-$homePageCirclesWidth: 1170px;
-$featureTriangleWidth: 30px;
-$featurePadding: ($homePageCirclesWidth - $featureCircleWidth * 5 - $featureDotWidth * 4) / 18;
-$gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
-
 @import "variable/variable.scss";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap");
 
 // 特色內容
 #introCard-container {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
 }
 
 #introCard-wrap {
   background-color: $lightGray;
   width: 30rem;
   height: 45rem;
+  padding: 30px;
   border-radius: 20px;
   box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
   position: relative;
   overflow: hidden;
 }
 
+#introCard-photo-fake {
+  width: 15rem;
+  height: 15rem;
+}
+
 #introCard-wrap:hover > #introCard-photo {
-  background-color: #f48145;
-  margin-left: -15rem;
-  margin-top: -7.5rem;
   object-fit: cover;
-  background-position: -30rem 3rem;
+  border-radius: 0%;
+  opacity: 0.25;
   transition: 0.5s;
-  border-radius: 50rem;
-  opacity: 0.3;
-  width: 60rem;
-  height: 60rem;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  z-index: 100;
 }
 
 #introCard-photo {
+  position: absolute;
+  z-index: 100;
+  top: calc(0% + 20px);
+  left: calc(50% - 7.5rem);
   background-color: #f48145;
-  border-radius: 50%;
-  object-fit: cover;
-  background-position: -8rem 0rem;
-  width: 15rem;
-  height: 15rem;
-  margin: 3rem auto 0 auto;
   display: flex;
   justify-content: center;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 15rem;
+  height: 15rem;
+  margin: 0 auto 20px;
+  transition: 0.5s;
 }
 
 #introCard-content {
-  width: 25rem;
-  height: 45rem;
-  top: 0;
-  right: 2.5rem;
-  position: absolute;
-}
-
-#introCard-fake-content-height {
-  width: 15rem;
-  height: 15rem;
-  margin: 3rem auto 2rem auto;
+  position: relative;
+  z-index: 1050;
 }
 
 #introCard-title {
+  z-index: 1050;
   text-align: center;
   font-family: "Noto Sans TC", sans-serif;
   font-size: 1.8rem;
@@ -96,12 +79,11 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 #introCard-text {
-  width: 25rem;
-  height: 15rem;
+  z-index: 1050;
   font-family: "Noto Sans TC", sans-serif;
   font-size: 1.4rem;
   font-weight: 500;
-  margin: 0 auto;
+  margin: 0 auto 30px 0;
 }
 
 #introCard-arrow {
@@ -131,5 +113,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   color: $gray;
   font-size: 1rem;
   margin-right: 0px;
+  margin-bottom: 0px;
   float: right;
 }

@@ -472,6 +472,7 @@ function HomePage(props) {
           {/* 小農欄位 */}
           <div id="homePage-intro1-cards" className="p-5">
             <IntroCard
+              className={'homePage-IntroCard-1'}
               photo={farmerPhoto1}
               title={'萱草園．農友張武增'}
               content={

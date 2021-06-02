@@ -573,10 +573,13 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 #homePage-intro1-cards {
-  // background-color: #ccc;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.homePage-IntroCard-1 {
+  padding-right: 15px;
 }
 
 #homePage-intro1-container {
@@ -1730,10 +1733,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
   #homePage-kcal-icon-active {
     background-size: $featureIconSize_sm_active $featureIconSize_sm_active;
-  }
-
-  #homePage-intro1-cards {
-    flex-direction: column;
   }
 
   #homePage-intro1-card1 {
