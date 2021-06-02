@@ -35,6 +35,7 @@ import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import ToToop from 'Share/Components/ToTopButton/ScrollButton';
 import RecommendCard from 'components/recommendCard/RecommendCard';
 import IntroCard from 'components/introCard/IntroCard';
+import ArticleCard from 'components/articleCard/ArticleCard';
 
 const data = {
   台北市: {
@@ -1125,6 +1126,7 @@ function HomePage(props) {
           </div>
         </div>
       </section>
+      <ArticleCard />
       <ToToop />
     </>
   );

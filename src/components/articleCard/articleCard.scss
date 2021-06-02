@@ -1,0 +1,55 @@
+$gray: #858585;
+$lightGray: #fafafa;
+$brown: #a59583;
+$lightBrown: #decdbb;
+$skin: #f7ede2;
+$green: #66ab8c;
+$deepGreen: #438b6b;
+$orange: #f48145;
+$deepOrange: #e0611e;
+$yellow: #f6bd60;
+$deepYellow: #f5a016;
+
+@import "variable/variable.scss";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap");
+
+#articleCard-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $lightGray;
+  width: 30rem;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+}
+
+#articleCard-article-photo {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  margin: 0rem auto 3rem;
+}
+
+#articleCard-article-text-area {
+  font-family: "Noto Sans TC", sans-serif;
+  margin: 0 auto;
+  border-top: 1px solid $lightBrown;
+}
+
+#articleCard-article-name {
+  font-size: 2rem;
+  font-weight: 600;
+  color: $gray;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+#articleCard-article-text {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: $brown;
+  text-align: center;
+  margin-bottom: 0px;
+}
