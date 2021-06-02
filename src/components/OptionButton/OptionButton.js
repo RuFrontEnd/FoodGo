@@ -59,6 +59,7 @@ function OptionButton(props) {
             <button
               className={'option-btn option-btn-orange'}
               onClick={() => {
+                routes && props.history.push(routes);
                 handleCardArea();
               }}
             >
@@ -82,6 +83,7 @@ function OptionButton(props) {
             <button
               className={'option-btn option-btn-green'}
               onClick={() => {
+                routes && props.history.push(routes);
                 handleCardArea();
               }}
             >

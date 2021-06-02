@@ -25,6 +25,7 @@ import event6 from 'assets/jpg/event6.jpg';
 import calImg from 'assets/png/kcalintro5.png';
 
 import Button from 'Share/Components/Button/Button';
+import OptionButton from 'components/optionButton/OptionButton';
 import ArrowLeft from 'Share/Components/ArrowLeft/ArrowLeft';
 import ArrowRight from 'Share/Components/ArrowRight/ArrowRight';
 import VNavbar from 'Share/Components/VNavbar/VNavbar';
@@ -621,13 +622,14 @@ function HomePage(props) {
               <p>希望吃出食物的原味及新鮮味</p>
               <p>更能夠吃進健康</p>
             </div>
-            <Link style={{ 'text-decoration': 'none' }} to="/productList">
-              <div className="homePage-index-button float-right mt-3">
-                <Button className="button-btn" text="商品列表" />
-              </div>
-            </Link>
+            <OptionButton
+              className="homePage-index-button  float-right mt-3"
+              type="origin"
+              text="商品列表"
+              routes={'/productList'}
+            />
           </div>
-          <div className="homePage-intro-card"></div>
+          <div id="homePage-intro-card-5" className="homePage-intro-card"></div>
         </div>
       </section>
 
