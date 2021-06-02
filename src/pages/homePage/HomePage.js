@@ -572,7 +572,8 @@ function HomePage(props) {
         </div>
         {/* 揪團訂購 */}
         <div
-          className={`homePage-intro homePage-intro4-container ${
+          id="homePage-intro5-container"
+          className={`homePage-intro ${
             isNetworkFeatureActive && 'homePage-intro-active'
           }`}
         >
@@ -602,13 +603,14 @@ function HomePage(props) {
         </div>
         {/* 營養標示 */}
         <div
-          className={`homePage-intro homePage-intro5-container ${
+          id="homePage-intro5-container"
+          className={`homePage-intro ${
             isKcalFeatureActive && 'homePage-intro-active'
           }`}
         >
-          <div className="homePage-intro5-wrap">
-            <div className="homePage-intro5-title"></div>
-            <div className="homePage-intro5-text mt-5">
+          <div id="homePage-intro5-wrap">
+            <div id="homePage-intro5-title"></div>
+            <div id="homePage-intro5-text" className="mt-5">
               <p>以均衡飲食為設計基礎</p>
               <p>除了注重食材來源</p>
               <p>更考量餐點製備及供餐過程等多方面的衛生安全</p>

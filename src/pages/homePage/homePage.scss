@@ -375,330 +375,356 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   padding: 30px 0px;
 }
 
+#homePage-intro1-large-text {
+  color: $green;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+#homePage-intro1-title {
+  background: url("../../assets/svg/intro1.svg") center center no-repeat;
+  background-size: cover;
+  height: 11rem;
+}
+#homePage-intro1-text {
+  height: 30rem;
+  color: $gray;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-left: 5rem;
+}
+
+#homePage-intro1-fake-farmer1 {
+  width: 15rem;
+  height: 15rem;
+  margin: 3rem auto 2rem auto;
+}
+#homePage-card1-title {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+#homePage-card1-text {
+  width: 25rem;
+  height: 15rem;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0 auto;
+}
+#homePage-card-arrow {
+  background: url("../../assets/svg/intro1-arrow.svg") center center no-repeat;
+  background-size: cover;
+  width: 3rem;
+  height: 2.2rem;
+  cursor: pointer;
+}
+
+.homePage-card1-viewmore {
+  font-family: "Noto Sans TC", sans-serif;
+  color: $gray;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+#homePage-intro1-farmer1 {
+  border-radius: 50%;
+  background: url("../../assets/jpg/farmer1.jpg") center center no-repeat;
+  background-size: 40rem;
+  background-position: -5rem -1.5rem;
+  width: 15rem;
+  height: 15rem;
+  margin: 3rem auto 0 auto;
+  display: flex;
+  justify-content: center;
+}
+#homePage-intro1-card1-wrap {
+  width: 25rem;
+  height: 45rem;
+  top: 0;
+  right: 2.5rem;
+  position: absolute;
+}
+
+#homePage-intro1-card1 {
+  background-color: $lightGray;
+  width: 30rem;
+  height: 45rem;
+  margin-right: 20px;
+  border-radius: 20px;
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+  position: relative;
+  overflow: hidden;
+}
+
+#homePage-intro1-card1:hover {
+  #homePage-intro1-farmer1 {
+    margin-left: -15rem;
+    margin-top: -7.5rem;
+    background: url("../../assets/jpg/farmer1.jpg") center center no-repeat;
+    background-size: 80rem;
+    background-position: -2rem 6rem;
+    transition: 0.5s;
+    border-radius: 50rem;
+    opacity: 0.3;
+    width: 60rem;
+    height: 60rem;
+  }
+  #homePage-card-arrow {
+    animation: myCustomAnimate 0.7s infinite;
+  }
+  @keyframes myCustomAnimate {
+    from {
+      margin-right: 3rem;
+    }
+    to {
+      margin-right: 0rem;
+    }
+  }
+}
+
+#homePage-intro1-fake-farmer2 {
+  width: 15rem;
+  height: 15rem;
+  margin: 3rem auto 2rem auto;
+}
+#homePage-card2-title {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+#homePage-card2-text {
+  width: 25rem;
+  height: 15rem;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0 auto;
+}
+#homePage-card-arrow {
+  background: url("../../assets/svg/intro1-arrow.svg") center center no-repeat;
+  background-size: cover;
+  width: 3rem;
+  height: 2.2rem;
+  cursor: pointer;
+}
+#homePage-card2-viewmore {
+  font-family: "Noto Sans TC", sans-serif;
+  color: $gray;
+  font-size: 1rem;
+  // margin-right: 2.5rem;
+}
+
+#homePage-intro1-card2:hover {
+  #homePage-intro1-farmer2 {
+    margin-left: -15rem;
+    margin-top: -7.5rem;
+    background: url("../../assets/jpg/farmer2.jpg") center center no-repeat;
+    background-size: 80rem;
+    background-position: -30rem 3rem;
+    transition: 0.5s;
+    border-radius: 50rem;
+    opacity: 0.3;
+    width: 60rem;
+    height: 60rem;
+  }
+  #homePage-card-arrow {
+    animation: myCustomAnimate 0.7s infinite;
+  }
+  @keyframes myCustomAnimate {
+    from {
+      margin-right: 3rem;
+    }
+    to {
+      margin-right: 0rem;
+    }
+  }
+}
+
+#homePage-intro1-farmer2 {
+  border-radius: 50%;
+  background: url("../../assets/jpg/farmer2.jpg") center center no-repeat;
+  background-size: 24rem;
+  background-position: -8rem 0rem;
+  width: 15rem;
+  height: 15rem;
+  margin: 3rem auto 0 auto;
+  display: flex;
+  justify-content: center;
+}
+#homePage-intro1-card2-wrap {
+  width: 25rem;
+  height: 45rem;
+  top: 0;
+  right: 2.5rem;
+  position: absolute;
+}
+
+#homePage-intro1-card2 {
+  background-color: $lightGray;
+  width: 30rem;
+  height: 45rem;
+  border-radius: 20px;
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+  position: relative;
+  overflow: hidden;
+}
+
+#homePage-intro1-cards {
+  // background-color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 #homePage-intro1-container {
   margin: auto;
   max-width: 117rem;
   justify-content: space-around;
   align-items: center;
   transition: 0.3s;
-  #homePage-intro1-wrap {
-    // background-color: #bbb;
-    #homePage-intro1-title {
-      background: url("../../assets/svg/intro1.svg") center center no-repeat;
-      background-size: cover;
-      height: 11rem;
-    }
-    #homePage-intro1-text {
-      height: 30rem;
-      color: $gray;
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 1.4rem;
-      margin-top: 2rem;
-      margin-left: 5rem;
-      #homePage-intro1-large-text {
-        color: $green;
-        font-family: "Noto Sans TC", sans-serif;
-        font-size: 2rem;
-        font-weight: 600;
-      }
-    }
-  }
-  #homePage-intro1-cards {
-    // background-color: #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    #homePage-intro1-card1 {
-      background-color: $lightGray;
-      width: 30rem;
-      height: 45rem;
-      margin-right: 20px;
-      border-radius: 20px;
-      box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
-      position: relative;
-      overflow: hidden;
-      #homePage-intro1-farmer1 {
-        border-radius: 50%;
-        background: url("../../assets/jpg/farmer1.jpg") center center no-repeat;
-        background-size: 40rem;
-        background-position: -5rem -1.5rem;
-        width: 15rem;
-        height: 15rem;
-        margin: 3rem auto 0 auto;
-        display: flex;
-        justify-content: center;
-      }
-      #homePage-intro1-card1-wrap {
-        width: 25rem;
-        height: 45rem;
-        top: 0;
-        right: 2.5rem;
-        position: absolute;
-        #homePage-intro1-fake-farmer1 {
-          width: 15rem;
-          height: 15rem;
-          margin: 3rem auto 2rem auto;
-        }
-        #homePage-card1-title {
-          font-family: "Noto Sans TC", sans-serif;
-          font-size: 1.8rem;
-          font-weight: 600;
-        }
-        #homePage-card1-text {
-          width: 25rem;
-          height: 15rem;
-          font-family: "Noto Sans TC", sans-serif;
-          font-size: 1.4rem;
-          font-weight: 500;
-          margin: 0 auto;
-        }
-        #homePage-card-arrow {
-          background: url("../../assets/svg/intro1-arrow.svg") center center no-repeat;
-          background-size: cover;
-          width: 3rem;
-          height: 2.2rem;
-          cursor: pointer;
-        }
+}
 
-        .homePage-card1-viewmore {
-          font-family: "Noto Sans TC", sans-serif;
-          color: $gray;
-          font-size: 1rem;
-          margin-bottom: 3rem;
-        }
-      }
-    }
-    #homePage-intro1-card1:hover {
-      #homePage-intro1-farmer1 {
-        margin-left: -15rem;
-        margin-top: -7.5rem;
-        background: url("../../assets/jpg/farmer1.jpg") center center no-repeat;
-        background-size: 80rem;
-        background-position: -2rem 6rem;
-        transition: 0.5s;
-        border-radius: 50rem;
-        opacity: 0.3;
-        width: 60rem;
-        height: 60rem;
-      }
-      #homePage-card-arrow {
-        animation: myCustomAnimate 0.7s infinite;
-      }
-      @keyframes myCustomAnimate {
-        from {
-          margin-right: 3rem;
-        }
-        to {
-          margin-right: 0rem;
-        }
-      }
-    }
+.homePage-intro2-cards {
+  background: url("../../assets/jpg/intro2.jpg");
+}
 
-    #homePage-intro1-card2 {
-      background-color: $lightGray;
-      width: 30rem;
-      height: 45rem;
-      border-radius: 20px;
-      box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
-      position: relative;
-      overflow: hidden;
-      #homePage-intro1-farmer2 {
-        border-radius: 50%;
-        background: url("../../assets/jpg/farmer2.jpg") center center no-repeat;
-        background-size: 24rem;
-        background-position: -8rem 0rem;
-        width: 15rem;
-        height: 15rem;
-        margin: 3rem auto 0 auto;
-        display: flex;
-        justify-content: center;
-      }
-      #homePage-intro1-card2-wrap {
-        width: 25rem;
-        height: 45rem;
-        top: 0;
-        right: 2.5rem;
-        position: absolute;
-        #homePage-intro1-fake-farmer2 {
-          width: 15rem;
-          height: 15rem;
-          margin: 3rem auto 2rem auto;
-        }
-        #homePage-card2-title {
-          font-family: "Noto Sans TC", sans-serif;
-          font-size: 1.8rem;
-          font-weight: 600;
-        }
-        #homePage-card2-text {
-          width: 25rem;
-          height: 15rem;
-          font-family: "Noto Sans TC", sans-serif;
-          font-size: 1.4rem;
-          font-weight: 500;
-          margin: 0 auto;
-        }
-        #homePage-card-arrow {
-          background: url("../../assets/svg/intro1-arrow.svg") center center no-repeat;
-          background-size: cover;
-          width: 3rem;
-          height: 2.2rem;
-          cursor: pointer;
-        }
-        #homePage-card2-viewmore {
-          font-family: "Noto Sans TC", sans-serif;
-          color: $gray;
-          font-size: 1rem;
-          // margin-right: 2.5rem;
-        }
-      }
-      #homePage-intro1-card2:hover {
-        #homePage-intro1-farmer2 {
-          margin-left: -15rem;
-          margin-top: -7.5rem;
-          background: url("../../assets/jpg/farmer2.jpg") center center no-repeat;
-          background-size: 80rem;
-          background-position: -30rem 3rem;
-          transition: 0.5s;
-          border-radius: 50rem;
-          opacity: 0.3;
-          width: 60rem;
-          height: 60rem;
-        }
-        #homePage-card-arrow {
-          animation: myCustomAnimate 0.7s infinite;
-        }
-        @keyframes myCustomAnimate {
-          from {
-            margin-right: 3rem;
-          }
-          to {
-            margin-right: 0rem;
-          }
-        }
-      }
-    }
-  }
+.homePage-intro2-large-text {
+  color: $deepYellow;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+#homePage-intro2-text {
+  width: 38rem;
+  height: 30rem;
+  color: $gray;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 6rem;
+  margin-left: 5rem;
+}
+
+#homePage-intro2-title {
+  background: url("../../assets/svg/intro2.svg") center center no-repeat;
+  background-size: cover;
+  height: 11rem;
 }
 
 #homePage-intro2-container {
   margin: auto;
   max-width: 117rem;
-  // display: block;
   justify-content: space-around;
   align-items: center;
   transition: 0.3s;
-  #homePage-intro2-wrap {
-    // background-color: #bbb;
-    width: 44rem;
-    #homePage-intro2-title {
-      background: url("../../assets/svg/intro2.svg") center center no-repeat;
-      background-size: cover;
-      height: 11rem;
-    }
-  }
-  #homePage-intro2-text {
-    width: 38rem;
-    height: 30rem;
-    color: $gray;
-    font-family: "Noto Sans TC", sans-serif;
-    font-size: 1.4rem;
-    margin-top: 6rem;
-    margin-left: 5rem;
-    .homePage-intro2-large-text {
-      color: $deepYellow;
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 2rem;
-      font-weight: 600;
-    }
-  }
-  .homePage-intro2-cards {
-    background: url("../../assets/jpg/intro2.jpg");
-  }
+}
+
+.homePage-intro3-cards > video {
+  outline: none;
+}
+
+.homePage-intro3-large-text {
+  color: $deepYellow;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.homePage-intro3-text {
+  width: 38rem;
+  height: 30rem;
+  color: $gray;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 6rem;
+  margin-left: 5rem;
+}
+
+.homePage-intro3-title {
+  background: url("../../assets/svg/intro3.svg") center center no-repeat;
+  background-size: cover;
+  width: 35rem;
+  height: 11rem;
 }
 
 .homePage-intro3-container {
   display: none;
   margin: auto;
   max-width: 117rem;
-  // display: block;
   justify-content: space-around;
   align-items: center;
   transition: 0.5s;
-  .homePage-intro3-wrap {
-    // background-color: #bbb;
-    width: 44rem;
+}
 
-    .homePage-intro3-title {
-      background: url("../../assets/svg/intro3.svg") center center no-repeat;
-      background-size: cover;
-      width: 35rem;
-      height: 11rem;
-    }
-  }
-  .homePage-intro3-text {
-    width: 38rem;
-    height: 30rem;
-    color: $gray;
-    font-family: "Noto Sans TC", sans-serif;
-    font-size: 1.4rem;
-    margin-top: 6rem;
-    margin-left: 5rem;
-    .homePage-intro3-large-text {
-      color: $deepYellow;
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 2rem;
-      font-weight: 600;
-    }
-  }
-  .homePage-intro3-cards {
-    video {
-      outline: none;
-    }
-  }
+.homePage-intro4-title {
+  background: url("../../assets/svg/intro4.svg") center center no-repeat;
+  background-size: cover;
+  width: 43rem;
+  height: 11rem;
+}
+
+.homePage-intro4-large-text {
+  color: $deepYellow;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.homePage-intro4-cards {
+  background: url("../../assets/jpg/networkintro4.jpg");
+}
+
+.homePage-intro4-text {
+  width: 38rem;
+  height: 30rem;
+  color: $gray;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 6rem;
+  margin-left: 5rem;
 }
 
 .homePage-intro4-container {
   display: none;
-  // background-color: #ddd;
   margin: auto;
   max-width: 117rem;
-  // display: block;
   justify-content: space-around;
   align-items: center;
   transition: 0.5s;
-  .homePage-intro4-wrap {
-    // background-color: #bbb;
-    width: 44rem;
-
-    .homePage-intro4-title {
-      background: url("../../assets/svg/intro4.svg") center center no-repeat;
-      background-size: cover;
-      width: 43rem;
-      height: 11rem;
-    }
-  }
-  .homePage-intro4-text {
-    width: 38rem;
-    height: 30rem;
-    color: $gray;
-    font-family: "Noto Sans TC", sans-serif;
-    font-size: 1.4rem;
-    margin-top: 6rem;
-    margin-left: 5rem;
-    .homePage-intro4-large-text {
-      color: $deepYellow;
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 2rem;
-      font-weight: 600;
-    }
-  }
-  .homePage-intro4-cards {
-    background: url("../../assets/jpg/networkintro4.jpg");
-  }
 }
 
-.homePage-intro5-container {
-  display: none;
+.homePage-intro5-title {
+  background: url("../../assets/svg/intro5.svg") center center no-repeat;
+  background-size: cover;
+  width: 43rem;
+  height: 11rem;
+}
+
+.homePage-intro5-cards {
+  background: url("../../assets/png/kcalintro5.png") center center no-repeat;
+}
+
+.homePage-intro5-large-text {
+  color: $deepYellow;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.homePage-intro5-text {
+  width: 38rem;
+  height: 30rem;
+  color: $gray;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 6rem;
+  margin-left: 5rem;
+}
+
+#homePage-intro5-container {
   // background-color: #ddd;
   margin: auto;
   max-width: 117rem;
@@ -706,34 +732,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   justify-content: space-around;
   align-items: center;
   transition: 0.5s;
-  .homePage-intro5-wrap {
-    width: 44rem;
-
-    .homePage-intro5-title {
-      background: url("../../assets/svg/intro5.svg") center center no-repeat;
-      background-size: cover;
-      width: 43rem;
-      height: 11rem;
-    }
-  }
-  .homePage-intro5-text {
-    width: 38rem;
-    height: 30rem;
-    color: $gray;
-    font-family: "Noto Sans TC", sans-serif;
-    font-size: 1.4rem;
-    margin-top: 6rem;
-    margin-left: 5rem;
-    .homePage-intro5-large-text {
-      color: $deepYellow;
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 2rem;
-      font-weight: 600;
-    }
-  }
-  .homePage-intro5-cards {
-    background: url("../../assets/png/kcalintro5.png") center center no-repeat;
-  }
 }
 
 .homePage-intro-active {
@@ -747,115 +745,122 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   background-size: cover;
 }
 
+.homePage-card-img1 {
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/jpg/01_bento-chicken-breast.jpg");
+  background-size: cover;
+  background-position: 70% center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.homePage-card-img2 {
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/jpg/04_bento-shrimp.jpg");
+  background-size: cover;
+  background-position: 70% center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.homePage-card-img3 {
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/jpg/05_bento-porkneck.jpg");
+  background-size: cover;
+  background-position: 70% center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.homePage-ingredient {
+  border-radius: 20px 20px 0 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+}
+
+.homePage-recommend-wrap {
+  margin: 4rem 0rem;
+  width: 100%;
+  height: 100%;
+}
+
+.homePage-ingredient-content {
+  margin-top: 5rem;
+  letter-spacing: 5px;
+  line-height: 30px;
+  width: 20rem;
+  height: 8rem;
+  transition: 0.5s;
+}
+
+.homePage-ingredient {
+  border-radius: 20px 20px 0 0;
+  display: block;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  background-color: #0000003c;
+  font-size: 1.5rem;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 300;
+  transition: 0.5s;
+}
+
+.homePage-card-img-warp:hover {
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+.homePage-card-img-warp {
+  height: 30rem;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.homePage-card-container {
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+  background-color: $lightGray;
+  border-radius: 20px;
+  width: 30rem;
+  height: 45rem;
+}
+
+.homePage-card-info > h3 {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  margin: 2.5rem 0;
+}
+
+.homePage-card-hr {
+  width: 25rem;
+  height: 100%;
+  border-top: 1px solid $lightBrown;
+}
+
+.homePage-card-hr > p {
+  color: $gray;
+  font-family: "Noto Sans TC", sans-serif;
+  margin: 0 1rem;
+}
+
+.homePage-card-star {
+  margin: 0px 2px;
+  width: 1.4rem;
+}
+
 // 今日推薦
 .homePage-recommend {
   background: url("../../assets/svg/rice.svg") center center no-repeat;
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
-  .homePage-recommend-wrap {
-    margin: 4rem 0rem;
-    width: 100%;
-    height: 100%;
-  }
-  .homePage-recommend-cards {
-    .homePage-card-container {
-      box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
-      background-color: $lightGray;
-      border-radius: 20px;
-      width: 30rem;
-      height: 45rem;
-      .homePage-card-img-warp {
-        height: 30rem;
-        position: relative;
-        overflow: hidden;
-        transition: 0.5s;
-        .homePage-card-img1 {
-          border-radius: 20px 20px 0 0;
-          width: 100%;
-          height: 100%;
-          background-image: url("../../assets/jpg/01_bento-chicken-breast.jpg");
-          background-size: cover;
-          background-position: 70% center;
-          background-repeat: no-repeat;
-          cursor: pointer;
-        }
-        .homePage-card-img2 {
-          border-radius: 20px 20px 0 0;
-          width: 100%;
-          height: 100%;
-          background-image: url("../../assets/jpg/04_bento-shrimp.jpg");
-          background-size: cover;
-          background-position: 70% center;
-          background-repeat: no-repeat;
-          cursor: pointer;
-        }
-        .homePage-card-img3 {
-          border-radius: 20px 20px 0 0;
-          width: 100%;
-          height: 100%;
-          background-image: url("../../assets/jpg/05_bento-porkneck.jpg");
-          background-size: cover;
-          background-position: 70% center;
-          background-repeat: no-repeat;
-          cursor: pointer;
-        }
-        .homePage-ingredient {
-          border-radius: 20px 20px 0 0;
-          display: none;
-          width: 100%;
-          height: 100%;
-          backdrop-filter: blur(3px);
-        }
-      }
-      .homePage-card-img-warp:hover {
-        transition: 0.5s;
-        text-decoration: none;
-        .homePage-ingredient {
-          border-radius: 20px 20px 0 0;
-          display: block;
-          display: flex;
-          justify-content: center;
-          color: #fff;
-          background-color: #0000003c;
-          font-size: 1.5rem;
-          font-family: "Noto Sans TC", sans-serif;
-          font-weight: 300;
-          transition: 0.5s;
-          .homePage-ingredient-content {
-            margin-top: 5rem;
-            letter-spacing: 5px;
-            line-height: 30px;
-            width: 20rem;
-            height: 8rem;
-            transition: 0.5s;
-          }
-        }
-      }
-    }
-    .homePage-card-info {
-      h3 {
-        font-family: "Noto Sans TC", sans-serif;
-        font-weight: 400;
-        text-align: center;
-        margin: 2.5rem 0;
-      }
-      .homePage-card-hr {
-        width: 25rem;
-        height: 100%;
-        border-top: 1px solid $lightBrown;
-        p {
-          color: $gray;
-          font-family: "Noto Sans TC", sans-serif;
-          margin: 0 1rem;
-        }
-        .homePage-card-star {
-          margin: 0px 2px;
-          width: 1.4rem;
-        }
-      }
-    }
-  }
 }
 
 // 專屬優惠
@@ -864,6 +869,13 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   width: 100%;
   height: 80rem;
 }
+
+.homePage-event-img {
+  width: 40rem;
+  height: 40rem;
+  background: url("../../assets/png/event1.png") center center no-repeat;
+  background-size: cover;
+}
 .homePage-event {
   width: 85rem;
   height: 40rem;
@@ -871,17 +883,13 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   border-radius: 20px;
   box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
   overflow: hidden;
-  .homePage-event-img {
-    width: 40rem;
-    height: 40rem;
-    background: url("../../assets/png/event1.png") center center no-repeat;
-    background-size: cover;
-  }
 }
+
 .homePage-event-text {
   width: 35rem;
   height: 30rem;
 }
+
 .homePage-event-title {
   font-size: 1.8rem;
   font-family: "Noto Serif TC", serif;
@@ -889,60 +897,62 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   line-height: 13px;
   font-weight: 700;
 }
+
 .homePage-event-title2 {
   display: none;
 }
+
 .homePage-event-title3 {
   display: none;
 }
+
 .homePage-event-content2 {
   display: none;
 }
+
 .homePage-event-content3 {
   display: none;
 }
+
 .homePage-event-content {
   font-size: 1.3rem;
   font-family: "Noto Sans TC", sans-serif;
   color: $gray;
   line-height: 10px;
-  p {
-    line-height: 15px;
-  }
-  .homePage-call-to-action {
-    color: $orange;
-  }
 }
+
+.homePage-event-content > p {
+  line-height: 15px;
+}
+
+.homePage-call-to-action {
+  color: $orange;
+}
+
 .homePage-event-date {
   font-size: 1rem;
   font-family: "Noto Sans TC", sans-serif;
   color: $gray;
 }
+
 .homePage-img-select {
   width: 140rem;
   height: 17rem;
-  .img-row {
-    display: flex;
-    justify-content: center;
-    img {
-      width: 17rem;
-      height: 17rem;
-      // border: 1px solid #ccc;
-      border-radius: 20px;
-      margin: auto;
-      cursor: pointer;
-      position: relative;
-    }
-    // .img-row-infor {
-    //   width: 17rem;
-    //   height: 17rem;
-    //   background-color: rgba(94, 93, 93, 0.171);
-    //   border-radius: 20px;
-    //   margin: auto;
-    //   cursor: pointer;
-    //   position: absolute;
-    // }
-  }
+}
+
+.img-row {
+  display: flex;
+  justify-content: center;
+}
+
+.img-row > img {
+  width: 17rem;
+  height: 17rem;
+  // border: 1px solid #ccc;
+  border-radius: 20px;
+  margin: auto;
+  cursor: pointer;
+  position: relative;
 }
 
 // 購物流程背景樣式
@@ -953,55 +963,59 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   width: 100vw;
   margin: 0 1.5rem;
   overflow: hidden;
-  .homePage-blur {
-    background-color: rgba(255, 255, 255, 0.235);
-    width: 100vw;
-    backdrop-filter: blur(5px) brightness(1.2);
-    .homePage-black-blur {
-      width: 100vw;
-      background-color: rgba(0, 0, 0, 0.2);
-    }
-  }
+}
+
+.homePage-black-blur {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.homePage-blur {
+  background-color: rgba(255, 255, 255, 0.235);
+  width: 100vw;
+  backdrop-filter: blur(5px) brightness(1.2);
 }
 // 購物五步驟
 .homePage-step-circle {
   margin-top: 6rem;
-  p {
-    font-size: 1.8rem;
-    font-family: "Noto Sans TC", sans-serif;
-    font-weight: 700;
-    color: $skin;
-  }
-  .homePage-step1 {
-    background: url("../../assets/svg/step1.svg") center center no-repeat;
-    width: 12rem;
-    height: 12rem;
-    background-size: cover;
-  }
-  .homePage-step2 {
-    background: url("../../assets/svg/step2.svg") center center no-repeat;
-    width: 12rem;
-    height: 12rem;
-    background-size: cover;
-  }
-  .homePage-step3 {
-    background: url("../../assets/svg/step3.svg") center center no-repeat;
-    width: 12rem;
-    height: 12rem;
-    background-size: cover;
-  }
-  .homePage-step4 {
-    background: url("../../assets/svg/step4.svg") center center no-repeat;
-    width: 12rem;
-    height: 12rem;
-    background-size: cover;
-  }
-  .homePage-step5 {
-    background: url("../../assets/svg/step5.svg") center center no-repeat;
-    width: 12rem;
-    height: 12rem;
-    background-size: cover;
-  }
+}
+
+.homePage-step-circle > p {
+  font-size: 1.8rem;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 700;
+  color: $skin;
+}
+
+.homePage-step1 {
+  background: url("../../assets/svg/step1.svg") center center no-repeat;
+  width: 12rem;
+  height: 12rem;
+  background-size: cover;
+}
+.homePage-step2 {
+  background: url("../../assets/svg/step2.svg") center center no-repeat;
+  width: 12rem;
+  height: 12rem;
+  background-size: cover;
+}
+.homePage-step3 {
+  background: url("../../assets/svg/step3.svg") center center no-repeat;
+  width: 12rem;
+  height: 12rem;
+  background-size: cover;
+}
+.homePage-step4 {
+  background: url("../../assets/svg/step4.svg") center center no-repeat;
+  width: 12rem;
+  height: 12rem;
+  background-size: cover;
+}
+.homePage-step5 {
+  background: url("../../assets/svg/step5.svg") center center no-repeat;
+  width: 12rem;
+  height: 12rem;
+  background-size: cover;
 }
 
 // 地圖
@@ -1016,47 +1030,39 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   height: 75rem;
   position: relative;
   // 表單背景色
-  .homePage-map-form-bcc {
-    margin: 0;
-    .homePage-map-form-wrap {
-    }
-    .homePage-adress-form-wrap {
-      margin-left: 2rem;
-      width: 38rem;
-      height: 52rem;
-      .homePage-form-announce {
-        font-family: "Noto Sans TC", sans-serif;
-        font-size: 2rem;
-        font-weight: 400;
-        color: $deepYellow;
-      }
-      .homePage-adress-radio {
-        color: $brown;
-        font-size: 1.6rem;
-        font-family: "Noto Sans TC", sans-serif;
-        font-weight: 400;
-      }
-      .homePage-map-results {
-        color: $brown;
-        font-size: 1.6rem;
-        font-family: "Noto Sans TC", sans-serif;
-        font-weight: 400;
-      }
-      // .homePage-map-buttons {
-      //   text-align: right;
-      //   margin: 0px 0 0px auto;
-      // }
-    }
-    // 地圖區域
-    .homePage-map-view {
-      // width: 55%;
-      // height: 70%;
-      // overflow: hidden;
-    }
-  }
 }
+
+.homePage-map-form-bcc {
+  margin: 0;
+}
+
+.homePage-form-announce {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: $deepYellow;
+}
+.homePage-adress-radio {
+  color: $brown;
+  font-size: 1.6rem;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+}
+.homePage-map-results {
+  color: $brown;
+  font-size: 1.6rem;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+}
+
 .homePage-form-wrap2 {
   width: 38rem;
+}
+
+.homePage-adress-form-wrap {
+  margin-left: 2rem;
+  width: 38rem;
+  height: 52rem;
 }
 
 // 首頁select box
@@ -1249,133 +1255,145 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 // 好文推薦
+.homePage-article-sbcc {
+  background-color: $lightGray;
+  width: 20rem;
+  height: 28rem;
+  border-radius: 20px;
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+}
+
+.homePage-article-img1 {
+  background: url("../../assets/jpg/article-img1.jpg") center center no-repeat;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  margin: 2rem auto 1rem auto;
+}
+.homePage-article-img2 {
+  background: url("../../assets/jpg/article-img2.jpg") center center no-repeat;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  margin: 2rem auto 1rem auto;
+}
+.homePage-article-img3 {
+  background: url("../../assets/jpg/article-img4.jpg") center center no-repeat;
+  background-size: cover;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  margin: 2rem auto 1rem auto;
+}
+
+.homePage-article-name {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: $gray;
+  margin: 1rem auto;
+  text-align: center;
+}
+.homePage-article-text {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: $brown;
+  text-align: center;
+}
+
+.homePage-article-text-area {
+  width: 25rem;
+  height: 25rem;
+  border-top: 1px solid $lightBrown;
+  margin: 0 auto;
+}
+
+.homePage-article-bcc {
+  background-color: $lightGray;
+  width: 30rem;
+  height: 45rem;
+  border-radius: 20px;
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+}
+
 .homePage-article {
   background-color: #fff;
   width: 100%;
   position: relative;
-  .homePage-article-sbcc {
-    background-color: $lightGray;
-    width: 20rem;
-    height: 28rem;
-    border-radius: 20px;
-    box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
-  }
-  .homePage-article-bcc {
-    background-color: $lightGray;
-    width: 30rem;
-    height: 45rem;
-    border-radius: 20px;
-    box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
-    .homePage-article-img1 {
-      background: url("../../assets/jpg/article-img1.jpg") center center no-repeat;
-      width: 15rem;
-      height: 15rem;
-      border-radius: 50%;
-      margin: 2rem auto 1rem auto;
-    }
-    .homePage-article-img2 {
-      background: url("../../assets/jpg/article-img2.jpg") center center no-repeat;
-      width: 15rem;
-      height: 15rem;
-      border-radius: 50%;
-      margin: 2rem auto 1rem auto;
-    }
-    .homePage-article-img3 {
-      background: url("../../assets/jpg/article-img4.jpg") center center no-repeat;
-      background-size: cover;
-      width: 15rem;
-      height: 15rem;
-      border-radius: 50%;
-      margin: 2rem auto 1rem auto;
-    }
-    .homePage-article-text-area {
-      width: 25rem;
-      height: 25rem;
-      border-top: 1px solid $lightBrown;
-      margin: 0 auto;
-      .homePage-article-name {
-        font-family: "Noto Sans TC", sans-serif;
-        font-size: 2rem;
-        font-weight: 600;
-        color: $gray;
-        margin: 1rem auto;
-        text-align: center;
-      }
-      .homePage-article-text {
-        font-family: "Noto Sans TC", sans-serif;
-        font-size: 1.4rem;
-        font-weight: 400;
-        color: $brown;
-        text-align: center;
-      }
-    }
-  }
 }
+
+.homePage-article-name {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $gray;
+  margin: 1rem auto;
+  text-align: center;
+}
+.homePage-article-text {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: $brown;
+  text-align: center;
+}
+
+.homePage-article-img {
+  background: url("../../assets/jpg/article-img1.jpg") center center no-repeat;
+  background-size: cover;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin: 1.5rem auto 1rem auto;
+}
+.homePage-article-text-area {
+  width: 21rem;
+  height: 22rem;
+  margin: 0 auto;
+}
+
+.homePage-article-name {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $gray;
+  margin: 1rem auto;
+  text-align: center;
+}
+.homePage-article-text {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: $brown;
+  text-align: center;
+}
+
 .homePage-article-left-blur {
   width: 20rem;
   height: 28rem;
   filter: blur(5px);
-  .homePage-article-img {
-    background: url("../../assets/jpg/article-img1.jpg") center center no-repeat;
-    background-size: cover;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    margin: 1.5rem auto 1rem auto;
-  }
-  .homePage-article-text-area {
-    width: 21rem;
-    height: 22rem;
-    margin: 0 auto;
-    .homePage-article-name {
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: $gray;
-      margin: 1rem auto;
-      text-align: center;
-    }
-    .homePage-article-text {
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: $brown;
-      text-align: center;
-    }
-  }
 }
+
+.homePage-article-text-area {
+  width: 21rem;
+  height: 22rem;
+  margin: 0 auto;
+}
+
+.homePage-article-img {
+  background: url("../../assets/jpg/article-img2.jpg") center center no-repeat;
+  background-size: cover;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin: 1.5rem auto 1rem auto;
+}
+
 .homePage-article-right-blur {
   width: 25rem;
   height: 35rem;
   filter: blur(5px);
-  .homePage-article-img {
-    background: url("../../assets/jpg/article-img2.jpg") center center no-repeat;
-    background-size: cover;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    margin: 1.5rem auto 1rem auto;
-  }
-  .homePage-article-text-area {
-    width: 21rem;
-    height: 22rem;
-    margin: 0 auto;
-    .homePage-article-name {
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: $gray;
-      margin: 1rem auto;
-      text-align: center;
-    }
-    .homePage-article-text {
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: $brown;
-      text-align: center;
-    }
-  }
 }
 
 @media screen and (max-width: 1199.98px) {
@@ -1428,11 +1446,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
   #homePage-kcal-icon-active {
     background-size: $featureIconSize_xl_active $featureIconSize_xl_active;
-  }
-
-  .homePage-index-feature {
-    #homePage-feature-circles {
-    }
   }
 
   .homePage-intro {
@@ -1678,33 +1691,29 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     background-size: $featureIconSize_sm_active $featureIconSize_sm_active;
   }
 
-  .homePage-intro5-container .homePage-intro5-cards {
+  .homePage-intro5-cards {
     background-size: cover;
     width: 300px;
   }
 
-  #homePage-intro1-container #homePage-intro1-cards {
+  #homePage-intro1-cards {
     flex-direction: column;
   }
 
-  #homePage-intro1-container #homePage-intro1-cards #homePage-intro1-card1 {
+  #homePage-intro1-card1 {
     margin-right: 0px;
     margin-bottom: 20px;
   }
-
-  #homePage-intro1-container #homePage-intro1-cards #homePage-intro1-card1 {
+  #homePage-intro1-card1 {
     margin-top: 20px;
   }
 
-  #homePage-intro1-container #homePage-intro1-cards {
+  #homePage-intro1-cards {
     flex-direction: column;
-  }
-
-  #homePage-intro1-container #homePage-intro1-cards {
     padding: 0px !important;
   }
 
-  #homePage-intro2-container .homePage-intro2-cards {
+  .homePage-intro2-cards {
     width: 300px;
     height: 200px;
   }
@@ -1715,25 +1724,25 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     background-size: cover;
   }
 
-  #homePage-intro1-container #homePage-intro1-wrap #homePage-intro1-title {
+  #homePage-intro1-title {
     height: 7rem;
   }
 
-  #homePage-intro1-container #homePage-intro1-wrap #homePage-intro1-text {
+  #homePage-intro1-text {
     margin-left: 0rem;
   }
 
-  #homePage-intro2-container #homePage-intro2-wrap #homePage-intro2-title {
+  #homePage-intro2-title {
     height: 6rem;
     width: 25rem;
     margin: auto;
   }
 
-  #homePage-intro2-container #homePage-intro2-wrap {
+  #homePage-intro2-wrap {
     width: 100%;
   }
 
-  #homePage-intro2-container #homePage-intro2-text {
+  #homePage-intro2-text {
     width: 100%;
     height: 100%;
     margin-left: 0rem;
