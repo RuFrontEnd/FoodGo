@@ -32,106 +32,29 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap");
 
 // 特色內容
-#introCard-intro-container {
-  width: 100%;
-  background-color: $skin;
-}
-
-.introCard-intro {
-  display: none;
-  padding: 30px 0px;
-}
-
-#introCard-intro1-large-text {
-  color: $green;
-  font-family: "Noto Sans TC", sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-#introCard-intro1-title {
-  background: url("../../assets/svg/intro1.svg") center center no-repeat;
-  background-size: cover;
-  height: 11rem;
-}
-#introCard-intro1-text {
-  height: 30rem;
-  color: $gray;
-  font-family: "Noto Sans TC", sans-serif;
-  font-size: 1.4rem;
-  margin-top: 2rem;
-  margin-left: 5rem;
-}
-
-#introCard-intro1-fake-farmer1 {
-  width: 15rem;
-  height: 15rem;
-  margin: 3rem auto 2rem auto;
-}
-#introCard-card1-title {
-  font-family: "Noto Sans TC", sans-serif;
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-#introCard-card1-text {
-  width: 25rem;
-  height: 15rem;
-  font-family: "Noto Sans TC", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 500;
-  margin: 0 auto;
-}
-.introCard-arrow {
-  background: url("../../assets/svg/intro1-arrow.svg") center center no-repeat;
-  background-size: cover;
-  width: 3rem;
-  height: 2.2rem;
-  cursor: pointer;
-}
-
-.introCard-card1-viewmore {
-  font-family: "Noto Sans TC", sans-serif;
-  color: $gray;
-  font-size: 1rem;
-  margin-bottom: 3rem;
-}
-
-#introCard-intro1-farmer1 {
-  border-radius: 50%;
-  background: url("../../assets/jpg/farmer1.jpg") center center no-repeat;
-  background-size: 40rem;
-  background-position: -5rem -1.5rem;
-  width: 15rem;
-  height: 15rem;
-  margin: 3rem auto 0 auto;
+#introCard-container {
   display: flex;
-  justify-content: center;
-}
-#introCard-intro1-card1-wrap {
-  width: 25rem;
-  height: 45rem;
-  top: 0;
-  right: 2.5rem;
-  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
 }
 
-#introCard-intro1-card1 {
+#introCard-wrap {
   background-color: $lightGray;
   width: 30rem;
   height: 45rem;
-  margin-right: 20px;
   border-radius: 20px;
   box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
   position: relative;
   overflow: hidden;
 }
 
-#introCard-intro1-card1:hover > #introCard-intro1-farmer1 {
+#introCard-wrap:hover > #introCard-photo {
+  background-color: #f48145;
   margin-left: -15rem;
   margin-top: -7.5rem;
-  background: url("../../assets/jpg/farmer1.jpg") center center no-repeat;
-  background-size: 80rem;
-  background-position: -2rem 6rem;
+  object-fit: cover;
+  background-position: -30rem 3rem;
   transition: 0.5s;
   border-radius: 50rem;
   opacity: 0.3;
@@ -139,17 +62,24 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   height: 60rem;
 }
 
-#introCard-intro1-card1:hover > #introCard-arrow {
-  animation: myCustomAnimate 0.7s infinite;
+#introCard-photo {
+  background-color: #f48145;
+  border-radius: 50%;
+  object-fit: cover;
+  background-position: -8rem 0rem;
+  width: 15rem;
+  height: 15rem;
+  margin: 3rem auto 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes myCustomAnimate {
-  from {
-    margin-right: 3rem;
-  }
-  to {
-    margin-right: 0rem;
-  }
+#introCard-content {
+  width: 25rem;
+  height: 45rem;
+  top: 0;
+  right: 2.5rem;
+  position: absolute;
 }
 
 #introCard-fake-content-height {
@@ -157,11 +87,14 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   height: 15rem;
   margin: 3rem auto 2rem auto;
 }
+
 #introCard-title {
+  text-align: center;
   font-family: "Noto Sans TC", sans-serif;
   font-size: 1.8rem;
   font-weight: 600;
 }
+
 #introCard-text {
   width: 25rem;
   height: 15rem;
@@ -170,31 +103,14 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   font-weight: 500;
   margin: 0 auto;
 }
+
 #introCard-arrow {
   background: url("../../assets/svg/intro1-arrow.svg") center center no-repeat;
   background-size: cover;
   width: 3rem;
   height: 2.2rem;
   cursor: pointer;
-}
-#introCard-viewmore {
-  font-family: "Noto Sans TC", sans-serif;
-  color: $gray;
-  font-size: 1rem;
-  // margin-right: 2.5rem;
-}
-
-#introCard-wrap:hover > #introCard-photo {
-  margin-left: -15rem;
-  margin-top: -7.5rem;
-  background: url("../../assets/jpg/farmer2.jpg") center center no-repeat;
-  background-size: 80rem;
-  background-position: -30rem 3rem;
-  transition: 0.5s;
-  border-radius: 50rem;
-  opacity: 0.3;
-  width: 60rem;
-  height: 60rem;
+  float: right;
 }
 
 #introCard-wrap:hover > #introCard-arrow {
@@ -210,80 +126,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
 }
 
-#introCard-photo {
-  border-radius: 50%;
-  background: url("../../assets/jpg/farmer2.jpg") center center no-repeat;
-  background-size: 24rem;
-  background-position: -8rem 0rem;
-  width: 15rem;
-  height: 15rem;
-  margin: 3rem auto 0 auto;
-  display: flex;
-  justify-content: center;
-}
-#introCard-content {
-  width: 25rem;
-  height: 45rem;
-  top: 0;
-  right: 2.5rem;
-  position: absolute;
-}
-
-#introCard-wrap {
-  background-color: $lightGray;
-  width: 30rem;
-  height: 45rem;
-  border-radius: 20px;
-  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
-  position: relative;
-  overflow: hidden;
-}
-
-#introCard-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#introCard-intro1-container {
-  margin: auto;
-  max-width: 117rem;
-  justify-content: space-around;
-  align-items: center;
-  transition: 0.3s;
-}
-
-.introCard-intro2-cards {
-  background: url("../../assets/jpg/intro2.jpg");
-}
-
-.introCard-intro2-large-text {
-  color: $deepYellow;
+#introCard-viewMore {
   font-family: "Noto Sans TC", sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-#introCard-intro2-text {
-  width: 38rem;
-  height: 30rem;
   color: $gray;
-  font-family: "Noto Sans TC", sans-serif;
-  font-size: 1.4rem;
-  margin-top: 6rem;
-  margin-left: 5rem;
-}
-
-#introCard-intro2-title {
-  background: url("../../assets/svg/intro2.svg") center center no-repeat;
-  background-size: cover;
-  height: 11rem;
-}
-
-#introCard-intro2-container {
-  margin: auto;
-  max-width: 117rem;
-  justify-content: space-around;
-  align-items: center;
-  transition: 0.3s;
+  font-size: 1rem;
+  margin-right: 0px;
+  float: right;
 }

@@ -22,6 +22,8 @@ import event3 from 'assets/jpg/event3.jpg';
 import event4 from 'assets/jpg/event4.jpg';
 import event5 from 'assets/jpg/event5.jpg';
 import event6 from 'assets/jpg/event6.jpg';
+import farmerPhoto1 from 'assets/jpg/farmer1.jpg';
+import farmerPhoto2 from 'assets/jpg/farmer2.jpg';
 
 import customVideo from 'assets/mp4/customFinalVideo.mp4';
 
@@ -469,52 +471,20 @@ function HomePage(props) {
           </div>
           {/* 小農欄位 */}
           <div id="homePage-intro1-cards" className="p-5">
-            {/* 萱草園．農友張武增 */}
-            <div id="homePage-intro1-card1">
-              <div
-                id="homePage-intro1-farmer1"
-                className="d-flex justify-content-center"
-              ></div>
-              <div id="homePage-intro1-card1-wrap" className="flex-column">
-                <div id="homePage-intro1-fake-farmer1"></div>
-                <p id="homePage-card1-title">萱草園．農友張武增</p>
-                <p id="homePage-card1-text">
-                  張武增張大哥，生於花蓮赤柯山 田地保育山羌，通過綠色保育標章
-                  「安心金針」甘甜風味受好評 友善耕種，堅持不使用農藥、化肥
-                  熱風烘乾，堅持提供無硫金針。
-                </p>
-                <Link style={{ 'text-decoration': 'none' }} to="/farmIntro">
-                  <div className="homePage-card-arrow float-right"></div>
-                  <br />
-                  <br />
-                  <div className="homePage-card1-viewmore float-right">
-                    <p>view more</p>
-                  </div>
-                </Link>
-              </div>
-            </div>
-
-            {/* 青翠園有機農場・農友莊翠蘭 */}
-            <div id="homePage-intro1-card2">
-              <div id="homePage-intro1-farmer2"></div>
-              <div id="homePage-intro1-card2-wrap" className="flex-column">
-                <div id="homePage-intro1-fake-farmer2"></div>
-                <p id="homePage-card2-title">青翠園有機農場・農友莊翠蘭</p>
-                <p id="homePage-card2-text">
-                  堅持至今的信念是個好： 「對自己身體好，對消費者的身體好，
-                  對土地好，對天地萬物好」。 她的心願是，「如果土地會說話，
-                  希望他們會說：『嗯，我很舒服』， 這樣就太好了！」
-                </p>
-                <Link to="/farmIntro">
-                  <div id="homePage-card-arrow" className="float-right"></div>
-                  <br />
-                  <br />
-                  <p id="homePage-card2-viewmore" className="m-0 float-right">
-                    view more
-                  </p>
-                </Link>
-              </div>
-            </div>
+            <IntroCard
+              photo={farmerPhoto1}
+              title={'萱草園．農友張武增'}
+              content={
+                '張武增張大哥，生於花蓮赤柯山田地保育山羌，通過綠色保育標章「安心金針」甘甜風味受好評 友善耕種，堅持不使用農藥、化肥熱風烘乾，堅持提供無硫金針。'
+              }
+            />
+            <IntroCard
+              photo={farmerPhoto2}
+              title={'青翠園有機農場・農友莊翠蘭'}
+              content={
+                '堅持至今的信念是個好：「對自己身體好，對消費者的身體好，對土地好，對天地萬物好」。 她的心願是，「如果土地會說話，希望他們會說：『嗯，我很舒服』， 這樣就太好了！」'
+              }
+            />
           </div>
         </div>
         {/* 產銷履歷 */}
@@ -1154,7 +1124,6 @@ function HomePage(props) {
           </div>
         </div>
       </section>
-      <IntroCard></IntroCard>
       <ToToop />
     </>
   );
