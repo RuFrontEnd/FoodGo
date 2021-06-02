@@ -414,7 +414,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   font-weight: 500;
   margin: 0 auto;
 }
-#homePage-card-arrow {
+.homePage-card-arrow {
   background: url("../../assets/svg/intro1-arrow.svg") center center no-repeat;
   background-size: cover;
   width: 3rem;
@@ -697,6 +697,21 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   height: 15rem;
 }
 
+#homePage-intro-title-1 {
+  background: url("../../assets/svg/intro1.svg") center center no-repeat;
+  background-size: contain;
+}
+
+#homePage-intro-title-2 {
+  background: url("../../assets/svg/intro2.svg") center center no-repeat;
+  background-size: contain;
+}
+
+#homePage-intro-title-3 {
+  background: url("../../assets/svg/intro3.svg") center center no-repeat;
+  background-size: contain;
+}
+
 #homePage-intro-title-4 {
   background: url("../../assets/svg/intro4.svg") center center no-repeat;
   background-size: contain;
@@ -707,15 +722,15 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   background-size: contain;
 }
 
-// .homePage-intro5-cards {
-//   background: url("../../assets/png/kcalintro5.png") center center no-repeat;
-// }
-
 .homePage-intro-large-text {
   color: $deepYellow;
   font-family: "Noto Sans TC", sans-serif;
   font-size: 2rem;
   font-weight: 600;
+}
+
+#homePage-intro-large-text-green {
+  color: $deepGreen;
 }
 
 .homePage-intro-text {
@@ -747,6 +762,15 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   margin: 25px;
   width: 100%;
   height: 500px;
+}
+
+#homePage-intro-video {
+  width: 100%;
+  height: 100%;
+}
+
+#homePage-intro-card-2 {
+  background-image: url("../../assets/jpg/intro2.jpg");
 }
 
 #homePage-intro-card-4 {

@@ -22,7 +22,7 @@ import event4 from 'assets/jpg/event4.jpg';
 import event5 from 'assets/jpg/event5.jpg';
 import event6 from 'assets/jpg/event6.jpg';
 
-import calImg from 'assets/png/kcalintro5.png';
+import customVideo from 'assets/mp4/customFinalVideo.mp4';
 
 import Button from 'Share/Components/Button/Button';
 import OptionButton from 'components/optionButton/OptionButton';
@@ -434,29 +434,37 @@ function HomePage(props) {
       >
         {/* 在地小農 */}
         <div
-          id="homePage-intro1-container"
-          className={`homePage-intro ${
+          className={`container homePage-intro-wrap homePage-intro ${
             isFarmerFeatureActive && 'homePage-intro-active'
           }`}
         >
           {/* 介紹欄位 */}
-          <div id="homePage-intro1-wrap">
-            <div id="homePage-intro1-title"></div>
-            <div id="homePage-intro1-text" className="mt-5">
+          <div>
+            <div
+              id="homePage-intro-title-1"
+              className="homePage-intro-title"
+            ></div>
+            <div className="homePage-intro-text mt-5">
               <p>嚴選在地農產品</p>
               <p>透過小農地圖</p>
-              <p id="homePage-intro1-large-text">"拾餐"帶你從餐桌看見台灣</p>
+              <p
+                id="homePage-intro-large-text-green"
+                className="homePage-intro-large-text"
+              >
+                "拾餐"帶你從餐桌看見台灣
+              </p>
               <p>走訪這些在地小農</p>
               <p>打開感官體驗</p>
               <p>拾餐也提供蔬菜箱寄送</p>
               <p>給想自己料理的你</p>
               <p>不用出門也能品嘗到安心的美味</p>
             </div>
-            <Link style={{ 'text-decoration': 'none' }} to="/farmMap">
-              <div className="homePage-index-button float-right mt-3">
-                <Button className="button-btn-g" text="小農地圖" />
-              </div>
-            </Link>
+            <OptionButton
+              className={'homePage-index-button  float-right mt-3'}
+              type={'green'}
+              text={'小農地圖'}
+              routes={'/farmMap'}
+            />
           </div>
           {/* 小農欄位 */}
           <div id="homePage-intro1-cards" className="p-5">
@@ -475,7 +483,7 @@ function HomePage(props) {
                   熱風烘乾，堅持提供無硫金針。
                 </p>
                 <Link style={{ 'text-decoration': 'none' }} to="/farmIntro">
-                  <div id="" className="homePage-card-arrow float-right"></div>
+                  <div className="homePage-card-arrow float-right"></div>
                   <br />
                   <br />
                   <div className="homePage-card1-viewmore float-right">
@@ -510,67 +518,70 @@ function HomePage(props) {
         </div>
         {/* 產銷履歷 */}
         <div
-          id="homePage-intro2-container"
-          className={`homePage-intro ${
+          className={`container homePage-intro-wrap homePage-intro ${
             isDietFeatureActive && 'homePage-intro-active'
           }`}
         >
-          <div id="homePage-intro2-wrap">
-            <div id="homePage-intro2-title"></div>
-            <div id="homePage-intro2-text" className="mt-5">
+          <div>
+            <div
+              id="homePage-intro-title-2"
+              className="homePage-intro-title"
+            ></div>
+            <div className="homePage-intro-text mt-5">
               <p>農產品產銷履歷制度</p>
               <p>是一種農產品從農場到餐桌</p>
               <p>在生產、加工、運輸、銷售過程</p>
               <p>完整記錄的安心保證制度</p>
               <p>具備可追溯生產者或加工者之資訊</p>
-              <p className="homePage-intro2-large-text">對於健康的把關</p>
-              <p className="homePage-intro2-large-text">"拾餐"總是比你更在意</p>
+              <p className="homePage-intro-large-text">對於健康的把關</p>
+              <p className="homePage-intro-large-text">"拾餐"總是比你更在意</p>
             </div>
-            <Link style={{ 'text-decoration': 'none' }} to="/productList">
-              <div className="homePage-index-button float-right mt-3">
-                <Button className="button-btn" text="商品列表" />
-              </div>
-            </Link>
+            <OptionButton
+              className={'homePage-index-button  float-right mt-3'}
+              type={'origin'}
+              text={'商品列表'}
+              routes={'/productList'}
+            />
           </div>
-          <div className="homePage-intro-card homePage-intro2-cards m-5"></div>
+          <div id="homePage-intro-card-2" className="homePage-intro-card"></div>
         </div>
         {/* 客製化便當 */}
         <div
-          className={`homePage-intro homePage-intro3-container ${
+          className={`container homePage-intro homePage-intro-wrap homePage-intro3-container ${
             isChoicesFeatureActive && 'homePage-intro-active'
           }`}
         >
-          <div className="homePage-intro3-wrap">
-            <div className="homePage-intro3-title"></div>
-            <div className="homePage-intro3-text mt-5">
+          <div>
+            <div
+              id="homePage-intro-title-3"
+              className="homePage-intro-title"
+            ></div>
+            <div className="homePage-intro-text mt-5">
               <p>親愛的，是不是有那些日子，看著菜單卻覺得無從下手，</p>
               <p>想吃照燒雞肉配玉米炒蛋，</p>
               <p>可偏偏照燒雞肉的配菜卻是最討厭的菜色呢？</p>
               <p>照過來，照過來!</p>
-              <p className="homePage-intro3-large-text">“拾餐”客製化便當</p>
+              <p className="homePage-intro-large-text">“拾餐”客製化便當</p>
               <p>幫你實現午餐到晚餐的美味想法；</p>
               <p>自由組合，隨心搭配，</p>
               <p>別再讓你的想法受限於制式的菜單上了！</p>
             </div>
-
-            <div className="homePage-index-button float-right mt-3">
-              <Link style={{ 'text-decoration': 'none' }} to="/productList">
-                <Button className="button-btn" text="客製化便當" />
-              </Link>
-            </div>
+            <OptionButton
+              className={'homePage-index-button float-right mt-3'}
+              type={'origin'}
+              text={'客製化便當'}
+              routes={'/productList'}
+            />
           </div>
-          <div className="homePage-intro-card homePage-intro3-cards">
+          <div className="homePage-intro-card">
             <video
-              className="homePage-intro-card"
+              id="homePage-intro-video"
               preload="auto"
               loop="true"
               autoplay="autoplay"
               muted="true"
             >
-              <source
-                src="/Images/customFinalVideo.mp4"
-                type="video/mp4"
-              ></source>
+              <source src={customVideo} type="video/mp4"></source>
             </video>
           </div>
         </div>
@@ -597,7 +608,7 @@ function HomePage(props) {
               </p>
             </div>
             <OptionButton
-              className={'homePage-index-button  float-right mt-3'}
+              className={'homePage-index-button float-right mt-3'}
               type={'origin'}
               text={'作伙揪團'}
               routes={'/groupOrder/groupOrderCreate'}
