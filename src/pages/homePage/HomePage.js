@@ -36,6 +36,7 @@ import ArrowLeft from 'Share/Components/ArrowLeft/ArrowLeft';
 import ArrowRight from 'Share/Components/ArrowRight/ArrowRight';
 import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import ToToop from 'Share/Components/ToTopButton/ScrollButton';
+import AreaTitle from 'components/areaTitle/AreaTitle';
 import RecommendCard from 'components/recommendCard/RecommendCard';
 import IntroCard from 'components/introCard/IntroCard';
 import ArticleCard from 'components/articleCard/ArticleCard';
@@ -321,15 +322,10 @@ function HomePage(props) {
           id="homePage-feature-wrap"
           className="row d-flex flex-column align-items-center justify-content-space-between"
         >
-          {/* 標題 */}
-          <div
-            id="homePage-feature-title-wrap"
-            className="d-flex align-items-center"
-          >
-            <img alt="" src={titleLeft} />
-            <p id="homePage-feature-title">品牌特色</p>
-            <img alt="" src={titleRight} />
-          </div>
+          <AreaTitle
+            title="品牌特色"
+            className={'homePage-areaTitle'}
+          ></AreaTitle>
           {/* circles */}
           <div
             id="homePage-feature-circles"
@@ -696,11 +692,10 @@ function HomePage(props) {
         <div className="container homePage-p0">
           <div className="row homePage-p0  d-flex justify-content-center">
             {/* 專屬優惠標題 */}
-            <div className="mt-5 mb-5 d-flex align-items-center mt-4 mb-3">
-              <img alt="" src={titleLeft} />
-              <p className="homePage-feature-title">專屬優惠</p>
-              <img alt="" src={titleRight} />
-            </div>
+            <AreaTitle
+              title="專屬優惠"
+              className={'homePage-areaTitle'}
+            ></AreaTitle>
             {/* 活動卡片 */}
             <div className="container">
               <div className="row">
@@ -1081,11 +1076,10 @@ function HomePage(props) {
       <section className="container homePage-p0 homePage-article">
         <div>
           {/* 標題 */}
-          <div className="mb-5 d-flex justify-content-center">
-            <img alt="" src={titleLeft} />
-            <p className="mt-2 homePage-feature-title">好文推薦</p>
-            <img alt="" src={titleRight} />
-          </div>
+          <AreaTitle
+            title="好文推薦"
+            className={'homePage-areaTitle'}
+          ></AreaTitle>
 
           {/* 推薦文章卡片 */}
           <div id="homepage-articles" className="d-flex justify-content-around">
