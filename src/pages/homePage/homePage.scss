@@ -761,7 +761,8 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
 .homePage-intro-card {
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   margin: 25px;
   width: 100%;
   height: 500px;

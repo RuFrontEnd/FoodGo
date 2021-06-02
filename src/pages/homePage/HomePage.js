@@ -533,7 +533,7 @@ function HomePage(props) {
               <p>想吃照燒雞肉配玉米炒蛋，</p>
               <p>可偏偏照燒雞肉的配菜卻是最討厭的菜色呢？</p>
               <p>照過來，照過來!</p>
-              <p className="homePage-intro-large-text">“拾餐”客製化便當</p>
+              <p className="homePage-intro-large-text">"拾餐"客製化便當</p>
               <p>幫你實現午餐到晚餐的美味想法；</p>
               <p>自由組合，隨心搭配，</p>
               <p>別再讓你的想法受限於制式的菜單上了！</p>
