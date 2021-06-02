@@ -852,16 +852,11 @@ function HomePage(props) {
           <div className="homePage-p0 homePage-black-blur">
             <div className="d-flex justify-content-center align-items-center flex-column">
               {/* 購物流程標題-淺色 */}
-              <div className="d-flex align-items-center mt-5">
-                <img alt="" src={titleLeftLight} />
-                <p
-                  className="homePage-feature-title "
-                  style={{ color: '#F7EDE2' }}
-                >
-                  購物流程
-                </p>
-                <img alt="" src={titleRightLight} />
-              </div>
+              <AreaTitle
+                title="購物流程"
+                className={'homePage-areaTitle'}
+                isLightMode={true}
+              ></AreaTitle>
               {/* 五個步驟 */}
               <div
                 id="homePage-steps"
