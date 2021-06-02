@@ -22,12 +22,15 @@ import event4 from 'assets/jpg/event4.jpg';
 import event5 from 'assets/jpg/event5.jpg';
 import event6 from 'assets/jpg/event6.jpg';
 
+import calImg from 'assets/png/kcalintro5.png';
+
 import Button from 'Share/Components/Button/Button';
 import ArrowLeft from 'Share/Components/ArrowLeft/ArrowLeft';
 import ArrowRight from 'Share/Components/ArrowRight/ArrowRight';
 import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import ToToop from 'Share/Components/ToTopButton/ScrollButton';
 import RecommendCard from 'components/recommendCard/RecommendCard';
+import { Container } from 'react-bootstrap';
 
 const data = {
   台北市: {
@@ -572,8 +575,7 @@ function HomePage(props) {
         </div>
         {/* 揪團訂購 */}
         <div
-          id="homePage-intro5-container"
-          className={`homePage-intro ${
+          className={`homePage-intro-wrap homePage-intro ${
             isNetworkFeatureActive && 'homePage-intro-active'
           }`}
         >
@@ -603,18 +605,17 @@ function HomePage(props) {
         </div>
         {/* 營養標示 */}
         <div
-          id="homePage-intro5-container"
-          className={`homePage-intro ${
+          className={`container homePage-intro-wrap homePage-intro ${
             isKcalFeatureActive && 'homePage-intro-active'
           }`}
         >
-          <div id="homePage-intro5-wrap">
-            <div id="homePage-intro5-title"></div>
-            <div id="homePage-intro5-text" className="mt-5">
+          <div>
+            <div className="homePage-intro-title"></div>
+            <div className="homePage-intro-text mt-5">
               <p>以均衡飲食為設計基礎</p>
               <p>除了注重食材來源</p>
               <p>更考量餐點製備及供餐過程等多方面的衛生安全</p>
-              <p className="homePage-intro5-large-text">當日料理、供應</p>
+              <p className="homePage-intro-large-text">當日料理、供應</p>
               <p>以提供較多完整的營養素</p>
               <p>避免過多添加物以及鹽份的攝取</p>
               <p>希望吃出食物的原味及新鮮味</p>
@@ -626,7 +627,7 @@ function HomePage(props) {
               </div>
             </Link>
           </div>
-          <div className="homePage-intro-card homePage-intro5-cards m-5"></div>
+          <div className="homePage-intro-card"></div>
         </div>
       </section>
 

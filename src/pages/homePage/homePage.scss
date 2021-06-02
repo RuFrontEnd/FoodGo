@@ -696,27 +696,25 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   transition: 0.5s;
 }
 
-.homePage-intro5-title {
+.homePage-intro-title {
   background: url("../../assets/svg/intro5.svg") center center no-repeat;
   background-size: cover;
   width: 43rem;
   height: 11rem;
 }
 
-.homePage-intro5-cards {
-  background: url("../../assets/png/kcalintro5.png") center center no-repeat;
-}
+// .homePage-intro5-cards {
+//   background: url("../../assets/png/kcalintro5.png") center center no-repeat;
+// }
 
-.homePage-intro5-large-text {
+.homePage-intro-large-text {
   color: $deepYellow;
   font-family: "Noto Sans TC", sans-serif;
   font-size: 2rem;
   font-weight: 600;
 }
 
-.homePage-intro5-text {
-  width: 38rem;
-  height: 30rem;
+.homePage-intro-text {
   color: $gray;
   font-family: "Noto Sans TC", sans-serif;
   font-size: 1.4rem;
@@ -724,7 +722,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   margin-left: 5rem;
 }
 
-#homePage-intro5-container {
+.homePage-intro-wrap {
   // background-color: #ddd;
   margin: auto;
   max-width: 117rem;
@@ -740,9 +738,17 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 .homePage-intro-card {
-  width: 680px;
-  height: 500px;
+  background-image: url("../../assets/png/kcalintro5.png");
+  background-position: center;
   background-size: cover;
+  margin: 25px;
+  width: 100%;
+  height: 500px;
+}
+
+.homePage-intro-card > img {
+  width: 100%;
+  height: 100%;
 }
 
 .homePage-card-img1 {
@@ -1689,11 +1695,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
   #homePage-kcal-icon-active {
     background-size: $featureIconSize_sm_active $featureIconSize_sm_active;
-  }
-
-  .homePage-intro5-cards {
-    background-size: cover;
-    width: 300px;
   }
 
   #homePage-intro1-cards {
