@@ -838,7 +838,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   width: 100%;
 }
 
-
 .homePage-recommend-wrap {
   margin: 4rem 0rem;
   width: 100%;
@@ -933,7 +932,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   overflow: hidden;
 }
 
-#homePage-event-text{
+#homePage-event-text {
   padding: 20px;
 }
 
@@ -1441,6 +1440,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   width: 25rem;
   height: 35rem;
   filter: blur(5px);
+}
+
+.homePage-discountCard-text {
+  text-align: justify;
 }
 
 @media screen and (max-width: 1199.98px) {

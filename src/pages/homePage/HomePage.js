@@ -27,6 +27,13 @@ import farmerPhoto2 from 'assets/jpg/farmer2.jpg';
 import articlePhoto1 from 'assets/jpg/article-img1.jpg';
 import articlePhoto2 from 'assets/jpg/article-img2.jpg';
 import articlePhoto3 from 'assets/jpg/article-img3.jpg';
+import discountImage1 from 'assets/png/event1.png';
+import discountImage7 from 'assets/png/event7.png';
+import discountImage2 from 'assets/jpg/event2.jpg';
+import discountImage3 from 'assets/jpg/event3.jpg';
+import discountImage4 from 'assets/jpg/event4.jpg';
+import discountImage5 from 'assets/jpg/event5.jpg';
+import discountImage6 from 'assets/jpg/event6.jpg';
 
 import customVideo from 'assets/mp4/customFinalVideo.mp4';
 
@@ -313,7 +320,6 @@ function HomePage(props) {
           {/* 切換鈕 */}
         </div>
       </section>
-
       {/* 品牌特色*/}
       <section
         id="homePage-feature-container"
@@ -430,7 +436,6 @@ function HomePage(props) {
           ref={$featureTriangle}
         ></div> */}
       </section>
-
       {/* intros */}
       <section
         id="homePage-intro-container"
@@ -620,7 +625,6 @@ function HomePage(props) {
           <div id="homePage-intro-card-5" className="homePage-intro-card"></div>
         </div>
       </section>
-
       {/* 今日推薦 */}
       <section className="container-fluid homePage-p0 homePage-recommend-container">
         <div className="container homePage-recommend-wrap d-flex flex-column">
@@ -686,7 +690,6 @@ function HomePage(props) {
           />
         </div>
       </section>
-
       {/* 專屬優惠 */}
       <section
         id="homePage-discount-container"
@@ -703,7 +706,24 @@ function HomePage(props) {
             <div className="container">
               <div className="row">
                 <div className="col-12 d-flex justify-content-center">
-                  <div id="homePage-event" className="d-flex">
+                  <DiscountCard
+                    image={discountImage3}
+                    title={'網購消費'}
+                    viceTitle={'指定品項滿額享優惠'}
+                    date={'2020.11.1~2020.12.31'}
+                    linkTo={'/productList'}
+                  >
+                    <p>
+                      12/31前，網購消費指定品項滿$500元，回饋$100！
+                    </p>
+                    <p>活動辦法：</p>
+                    <p className="homePage-discountCard-text">
+                      7/1起，於拾餐網站單筆消費指定品項滿$500元(常溫/冷凍/冷藏訂單分開計算)，即可獲得乙張$100電子優惠券，消費滿$2,500(含)以上，獲貳張$250電子優惠券。
+                    </p>
+                    <p>* 以線上結帳付款之訂單，需完成付款，訂單才算成立。</p>
+                    <p>* 已取消之訂單，將失去本活動之資格。</p>
+                  </DiscountCard>
+                  {/* <div id="homePage-event" className="d-flex">
                     <div id="homePage-event-img"></div>
                     <div
                       id="homePage-event-text"
@@ -787,7 +807,7 @@ function HomePage(props) {
                         活動日期：2020.11.1~2020.12.31
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="col-12 mt-5 ">
                   <div className="img-wrap d-flex justify-content-center align-items-center">
@@ -848,7 +868,6 @@ function HomePage(props) {
           </div>
         </div>
       </section>
-
       {/* 購物流程 */}
       {/* 背景圖 */}
       <section className="container-fluid homePage-p0 homePage-shopping-process m-0">
@@ -902,7 +921,6 @@ function HomePage(props) {
           </div>
         </div>
       </section>
-
       {/* 地圖 */}
       <section
         id="hamePage-map-container"
@@ -1072,7 +1090,6 @@ function HomePage(props) {
           </div> */}
         </div>
       </section>
-
       {/* 好文推薦 */}
       <section className="container homePage-p0 homePage-article">
         <div>
@@ -1108,7 +1125,6 @@ function HomePage(props) {
           </div>
         </div>
       </section>
-      <DiscountCard />
       <ToToop />
     </>
   );

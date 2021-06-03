@@ -2,8 +2,6 @@
 
 #discountCard-container {
   font-family: "Noto Sans TC", sans-serif;
-  width: 85rem;
-  height: 40rem;
   background-color: $dark-white;
   border-radius: 20px;
   box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
@@ -24,7 +22,8 @@
 
 #discountCard-text {
   height: 100%;
-  padding: 50px 20px;
+  width: 52.5%;
+  padding: 50px
 }
 
 #discountCard-title {
@@ -43,7 +42,7 @@
 
 #discountCard-call-to-action {
   font-size: 1.8rem;
-  margin-bottom: 6px;
+  margin-bottom: 20px;
   color: $light-orange;
 }
 

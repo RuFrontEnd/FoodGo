@@ -9,6 +9,8 @@ function DiscountCard(props) {
     image,
     title = 'Title',
     viceTitle = 'ViceTitle',
+    linkTo = '/',
+    date,
     children,
   } = props;
 
@@ -20,7 +22,7 @@ function DiscountCard(props) {
           id="discountCard-text"
           className="text-center m-auto d-flex flex-column justify-content-between"
         >
-          <div id="discountCard-title" className="mb-5">
+          <div id="discountCard-title">
             <h4>{title}</h4>
             <h5>{viceTitle}</h5>
           </div>
@@ -29,14 +31,14 @@ function DiscountCard(props) {
             className="discountCard-information mt-3"
           >
             {children}
-            <span>
-              <Link style={{ 'text-decoration': 'none' }} to="/productList">
-                <h6 id="discountCard-call-to-action">馬上訂購</h6>
-              </Link>
-              <p id="homePage-event-date" className="discountCard-information">
-                活動日期：2020.11.1~2020.12.31
-              </p>
-            </span>
+          </div>
+          <div>
+            <Link style={{ 'text-decoration': 'none' }} to={linkTo}>
+              <h6 id="discountCard-call-to-action">馬上訂購</h6>
+            </Link>
+            <p id="homePage-event-date" className="discountCard-information">
+              活動日期：{date}
+            </p>
           </div>
         </div>
       </div>
