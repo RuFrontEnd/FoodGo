@@ -912,19 +912,19 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 // 專屬優惠
-.homePage-discount {
+#homePage-discount-container {
   background-color: $skin;
   width: 100%;
   height: 80rem;
 }
 
-.homePage-event-img {
+#homePage-event-img {
   width: 40rem;
   height: 40rem;
   background: url("../../assets/png/event1.png") center center no-repeat;
   background-size: cover;
 }
-.homePage-event {
+#homePage-event {
   width: 85rem;
   height: 40rem;
   background-color: $lightGray;
@@ -933,9 +933,8 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   overflow: hidden;
 }
 
-.homePage-event-text {
-  width: 35rem;
-  height: 30rem;
+#homePage-event-text{
+  padding: 20px;
 }
 
 .homePage-event-title {

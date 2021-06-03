@@ -40,6 +40,7 @@ import AreaTitle from 'components/areaTitle/AreaTitle';
 import RecommendCard from 'components/recommendCard/RecommendCard';
 import IntroCard from 'components/introCard/IntroCard';
 import ArticleCard from 'components/articleCard/ArticleCard';
+import DiscountCard from 'components/discountCard/DiscountCard';
 
 const data = {
   台北市: {
@@ -676,7 +677,6 @@ function HomePage(props) {
               {/* Card3 */}
             </div>
           </div>
-
           {/* 商品列表按鈕 */}
           <OptionButton
             className="mt-5 container homePage-index-button d-flex justify-content-center"
@@ -688,8 +688,11 @@ function HomePage(props) {
       </section>
 
       {/* 專屬優惠 */}
-      <section className="container-fluid homePage-p0  homePage-discount">
-        <div className="container homePage-p0">
+      <section
+        id="homePage-discount-container"
+        className="container-fluid homePage-p0"
+      >
+        <div id="homePage-discount-wrap" className="container">
           <div className="row homePage-p0  d-flex justify-content-center">
             {/* 專屬優惠標題 */}
             <AreaTitle
@@ -700,9 +703,12 @@ function HomePage(props) {
             <div className="container">
               <div className="row">
                 <div className="col-12 d-flex justify-content-center">
-                  <div className="homePage-event d-flex ">
-                    <div className="homePage-event-img"></div>
-                    <div className="homePage-event-text text-center m-auto">
+                  <div id="homePage-event" className="d-flex">
+                    <div id="homePage-event-img"></div>
+                    <div
+                      id="homePage-event-text"
+                      className="text-center m-auto"
+                    >
                       <div className="homePage-event-title homePage-event-title1 mb-5">
                         <p>現在訂購</p>
                         <p>就送 Blender Bottle 搖搖杯</p>
@@ -794,7 +800,7 @@ function HomePage(props) {
                         margin: '0 auto',
                       }}
                     >
-                      {/* <ItemsCarousel
+                      <ItemsCarousel
                         infiniteLoop={false}
                         requestToChangeActive={setActiveItemIndex}
                         activeItemIndex={activeItemIndex}
@@ -833,7 +839,7 @@ function HomePage(props) {
                         <div onClick={event7C} className="img-row">
                           <img alt="" src={event7} />
                         </div>
-                      </ItemsCarousel> */}
+                      </ItemsCarousel>
                     </div>
                   </div>
                 </div>
@@ -1102,6 +1108,7 @@ function HomePage(props) {
           </div>
         </div>
       </section>
+      <DiscountCard />
       <ToToop />
     </>
   );
