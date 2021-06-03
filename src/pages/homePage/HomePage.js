@@ -625,8 +625,8 @@ function HomePage(props) {
         <div className="container homePage-recommend-wrap d-flex flex-column">
           <div className="flex-column homePage-p0">
             {/* 今日推薦 */}
-            <div className="row col-12 col-lg-6">
-              <img style={{ width: '300rem' }} alt="" src={recommend} />
+            <div className="row col-10 col-sm-12 col-md-10 col-lg-8 m-auto">
+              <img alt="" src={recommend} />
             </div>
           </div>
           {/* 商品卡片 */}
@@ -678,11 +678,12 @@ function HomePage(props) {
           </div>
 
           {/* 商品列表按鈕 */}
-          <Link style={{ 'text-decoration': 'none' }} to="/productList">
-            <div className="mt-5 container homePage-index-button d-flex justify-content-center">
-              <Button className="button-btn" text="商品列表" />
-            </div>
-          </Link>
+          <OptionButton
+            className="mt-5 container homePage-index-button d-flex justify-content-center"
+            type={'origin'}
+            text={'商品列表'}
+            routes={'/productList'}
+          />
         </div>
       </section>
 
