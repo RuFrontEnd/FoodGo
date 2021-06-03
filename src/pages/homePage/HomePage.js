@@ -4,6 +4,8 @@ import { Carousel } from 'antd';
 import { Link } from 'react-router-dom';
 import ItemsCarousel from 'react-items-carousel';
 import { Container } from 'react-bootstrap';
+import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
 
 import titleLeft from 'assets/svg/titleLeft.svg';
 import titleRight from 'assets/svg/titleRight.svg';
@@ -789,7 +791,7 @@ function HomePage(props) {
                 </DiscountCard>
               )}
             </div>
-            <div className="col-12 mt-5">
+            <div className="mt-5">
               <div className="img-wrap d-flex justify-content-center align-items-center">
                 <div className="homePage-event-hideArrowL"></div>
                 <div
@@ -1138,6 +1140,100 @@ function HomePage(props) {
           </div>
         </div>
       </section>
+
+      {/* ---- */}
+      <Carousel
+        plugins={[
+          'arrows',
+          {
+            resolve: slidesToShowPlugin,
+            options: {
+              numberOfSlides: 3,
+            },
+          },
+        ]}
+        breakpoints={{
+          640: {
+            plugins: [
+              {
+                resolve: slidesToShowPlugin,
+                options: {
+                  numberOfSlides: 1,
+                },
+              },
+            ],
+          },
+          900: {
+            plugins: [
+              {
+                resolve: slidesToShowPlugin,
+                options: {
+                  numberOfSlides: 2,
+                },
+              },
+            ],
+          },
+        }}
+      >
+        <div className="img-row">
+          <img
+            alt=""
+            src={discountImage1}
+            id="homePage-discountCard-1"
+            onClick={handleShowDiscountCard}
+          />
+        </div>
+        <div className="img-row">
+          <div className="img-row-infor"></div>
+          <img
+            alt=""
+            src={discountImage2}
+            id="homePage-discountCard-2"
+            onClick={handleShowDiscountCard}
+          />
+        </div>
+        <div className="img-row">
+          <img
+            alt=""
+            src={discountImage3}
+            id="homePage-discountCard-3"
+            onClick={handleShowDiscountCard}
+          />
+        </div>
+        <div className="img-row">
+          <img
+            alt=""
+            src={discountImage4}
+            id="homePage-discountCard-4"
+            onClick={handleShowDiscountCard}
+          />
+        </div>
+        <div className="img-row">
+          <img
+            alt=""
+            src={discountImage5}
+            id="homePage-discountCard-5"
+            onClick={handleShowDiscountCard}
+          />
+        </div>
+        <div className="img-row">
+          <img
+            alt=""
+            src={discountImage6}
+            id="homePage-discountCard-6"
+            onClick={handleShowDiscountCard}
+          />
+        </div>
+        <div className="img-row">
+          <img
+            alt=""
+            src={discountImage7}
+            id="homePage-discountCard-7"
+            onClick={handleShowDiscountCard}
+          />
+        </div>
+      </Carousel>
+      {/* ---- */}
       <ToToop />
     </>
   );
