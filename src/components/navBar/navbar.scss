@@ -28,8 +28,8 @@ nav {
 }
 
 .navBar-wrap {
-  max-width: 144rem;
-  padding: 0px 135px;
+  max-width: 117rem;
+  padding: 0px 20px;
   margin: 0 auto;
   text-align: center;
 }
@@ -381,27 +381,7 @@ nav {
   height: calc(100vh - 100px);
 }
 
-@media screen and (max-width: 1440px) {
-  .navBar-wrap {
-    padding: 0px 100px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .navBar-wrap {
-    padding: 0px 70px;
-  }
-
-  .navBar-navigation-item {
-    padding: 0px 5px;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .navBar-navigation-item {
-    padding: 0px 5px;
-  }
-
+@media screen and (max-width: 1199.98px) {
   .navBar-navigation-item-txt {
     display: none;
   }
@@ -418,19 +398,21 @@ nav {
   #member-sideBar {
     display: block;
   }
-}
-
-@media screen and (max-width: 768px) {
-  .navBar-wrap {
-    padding: 0px 50px;
+  .navBar-navigation-item {
+    padding: 0px 5px;
   }
 }
 
-@media screen and (max-width: 576px) {
-  .navBar-wrap {
-    padding: 0px 20px;
+@media screen and (max-width: 991.98px) {
+  .navBar-navigation-item {
+    padding: 0px 5px;
   }
+}
 
+@media screen and (max-width: 767.98px) {
+}
+
+@media screen and (max-width: 575.98px) {
   .navBar-logo {
     width: 100px;
   }
