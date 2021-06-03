@@ -4,8 +4,8 @@ import { Carousel } from 'antd';
 import { Link } from 'react-router-dom';
 import ItemsCarousel from 'react-items-carousel';
 import { Container } from 'react-bootstrap';
-import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
+import MultiCarousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 import titleLeft from 'assets/svg/titleLeft.svg';
 import titleRight from 'assets/svg/titleRight.svg';
@@ -72,6 +72,29 @@ const data = {
     永和區: '800',
     中和區: '1000',
     三重區: '1500',
+  },
+};
+
+const MultiCarouselResponsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 1920, min: 1199.99 },
+    items: 5,
+  },
+  largeDesktop: {
+    breakpoint: { max: 1199.98, min: 991.99 },
+    items: 4,
+  },
+  desktop: {
+    breakpoint: { max: 991.98, min: 767.99 },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: { max: 767.98, min: 575.99 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 575.98, min: 0 },
+    items: 2,
   },
 };
 
@@ -657,7 +680,10 @@ function HomePage(props) {
         className="container-fluid homePage-p0"
       >
         <div id="homePage-discount-wrap" className="container">
-          <div className="row homePage-p0  d-flex justify-content-center">
+          <div
+            id="homePage-discount-area"
+            className="row homePage-p0  d-flex justify-content-center"
+          >
             <AreaTitle
               title="專屬優惠"
               className={'homePage-areaTitle'}
@@ -791,94 +817,68 @@ function HomePage(props) {
                 </DiscountCard>
               )}
             </div>
-            <div className="mt-5">
-              <div className="img-wrap d-flex justify-content-center align-items-center">
-                <div className="homePage-event-hideArrowL"></div>
-                <div
-                  className="homePage-img-select"
-                  style={{
-                    padding: '0 0px',
-                    maxWidth: 900,
-                    margin: '0 auto',
-                  }}
-                >
-                  <ItemsCarousel
-                    infiniteLoop={false}
-                    requestToChangeActive={setActiveItemIndex}
-                    activeItemIndex={activeItemIndex}
-                    gutter={20}
-                    activePosition={'center'}
-                    chevronWidth={60}
-                    disableSwipe={true}
-                    alwaysShowChevrons={false}
-                    numberOfCards={4}
-                    slidesToScroll={1}
-                    outsideChevron={true}
-                    showSlither={false}
-                    firstAndLastGutter={false}
-                    rightChevron={<ArrowRight />}
-                    leftChevron={<ArrowLeft />}
-                  >
-                    <div className="img-row">
-                      <img
-                        alt=""
-                        src={discountImage1}
-                        id="homePage-discountCard-1"
-                        onClick={handleShowDiscountCard}
-                      />
-                    </div>
-                    <div className="img-row">
-                      <div className="img-row-infor"></div>
-                      <img
-                        alt=""
-                        src={discountImage2}
-                        id="homePage-discountCard-2"
-                        onClick={handleShowDiscountCard}
-                      />
-                    </div>
-                    <div className="img-row">
-                      <img
-                        alt=""
-                        src={discountImage3}
-                        id="homePage-discountCard-3"
-                        onClick={handleShowDiscountCard}
-                      />
-                    </div>
-                    <div className="img-row">
-                      <img
-                        alt=""
-                        src={discountImage4}
-                        id="homePage-discountCard-4"
-                        onClick={handleShowDiscountCard}
-                      />
-                    </div>
-                    <div className="img-row">
-                      <img
-                        alt=""
-                        src={discountImage5}
-                        id="homePage-discountCard-5"
-                        onClick={handleShowDiscountCard}
-                      />
-                    </div>
-                    <div className="img-row">
-                      <img
-                        alt=""
-                        src={discountImage6}
-                        id="homePage-discountCard-6"
-                        onClick={handleShowDiscountCard}
-                      />
-                    </div>
-                    <div className="img-row">
-                      <img
-                        alt=""
-                        src={discountImage7}
-                        id="homePage-discountCard-7"
-                        onClick={handleShowDiscountCard}
-                      />
-                    </div>
-                  </ItemsCarousel>
+            <div id="homePage-discount-BrainCarousel" className="mt-5">
+              <MultiCarousel
+                infinite={true}
+                responsive={MultiCarouselResponsive}
+              >
+                <div className="img-row">
+                  <img
+                    alt=""
+                    src={discountImage1}
+                    id="homePage-discountCard-1"
+                    onClick={handleShowDiscountCard}
+                  />
                 </div>
-              </div>
+                <div className="img-row">
+                  <img
+                    alt=""
+                    src={discountImage2}
+                    id="homePage-discountCard-2"
+                    onClick={handleShowDiscountCard}
+                  />
+                </div>
+                <div className="img-row">
+                  <img
+                    alt=""
+                    src={discountImage3}
+                    id="homePage-discountCard-3"
+                    onClick={handleShowDiscountCard}
+                  />
+                </div>
+                <div className="img-row">
+                  <img
+                    alt=""
+                    src={discountImage4}
+                    id="homePage-discountCard-4"
+                    onClick={handleShowDiscountCard}
+                  />
+                </div>
+                <div className="img-row">
+                  <img
+                    alt=""
+                    src={discountImage5}
+                    id="homePage-discountCard-5"
+                    onClick={handleShowDiscountCard}
+                  />
+                </div>
+                <div className="img-row">
+                  <img
+                    alt=""
+                    src={discountImage6}
+                    id="homePage-discountCard-6"
+                    onClick={handleShowDiscountCard}
+                  />
+                </div>
+                <div className="img-row">
+                  <img
+                    alt=""
+                    src={discountImage7}
+                    id="homePage-discountCard-7"
+                    onClick={handleShowDiscountCard}
+                  />
+                </div>
+              </MultiCarousel>
             </div>
           </div>
         </div>
@@ -1142,97 +1142,7 @@ function HomePage(props) {
       </section>
 
       {/* ---- */}
-      <Carousel
-        plugins={[
-          'arrows',
-          {
-            resolve: slidesToShowPlugin,
-            options: {
-              numberOfSlides: 3,
-            },
-          },
-        ]}
-        breakpoints={{
-          640: {
-            plugins: [
-              {
-                resolve: slidesToShowPlugin,
-                options: {
-                  numberOfSlides: 1,
-                },
-              },
-            ],
-          },
-          900: {
-            plugins: [
-              {
-                resolve: slidesToShowPlugin,
-                options: {
-                  numberOfSlides: 2,
-                },
-              },
-            ],
-          },
-        }}
-      >
-        <div className="img-row">
-          <img
-            alt=""
-            src={discountImage1}
-            id="homePage-discountCard-1"
-            onClick={handleShowDiscountCard}
-          />
-        </div>
-        <div className="img-row">
-          <div className="img-row-infor"></div>
-          <img
-            alt=""
-            src={discountImage2}
-            id="homePage-discountCard-2"
-            onClick={handleShowDiscountCard}
-          />
-        </div>
-        <div className="img-row">
-          <img
-            alt=""
-            src={discountImage3}
-            id="homePage-discountCard-3"
-            onClick={handleShowDiscountCard}
-          />
-        </div>
-        <div className="img-row">
-          <img
-            alt=""
-            src={discountImage4}
-            id="homePage-discountCard-4"
-            onClick={handleShowDiscountCard}
-          />
-        </div>
-        <div className="img-row">
-          <img
-            alt=""
-            src={discountImage5}
-            id="homePage-discountCard-5"
-            onClick={handleShowDiscountCard}
-          />
-        </div>
-        <div className="img-row">
-          <img
-            alt=""
-            src={discountImage6}
-            id="homePage-discountCard-6"
-            onClick={handleShowDiscountCard}
-          />
-        </div>
-        <div className="img-row">
-          <img
-            alt=""
-            src={discountImage7}
-            id="homePage-discountCard-7"
-            onClick={handleShowDiscountCard}
-          />
-        </div>
-      </Carousel>
+      <div style={{ margin: 'auto' }}></div>
       {/* ---- */}
       <ToToop />
     </>

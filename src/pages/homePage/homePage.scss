@@ -916,16 +916,24 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   width: 100%;
 }
 
-#homePage-discount-wrap{
+#homePage-discount-wrap {
   padding: 30px 15px;
+}
+
+#homePage-discount-area{
+  width: 100%;
 }
 
 #homePage-DiscountCards {
   height: 475px;
 }
 
-#homePage-DiscountCard{
+#homePage-DiscountCard {
   height: 100%;
+}
+
+#homePage-discount-BrainCarousel{
+  width: 100%;
 }
 
 #homePage-event-img {
@@ -993,8 +1001,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 .homePage-img-select {
-  width: 140rem;
-  height: 17rem;
+  width: 700px;
+  // height: 17rem;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .img-row {
@@ -1005,7 +1015,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 .img-row > img {
   width: 17rem;
   height: 17rem;
-  // border: 1px solid #ccc;
   border-radius: 20px;
   margin: auto;
   cursor: pointer;
