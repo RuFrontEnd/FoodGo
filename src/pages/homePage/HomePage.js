@@ -569,7 +569,7 @@ function HomePage(props) {
               className="homePage-intro-title"
             ></div>
             <div className="homePage-intro-text mt-5">
-              <p>“拾餐”讓您和您的親朋好友更容易揪團</p>
+              <p>"拾餐"讓您和您的親朋好友更容易揪團</p>
               <p>您不需要為了訂哪一種口味的餐點</p>
               <p>而在費心的喬團友了</p>
               <p>有了點餐網址從此輕鬆選餐</p>
@@ -621,15 +621,14 @@ function HomePage(props) {
       </section>
 
       {/* 今日推薦 */}
-      <section className="container homePage-p0 homePage-recommend ">
-        <div className="homePage-recommend-wrap">
-          <div className="container flex-column homePage-p0">
+      <section className="container-fluid homePage-p0 homePage-recommend-container">
+        <div className="container homePage-recommend-wrap d-flex flex-column">
+          <div className="flex-column homePage-p0">
             {/* 今日推薦 */}
             <div className="row col-12 col-lg-6">
               <img style={{ width: '300rem' }} alt="" src={recommend} />
             </div>
           </div>
-
           {/* 商品卡片 */}
           <div
             id="homePage-recommend-card-container"

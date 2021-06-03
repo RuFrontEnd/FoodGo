@@ -585,8 +585,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 .homePage-IntroCard-1 {
-  padding-right: 0px;
-  margin-bottom: 20px;
+  padding-right: 15px;
 }
 
 #homePage-intro1-container {
@@ -831,6 +830,15 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   backdrop-filter: blur(3px);
 }
 
+// 今日推薦
+.homePage-recommend-container {
+  background: url("../../assets/svg/rice.svg") center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+}
+
+
 .homePage-recommend-wrap {
   margin: 4rem 0rem;
   width: 100%;
@@ -901,14 +909,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 .homePage-card-star {
   margin: 0px 2px;
   width: 1.4rem;
-}
-
-// 今日推薦
-.homePage-recommend {
-  background: url("../../assets/svg/rice.svg") center center no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  width: 100%;
 }
 
 // 專屬優惠
@@ -1798,6 +1798,11 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   .homePage-intro-title {
     width: 43rem;
     height: 12rem;
+  }
+
+  .homePage-IntroCard-1 {
+    padding-right: 0px;
+    margin-bottom: 20px;
   }
 }
 
