@@ -110,6 +110,7 @@ function HomePage(props) {
   const [featureTriangleClassName, setFeatureTriangleClassName] = useState(
     'homePage-index-feature-triangle-active-farmer'
   );
+  const [showDiscountCard, setShowDiscountCard] = useState('discountCard-1');
 
   useEffect(() => {
     setShowBar(true);
@@ -187,52 +188,10 @@ function HomePage(props) {
   window.addEventListener('scroll', downloadIcon);
 
   //活動牆
-  function event1C() {
-    document.querySelector('.homePage-event-img').style =
-      'background: url("./Images/Images/event1.png") center center no-repeat;background-size: cover';
-    document.querySelector('.homePage-event-title1').style = 'display:block';
-    document.querySelector('.homePage-event-title2').style = 'display:none';
-    document.querySelector('.homePage-event-title3').style = 'display:none';
-    document.querySelector('.homePage-event-content1').style = 'display:block';
-    document.querySelector('.homePage-event-content2').style = 'display:none';
-    document.querySelector('.homePage-event-content3').style = 'display:none';
-  }
-  function event2C() {
-    document.querySelector('.homePage-event-img').style =
-      'background: url("./Images/Images/event2.jpg") center center no-repeat;background-size: cover';
-    document.querySelector('.homePage-event-title2').style = 'display:block';
-    document.querySelector('.homePage-event-title3').style = 'display:none';
-    document.querySelector('.homePage-event-title1').style = 'display:none';
-    document.querySelector('.homePage-event-content2').style = 'display:block';
-    document.querySelector('.homePage-event-content3').style = 'display:none';
-    document.querySelector('.homePage-event-content1').style = 'display:none';
-  }
-  function event3C() {
-    document.querySelector('.homePage-event-img').style =
-      'background: url("./Images/Images/event3.jpg") center center no-repeat;background-size: cover';
-    document.querySelector('.homePage-event-title3').style = 'display:block';
-    document.querySelector('.homePage-event-title2').style = 'display:none';
-    document.querySelector('.homePage-event-title1').style = 'display:none';
-    document.querySelector('.homePage-event-content3').style = 'display:block';
-    document.querySelector('.homePage-event-content2').style = 'display:none';
-    document.querySelector('.homePage-event-content1').style = 'display:none';
-  }
-  function event4C() {
-    document.querySelector('.homePage-event-img').style =
-      'background: url("./Images/Images/event4.jpg") center center no-repeat;background-size: cover';
-  }
-  function event5C() {
-    document.querySelector('.homePage-event-img').style =
-      'background: url("./Images/Images/event5.jpg") center center no-repeat;background-size: cover';
-  }
-  function event6C() {
-    document.querySelector('.homePage-event-img').style =
-      'background: url("./Images/Images/event6.jpg") center center no-repeat;background-size: cover';
-  }
-  function event7C() {
-    document.querySelector('.homePage-event-img').style =
-      'background: url("./Images/Images/event7.png") center center no-repeat;background-size: cover';
-  }
+  const handleShowDiscountCard = (e) => {
+    const clickId = e.target.id.replace('homePage-', '');
+    setShowDiscountCard(clickId);
+  };
 
   //地圖顯示外送金額及自取門市
   const hideInfo = () => {
@@ -697,171 +656,225 @@ function HomePage(props) {
       >
         <div id="homePage-discount-wrap" className="container">
           <div className="row homePage-p0  d-flex justify-content-center">
-            {/* 專屬優惠標題 */}
             <AreaTitle
               title="專屬優惠"
               className={'homePage-areaTitle'}
             ></AreaTitle>
-            {/* 活動卡片 */}
-            <div className="container">
-              <div className="row">
-                <div className="col-12 d-flex justify-content-center">
-                  <DiscountCard
-                    image={discountImage3}
-                    title={'網購消費'}
-                    viceTitle={'指定品項滿額享優惠'}
-                    date={'2020.11.1~2020.12.31'}
-                    linkTo={'/productList'}
+            <div
+              id="homePage-DiscountCards"
+              className="col-12 d-flex justify-content-center"
+            >
+              {showDiscountCard === 'discountCard-1' && (
+                <DiscountCard
+                  className={'homePage-DiscountCard'}
+                  image={discountImage1}
+                  title={'現在訂購'}
+                  viceTitle={'就送 Blender Bottle 搖搖杯'}
+                  date={'2020.11.1~2020.12.31'}
+                  linkTo={'/productList'}
+                >
+                  <p>環保，才是歷久不衰的流行。</p>
+                  <p>現在訂購，就送Blender Bottle搖搖杯</p>
+                  <p>你可以這樣做，輕鬆拿到限量搖搖杯！</p>
+                  <p>訂20個 期間限定百元餐盒</p>
+                  <p>包兩週 外送宅配到公司</p>
+                </DiscountCard>
+              )}
+              {showDiscountCard === 'discountCard-2' && (
+                <DiscountCard
+                  className={'homePage-DiscountCard'}
+                  image={discountImage2}
+                  title={'火熱上架！'}
+                  viceTitle={'下週百元餐盒，三天、三種限定主菜！'}
+                  date={'2020.11.1~2020.12.31'}
+                  linkTo={'/productList'}
+                >
+                  <p>下週百元餐盒，三天、三種限定主菜！</p>
+                  <p>蒜泥厲害豬五花、海灘慢烤味噌魚、海灘橄欖油蔥雞腿</p>
+                  <p>
+                    餐盒使用低GI糙米紫米飯、新鮮季節時蔬、超甜66號地瓜、輕滷蛋
+                  </p>
+                  <p>吃午餐再也不是負擔</p>
+                  <p>血糖不會驟升陡降、下午不再昏昏欲睡</p>
+                </DiscountCard>
+              )}
+              {showDiscountCard === 'discountCard-3' && (
+                <DiscountCard
+                  className={'homePage-DiscountCard'}
+                  image={discountImage3}
+                  title={'網購消費'}
+                  viceTitle={'指定品項滿額享優惠'}
+                  date={'2020.11.1~2020.12.31'}
+                  linkTo={'/productList'}
+                >
+                  <p>12/31前，網購消費指定品項滿$500元，回饋$100！</p>
+                  <p>活動辦法：</p>
+                  <p className="homePage-discountCard-text">
+                    7/1起，於拾餐網站單筆消費指定品項滿$500元(常溫/冷凍/冷藏訂單分開計算)，即可獲得乙張$100電子優惠券，消費滿$2,500(含)以上，獲貳張$250電子優惠券。
+                  </p>
+                  <p>* 以線上結帳付款之訂單，需完成付款，訂單才算成立。</p>
+                  <p>* 已取消之訂單，將失去本活動之資格。</p>
+                </DiscountCard>
+              )}
+              {showDiscountCard === 'discountCard-4' && (
+                <DiscountCard
+                  className={'homePage-DiscountCard'}
+                  image={discountImage4}
+                  title={'網購消費'}
+                  viceTitle={'指定品項滿額享優惠'}
+                  date={'2020.11.1~2020.12.31'}
+                  linkTo={'/productList'}
+                >
+                  <p>12/31前，網購消費指定品項滿$500元，回饋$100！</p>
+                  <p>活動辦法：</p>
+                  <p className="homePage-discountCard-text">
+                    7/1起，於拾餐網站單筆消費指定品項滿$500元(常溫/冷凍/冷藏訂單分開計算)，即可獲得乙張$100電子優惠券，消費滿$2,500(含)以上，獲貳張$250電子優惠券。
+                  </p>
+                  <p>* 以線上結帳付款之訂單，需完成付款，訂單才算成立。</p>
+                  <p>* 已取消之訂單，將失去本活動之資格。</p>
+                </DiscountCard>
+              )}
+              {showDiscountCard === 'discountCard-5' && (
+                <DiscountCard
+                  className={'homePage-DiscountCard'}
+                  image={discountImage5}
+                  title={'網購消費'}
+                  viceTitle={'指定品項滿額享優惠'}
+                  date={'2020.11.1~2020.12.31'}
+                  linkTo={'/productList'}
+                >
+                  <p>12/31前，網購消費指定品項滿$500元，回饋$100！</p>
+                  <p>活動辦法：</p>
+                  <p className="homePage-discountCard-text">
+                    7/1起，於拾餐網站單筆消費指定品項滿$500元(常溫/冷凍/冷藏訂單分開計算)，即可獲得乙張$100電子優惠券，消費滿$2,500(含)以上，獲貳張$250電子優惠券。
+                  </p>
+                  <p>* 以線上結帳付款之訂單，需完成付款，訂單才算成立。</p>
+                  <p>* 已取消之訂單，將失去本活動之資格。</p>
+                </DiscountCard>
+              )}
+              {showDiscountCard === 'discountCard-6' && (
+                <DiscountCard
+                  className={'homePage-DiscountCard'}
+                  image={discountImage6}
+                  title={'網購消費'}
+                  viceTitle={'指定品項滿額享優惠'}
+                  date={'2020.11.1~2020.12.31'}
+                  linkTo={'/productList'}
+                >
+                  <p>12/31前，網購消費指定品項滿$500元，回饋$100！</p>
+                  <p>活動辦法：</p>
+                  <p className="homePage-discountCard-text">
+                    7/1起，於拾餐網站單筆消費指定品項滿$500元(常溫/冷凍/冷藏訂單分開計算)，即可獲得乙張$100電子優惠券，消費滿$2,500(含)以上，獲貳張$250電子優惠券。
+                  </p>
+                  <p>* 以線上結帳付款之訂單，需完成付款，訂單才算成立。</p>
+                  <p>* 已取消之訂單，將失去本活動之資格。</p>
+                </DiscountCard>
+              )}
+              {showDiscountCard === 'discountCard-7' && (
+                <DiscountCard
+                  className={'homePage-DiscountCard'}
+                  image={discountImage7}
+                  title={'網購消費'}
+                  viceTitle={'指定品項滿額享優惠'}
+                  date={'2020.11.1~2020.12.31'}
+                  linkTo={'/productList'}
+                >
+                  <p>12/31前，網購消費指定品項滿$500元，回饋$100！</p>
+                  <p>活動辦法：</p>
+                  <p className="homePage-discountCard-text">
+                    7/1起，於拾餐網站單筆消費指定品項滿$500元(常溫/冷凍/冷藏訂單分開計算)，即可獲得乙張$100電子優惠券，消費滿$2,500(含)以上，獲貳張$250電子優惠券。
+                  </p>
+                  <p>* 以線上結帳付款之訂單，需完成付款，訂單才算成立。</p>
+                  <p>* 已取消之訂單，將失去本活動之資格。</p>
+                </DiscountCard>
+              )}
+            </div>
+            <div className="col-12 mt-5">
+              <div className="img-wrap d-flex justify-content-center align-items-center">
+                <div className="homePage-event-hideArrowL"></div>
+                <div
+                  className="homePage-img-select"
+                  style={{
+                    padding: '0 0px',
+                    maxWidth: 900,
+                    margin: '0 auto',
+                  }}
+                >
+                  <ItemsCarousel
+                    infiniteLoop={false}
+                    requestToChangeActive={setActiveItemIndex}
+                    activeItemIndex={activeItemIndex}
+                    gutter={20}
+                    activePosition={'center'}
+                    chevronWidth={60}
+                    disableSwipe={true}
+                    alwaysShowChevrons={false}
+                    numberOfCards={4}
+                    slidesToScroll={1}
+                    outsideChevron={true}
+                    showSlither={false}
+                    firstAndLastGutter={false}
+                    rightChevron={<ArrowRight />}
+                    leftChevron={<ArrowLeft />}
                   >
-                    <p>
-                      12/31前，網購消費指定品項滿$500元，回饋$100！
-                    </p>
-                    <p>活動辦法：</p>
-                    <p className="homePage-discountCard-text">
-                      7/1起，於拾餐網站單筆消費指定品項滿$500元(常溫/冷凍/冷藏訂單分開計算)，即可獲得乙張$100電子優惠券，消費滿$2,500(含)以上，獲貳張$250電子優惠券。
-                    </p>
-                    <p>* 以線上結帳付款之訂單，需完成付款，訂單才算成立。</p>
-                    <p>* 已取消之訂單，將失去本活動之資格。</p>
-                  </DiscountCard>
-                  {/* <div id="homePage-event" className="d-flex">
-                    <div id="homePage-event-img"></div>
-                    <div
-                      id="homePage-event-text"
-                      className="text-center m-auto"
-                    >
-                      <div className="homePage-event-title homePage-event-title1 mb-5">
-                        <p>現在訂購</p>
-                        <p>就送 Blender Bottle 搖搖杯</p>
-                      </div>
-                      <div className="homePage-event-title homePage-event-title2 mb-5">
-                        <p>火熱上架！</p>
-                        <p>下週百元餐盒，三天、三種限定主菜！</p>
-                      </div>
-                      <div className="homePage-event-title homePage-event-title3 mb-5">
-                        <p>網購消費</p>
-                        <p>指定品項滿額享優惠</p>
-                      </div>
-                      <div className="homePage-event-content  homePage-event-content1 mt-3">
-                        <p>環保，才是歷久不衰的流行。</p>
-                        <p>現在訂購，就送Blender Bottle搖搖杯</p>
-                        <br />
-                        <br />
-                        <p>你可以這樣做，輕鬆拿到限量搖搖杯！</p>
-                        <br />
-                        <br />
-                        <p>訂20個 期間限定百元餐盒</p>
-                        <p>包兩週 外送宅配到公司</p>
-                        <br />
-                        <br />
-                        <Link
-                          style={{ 'text-decoration': 'none' }}
-                          to="/productList"
-                        >
-                          <p className="homePage-call-to-action">馬上訂購</p>
-                        </Link>
-                      </div>
-                      <div className="homePage-event-content  homePage-event-content2 mt-3">
-                        <p>下週百元餐盒，三天、三種限定主菜！</p>
-                        <p>蒜泥厲害豬五花、海灘慢烤味噌魚、海灘橄欖油蔥雞腿</p>
-                        <br />
-                        <br />
-                        <p>
-                          餐盒使用低GI糙米紫米飯、新鮮季節時蔬、超甜66號地瓜、輕滷蛋
-                        </p>
-                        <br />
-                        <br />
-                        <p>吃午餐再也不是負擔</p>
-                        <p>血糖不會驟升陡降、下午不再昏昏欲睡</p>
-                        <br />
-                        <br />
-                        <Link
-                          style={{ 'text-decoration': 'none' }}
-                          to="/productList"
-                        >
-                          <p className="homePage-call-to-action">來去餐點</p>
-                        </Link>
-                      </div>
-                      <div className="homePage-event-content  homePage-event-content3 mt-3">
-                        <p>12/31前，網購消費指定品項滿$500元，回饋$100！</p>
-                        <br />
-                        <p>活動辦法：</p>
-                        <p>
-                          7/1起，於拾餐網站單筆消費指定品項滿$500元(常溫/冷凍/冷藏訂單分開計算)，即可獲得乙張$100電子優惠券，消費滿$2,500(含)以上，獲貳張$250電子優惠券。
-                        </p>
-                        <br />
-                        <br />
-                        <p>
-                          * 以線上結帳付款之訂單，需完成付款，訂單才算成立。
-                        </p>
-                        <p>* 已取消之訂單，將失去本活動之資格。</p>
-                        <br />
-                        <br />
-                        <Link
-                          style={{ 'text-decoration': 'none' }}
-                          to="/productList"
-                        >
-                          <p className="homePage-call-to-action">來去餐點</p>
-                        </Link>
-                      </div>
-                      <div className="homePage-event-date">
-                        活動日期：2020.11.1~2020.12.31
-                      </div>
+                    <div className="img-row">
+                      <img
+                        alt=""
+                        src={discountImage1}
+                        id="homePage-discountCard-1"
+                        onClick={handleShowDiscountCard}
+                      />
                     </div>
-                  </div> */}
-                </div>
-                <div className="col-12 mt-5 ">
-                  <div className="img-wrap d-flex justify-content-center align-items-center">
-                    <div className="homePage-event-hideArrowL"></div>
-                    <div
-                      className="homePage-img-select"
-                      style={{
-                        padding: '0 0px',
-                        maxWidth: 900,
-                        margin: '0 auto',
-                      }}
-                    >
-                      <ItemsCarousel
-                        infiniteLoop={false}
-                        requestToChangeActive={setActiveItemIndex}
-                        activeItemIndex={activeItemIndex}
-                        gutter={20}
-                        activePosition={'center'}
-                        chevronWidth={60}
-                        disableSwipe={true}
-                        alwaysShowChevrons={false}
-                        numberOfCards={4}
-                        slidesToScroll={1}
-                        outsideChevron={true}
-                        showSlither={false}
-                        firstAndLastGutter={false}
-                        rightChevron={<ArrowRight />}
-                        leftChevron={<ArrowLeft />}
-                      >
-                        <div onClick={event1C} className="img-row">
-                          <img alt="" src={event1} />
-                        </div>
-                        <div onClick={event2C} className="img-row">
-                          <div className="img-row-infor"></div>
-                          <img alt="" src={event2} />
-                        </div>
-                        <div onClick={event3C} className="img-row">
-                          <img alt="" src={event3} />
-                        </div>
-                        <div onClick={event4C} className="img-row">
-                          <img alt="" src={event4} />
-                        </div>
-                        <div onClick={event5C} className="img-row">
-                          <img alt="" src={event5} />
-                        </div>
-                        <div onClick={event6C} className="img-row">
-                          <img alt="" src={event6} />
-                        </div>
-                        <div onClick={event7C} className="img-row">
-                          <img alt="" src={event7} />
-                        </div>
-                      </ItemsCarousel>
+                    <div className="img-row">
+                      <div className="img-row-infor"></div>
+                      <img
+                        alt=""
+                        src={discountImage2}
+                        id="homePage-discountCard-2"
+                        onClick={handleShowDiscountCard}
+                      />
                     </div>
-                  </div>
+                    <div className="img-row">
+                      <img
+                        alt=""
+                        src={discountImage3}
+                        id="homePage-discountCard-3"
+                        onClick={handleShowDiscountCard}
+                      />
+                    </div>
+                    <div className="img-row">
+                      <img
+                        alt=""
+                        src={discountImage4}
+                        id="homePage-discountCard-4"
+                        onClick={handleShowDiscountCard}
+                      />
+                    </div>
+                    <div className="img-row">
+                      <img
+                        alt=""
+                        src={discountImage5}
+                        id="homePage-discountCard-5"
+                        onClick={handleShowDiscountCard}
+                      />
+                    </div>
+                    <div className="img-row">
+                      <img
+                        alt=""
+                        src={discountImage6}
+                        id="homePage-discountCard-6"
+                        onClick={handleShowDiscountCard}
+                      />
+                    </div>
+                    <div className="img-row">
+                      <img
+                        alt=""
+                        src={discountImage7}
+                        id="homePage-discountCard-7"
+                        onClick={handleShowDiscountCard}
+                      />
+                    </div>
+                  </ItemsCarousel>
                 </div>
               </div>
             </div>

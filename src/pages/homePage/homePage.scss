@@ -914,7 +914,14 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 #homePage-discount-container {
   background-color: $skin;
   width: 100%;
-  height: 80rem;
+}
+
+#homePage-DiscountCards {
+  height: 500px;
+}
+
+#homePage-DiscountCard{
+  height: 100%;
 }
 
 #homePage-event-img {
