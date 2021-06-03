@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import 'components/customBento/customBento.scss';
+import MultiCarousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import RuArrowLeft from 'Ru/Components/RuArrowLeft/RuArrowLeft';
 import RuArrowRight from 'Ru/Components/RuArrowRight/RuArrowRight';
 import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
@@ -125,6 +127,25 @@ function CustomBento(props) {
   // 開始拖曳品項
   const handleDragFoodItem = (e) => {
     e.dataTransfer.setData('text/plain', e.target.dataset.sid);
+  };
+
+  const MultiCarouselResponsive = {
+    desktop: {
+      breakpoint: { max: 1920, min: 1199.99 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1199.98, min: 991.99 },
+      items: 3,
+    },
+    tabletMini: {
+      breakpoint: { max: 991.98, min: 575.99 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 575.98, min: 0 },
+      items: 1,
+    },
   };
 
   // 品項放到目標容器
@@ -731,19 +752,12 @@ function CustomBento(props) {
                   />
                 </div>
               </div>
-              <Carousel
-                id={'customBento-carousel'}
-                CarouselItems={foodItems}
-                width={1000}
-                buttonSize={100}
-                breakpoints={{
-                  s: { point: 576, width: 480, btnsize: 100 },
-                  m: { point: 768, width: 660, btnsize: 100 },
-                  l: { point: 1024, width: 800, btnsize: 100 },
-                  xl: { point: 1200, width: 960, btnsize: 100 },
-                  xxl: { point: 1440, width: 1170, btnsize: 100 },
-                }}
-              />
+              <MultiCarousel
+                infinite={true}
+                responsive={MultiCarouselResponsive}
+              >
+                {foodItems.map((foodItem) => foodItem)}
+              </MultiCarousel>
             </div>
           </div>
           {/* rwd 詳細資訊 s */}
