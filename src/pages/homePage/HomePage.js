@@ -105,6 +105,12 @@ const DiscountCardPaddings = [
   { breakpoint: { max: 991.98, min: 767.99 }, paddingHorizental: 20 },
 ];
 
+const stepCircleResponsive = [
+  { breakpoint: { max: 1199.98, min: 991.99 }, svgSize: 100, fontSize: 20 },
+  // { breakpoint: { max: 991.98, min: 767.99 }, svgSize: 80, fontSize: 18 },
+  // { breakpoint: { max: 575.98, min: 0 }, svgSize: 60, fontSize: 16 },
+];
+
 const datacountries = Object.getOwnPropertyNames(data);
 // console.log('datacountries:', datacountries)
 const datatownships = datacountries.map((v, i, array) =>
@@ -929,15 +935,35 @@ function HomePage(props) {
                 id="homePage-steps"
                 className="container homePage-p0 homePage-step-circle d-flex justify-content-between"
               >
-                <StepCircle img={stepImage1} title={'選購商品'} />
+                <StepCircle
+                  img={stepImage1}
+                  title={'選購商品'}
+                  responsives={stepCircleResponsive}
+                />
                 <img alt="" src={stepArrow} />
-                <StepCircle img={stepImage2} title={'加入購物車'} />
+                <StepCircle
+                  img={stepImage2}
+                  title={'加入購物車'}
+                  responsives={stepCircleResponsive}
+                />
                 <img alt="" src={stepArrow} />
-                <StepCircle img={stepImage3} title={'會員登入'} />
+                <StepCircle
+                  img={stepImage3}
+                  title={'會員登入'}
+                  responsives={stepCircleResponsive}
+                />
                 <img alt="" src={stepArrow} />
-                <StepCircle img={stepImage4} title={'確認結帳'} />
+                <StepCircle
+                  img={stepImage4}
+                  title={'確認結帳'}
+                  responsives={stepCircleResponsive}
+                />
                 <img alt="" src={stepArrow} />
-                <StepCircle img={stepImage5} title={'領取餐點'} />
+                <StepCircle
+                  img={stepImage5}
+                  title={'領取餐點'}
+                  responsives={stepCircleResponsive}
+                />
               </div>
             </div>
           </div>

@@ -36,6 +36,8 @@ function DiscountCard(props) {
     };
   });
 
+  console.log('paddings', paddings);
+
   // bellow which width shows straight mode
   const StraightModeWidth = Object.values(StraightMode)[0];
   let StraightStyles = {};
