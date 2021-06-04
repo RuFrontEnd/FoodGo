@@ -36,6 +36,11 @@ import discountImage3 from 'assets/jpg/event3.jpg';
 import discountImage4 from 'assets/jpg/event4.jpg';
 import discountImage5 from 'assets/jpg/event5.jpg';
 import discountImage6 from 'assets/jpg/event6.jpg';
+import stepImage1 from 'assets/svg/step1.svg';
+import stepImage2 from 'assets/svg/step2.svg';
+import stepImage3 from 'assets/svg/step3.svg';
+import stepImage4 from 'assets/svg/step4.svg';
+import stepImage5 from 'assets/svg/step5.svg';
 
 import customVideo from 'assets/mp4/customFinalVideo.mp4';
 
@@ -50,6 +55,7 @@ import RecommendCard from 'components/recommendCard/RecommendCard';
 import IntroCard from 'components/introCard/IntroCard';
 import ArticleCard from 'components/articleCard/ArticleCard';
 import DiscountCard from 'components/discountCard/DiscountCard';
+import StepCircle from 'components/stepCircle/StepCircle';
 
 const data = {
   台北市: {
@@ -908,14 +914,14 @@ function HomePage(props) {
       {/* 背景圖 */}
       <section className="container-fluid homePage-p0 homePage-shopping-process m-0">
         {/* 模糊效果 */}
-        <div className="homePage-blur d-flex align-items-center">
+        <div id="homePage-blur" className="d-flex align-items-center">
           {/* 黑灰文字區塊 */}
           <div className="homePage-p0 homePage-black-blur">
             <div className="d-flex justify-content-center align-items-center flex-column">
               {/* 購物流程標題-淺色 */}
               <AreaTitle
                 title="購物流程"
-                className={'homePage-areaTitle'}
+                className={'homePage-step-areaTitle'}
                 isLightMode={true}
               ></AreaTitle>
               {/* 五個步驟 */}
@@ -923,35 +929,15 @@ function HomePage(props) {
                 id="homePage-steps"
                 className="container homePage-p0 homePage-step-circle d-flex justify-content-between"
               >
-                {/* step1 */}
-                <div className="homePage-step1 d-flex flex-wrap justify-content-center align-items-center">
-                  <div className="homePage-step1-icon"></div>
-                  <p>選購商品</p>
-                </div>
+                <StepCircle img={stepImage1} title={'選購商品'} />
                 <img alt="" src={stepArrow} />
-                {/* step2 */}
-                <div className="homePage-step2 d-flex flex-wrap justify-content-center align-items-center">
-                  <div className="homePage-step2-icon"></div>
-                  <p className="">加入購物車</p>
-                </div>
+                <StepCircle img={stepImage2} title={'加入購物車'} />
                 <img alt="" src={stepArrow} />
-                {/* step3 */}
-                <div className="homePage-step3 d-flex flex-wrap justify-content-center align-items-center">
-                  <div className="homePage-step3-icon"></div>
-                  <p>會員登入</p>
-                </div>
+                <StepCircle img={stepImage3} title={'會員登入'} />
                 <img alt="" src={stepArrow} />
-                {/* step4 */}
-                <div className="homePage-step4 d-flex flex-wrap justify-content-center align-items-center">
-                  <div className="homePage-step4-icon"></div>
-                  <p>確認結帳</p>
-                </div>
+                <StepCircle img={stepImage4} title={'確認結帳'} />
                 <img alt="" src={stepArrow} />
-                {/* step5 */}
-                <div className="homePage-step5 d-flex flex-wrap justify-content-center align-items-center">
-                  <div className="homePage-step5-icon"></div>
-                  <p>領取餐點</p>
-                </div>
+                <StepCircle img={stepImage5} title={'領取餐點'} />
               </div>
             </div>
           </div>

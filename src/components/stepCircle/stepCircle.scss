@@ -1,0 +1,18 @@
+@import "variable/variable.scss";
+
+#stepCircle-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#stepCircle-wrap > img {
+    width: 12rem;
+    height: 12rem;
+    margin-bottom: 10px;
+}
+
+#stepCircle-wrap > p {
+    font-size: 20px;
+    color: $light-Beige;
+}
