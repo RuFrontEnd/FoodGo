@@ -106,9 +106,7 @@ const DiscountCardPaddings = [
 ];
 
 const stepCircleResponsive = [
-  { breakpoint: { max: 1199.98, min: 991.99 }, svgSize: 100, fontSize: 20 },
-  // { breakpoint: { max: 991.98, min: 767.99 }, svgSize: 80, fontSize: 18 },
-  // { breakpoint: { max: 575.98, min: 0 }, svgSize: 60, fontSize: 16 },
+  { breakpoint: { max: 991.98, min: 767.99 }, svgSize: 100, fontSize: 18 },
 ];
 
 const datacountries = Object.getOwnPropertyNames(data);
@@ -940,25 +938,25 @@ function HomePage(props) {
                   title={'選購商品'}
                   responsives={stepCircleResponsive}
                 />
-                <img alt="" src={stepArrow} />
+                <img className="homePage-stepArrow" src={stepArrow} />
                 <StepCircle
                   img={stepImage2}
                   title={'加入購物車'}
                   responsives={stepCircleResponsive}
                 />
-                <img alt="" src={stepArrow} />
+                <img className="homePage-stepArrow" src={stepArrow} />
                 <StepCircle
                   img={stepImage3}
                   title={'會員登入'}
                   responsives={stepCircleResponsive}
                 />
-                <img alt="" src={stepArrow} />
+                <img className="homePage-stepArrow" src={stepArrow} />
                 <StepCircle
                   img={stepImage4}
                   title={'確認結帳'}
                   responsives={stepCircleResponsive}
                 />
-                <img alt="" src={stepArrow} />
+                <img className="homePage-stepArrow" src={stepArrow} />
                 <StepCircle
                   img={stepImage5}
                   title={'領取餐點'}
