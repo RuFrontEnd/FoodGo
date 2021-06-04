@@ -1090,13 +1090,12 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 .homePage-map {
   background-size: cover;
   width: 100%;
-  height: 75rem;
   position: relative;
   // 表單背景色
 }
 
-.homePage-map-form-bcc {
-  margin: 0;
+#homePage-map-form-bcc {
+  padding: 60px 15px;
 }
 
 .homePage-form-announce {
@@ -1111,6 +1110,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   font-family: "Noto Sans TC", sans-serif;
   font-weight: 400;
 }
+
 .homePage-map-results {
   color: $brown;
   font-size: 1.6rem;
@@ -1118,14 +1118,12 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   font-weight: 400;
 }
 
-.homePage-form-wrap2 {
-  width: 38rem;
+#homePage-adress-form-wrap {
+  width: 100%;
 }
 
-.homePage-adress-form-wrap {
-  margin-left: 2rem;
-  width: 38rem;
-  height: 52rem;
+.homepage-map-title > img {
+  width: 500px;
 }
 
 // 首頁select box
@@ -1481,9 +1479,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   margin: 60px 0px;
 }
 
-.homePage-map-view{
+.homePage-map-view {
   width: 100%;
   height: 100%;
+  margin-left: 15px;
 }
 
 .homePage-map-view iframe {
@@ -1641,6 +1640,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   .homepage-articleCard {
     margin-bottom: 50px;
   }
+
+  .homepage-map-title > img {
+    width: 350px;
+  }
 }
 
 @media screen and (max-width: 767.98px) {
@@ -1749,6 +1752,26 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   .homePage-stepArrow {
     transform: rotate(90deg);
     margin: 20px 0;
+  }
+
+  .homepage-map-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homepage-map-title > img {
+    width: 450px;
+  }
+
+  #homePage-map-form-bcc {
+    flex-direction: column;
+  }
+
+  .homePage-map-view {
+    margin-top: 50px;
+    margin-left: 0px;
+    height: 500px;
   }
 }
 

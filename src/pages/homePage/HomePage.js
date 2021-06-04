@@ -973,17 +973,19 @@ function HomePage(props) {
         className="container-fluid homePage-p0 homePage-map d-flex justify-content-center"
       >
         {/* 橘色底色 */}
-        <div className="container d-flex homePage-map-form-bcc">
+        <div id="homePage-map-form-bcc" className="container d-flex">
           <div className="flex-column homePage-map-form-wrap">
-            <br />
             {/* 標題 */}
-            <div className="mt-5">
-              <img style={{ height: '10rem' }} alt="" src={map1} />
+            <div className="homepage-map-title">
+              <img alt="" src={map1} />
               <br />
-              <img style={{ height: '10rem' }} alt="" src={map2} />
+              <img alt="" src={map2} />
             </div>
             {/* 表單 */}
-            <div className="homePage-adress-form-wrap d-flex justify-content-center align-items-center">
+            <div
+              id="homePage-adress-form-wrap"
+              className="d-flex justify-content-center align-items-center"
+            >
               <div className="homePage-form-wrap2 d-flex flex-column m-0">
                 <div className="mb-4">
                   <form name="homePage-adress-form" id="homePage-adress-form">
@@ -1001,7 +1003,6 @@ function HomePage(props) {
                             onChange={(e) => {
                               //將字串轉成數字
                               setCounty(+e.target.value);
-                              console.log('zqaza', +e.target.value);
                               //重置township的值
                               // setTownship(0)
                               setTownship(-1);
@@ -1061,18 +1062,6 @@ function HomePage(props) {
                     </div>
                     <br />
                     <div className="homePage-index-button float-right">
-                      <div
-                        style={{
-                          width: '3rem',
-                          height: '3rem',
-                          cursor: 'pointer',
-                          color: '#f7ede2',
-                        }}
-                        className="homePage-index-hide-demo float-left"
-                        onClick={(e) => setAddress('復興南路一段390號2樓')}
-                      >
-                        demo
-                      </div>
                       <button
                         onClick={showInfo}
                         type="button"
