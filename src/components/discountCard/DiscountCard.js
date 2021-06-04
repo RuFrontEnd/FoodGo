@@ -13,37 +13,34 @@ function DiscountCard(props) {
     linkTo = '/',
     date,
     children,
-    responsivePaddings,
+    responsivePaddings = [],
   } = props;
 
-  const styles = {
-    backgroundColor: 'red',
-    '@media(min-width: 1800px)': { backgroundColor: 'yellow' },
-  };
-
-  // console.log(responsivePaddings);
-
-  // const styles = responsivePaddings.map((responsivePadding) => {
-  //   const keys = Object.values(responsivePadding.breakpoint);
-  //   const max = keys[0];
-  //   const min = keys[1];
-  //   const maxKey = `@media(max-width:500px)`;
-  //   let resopnsive = {
-  //     [maxKey]: { padding: `${responsivePadding.padding}px` },
-  //   };
-  //   return resopnsive;
-  // });
-
-  // console.log('styles', styles);
+  const paddings = responsivePaddings.map((responsivePadding) => {
+    const values = Object.values(responsivePadding.breakpoint);
+    const maxValue = values[0];
+    const minValue = values[1];
+    const key = `@media(max-width:${maxValue}px) and (min-width: ${minValue}px)`;
+    const paddingVertical = responsivePadding.paddingVertical
+      ? responsivePadding.paddingVertical
+      : 50;
+    const paddingHorizental = responsivePadding.paddingHorizental
+      ? responsivePadding.paddingHorizental
+      : 50;
+    return {
+      [key]: {
+        padding: `${paddingVertical}px ${paddingHorizental}px`,
+      },
+    };
+  });
 
   return (
     <section id="discountCard-container" className={className} style={style}>
-      <div style={styles}>123</div>
       <div id="discountCard-wrap" className="d-flex">
         <img id="discountCard-img" src={image}></img>
         <div
           id="discountCard-text"
-          style={{ padding: '50px' }}
+          style={paddings}
           className={`discountCard-text-padding text-center m-auto d-flex flex-column justify-content-between`}
         >
           <div id="discountCard-title">

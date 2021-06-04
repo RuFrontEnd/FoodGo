@@ -92,11 +92,12 @@ const MultiCarouselResponsive = {
     breakpoint: { max: 767.98, min: 575.99 },
     items: 2,
   },
-  mobile: {
-    breakpoint: { max: 575.98, min: 0 },
-    items: 2,
-  },
+  mobile: { breakpoint: { max: 575.98, min: 0 }, items: 2 },
 };
+
+const DiscountCardPaddings = [
+  { breakpoint: { max: 991.98, min: 767.99 }, paddingHorizental: 20 },
+];
 
 const datacountries = Object.getOwnPropertyNames(data);
 // console.log('datacountries:', datacountries)
@@ -700,12 +701,7 @@ function HomePage(props) {
                   viceTitle={'就送 Blender Bottle 搖搖杯'}
                   date={'2020.11.1~2020.12.31'}
                   linkTo={'/productList'}
-                  responsivePaddings={[
-                    {
-                      breakpoint: { max: 1920, min: 1199.99 },
-                      padding: 50,
-                    },
-                  ]}
+                  responsivePaddings={DiscountCardPaddings}
                 >
                   <p>環保，才是歷久不衰的流行。</p>
                   <p>現在訂購，就送Blender Bottle搖搖杯</p>
