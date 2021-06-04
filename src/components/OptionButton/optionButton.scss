@@ -94,3 +94,29 @@
   background-color: $light-green;
   color: white;
 }
+
+// yellow
+.option-btn-yellow {
+  border: 1px solid $dark-yellow;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $dark-yellow
+  );
+}
+
+.option-btn-yellow::after {
+  background-color: $dark-yellow;
+}
+
+.option-btn-yellow:active::after {
+  background-color: $dark-yellow;
+}
+
+.option-btn-yellow-active {
+  background-color: $dark-yellow;
+  color: white;
+}

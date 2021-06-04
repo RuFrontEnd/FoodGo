@@ -1002,10 +1002,10 @@ function HomePage(props) {
                             value={county}
                             onChange={(e) => {
                               //將字串轉成數字
-                              setCounty(+e.target.value);
+                              // setCounty(+e.target.value);
                               //重置township的值
                               // setTownship(0)
-                              setTownship(-1);
+                              // setTownship(-1);
                             }}
                             onClick={hideInfo}
                           >
@@ -1021,7 +1021,6 @@ function HomePage(props) {
                         </div>
                       </div>
                     </div>
-                    <br />
                     <div className="homePage-adress-select">
                       <div className="iris-mainpage-select-wrapper d-flex">
                         <div className="iris-selectbar-wrapper">
@@ -1049,7 +1048,6 @@ function HomePage(props) {
                         </div>
                       </div>
                     </div>
-                    <br />
                     <div className="homePage-adress-input">
                       <input
                         style={{ fontSize: '1.5rem' }}
@@ -1060,18 +1058,13 @@ function HomePage(props) {
                         onChange={(e) => setAddress(e.target.value)}
                       />
                     </div>
-                    <br />
-                    <div className="homePage-index-button float-right">
-                      <button
-                        onClick={showInfo}
-                        type="button"
-                        className="button-btn-y "
-                        text="查詢結果"
-                      >
-                        確認地址
-                      </button>
-                    </div>
                   </form>
+                  <OptionButton
+                    className={'homePage-index-button float-right'}
+                    type={'yellow'}
+                    text={'確認地址'}
+                    onClick={showInfo}
+                  />
                 </div>
                 <div className="homePage-map-results mt-4">
                   <p>
@@ -1089,24 +1082,18 @@ function HomePage(props) {
                   </p>
                 </div>
                 <div className="homePage-map-buttons d-flex justify-content-between mt-4">
-                  <Link style={{ 'text-decoration': 'none' }} to="/productList">
-                    <div className="homePage-index-button">
-                      <button className="button-btn" text="商品列表">
-                        商品列表
-                      </button>
-                    </div>
-                  </Link>
-                  <br />
-                  <Link
-                    style={{ 'text-decoration': 'none' }}
-                    to="/groupOrder/groupOrderCreate"
-                  >
-                    <div className="homePage-index-button">
-                      <button className="button-btn" text="揪團訂購">
-                        揪團訂購
-                      </button>
-                    </div>
-                  </Link>
+                  <OptionButton
+                    className={'homePage-index-button float-right mt-3'}
+                    type={'origin'}
+                    text={'商品列表'}
+                    routes={'/productList'}
+                  />
+                  <OptionButton
+                    className={'homePage-index-button float-right mt-3'}
+                    type={'origin'}
+                    text={'揪團訂購'}
+                    routes={'/groupOrder/groupOrderCreate'}
+                  />
                 </div>
               </div>
             </div>

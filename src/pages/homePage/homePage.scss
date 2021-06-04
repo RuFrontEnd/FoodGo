@@ -1490,6 +1490,11 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   height: 100%;
 }
 
+.homePage-adress-select,
+.homePage-adress-input {
+  margin-bottom: 10px;
+}
+
 @media screen and (max-width: 1199.98px) {
   .homePage-index-feature-smcircle {
     width: 1.3rem;
@@ -1761,7 +1766,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
 
   .homepage-map-title > img {
-    width: 450px;
+    width: 400px;
   }
 
   #homePage-map-form-bcc {
@@ -1893,7 +1898,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
 
   .homePage-intro-title {
-    width: 43rem;
+    width: 36rem;
     height: 12rem;
   }
 
