@@ -14,8 +14,10 @@ function DiscountCard(props) {
     date,
     children,
     responsivePaddings = [],
+    StraightMode = {},
   } = props;
 
+  // #discountCard-text's padding in each width
   const paddings = responsivePaddings.map((responsivePadding) => {
     const values = Object.values(responsivePadding.breakpoint);
     const maxValue = values[0];
@@ -34,13 +36,33 @@ function DiscountCard(props) {
     };
   });
 
+  // bellow which width shows straight mode
+  const StraightModeWidth = Object.values(StraightMode)[0];
+  let StraightStyles = {};
+  if (StraightModeWidth !== undefined) {
+    const StraightModeKey = `@media(max-width: ${StraightModeWidth}px)`;
+    StraightStyles = {
+      discountCardWrap: { [StraightModeKey]: { flexDirection: 'column' } },
+      discountCardImg: { [StraightModeKey]: { width: '100%' } },
+      discountCardText: { [StraightModeKey]: { width: '100%' } },
+    };
+  }
+
   return (
     <section id="discountCard-container" className={className} style={style}>
-      <div id="discountCard-wrap" className="d-flex">
-        <img id="discountCard-img" src={image}></img>
+      <div
+        id="discountCard-wrap"
+        className="d-flex"
+        style={StraightStyles.discountCardWrap}
+      >
+        <img
+          id="discountCard-img"
+          style={StraightStyles.discountCardImg}
+          src={image}
+        ></img>
         <div
           id="discountCard-text"
-          style={paddings}
+          style={[paddings, StraightStyles.discountCardImg]}
           className={`discountCard-text-padding text-center m-auto d-flex flex-column justify-content-between`}
         >
           <div id="discountCard-title">

@@ -924,12 +924,8 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   width: 100%;
 }
 
-#homePage-DiscountCards {
-  height: 475px;
-}
-
 .homePage-DiscountCard {
-  height: 100%;
+  height: 475px;
 }
 
 #homePage-discount-BrainCarousel {
@@ -1608,10 +1604,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     margin-bottom: 30px;
   }
 
-  #homePage-DiscountCards {
-    height: 525px;
-  }
-
   .homePage-discountCard-text-padding {
     padding: 50px 10px;
   }
@@ -1708,6 +1700,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
   #homepage-articles {
     justify-content: center !important;
+  }
+
+  .homePage-DiscountCard {
+    height: 100%;
   }
 }
 

@@ -683,7 +683,7 @@ function HomePage(props) {
         <div id="homePage-discount-wrap" className="container">
           <div
             id="homePage-discount-area"
-            className="row homePage-p0  d-flex justify-content-center"
+            className="homePage-p0  d-flex flex-column justify-content-center"
           >
             <AreaTitle
               title="專屬優惠"
@@ -702,6 +702,7 @@ function HomePage(props) {
                   date={'2020.11.1~2020.12.31'}
                   linkTo={'/productList'}
                   responsivePaddings={DiscountCardPaddings}
+                  StraightMode={{ width: 767.99 }}
                 >
                   <p>環保，才是歷久不衰的流行。</p>
                   <p>現在訂購，就送Blender Bottle搖搖杯</p>
@@ -719,6 +720,8 @@ function HomePage(props) {
                   date={'2020.11.1~2020.12.31'}
                   linkTo={'/productList'}
                   textClassName={'homePage-discountCard-text-padding'}
+                  responsivePaddings={DiscountCardPaddings}
+                  StraightMode={{ width: 767.99 }}
                 >
                   <p>下週百元餐盒，三天、三種限定主菜！</p>
                   <p>蒜泥厲害豬五花、海灘慢烤味噌魚、海灘橄欖油蔥雞腿</p>
@@ -738,6 +741,8 @@ function HomePage(props) {
                   date={'2020.11.1~2020.12.31'}
                   linkTo={'/productList'}
                   textClassName={'homePage-discountCard-text-padding'}
+                  responsivePaddings={DiscountCardPaddings}
+                  StraightMode={{ width: 767.99 }}
                 >
                   <p>12/31前，網購消費指定品項滿$500元，回饋$100！</p>
                   <p>活動辦法：</p>
@@ -757,6 +762,8 @@ function HomePage(props) {
                   date={'2020.11.1~2020.12.31'}
                   linkTo={'/productList'}
                   textClassName={'homePage-discountCard-text-padding'}
+                  responsivePaddings={DiscountCardPaddings}
+                  StraightMode={{ width: 767.99 }}
                 >
                   <p>12/31前，網購消費指定品項滿$500元，回饋$100！</p>
                   <p>活動辦法：</p>
@@ -776,6 +783,8 @@ function HomePage(props) {
                   date={'2020.11.1~2020.12.31'}
                   linkTo={'/productList'}
                   textClassName={'homePage-discountCard-text-padding'}
+                  responsivePaddings={DiscountCardPaddings}
+                  StraightMode={{ width: 767.99 }}
                 >
                   <p>12/31前，網購消費指定品項滿$500元，回饋$100！</p>
                   <p>活動辦法：</p>
@@ -795,6 +804,8 @@ function HomePage(props) {
                   date={'2020.11.1~2020.12.31'}
                   linkTo={'/productList'}
                   textClassName={'homePage-discountCard-text-padding'}
+                  responsivePaddings={DiscountCardPaddings}
+                  StraightMode={{ width: 767.99 }}
                 >
                   <p>12/31前，網購消費指定品項滿$500元，回饋$100！</p>
                   <p>活動辦法：</p>
@@ -814,6 +825,8 @@ function HomePage(props) {
                   date={'2020.11.1~2020.12.31'}
                   linkTo={'/productList'}
                   textClassName={'homePage-discountCard-text-padding'}
+                  responsivePaddings={DiscountCardPaddings}
+                  StraightMode={{ width: 767.99 }}
                 >
                   <p>12/31前，網購消費指定品項滿$500元，回饋$100！</p>
                   <p>活動辦法：</p>
