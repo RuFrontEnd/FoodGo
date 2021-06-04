@@ -23,7 +23,10 @@
 #discountCard-text {
   height: 100%;
   width: 52.5%;
-  padding: 50px
+}
+
+.discountCard-text-padding {
+  padding: 50px;
 }
 
 #discountCard-title {
@@ -46,7 +49,7 @@
   color: $light-orange;
 }
 
-.discountCard-information{
+.discountCard-information {
   font-size: 1.5rem;
   color: $grey;
 }

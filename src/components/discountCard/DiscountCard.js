@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import 'components/discountCard/discountCard.scss';
+import Radium from 'radium';
 import { Link } from 'react-router-dom';
 
 function DiscountCard(props) {
@@ -12,15 +13,38 @@ function DiscountCard(props) {
     linkTo = '/',
     date,
     children,
+    responsivePaddings,
   } = props;
+
+  const styles = {
+    backgroundColor: 'red',
+    '@media(min-width: 1800px)': { backgroundColor: 'yellow' },
+  };
+
+  // console.log(responsivePaddings);
+
+  // const styles = responsivePaddings.map((responsivePadding) => {
+  //   const keys = Object.values(responsivePadding.breakpoint);
+  //   const max = keys[0];
+  //   const min = keys[1];
+  //   const maxKey = `@media(max-width:500px)`;
+  //   let resopnsive = {
+  //     [maxKey]: { padding: `${responsivePadding.padding}px` },
+  //   };
+  //   return resopnsive;
+  // });
+
+  // console.log('styles', styles);
 
   return (
     <section id="discountCard-container" className={className} style={style}>
+      <div style={styles}>123</div>
       <div id="discountCard-wrap" className="d-flex">
         <img id="discountCard-img" src={image}></img>
         <div
           id="discountCard-text"
-          className="text-center m-auto d-flex flex-column justify-content-between"
+          style={{ padding: '50px' }}
+          className={`discountCard-text-padding text-center m-auto d-flex flex-column justify-content-between`}
         >
           <div id="discountCard-title">
             <h4>{title}</h4>
@@ -46,4 +70,4 @@ function DiscountCard(props) {
   );
 }
 
-export default DiscountCard;
+export default Radium(DiscountCard);

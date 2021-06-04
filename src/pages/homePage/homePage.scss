@@ -920,7 +920,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   padding: 30px 15px;
 }
 
-#homePage-discount-area{
+#homePage-discount-area {
   width: 100%;
 }
 
@@ -928,11 +928,11 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   height: 475px;
 }
 
-#homePage-DiscountCard {
+.homePage-DiscountCard {
   height: 100%;
 }
 
-#homePage-discount-BrainCarousel{
+#homePage-discount-BrainCarousel {
   width: 100%;
 }
 
@@ -1466,6 +1466,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   text-align: justify;
 }
 
+.homePage-discountCard-text-padding {
+  padding: 50px 10px;
+}
+
 @media screen and (max-width: 1199.98px) {
   .homePage-index-feature-smcircle {
     width: 1.3rem;
@@ -1520,6 +1524,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
   .homePage-intro {
     flex-direction: column;
+  }
+
+  .homePage-discountCard-text-padding {
+    padding: 50px 30px;
   }
 }
 
@@ -1598,6 +1606,14 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
   .homePage-article .homePage-article-bcc {
     margin-bottom: 30px;
+  }
+
+  #homePage-DiscountCards {
+    height: 525px;
+  }
+
+  .homePage-discountCard-text-padding {
+    padding: 50px 10px;
   }
 }
 
