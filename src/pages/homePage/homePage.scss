@@ -1477,6 +1477,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   height: 5rem;
 }
 
+#homePage-article-wrap {
+  margin: 60px 0px;
+}
+
 @media screen and (max-width: 1199.98px) {
   .homePage-index-feature-smcircle {
     width: 1.3rem;
@@ -1623,6 +1627,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
     width: 4rem;
     height: 4rem;
   }
+
+  .homepage-articleCard {
+    margin-bottom: 50px;
+  }
 }
 
 @media screen and (max-width: 767.98px) {
@@ -1730,7 +1738,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
   .homePage-stepArrow {
     transform: rotate(90deg);
-    margin: 20px 0; 
+    margin: 20px 0;
   }
 }
 
