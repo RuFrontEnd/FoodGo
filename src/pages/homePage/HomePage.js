@@ -1124,16 +1124,16 @@ function HomePage(props) {
           </div>
 
           {/* 地圖 */}
-          {/* <div className="homePage-map-view">
+          <div className="homePage-map-view">
             <iframe
               title="indexDataMap"
               src="https://plotdb.io/v/chart/27933"
-              width="816px"
-              height="550px"
+              // width="816px"
+              // height="550px"
               allowfullscreen="true"
               frameborder="0"
             ></iframe>
-          </div> */}
+          </div>
         </div>
       </section>
       {/* 好文推薦 */}
@@ -1144,7 +1144,6 @@ function HomePage(props) {
             title="好文推薦"
             className={'homePage-areaTitle'}
           ></AreaTitle>
-
           {/* 推薦文章卡片 */}
           <div id="homepage-articles" className="d-flex justify-content-around">
             <ArticleCard
@@ -1174,10 +1173,6 @@ function HomePage(props) {
           </div>
         </div>
       </section>
-
-      {/* ---- */}
-      <div style={{ margin: 'auto' }}></div>
-      {/* ---- */}
       <ToToop />
     </>
   );
