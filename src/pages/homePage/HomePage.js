@@ -95,7 +95,8 @@ const MultiCarouselResponsive = {
     breakpoint: { max: 767.98, min: 575.99 },
     items: 2,
   },
-  mobile: { breakpoint: { max: 575.98, min: 0 }, items: 2 },
+  mobile: { breakpoint: { max: 575.98, min: 479.99 }, items: 2 },
+  phone: { breakpoint: { max: 479.98, min: 0 }, items: 1 },
 };
 
 const DiscountCardPaddings = [
@@ -126,6 +127,7 @@ function HomePage(props) {
     address,
     setAddress,
   } = props;
+  const $featureContainer = useRef();
   const $featureCircle = useRef();
   const $featureDot = useRef();
   const $homePageCircles = useRef();
@@ -233,6 +235,19 @@ function HomePage(props) {
       'visibility: visible';
   };
 
+  const scrollToFeature = () => {
+    const navBarHeight = 100;
+    window.scrollTo({
+      top: $featureContainer.current.offsetTop - navBarHeight,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  // window.addEventListener('scroll', (e) => {
+  //   console.log(window.scrollY);
+  // });
+
   return (
     <>
       {/* <VNavbar
@@ -299,10 +314,14 @@ function HomePage(props) {
             <div id="homePage-col-download"></div>
           </div>
           {/* 滾動提示 */}
-          <div id="homePage-mouse-wrap" className="position-absolute">
+          <a
+            onClick={scrollToFeature}
+            id="homePage-mouse-wrap"
+            className="position-absolute"
+          >
             <button id="homePage-mouse"></button>
             <div id="homePage-mouse-arrow"></div>
-          </div>
+          </a>
           {/* 切換鈕 */}
         </div>
       </section>
@@ -310,6 +329,7 @@ function HomePage(props) {
       <section
         id="homePage-feature-container"
         className="container position-relative"
+        ref={$featureContainer}
       >
         <div
           id="homePage-feature-wrap"
