@@ -44,10 +44,7 @@ import stepImage5 from 'assets/svg/step5.svg';
 
 import customVideo from 'assets/mp4/customFinalVideo.mp4';
 
-import Button from 'Share/Components/Button/Button';
 import OptionButton from 'components/optionButton/OptionButton';
-import ArrowLeft from 'Share/Components/ArrowLeft/ArrowLeft';
-import ArrowRight from 'Share/Components/ArrowRight/ArrowRight';
 import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import ToToop from 'Share/Components/ToTopButton/ScrollButton';
 import AreaTitle from 'components/areaTitle/AreaTitle';

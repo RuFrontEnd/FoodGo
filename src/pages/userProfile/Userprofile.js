@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect';
-import IrisDataEditSect from '../Components/IrisDataEditSect/IrisDataEditSect';
-import VNavbar from 'Share/Components/VNavbar/VNavbar';
-import './IrisMemberPage.scss';
+import MemberMenuSect from 'components/MemberMenuSect/MemberMenuSect';
+import DataEditSect from 'components/DataEditSect/DataEditSect';
+import 'pages/irisUserprofile/irisUserprofile.scss';
 import { Redirect } from 'react-router-dom';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
-import IrisGetCouponBox from './../Components/IrisGetCouponBox/IrisGetCouponBox';
+import GetCouponBox from 'components/GetCouponBox/GetCouponBox';
 import { useSelector } from 'react-redux';
 
-function IrisUserprofile(props) {
+function Userprofile(props) {
   const isLogin = useSelector((state) => state.member.isLogin);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [showGetCouponBox, setShowGetCouponBox] = useState(false);
@@ -60,12 +59,12 @@ function IrisUserprofile(props) {
     <>
       {/* <VNavbar {...props} /> */}
       <div className="container iris-memberpage-container">
-        <IrisMemberMenuSect
+        <MemberMenuSect
           currentUser={currentUser}
           beastiePointAdd={beastiePointAdd}
           currentUserData={currentUserData}
         />
-        <IrisDataEditSect
+        <DataEditSect
           currentUser={currentUser}
           setShowUpdateModal={setShowUpdateModal}
           setShowGetCouponBox={setShowGetCouponBox}
@@ -93,8 +92,9 @@ function IrisUserprofile(props) {
           </div>
         </div>
       </div>
+      <ScrollButton />
       <div className="IrisGetCouponBox">
-        <IrisGetCouponBox
+        <GetCouponBox
           showGetCouponBox={showGetCouponBox}
           setShowGetCouponBox={setShowGetCouponBox}
         />
@@ -103,4 +103,4 @@ function IrisUserprofile(props) {
   );
 }
 
-export default IrisUserprofile;
+export default Userprofile;

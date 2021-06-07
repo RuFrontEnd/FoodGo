@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import './IrisDataEditSect.scss';
-import { ReactComponent as WaveLine } from './Images/wave_line.svg';
-import InputH40 from './InputH40/InputH40';
+import 'components/DataEditSect/IrisDataEditSect.scss';
+import { ReactComponent as WaveLine } from 'assets/svg/wave_line.svg';
+import FoodGoInput from 'components/FoodGoInput/FoodGoInput';
 // import SelectBox from './../../../Share/Components/Input/SelectBox';
-import Button from './../../../Share/Components/Button/Button';
+import OptionButton from 'components/OptionButton/OptionButton';
 import $ from 'jquery';
 
-function IrisDataEditSect(props) {
+function DataEditSect(props) {
   const {
     currentUser,
     setShowUpdateModal,
@@ -284,14 +284,14 @@ function IrisDataEditSect(props) {
             <form className="iris-form-adjust">
               <div className="d-flex  align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box testtest">姓氏</div>
-                <InputH40
+                <FoodGoInput
                   type="text"
                   placeholder=""
                   id="iris-member-family-name"
                 />
                 <div className="iris-input-box">名字</div>
 
-                <InputH40
+                <FoodGoInput
                   type="text"
                   placeholder=""
                   id="iris-member-given-name"
@@ -300,7 +300,7 @@ function IrisDataEditSect(props) {
               <div className="d-flex noF-wrap align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box">生日</div>
 
-                <InputH40
+                <FoodGoInput
                   type="text"
                   placeholder=""
                   id="iris-member-birthday"
@@ -308,11 +308,15 @@ function IrisDataEditSect(props) {
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box">手機</div>
-                <InputH40 type="text" placeholder="" id="iris-member-mobile" />
+                <FoodGoInput
+                  type="text"
+                  placeholder=""
+                  id="iris-member-mobile"
+                />
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box">密碼</div>
-                <InputH40
+                <FoodGoInput
                   type="password"
                   placeholder=""
                   id="iris-member-password"
@@ -320,7 +324,7 @@ function IrisDataEditSect(props) {
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box">新密碼</div>
-                <InputH40
+                <FoodGoInput
                   type="password"
                   placeholder=""
                   id="iris-set-new-password"
@@ -328,7 +332,7 @@ function IrisDataEditSect(props) {
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box">確認新密碼</div>
-                <InputH40
+                <FoodGoInput
                   type="password"
                   placeholder=""
                   id="iris-member-new-password"
@@ -339,11 +343,19 @@ function IrisDataEditSect(props) {
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box">信箱</div>
-                <InputH40 type="text" placeholder="" id="iris-member-email" />
+                <FoodGoInput
+                  type="text"
+                  placeholder=""
+                  id="iris-member-email"
+                />
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box">配送地址</div>
-                <InputH40 type="text" placeholder="" id="iris-member-address" />
+                <FoodGoInput
+                  type="text"
+                  placeholder=""
+                  id="iris-member-address"
+                />
               </div>
             </form>
             <div
@@ -352,7 +364,7 @@ function IrisDataEditSect(props) {
                 updateProfile();
               }}
             >
-              <Button className="button-btn" text="更新個人資料" />
+              <OptionButton type="origin" text="更新個人資料" />
             </div>
           </div>
         </div>
@@ -361,4 +373,4 @@ function IrisDataEditSect(props) {
   );
 }
 
-export default IrisDataEditSect;
+export default DataEditSect;
