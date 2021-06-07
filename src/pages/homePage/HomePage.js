@@ -118,9 +118,6 @@ const datatownships = datacountries.map((v, i, array) =>
 const dataprice = datacountries.map((v, i, array) =>
   Object.values(data[array[i]])
 );
-// console.log('dataprice:', dataprice)
-
-//可以在用“node  src/Janice/Components/JanIndexx/data.js”終端機查看console.log()的結果
 
 function HomePage(props) {
   const {
@@ -394,7 +391,7 @@ function HomePage(props) {
             </div>
             <div className="homePage-index-feature-smcircle"></div>
             {/* circle4 */}
-            <div className="homePage-feature-circle d-flex flex-wrap justify-content-center align-items-center">
+            {/* <div className="homePage-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
                 onClick={(e) => {
                   switchFeatureArea(e);
@@ -408,7 +405,7 @@ function HomePage(props) {
               ></div>
               <p className="homePage-circle-title">揪團訂購</p>
             </div>
-            <div className="homePage-index-feature-smcircle"></div>
+            <div className="homePage-index-feature-smcircle"></div> */}
             {/* circle5 */}
             <div className="homePage-feature-circle d-flex flex-wrap justify-content-center align-items-center">
               <div
@@ -559,7 +556,7 @@ function HomePage(props) {
           </div>
         </div>
         {/* 揪團訂購 */}
-        <div
+        {/* <div
           className={`container homePage-intro-wrap homePage-intro ${
             isNetworkFeatureActive && 'homePage-intro-active'
           }`}
@@ -588,7 +585,7 @@ function HomePage(props) {
             />
           </div>
           <div id="homePage-intro-card-4" className="homePage-intro-card"></div>
-        </div>
+        </div> */}
         {/* 營養標示 */}
         <div
           className={`container homePage-intro-wrap homePage-intro ${
@@ -968,21 +965,21 @@ function HomePage(props) {
         </div>
       </section>
       {/* 地圖 */}
-      <section
+      {/* <section
         id="hamePage-map-container"
         className="container-fluid homePage-p0 homePage-map d-flex justify-content-center"
-      >
-        {/* 橘色底色 */}
-        <div id="homePage-map-form-bcc" className="container d-flex">
-          <div className="flex-column homePage-map-form-wrap">
-            {/* 標題 */}
-            <div className="homepage-map-title">
+      > */}
+      {/* 橘色底色 */}
+      {/* <div id="homePage-map-form-bcc" className="container d-flex">
+          <div className="flex-column homePage-map-form-wrap"> */}
+      {/* 標題 */}
+      {/* <div className="homepage-map-title">
               <img alt="" src={map1} />
               <br />
               <img alt="" src={map2} />
-            </div>
-            {/* 表單 */}
-            <div
+            </div> */}
+      {/* 表單 */}
+      {/* <div
               id="homePage-adress-form-wrap"
               className="d-flex justify-content-center align-items-center"
             >
@@ -1069,9 +1066,9 @@ function HomePage(props) {
                 <div className="homePage-map-results mt-4">
                   <p>
                     所在地點，符合滿
-                    <span className="homePage-price homePage-tabs-highlight">
-                      {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
-                      {county > -1 &&
+                    <span className="homePage-price homePage-tabs-highlight"> */}
+      {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
+      {/* {county > -1 &&
                         township > -1 &&
                         dataprice[county][township]}
                     </span>
@@ -1097,10 +1094,10 @@ function HomePage(props) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          {/* 地圖 */}
-          <div className="homePage-map-view">
+      {/* 地圖 */}
+      {/* <div className="homePage-map-view">
             <iframe
               title="indexDataMap"
               src="https://plotdb.io/v/chart/27933"
@@ -1109,9 +1106,9 @@ function HomePage(props) {
               allowfullscreen="true"
               frameborder="0"
             ></iframe>
-          </div>
-        </div>
-      </section>
+          </div> */}
+      {/* </div>
+      </section> */}
       {/* 好文推薦 */}
       <section className="container">
         <div id="homePage-article-wrap">

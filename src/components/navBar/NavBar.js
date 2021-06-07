@@ -141,7 +141,7 @@ function NavBar(props) {
         >
           <div className="navBar-collapse">
             <ul className="navBar-navigation navBar-navigation-1">
-              <li
+              {/* <li
                 id="navBar-hamburger-wrap"
                 className="navBar-navigation-item"
                 onClick={() => {
@@ -162,7 +162,7 @@ function NavBar(props) {
                 >
                   作伙揪團
                 </Nav.Link>
-              </li>
+              </li> */}
               <li className="navBar-navigation-item navBar-navigation-item-txt">
                 <Nav.Link as={NavLink} to="/farmMap">
                   哈囉小農
@@ -228,7 +228,7 @@ function NavBar(props) {
               </Nav.Link>
             </div>
             <ul className="navBar-navigation navBar-navigation-3">
-              <li className="navBar-navigation-item navBar-navigation-item-txt">
+              {/* <li className="navBar-navigation-item navBar-navigation-item-txt">
                 <Nav.Link
                   as={NavLink}
                   to="/getcoupon"
@@ -238,7 +238,7 @@ function NavBar(props) {
                 >
                   專屬優惠
                 </Nav.Link>
-              </li>
+              </li> */}
               <li className="navBar-navigation-item navBar-navigation-item-txt">
                 <Nav.Link as={NavLink} to="/">
                   關於我們
