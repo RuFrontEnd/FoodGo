@@ -424,6 +424,26 @@ function LoginCard(props) {
               *兩次輸入的密碼不符
             </div>
             <div className="login-input d-flex align-items-center justify-content-between">
+              <div className="login-text">姓</div>
+              <LoginInput
+                type="text"
+                id="creatEmail"
+                ref={$createEmail}
+                value={userEmailValue}
+                setValue={setUserEmailValue}
+              />
+            </div>
+            <div className="login-input d-flex align-items-center justify-content-between">
+              <div className="login-text">名字</div>
+              <LoginInput
+                type="text"
+                id="creatEmail"
+                ref={$createEmail}
+                value={userEmailValue}
+                setValue={setUserEmailValue}
+              />
+            </div>
+            <div className="login-input d-flex align-items-center justify-content-between">
               <div className="login-text">信箱</div>
               <LoginInput
                 type="text"

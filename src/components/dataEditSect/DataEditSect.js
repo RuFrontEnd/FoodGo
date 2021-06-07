@@ -46,7 +46,7 @@ function DataEditSect(props) {
   const updateProfile = () => {
     const familyname = document.querySelector('#iris-member-family-name').value;
     const givenname = document.querySelector('#iris-member-given-name').value;
-    const birthday = document.querySelector('#iris-member-birthday').value;
+    // const birthday = document.querySelector('#iris-member-birthday').value;
     const mobile = document.querySelector('#iris-member-mobile').value;
 
     // 如果新密碼欄位value不一樣
@@ -73,16 +73,20 @@ function DataEditSect(props) {
       }
       const email = document.querySelector('#iris-member-email').value;
       const address = document.querySelector('#iris-member-address').value;
+
       const newProfile = {
         member_id: currentUser,
         familyname: familyname,
         givenname: givenname,
-        birthday: birthday,
+        // birthday: birthday,
         mobile: mobile,
         password: password,
         email: email,
         address: address,
       };
+
+      console.log('newProfile', newProfile);
+
       // console.log(newProfile)
       // 更新會員資料
       fetch('http://localhost:5000/member/updateProfile', {
@@ -95,7 +99,7 @@ function DataEditSect(props) {
       })
         .then((r) => r.json())
         .then((o) => {
-          // console.log(o)
+          console.log(o);
         });
 
       // 第一次填資料送優惠券
@@ -225,7 +229,6 @@ function DataEditSect(props) {
 
       let familyname = document.querySelector('#iris-member-family-name');
       let givenname = document.querySelector('#iris-member-given-name');
-      let birthday = document.querySelector('#iris-member-birthday');
       let mobile = document.querySelector('#iris-member-mobile');
       let oldPassword = document.querySelector('#iris-member-password');
       let email = document.querySelector('#iris-member-email');
@@ -234,11 +237,11 @@ function DataEditSect(props) {
       familyname.value = userFamilyName;
       givenname.value = userGivenName;
       // 讓新註冊會員的生日顯示為空值
-      if (userBirthday !== '1899-11-29') {
-        birthday.value = userBirthday;
-      } else {
-        birthday.value = '';
-      }
+      // if (userBirthday !== '1899-11-29') {
+      //   birthday.value = userBirthday;
+      // } else {
+      //   birthday.value = '';
+      // }
       mobile.value = item.mobile;
       oldPassword.value = item.password;
       email.value = item.email;
@@ -253,7 +256,6 @@ function DataEditSect(props) {
   const fillInData = () => {
     document.querySelector('#iris-member-family-name').value = '陳';
     document.querySelector('#iris-member-given-name').value = '雪莉';
-    document.querySelector('#iris-member-birthday').value = '1995-02-09';
     document.querySelector('#iris-member-address').value =
       '台北市南港區南港路一段27號';
   };
@@ -295,15 +297,6 @@ function DataEditSect(props) {
                   type="text"
                   placeholder=""
                   id="iris-member-given-name"
-                />
-              </div>
-              <div className="d-flex noF-wrap align-items-center iris-profile-item-wrapper">
-                <div className="iris-input-box">生日</div>
-
-                <FoodGoInput
-                  type="text"
-                  placeholder=""
-                  id="iris-member-birthday"
                 />
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
@@ -350,7 +343,7 @@ function DataEditSect(props) {
                 />
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
-                <div className="iris-input-box">配送地址</div>
+                <div className="iris-input-box">地址</div>
                 <FoodGoInput
                   type="text"
                   placeholder=""

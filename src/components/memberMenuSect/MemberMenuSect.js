@@ -135,7 +135,7 @@ function MemberMenuSect(props) {
   return (
     <>
       <div class="container iris-membermenu-container col-3 ">
-        <div class="row">
+        <div>
           <div class="iris-menu-background d-flex">
             {/* ---------- info ----------- */}
             <div class="iris-profile-photo d-flex">
