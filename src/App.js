@@ -13,15 +13,12 @@ import LoginModal from 'components/loginModal/LoginModal';
 // 引入 所有人的總元件
 import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex';
 import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage';
-import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'; // delete later
-import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'; // delete later
-import ProductList from 'pages/productList/ProductList';
 
-import IrisOrderComment from 'Iris/Pages/IrisOrderComment';
-import IrisMyFav from 'Iris/Pages/IrisMyFav';
-import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint';
-import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon';
-import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement';
+// import IrisOrderComment from 'Iris/Pages/IrisOrderComment';
+// import IrisMyFav from 'Iris/Pages/IrisMyFav';
+// import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint';
+// import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon';
+// import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement';
 import JessMenu from 'Jess/Pages/JessMenu';
 import JessBento from 'Jess/Pages/JessBento';
 import JessVegBox from 'Jess/Pages/JessVegBox';
@@ -37,7 +34,10 @@ import ChaProductList from 'Cha/Components-demo/ChaProductList';
 import ChaCartTest from 'Cha/Components-demo/ChaCartTest';
 
 import HomePage from 'pages/homePage/HomePage';
-import IrisUserprofile from 'Iris/Pages/IrisUserprofile';
+import Userprofile from 'pages/userProfile/UserProfile';
+import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'; // delete later
+import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'; // delete later
+import ProductList from 'pages/productList/ProductList';
 
 // 加入 toTop 按鈕元件
 import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
@@ -116,9 +116,10 @@ function App() {
   }, []); // 初始判斷會員狀態與資料
 
   useEffect(() => setTextAddress(address), [address]);
-  useEffect(() => setTextCounty(county !== -1 ? datacountries[county] : ''), [
-    county,
-  ]);
+  useEffect(
+    () => setTextCounty(county !== -1 ? datacountries[county] : ''),
+    [county]
+  );
   useEffect(
     () =>
       setTextTownship(
@@ -270,7 +271,7 @@ function App() {
 
             {/* iris */}
             <Route exact path="/memberUserprofile">
-              <IrisUserprofile
+              <Userprofile
                 setShowBar={setShowBar}
                 // 會員
                 currentUser={currentUser}
@@ -296,7 +297,7 @@ function App() {
               />
             </Route>
             <Route exact path="/orderComment">
-              <IrisOrderComment
+              {/* <IrisOrderComment
                 setShowBar={setShowBar}
                 // 會員
                 currentUser={currentUser}
@@ -315,10 +316,10 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
-              />
+              /> */}
             </Route>
             <Route exact path="/myFav">
-              <IrisMyFav
+              {/* <IrisMyFav
                 setShowBar={setShowBar}
                 // 會員
                 currentUser={currentUser}
@@ -337,10 +338,10 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
-              />
+              /> */}
             </Route>
             <Route exact path="/beastiePoint">
-              <IrisBeastiePoint
+              {/* <IrisBeastiePoint
                 setShowBar={setShowBar}
                 // 會員
                 currentUser={currentUser}
@@ -359,10 +360,10 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
-              />
+              /> */}
             </Route>
             <Route path="/getCoupon">
-              <IrisGetCoupon
+              {/* <IrisGetCoupon
                 setShowBar={setShowBar}
                 // 會員
                 currentUser={currentUser}
@@ -384,10 +385,10 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
-              />
+              /> */}
             </Route>
             <Route path="/orderManagement">
-              <IrisOrderManagement
+              {/* <IrisOrderManagement
                 handleCartNumber={handleCartNumber}
                 showBar={showBar}
                 setShowBar={setShowBar}
@@ -408,7 +409,7 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
-              />
+              /> */}
             </Route>
             {/* jess */}
             <Route path="/menu">

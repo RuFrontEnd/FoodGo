@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'components/getCouponBox/getCouponBox.scss';
-import { ReactComponent as Coupon30 } from 'assests/svg/beastie_coupon30.svg';
+import { ReactComponent as Coupon30 } from 'assets/svg/beastie_coupon30.svg';
 
 function GetCouponBox(props) {
   const { setShowGetCouponBox } = props;

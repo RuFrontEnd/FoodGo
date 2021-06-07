@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import MemberMenuSect from 'components/MemberMenuSect/MemberMenuSect';
-import DataEditSect from 'components/DataEditSect/DataEditSect';
-import 'pages/irisUserprofile/irisUserprofile.scss';
+import MemberMenuSect from 'components/memberMenuSect/MemberMenuSect';
+import DataEditSect from 'components/dataEditSect/DataEditSect';
+import 'pages/userProfile/userProfile.scss';
 import { Redirect } from 'react-router-dom';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
-import GetCouponBox from 'components/GetCouponBox/GetCouponBox';
+import GetCouponBox from 'components/getCouponBox/GetCouponBox';
 import { useSelector } from 'react-redux';
 
 function Userprofile(props) {
@@ -55,6 +55,7 @@ function Userprofile(props) {
     // setShowLoginModal(true)
     return <Redirect to="/" />;
   }
+  
   return (
     <>
       {/* <VNavbar {...props} /> */}

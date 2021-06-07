@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import 'components/DataEditSect/IrisDataEditSect.scss';
+import 'components/dataEditSect/dataEditSect.scss';
 import { ReactComponent as WaveLine } from 'assets/svg/wave_line.svg';
-import FoodGoInput from 'components/FoodGoInput/FoodGoInput';
+import FoodGoInput from 'components/foodGoInput/FoodGoInput';
 // import SelectBox from './../../../Share/Components/Input/SelectBox';
-import OptionButton from 'components/OptionButton/OptionButton';
+import OptionButton from 'components/optionButton/OptionButton';
 import $ from 'jquery';
 
 function DataEditSect(props) {
