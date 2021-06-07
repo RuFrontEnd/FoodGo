@@ -247,9 +247,6 @@ function HomePage(props) {
         address={address}
         setAddress={setAddress}
       /> */}
-      <section className="homePage-fake-nav d-flex justify-content-center align-items-center">
-        navbar的高度
-      </section>
       {/* 輪播牆 */}
       <section
         id="homePage-carousel-container"
