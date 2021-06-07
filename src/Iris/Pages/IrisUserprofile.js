@@ -58,7 +58,7 @@ function IrisUserprofile(props) {
   }
   return (
     <>
-      <VNavbar {...props} />
+      {/* <VNavbar {...props} /> */}
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect
           currentUser={currentUser}

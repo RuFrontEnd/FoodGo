@@ -10,6 +10,8 @@ function ArticleCard(props) {
     content = 'content',
   } = props;
 
+
+
   return (
     <section id="articleCard-container" className={className} style={style}>
       <div id="articleCard-wrap">

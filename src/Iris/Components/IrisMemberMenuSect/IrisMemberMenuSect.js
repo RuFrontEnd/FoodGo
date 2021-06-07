@@ -176,7 +176,7 @@ function IrisMemberMenuSect(props) {
               </div>
 
               <div class="iris-menu-hr"></div>
-              <div
+              {/* <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
                   props.history.push('/beastiePoint');
@@ -184,7 +184,7 @@ function IrisMemberMenuSect(props) {
               >
                 <BeastieIcon class="iris-menu-icon" />
                 <div class="iris-menu-text">怪獸幣</div>
-              </div>
+              </div> */}
 
               <div class="iris-menu-hr"></div>
 
@@ -212,7 +212,7 @@ function IrisMemberMenuSect(props) {
 
               <div class="iris-menu-hr"></div>
 
-              <div
+              {/* <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
                   props.history.push('/groupOrder');
@@ -220,7 +220,7 @@ function IrisMemberMenuSect(props) {
               >
                 <GroupOrderIcon class="iris-menu-icon" />
                 <div class="iris-menu-text">揪團</div>
-              </div>
+              </div> */}
 
               <div class="iris-menu-hr"></div>
 

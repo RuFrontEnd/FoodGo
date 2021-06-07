@@ -1460,7 +1460,6 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 .homePage-discountCard-text {
   text-align: justify;
 }
-
 .homePage-discountCard-text-padding {
   padding: 50px 10px;
 }
@@ -1493,6 +1492,10 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 .homePage-adress-select,
 .homePage-adress-input {
   margin-bottom: 10px;
+}
+
+.homepage-articleCard {
+  width: 30rem;
 }
 
 @media screen and (max-width: 1199.98px) {
@@ -1908,74 +1911,17 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   }
 }
 
-// @media screen and (max-width: 376px) {
-//   .homePage-adress-select select {
-//     font-size: 1.4rem;
-//     border-radius: 1.5rem;
-//     height: 3rem;
-//   }
-// }
+@media screen and (max-width: 480px) {
+  .homePage-intro-title {
+    width: 27rem;
+    height: 8rem;
+  }
 
-// .homePage-adress-select .iris-mainpage-whitebox {
-//   border-radius: 2.5rem;
-//   height: 4.6rem;
-//   width: 4.6rem;
-//   background-color: #fff;
-//   position: absolute;
-//   right: 0.3rem;
-//   top: 0.2rem;
-//   // 點擊會直接穿透whitebox
-//   pointer-events: none;
-// }
+  .homePage-intro-text {
+    margin: auto;
+  }
 
-// @media screen and (max-width: 376px) {
-//   .homePage-adress-select .iris-mainpage-whitebox {
-//     border-radius: 1.5rem;
-//     height: 2.6rem;
-//     width: 2.7rem;
-//     background-color: #fff;
-//     position: absolute;
-//     right: 0.1rem;
-//     top: 0.2rem;
-//     // 點擊會直接穿透whitebox
-//     pointer-events: none;
-//   }
-// }
-
-// .homePage-adress-select .iris-selectbar-wrapper .iris-mainpage-trianglearrow {
-//   background: url("../../assets/svg/triangleArrow.svg") cover center no-repeat;
-//   background-size: auto;
-//   position: absolute;
-//   right: 1.9rem;
-//   top: 2.1em;
-//   pointer-events: none;
-//   fill: #c9c9c9;
-// }
-// @media screen and (max-width: 376px) {
-//   .homePage-adress-select > .iris-mainpage-select-wrapper > .iris-selectbar-wrapper > .iris-mainpage-trianglearrow {
-//     position: absolute;
-//     right: 1.5rem;
-//     top: 1em;
-//     pointer-events: none;
-//     fill: #c9c9c9;
-//   }
-// }
-
-// .homePage-adress-select > .iris-mainpage-select-wrapper > .iris-selectbar-wrapper {
-//   width: 16.7rem;
-//   position: relative;
-// }
-
-// .homePage-adress-input .iris-inputH50 {
-//   font-size: 2rem;
-//   border-radius: 2.5rem;
-//   height: 5rem;
-// }
-
-// @media screen and (max-width: 376px) {
-//   .homePage-adress-input > .iris-inputH50 {
-//     font-size: 1.4rem;
-//     border-radius: 1.5rem;
-//     height: 3rem;
-//   }
-// }
+  .homepage-articleCard {
+    width: 28rem;
+  }
+}

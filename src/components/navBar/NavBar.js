@@ -75,7 +75,7 @@ function NavBar(props) {
     { linkTo: '/productList', content: '美味沙拉' },
     { linkTo: '/vegBox', content: ' 蔬菜箱' },
     { linkTo: '/productList', content: '客製化便當' },
-    { linkTo: '/', content: '外送服務' },
+    // { linkTo: '/', content: '外送服務' },
   ];
   const memberSideBarItems = [
     { linkTo: '/orderManagement', content: '訂單管理' },
@@ -141,7 +141,7 @@ function NavBar(props) {
         >
           <div className="navBar-collapse">
             <ul className="navBar-navigation navBar-navigation-1">
-              {/* <li
+              <li
                 id="navBar-hamburger-wrap"
                 className="navBar-navigation-item"
                 onClick={() => {
@@ -152,7 +152,7 @@ function NavBar(props) {
                   <HamburgerMenu className="navbar-icon navBar-hamburger" />
                 </Nav.Link>
               </li>
-              <li className="navBar-navigation-item navBar-navigation-item-txt">
+              {/* <li className="navBar-navigation-item navBar-navigation-item-txt">
                 <Nav.Link
                   as={NavLink}
                   to="/groupOrder/groupOrderCreate"
@@ -213,11 +213,11 @@ function NavBar(props) {
                         客製化便當
                       </Nav.Link>
                     </li>
-                    <li className="navBar-dropdown-item">
+                    {/* <li className="navBar-dropdown-item">
                       <Nav.Link as={NavLink} to="/">
                         外送服務
                       </Nav.Link>
-                    </li>
+                    </li> */}
                   </div>
                 </ul>
               </li>
@@ -304,7 +304,7 @@ function NavBar(props) {
                           我的最愛
                         </Nav.Link>
                       </li>
-                      <li className="navBar-dropdown-item">
+                      {/* <li className="navBar-dropdown-item">
                         <Nav.Link
                           as={NavLink}
                           to="/beastiePoint"
@@ -315,7 +315,7 @@ function NavBar(props) {
                           我的怪獸
                         </Nav.Link>
                         <Monster className="navBar-monster4" />
-                      </li>
+                      </li> */}
                       <li
                         className="navBar-dropdown-item navBar-login-option"
                         onClick={() => {
