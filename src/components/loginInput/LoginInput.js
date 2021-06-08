@@ -6,6 +6,7 @@ const LoginInput = React.forwardRef((props, ref) => {
     placeholder,
     type,
     id,
+    title,
     className,
     style,
     value,
@@ -16,7 +17,7 @@ const LoginInput = React.forwardRef((props, ref) => {
   return (
     <section id="loginInput-container" className={className} style={style}>
       <div id="loginInput-wrap">
-        <div className="loginInput-text">帳號</div>
+        <div className="loginInput-text">{title}</div>
         <div id="loginInput-message">
           <input
             value={value}

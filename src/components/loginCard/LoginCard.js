@@ -37,14 +37,17 @@ function LoginCard(props) {
   const $loginAlert = useRef();
   const $registerAlert = useRef();
 
+  // 帳號
   const [userAccountValue, setUserAccountValue] = useState('');
-  const [userPasswordValue, setUserPasswordValue] = useState('');
-
   const [createAccountValue, setCreateAccountValue] = useState('');
   const [isCreateAccountWrong, setIsCreateAccountWrong] = useState(false);
 
+  // 密碼
+  const [userPasswordValue, setUserPasswordValue] = useState('');
   const [createPasswordValue, setCreatePasswordValue] = useState('');
+  const [isCreatePasswordWrong, setIsCreatePasswordWrong] = useState(false);
   const [confirmPasswordValue, setConfirmPasswordValue] = useState('');
+
   const [userEmailValue, setUserEmailValue] = useState('');
   const [userMobileValue, setUserMobileValue] = useState('');
 
@@ -338,31 +341,86 @@ function LoginCard(props) {
             >
               註冊成功
             </div>
-            <div className="login-input d-flex align-items-center justify-content-between">
-              {/* <div className="login-text">帳號</div> */}
+            <div className="login-input d-flex flex-column align-items-end justify-content-between">
               <LoginInput
                 type="text"
                 id="createAccount"
+                title={'帳號'}
+                className={'loginCard-input'}
                 ref={$createAccount}
                 value={createAccountValue}
                 setValue={setCreateAccountValue}
                 isShowWrongText={isCreateAccountWrong}
                 wrongText={'帳號要大於8碼'}
               />
-            </div>
-            {/* <div className="login-input d-flex align-items-center justify-content-between">
-              <div className="login-text">密碼</div>
               <LoginInput
-                type="password"
-                id="createPassword"
+                type="text"
+                id="createAccount"
+                title={'密碼'}
+                className={'loginCard-input'}
                 ref={$createPassword}
                 value={createPasswordValue}
                 setValue={setCreatePasswordValue}
+                isShowWrongText={isCreatePasswordWrong}
+                wrongText={'密碼要大於8碼'}
+              />
+              <LoginInput
+                type="text"
+                id="createAccount"
+                title={'確認密碼'}
+                className={'loginCard-input'}
+                ref={$createPassword}
+                value={createPasswordValue}
+                setValue={setCreatePasswordValue}
+                isShowWrongText={isCreatePasswordWrong}
+                wrongText={'密碼要大於8碼'}
+              />
+              <LoginInput
+                type="text"
+                id="createAccount"
+                title={'姓名'}
+                className={'loginCard-input'}
+                ref={$createPassword}
+                value={createPasswordValue}
+                setValue={setCreatePasswordValue}
+                isShowWrongText={isCreatePasswordWrong}
+                wrongText={'密碼要大於8碼'}
+              />
+              <LoginInput
+                type="text"
+                id="createAccount"
+                title={'信箱'}
+                className={'loginCard-input'}
+                ref={$createPassword}
+                value={createPasswordValue}
+                setValue={setCreatePasswordValue}
+                isShowWrongText={isCreatePasswordWrong}
+                wrongText={'密碼要大於8碼'}
+              />
+              <LoginInput
+                type="text"
+                id="createAccount"
+                title={'手機'}
+                className={'loginCard-input'}
+                ref={$createPassword}
+                value={createPasswordValue}
+                setValue={setCreatePasswordValue}
+                isShowWrongText={isCreatePasswordWrong}
+                wrongText={'密碼要大於8碼'}
               />
             </div>
-            <div className="wrong-password-format" ref={$wrongPasswordFormat}>
-              *密碼要大於8碼
+            <div className="d-flex">
+              <div className="no-account">已經有帳號了嗎?</div>
+              <div
+                className="login-now"
+                onClick={() => {
+                  ToLoginForm();
+                }}
+              >
+                立即登入
+              </div>
             </div>
+            {/* <div className="login-input d-flex align-items-center justify-content-between">
             <div className="login-input d-flex align-items-center justify-content-between">
               <div className="login-text">確認密碼</div>
               <LoginInput

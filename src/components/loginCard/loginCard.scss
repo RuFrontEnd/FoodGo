@@ -48,7 +48,6 @@
 
 // 文字+輸入框的wrapper
 .login-input {
-  width: 29.5rem;
   margin-top: 1.8rem;
 }
 
@@ -113,6 +112,10 @@
 
 .no-account-register:hover {
   cursor: pointer;
+}
+
+.loginCard-input{
+  margin: 10px 0px;
 }
 
 // ------------------------------ login end
