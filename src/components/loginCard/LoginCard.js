@@ -36,9 +36,13 @@ function LoginCard(props) {
   const $wrongMobileFormat = useRef();
   const $loginAlert = useRef();
   const $registerAlert = useRef();
+
   const [userAccountValue, setUserAccountValue] = useState('');
   const [userPasswordValue, setUserPasswordValue] = useState('');
+
   const [createAccountValue, setCreateAccountValue] = useState('');
+  const [isCreateAccountWrong, setIsCreateAccountWrong] = useState(false);
+
   const [createPasswordValue, setCreatePasswordValue] = useState('');
   const [confirmPasswordValue, setConfirmPasswordValue] = useState('');
   const [userEmailValue, setUserEmailValue] = useState('');
@@ -149,45 +153,13 @@ function LoginCard(props) {
           setShowSuccessBox(true); // 出現登入成功光箱
         }
       });
-    // }
-
-    // await getData();
-    // for (let i = 0; i < userinfo.length; i++) {
-    //   if (
-    //     // 正確
-    //     userAccountValue === userinfo[i].account &&
-    //     userPasswordValue === userinfo[i].password
-    //   ) {
-    //     dispatch(login());
-    //     setCurrentUser(userinfo[i].member_sid); // 設定目前使用者id
-
-    //     // 放在localStorage
-    //     let currentUserStorage = parseInt(userinfo[i].member_sid);
-    //     localStorage.setItem('currentUser', currentUserStorage);
-
-    //     setCurrentUserData(userinfo[i]);
-    //     console.log(userinfo[i]);
-    //     setShowLoginModal(false); // 登入光箱消失
-    //     setShowSuccessBox(true); // 出現登入成功光箱)
-    //   } else {
-    //     // 若帳密錯誤，顯示錯誤提示
-    //     $($loginAlert.current).slideDown('slow');
-    //     // 2秒後消失
-    //     setTimeout(() => {
-    //       $($loginAlert.current).slideUp('slow');
-    //     }, 2000);
-    //     // 清空input
-    //     setUserAccountValue('');
-    //     setUserPasswordValue('');
-    //   }
-    // }
   }
 
   // 註冊功能
   const handleRegister = () => {
     if (!createAccountValue.match(/[A-Za-z0-9]{8,24}/)) {
-      // $('.empty-account').slideUp('slow');
-      $($wrongAccountFormat.current).slideDown('slow');
+      console.log('a');
+      setIsCreateAccountWrong(true);
     } // 帳號小於8碼
 
     if (!createPasswordValue.match(/[A-Za-z0-9]{8,24}/)) {
@@ -275,23 +247,8 @@ function LoginCard(props) {
     }
   };
 
-  const handleFake = () => {
-    setCreateAccountValue('456456456');
-    setCreatePasswordValue('456456456');
-    setConfirmPasswordValue('456456456');
-    setUserEmailValue('456456456@gmail.com');
-    setUserMobileValue('0945456456');
-  };
-
   return (
     <div className={className} id={id}>
-      {/* <button
-        onClick={() => {
-          handleFake();
-        }}
-      >
-        假資料
-      </button> */}
       <div className="loginCard-container d-flex align-items-center">
         <section className="loginCard-background-container">
           <div
@@ -382,19 +339,18 @@ function LoginCard(props) {
               註冊成功
             </div>
             <div className="login-input d-flex align-items-center justify-content-between">
-              <div className="login-text">帳號</div>
+              {/* <div className="login-text">帳號</div> */}
               <LoginInput
                 type="text"
                 id="createAccount"
                 ref={$createAccount}
                 value={createAccountValue}
                 setValue={setCreateAccountValue}
+                isShowWrongText={isCreateAccountWrong}
+                wrongText={'帳號要大於8碼'}
               />
             </div>
-            <div class="wrong-account-format" ref={$wrongAccountFormat}>
-              *帳號要大於8碼
-            </div>
-            <div className="login-input d-flex align-items-center justify-content-between">
+            {/* <div className="login-input d-flex align-items-center justify-content-between">
               <div className="login-text">密碼</div>
               <LoginInput
                 type="password"
@@ -487,7 +443,13 @@ function LoginCard(props) {
               >
                 立即登入
               </div>
-            </div>
+            </div> */}
+
+            <OptionButton
+              onClick={handleRegister}
+              className="register-button"
+              text={'送出'}
+            />
           </div>
         </section>
       </div>

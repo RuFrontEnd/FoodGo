@@ -1,3 +1,4 @@
+// wrong variable.scss
 // 引入
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
 
@@ -20,6 +21,8 @@ $productName-Color: #262628;
 $customBorder: #decdbb;
 $customSelection-color: #a59583;
 $hr-Color: #decdbb;
+$warning-color:rgb(255, 53, 53);
+
 
 // 字體
 $notoSansTC: 'Noto Sans TC', sans-serif;

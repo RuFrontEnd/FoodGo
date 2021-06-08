@@ -1,23 +1,39 @@
-// inputH44
-// height:50px   font-size:20px   圓角輸入框
-// iris 會員註冊/登入
 import React, { useState, useEffect } from 'react';
 import './loginInput.scss';
 
 const LoginInput = React.forwardRef((props, ref) => {
-  const { placeholder, type, id, className, value, setValue } = props;
+  const {
+    placeholder,
+    type,
+    id,
+    className,
+    style,
+    value,
+    setValue,
+    isShowWrongText,
+    wrongText,
+  } = props;
   return (
-    <input
-      value={value}
-      onChange={(e) => {
-        setValue(e.target.value);
-      }}
-      ref={ref}
-      id={id}
-      className={`LoginInput ${className}`}
-      type={type}
-      placeholder={placeholder}
-    />
+    <section id="loginInput-container" className={className} style={style}>
+      <div id="loginInput-wrap">
+        <div className="loginInput-text">帳號</div>
+        <div id="loginInput-message">
+          <input
+            value={value}
+            onChange={(e) => {
+              setValue(e.target.value);
+            }}
+            ref={ref}
+            className={isShowWrongText ? 'loginInput-wrong' : 'loginInput'}
+            type={type}
+            placeholder={placeholder}
+          />
+          {isShowWrongText && (
+            <div class="loginInput-wrong-text">*{wrongText}</div>
+          )}
+        </div>
+      </div>
+    </section>
   );
 });
 
