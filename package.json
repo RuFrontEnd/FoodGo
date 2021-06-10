@@ -13,6 +13,7 @@
     "antd": "^4.8.2",
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
+    "crypto-js": "^4.0.0",
     "date-fns": "^2.16.1",
     "eslint-config-react-app": "^5.2.1",
     "eslint-plugin-import": "^2.22.1",

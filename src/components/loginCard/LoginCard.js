@@ -5,6 +5,8 @@ import LoginInput from 'components/loginInput/LoginInput.js';
 import OptionButton from 'components/optionButton/OptionButton';
 import { login } from 'redux/member/memberActions';
 import { useDispatch } from 'react-redux';
+import CryptoAES from 'crypto-js/aes';
+import CryptoENC from 'crypto-js/enc-utf8';
 
 function LoginCard(props) {
   const {
@@ -25,6 +27,7 @@ function LoginCard(props) {
   const $userPassword = useRef();
   const $loginAlert = useRef();
   const $registerAlert = useRef();
+  const $formCheckInput = useRef();
 
   // 登入帳號
   const [userAccountValue, setUserAccountValue] = useState('');
@@ -58,6 +61,9 @@ function LoginCard(props) {
 
   // 註冊成功提示
   const [isRegistered, setIsRegistered] = useState(false);
+
+  // 記住我
+  const [isRemembered, setIsRemembered] = useState(false);
 
   // 變成註冊表單
   const ToRegisterForm = () => {
@@ -263,6 +269,61 @@ function LoginCard(props) {
     }
   };
 
+  useEffect(() => {
+    const cookies = document.cookie.split(';');
+    let findcookieTimes = 0;
+    cookies.forEach((cookie) => {
+      if (cookie.indexOf('encryptedAccount=') >= 0) {
+        const encryptAccount = cookie.replace('encryptedAccount=', '').trim('');
+        const decryptedAccount = CryptoAES.decrypt(
+          encryptAccount,
+          'foodGoRememberMeSecret'
+        ).toString(CryptoENC); // 解密帳號
+        setUserAccountValue(decryptedAccount);
+        findcookieTimes += 1;
+      }
+      if (cookie.indexOf('encryptedPassword=') >= 0) {
+        const encryptPassword = cookie
+          .replace('encryptedPassword=', '')
+          .trim('');
+        const decryptedPassword = CryptoAES.decrypt(
+          encryptPassword,
+          'foodGoRememberMeSecret'
+        ).toString(CryptoENC); // 解密帳號
+        setUserPasswordValue(decryptedPassword);
+        findcookieTimes += 1;
+      }
+    });
+    findcookieTimes === 2 ? setIsRemembered(true) : setIsRemembered(false); // 有記住的帳號密碼則checkbox為勾起; 反之則不勾
+  }, []); // 判斷是否cookie已經有記住我的帳號密碼
+
+  useEffect(() => {
+    if (isRemembered && userAccountValue !== '' && userPasswordValue !== '') {
+      // 加密
+      const encryptedAccount = CryptoAES.encrypt(
+        userAccountValue,
+        'foodGoRememberMeSecret'
+      ).toString(); // 加密帳號並轉字串
+
+      const encryptedPassword = CryptoAES.encrypt(
+        userPasswordValue,
+        'foodGoRememberMeSecret'
+      ).toString(); // 加密密碼並轉字串
+
+      document.cookie = `encryptedAccount=${encryptedAccount}; max-age=${
+        86400 * 1
+      }`; // 存活一天
+      document.cookie = `encryptedPassword=${encryptedPassword}; max-age=${
+        86400 * 1
+      }`; // 存活一天
+    } // 按下有記住我則設cookie
+
+    if (!isRemembered) {
+      document.cookie = 'encryptedAccount=; max-age=0';
+      document.cookie = 'encryptedPassword=$; max-age=0';
+    } // 取消記住我則刪除cookie
+  }, [isRemembered]);
+
   return (
     <div className={className} id={id}>
       <div className="loginCard-container d-flex align-items-center">
@@ -321,6 +382,11 @@ function LoginCard(props) {
                   class="form-check-input big-checkbox"
                   type="checkbox"
                   id="gridCheck"
+                  onChange={() => {
+                    setIsRemembered(!isRemembered);
+                  }}
+                  ref={$formCheckInput}
+                  checked={isRemembered}
                 />
                 <div className="login-remember-me">記住我</div>
               </div>
