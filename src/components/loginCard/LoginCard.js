@@ -37,19 +37,35 @@ function LoginCard(props) {
   const $loginAlert = useRef();
   const $registerAlert = useRef();
 
-  // 帳號
+  // 登入帳號
   const [userAccountValue, setUserAccountValue] = useState('');
-  const [createAccountValue, setCreateAccountValue] = useState('');
-  const [isCreateAccountWrong, setIsCreateAccountWrong] = useState(false);
 
-  // 密碼
+  // 登入密碼
   const [userPasswordValue, setUserPasswordValue] = useState('');
-  const [createPasswordValue, setCreatePasswordValue] = useState('');
-  const [isCreatePasswordWrong, setIsCreatePasswordWrong] = useState(false);
-  const [confirmPasswordValue, setConfirmPasswordValue] = useState('');
 
+  // 註冊帳號
+  const [createAccountValue, setCreateAccountValue] = useState('');
+  const [createAccountWrongText, setCreateAccountWrongText] = useState('');
+
+  // 註冊密碼
+  const [createPasswordValue, setCreatePasswordValue] = useState('');
+  const [createPasswordWrongText, setCreatePasswordWrongText] = useState('');
+
+  // 確認密碼
+  const [confirmPasswordValue, setConfirmPasswordValue] = useState('');
+  const [confirmPasswordWrongText, setConfirmPasswordWrongText] = useState('');
+
+  // 姓名
+  const [nameValue, setNameValue] = useState('');
+  const [nameWrongText, setNameWrongText] = useState('');
+
+  // 信箱
   const [userEmailValue, setUserEmailValue] = useState('');
+  const [userEmailWrongText, setUserEmailWrongText] = useState('');
+
+  // 手機
   const [userMobileValue, setUserMobileValue] = useState('');
+  const [userMobileWrongText, setUserMobileWrongText] = useState('');
 
   // 變成註冊表單
   const ToRegisterForm = () => {
@@ -161,21 +177,18 @@ function LoginCard(props) {
   // 註冊功能
   const handleRegister = () => {
     if (!createAccountValue.match(/[A-Za-z0-9]{8,24}/)) {
-      console.log('a');
-      setIsCreateAccountWrong(true);
+      setCreateAccountWrongText('帳號不得小於8位數');
     } // 帳號小於8碼
 
     if (!createPasswordValue.match(/[A-Za-z0-9]{8,24}/)) {
-      // $('.empty-password').slideUp('slow');
-      $($wrongPasswordFormat.current).slideDown('slow');
+      setCreatePasswordWrongText('密碼不得小於8位數');
     } // 密碼小於8碼
 
     if (
       !confirmPasswordValue.match(/[A-Za-z0-9]{8,24}/) ||
       confirmPasswordValue !== createPasswordValue
     ) {
-      // $('.empty-password').slideUp('slow');
-      $($wrongConfirmPasswordFormat.current).slideDown('slow');
+      setConfirmPasswordWrongText('密碼與確認密碼不相同');
     } // 確認密碼小於8碼或確認密碼不等於密碼
 
     if (
@@ -183,13 +196,11 @@ function LoginCard(props) {
         /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
       )
     ) {
-      // $('.empty-email').slideUp('slow');
-      $($wrongEmailFormat.current).slideDown('slow');
+      setUserEmailWrongText('信箱格式錯誤');
     } // 信箱格式不符
 
     if (!userMobileValue.match(/^09[0-9]{8}$/)) {
-      // $('.empty-mobile').slideUp('slow');
-      $($wrongMobileFormat.current).slideDown('slow');
+      setUserMobileWrongText('手機格式錯誤');
     } // 手機格式不符
 
     // 資料都ok才送出
@@ -204,15 +215,11 @@ function LoginCard(props) {
       userMobileValue.match(/^09[0-9]{8}$/)
     ) {
       // 清空錯誤題示
-      // $('.empty-account').slideUp('slow');
-      // $('.empty-password').slideUp('slow');
-      // $('.empty-email').slideUp('slow');
-      // $('.empty-mobile').slideUp('slow');
-      $($wrongAccountFormat.current).slideUp('slow');
-      $($wrongPasswordFormat.current).slideUp('slow');
-      $($wrongConfirmPasswordFormat.current).slideUp('slow');
-      $($wrongEmailFormat.current).slideUp('slow');
-      $($wrongMobileFormat.current).slideUp('slow');
+      setCreateAccountWrongText('');
+      setCreatePasswordWrongText('');
+      setConfirmPasswordWrongText('');
+      setUserEmailWrongText('');
+      setUserMobileWrongText('');
 
       // 把輸入的內容包成物件傳出去
       const newRegister = {
@@ -271,7 +278,7 @@ function LoginCard(props) {
         </section>
         <section className="login-form" ref={$loginForm}>
           {/* ----------------登入表單----------------- */}
-          <div className="login-content" ref={$loginContent}>
+          <div className="login-content form-content" ref={$loginContent}>
             <div className="login-title">會員登入</div>
             <div
               className="alert alert-danger login-alert"
@@ -281,9 +288,10 @@ function LoginCard(props) {
               帳號或密碼錯誤
             </div>
             <div className="login-input d-flex align-items-center justify-content-between">
-              <div className="login-text">帳號</div>
               <LoginInput
+                className={'loginCard-input'}
                 type="text"
+                title={'帳號'}
                 id="userAccount"
                 ref={$userAccount}
                 value={userAccountValue}
@@ -291,9 +299,10 @@ function LoginCard(props) {
               />
             </div>
             <div className="login-input d-flex  align-items-center justify-content-between">
-              <div className="login-text">密碼</div>
               <LoginInput
+                className={'loginCard-input'}
                 type="password"
+                title={'密碼'}
                 id="userPassword"
                 ref={$userPassword}
                 value={userPasswordValue}
@@ -311,14 +320,12 @@ function LoginCard(props) {
               </div>
               <div className="login-forget-pw">忘記密碼</div>
             </div>
-            <div
+            <OptionButton
               className="login-button"
-              onClick={() => {
-                handleLogin();
-              }}
-            >
-              <OptionButton text={'登入'} type={'green'} />
-            </div>
+              onClick={handleLogin}
+              text={'登入'}
+              type={'green'}
+            />
             <div className="d-flex">
               <div className="no-account">還沒有帳號嗎?</div>
               <div
@@ -332,7 +339,7 @@ function LoginCard(props) {
             </div>
           </div>
           {/* ----------------註冊表單----------------- */}
-          <div className="register-content" ref={$registerContent}>
+          <div className="register-content form-content" ref={$registerContent}>
             <div className="register-title">會員註冊</div>
             <div
               className="alert alert-success register-alert"
@@ -347,167 +354,72 @@ function LoginCard(props) {
                 id="createAccount"
                 title={'帳號'}
                 className={'loginCard-input'}
-                ref={$createAccount}
                 value={createAccountValue}
                 setValue={setCreateAccountValue}
-                isShowWrongText={isCreateAccountWrong}
-                wrongText={'帳號要大於8碼'}
+                wrongText={createAccountWrongText}
               />
               <LoginInput
                 type="text"
                 id="createAccount"
                 title={'密碼'}
                 className={'loginCard-input'}
-                ref={$createPassword}
                 value={createPasswordValue}
                 setValue={setCreatePasswordValue}
-                isShowWrongText={isCreatePasswordWrong}
-                wrongText={'密碼要大於8碼'}
+                wrongText={createPasswordWrongText}
               />
               <LoginInput
                 type="text"
                 id="createAccount"
                 title={'確認密碼'}
                 className={'loginCard-input'}
-                ref={$createPassword}
-                value={createPasswordValue}
-                setValue={setCreatePasswordValue}
-                isShowWrongText={isCreatePasswordWrong}
-                wrongText={'密碼要大於8碼'}
+                value={confirmPasswordValue}
+                setValue={setConfirmPasswordValue}
+                wrongText={confirmPasswordWrongText}
               />
               <LoginInput
                 type="text"
                 id="createAccount"
                 title={'姓名'}
                 className={'loginCard-input'}
-                ref={$createPassword}
-                value={createPasswordValue}
-                setValue={setCreatePasswordValue}
-                isShowWrongText={isCreatePasswordWrong}
-                wrongText={'密碼要大於8碼'}
+                value={nameValue}
+                setValue={setNameValue}
+                isShowWrongText={nameWrongText}
               />
               <LoginInput
                 type="text"
                 id="createAccount"
                 title={'信箱'}
                 className={'loginCard-input'}
-                ref={$createPassword}
-                value={createPasswordValue}
-                setValue={setCreatePasswordValue}
-                isShowWrongText={isCreatePasswordWrong}
-                wrongText={'密碼要大於8碼'}
+                value={userEmailValue}
+                setValue={setUserEmailValue}
+                wrongText={userEmailWrongText}
               />
               <LoginInput
                 type="text"
                 id="createAccount"
                 title={'手機'}
                 className={'loginCard-input'}
-                ref={$createPassword}
-                value={createPasswordValue}
-                setValue={setCreatePasswordValue}
-                isShowWrongText={isCreatePasswordWrong}
-                wrongText={'密碼要大於8碼'}
-              />
-            </div>
-            <div className="d-flex">
-              <div className="no-account">已經有帳號了嗎?</div>
-              <div
-                className="login-now"
-                onClick={() => {
-                  ToLoginForm();
-                }}
-              >
-                立即登入
-              </div>
-            </div>
-            {/* <div className="login-input d-flex align-items-center justify-content-between">
-            <div className="login-input d-flex align-items-center justify-content-between">
-              <div className="login-text">確認密碼</div>
-              <LoginInput
-                type="password"
-                id="createConfirmPassword"
-                ref={$createConfirmPassword}
-                value={confirmPasswordValue}
-                setValue={setConfirmPasswordValue}
-              />
-            </div>
-            <div
-              className="wrong-confirmPassword-format"
-              ref={$wrongConfirmPasswordFormat}
-            >
-              *兩次輸入的密碼不符
-            </div>
-            <div className="login-input d-flex align-items-center justify-content-between">
-              <div className="login-text">姓</div>
-              <LoginInput
-                type="text"
-                id="creatEmail"
-                ref={$createEmail}
-                value={userEmailValue}
-                setValue={setUserEmailValue}
-              />
-            </div>
-            <div className="login-input d-flex align-items-center justify-content-between">
-              <div className="login-text">名字</div>
-              <LoginInput
-                type="text"
-                id="creatEmail"
-                ref={$createEmail}
-                value={userEmailValue}
-                setValue={setUserEmailValue}
-              />
-            </div>
-            <div className="login-input d-flex align-items-center justify-content-between">
-              <div className="login-text">信箱</div>
-              <LoginInput
-                type="text"
-                id="creatEmail"
-                ref={$createEmail}
-                value={userEmailValue}
-                setValue={setUserEmailValue}
-              />
-            </div>
-            <div class="wrong-email-format" ref={$wrongEmailFormat}>
-              *請填入正確的信箱格式
-            </div>
-            <div className="login-input d-flex align-items-center justify-content-between">
-              <div className="login-text">手機</div>
-              <LoginInput
-                type="text"
-                id="createMobile"
-                ref={$createMobile}
                 value={userMobileValue}
                 setValue={setUserMobileValue}
+                wrongText={userMobileWrongText}
               />
             </div>
-            <div className="wrong-mobile-format" ref={$wrongMobileFormat}>
-              *請填入正確的手機格式
-            </div>
-            <div
-              className="register-button"
-              onClick={() => {
-                handleRegister();
-              }}
-            >
-              <OptionButton text={'送出'} />
-            </div>
-            <div className="d-flex">
-              <div className="no-account">已經有帳號了嗎?</div>
-              <div
-                className="login-now"
-                onClick={() => {
-                  ToLoginForm();
-                }}
-              >
-                立即登入
-              </div>
-            </div> */}
-
             <OptionButton
               onClick={handleRegister}
               className="register-button"
               text={'送出'}
             />
+            <div className="d-flex">
+              <div className="no-account">已經有帳號了嗎?</div>
+              <div
+                className="login-now"
+                onClick={() => {
+                  ToLoginForm();
+                }}
+              >
+                立即登入
+              </div>
+            </div>
           </div>
         </section>
       </div>

@@ -10,8 +10,7 @@
 .login-form {
   position: absolute;
   left: 45%;
-  padding: 50px 0px;
-  width: 47rem;
+  padding: 50px 50px;
   background-color: #fff;
   border-radius: 2rem;
   transform: translate(-90%, 0);
@@ -25,12 +24,7 @@
   opacity: 1;
 }
 .login-content {
-  width: 54rem;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
   display: flex;
-  // display: none;
 }
 
 .login-alert {
@@ -46,11 +40,6 @@
   margin-bottom: 4rem;
 }
 
-// 文字+輸入框的wrapper
-.login-input {
-  margin-top: 1.8rem;
-}
-
 .login-form .login-text {
   color: #858585;
   font-size: 2rem;
@@ -63,13 +52,10 @@
 
 // 記住我,忘記密碼的wrapper
 .login-other {
-  justify-content: space-between;
-  width: 28rem;
+  width: 100%;
+  justify-content: center;
   color: #858585;
   font-size: 1.7rem;
-  margin-left: -3rem;
-  margin-top: 3rem;
-  margin-bottom: 6rem;
 }
 
 // 忘記密碼
@@ -79,6 +65,10 @@
 
 .login-forget-pw:hover {
   cursor: pointer;
+}
+
+.form-check{
+  margin-right: 5rem;
 }
 
 // 記住我
@@ -93,10 +83,11 @@
   height: 2.2rem;
 }
 
-.login-button button {
+.login-button {
   width: 12rem;
   height: 4rem;
-  margin-bottom: 2.3rem;
+  margin-top: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 .no-account {
@@ -114,8 +105,14 @@
   cursor: pointer;
 }
 
-.loginCard-input{
-  margin: 10px 0px;
+.loginCard-input {
+  margin: 10px 30px;
+}
+
+.form-content {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 // ------------------------------ login end
@@ -128,16 +125,12 @@
 
 .register-content {
   display: none;
-  width: 54rem;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .register-title {
   color: #a59583;
   font-size: 2.4rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 4rem;
 }
 
 .login-now {
@@ -150,11 +143,11 @@
   cursor: pointer;
 }
 
-.register-button button {
+.register-button {
   width: 12rem;
   height: 4rem;
-  margin-bottom: 2.3rem;
-  margin-top: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 // 註冊表單提示

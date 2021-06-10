@@ -11,9 +11,9 @@ const LoginInput = React.forwardRef((props, ref) => {
     style,
     value,
     setValue,
-    isShowWrongText,
     wrongText,
   } = props;
+
   return (
     <section id="loginInput-container" className={className} style={style}>
       <div id="loginInput-wrap">
@@ -25,13 +25,11 @@ const LoginInput = React.forwardRef((props, ref) => {
               setValue(e.target.value);
             }}
             ref={ref}
-            className={isShowWrongText ? 'loginInput-wrong' : 'loginInput'}
+            className={wrongText ? 'loginInput-wrong' : 'loginInput'}
             type={type}
             placeholder={placeholder}
           />
-          {isShowWrongText && (
-            <div class="loginInput-wrong-text">*{wrongText}</div>
-          )}
+          {wrongText && <div class="loginInput-wrong-text">*{wrongText}</div>}
         </div>
       </div>
     </section>
