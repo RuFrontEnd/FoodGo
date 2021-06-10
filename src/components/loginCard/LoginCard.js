@@ -5,7 +5,6 @@ import LoginInput from 'components/loginInput/LoginInput.js';
 import OptionButton from 'components/optionButton/OptionButton';
 import { login } from 'redux/member/memberActions';
 import { useDispatch } from 'react-redux';
-import $ from 'jquery';
 
 function LoginCard(props) {
   const {
@@ -24,16 +23,6 @@ function LoginCard(props) {
   const $registerContent = useRef();
   const $userAccount = useRef();
   const $userPassword = useRef();
-  const $createAccount = useRef();
-  const $createPassword = useRef();
-  const $createConfirmPassword = useRef();
-  const $createEmail = useRef();
-  const $createMobile = useRef();
-  const $wrongAccountFormat = useRef();
-  const $wrongPasswordFormat = useRef();
-  const $wrongConfirmPasswordFormat = useRef();
-  const $wrongEmailFormat = useRef();
-  const $wrongMobileFormat = useRef();
   const $loginAlert = useRef();
   const $registerAlert = useRef();
 
@@ -66,6 +55,9 @@ function LoginCard(props) {
   // 手機
   const [userMobileValue, setUserMobileValue] = useState('');
   const [userMobileWrongText, setUserMobileWrongText] = useState('');
+
+  // 註冊成功提示
+  const [isRegistered, setIsRegistered] = useState(false);
 
   // 變成註冊表單
   const ToRegisterForm = () => {
@@ -132,21 +124,6 @@ function LoginCard(props) {
   // 登入比對帳密
   // 要用 async await, 先拿到資料再比對
   async function handleLogin() {
-    // if (localStorage.getItem('accessToken')) {
-    //   const token = { accessToken: localStorage.getItem('accessToken') };
-    //   console.log('token', token);
-    //   await fetch('http://localhost:5000/member/isUserAuth', {
-    //     method: 'POST',
-    //     body: JSON.stringify(token),
-    //     headers: new Headers({
-    //       Accept: 'application/json',
-    //       'Content-Type': 'application/json',
-    //     }),
-    //   }).then((res) => res.json());
-    //   // .then(jsonData);
-    // }
-
-    // if (!localStorage.getItem('accessToken')) {
     const member = {
       account: userAccountValue,
       password: userPasswordValue,
@@ -214,7 +191,6 @@ function LoginCard(props) {
       ) &&
       userMobileValue.match(/^09[0-9]{8}$/)
     ) {
-      // 清空錯誤題示
       setCreateAccountWrongText('');
       setCreatePasswordWrongText('');
       setConfirmPasswordWrongText('');
@@ -241,19 +217,17 @@ function LoginCard(props) {
         .then((r) => r.json())
         .then((o) => {
           console.log(o);
+          setCreateAccountValue('');
+          setCreatePasswordValue('');
+          setConfirmPasswordValue('');
+          setNameValue('')
+          setUserEmailValue('');
+          setUserMobileValue('');
+          setIsRegistered(true);
+          setTimeout(() => {
+            setIsRegistered(false);
+          }, 3 * 1000);
         });
-
-      // 若註冊成功，顯示成功提示
-      $($registerAlert.current).slideDown('slow');
-      // 2秒後消失
-      setTimeout(() => {
-        $($registerAlert.current).slideUp('slow');
-      }, 2000);
-      setCreateAccountValue('');
-      setCreatePasswordValue('');
-      setConfirmPasswordValue('');
-      setUserEmailValue('');
-      setUserMobileValue('');
     }
   };
 
@@ -342,11 +316,19 @@ function LoginCard(props) {
           <div className="register-content form-content" ref={$registerContent}>
             <div className="register-title">會員註冊</div>
             <div
-              className="alert alert-success register-alert"
-              role="alert"
-              ref={$registerAlert}
+              className={
+                isRegistered
+                  ? 'logCard-register-alert-active'
+                  : 'logCard-register-alert-inactive'
+              }
             >
-              註冊成功
+              <div
+                className="alert-success register-alert"
+                role="alert"
+                ref={$registerAlert}
+              >
+                註冊成功
+              </div>
             </div>
             <div className="login-input d-flex flex-column align-items-end justify-content-between">
               <LoginInput

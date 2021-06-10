@@ -67,7 +67,7 @@
   cursor: pointer;
 }
 
-.form-check{
+.form-check {
   margin-right: 5rem;
 }
 
@@ -182,8 +182,27 @@
 }
 
 .register-alert {
-  width: 55%;
+  // width: 55%;
   text-align: center;
   font-size: 1.5rem;
   display: none;
+  display: block;
+}
+
+.register-alert {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+}
+
+.logCard-register-alert-active {
+  height: 42px;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.logCard-register-alert-inactive {
+  height: 0px;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
 }
