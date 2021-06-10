@@ -18,9 +18,9 @@
   width: 100%;
   position: absolute;
   z-index: -1;
-  top: 70px;
-  left: -10px;
-  transition: top $two-five, background-color $zero, border $zero;
+  bottom: -100%;
+  left: 0%;
+  transition: bottom $two-five, background-color $zero, border $zero;
   @include font(
     // 字體, 字體大小, 字重, 字距, 字色
     $notoSansTC,
@@ -40,7 +40,7 @@
 }
 
 .option-btn:hover::after {
-  top: 0px;
+  bottom: 0%;
 }
 
 // orange
