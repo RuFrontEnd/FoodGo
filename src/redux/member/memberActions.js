@@ -1,5 +1,9 @@
-import { LOGIN } from 'redux/member/memberTypes';
-import { LOGOUT } from 'redux/member/memberTypes';
+import {
+  LOGIN,
+  LOGOUT,
+  SETCURRENTUSER,
+  SETCURRENTUSERDATA,
+} from 'redux/member/memberTypes';
 
 export const login = () => {
   return {
@@ -12,5 +16,20 @@ export const logout = () => {
   return {
     type: LOGOUT,
     info: 'login status has been changed(false)',
+  };
+};
+
+export const setCurrentUser = (currentUser) => {
+  return {
+    type: SETCURRENTUSER,
+    info: 'currnetUser status has been changed',
+    currentUser: currentUser,
+  };
+};
+
+export const setCurrentUserData = () => {
+  return {
+    type: SETCURRENTUSERDATA,
+    info: 'currnetUserData status has been changed',
   };
 };

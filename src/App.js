@@ -48,19 +48,19 @@ import {
 } from '../src/Janice/Components/JanIndexx/data.js';
 
 // 判斷是否 login 的狀態
-import { login } from 'redux/member/memberActions';
-import { logout } from 'redux/member/memberActions';
+import { login, logout, setCurrentUser } from 'redux/member/memberActions';
 
 // 路由表
 function App() {
   const dispatch = useDispatch();
   const isLogin = useSelector((state) => state.member.isLogin);
+  const currentUser = useSelector((state) => state.member.currentUser);
   const [showBar, setShowBar] = useState(true);
   const [cartNumber, setCartNumber] = useState(0);
   const [amount, setAmount] = useState(1);
 
   // ---------- iris ---------- //
-  const [currentUser, setCurrentUser] = useState(''); // 目前用戶
+  // const [currentUser, setCurrentUser] = useState(''); // 目前用戶
   const [currentUserData, setCurrentUserData] = useState({}); // 目前用戶
   const [showLoginModal, setShowLoginModal] = useState(false); //控制是否秀光箱
   const [showSuccessBox, setShowSuccessBox] = useState(false);
@@ -78,9 +78,7 @@ function App() {
 
   //----------------------索引值轉字串----------------------
   const [textCounty, setTextCounty] = useState('');
-  // setTextCounty(turnCon);
   const [textTownship, setTextTownship] = useState('');
-  // setTextTownship(turnTown);
 
   useEffect(async () => {
     const accessToken = localStorage.getItem('accessToken');
@@ -101,6 +99,7 @@ function App() {
         .then((jsonData) => {
           if (jsonData.status) {
             dispatch(login());
+            dispatch(setCurrentUser(jsonData.currentUser));
           }
         });
     }
@@ -141,26 +140,6 @@ function App() {
       setCartNumber(newCartNumber);
     }
   };
-  // 20201112新版購物車icon計數處理器(修正減項邏輯，單純加的人可以不用)
-  // const handleCartNumber2 = (type = 'add', amount = 1) => {
-  //   if (type === 'add') {
-  //     let currentCartNumber =
-  //       JSON.parse(localStorage.getItem('cartNumber')) || 0;
-  //     let newCartNumber = +currentCartNumber + amount;
-  //     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-  //     setCartNumber(newCartNumber);
-  //   }
-  //   if (
-  //     type === 'minus' &&
-  //     JSON.parse(localStorage.getItem('cartNumber')) > 0
-  //   ) {
-  //     let currentCartNumber =
-  //       JSON.parse(localStorage.getItem('cartNumber')) || 0;
-  //     let newCartNumber = +currentCartNumber - amount;
-  //     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-  //     setCartNumber(newCartNumber);
-  //   }
-  // };
 
   if (isLogin === null) {
     return <></>;

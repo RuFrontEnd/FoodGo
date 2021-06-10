@@ -3,8 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import 'components/loginCard/loginCard.scss';
 import LoginInput from 'components/loginInput/LoginInput.js';
 import OptionButton from 'components/optionButton/OptionButton';
-import { login } from 'redux/member/memberActions';
-import { useDispatch } from 'react-redux';
+import { login, setCurrentUser } from 'redux/member/memberActions';
+import { useDispatch, useSelector } from 'react-redux';
 import CryptoAES from 'crypto-js/aes';
 import CryptoENC from 'crypto-js/enc-utf8';
 
@@ -12,7 +12,7 @@ function LoginCard(props) {
   const {
     className,
     id,
-    setCurrentUser,
+    // setCurrentUser,
     setShowSuccessBox,
     setShowLoginModal,
     setCurrentUserData,
@@ -145,12 +145,12 @@ function LoginCard(props) {
     })
       .then((res) => res.json())
       .then((jsonData) => {
-        console.log('jsonData', jsonData);
+        // console.log('jsonData', jsonData);
         if (jsonData.status === true) {
           localStorage.setItem('accessToken', jsonData.accessToken);
           localStorage.setItem('currentUser', jsonData.currentUser);
           dispatch(login());
-          setCurrentUser(jsonData.currentUser);
+          dispatch(setCurrentUser(jsonData.currentUser)); // dispatch參數傳入到reducer的action參數
           setShowLoginModal(false); // 登入光箱消失
           setShowSuccessBox(true); // 出現登入成功光箱
         }
@@ -254,7 +254,7 @@ function LoginCard(props) {
       })
         .then((r) => r.json())
         .then((o) => {
-          console.log(o);
+          // console.log(o);
           setCreateAccountValue('');
           setCreatePasswordValue('');
           setConfirmPasswordValue('');
@@ -268,6 +268,11 @@ function LoginCard(props) {
         });
     }
   };
+
+  const A = useSelector((state) => state);
+  useEffect(() => {
+    console.log('A', A);
+  }, [A]);
 
   useEffect(() => {
     const cookies = document.cookie.split(';');

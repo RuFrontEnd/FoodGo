@@ -1,20 +1,39 @@
-import { LOGIN } from 'redux/member/memberTypes';
-import { LOGOUT } from 'redux/member/memberTypes';
+import {
+  LOGIN,
+  LOGOUT,
+  SETCURRENTUSER,
+  SETCURRENTUSERDATA,
+} from 'redux/member/memberTypes';
 
 const initialState = {
   isLogin: null,
+  currentUser: -1,
+  currentUserData: [],
 };
 
-const loginReducers = (state = initialState, action) => {
+const memberReducers = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN:
       return {
+        ...state,
         isLogin: true,
       };
 
     case LOGOUT:
       return {
+        ...state,
         isLogin: false,
+      };
+
+    case SETCURRENTUSER:
+      return {
+        ...state,
+        currentUser: action.currentUser,
+      };
+
+    case SETCURRENTUSERDATA:
+      return {
+        currentUser: state,
       };
 
     default:
@@ -22,4 +41,4 @@ const loginReducers = (state = initialState, action) => {
   }
 };
 
-export default loginReducers;
+export default memberReducers;
