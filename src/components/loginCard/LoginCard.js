@@ -269,6 +269,11 @@ function LoginCard(props) {
     }
   };
 
+  const currentUser = useSelector((state) => state.member.currentUser);
+  useEffect(() => {
+    console.log('currentUser', currentUser);
+  }, [currentUser]);
+
   useEffect(() => {
     const cookies = document.cookie.split(';');
     let findcookieTimes = 0;

@@ -82,9 +82,10 @@ function App() {
 
   useEffect(async () => {
     const accessToken = localStorage.getItem('accessToken');
+    const currenUser = JSON.parse(localStorage.getItem('currentUser')); // JSON.parse()轉數值
     const currentCartNumber =
       JSON.parse(localStorage.getItem('cartNumber')) || 0;
-    if (accessToken) {
+    if (accessToken && currenUser) {
       const token = { accessToken: accessToken };
       await fetch('http://localhost:5000/member/login', {
         method: 'POST',
@@ -94,25 +95,20 @@ function App() {
           'Content-Type': 'application/json',
           authorization: `Bearer ${accessToken}`,
         }),
-      })
+      }) // 將token送到後端做JWT驗證
         .then((res) => res.json())
         .then((jsonData) => {
           if (jsonData.status) {
             dispatch(login());
-            dispatch(setCurrentUser(jsonData.currentUser));
+            dispatch(setCurrentUser(currenUser));
           }
         });
     }
-    if (!accessToken) {
+    if (!accessToken || !currenUser) {
       dispatch(logout());
     }
-
     setCartNumber(currentCartNumber);
-
-    if (JSON.parse(localStorage.getItem('currentUser'))) {
-      setCurrentUser(JSON.parse(localStorage.getItem('currentUser')));
-    }
-  }, []); // 初始判斷會員狀態與資料
+  }, []); // 判斷初始會員狀態與資料(是否須要重新登入)
 
   useEffect(() => setTextAddress(address), [address]);
   useEffect(
