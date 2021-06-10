@@ -12,6 +12,7 @@ const LoginInput = React.forwardRef((props, ref) => {
     value,
     setValue,
     wrongText,
+    setWrongText
   } = props;
 
   return (
@@ -23,6 +24,7 @@ const LoginInput = React.forwardRef((props, ref) => {
             value={value}
             onChange={(e) => {
               setValue(e.target.value);
+              setWrongText('')
             }}
             ref={ref}
             className={wrongText ? 'loginInput-wrong' : 'loginInput'}

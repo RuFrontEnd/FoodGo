@@ -153,44 +153,76 @@ function LoginCard(props) {
 
   // 註冊功能
   const handleRegister = () => {
-    if (!createAccountValue.match(/[A-Za-z0-9]{8,24}/)) {
-      setCreateAccountWrongText('帳號不得小於8位數');
-    } // 帳號小於8碼
-
-    if (!createPasswordValue.match(/[A-Za-z0-9]{8,24}/)) {
-      setCreatePasswordWrongText('密碼不得小於8位數');
-    } // 密碼小於8碼
-
-    if (
-      !confirmPasswordValue.match(/[A-Za-z0-9]{8,24}/) ||
-      confirmPasswordValue !== createPasswordValue
+    let unPassTimes = 0;
+    // 驗證帳號
+    if (createAccountValue.length === 0) {
+      setCreateAccountWrongText('帳號不得為空');
+      unPassTimes += 1;
+    } else if (
+      !createAccountValue.match(/.{8}/) ||
+      createAccountValue.match(/.{25}/)
     ) {
-      setConfirmPasswordWrongText('密碼與確認密碼不相同');
-    } // 確認密碼小於8碼或確認密碼不等於密碼
+      setCreateAccountWrongText('帳號不得小於8位數或大於24位數');
+      unPassTimes += 1;
+    } else if (!createAccountValue.match(/^[a-z]/i)) {
+      setCreateAccountWrongText('帳號開頭須為英文字母');
+      unPassTimes += 1;
+    } else if (!createAccountValue.match(/^\w+$/)) {
+      setCreateAccountWrongText('帳號不得含有特殊符號');
+      unPassTimes += 1;
+    }
 
-    if (
+    // 驗證密碼
+    if (createPasswordValue.length === 0) {
+      setCreatePasswordWrongText('密碼不得為空');
+      unPassTimes += 1;
+    } else if (
+      !createPasswordValue.match(/.{8}/) ||
+      createPasswordValue.match(/.{25}/)
+    ) {
+      setCreatePasswordWrongText('密碼不得小於8位數或大於24位數');
+      unPassTimes += 1;
+    } else if (!createPasswordValue.match(/^[a-z]/i)) {
+      setCreatePasswordWrongText('密碼開頭須為英文字母');
+      unPassTimes += 1;
+    } else if (!createPasswordValue.match(/^\w+$/)) {
+      setCreatePasswordWrongText('密碼不得含有特殊符號');
+      unPassTimes += 1;
+    }
+
+    // 驗證確認密碼
+    if (confirmPasswordValue !== createPasswordValue) {
+      setConfirmPasswordWrongText('密碼與確認密碼不相同');
+      unPassTimes += 1;
+    }
+
+    if (nameValue.length === 0) {
+      setNameWrongText('姓名不得為空');
+      unPassTimes += 1;
+    }
+
+    if (userEmailValue.length === 0) {
+      setUserEmailWrongText('信箱不得為空');
+      unPassTimes += 1;
+    } else if (
       !userEmailValue.match(
         /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
       )
     ) {
       setUserEmailWrongText('信箱格式錯誤');
+      unPassTimes += 1;
     } // 信箱格式不符
 
-    if (!userMobileValue.match(/^09[0-9]{8}$/)) {
+    if (userMobileValue.length === 0) {
+      setUserMobileWrongText('手機不得為空');
+      unPassTimes += 1;
+    } else if (!userMobileValue.match(/^09[0-9]{8}$/)) {
       setUserMobileWrongText('手機格式錯誤');
+      unPassTimes += 1;
     } // 手機格式不符
 
     // 資料都ok才送出
-    if (
-      createAccountValue.match(/[A-Za-z0-9]{8,24}/) &&
-      createPasswordValue.match(/[A-Za-z0-9]{8,24}/) &&
-      confirmPasswordValue.match(/[A-Za-z0-9]{8,24}/) &&
-      confirmPasswordValue === createPasswordValue &&
-      userEmailValue.match(
-        /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
-      ) &&
-      userMobileValue.match(/^09[0-9]{8}$/)
-    ) {
+    if (unPassTimes === 0) {
       setCreateAccountWrongText('');
       setCreatePasswordWrongText('');
       setConfirmPasswordWrongText('');
@@ -220,7 +252,7 @@ function LoginCard(props) {
           setCreateAccountValue('');
           setCreatePasswordValue('');
           setConfirmPasswordValue('');
-          setNameValue('')
+          setNameValue('');
           setUserEmailValue('');
           setUserMobileValue('');
           setIsRegistered(true);
@@ -339,6 +371,7 @@ function LoginCard(props) {
                 value={createAccountValue}
                 setValue={setCreateAccountValue}
                 wrongText={createAccountWrongText}
+                setWrongText={setCreateAccountWrongText}
               />
               <LoginInput
                 type="text"
@@ -348,6 +381,7 @@ function LoginCard(props) {
                 value={createPasswordValue}
                 setValue={setCreatePasswordValue}
                 wrongText={createPasswordWrongText}
+                setWrongText={setCreatePasswordWrongText}
               />
               <LoginInput
                 type="text"
@@ -357,6 +391,7 @@ function LoginCard(props) {
                 value={confirmPasswordValue}
                 setValue={setConfirmPasswordValue}
                 wrongText={confirmPasswordWrongText}
+                setWrongText={setConfirmPasswordWrongText}
               />
               <LoginInput
                 type="text"
@@ -365,7 +400,8 @@ function LoginCard(props) {
                 className={'loginCard-input'}
                 value={nameValue}
                 setValue={setNameValue}
-                isShowWrongText={nameWrongText}
+                wrongText={nameWrongText}
+                setWrongText={setNameWrongText}
               />
               <LoginInput
                 type="text"
@@ -375,6 +411,7 @@ function LoginCard(props) {
                 value={userEmailValue}
                 setValue={setUserEmailValue}
                 wrongText={userEmailWrongText}
+                setWrongText={setUserEmailWrongText}
               />
               <LoginInput
                 type="text"
@@ -384,6 +421,7 @@ function LoginCard(props) {
                 value={userMobileValue}
                 setValue={setUserMobileValue}
                 wrongText={userMobileWrongText}
+                setWrongText={setUserMobileWrongText}
               />
             </div>
             <OptionButton
