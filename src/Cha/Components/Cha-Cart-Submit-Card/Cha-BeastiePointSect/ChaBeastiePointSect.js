@@ -10,9 +10,10 @@ import { ReactComponent as PencilIcon } from './Images/pencil_icon.svg';
 import { ReactComponent as BeastieCoupon20 } from './Images/beastie_coupon20.svg';
 import { ReactComponent as BeastieCoupon20Grey } from './Images/beastie-coupon20-grey.svg';
 import { ReactComponent as CouponVerticalLine } from './Images/coupon_vertical_line.svg';
+import { useSelector } from 'react-redux';
 
 function ChaBeastiePointSect(props) {
-  const { currentUser } = props;
+  const currentUser = useSelector((state) => state.member.currentUser);
   const [couponList, setCouponList] = useState([]);
 
   // 若localStorage有小怪獸名字就用此名，沒有就叫小怪獸
@@ -26,9 +27,8 @@ function ChaBeastiePointSect(props) {
   // -------- 點擊鉛筆改名字 --------- //
   const changeBeastieName = () => {
     // 把現在的名字放到輸入框
-    document.querySelector(
-      '.iris-beastie-name-input'
-    ).value = document.querySelector('.iris-beastie-name').innerText;
+    document.querySelector('.iris-beastie-name-input').value =
+      document.querySelector('.iris-beastie-name').innerText;
     // 點擊icon後名字消失，顯示輸入框
     document.querySelector('.iris-beastie-name').style.display = 'none';
     document.querySelector('.iris-beastie-name-input').style.display = 'block';
@@ -40,9 +40,8 @@ function ChaBeastiePointSect(props) {
     let keypress = e.keyCode;
     if (keypress === 13) {
       // 讓名字等於INPUT裡的值，input消失，名字出現
-      document.querySelector(
-        '.iris-beastie-name'
-      ).innerText = document.querySelector('.iris-beastie-name-input').value;
+      document.querySelector('.iris-beastie-name').innerText =
+        document.querySelector('.iris-beastie-name-input').value;
       document.querySelector('.iris-beastie-name-input').style.display = 'none';
 
       document.querySelector('.iris-beastie-name').style.display = 'block';

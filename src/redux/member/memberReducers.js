@@ -33,6 +33,7 @@ const memberReducers = (state = initialState, action) => {
 
     case SETCURRENTUSERDATA:
       return {
+        ...state,
         currentUser: state,
       };
 

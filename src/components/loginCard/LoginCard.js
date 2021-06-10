@@ -269,11 +269,6 @@ function LoginCard(props) {
     }
   };
 
-  const A = useSelector((state) => state);
-  useEffect(() => {
-    console.log('A', A);
-  }, [A]);
-
   useEffect(() => {
     const cookies = document.cookie.split(';');
     let findcookieTimes = 0;
