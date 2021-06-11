@@ -65,8 +65,6 @@ function App() {
   const [amount, setAmount] = useState(1);
 
   // ---------- iris ---------- //
-  // const [currentUser, setCurrentUser] = useState(''); // 目前用戶
-  // const [currentUserData, setCurrentUserData] = useState({}); // 目前用戶
   const [showLoginModal, setShowLoginModal] = useState(false); //控制是否秀光箱
   const [showSuccessBox, setShowSuccessBox] = useState(false);
   const [couponStatus, setCouponStatus] = useState([]);
@@ -161,14 +159,12 @@ function App() {
           setShowLoginModal={setShowLoginModal}
           setShowSuccessBox={setShowSuccessBox}
           showLoginModal={showLoginModal}
-          currentUser={currentUser}
         />
         <LoginModal
           showLoginModal={showLoginModal}
           setShowLoginModal={setShowLoginModal}
           showSuccessBox={showSuccessBox}
           setShowSuccessBox={setShowSuccessBox}
-          setCurrentUser={setCurrentUser}
         />
         <ScrollToTop>
           <Switch>

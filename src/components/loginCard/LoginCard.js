@@ -6,7 +6,6 @@ import OptionButton from 'components/optionButton/OptionButton';
 import {
   login,
   setCurrentUser,
-  setCurrentUserData,
 } from 'redux/member/memberActions';
 import { useDispatch, useSelector } from 'react-redux';
 import CryptoAES from 'crypto-js/aes';
@@ -16,10 +15,8 @@ function LoginCard(props) {
   const {
     className,
     id,
-    // setCurrentUser,
     setShowSuccessBox,
     setShowLoginModal,
-    // setCurrentUserData,
   } = props;
   const dispatch = useDispatch();
   const $loginCardBackgroundWrap = useRef();

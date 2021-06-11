@@ -8,8 +8,6 @@ function LoginModal(props) {
     showLoginModal,
     setShowLoginModal,
     setCurrentUser,
-    currentUserData,
-    setCurrentUserData,
     showSuccessBox,
     setShowSuccessBox,
   } = props;
@@ -42,11 +40,9 @@ function LoginModal(props) {
         setCurrentUser={setCurrentUser}
         setShowSuccessBox={setShowSuccessBox}
         setShowLoginModal={setShowLoginModal}
-        setCurrentUserData={setCurrentUserData}
       />
       <LoginSuccessBox
         showSuccessBox={showSuccessBox}
-        setShowSuccessBox={setShowSuccessBox}
       />
     </>
   );

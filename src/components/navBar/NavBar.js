@@ -32,8 +32,6 @@ function NavBar(props) {
     setShowLoginModal,
     showLoginModal,
     cartNumber,
-    SetShowLoginCard,
-    setShowSuccessBox,
   } = props;
 
   const dispatch = useDispatch();
