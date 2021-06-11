@@ -48,7 +48,12 @@ import {
 } from '../src/Janice/Components/JanIndexx/data.js';
 
 // 判斷是否 login 的狀態
-import { login, logout, setCurrentUser } from 'redux/member/memberActions';
+import {
+  login,
+  logout,
+  setCurrentUser,
+  setCurrentUserData,
+} from 'redux/member/memberActions';
 
 // 路由表
 function App() {
@@ -61,7 +66,7 @@ function App() {
 
   // ---------- iris ---------- //
   // const [currentUser, setCurrentUser] = useState(''); // 目前用戶
-  const [currentUserData, setCurrentUserData] = useState({}); // 目前用戶
+  // const [currentUserData, setCurrentUserData] = useState({}); // 目前用戶
   const [showLoginModal, setShowLoginModal] = useState(false); //控制是否秀光箱
   const [showSuccessBox, setShowSuccessBox] = useState(false);
   const [couponStatus, setCouponStatus] = useState([]);
@@ -102,7 +107,7 @@ function App() {
           if (jsonData.status) {
             dispatch(login());
             dispatch(setCurrentUser(currentUser));
-            dispatch(setCurrentUserData(jsonData.currentUserData));
+            dispatch(setCurrentUserData(currentUser));
           }
           if (!jsonData.status) {
             dispatch(logout());
@@ -164,8 +169,6 @@ function App() {
           showSuccessBox={showSuccessBox}
           setShowSuccessBox={setShowSuccessBox}
           setCurrentUser={setCurrentUser}
-          currentUserData={currentUserData}
-          setCurrentUserData={setCurrentUserData}
         />
         <ScrollToTop>
           <Switch>
@@ -256,7 +259,6 @@ function App() {
                 // 會員
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
-                currentUserData={currentUserData}
                 couponStatus={couponStatus}
                 setCouponStatus={setCouponStatus}
                 couponOneStatus={couponOneStatus}
@@ -282,7 +284,6 @@ function App() {
                 // 會員
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
-                currentUserData={currentUserData}
                 // vnbar
                 county={county}
                 setCounty={setCounty}
@@ -304,7 +305,6 @@ function App() {
                 // 會員
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
-                currentUserData={currentUserData}
                 // vnbar
                 county={county}
                 setCounty={setCounty}
@@ -326,7 +326,6 @@ function App() {
                 // 會員
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
-                currentUserData={currentUserData}
                 // vnbar
                 county={county}
                 setCounty={setCounty}
@@ -348,7 +347,6 @@ function App() {
                 // 會員
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
-                currentUserData={currentUserData}
                 couponStatus={couponStatus}
                 setCouponStatus={setCouponStatus}
                 couponOneStatus={couponOneStatus}
@@ -375,7 +373,6 @@ function App() {
                 // 會員
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
-                currentUserData={currentUserData}
                 // vnbar
                 county={county}
                 setCounty={setCounty}

@@ -34,7 +34,7 @@ const memberReducers = (state = initialState, action) => {
     case SETCURRENTUSERDATA:
       return {
         ...state,
-        currentUser: action.currentUserData,
+        currentUserData: action.currentUserData,
       };
 
     default:
