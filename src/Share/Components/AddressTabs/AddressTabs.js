@@ -6,11 +6,11 @@ import {
   datatownships,
   dataprice,
 } from '../../../Janice/Components/JanIndexx/data.js';
+import { useSelector } from 'react-redux';
 
 function AddressTabs(props) {
   const {
     // takeOrNot,
-    currentUser,
     setTakeOrNot,
     closeModal,
     county,
@@ -21,14 +21,17 @@ function AddressTabs(props) {
     setAddress,
   } = props;
 
+  const currentUser = useSelector((state) => state.member.currentUser);
+
   const updateAddress = () => {
     // const address = document.querySelector('#iris-member-address').value
     const newcounty = document.querySelector('#exampleFormControlSelect1')
       .options[county].value;
     const newdistrict = document.querySelector('#exampleFormControlSelect2')
       .options[township].value;
-    const newaddress = document.querySelector('#exampleFormControlSelect3')
-      .value;
+    const newaddress = document.querySelector(
+      '#exampleFormControlSelect3'
+    ).value;
     const newAddressData = {
       member_id: currentUser,
       county: newcounty,

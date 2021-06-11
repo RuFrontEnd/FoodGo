@@ -168,7 +168,6 @@ function VNavbar(props) {
       {status && (
         <AddressTabs
           {...props}
-          currentUser={currentUser}
           address={address}
           setAddress={setAddress}
           closeModal={() => setStatus(false)}
