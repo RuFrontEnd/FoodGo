@@ -41,8 +41,6 @@ function RuAddFavorite(props) {
         currentUser: currentUser_sid,
         product_sid: product_sid,
       };
-      // console.log(newProfile)
-      // 待開啟 s
       fetch('http://localhost:5000/member/addMyFav', {
         method: 'POST',
         body: JSON.stringify(newFavItem),

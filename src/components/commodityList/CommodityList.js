@@ -4,6 +4,7 @@ import RuNothing from 'Ru/Components/RuNothing/RuNothing';
 import RuCard from 'Ru/Components/RuCard/RuCard';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import ProductCard from 'components/productCard/ProductCard';
 
 function CommodityList(props) {
   const {
@@ -59,7 +60,7 @@ function CommodityList(props) {
           <div className="ru-itemWarp">
             {/* {isShowNothing && <RuNothing />} */}
             {commodities.map((commodity, index) => (
-              <RuCard
+              <ProductCard
                 data={commodities}
                 favorites={favorites}
                 title={commodity.productname}

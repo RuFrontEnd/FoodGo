@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { endpoint } from 'variable/variable';
+import 'pages/productList/productList.scss';
 import OptionButton from 'components/optionButton/OptionButton';
 import CommodityList from 'components/commodityList/CommodityList';
 import CustomBento from 'components/customBento/CustomBento';
 import SearchBar from 'components/searchBar/SearchBar';
 import axios from 'axios';
-import 'pages/productList/productList.scss';
 
 // 引用共用元件
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
@@ -42,7 +43,7 @@ function ProductList(props) {
   ];
 
   const getData = useCallback(() => {
-    axios.get('http://localhost:5000/product/bento').then((res) => {
+    axios.get(`${endpoint}/product/bento`).then((res) => {
       console.log('res', res);
       const _commodities = res.data.filter(
         (dataItem) => dataItem.categories === '1.低GI便當'
@@ -50,7 +51,7 @@ function ProductList(props) {
       console.log('_commodities', _commodities);
       setCommodities(_commodities);
     });
-    axios.get('http://localhost:5000/member/myFavList').then((res) => {
+    axios.get(`${endpoint}/member/myFavList`).then((res) => {
       setFavorites(res.data);
     });
   }, []);
