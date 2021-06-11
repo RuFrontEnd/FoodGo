@@ -13,9 +13,7 @@ import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import line from './Images/line.png';
 
 function ProductList(props) {
-
-
-  const { handleCartNumber, currentUser, amount, setAmount } = props;
+  const { handleCartNumber, amount, setAmount } = props;
   let location = useLocation(); // react-bootStrap-hook => get Nav.link state
   const { currentOption } = location.state;
   const [commodities, setCommodities] = useState([]);
@@ -153,7 +151,6 @@ function ProductList(props) {
           favorites={favorites}
           searchInput={searchInput}
           handleCartNumber={handleCartNumber} // localStorage method
-          currentUser={currentUser}
           count={count}
           setCount={setCount}
         />

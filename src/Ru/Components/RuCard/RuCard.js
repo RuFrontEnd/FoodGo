@@ -32,7 +32,6 @@ function RuCard(props) {
     parentId,
     imgId,
     handleCartNumber,
-    currentUser,
     showFavArr,
     count,
     setCount,
@@ -105,7 +104,6 @@ function RuCard(props) {
                 data={data}
                 isShowFav={isShowFav}
                 setIsShowFav={setIsShowFav}
-                currentUser={currentUser}
                 proudctId={proudctId}
                 dataFav={dataFav}
               />
@@ -116,7 +114,6 @@ function RuCard(props) {
                 data={data}
                 isShowFav={isShowFav}
                 setIsShowFav={setIsShowFav}
-                currentUser={currentUser}
                 proudctId={proudctId}
                 dataFav={dataFav}
               />

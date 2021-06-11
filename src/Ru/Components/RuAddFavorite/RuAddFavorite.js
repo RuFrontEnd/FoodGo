@@ -1,28 +1,23 @@
-import React, { useState, useEffect } from 'react'
-import './Style.scss'
+import React, { useState, useEffect } from 'react';
+import './Style.scss';
+import { useSelector } from 'react-redux';
 
 function RuAddFavorite(props) {
-  const {
-    data,
-    dataFav,
-    isShowFav,
-    currentUser,
-    setIsShowFav,
-    proudctId,
-  } = props
+  const { data, dataFav, isShowFav, setIsShowFav, proudctId } = props;
 
   // 新增與刪除最愛邏輯
-  const currentUser_sid = currentUser
-  const product_sid = proudctId
+  const currentUser = useSelector((state) => state.member.currentUser);
+  const currentUser_sid = currentUser;
+  const product_sid = proudctId;
   const addFav = (e) => {
-    console.log(proudctId)
+    console.log(proudctId);
     if (isShowFav) {
       // console.log(product_sid)
       const newFavItem = {
         currentUser: currentUser_sid,
         product_sid: product_sid,
-      }
-      setIsShowFav(false) // 按鈕隱藏
+      };
+      setIsShowFav(false); // 按鈕隱藏
 
       // 待開啟 s
       fetch('http://localhost:5000/member/deleteMyFav', {
@@ -36,16 +31,16 @@ function RuAddFavorite(props) {
         .then((r) => r.json())
         .then((o) => {
           // console.log(o)
-        })
+        });
       // 待開啟 e
     } else if (!isShowFav) {
-      setIsShowFav(true) // 按鈕定住
+      setIsShowFav(true); // 按鈕定住
       // 發送資料
       // console.log(product_sid)
       const newFavItem = {
         currentUser: currentUser_sid,
         product_sid: product_sid,
-      }
+      };
       // console.log(newProfile)
       // 待開啟 s
       fetch('http://localhost:5000/member/addMyFav', {
@@ -59,10 +54,10 @@ function RuAddFavorite(props) {
         .then((r) => r.json())
         .then((o) => {
           // console.log(o)
-        })
+        });
       // 待開啟 e
     }
-  }
+  };
 
   // if (!dataFav) {
   //   return
@@ -72,11 +67,11 @@ function RuAddFavorite(props) {
       <button
         className="addFavorite-btn addFavorite-btn-n"
         onClick={(e) => {
-          addFav(e)
+          addFav(e);
         }}
       ></button>
     </>
-  )
+  );
 }
 
-export default RuAddFavorite
+export default RuAddFavorite;

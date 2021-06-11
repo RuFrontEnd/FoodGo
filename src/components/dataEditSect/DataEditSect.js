@@ -5,11 +5,12 @@ import { ReactComponent as WaveLine } from 'assets/svg/wave_line.svg';
 import FoodGoInput from 'components/foodGoInput/FoodGoInput';
 // import SelectBox from './../../../Share/Components/Input/SelectBox';
 import OptionButton from 'components/optionButton/OptionButton';
+import { useSelector } from 'react-redux';
+
 import $ from 'jquery';
 
 function DataEditSect(props) {
   const {
-    currentUser,
     setShowUpdateModal,
     setShowGetCouponBox,
     setBeastiePointAdd,
@@ -18,6 +19,7 @@ function DataEditSect(props) {
     couponOneStatus,
     setCouponOneStatus,
   } = props;
+  const currentUser = useSelector((state) => state.member.currentUser);
   const [userInfo, setUserInfo] = useState([]);
 
   // -------先新增會員資料折價券領取狀態資料表--------//

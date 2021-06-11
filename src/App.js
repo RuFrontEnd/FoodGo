@@ -180,7 +180,6 @@ function App() {
               <ProductList
                 setShowBar={setShowBar}
                 handleCartNumber={handleCartNumber}
-                currentUser={currentUser}
                 county={county}
                 setCounty={setCounty}
                 township={township}

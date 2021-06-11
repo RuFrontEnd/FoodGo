@@ -10,15 +10,17 @@ import { ReactComponent as GroupOrderIcon } from 'assets/svg/group_order.svg';
 import { ReactComponent as MyFavIcon } from 'assets/svg/my_fav.svg';
 import { ReactComponent as MyCommentIcon } from 'assets/svg/my_comment.svg';
 import { ReactComponent as ProfileIcon } from 'assets/svg/profile_beastie_icon.svg';
+import { useSelector } from 'react-redux';
+
 function MemberMenuSect(props) {
   const {
-    currentUser,
     userFavDelete,
     commentDelete,
     beastiePointAdd,
     currentUserData,
   } = props;
 
+  const currentUser = useSelector((state) => state.member.currentUser);
   const [allComments, setAllComments] = useState([]);
   const [myFavs, setMyFavs] = useState([]);
   const [couponLists, setCouponLists] = useState([]);

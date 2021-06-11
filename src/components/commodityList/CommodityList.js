@@ -3,6 +3,7 @@ import 'components/commodityList/commodityList.scss';
 import RuNothing from 'Ru/Components/RuNothing/RuNothing';
 import RuCard from 'Ru/Components/RuCard/RuCard';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 function BentoList(props) {
   const {
@@ -10,11 +11,11 @@ function BentoList(props) {
     favorites,
     searchInput,
     handleCartNumber,
-    currentUser,
     count,
     setCount,
   } = props;
 
+  const currentUser = useSelector((state) => state.member.currentUser);
   const [showFavArr, setShowFavArr] = useState([]);
 
   useEffect(() => {
@@ -71,7 +72,6 @@ function BentoList(props) {
                 parentId={`ru-addCart-btn-warp-${index + 1}`}
                 imgId={commodity.img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
-                currentUser={currentUser}
                 showFavArr={showFavArr}
                 count={count}
                 setCount={setCount}

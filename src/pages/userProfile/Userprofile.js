@@ -10,13 +10,13 @@ import { useSelector } from 'react-redux';
 
 function Userprofile(props) {
   const isLogin = useSelector((state) => state.member.isLogin);
+  const currentUserData = useSelector((state) => state.member.currentUserData);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [showGetCouponBox, setShowGetCouponBox] = useState(false);
   const [beastiePointAdd, setBeastiePointAdd] = useState();
   const {
     setShowBar,
     currentUser,
-    currentUserData,
     setShowLoginModal,
     couponStatus,
     setCouponStatus,
@@ -55,13 +55,12 @@ function Userprofile(props) {
     // setShowLoginModal(true)
     return <Redirect to="/" />;
   }
-  
+
   return (
     <>
       {/* <VNavbar {...props} /> */}
       <div className="container iris-memberpage-container">
         <MemberMenuSect
-          currentUser={currentUser}
           beastiePointAdd={beastiePointAdd}
           currentUserData={currentUserData}
         />
