@@ -3,9 +3,10 @@ import { endpoint } from 'variable/variable';
 import 'pages/productList/productList.scss';
 import OptionButton from 'components/optionButton/OptionButton';
 import CommodityList from 'components/commodityList/CommodityList';
-import CustomBento from 'components/customBento/CustomBento';
+import ProductFeatureBar from 'components/productFeatureBar/ProductFeatureBar';
 import SearchBar from 'components/searchBar/SearchBar';
 import axios from 'axios';
+import productListBanner from 'assets/jpg/proudctList-banner.jpg';
 
 // 引用共用元件
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
@@ -70,34 +71,14 @@ function ProductList(props) {
 
   return (
     <>
-      <section className="mainImg-warp">
-        <h1>享受美食 不需要理由</h1>
-        <div className="mainImg"></div>
-      </section>
-      <section className="productList-container">
-        <div className="optionWarp">
-          <div className="productList-option-area">
-            <SearchBar
-              searchInput={searchInput}
-              setSearchInput={setSearchInput}
-              onSearch={filterData}
-            />
-            <div className="buttonWarp">
-              {buttonAttributes.map((buttonAttribute) => (
-                <OptionButton
-                  className={'productList-option-button'}
-                  text={buttonAttribute.text}
-                  isSelected={buttonAttribute.isSelected}
-                  routes={buttonAttribute.routes}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="line">
-          <img src={line}></img>
-        </div>
-      </section>
+      <ProductFeatureBar
+        title={'享受美食 不需要理由'}
+        imgUrl={productListBanner}
+        searchInput={searchInput}
+        setSearchInput={setSearchInput}
+        onSearch={filterData}
+        buttonAttributes={buttonAttributes}
+      />
       <CommodityList
         commodities={commodities}
         favorites={favorites}

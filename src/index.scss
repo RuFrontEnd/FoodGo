@@ -24,9 +24,14 @@ li {
   list-style: none;
 }
 
-button{
+button {
   outline: none;
   border: none;
+}
+
+button:focus,
+input {
+  outline: none;
 }
 
 code {
