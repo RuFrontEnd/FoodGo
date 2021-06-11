@@ -99,10 +99,10 @@ function App() {
       }) // 將token送到後端做JWT驗證
         .then((res) => res.json())
         .then((jsonData) => {
-          console.log('jsonData', jsonData);
           if (jsonData.status) {
             dispatch(login());
             dispatch(setCurrentUser(currentUser));
+            dispatch(setCurrentUserData(jsonData.currentUserData));
           }
           if (!jsonData.status) {
             dispatch(logout());
