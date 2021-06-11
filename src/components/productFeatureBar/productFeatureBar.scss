@@ -30,10 +30,9 @@
 }
 
 .productFeatureBar-feature-container {
-  // background-color: dodgerblue;
+  @include xl;
   color: white;
   margin: auto;
-  @include page(); // 1440px
   padding: 80px 20px;
 }
 
@@ -42,35 +41,12 @@
 }
 
 .productFeatureBar-optionButtons {
-  // background-color: rgb(30, 236, 255);
   width: 100%;
-  // height: 65px;
   margin-top: 50px;
   @include flex($df, $fdr, center, $alc);
 }
 
-.productFeatureBar-optionButtons .button-btn:nth-child(1) {
-  // background-color: ;
-  margin-right: 10px;
-}
-
-.productFeatureBar-optionButtons .button-btn:nth-child(2),
-.button-btn:nth-child(3) {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-.productFeatureBar-optionButtons .button-btn-g {
-  margin-left: 10px;
-}
-
-.productFeatureBar-feature-container .input-field {
-  width: 43.762%;
-  height: 50px;
-}
-
 .productFeatureBar-line {
-  // background-color: red;
   width: 100%;
   @include flex($df, $fdr, $jcc, $als);
   overflow: hidden;
@@ -80,149 +56,57 @@
   height: 8px;
 }
 
-// 響應式 --------------------------------------------------------------------------------
-// ipad pro版 ----------
-@media screen and (min-width: 992px) and (max-width: 1365.99px) {
-  .productFeatureBar-feature-container {
-    @include page-iPadPro();
-  }
-
-  .productFeatureBar-feature-container .input-field {
-    width: 56.6375%;
-  }
-
-  .productFeatureBar-optionButtons {
-    width: 100%;
-  }
-}
-
-// ipad 版 ----------
-@media screen and (min-width: 768px) and (max-width: 991.99px) {
-  .productFeatureBar-feature-container {
-    // background-color: gold;
-    @include page-iPad();
-    padding: 0px 30px;
-    width: 100%;
-  }
-
-  .productFeatureBar-feature-container .input-field {
-    width: 59.9525%;
-  }
-
-  .productFeatureBar-optionButtons {
-    width: 100%;
-  }
-
-  .productFeatureBar-optionButtons .button-btn:nth-child(1),
-  .productFeatureBar-optionButtons .button-btn:nth-child(2),
-  .productFeatureBar-optionButtons .button-btn:nth-child(3),
-  .productFeatureBar-optionButtons .button-btn-g {
-    font-size: 18px;
-    width: 160px;
-    height: 52px;
-    margin: 0px;
-  }
-}
-
-@media screen and (min-width: 576px) and (max-width: 767.99px) {
-  .productFeatureBar-productList-container {
-    // background-color: blueviolet;
-  }
-
-  .productFeatureBar-header {
-    position: relative;
-  }
-
-  .productFeatureBar-feature-container {
-    // background-color: dodgerblue;
-    color: white;
-    @include page-iPad();
-    padding: 0px 30px;
-  }
-
-  .productFeatureBar-feature-container .input-field {
-    width: 62.5%;
-  }
-
-  .productFeatureBar-optionButtons {
-    width: 98%;
-    flex-wrap: wrap;
-  }
-
-  .productFeatureBar-optionButtons .button-btn:nth-child(1),
-  .productFeatureBar-optionButtons .button-btn:nth-child(2),
-  .productFeatureBar-optionButtons .button-btn:nth-child(3),
-  .productFeatureBar-optionButtons .button-btn-g {
-    font-size: 18px;
-    width: 120px;
-    height: 52px;
-    margin: 0px;
-  }
-}
-
 .productFeatureBar-option-button {
   max-width: 200px;
   margin: 0px 25px;
   padding: 20px 0px;
 }
 
+// 響應式 --------------------------------------------------------------------------------
+// ipad pro版 ----------
+@media screen and (max-width: 1199.98px) {
+  .productFeatureBar-option-button {
+    margin: 0px 15px;
+  }
+}
+
+// ipad 版 ----------
+@media screen and (max-width: 991.98px) {
+  .productFeatureBar-feature-container {
+    @include lg;
+  }
+
+  .productFeatureBar-option-button {
+    width: 150px;
+    margin: 0px 12.5px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .productFeatureBar-feature-container {
+    @include md;
+  }
+
+  .productFeatureBar-option-button {
+    width: 120px;
+    margin: 0px 5px;
+  }
+}
+
 // 手機版 ----------
 @media screen and (max-width: 575.99px) {
-  .productFeatureBar-productList-container {
-    // background-color: blueviolet;
-  }
-
-  .productFeatureBar-header {
-    position: relative;
-  }
-
   .productFeatureBar-feature-container {
-    // background-color: dodgerblue;
-    color: white;
-    height: 257px;
-    @include page-phone();
-    @include flex($df, $fdc, $jcc, $alc);
-  }
-
-  .productFeatureBar-feature-container .input-field {
-    width: 100%;
+    @include sm;
+    padding: 40px 20px;
   }
 
   .productFeatureBar-optionButtons {
-    // background-color: rgb(30, 236, 255);
-    width: 80%;
-    height: 100px;
-    margin-top: 30px;
-    @include flex($df, $fdr, space-between, $alc);
-    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 20px;
   }
 
-  .productFeatureBar-optionButtons .button-btn {
-    width: 120px;
-    height: 40px;
-  }
-
-  .productFeatureBar-optionButtons .button-btn-g {
-    width: 120px;
-    height: 40px;
-  }
-
-  .productFeatureBar-optionButtons div {
-    display: flex;
-    justify-content: center;
-  }
-  .productFeatureBar-optionButtons .button-btn:nth-child(1) {
-    font-size: 18px;
-    margin: 5px 0px;
-  }
-  .productFeatureBar-optionButtons .button-btn:nth-child(2),
-  .button-btn:nth-child(3) {
-    font-size: 18px;
-    margin: 5px 0px;
-  }
-
-  .productFeatureBar-optionButtons .button-btn-g {
-    font-size: 18px;
-    margin: 5px 0px;
+  .productFeatureBar-option-button{
+    width: 160px;
+    margin: 10px 5px;
   }
 }

@@ -83,6 +83,36 @@ $letter-spacing: 5px;
   margin: auto;
 }
 
+// breakpoint:1440
+@mixin xxl {
+  max-width: 1320px;
+}
+
+// breakpoint:1200
+@mixin xl {
+  max-width: 1140px;
+}
+
+// breakpoint:992
+@mixin lg {
+  max-width: 960px;
+}
+
+// breakpoint:768
+@mixin md {
+  max-width: 720px;
+}
+
+// breakpoint:576
+@mixin sm {
+  max-width: 540;
+}
+
+// breakpoint:480
+@mixin xs {
+  max-width: 100%;
+}
+
 // flex
 // display
 $df: flex;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import 'components/productFeatureBar/productFeatureBar.scss';
 import OptionButton from 'components/optionButton/OptionButton';
 import SearchBar from 'components/searchBar/SearchBar';
@@ -37,6 +37,7 @@ function productFeatureBar(props) {
             <div className="productFeatureBar-optionButtons">
               {buttonAttributes.map((buttonAttribute) => (
                 <OptionButton
+                  type={buttonAttribute.type}
                   className={'productFeatureBar-option-button'}
                   text={buttonAttribute.text}
                   isSelected={buttonAttribute.isSelected}

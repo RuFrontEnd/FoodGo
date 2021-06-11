@@ -23,17 +23,20 @@ function ProductList(props) {
     {
       text: '低GI便當',
       isSelected: true,
-      type: '/productList',
+      type: 'origin',
+      routes: '/productList',
     },
     {
       text: '鮮蔬沙拉',
       isSelected: false,
-      type: '/productListSalad',
+      type: 'origin',
+      routes: '/productListSalad',
     },
     {
       text: '客製化便當',
       isSelected: false,
-      type: '/productListCustom',
+      type: 'origin',
+      routes: '/productListCustom',
     },
     {
       text: '蔬菜箱',
