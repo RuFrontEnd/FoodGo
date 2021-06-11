@@ -4,7 +4,7 @@ import starEmpty from 'assets/svg/starEmpty.svg';
 import starHalf from 'assets/svg/starHalf.svg';
 import starFull from 'assets/svg/starFull.svg';
 import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
-import RuAddFavorite from 'Ru/Components/RuAddFavorite/RuAddFavorite';
+import AddFavoriteButton from 'components/addFavoriteButton/AddFavoriteButton';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 
@@ -82,27 +82,15 @@ function ProductCard(props) {
             ></img>
           </Link>
           {/* 是否固定我的最愛按鈕 */}
-          {isShowFav ? (
-            <div className="ru-card-abs ru-card-abs-stop">
-              <RuAddFavorite
-                data={data}
-                isShowFav={isShowFav}
-                setIsShowFav={setIsShowFav}
-                proudctId={proudctId}
-                dataFav={dataFav}
-              />
-            </div>
-          ) : (
-            <div className="ru-card-abs">
-              <RuAddFavorite
-                data={data}
-                isShowFav={isShowFav}
-                setIsShowFav={setIsShowFav}
-                proudctId={proudctId}
-                dataFav={dataFav}
-              />
-            </div>
-          )}
+          <div className="ru-card-abs ru-card-abs-stop">
+            <AddFavoriteButton
+              data={data}
+              proudctId={proudctId}
+              dataFav={dataFav}
+              isActive={isShowFav}
+              setIsActive={setIsShowFav}
+            />
+          </div>
         </section>
         {/* item圖片e */}
         {/* item資訊s */}

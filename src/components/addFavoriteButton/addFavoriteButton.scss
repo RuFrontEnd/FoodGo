@@ -1,42 +1,31 @@
 @import "variable/variable.scss";
 
 // .favorite-btn
+.addFavoriteButton {
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}
+
 #addFavoriteButton:focus {
   outline: none;
 }
 
 #addFavoriteButton {
   background-color: $white;
-  width: 37px;
-  height: 37px;
-  border: none;
-  border-radius: 5px;
-  background-image: url("../../assets/addFavorite.svg");
-  background-repeat: no-repeat;
-  background-position: 75% 60%;
-  background-size: 32px;
+  background-image: url("../../assets/svg/addFavorite.svg");
 }
 
 #addFavoriteButton:hover {
   background-color: $light-yellow;
-  width: 37px;
-  height: 37px;
-  border: none;
-  border-radius: 5px;
-  background-image: url("../../assets/addFavorite-hover.svg");
-  background-repeat: no-repeat;
-  background-position: 75% 60%;
-  background-size: 32px;
+  background-image: url("../../assets/svg/addFavorite-hover.svg");
 }
 
-#addFavoriteButton:active {
+#addFavoriteButton-active {
   background-color: $dark-yellow;
-  width: 37px;
-  height: 37px;
-  border: none;
-  border-radius: 5px;
-  background-image: url("./Images/addFavoriteC.svg");
-  background-repeat: no-repeat;
-  background-position: 75% 60%;
-  background-size: 32px;
+  background-image: url("../../assets/svg/addFavorite-stop.svg");
 }

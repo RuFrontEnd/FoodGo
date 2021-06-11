@@ -59,7 +59,6 @@ import {
 function App() {
   const dispatch = useDispatch();
   const isLogin = useSelector((state) => state.member.isLogin);
-  const currentUser = useSelector((state) => state.member.currentUser);
   const [showBar, setShowBar] = useState(true);
   const [cartNumber, setCartNumber] = useState(0);
   const [amount, setAmount] = useState(1);
