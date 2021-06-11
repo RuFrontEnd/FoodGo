@@ -27,9 +27,10 @@ export const setCurrentUser = (currentUser) => {
   };
 };
 
-export const setCurrentUserData = () => {
+export const setCurrentUserData = (currentUserData) => {
   return {
     type: SETCURRENTUSERDATA,
     info: 'currnetUserData status has been changed',
+    currentUserData: currentUserData,
   };
 };

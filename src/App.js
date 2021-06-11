@@ -82,29 +82,34 @@ function App() {
 
   useEffect(async () => {
     const accessToken = localStorage.getItem('accessToken');
-    const currenUser = JSON.parse(localStorage.getItem('currentUser')); // JSON.parse()轉數值
+    const currentUser = JSON.parse(localStorage.getItem('currentUser')); // JSON.parse()轉數值
     const currentCartNumber =
       JSON.parse(localStorage.getItem('cartNumber')) || 0;
-    if (accessToken && currenUser) {
-      const token = { accessToken: accessToken };
-      await fetch('http://localhost:5000/member/login', {
+
+    if (accessToken && currentUser) {
+      const _currentUser = { currentUser: currentUser };
+      await fetch('http://localhost:5000/member/loginVerify', {
         method: 'POST',
-        body: JSON.stringify(token),
+        body: JSON.stringify(_currentUser),
         headers: new Headers({
           Accept: 'application/json',
           'Content-Type': 'application/json',
-          authorization: `Bearer ${accessToken}`,
+          Authorization: `Bearer ${accessToken}`,
         }),
       }) // 將token送到後端做JWT驗證
         .then((res) => res.json())
         .then((jsonData) => {
+          console.log('jsonData', jsonData);
           if (jsonData.status) {
             dispatch(login());
-            dispatch(setCurrentUser(currenUser));
+            dispatch(setCurrentUser(currentUser));
+          }
+          if (!jsonData.status) {
+            dispatch(logout());
           }
         });
     }
-    if (!accessToken || !currenUser) {
+    if (!accessToken || !currentUser) {
       dispatch(logout());
     }
     setCartNumber(currentCartNumber);

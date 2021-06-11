@@ -3,7 +3,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import 'components/loginCard/loginCard.scss';
 import LoginInput from 'components/loginInput/LoginInput.js';
 import OptionButton from 'components/optionButton/OptionButton';
-import { login, setCurrentUser } from 'redux/member/memberActions';
+import {
+  login,
+  setCurrentUser,
+  setCurrentUserData,
+} from 'redux/member/memberActions';
 import { useDispatch, useSelector } from 'react-redux';
 import CryptoAES from 'crypto-js/aes';
 import CryptoENC from 'crypto-js/enc-utf8';
@@ -15,7 +19,7 @@ function LoginCard(props) {
     // setCurrentUser,
     setShowSuccessBox,
     setShowLoginModal,
-    setCurrentUserData,
+    // setCurrentUserData,
   } = props;
   const dispatch = useDispatch();
   const $loginCardBackgroundWrap = useRef();
@@ -149,8 +153,11 @@ function LoginCard(props) {
         if (jsonData.status === true) {
           localStorage.setItem('accessToken', jsonData.accessToken);
           localStorage.setItem('currentUser', jsonData.currentUser);
+          // localStorage.setItem('currentUserData', jsonData.currentUserData);
+          console.log(jsonData);
           dispatch(login());
           dispatch(setCurrentUser(jsonData.currentUser)); // dispatch參數傳入到reducer的action參數
+          // dispatch(setCurrentUserData(jsonData.currentUserData));
           setShowLoginModal(false); // 登入光箱消失
           setShowSuccessBox(true); // 出現登入成功光箱
         }
