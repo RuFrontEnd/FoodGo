@@ -35,9 +35,9 @@ import ChaCartTest from 'Cha/Components-demo/ChaCartTest';
 
 import HomePage from 'pages/homePage/HomePage';
 import Userprofile from 'pages/userProfile/UserProfile';
-import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'; // delete later
-import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'; // delete later
 import ProductList from 'pages/productList/ProductList';
+import SaladList from 'pages/saladList/SaladList';
+import CustomBentoList from 'pages/customBentoList/CustomBentoList';
 
 // 加入 toTop 按鈕元件
 import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
@@ -168,14 +168,25 @@ function App() {
         />
         <ScrollToTop>
           <Switch>
-            {/* claudia */}
-            <Route exact path="/farmMap">
-              <ClaudiaFarmIndex />
+            {/* 首頁 */}
+            <Route exact path="/">
+              <HomePage
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                setShowBar={setShowBar}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+              />
             </Route>
-            <Route exact path="/farmIntro">
-              <ClaudiaFarmDetailedPage handleCartNumber={handleCartNumber} />
-            </Route>
-            {/* ru */}
+            {/* 便當商品列表 */}
             <Route exact path="/productList">
               <ProductList
                 setShowBar={setShowBar}
@@ -195,6 +206,56 @@ function App() {
                 amount={amount}
                 setAmount={setAmount}
               />
+            </Route>
+            {/* 沙拉商品列表 */}
+            <Route exact path="/productListSalad">
+              <SaladList
+                setShowBar={setShowBar}
+                handleCartNumber={handleCartNumber}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                amount={amount}
+                setAmount={setAmount}
+              />
+            </Route>
+            {/* 客製化便當 */}
+            <Route exact path="/productListCustom">
+              <CustomBentoList
+                setShowBar={setShowBar}
+                handleCartNumber={handleCartNumber}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                amount={amount}
+                setAmount={setAmount}
+              />
+            </Route>
+
+            {/* claudia */}
+            <Route exact path="/farmMap">
+              <ClaudiaFarmIndex />
+            </Route>
+            <Route exact path="/farmIntro">
+              <ClaudiaFarmDetailedPage handleCartNumber={handleCartNumber} />
             </Route>
             {/* cha */}
             <Route exact path="/cart">
@@ -432,24 +493,6 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
-              />
-            </Route>
-            {/* janice */}
-            <Route exact path="/">
-              <HomePage
-                takeOrNot={takeOrNot}
-                setTakeOrNot={setTakeOrNot}
-                selectDate={selectDate}
-                setSelectDate={setSelectDate}
-                slecteTime={slecteTime}
-                setSelectTime={setSelectTime}
-                setShowBar={setShowBar}
-                county={county}
-                setCounty={setCounty}
-                township={township}
-                setTownship={setTownship}
-                address={address}
-                setAddress={setAddress}
               />
             </Route>
           </Switch>

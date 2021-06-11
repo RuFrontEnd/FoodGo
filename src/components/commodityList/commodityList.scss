@@ -1,4 +1,4 @@
-@import "Ru/Pages/variable.scss";
+@import "variable/variable.scss";
 
 // ------------------------------------------- 網頁版 s -------------------------------------------
 .ru-item-container {
@@ -15,16 +15,14 @@
 .ru-card-warp {
   // background-color: gold;
   @include page();
-  width: 100%;
 }
 
 .ru-itemWarp {
   // background-color: cornflowerblue;
   min-height: 532px;
   width: 100%;
-  display: flex;
+  @include flex($df, $fdr, center, $als);
   flex-wrap: wrap;
-  @include flex($df, $fdr, space-between, $als);
 }
 
 .ru-itemWarp .ru-card-container {

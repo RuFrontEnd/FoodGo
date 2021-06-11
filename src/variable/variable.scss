@@ -10,15 +10,14 @@ $light-Beige: #f7ede2;
 $dark-Beige: #decdbb;
 $light-green: #66ab8c;
 $dark-green: #438b6b;
-$grey: #858585; 
+$grey: #858585;
 $light-grey: #9b9b9b;
 $tan: #a59583;
 $productName-Color: #262628;
-$warning-color:rgb(255, 35, 35);
-
+$warning-color: rgb(255, 35, 35);
 
 // 字體
-$notoSansTC: "Noto Sans TC", sans-serif; 
+$notoSansTC: "Noto Sans TC", sans-serif;
 
 // 字體大小
 // web
@@ -62,7 +61,25 @@ $letter-spacing: 5px;
 // 父容器置中
 @mixin page {
   max-width: 1440px;
-  padding: 0px 135px;
+  padding: 0px 20px;
+  margin: auto;
+}
+
+@mixin page-iPadPro {
+  max-width: 1024px;
+  padding: 0px 20px;
+  margin: auto;
+}
+
+@mixin page-iPad {
+  max-width: 768px;
+  padding: 0px 20px;
+  margin: auto;
+}
+
+@mixin page-phone {
+  max-width: 375px;
+  padding: 0px 20px;
   margin: auto;
 }
 
@@ -89,7 +106,7 @@ $ale: flex-end;
 
 // transition 時間
 $zero: 0s;
-$zero-one: .1s;
-$two-five: .25s;
-$three-five: .35s;
-$zero-five: .5s;
+$zero-one: 0.1s;
+$two-five: 0.25s;
+$three-five: 0.35s;
+$zero-five: 0.5s;

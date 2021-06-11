@@ -5,7 +5,7 @@ import RuCard from 'Ru/Components/RuCard/RuCard';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 
-function BentoList(props) {
+function CommodityList(props) {
   const {
     commodities,
     favorites,
@@ -84,4 +84,4 @@ function BentoList(props) {
   );
 }
 
-export default BentoList;
+export default CommodityList;

@@ -8,25 +8,10 @@ function OptionButton(props) {
     id = '',
     onClick = () => {},
     text = '', // show btn content
-    selectedTypes = [], // all button active types
-    setSelectedTypes = () => {}, // set all button active types state
     isSelected = false, // is button active
-    index = 0, // all button active types index
     type = 'origin', // orange or green
     routes = '', // link address
   } = props;
-
-  function handleCardArea(e) {
-    let _selectedTypes = [];
-    for (let i = 0; i < selectedTypes.length; i++) {
-      if (index === i) {
-        _selectedTypes.push(true);
-      } else {
-        _selectedTypes.push(false);
-      }
-    }
-    setSelectedTypes(_selectedTypes);
-  }
 
   let btnColor = '';
   let selectedBtnColor = '';
@@ -45,28 +30,15 @@ function OptionButton(props) {
 
   return (
     <>
-      <div className={className} id={id} onClick={onClick}>
-        {isSelected ? (
-          <button
-            className={`option-btn ${selectedBtnColor}`}
-            onClick={() => {
-              handleCardArea();
-            }}
-          >
-            {text}
-          </button>
-        ) : (
-          <button
-            className={`option-btn ${btnColor}`}
-            onClick={() => {
-              routes !== '' && props.history.push(routes);
-              handleCardArea();
-            }}
-          >
-            {text}
-          </button>
-        )}
-      </div>
+      <button
+        onClick={onClick}
+        id={id}
+        className={`option-btn ${
+          isSelected ? selectedBtnColor : btnColor
+        } ${className}`}
+      >
+        {text}
+      </button>
     </>
   );
 }
