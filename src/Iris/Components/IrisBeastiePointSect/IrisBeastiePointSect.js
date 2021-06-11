@@ -10,33 +10,34 @@ import { ReactComponent as PencilIcon } from './Images/pencil_icon.svg';
 import { ReactComponent as BeastieCoupon20 } from './Images/beastie_coupon20.svg';
 import { ReactComponent as BeastieCoupon20Grey } from './Images/beastie-coupon20-grey.svg';
 import { ReactComponent as CouponVerticalLine } from './Images/coupon_vertical_line.svg';
+import { useSelector } from 'react-redux';
 
 function IrisBeastiePointSect(props) {
-  const { currentUser, setShowRuleBox } = props
-  const [couponList, setCouponList] = useState([])
+  const { setShowRuleBox } = props;
+  const currentUser = useSelector((state) => state.member.currentUser);
+  const [couponList, setCouponList] = useState([]);
 
   // 若localStorage有小怪獸名字就用此名，沒有就叫小怪獸
-  let beastieName = localStorage.getItem('beastieName')
+  let beastieName = localStorage.getItem('beastieName');
 
   if (beastieName) {
     if (currentUser === 1) {
-      beastieName = '小Q怪'
+      beastieName = '小Q怪';
     } else {
-      beastieName = localStorage.getItem('beastieName')
+      beastieName = localStorage.getItem('beastieName');
     }
   } else {
-    beastieName = '小怪獸'
+    beastieName = '小怪獸';
     if (currentUser === 1) {
-      beastieName = '小Q怪'
+      beastieName = '小Q怪';
     }
   }
 
   // -------- 點擊鉛筆改名字 --------- //
   const changeBeastieName = () => {
     // 把現在的名字放到輸入框
-    document.querySelector(
-      '.iris-beastie-name-input'
-    ).value = document.querySelector('.iris-beastie-name').innerText;
+    document.querySelector('.iris-beastie-name-input').value =
+      document.querySelector('.iris-beastie-name').innerText;
     // 點擊icon後名字消失，顯示輸入框
     document.querySelector('.iris-beastie-name').style.display = 'none';
     document.querySelector('.iris-beastie-name-input').style.display = 'block';
@@ -48,9 +49,8 @@ function IrisBeastiePointSect(props) {
     let keypress = e.keyCode;
     if (keypress === 13) {
       // 讓名字等於INPUT裡的值，input消失，名字出現
-      document.querySelector(
-        '.iris-beastie-name'
-      ).innerText = document.querySelector('.iris-beastie-name-input').value;
+      document.querySelector('.iris-beastie-name').innerText =
+        document.querySelector('.iris-beastie-name-input').value;
       document.querySelector('.iris-beastie-name-input').style.display = 'none';
 
       document.querySelector('.iris-beastie-name').style.display = 'block';
@@ -78,7 +78,7 @@ function IrisBeastiePointSect(props) {
     const data = await response.json();
 
     // console.log(data)
-    setCouponList(data)
+    setCouponList(data);
   }
 
   // 一開始就會開始載入資料
@@ -92,20 +92,20 @@ function IrisBeastiePointSect(props) {
   );
 
   // 計算總值
-  let sum = 0
+  let sum = 0;
   function calctotalCoin(currentObject, index, array) {
-    sum += currentObject.coupon_type
+    sum += currentObject.coupon_type;
   }
-  currentUserCoupon.forEach(calctotalCoin)
-  let userBeastieCoin = sum * 10
+  currentUserCoupon.forEach(calctotalCoin);
+  let userBeastieCoin = sum * 10;
 
   // ------- coupon template --------- //
   const couponDisplay = currentUserCoupon.map((item, index) => {
-    const isseuDate = item.coupon_issue.slice(0, 10)
+    const isseuDate = item.coupon_issue.slice(0, 10);
     // const isseuTime = item.coupon_issue.slice(11, 16)
-    const dueDate = item.coupon_due.slice(0, 10)
-    const dueTime = '23:59'
-    const couponImgId = 'coupon-img-' + item.coupon_type
+    const dueDate = item.coupon_due.slice(0, 10);
+    const dueTime = '23:59';
+    const couponImgId = 'coupon-img-' + item.coupon_type;
     return (
       <div className="iris-coupon-box d-flex align-items-center ">
         <div className="iris-coupon-icon">
@@ -180,7 +180,7 @@ function IrisBeastiePointSect(props) {
               <div
                 className="iris-rule-book"
                 onClick={() => {
-                  setShowRuleBox(true)
+                  setShowRuleBox(true);
                 }}
               >
                 <BesatieBook />

@@ -10,7 +10,7 @@ import JessListE from '../Components/JessListE/JessListE';
 import ToTop from 'Share/Components/ToTopButton/ScrollButton';
 
 function JessBento(props) {
-  const { handleCartNumber, handleCarList, currentUser, setShowBar } = props;
+  const { handleCartNumber, handleCarList, setShowBar } = props;
   const [count, setCount] = useState(1);
   const [total, setTotal] = useState(0);
   const [menu, setMenu] = useState([]);

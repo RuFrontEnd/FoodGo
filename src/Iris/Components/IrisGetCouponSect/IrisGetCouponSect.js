@@ -1,25 +1,27 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import './IrisGetCouponSect.scss'
-import { ReactComponent as WaveLine } from './Images/wave_line.svg'
-import { ReactComponent as BeastieCoupon20 } from './Images/beastie_coupon20.svg'
-import { ReactComponent as BeastieCoupon } from './Images/beastie_coupon.svg'
-import { ReactComponent as BeastieCouponGrey } from './Images/beastie_coupon_grey.svg'
-import { ReactComponent as CouponVerticalLine } from './Images/coupon_vertical_line.svg'
-import { useHistory } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import './IrisGetCouponSect.scss';
+import { ReactComponent as WaveLine } from './Images/wave_line.svg';
+import { ReactComponent as BeastieCoupon20 } from './Images/beastie_coupon20.svg';
+import { ReactComponent as BeastieCoupon } from './Images/beastie_coupon.svg';
+import { ReactComponent as BeastieCouponGrey } from './Images/beastie_coupon_grey.svg';
+import { ReactComponent as CouponVerticalLine } from './Images/coupon_vertical_line.svg';
+import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function IrisGetCouponSect(props) {
-  const { currentUser, couponStatus, setCouponStatus } = props
-  const history = useHistory()
+  const { couponStatus, setCouponStatus } = props;
+  const currentUser = useSelector((state) => state.member.currentUser);
+  const history = useHistory();
 
   const gotoProfilePage = () => {
-    history.push('/memberUserprofile')
-  }
+    history.push('/memberUserprofile');
+  };
 
   // --------- 取得目前user的優惠券領取狀態 --------- //
   // 取得所有人的優惠券領取狀態
   async function getCouponStatusFromServer() {
-    const url = 'http://localhost:5000/member/couponStatus'
+    const url = 'http://localhost:5000/member/couponStatus';
 
     const request = new Request(url, {
       method: 'GET',
@@ -27,43 +29,41 @@ function IrisGetCouponSect(props) {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }),
-    })
+    });
 
-    const response = await fetch(request)
-    const data = await response.json()
+    const response = await fetch(request);
+    const data = await response.json();
 
     // console.log('data', data)
-    setCouponStatus(data)
-
-
+    setCouponStatus(data);
   }
 
   // 載入
   useEffect(() => {
-    getCouponStatusFromServer()
+    getCouponStatusFromServer();
 
     // 過濾出現在使用者的資料
     const currentUserCouponStatus = couponStatus.filter(
       (item) => item.member_sid === currentUser
-    )
+    );
 
     // console.log('couponStatus', couponStatus)
     // console.log('currentUserCouponStatus', currentUserCouponStatus)
 
     if (!currentUserCouponStatus) {
-      return
+      return;
     }
     if (currentUserCouponStatus[0].coupon1_status === 1) {
-      document.querySelector('.iris-coupon1-title').style.color = 'grey'
+      document.querySelector('.iris-coupon1-title').style.color = 'grey';
       document.querySelector('.iris-getcoupon1-learnmore').style.display =
-        'none'
+        'none';
       document.querySelector('.iris-getcoupon1-received').style.display =
-        'block'
-      document.querySelector('.iris-beastieCoupon-svg').style.display = 'none'
+        'block';
+      document.querySelector('.iris-beastieCoupon-svg').style.display = 'none';
       document.querySelector('.iris-beastieCoupon-grey-svg').style.display =
-        'block'
+        'block';
     }
-  }, [couponStatus])
+  }, [couponStatus]);
 
   return (
     <>
@@ -97,7 +97,7 @@ function IrisGetCouponSect(props) {
                   <div
                     className="iris-getcoupon1-learnmore"
                     onClick={() => {
-                      gotoProfilePage()
+                      gotoProfilePage();
                     }}
                   >
                     點擊前往 >>
@@ -130,7 +130,7 @@ function IrisGetCouponSect(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default IrisGetCouponSect
+export default IrisGetCouponSect;

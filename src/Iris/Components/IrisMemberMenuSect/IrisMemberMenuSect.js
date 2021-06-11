@@ -13,10 +13,11 @@ import { ReactComponent as ProfileIcon } from './Images/profile_beastie_icon.svg
 import { useSelector } from 'react-redux';
 
 function IrisMemberMenuSect(props) {
-  const { userFavDelete, commentDelete, beastiePointAdd, currentUserData } =
+  const { userFavDelete, commentDelete, beastiePointAdd } =
     props;
 
   const currentUser = useSelector((state) => state.member.currentUser);
+  const currentUserData = useSelector((state) => state.member.currentUserData);
   const [allComments, setAllComments] = useState([]);
   const [myFavs, setMyFavs] = useState([]);
   const [couponLists, setCouponLists] = useState([]);

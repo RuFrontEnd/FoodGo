@@ -316,7 +316,6 @@ function App() {
               {/* <IrisBeastiePoint
                 setShowBar={setShowBar}
                 // 會員
-                currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 // vnbar
                 county={county}
@@ -337,7 +336,6 @@ function App() {
               {/* <IrisGetCoupon
                 setShowBar={setShowBar}
                 // 會員
-                currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 couponStatus={couponStatus}
                 setCouponStatus={setCouponStatus}
@@ -363,7 +361,6 @@ function App() {
                 showBar={showBar}
                 setShowBar={setShowBar}
                 // 會員
-                currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 // vnbar
                 county={county}
@@ -384,7 +381,6 @@ function App() {
             <Route path="/menu">
               <JessMenu
                 setShowBar={setShowBar}
-                currentUser={currentUser}
                 setCartNumber={setCartNumber}
                 county={county}
                 setCounty={setCounty}
@@ -403,7 +399,6 @@ function App() {
             <Route path="/bento/:id?">
               <JessBento
                 setShowBar={setShowBar}
-                currentUser={currentUser}
                 setCartNumber={setCartNumber}
                 handleCartNumber={handleCartNumber}
                 county={county}
@@ -423,7 +418,6 @@ function App() {
             <Route path="/vegBox">
               <JessVegBox
                 setShowBar={setShowBar}
-                currentUser={currentUser}
                 setCartNumber={setCartNumber}
                 handleCartNumber={handleCartNumber}
                 county={county}
@@ -443,7 +437,6 @@ function App() {
             {/* janice */}
             <Route exact path="/">
               <HomePage
-                currentUser={currentUser}
                 takeOrNot={takeOrNot}
                 setTakeOrNot={setTakeOrNot}
                 selectDate={selectDate}

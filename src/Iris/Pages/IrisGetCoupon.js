@@ -36,11 +36,9 @@ function IrisGetCoupon(props) {
       <VNavbar {...props} />
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect
-          currentUser={currentUser}
           currentUserData={currentUserData}
         />
         <IrisGetCouponSect
-          currentUser={currentUser}
           couponStatus={couponStatus}
           setCouponStatus={setCouponStatus}
           couponOneStatus={couponOneStatus}

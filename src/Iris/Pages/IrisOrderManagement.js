@@ -10,13 +10,8 @@ import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import { useSelector } from 'react-redux';
 
 function IrisOrderManagement(props) {
-  const {
-    currentUser,
-    currentUserData,
-    setShowLoginModal,
-    setShowBar,
-    handleCartNumber,
-  } = props;
+  const { currentUserData, setShowLoginModal, setShowBar, handleCartNumber } =
+    props;
 
   const isLogin = useSelector((state) => state.member.isLogin);
 
@@ -33,10 +28,7 @@ function IrisOrderManagement(props) {
     <>
       <VNavbar {...props} />
       <div className="container iris-memberpage-container">
-        <IrisMemberMenuSect
-          currentUser={currentUser}
-          currentUserData={currentUserData}
-        />
+        <IrisMemberMenuSect />
         <ChaOrderManagement {...props} />
       </div>
       <ScrollButton />

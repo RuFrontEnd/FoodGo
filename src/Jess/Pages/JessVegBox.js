@@ -9,7 +9,7 @@ import JessVegE from '../Components/JessVegE/JessVegE';
 import ToTopGreen from '../Components/Scroll/ScrollButton-green';
 
 function JessVegBox(props) {
-  const { handleCartNumber, handleCarList, currentUser, setShowBar } = props;
+  const { handleCartNumber, handleCarList, setShowBar } = props;
   const [count, setCount] = useState(1);
   const [total, setTotal] = useState(170);
   const [menu, setMenu] = useState([]);

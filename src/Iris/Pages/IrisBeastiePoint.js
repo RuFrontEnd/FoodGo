@@ -10,12 +10,8 @@ import IrisBeastieRuleBox from '../Components/IrisBeastieRuleBox/IrisBeastieRule
 import { useSelector } from 'react-redux';
 
 function IrisBeastiePoint(props) {
-  const {
-    currentUser,
-    currentUserData,
-    setShowLoginModal,
-    setShowBar,
-  } = props;
+  const {currentUserData, setShowLoginModal, setShowBar } = props;
+  const currentUser = useSelector((state) => state.member.currentUser);
   const isLogin = useSelector((state) => state.member.isLogin);
   const [showRuleBox, setShowRuleBox] = useState(false);
 
@@ -33,11 +29,9 @@ function IrisBeastiePoint(props) {
       <VNavbar {...props} />
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect
-          currentUser={currentUser}
           currentUserData={currentUserData}
         />
         <IrisBeastiePointSect
-          currentUser={currentUser}
           setShowRuleBox={setShowRuleBox}
         />
       </div>
