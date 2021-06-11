@@ -16,7 +16,6 @@ function Userprofile(props) {
   const [beastiePointAdd, setBeastiePointAdd] = useState();
   const {
     setShowBar,
-    currentUser,
     setShowLoginModal,
     couponStatus,
     setCouponStatus,
@@ -65,7 +64,6 @@ function Userprofile(props) {
           currentUserData={currentUserData}
         />
         <DataEditSect
-          currentUser={currentUser}
           setShowUpdateModal={setShowUpdateModal}
           setShowGetCouponBox={setShowGetCouponBox}
           setBeastiePointAdd={setBeastiePointAdd}

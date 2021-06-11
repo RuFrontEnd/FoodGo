@@ -252,7 +252,6 @@ function App() {
               <Userprofile
                 setShowBar={setShowBar}
                 // 會員
-                currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 couponStatus={couponStatus}
                 setCouponStatus={setCouponStatus}
@@ -277,7 +276,6 @@ function App() {
               {/* <IrisOrderComment
                 setShowBar={setShowBar}
                 // 會員
-                currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 // vnbar
                 county={county}
@@ -298,7 +296,6 @@ function App() {
               {/* <IrisMyFav
                 setShowBar={setShowBar}
                 // 會員
-                currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 // vnbar
                 county={county}

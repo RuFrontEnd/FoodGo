@@ -6,11 +6,11 @@ import star from './Images/star.svg';
 import IrisTextArea from './IrisTextArea/IrisTextArea';
 import { Rate } from 'antd';
 import 'antd/dist/antd.css';
-// import InputH40 from './../../../Share/Components/Input/InputH40';
+import { useSelector } from 'react-redux';
 
 function IrisUserCommentSect(props) {
+  const currentUser = useSelector((state) => state.member.currentUser);
   const {
-    currentUser,
     // 設定setCommentDelete的狀態，傳到memberMenu，若有改變數字會減一
     setCommentDelete,
   } = props;
@@ -127,8 +127,9 @@ function IrisUserCommentSect(props) {
     const thisId = e.target.parentNode.parentNode.parentNode.id;
     const thisComment = document.querySelector('#' + thisId);
     // 抓這條comment box上面的線
-    const LineAbovethisComment = document.querySelector('#' + thisId)
-      .previousSibling;
+    const LineAbovethisComment = document.querySelector(
+      '#' + thisId
+    ).previousSibling;
     thisComment.style.display = 'none';
     LineAbovethisComment.style.display = 'none';
     // 讓您共有x則投稿數量-1

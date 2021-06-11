@@ -11,7 +11,6 @@ import { useSelector } from 'react-redux';
 function IrisOrderComment(props) {
   const [commentDelete, setCommentDelete] = useState('');
   const {
-    currentUser,
     currentUserData,
     setShowLoginModal,
     setShowBar,
@@ -33,12 +32,10 @@ function IrisOrderComment(props) {
       <VNavbar {...props} />
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect
-          currentUser={currentUser}
           commentDelete={commentDelete}
           currentUserData={currentUserData}
         />
         <IrisOrderCommentSect
-          currentUser={currentUser}
           commentDelete={commentDelete}
           setCommentDelete={setCommentDelete}
         />

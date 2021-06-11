@@ -31,7 +31,6 @@ function IrisCard(props) {
     parentId,
     imgId,
     handleCartNumber,
-    currentUser,
     showFavArr,
     currentUserFav,
     setUserFavDelete,
@@ -82,7 +81,6 @@ function IrisCard(props) {
                 data={data}
                 isShowFav={isShowFav}
                 setIsShowFav={setIsShowFav}
-                currentUser={currentUser}
                 proudctId={proudctId}
                 dataFav={dataFav}
                 setUserFavDelete={setUserFavDelete}
@@ -95,7 +93,6 @@ function IrisCard(props) {
                 data={data}
                 isShowFav={isShowFav}
                 setIsShowFav={setIsShowFav}
-                currentUser={currentUser}
                 proudctId={proudctId}
                 dataFav={dataFav}
               />

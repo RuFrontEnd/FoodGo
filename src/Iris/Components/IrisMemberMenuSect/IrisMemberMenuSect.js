@@ -10,15 +10,13 @@ import { ReactComponent as GroupOrderIcon } from './Images/group_order.svg';
 import { ReactComponent as MyFavIcon } from './Images/my_fav.svg';
 import { ReactComponent as MyCommentIcon } from './Images/my_comment.svg';
 import { ReactComponent as ProfileIcon } from './Images/profile_beastie_icon.svg';
-function IrisMemberMenuSect(props) {
-  const {
-    currentUser,
-    userFavDelete,
-    commentDelete,
-    beastiePointAdd,
-    currentUserData,
-  } = props;
+import { useSelector } from 'react-redux';
 
+function IrisMemberMenuSect(props) {
+  const { userFavDelete, commentDelete, beastiePointAdd, currentUserData } =
+    props;
+
+  const currentUser = useSelector((state) => state.member.currentUser);
   const [allComments, setAllComments] = useState([]);
   const [myFavs, setMyFavs] = useState([]);
   const [couponLists, setCouponLists] = useState([]);

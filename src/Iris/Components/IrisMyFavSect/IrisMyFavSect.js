@@ -8,14 +8,15 @@ import { ReactComponent as StarGrey } from './Images/star_grey.svg'
 import './IrisMyFavSect.scss'
 import IrisCard from './IrisCard/IrisCard'
 // import Star123 from './Images/star_orange.svg';
+import {useSelector } from 'react-redux';
 
 function IrisMyFavSect(props) {
   const {
-    currentUser,
     userFavDelete,
     // 設定userFavDelete的狀態，傳到memberMenu，若有改變數字會減一
     setUserFavDelete,
   } = props
+  const currentUser = useSelector((state) => state.member.currentUser);
   const [myFav, setMyFav] = useState([])
   const [showFavArr, setShowFavArr] = useState([])
   const [hideCard, setHideCard] = useState(false)
@@ -72,7 +73,6 @@ function IrisMyFavSect(props) {
                   currentUserFav={currentUserFav}
                   stars={item.starRating}
                   proudctId={item.product_sid}
-                  currentUser={currentUser}
                   setUserFavDelete={setUserFavDelete}
                   hideCard={hideCard}
                   setHideCard={setHideCard}
