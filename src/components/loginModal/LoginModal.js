@@ -43,6 +43,7 @@ function LoginModal(props) {
       />
       <LoginSuccessBox
         showSuccessBox={showSuccessBox}
+        setShowSuccessBox={setShowSuccessBox}
       />
     </>
   );
