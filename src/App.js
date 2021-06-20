@@ -17,16 +17,14 @@ import {
 
 // const OtherComponent = React.lazy(() => import('./OtherComponent'));
 
-const suspense = () => <div></div>;
-const Navbar = lazy(() => import('components/navBar/NavBar'));
-const Footer = lazy(() => import('components/footer/Footer'));
+import Navbar from 'components/navBar/NavBar';
+import Footer from 'components/footer/Footer';
+import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
 // 加入 toTop 按鈕元件
-const ScrollToTop = lazy(() =>
-  import('Share/Components/ScrollToTop/ScrollToTop')
-);
-const LoginModal = lazy(() => import('components/loginModal/LoginModal'));
-const HomePage = lazy(() => import('pages/homePage/HomePage'));
+import LoginModal from 'components/loginModal/LoginModal';
+import HomePage from 'pages/homePage/HomePage';
 
+const suspense = () => <div></div>;
 // 引入 所有人的總元件
 const ClaudiaFarmIndex = lazy(() => import('Claudia/Pages/ClaudiaFarmIndex'));
 const ClaudiaFarmDetailedPage = lazy(() =>
@@ -165,229 +163,220 @@ function App() {
     <Router>
       <>
         {/* 切頁時不重新渲染的部份 */}
-        <Suspense fallback={suspense}>
-          <Navbar
-            style={{ display: !showBar && 'none' }}
-            cartNumber={cartNumber}
-            amount={amount}
-            setShowLoginModal={setShowLoginModal}
-            setShowSuccessBox={setShowSuccessBox}
-            showLoginModal={showLoginModal}
-          />
-        </Suspense>
-        <Suspense fallback={suspense}>
-          <LoginModal
-            showLoginModal={showLoginModal}
-            setShowLoginModal={setShowLoginModal}
-            showSuccessBox={showSuccessBox}
-            setShowSuccessBox={setShowSuccessBox}
-          />
-        </Suspense>
-        <Suspense fallback={suspense}>
-          <ScrollToTop>
-            <Switch>
-              {/* 首頁 */}
-              <Route exact path="/">
-                <Suspense fallback={suspense}>
-                  <HomePage
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                    setShowBar={setShowBar}
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                  />
-                </Suspense>
-              </Route>
-              {/* 便當商品列表 */}
-              <Route exact path="/productList">
-                <Suspense fallback={suspense}>
-                  <ProductList
-                    setShowBar={setShowBar}
-                    handleCartNumber={handleCartNumber}
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                    amount={amount}
-                    setAmount={setAmount}
-                  />
-                </Suspense>
-              </Route>
-              {/* 沙拉商品列表 */}
-              <Route exact path="/productListSalad">
-                <Suspense fallback={suspense}>
-                  <SaladList
-                    setShowBar={setShowBar}
-                    handleCartNumber={handleCartNumber}
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                    amount={amount}
-                    setAmount={setAmount}
-                  />
-                </Suspense>
-              </Route>
-              {/* 客製化便當 */}
-              <Route exact path="/productListCustom">
-                <Suspense fallback={suspense}>
-                  <CustomBentoList
-                    setShowBar={setShowBar}
-                    handleCartNumber={handleCartNumber}
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                    amount={amount}
-                    setAmount={setAmount}
-                  />
-                </Suspense>
-              </Route>
+        <Navbar
+          style={{ display: !showBar && 'none' }}
+          cartNumber={cartNumber}
+          amount={amount}
+          setShowLoginModal={setShowLoginModal}
+          setShowSuccessBox={setShowSuccessBox}
+          showLoginModal={showLoginModal}
+        />
+        <LoginModal
+          showLoginModal={showLoginModal}
+          setShowLoginModal={setShowLoginModal}
+          showSuccessBox={showSuccessBox}
+          setShowSuccessBox={setShowSuccessBox}
+        />
+        <ScrollToTop>
+          <Switch>
+            {/* 首頁 */}
+            <Route exact path="/">
+              <HomePage
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                setShowBar={setShowBar}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+              />
+            </Route>
+            {/* 便當商品列表 */}
+            <Route exact path="/productList">
+              <Suspense fallback={suspense}>
+                <ProductList
+                  setShowBar={setShowBar}
+                  handleCartNumber={handleCartNumber}
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                  amount={amount}
+                  setAmount={setAmount}
+                />
+              </Suspense>
+            </Route>
+            {/* 沙拉商品列表 */}
+            <Route exact path="/productListSalad">
+              <Suspense fallback={suspense}>
+                <SaladList
+                  setShowBar={setShowBar}
+                  handleCartNumber={handleCartNumber}
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                  amount={amount}
+                  setAmount={setAmount}
+                />
+              </Suspense>
+            </Route>
+            {/* 客製化便當 */}
+            <Route exact path="/productListCustom">
+              <Suspense fallback={suspense}>
+                <CustomBentoList
+                  setShowBar={setShowBar}
+                  handleCartNumber={handleCartNumber}
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                  amount={amount}
+                  setAmount={setAmount}
+                />
+              </Suspense>
+            </Route>
 
-              {/* claudia */}
-              <Route exact path="/farmMap">
-                <Suspense fallback={suspense}>
-                  <ClaudiaFarmIndex />
-                </Suspense>
-              </Route>
-              <Route exact path="/farmIntro">
-                <Suspense fallback={suspense}>
-                  <ClaudiaFarmDetailedPage
-                    handleCartNumber={handleCartNumber}
-                  />
-                </Suspense>
-              </Route>
-              {/* cha */}
-              <Route exact path="/cart">
-                <Suspense fallback={suspense}>
-                  <ChaCart
-                    setShowBar={setShowBar}
-                    setCartNumber={setCartNumber}
-                    // handleCartNumber={handleCartNumber}
-                    // county={county}
-                    // setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    // address={address}
-                    // setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                    textCounty={textCounty}
-                    textTownship={textTownship}
-                    textAddress={textAddress}
-                  />
-                </Suspense>
-              </Route>
-              <Route exact path="/groupOrder/groupOrderCreate">
-                <Suspense fallback={suspense}>
-                  <ChaGroupOrderCreate />
-                </Suspense>
-              </Route>
-              <Route path="/groupOrder/groupOrderSearch">
-                <Suspense fallback={suspense}>
-                  <ChaGroupOrderSearch />
-                </Suspense>
-              </Route>
-              <Route path="/groupOrder/groupOrderSignIn">
-                <Suspense fallback={suspense}>
-                  <ChaGroupOrderSignIn />
-                </Suspense>
-              </Route>
-              <Route path="/groupOrder/groupOrderConfirm">
-                <Suspense fallback={suspense}>
-                  <ChaGroupOrderConfirm />
-                </Suspense>
-              </Route>
-              <Route path="/groupOrder/groupOrderMenu">
-                <Suspense fallback={suspense}>
-                  <ChaGroupOrderMenu />
-                </Suspense>
-              </Route>
-              {/* 訂單管理已置入<IrisOrderManagement /> */}
-              {/* 測試用：中繼站、商品清單 */}
-              <Route exact path="/checkpoint">
-                <Suspense fallback={suspense}>
-                  <ChaCheckpoint />
-                </Suspense>
-              </Route>
-              <Route exact path="/chaProductList">
-                <Suspense fallback={suspense}>
-                  <ChaProductList handleCartNumber={handleCartNumber} />
-                </Suspense>
-              </Route>
-              <Route exact path="/chaCartTest">
-                <Suspense fallback={suspense}>
-                  <ChaCartTest />
-                </Suspense>
-              </Route>
-              {/* 404 */}
+            {/* claudia */}
+            <Route exact path="/farmMap">
+              <Suspense fallback={suspense}>
+                <ClaudiaFarmIndex />
+              </Suspense>
+            </Route>
+            <Route exact path="/farmIntro">
+              <Suspense fallback={suspense}>
+                <ClaudiaFarmDetailedPage handleCartNumber={handleCartNumber} />
+              </Suspense>
+            </Route>
+            {/* cha */}
+            <Route exact path="/cart">
+              <Suspense fallback={suspense}>
+                <ChaCart
+                  setShowBar={setShowBar}
+                  setCartNumber={setCartNumber}
+                  // handleCartNumber={handleCartNumber}
+                  // county={county}
+                  // setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  // address={address}
+                  // setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                  textCounty={textCounty}
+                  textTownship={textTownship}
+                  textAddress={textAddress}
+                />
+              </Suspense>
+            </Route>
+            <Route exact path="/groupOrder/groupOrderCreate">
+              <Suspense fallback={suspense}>
+                <ChaGroupOrderCreate />
+              </Suspense>
+            </Route>
+            <Route path="/groupOrder/groupOrderSearch">
+              <Suspense fallback={suspense}>
+                <ChaGroupOrderSearch />
+              </Suspense>
+            </Route>
+            <Route path="/groupOrder/groupOrderSignIn">
+              <Suspense fallback={suspense}>
+                <ChaGroupOrderSignIn />
+              </Suspense>
+            </Route>
+            <Route path="/groupOrder/groupOrderConfirm">
+              <Suspense fallback={suspense}>
+                <ChaGroupOrderConfirm />
+              </Suspense>
+            </Route>
+            <Route path="/groupOrder/groupOrderMenu">
+              <Suspense fallback={suspense}>
+                <ChaGroupOrderMenu />
+              </Suspense>
+            </Route>
+            {/* 訂單管理已置入<IrisOrderManagement /> */}
+            {/* 測試用：中繼站、商品清單 */}
+            <Route exact path="/checkpoint">
+              <Suspense fallback={suspense}>
+                <ChaCheckpoint />
+              </Suspense>
+            </Route>
+            <Route exact path="/chaProductList">
+              <Suspense fallback={suspense}>
+                <ChaProductList handleCartNumber={handleCartNumber} />
+              </Suspense>
+            </Route>
+            <Route exact path="/chaCartTest">
+              <Suspense fallback={suspense}>
+                <ChaCartTest />
+              </Suspense>
+            </Route>
+            {/* 404 */}
 
-              {/* iris */}
-              <Route exact path="/memberUserprofile">
-                <Suspense fallback={suspense}>
-                  <Userprofile
-                    setShowBar={setShowBar}
-                    // 會員
-                    setShowLoginModal={setShowLoginModal}
-                    couponStatus={couponStatus}
-                    setCouponStatus={setCouponStatus}
-                    couponOneStatus={couponOneStatus}
-                    setCouponOneStatus={setCouponOneStatus}
-                    // vnbar
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                  />
-                </Suspense>
-              </Route>
-              <Route exact path="/orderComment">
-                {/* <Suspense fallback={suspense}> */}
-                {/* <IrisOrderComment
+            {/* iris */}
+            <Route exact path="/memberUserprofile">
+              <Suspense fallback={suspense}>
+                <Userprofile
+                  setShowBar={setShowBar}
+                  // 會員
+                  setShowLoginModal={setShowLoginModal}
+                  couponStatus={couponStatus}
+                  setCouponStatus={setCouponStatus}
+                  couponOneStatus={couponOneStatus}
+                  setCouponOneStatus={setCouponOneStatus}
+                  // vnbar
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                />
+              </Suspense>
+            </Route>
+            <Route exact path="/orderComment">
+              {/* <Suspense fallback={suspense}> */}
+              {/* <IrisOrderComment
                 setShowBar={setShowBar}
                 // 會員
                 setShowLoginModal={setShowLoginModal}
@@ -405,11 +394,11 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               /> */}
-                {/* </Suspense> */}
-              </Route>
-              <Route exact path="/myFav">
-                {/* <Suspense fallback={suspense}> */}
-                {/* <IrisMyFav
+              {/* </Suspense> */}
+            </Route>
+            <Route exact path="/myFav">
+              {/* <Suspense fallback={suspense}> */}
+              {/* <IrisMyFav
                 setShowBar={setShowBar}
                 // 會員
                 setShowLoginModal={setShowLoginModal}
@@ -427,11 +416,11 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               /> */}
-                {/* </Suspense> */}
-              </Route>
-              <Route exact path="/beastiePoint">
-                {/* <Suspense fallback={suspense}> */}
-                {/* <IrisBeastiePoint
+              {/* </Suspense> */}
+            </Route>
+            <Route exact path="/beastiePoint">
+              {/* <Suspense fallback={suspense}> */}
+              {/* <IrisBeastiePoint
                 setShowBar={setShowBar}
                 // 會員
                 setShowLoginModal={setShowLoginModal}
@@ -449,11 +438,11 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               /> */}
-                {/* </Suspense> */}
-              </Route>
-              <Route path="/getCoupon">
-                {/* <Suspense fallback={suspense}> */}
-                {/* <IrisGetCoupon
+              {/* </Suspense> */}
+            </Route>
+            <Route path="/getCoupon">
+              {/* <Suspense fallback={suspense}> */}
+              {/* <IrisGetCoupon
                 setShowBar={setShowBar}
                 // 會員
                 setShowLoginModal={setShowLoginModal}
@@ -474,11 +463,11 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               /> */}
-                {/* </Suspense> */}
-              </Route>
-              <Route path="/orderManagement">
-                {/* <Suspense fallback={suspense}> */}
-                {/* <IrisOrderManagement
+              {/* </Suspense> */}
+            </Route>
+            <Route path="/orderManagement">
+              {/* <Suspense fallback={suspense}> */}
+              {/* <IrisOrderManagement
                 handleCartNumber={handleCartNumber}
                 showBar={showBar}
                 setShowBar={setShowBar}
@@ -498,10 +487,10 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               /> */}
-                {/* </Suspense> */}
-              </Route>
-              {/* jess */}
-              {/* <Route path="/menu">
+              {/* </Suspense> */}
+            </Route>
+            {/* jess */}
+            {/* <Route path="/menu">
               <Suspense fallback={suspense}>
                 <JessMenu
                   setShowBar={setShowBar}
@@ -521,7 +510,7 @@ function App() {
                 />
               </Suspense>
             </Route> */}
-              {/* <Route path="/bento/:id?">
+            {/* <Route path="/bento/:id?">
               <Suspense fallback={suspense}>
                 <JessBento
                   setShowBar={setShowBar}
@@ -542,30 +531,29 @@ function App() {
                 />
               </Suspense>
             </Route> */}
-              <Route path="/vegBox">
-                <Suspense fallback={suspense}>
-                  <JessVegBox
-                    setShowBar={setShowBar}
-                    setCartNumber={setCartNumber}
-                    handleCartNumber={handleCartNumber}
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                  />
-                </Suspense>
-              </Route>
-            </Switch>
-          </ScrollToTop>
-        </Suspense>
+            <Route path="/vegBox">
+              <Suspense fallback={suspense}>
+                <JessVegBox
+                  setShowBar={setShowBar}
+                  setCartNumber={setCartNumber}
+                  handleCartNumber={handleCartNumber}
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                />
+              </Suspense>
+            </Route>
+          </Switch>
+        </ScrollToTop>
         <Suspense fallback={suspense}>
           <Footer />
         </Suspense>
