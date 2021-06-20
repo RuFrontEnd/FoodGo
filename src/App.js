@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './App.css';
 
 // install react router => npm install react-router-dom
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-// components
-import Navbar from 'components/navBar/NavBar';
-import Footer from 'components/footer/Footer';
-import LoginModal from 'components/loginModal/LoginModal';
+import {
+  datacountries,
+  datatownships,
+} from '../src/Janice/Components/JanIndexx/data.js';
+import {
+  login,
+  logout,
+  setCurrentUser,
+  setCurrentUserData,
+} from 'redux/member/memberActions'; // 判斷是否 login 的狀態
 
 // 引入 所有人的總元件
 import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex';
@@ -33,7 +38,6 @@ import ChaCheckpoint from 'Cha/Pages/ChaCheckpoint';
 import ChaProductList from 'Cha/Components-demo/ChaProductList';
 import ChaCartTest from 'Cha/Components-demo/ChaCartTest';
 
-import HomePage from 'pages/homePage/HomePage';
 import Userprofile from 'pages/userProfile/UserProfile';
 import ProductList from 'pages/productList/ProductList';
 import SaladList from 'pages/saladList/SaladList';
@@ -42,18 +46,13 @@ import CustomBentoList from 'pages/customBentoList/CustomBentoList';
 // 加入 toTop 按鈕元件
 import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
 
-import {
-  datacountries,
-  datatownships,
-} from '../src/Janice/Components/JanIndexx/data.js';
+// const OtherComponent = React.lazy(() => import('./OtherComponent'));
 
-// 判斷是否 login 的狀態
-import {
-  login,
-  logout,
-  setCurrentUser,
-  setCurrentUserData,
-} from 'redux/member/memberActions';
+const suspense = () => <div></div>;
+const Navbar = lazy(() => import('components/navBar/NavBar'));
+const Footer = lazy(() => import('components/footer/Footer'));
+const LoginModal = lazy(() => import('components/loginModal/LoginModal'));
+const HomePage = lazy(() => import('pages/homePage/HomePage'));
 
 // 路由表
 function App() {
@@ -151,39 +150,45 @@ function App() {
     <Router>
       <>
         {/* 切頁時不重新渲染的部份 */}
-        <Navbar
-          style={{ display: !showBar && 'none' }}
-          cartNumber={cartNumber}
-          amount={amount}
-          setShowLoginModal={setShowLoginModal}
-          setShowSuccessBox={setShowSuccessBox}
-          showLoginModal={showLoginModal}
-        />
-        <LoginModal
-          showLoginModal={showLoginModal}
-          setShowLoginModal={setShowLoginModal}
-          showSuccessBox={showSuccessBox}
-          setShowSuccessBox={setShowSuccessBox}
-        />
+        <Suspense fallback={suspense}>
+          <Navbar
+            style={{ display: !showBar && 'none' }}
+            cartNumber={cartNumber}
+            amount={amount}
+            setShowLoginModal={setShowLoginModal}
+            setShowSuccessBox={setShowSuccessBox}
+            showLoginModal={showLoginModal}
+          />
+        </Suspense>
+        <Suspense fallback={suspense}>
+          <LoginModal
+            showLoginModal={showLoginModal}
+            setShowLoginModal={setShowLoginModal}
+            showSuccessBox={showSuccessBox}
+            setShowSuccessBox={setShowSuccessBox}
+          />
+        </Suspense>
         <ScrollToTop>
           <Switch>
             {/* 首頁 */}
             <Route exact path="/">
-              <HomePage
-                takeOrNot={takeOrNot}
-                setTakeOrNot={setTakeOrNot}
-                selectDate={selectDate}
-                setSelectDate={setSelectDate}
-                slecteTime={slecteTime}
-                setSelectTime={setSelectTime}
-                setShowBar={setShowBar}
-                county={county}
-                setCounty={setCounty}
-                township={township}
-                setTownship={setTownship}
-                address={address}
-                setAddress={setAddress}
-              />
+              <Suspense fallback={suspense}>
+                <HomePage
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                  setShowBar={setShowBar}
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                />
+              </Suspense>
             </Route>
             {/* 便當商品列表 */}
             <Route exact path="/productList">
@@ -496,7 +501,9 @@ function App() {
             </Route>
           </Switch>
         </ScrollToTop>
-        <Footer />
+        <Suspense fallback={suspense}>
+          <Footer />
+        </Suspense>
       </>
     </Router>
   );
