@@ -18,13 +18,14 @@ import {
 // const OtherComponent = React.lazy(() => import('./OtherComponent'));
 
 import Navbar from 'components/navBar/NavBar';
-import Footer from 'components/footer/Footer';
+// import Footer from 'components/footer/Footer';
 import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
 // 加入 toTop 按鈕元件
 import LoginModal from 'components/loginModal/LoginModal';
 import HomePage from 'pages/homePage/HomePage';
 
 const suspense = () => <div></div>;
+const Footer = lazy(() => import('components/footer/Footer'));
 // 引入 所有人的總元件
 const ClaudiaFarmIndex = lazy(() => import('Claudia/Pages/ClaudiaFarmIndex'));
 const ClaudiaFarmDetailedPage = lazy(() =>
