@@ -4,6 +4,7 @@ import starEmpty from 'assets/svg/starEmpty.svg';
 import starHalf from 'assets/svg/starHalf.svg';
 import starFull from 'assets/svg/starFull.svg';
 import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
+import OptionButton from 'components/optionButton/OptionButton';
 import AddFavoriteButton from 'components/addFavoriteButton/AddFavoriteButton';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -167,17 +168,10 @@ function ProductCard(props) {
         {/* 加入購物車按鈕s */}
         <section className="ru-card-addCartWarp">
           <div className="ru-card-hr">
-            <RuAddCart
-              target={'target'}
-              id={id}
-              imgId={imgId}
-              proudctId={proudctId}
-              parentId={parentId}
-              price={price}
-              title={title}
-              handleCartNumber={handleCartNumber} // localStorage函式
-              count={count}
-              setCount={setCount}
+            <OptionButton
+              type={'origin'}
+              className={'productCard-option-button'}
+              text={'加入購物車'}
             />
           </div>
         </section>

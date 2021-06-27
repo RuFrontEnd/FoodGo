@@ -197,17 +197,7 @@ function App() {
             </Route>
             {/* 便當商品列表 */}
             <Route exact path="/productList">
-              <Suspense
-                fallback={
-                  <section
-                    style={{
-                      width: '100%',
-                      height: 'calc(100vh - 60px)',
-                    }}
-                  ></section>
-                }
-              >
-                {/* <Suspense fallback={<div>123</div>}> */}
+              <Suspense fallback={<FallBack />}>
                 <ProductList
                   setShowBar={setShowBar}
                   handleCartNumber={handleCartNumber}

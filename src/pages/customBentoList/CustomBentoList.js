@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-// import 'pages/customBentoList/customBentoList.scss';
+import 'pages/customBentoList/customBentoList.scss';
 import OptionButton from 'components/optionButton/OptionButton';
 import CommodityList from 'components/commodityList/CommodityList';
+import ProductFeatureBar from 'components/productFeatureBar/ProductFeatureBar';
 import CustomBento from 'components/customBento/CustomBento';
 import SearchBar from 'components/searchBar/SearchBar';
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+import productListBanner from 'assets/jpg/proudctList-banner.jpg';
 
 // 引用共用元件
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
@@ -14,8 +15,6 @@ import line from './Images/line.png';
 
 function CustomBentoList(props) {
   const { handleCartNumber, amount, setAmount } = props;
-  let location = useLocation(); // react-bootStrap-hook => get Nav.link state
-  const { currentOption } = location.state;
   const [commodities, setCommodities] = useState([]);
   const [favorites, setFavorites] = useState('');
   const [count, setCount] = useState(1);
@@ -90,21 +89,6 @@ function CustomBentoList(props) {
   };
 
   useEffect(() => {
-    if (currentOption === undefined) {
-      return;
-    }
-    if (currentOption === 'bento') {
-      return setSelectedTypes([true, false, false, false]);
-    }
-    if (currentOption === 'salad') {
-      return setSelectedTypes([false, true, false, false]);
-    }
-    if (currentOption === 'custom') {
-      return setSelectedTypes([false, false, true, false]);
-    }
-  }, []);
-
-  useEffect(() => {
     if (selectedTypes[0] === true) {
       return getBentoData('1.低GI便當');
     }
@@ -115,55 +99,21 @@ function CustomBentoList(props) {
 
   return (
     <>
-      <section className="top-space"></section>
-      <section className="mainImg-warp">
-        <h1>享受美食 不需要理由</h1>
-        <div className="mainImg"></div>
-      </section>
-      <section className="productList-container">
-        <div className="optionWarp">
-          <SearchBar
-            searchInput={searchInput}
-            setSearchInput={setSearchInput}
-            onSearch={filterData}
-          />
-          <div className="buttonWarp">
-            {buttonAttributes.map((buttonAttribute) => (
-              <OptionButton
-                text={buttonAttribute.text}
-                selectedTypes={selectedTypes}
-                setSelectedTypes={setSelectedTypes}
-                isSelected={buttonAttribute.isSelected}
-                index={buttonAttribute.index}
-                type={buttonAttribute.type}
-                routes={buttonAttribute.routes}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="line">
-          <img src={line}></img>
-        </div>
-      </section>
-      {(selectedTypes[0] || selectedTypes[1]) && (
-        <CommodityList
-          commodities={commodities}
-          favorites={favorites}
-          searchInput={searchInput}
-          handleCartNumber={handleCartNumber} // localStorage method
-          count={count}
-          setCount={setCount}
-        />
-      )}
-      {selectedTypes[2] && (
-        <CustomBento
-          handleCartNumber={handleCartNumber}
-          setAmount={setAmount}
-          amount={amount}
-          count={count}
-          setCount={setCount}
-        />
-      )}
+      <ProductFeatureBar
+        title={'享受美食 不需要理由'}
+        imgUrl={productListBanner}
+        searchInput={searchInput}
+        setSearchInput={setSearchInput}
+        onSearch={filterData}
+        buttonAttributes={buttonAttributes}
+      />
+      <CustomBento
+        handleCartNumber={handleCartNumber}
+        setAmount={setAmount}
+        amount={amount}
+        count={count}
+        setCount={setCount}
+      />
       <ScrollButton />
     </>
   );

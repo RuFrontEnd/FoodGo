@@ -13,7 +13,7 @@ import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 // 引用圖片
 import line from './Images/line.png';
 
-function SaladList(props) {
+function ProductList(props) {
   const { handleCartNumber, amount, setAmount } = props;
   const [commodities, setCommodities] = useState([]);
   const [favorites, setFavorites] = useState('');
@@ -95,4 +95,4 @@ function SaladList(props) {
   );
 }
 
-export default SaladList;
+export default ProductList;

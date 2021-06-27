@@ -179,7 +179,6 @@ function NavBar(props) {
                           as={NavLink}
                           to={{
                             pathname: '/productList',
-                            state: { currentOption: 'bento' },
                           }}
                         >
                           低GI便當
@@ -189,8 +188,7 @@ function NavBar(props) {
                         <Nav.Link
                           as={NavLink}
                           to={{
-                            pathname: '/productList',
-                            state: { currentOption: 'salad' },
+                            pathname: '/productListSalad',
                           }}
                         >
                           美味沙拉
@@ -205,8 +203,7 @@ function NavBar(props) {
                         <Nav.Link
                           as={NavLink}
                           to={{
-                            pathname: '/productList',
-                            state: { currentOption: 'custom' },
+                            pathname: '/productListCustom',
                           }}
                         >
                           客製化便當

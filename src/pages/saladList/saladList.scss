@@ -5,15 +5,9 @@ input {
   outline: none;
 }
 
-.top-space{
+.top-space {
   height: 100px;
-  background-color: '#FF5151'
-}
-
-.skeleton-container{
-  max-width: 1440px;
-  padding: 90px 135px 0px;
-  margin: auto;
+  background-color: "#FF5151";
 }
 
 .mainImg-warp {
@@ -51,17 +45,21 @@ input {
 .optionWarp {
   // background-color: dodgerblue;
   color: white;
-  height: 325px;
+  margin: auto;
   @include page(); // 1440px
+  padding: 80px 20px
+}
+
+.productList-option-area {
   @include flex($df, $fdc, $jcc, $alc);
 }
 
 .buttonWarp {
   // background-color: rgb(30, 236, 255);
-  width: 80.8%;
-  height: 65px;
+  width: 100%;
+  // height: 65px;
   margin-top: 50px;
-  @include flex($df, $fdr, space-between, $alc);
+  @include flex($df, $fdr, center, $alc);
 }
 
 .buttonWarp .button-btn:nth-child(1) {
@@ -173,6 +171,12 @@ input {
     height: 52px;
     margin: 0px;
   }
+}
+
+.productList-option-button {
+  max-width: 200px;
+  margin: 0px 25px;
+  padding: 20px 0px;
 }
 
 // 手機版 ----------
