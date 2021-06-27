@@ -689,7 +689,8 @@ function HomePage(props) {
           </div>
           {/* 商品列表按鈕 */}
           <OptionButton
-            className="mt-5 container homePage-index-button d-flex justify-content-center"
+            id={'homePage-recommend-button'}
+            className="homePage-index-button"
             type={'origin'}
             text={'商品列表'}
             routes={'/productList'}

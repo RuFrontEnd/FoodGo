@@ -42,10 +42,14 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 // 共用元件按鈕大小修改
-.homePage-index-button button {
+.homePage-index-button {
   width: 15rem;
   height: 5rem;
   font-size: 1.8rem;
+}
+
+#homePage-recommend-button{
+  margin: 30px auto 0px;
 }
 
 // 輪播牆
