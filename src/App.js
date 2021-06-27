@@ -488,7 +488,7 @@ function App() {
               {/* </Suspense> */}
             </Route>
             {/* jess */}
-            {/* <Route path="/menu">
+            <Route path="/menu">
               <Suspense fallback={<FallBack />}>
                 <JessMenu
                   setShowBar={setShowBar}
@@ -507,8 +507,8 @@ function App() {
                   setSelectTime={setSelectTime}
                 />
               </Suspense>
-            </Route> */}
-            {/* <Route path="/bento/:id?">
+            </Route>
+            <Route path="/bento/:id?">
               <Suspense fallback={<FallBack />}>
                 <JessBento
                   setShowBar={setShowBar}
@@ -528,7 +528,7 @@ function App() {
                   setSelectTime={setSelectTime}
                 />
               </Suspense>
-            </Route> */}
+            </Route>
             <Route path="/vegBox">
               <Suspense fallback={<FallBack />}>
                 <JessVegBox
