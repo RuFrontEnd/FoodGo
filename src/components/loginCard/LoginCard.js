@@ -58,6 +58,9 @@ function LoginCard(props) {
   // 記住我
   const [isRemembered, setIsRemembered] = useState(false);
 
+  // 註冊訊息
+  const [registerStatus, setRegisterStatus] = useState({});
+
   // 變成註冊表單
   const ToRegisterForm = () => {
     // 白底移動
@@ -190,6 +193,9 @@ function LoginCard(props) {
     } else if (!createPasswordValue.match(/^\w+$/)) {
       setCreatePasswordWrongText('密碼不得含有特殊符號');
       unPassTimes += 1;
+    } else if (createPasswordValue === createAccountValue) {
+      setCreatePasswordWrongText('帳號密碼不得相同');
+      unPassTimes += 1;
     }
 
     // 驗證確認密碼
@@ -237,7 +243,7 @@ function LoginCard(props) {
         password: createPasswordValue,
         email: userEmailValue,
         mobile: userMobileValue,
-        name: null,
+        name: nameValue,
       };
 
       fetch('http://localhost:5000/member/userRegister', {
@@ -251,6 +257,7 @@ function LoginCard(props) {
         .then((r) => r.json())
         .then((o) => {
           // console.log(o);
+          setRegisterStatus(o);
           setCreateAccountValue('');
           setCreatePasswordValue('');
           setConfirmPasswordValue('');
@@ -264,11 +271,6 @@ function LoginCard(props) {
         });
     }
   };
-
-  const currentUser = useSelector((state) => state.member.currentUser);
-  useEffect(() => {
-    console.log('currentUser', currentUser);
-  }, [currentUser]);
 
   useEffect(() => {
     const cookies = document.cookie.split(';');
@@ -413,7 +415,19 @@ function LoginCard(props) {
           </div>
           {/* ----------------註冊表單----------------- */}
           <div className="register-content form-content" ref={$registerContent}>
-            <div className="register-title">會員註冊</div>
+            <div
+              className="register-title"
+              onClick={() => {
+                setCreateAccountValue('a123456789');
+                setCreatePasswordValue('a000000000');
+                setConfirmPasswordValue('a000000000');
+                setNameValue('TEST');
+                setUserEmailValue('as2million@gmail.com');
+                setUserMobileValue('0917000000');
+              }}
+            >
+              會員註冊
+            </div>
             <div
               className={
                 isRegistered
@@ -422,11 +436,12 @@ function LoginCard(props) {
               }
             >
               <div
-                className="alert-success register-alert"
+                className={`${
+                  registerStatus.status ? 'alert-success' : 'alert-danger'
+                } register-alert`}
                 role="alert"
-                ref={$registerAlert}
               >
-                註冊成功
+                {registerStatus.message}
               </div>
             </div>
             <div className="login-input d-flex flex-column align-items-end justify-content-between">
