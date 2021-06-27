@@ -349,7 +349,15 @@ function LoginCard(props) {
         <section className="login-form" ref={$loginForm}>
           {/* ----------------登入表單----------------- */}
           <div className="login-content form-content" ref={$loginContent}>
-            <div className="login-title">會員登入</div>
+            <div
+              className="login-title"
+              onClick={() => {
+                setUserAccountValue('a123456789');
+                setUserPasswordValue('a000000000');
+              }}
+            >
+              會員登入
+            </div>
             <div
               className="alert alert-danger login-alert"
               role="alert"
