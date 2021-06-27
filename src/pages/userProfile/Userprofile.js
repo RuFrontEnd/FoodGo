@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import MemberMenuSect from 'components/memberMenuSect/MemberMenuSect';
 import DataEditSect from 'components/dataEditSect/DataEditSect';
 import 'pages/userProfile/userProfile.scss';
@@ -8,7 +7,7 @@ import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import GetCouponBox from 'components/getCouponBox/GetCouponBox';
 import { useSelector } from 'react-redux';
 
-function Userprofile(props) {
+function UserProfile(props) {
   const isLogin = useSelector((state) => state.member.isLogin);
   const currentUserData = useSelector((state) => state.member.currentUserData);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
@@ -101,4 +100,4 @@ function Userprofile(props) {
   );
 }
 
-export default Userprofile;
+export default UserProfile;
