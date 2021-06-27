@@ -87,7 +87,7 @@ function DataEditSect(props) {
         address: address,
       };
 
-      console.log('newProfile', newProfile);
+      // console.log('newProfile', newProfile);
 
       // console.log(newProfile)
       // 更新會員資料
@@ -106,52 +106,52 @@ function DataEditSect(props) {
 
       // 第一次填資料送優惠券
       // coupon1_status=0 代表之前沒領過
-      if (currentUserCouponStatus[0].coupon1_status === 0) {
-        const newCouponStatus = {
-          currentUser: currentUser,
-          coupon1: 1,
-          coupon2: 0,
-          coupon_type: 3,
-        };
-        // 更新領取狀態
-        fetch('http://localhost:5000/member/changeCouponStatus', {
-          method: 'POST',
-          body: JSON.stringify(newCouponStatus),
-          headers: new Headers({
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-          }),
-        })
-          .then((r) => r.json())
-          .then((o) => {
-            // console.log(o)
-          });
-        // 新增優惠券
-        fetch('http://localhost:5000/member/addCoupon', {
-          method: 'POST',
-          body: JSON.stringify(newCouponStatus),
-          headers: new Headers({
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-          }),
-        })
-          .then((r) => r.json())
-          .then((o) => {
-            // console.log(o)
-          });
+      // if (currentUserCouponStatus[0].coupon1_status === 0) {
+      //   const newCouponStatus = {
+      //     currentUser: currentUser,
+      //     coupon1: 1,
+      //     coupon2: 0,
+      //     coupon_type: 3,
+      //   };
+      //   // 更新領取狀態
+      //   fetch('http://localhost:5000/member/changeCouponStatus', {
+      //     method: 'POST',
+      //     body: JSON.stringify(newCouponStatus),
+      //     headers: new Headers({
+      //       Accept: 'application/json',
+      //       'Content-Type': 'application/json',
+      //     }),
+      //   })
+      //     .then((r) => r.json())
+      //     .then((o) => {
+      //       // console.log(o)
+      //     });
+      //   // 新增優惠券
+      //   fetch('http://localhost:5000/member/addCoupon', {
+      //     method: 'POST',
+      //     body: JSON.stringify(newCouponStatus),
+      //     headers: new Headers({
+      //       Accept: 'application/json',
+      //       'Content-Type': 'application/json',
+      //     }),
+      //   })
+      //     .then((r) => r.json())
+      //     .then((o) => {
+      //       // console.log(o)
+      //     });
 
-        // 2. 連動menu數字
-        // 設甚麼值無所謂，重點是讓狀態改變，menu那邊useEffect才會偵測到
-        setBeastiePointAdd(newCouponStatus.coupon1);
+      //   // 2. 連動menu數字
+      //   // 設甚麼值無所謂，重點是讓狀態改變，menu那邊useEffect才會偵測到
+      //   setBeastiePointAdd(newCouponStatus.coupon1);
 
-        // 秀成功獲取優惠券光箱
-        setShowGetCouponBox(true);
-        // setData()
-      } else {
-        // 秀更新成功光箱
-        setShowUpdateModal(true);
-        // setData()
-      }
+      //   // 秀成功獲取優惠券光箱
+      //   setShowGetCouponBox(true);
+      //   // setData()
+      // } else {
+      //   // 秀更新成功光箱
+      //   setShowUpdateModal(true);
+      //   // setData()
+      // }
     }
   };
 
@@ -205,14 +205,14 @@ function DataEditSect(props) {
     setCouponStatus(data);
   }
   // 載入
-  useEffect(() => {
-    getCouponStatusFromServer();
-  }, [couponStatus]);
+  // useEffect(() => {
+  //   getCouponStatusFromServer();
+  // }, [couponStatus]);
 
   // 過濾出現在使用者的資料
-  const currentUserCouponStatus = couponStatus.filter(
-    (couponStatus) => couponStatus.member_sid === currentUser
-  );
+  // const currentUserCouponStatus = couponStatus.filter(
+  //   (couponStatus) => couponStatus.member_sid === currentUser
+  // );
 
   // console.log(currentUserCouponStatus[0].coupon1_status)
 

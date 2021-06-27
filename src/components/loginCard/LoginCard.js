@@ -3,21 +3,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import 'components/loginCard/loginCard.scss';
 import LoginInput from 'components/loginInput/LoginInput.js';
 import OptionButton from 'components/optionButton/OptionButton';
-import {
-  login,
-  setCurrentUser,
-} from 'redux/member/memberActions';
+import { login, setCurrentUser } from 'redux/member/memberActions';
 import { useDispatch, useSelector } from 'react-redux';
 import CryptoAES from 'crypto-js/aes';
 import CryptoENC from 'crypto-js/enc-utf8';
 
 function LoginCard(props) {
-  const {
-    className,
-    id,
-    setShowSuccessBox,
-    setShowLoginModal,
-  } = props;
+  const { className, id, setShowSuccessBox, setShowLoginModal } = props;
   const dispatch = useDispatch();
   const $loginCardBackgroundWrap = useRef();
   const $registerBackgroundWrap = useRef();

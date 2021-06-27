@@ -16,7 +16,7 @@ function UserProfile(props) {
   const {
     setShowBar,
     setShowLoginModal,
-    couponStatus,
+    // couponStatus,
     setCouponStatus,
     couponOneStatus,
     setCouponOneStatus,
@@ -66,7 +66,7 @@ function UserProfile(props) {
           setShowUpdateModal={setShowUpdateModal}
           setShowGetCouponBox={setShowGetCouponBox}
           setBeastiePointAdd={setBeastiePointAdd}
-          couponStatus={couponStatus}
+          // couponStatus={couponStatus}
           setCouponStatus={setCouponStatus}
           couponOneStatus={couponOneStatus}
           setCouponOneStatus={setCouponOneStatus}

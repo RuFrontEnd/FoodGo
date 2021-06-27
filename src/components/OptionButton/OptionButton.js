@@ -33,9 +33,9 @@ function OptionButton(props) {
       <button
         onClick={onClick}
         id={id}
-        className={`option-btn ${
+        className={`${
           isSelected ? selectedBtnColor : btnColor
-        } ${className}`}
+        } ${className} option-btn`}
       >
         {text}
       </button>

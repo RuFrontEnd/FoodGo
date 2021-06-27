@@ -15,17 +15,14 @@ import {
   setCurrentUserData,
 } from 'redux/member/memberActions'; // 判斷是否 login 的狀態
 
-// const OtherComponent = React.lazy(() => import('./OtherComponent'));
-
 import Navbar from 'components/navBar/NavBar';
-// import Footer from 'components/footer/Footer';
+import Footer from 'components/footer/Footer';
 import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
-// 加入 toTop 按鈕元件
 import LoginModal from 'components/loginModal/LoginModal';
+import FallBack from 'components/fallBack/FallBack';
 import HomePage from 'pages/homePage/HomePage';
 
-const suspense = () => <div></div>;
-const Footer = lazy(() => import('components/footer/Footer'));
+// const Suspense = () =>returnFallBack;
 // 引入 所有人的總元件
 const ClaudiaFarmIndex = lazy(() => import('Claudia/Pages/ClaudiaFarmIndex'));
 const ClaudiaFarmDetailedPage = lazy(() =>
@@ -200,7 +197,17 @@ function App() {
             </Route>
             {/* 便當商品列表 */}
             <Route exact path="/productList">
-              <Suspense fallback={suspense}>
+              <Suspense
+                fallback={
+                  <section
+                    style={{
+                      width: '100%',
+                      height: 'calc(100vh - 60px)',
+                    }}
+                  ></section>
+                }
+              >
+                {/* <Suspense fallback={<div>123</div>}> */}
                 <ProductList
                   setShowBar={setShowBar}
                   handleCartNumber={handleCartNumber}
@@ -223,7 +230,7 @@ function App() {
             </Route>
             {/* 沙拉商品列表 */}
             <Route exact path="/productListSalad">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <SaladList
                   setShowBar={setShowBar}
                   handleCartNumber={handleCartNumber}
@@ -246,7 +253,7 @@ function App() {
             </Route>
             {/* 客製化便當 */}
             <Route exact path="/productListCustom">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <CustomBentoList
                   setShowBar={setShowBar}
                   handleCartNumber={handleCartNumber}
@@ -270,18 +277,18 @@ function App() {
 
             {/* claudia */}
             <Route exact path="/farmMap">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <ClaudiaFarmIndex />
               </Suspense>
             </Route>
             <Route exact path="/farmIntro">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <ClaudiaFarmDetailedPage handleCartNumber={handleCartNumber} />
               </Suspense>
             </Route>
             {/* cha */}
             <Route exact path="/cart">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <ChaCart
                   setShowBar={setShowBar}
                   setCartNumber={setCartNumber}
@@ -305,44 +312,44 @@ function App() {
               </Suspense>
             </Route>
             <Route exact path="/groupOrder/groupOrderCreate">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <ChaGroupOrderCreate />
               </Suspense>
             </Route>
             <Route path="/groupOrder/groupOrderSearch">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <ChaGroupOrderSearch />
               </Suspense>
             </Route>
             <Route path="/groupOrder/groupOrderSignIn">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <ChaGroupOrderSignIn />
               </Suspense>
             </Route>
             <Route path="/groupOrder/groupOrderConfirm">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <ChaGroupOrderConfirm />
               </Suspense>
             </Route>
             <Route path="/groupOrder/groupOrderMenu">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <ChaGroupOrderMenu />
               </Suspense>
             </Route>
             {/* 訂單管理已置入<IrisOrderManagement /> */}
             {/* 測試用：中繼站、商品清單 */}
             <Route exact path="/checkpoint">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <ChaCheckpoint />
               </Suspense>
             </Route>
             <Route exact path="/chaProductList">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <ChaProductList handleCartNumber={handleCartNumber} />
               </Suspense>
             </Route>
             <Route exact path="/chaCartTest">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <ChaCartTest />
               </Suspense>
             </Route>
@@ -350,7 +357,7 @@ function App() {
 
             {/* iris */}
             <Route exact path="/memberUserprofile">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <Userprofile
                   setShowBar={setShowBar}
                   // 會員
@@ -376,7 +383,7 @@ function App() {
               </Suspense>
             </Route>
             <Route exact path="/orderComment">
-              {/* <Suspense fallback={suspense}> */}
+              {/* <Suspense fallback={<FallBack />}> */}
               {/* <IrisOrderComment
                 setShowBar={setShowBar}
                 // 會員
@@ -398,7 +405,7 @@ function App() {
               {/* </Suspense> */}
             </Route>
             <Route exact path="/myFav">
-              {/* <Suspense fallback={suspense}> */}
+              {/* <Suspense fallback={<FallBack />}> */}
               {/* <IrisMyFav
                 setShowBar={setShowBar}
                 // 會員
@@ -420,7 +427,7 @@ function App() {
               {/* </Suspense> */}
             </Route>
             <Route exact path="/beastiePoint">
-              {/* <Suspense fallback={suspense}> */}
+              {/* <Suspense fallback={<FallBack />}> */}
               {/* <IrisBeastiePoint
                 setShowBar={setShowBar}
                 // 會員
@@ -442,7 +449,7 @@ function App() {
               {/* </Suspense> */}
             </Route>
             <Route path="/getCoupon">
-              {/* <Suspense fallback={suspense}> */}
+              {/* <Suspense fallback={<FallBack />}> */}
               {/* <IrisGetCoupon
                 setShowBar={setShowBar}
                 // 會員
@@ -467,7 +474,7 @@ function App() {
               {/* </Suspense> */}
             </Route>
             <Route path="/orderManagement">
-              {/* <Suspense fallback={suspense}> */}
+              {/* <Suspense fallback={<FallBack />}> */}
               {/* <IrisOrderManagement
                 handleCartNumber={handleCartNumber}
                 showBar={showBar}
@@ -492,7 +499,7 @@ function App() {
             </Route>
             {/* jess */}
             {/* <Route path="/menu">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <JessMenu
                   setShowBar={setShowBar}
                   setCartNumber={setCartNumber}
@@ -512,7 +519,7 @@ function App() {
               </Suspense>
             </Route> */}
             {/* <Route path="/bento/:id?">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <JessBento
                   setShowBar={setShowBar}
                   setCartNumber={setCartNumber}
@@ -533,7 +540,7 @@ function App() {
               </Suspense>
             </Route> */}
             <Route path="/vegBox">
-              <Suspense fallback={suspense}>
+              <Suspense fallback={<FallBack />}>
                 <JessVegBox
                   setShowBar={setShowBar}
                   setCartNumber={setCartNumber}
@@ -555,9 +562,7 @@ function App() {
             </Route>
           </Switch>
         </ScrollToTop>
-        <Suspense fallback={suspense}>
-          <Footer />
-        </Suspense>
+        <Footer />
       </>
     </Router>
   );
