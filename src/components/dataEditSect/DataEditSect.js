@@ -309,14 +309,14 @@ function DataEditSect(props) {
                   id="iris-member-mobile"
                 />
               </div>
-              <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
+              {/* <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box">密碼</div>
                 <FoodGoInput
                   type="password"
                   placeholder=""
                   id="iris-member-password"
                 />
-              </div>
+              </div> */}
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box">新密碼</div>
                 <FoodGoInput
