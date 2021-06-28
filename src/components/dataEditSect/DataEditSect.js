@@ -245,7 +245,7 @@ function DataEditSect(props) {
       //   birthday.value = '';
       // }
       mobile.value = item.mobile;
-      oldPassword.value = item.password;
+      // oldPassword.value = item.password;
       email.value = item.email;
       address.value = fullAddress;
     });
