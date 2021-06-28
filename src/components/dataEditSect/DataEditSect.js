@@ -359,7 +359,11 @@ function DataEditSect(props) {
                 updateProfile();
               }}
             >
-              <OptionButton type="origin" text="更新個人資料" />
+              <OptionButton
+                type="origin"
+                text="更新個人資料"
+                className="dataEditSect-optionButton"
+              />
             </div>
           </div>
         </div>
