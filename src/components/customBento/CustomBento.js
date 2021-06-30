@@ -10,23 +10,6 @@ import RuCalA from 'Ru/Components/RuCalA/RuCalA'; // 資訊區熱量 網頁版
 import RuCutsomHint from 'Ru/Components/RuCutsomHint/RuCutsomHint';
 import FoodItem from 'components/foodItem/FoodItem';
 
-// 引用共用元件
-import cauliflower from './Images/cauliflower.svg'; // rwd暫放(待刪)
-// 品項放置後s
-import cauliflowerAfter from './Images/cauliflowerAfter.svg';
-import cabageAfter from './Images/cabageAfter.svg';
-import cornAfter from './Images/cornAfter.svg';
-import qingjiangAfter from './Images/qingjiangAfter.svg';
-import eggplantAfter from './Images/eggplantAfter.svg';
-import eggAfter from './Images/eggAfter.svg';
-import poachedEggAfter from './Images/poachedEggAfter.svg';
-import riceAfter from './Images/riceAfter.svg';
-import grainRiceAfter from './Images/grainRiceAfter.svg';
-import redQuinoaAfter from './Images/redQuinoaAfter.svg';
-import chickenBreastAfter from './Images/chickenBreastAfter.svg';
-import chickenLegAfter from './Images/chickenLegAfter.svg';
-import shrimpAfter from './Images/shrimpAfter.svg';
-
 // 品項放置後 e
 import hintA from './Images/hintA.svg';
 import hintB from './Images/hintB.svg';
