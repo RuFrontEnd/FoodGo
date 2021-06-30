@@ -2,19 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import 'components/customBento/customBento.scss';
 import MultiCarousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import RuArrowLeft from 'Ru/Components/RuArrowLeft/RuArrowLeft';
-import RuArrowRight from 'Ru/Components/RuArrowRight/RuArrowRight';
 import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
 import RuCounter from 'Ru/Components/RuCounter/RuCounter';
 import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
 import RuPriceA from 'Ru/Components/RuPriceA/RuPriceA'; // 資訊區價格 網頁版
 import RuCalA from 'Ru/Components/RuCalA/RuCalA'; // 資訊區熱量 網頁版
-import RuRiceA from 'Ru/Components/RuFoodItems/RuRiceA/RuRiceA';
-import RuMeetA from 'Ru/Components/RuFoodItems/RuMeetA/RuMeetA';
-import RuVegetableA from 'Ru/Components/RuFoodItems/RuVegetableA/RuVegetableA';
-import RuEggA from 'Ru/Components/RuFoodItems/RuEggA/RuEggA';
 import RuCutsomHint from 'Ru/Components/RuCutsomHint/RuCutsomHint';
-import Carousel from 'components/carousel/Carousel';
 import FoodItem from 'components/foodItem/FoodItem';
 
 // 引用共用元件
