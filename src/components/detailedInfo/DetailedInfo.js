@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'components/detailedInfo/detailedInfo.scss';
 
 // 監控瀏覽器寬度
-function RuDetailedInfo(props) {
+function DetailedInfo(props) {
   const { data, riceName, meetName, vegNameA, vegNameB, vegNameC, eggName } =
     props;
   const [carbohydrates, setCarbohydrates] = useState(0);
@@ -95,4 +95,4 @@ function RuDetailedInfo(props) {
   );
 }
 
-export default RuDetailedInfo;
+export default DetailedInfo;

@@ -6,7 +6,7 @@ import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
 import RuCounter from 'Ru/Components/RuCounter/RuCounter';
 import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
 import PriceArea from 'components/priceArea/PriceArea'; // 資訊區價格 網頁版
-import RuCalA from 'Ru/Components/RuCalA/RuCalA'; // 資訊區熱量 網頁版
+import CalorieArea from 'components/calorieArea/CalorieArea'; // 資訊區熱量 網頁版
 import RuCutsomHint from 'Ru/Components/RuCutsomHint/RuCutsomHint';
 import FoodItem from 'components/foodItem/FoodItem';
 
@@ -545,7 +545,7 @@ function CustomBento(props) {
                     />
                   )}
                   {isCal && (
-                    <RuCalA
+                    <CalorieArea
                       data={data}
                       riceName={riceName}
                       riceCal={riceCal}
@@ -769,7 +769,7 @@ function CustomBento(props) {
                 />
               )}
               {isCal && (
-                <RuCalA
+                <CalorieArea
                   data={data}
                   riceName={riceName}
                   riceCal={riceCal}
