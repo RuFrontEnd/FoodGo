@@ -1,0 +1,23 @@
+@import 'Ru/Pages/variable.scss';
+
+.ru-nothing-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ru-nothing-warp {
+  @include flex($df, $fdr, $jcc, $alc);
+  flex-basis: 50%;
+}
+
+.ru-nothing-warp > h3 {
+  @include font($notoSansTC, 50px, $regular, 1.25px, $light-orange);
+  margin-right: 10px;
+  opacity: 0.25;
+}
+
+.ru-nothing-warp > img {
+  width: 40px;
+  opacity: 0.25;
+}

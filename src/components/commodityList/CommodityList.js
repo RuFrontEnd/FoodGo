@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'components/commodityList/commodityList.scss';
-import RuNothing from 'Ru/Components/RuNothing/RuNothing';
-import RuCard from 'Ru/Components/RuCard/RuCard';
-import axios from 'axios';
+import EmptyHint from 'components/emptyHint/EmptyHint';
 import { useSelector } from 'react-redux';
 import ProductCard from 'components/productCard/ProductCard';
 
@@ -58,7 +56,7 @@ function CommodityList(props) {
       <div className="ru-item-container">
         <div className="ru-card-warp">
           <div className="ru-itemWarp">
-            {/* {isShowNothing && <RuNothing />} */}
+            {/* {isShowNothing && <EmptyHint />} */}
             {commodities.map((commodity, index) => (
               <ProductCard
                 data={commodities}
