@@ -1,0 +1,19 @@
+@import 'Ru/Pages/variable.scss';
+
+.ru-detailedInfoTotal {
+  background-color: white;
+  position: absolute;
+  z-index: 100;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  border: 1px solid $grey;
+  @include flex($df, $fdr, space-around, $alc);
+}
+
+.ru-detailedInfoTotal > li {
+  list-style: none;
+  font-size: 18px;
+  margin: 5px 0px;
+  @include font($notoSansTC, $content, $regular, 0px, $grey);
+}
