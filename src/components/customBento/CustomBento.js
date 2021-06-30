@@ -5,7 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
 import RuCounter from 'Ru/Components/RuCounter/RuCounter';
 import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
-import RuPriceA from 'Ru/Components/RuPriceA/RuPriceA'; // 資訊區價格 網頁版
+import PriceArea from 'components/priceArea/PriceArea'; // 資訊區價格 網頁版
 import RuCalA from 'Ru/Components/RuCalA/RuCalA'; // 資訊區熱量 網頁版
 import RuCutsomHint from 'Ru/Components/RuCutsomHint/RuCutsomHint';
 import FoodItem from 'components/foodItem/FoodItem';
@@ -546,7 +546,7 @@ function CustomBento(props) {
                 </div>
                 <div className="ru-info-container">
                   {isPrice && (
-                    <RuPriceA
+                    <PriceArea
                       riceName={riceName}
                       ricePrice={ricePrice}
                       meetName={meetName}
@@ -770,7 +770,7 @@ function CustomBento(props) {
             </div>
             <div className="ru-info-container">
               {isPrice && (
-                <RuPriceA
+                <PriceArea
                   riceName={riceName}
                   ricePrice={ricePrice}
                   meetName={meetName}

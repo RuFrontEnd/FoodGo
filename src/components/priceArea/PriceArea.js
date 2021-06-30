@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import './Style.scss'
+import React, { useState, useEffect } from 'react';
+import 'components/priceArea/priceArea.scss';
 
-function RuPriceA(props) {
+function PriceArea(props) {
   const {
     riceName,
     ricePrice,
@@ -15,14 +15,14 @@ function RuPriceA(props) {
     vegPriceB,
     vegNameC,
     vegPriceC,
-  } = props
-  const [isShowTotal, setIsShowTotal] = useState(false) // 沒有品項時不出現總價
+  } = props;
+  const [isShowTotal, setIsShowTotal] = useState(false); // 沒有品項時不出現總價
 
   useEffect(() => {
     // console.log('執行useEffect')
     return () => {
-      setIsShowTotal(true) // 價格state變動後才渲染總價
-    }
+      setIsShowTotal(true); // 價格state變動後才渲染總價
+    };
   }, [
     isShowTotal,
     riceName,
@@ -37,7 +37,7 @@ function RuPriceA(props) {
     vegPriceB,
     vegNameC,
     vegPriceC,
-  ])
+  ]);
 
   return (
     <>
@@ -122,7 +122,7 @@ function RuPriceA(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default RuPriceA
+export default PriceArea;
