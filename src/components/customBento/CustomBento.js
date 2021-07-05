@@ -7,7 +7,7 @@ import RuCounter from 'Ru/Components/RuCounter/RuCounter';
 import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
 import PriceArea from 'components/priceArea/PriceArea'; // 資訊區價格 網頁版
 import CalorieArea from 'components/calorieArea/CalorieArea'; // 資訊區熱量 網頁版
-import RuCutsomHint from 'Ru/Components/RuCutsomHint/RuCutsomHint';
+import CustomHint from 'components/customHint/CustomHint';
 import FoodItem from 'components/foodItem/FoodItem';
 
 // 品項放置後 e
@@ -403,7 +403,7 @@ function CustomBento(props) {
             <div className="ru-drop-warp" id="ru-dropOutAreaC">
               <div className="ru-box-container">
                 <div className="ru-box-warp">
-                  {isShowHint && <RuCutsomHint />}
+                  {isShowHint && <CustomHint />}
                   {/* 放置菜色A區vegA s*/}
                   <div id="ru-hintA">
                     {isShowHintA && <img src={hintA}></img>}

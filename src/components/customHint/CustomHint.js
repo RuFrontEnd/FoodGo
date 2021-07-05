@@ -1,8 +1,7 @@
 import React from 'react';
-import 'components/cutsomHint/cutsomHint.scss';
-import littleQ from 'assets/svg/littleQ.svg';
+import 'components/customHint/customHint.scss';
 
-function CutsomHint(props) {
+function CustomHint(props) {
   return (
     <>
       <div className="ru-hint-container">
@@ -15,4 +14,4 @@ function CutsomHint(props) {
   );
 }
 
-export default CutsomHint;
+export default CustomHint;
