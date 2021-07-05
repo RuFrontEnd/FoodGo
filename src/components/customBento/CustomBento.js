@@ -3,7 +3,7 @@ import 'components/customBento/customBento.scss';
 import MultiCarousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
-import RuCounter from 'Ru/Components/RuCounter/RuCounter';
+import Counter from 'components/counter/Counter';
 import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
 import PriceArea from 'components/priceArea/PriceArea'; // 資訊區價格 網頁版
 import CalorieArea from 'components/calorieArea/CalorieArea'; // 資訊區熱量 網頁版
@@ -564,7 +564,7 @@ function CustomBento(props) {
                 </div>
                 <div className="ru-checkout-container">
                   <div className="ru-checkout-warp">
-                    <RuCounter
+                    <Counter
                       setAmount={setAmount}
                       count={count}
                       setCount={setCount}
@@ -788,7 +788,7 @@ function CustomBento(props) {
             </div>
             <div className="ru-checkout-container">
               <div className="ru-checkout-warp">
-                <RuCounter
+                <Counter
                   setAmount={setAmount}
                   count={count}
                   setCount={setCount}
