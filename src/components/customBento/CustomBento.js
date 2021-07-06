@@ -4,7 +4,7 @@ import MultiCarousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
 import Counter from 'components/counter/Counter';
-import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
+import AddCart from 'components/addCart/AddCart';
 import PriceArea from 'components/priceArea/PriceArea'; // 資訊區價格 網頁版
 import CalorieArea from 'components/calorieArea/CalorieArea'; // 資訊區熱量 網頁版
 import CustomHint from 'components/customHint/CustomHint';
@@ -570,7 +570,7 @@ function CustomBento(props) {
                       setCount={setCount}
                     />
                     {isCanBuy ? (
-                      <RuAddCart
+                      <AddCart
                         id={'addCart-btn-custom'}
                         parentId={'addCart-btn-warp-custom'}
                         handleCartNumber={handleCartNumber}
@@ -603,7 +603,7 @@ function CustomBento(props) {
                           filter: 'grayscale(100%)',
                         }}
                       >
-                        <RuAddCart
+                        <AddCart
                           id={'addCart-btn-custom'}
                           parentId={'addCart-btn-warp-custom'}
                           handleCartNumber={handleCartNumber}
@@ -794,7 +794,7 @@ function CustomBento(props) {
                   setCount={setCount}
                 />
                 {isCanBuy ? (
-                  <RuAddCart
+                  <AddCart
                     id={'addCart-btn-custom'}
                     parentId={'addCart-btn-warp-custom'}
                     handleCartNumber={handleCartNumber}
@@ -827,7 +827,7 @@ function CustomBento(props) {
                       filter: 'grayscale(100%)',
                     }}
                   >
-                    <RuAddCart
+                    <AddCart
                       id={'addCart-btn-custom'}
                       parentId={'addCart-btn-warp-custom'}
                       handleCartNumber={handleCartNumber}
