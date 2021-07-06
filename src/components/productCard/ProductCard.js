@@ -3,7 +3,6 @@ import 'components/productCard/productCard.scss';
 import starEmpty from 'assets/svg/starEmpty.svg';
 import starHalf from 'assets/svg/starHalf.svg';
 import starFull from 'assets/svg/starFull.svg';
-import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
 import OptionButton from 'components/optionButton/OptionButton';
 import AddFavoriteButton from 'components/addFavoriteButton/AddFavoriteButton';
 import { withRouter } from 'react-router';
