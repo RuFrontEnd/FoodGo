@@ -171,16 +171,6 @@ function DataEditSect(props) {
       });
   };
 
-  // 過濾出現在使用者的資料
-  const currentUserInfo = userInfo.filter(
-    (userInfo) => userInfo.member_sid === currentUser
-  );
-  // console.log(currentUserInfo[0])
-
-  useEffect(() => {
-    getUserInfoFromServer();
-  }, []);
-
   // --------- 取得目前user的優惠券領取狀態 --------- //
   // 取得所有人的優惠券領取狀態
   async function getCouponStatusFromServer() {
@@ -218,38 +208,32 @@ function DataEditSect(props) {
   // }, [currentUserInfo]);
 
   const setData = () => {
-    currentUserInfo.map((item, index) => {
-      const userFamilyName = item.name.slice(0, 1);
-      const userGivenName = item.name.slice(1, 3);
-      // const userBirthday = item.birthday.slice(0, 10);
-      const userBirthday = '';
-      const fullAddress = item.county + item.district + item.address;
-
-      let familyname = document.querySelector('#iris-member-family-name');
-      let givenname = document.querySelector('#iris-member-given-name');
-      let mobile = document.querySelector('#iris-member-mobile');
-      let oldPassword = document.querySelector('#iris-member-password');
-      let email = document.querySelector('#iris-member-email');
-      let address = document.querySelector('#iris-member-address');
-
-      familyname.value = userFamilyName;
-      givenname.value = userGivenName;
-      // 讓新註冊會員的生日顯示為空值
-      // if (userBirthday !== '1899-11-29') {
-      //   birthday.value = userBirthday;
-      // } else {
-      //   birthday.value = '';
-      // }
-      mobile.value = item.mobile;
-      // oldPassword.value = item.password;
-      email.value = item.email;
-      address.value = fullAddress;
-    });
+    // currentUserInfo.map((item, index) => {
+    //   const userFamilyName = item.name.slice(0, 1);
+    //   const userGivenName = item.name.slice(1, 3);
+    //   // const userBirthday = item.birthday.slice(0, 10);
+    //   const userBirthday = '';
+    //   const fullAddress = item.county + item.district + item.address;
+    //   let familyname = document.querySelector('#iris-member-family-name');
+    //   let givenname = document.querySelector('#iris-member-given-name');
+    //   let mobile = document.querySelector('#iris-member-mobile');
+    //   let oldPassword = document.querySelector('#iris-member-password');
+    //   let email = document.querySelector('#iris-member-email');
+    //   let address = document.querySelector('#iris-member-address');
+    //   familyname.value = userFamilyName;
+    //   givenname.value = userGivenName;
+    //   // 讓新註冊會員的生日顯示為空值
+    //   // if (userBirthday !== '1899-11-29') {
+    //   //   birthday.value = userBirthday;
+    //   // } else {
+    //   //   birthday.value = '';
+    //   // }
+    //   mobile.value = item.mobile;
+    //   // oldPassword.value = item.password;
+    //   email.value = item.email;
+    //   address.value = fullAddress;
+    // });
   };
-
-  useEffect(() => {
-    setData();
-  }, [userInfo]);
 
   const fillInData = () => {
     document.querySelector('#iris-member-family-name').value = '陳';
@@ -257,6 +241,14 @@ function DataEditSect(props) {
     document.querySelector('#iris-member-address').value =
       '台北市南港區南港路一段27號';
   };
+
+  useEffect(() => {
+    getUserInfoFromServer();
+  }, []);
+
+  useEffect(() => {
+    setData();
+  }, [userInfo]);
 
   return (
     <>
@@ -288,6 +280,7 @@ function DataEditSect(props) {
                   type="text"
                   placeholder=""
                   id="iris-member-family-name"
+                  userInfo={userInfo}
                 />
                 <div className="iris-input-box">名字</div>
 
