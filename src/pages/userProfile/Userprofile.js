@@ -6,13 +6,17 @@ import { Redirect } from 'react-router-dom';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import GetCouponBox from 'components/getCouponBox/GetCouponBox';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
+import FallBack from 'components/fallBack/FallBack';
 
 function UserProfile(props) {
   const isLogin = useSelector((state) => state.member.isLogin);
+  const currentUser = useSelector((state) => state.member.currentUser);
   const currentUserData = useSelector((state) => state.member.currentUserData);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [showGetCouponBox, setShowGetCouponBox] = useState(false);
   const [beastiePointAdd, setBeastiePointAdd] = useState();
+  const [userInfo, setUserInfo] = useState([]);
   const {
     setShowBar,
     setShowLoginModal,
@@ -44,9 +48,26 @@ function UserProfile(props) {
     }
   }
 
+  const getUserInfoFromServer = () => {
+    axios
+      .get('http://localhost:5000/member/singleUserProfile', {
+        params: {
+          member_sid: currentUser,
+        },
+      })
+      .then((res) => {
+        setUserInfo(res.data[0]);
+      });
+  };
+
   useEffect(() => {
     setShowBar(true);
+    getUserInfoFromServer();
   }, []);
+
+  useEffect(() => {
+    console.log('userInfo', userInfo);
+  }, [userInfo]);
 
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {
@@ -54,6 +75,9 @@ function UserProfile(props) {
     return <Redirect to="/" />;
   }
 
+  if (userInfo.length === 0) {
+    return <FallBack />;
+  }
   return (
     <>
       {/* <VNavbar {...props} /> */}
@@ -70,6 +94,7 @@ function UserProfile(props) {
           setCouponStatus={setCouponStatus}
           couponOneStatus={couponOneStatus}
           setCouponOneStatus={setCouponOneStatus}
+          memberData={userInfo}
         />
         <div
           className="iris-update-success-mask"

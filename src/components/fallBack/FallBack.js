@@ -4,7 +4,7 @@ import 'components/fallBack/fallBack.scss';
 function FallBack() {
   return (
     <>
-      <section id="fallBack">123</section>
+      <section id="fallBack">fallBack</section>
     </>
   );
 }

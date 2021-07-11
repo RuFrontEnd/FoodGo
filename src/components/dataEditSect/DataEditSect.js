@@ -19,9 +19,25 @@ function DataEditSect(props) {
     setCouponStatus,
     couponOneStatus,
     setCouponOneStatus,
+    memberData,
   } = props;
+  // useEffect(() => {
+  //   console.log('memberData.name', memberData.name);
+  // }, [memberData]);
+
   const currentUser = useSelector((state) => state.member.currentUser);
-  const [userInfo, setUserInfo] = useState([]);
+  // const A = memberData.name;
+  // console.log('A', A);
+  const [name, setName] = useState(memberData.name);
+  const [mobile, setMobile] = useState(memberData.mobile);
+  const [password, setPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [email, setEmail] = useState(memberData.email);
+  const [address, setAddress] = useState(memberData.address);
+  // console.log('TTT');
+  // useEffect(() => {
+  //   console.log('name', name);
+  // }, [name]);
 
   // -------先新增會員資料折價券領取狀態資料表--------//
   const postCouponStatus = () => {
@@ -77,7 +93,7 @@ function DataEditSect(props) {
       const email = document.querySelector('#iris-member-email').value;
       const address = document.querySelector('#iris-member-address').value;
 
-      const newProfile = {
+      const _newProfile = {
         member_id: currentUser,
         // familyname: familyname,
         givenname: givenname,
@@ -87,23 +103,37 @@ function DataEditSect(props) {
         email: email,
         address: address,
       };
+      const newProfile = JSON.stringify(_newProfile);
 
       // console.log('newProfile', newProfile);
 
       // console.log(newProfile)
       // 更新會員資料
-      fetch('http://localhost:5000/member/updateProfile', {
-        method: 'POST',
-        body: JSON.stringify(newProfile),
-        headers: new Headers({
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        }),
-      })
-        .then((r) => r.json())
+      axios
+        .post(
+          'http://localhost:5000/member/updateProfile',
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          },
+          newProfile
+        )
         .then((o) => {
           console.log(o);
         });
+      // fetch('http://localhost:5000/member/updateProfile', {
+      //   method: 'POST',
+      //   body: JSON.stringify(newProfile),
+      //   headers: new Headers({
+      //     Accept: 'application/json',
+      //     'Content-Type': 'application/json',
+      //   }),
+      // })
+      //   .then((r) => r.json())
+      //   .then((o) => {
+      //     console.log(o);
+      //   });
 
       // 第一次填資料送優惠券
       // coupon1_status=0 代表之前沒領過
@@ -154,20 +184,6 @@ function DataEditSect(props) {
       //   // setData()
       // }
     }
-  };
-
-  // -------- 取得目前user的資料 ---------- //
-  // 取得所有會員的資料
-  const getUserInfoFromServer = () => {
-    axios
-      .get('http://localhost:5000/member/singleUserProfile', {
-        params: {
-          member_sid: currentUser,
-        },
-      })
-      .then((res) => {
-        setUserInfo(res.data[0]);
-      });
   };
 
   // --------- 取得目前user的優惠券領取狀態 --------- //
@@ -242,12 +258,8 @@ function DataEditSect(props) {
   };
 
   useEffect(() => {
-    getUserInfoFromServer();
-  }, []);
-
-  useEffect(() => {
-    console.log('userInfo', userInfo);
-  }, [userInfo]);
+ 
+  }, [memberData]);
 
   return (
     <>
@@ -281,7 +293,8 @@ function DataEditSect(props) {
                   type="text"
                   placeholder=""
                   id="iris-member-given-name"
-                  value={userInfo.name}
+                  value={name}
+                  setValue={setName}
                 />
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
@@ -290,7 +303,8 @@ function DataEditSect(props) {
                   type="text"
                   placeholder=""
                   id="iris-member-mobile"
-                  value={userInfo.mobile}
+                  value={mobile}
+                  setValue={setMobile}
                 />
               </div>
               {/* <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
@@ -307,6 +321,8 @@ function DataEditSect(props) {
                   type="password"
                   placeholder=""
                   id="iris-set-new-password"
+                  value={password}
+                  setValue={setPassword}
                 />
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
@@ -315,6 +331,8 @@ function DataEditSect(props) {
                   type="password"
                   placeholder=""
                   id="iris-member-new-password"
+                  value={newPassword}
+                  setValue={setNewPassword}
                 />
               </div>
               <div class="iris-password-inconsistent">
@@ -326,7 +344,8 @@ function DataEditSect(props) {
                   type="text"
                   placeholder=""
                   id="iris-member-email"
-                  value={userInfo.email}
+                  value={email}
+                  setValue={setEmail}
                 />
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
@@ -335,7 +354,8 @@ function DataEditSect(props) {
                   type="text"
                   placeholder=""
                   id="iris-member-address"
-                  value={userInfo.address}
+                  value={address}
+                  setValue={setAddress}
                 />
               </div>
             </form>
