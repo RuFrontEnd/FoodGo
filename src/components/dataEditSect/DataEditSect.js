@@ -166,8 +166,7 @@ function DataEditSect(props) {
         },
       })
       .then((res) => {
-        // console.log(res);
-        setUserInfo(res.data);
+        setUserInfo(res.data[0]);
       });
   };
 
@@ -247,7 +246,7 @@ function DataEditSect(props) {
   }, []);
 
   useEffect(() => {
-    setData();
+    console.log('userInfo', userInfo);
   }, [userInfo]);
 
   return (
@@ -277,11 +276,12 @@ function DataEditSect(props) {
             </div> */}
             <form className="iris-form-adjust">
               <div className="d-flex  align-items-center iris-profile-item-wrapper">
-                <div className="iris-input-box">名字</div>
+                <div className="iris-input-box">姓名</div>
                 <FoodGoInput
                   type="text"
                   placeholder=""
                   id="iris-member-given-name"
+                  value={userInfo.name}
                 />
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
@@ -290,6 +290,7 @@ function DataEditSect(props) {
                   type="text"
                   placeholder=""
                   id="iris-member-mobile"
+                  value={userInfo.mobile}
                 />
               </div>
               {/* <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
@@ -325,6 +326,7 @@ function DataEditSect(props) {
                   type="text"
                   placeholder=""
                   id="iris-member-email"
+                  value={userInfo.email}
                 />
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
@@ -333,6 +335,7 @@ function DataEditSect(props) {
                   type="text"
                   placeholder=""
                   id="iris-member-address"
+                  value={userInfo.address}
                 />
               </div>
             </form>
