@@ -21,23 +21,14 @@ function DataEditSect(props) {
     setCouponOneStatus,
     memberData,
   } = props;
-  // useEffect(() => {
-  //   console.log('memberData.name', memberData.name);
-  // }, [memberData]);
 
   const currentUser = useSelector((state) => state.member.currentUser);
-  // const A = memberData.name;
-  // console.log('A', A);
   const [name, setName] = useState(memberData.name);
   const [mobile, setMobile] = useState(memberData.mobile);
   const [password, setPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [email, setEmail] = useState(memberData.email);
   const [address, setAddress] = useState(memberData.address);
-  // console.log('TTT');
-  // useEffect(() => {
-  //   console.log('name', name);
-  // }, [name]);
 
   // -------先新增會員資料折價券領取狀態資料表--------//
   const postCouponStatus = () => {
@@ -64,126 +55,119 @@ function DataEditSect(props) {
   // ------------ 更新會員資料 ----------------- //
   const updateProfile = () => {
     // const familyname = document.querySelector('#iris-member-family-name').value;
-    const givenname = document.querySelector('#iris-member-given-name').value;
+    // const givenname = document.querySelector('#iris-member-given-name').value;
     // const birthday = document.querySelector('#iris-member-birthday').value;
-    const mobile = document.querySelector('#iris-member-mobile').value;
+    // const mobile = document.querySelector('#iris-member-mobile').value;
 
     // 如果新密碼欄位value不一樣
-    if (
-      document.querySelector('#iris-member-new-password').value !==
-      document.querySelector('#iris-set-new-password').value
-    ) {
-      // 秀出提示
-      $('.iris-password-inconsistent').slideDown('slow');
-      // 2秒後消失
-      setTimeout(() => {
-        $('.iris-password-inconsistent').slideUp('slow');
-      }, 2000);
-      // 如果新密碼欄位value一樣就送出
-    } else {
-      let password;
-      // 如果新密碼欄位有值的話
-      if (document.querySelector('#iris-member-new-password').value !== '') {
-        // 設定密碼為新密碼
-        password = document.querySelector('#iris-member-new-password').value;
-      } else {
-        // 否則設定密碼為舊密碼(密碼不變)
-        // password = document.querySelector('#iris-member-password').value;
-      }
-      const email = document.querySelector('#iris-member-email').value;
-      const address = document.querySelector('#iris-member-address').value;
+    // if (
+    //   document.querySelector('#iris-member-new-password').value !==
+    //   document.querySelector('#iris-set-new-password').value
+    // ) {
+    //   // 秀出提示
+    //   $('.iris-password-inconsistent').slideDown('slow');
+    //   // 2秒後消失
+    //   setTimeout(() => {
+    //     $('.iris-password-inconsistent').slideUp('slow');
+    //   }, 2000);
+    //   // 如果新密碼欄位value一樣就送出
+    // } else {
+    //   let password;
+    //   // 如果新密碼欄位有值的話
+    //   if (document.querySelector('#iris-member-new-password').value !== '') {
+    //     // 設定密碼為新密碼
+    //     password = document.querySelector('#iris-member-new-password').value;
+    //   } else {
+    //     // 否則設定密碼為舊密碼(密碼不變)
+    //     // password = document.querySelector('#iris-member-password').value;
+    //   }
+    //   const email = document.querySelector('#iris-member-email').value;
+    //   const address = document.querySelector('#iris-member-address').value;
 
-      const _newProfile = {
-        member_id: currentUser,
-        // familyname: familyname,
-        givenname: givenname,
-        // birthday: birthday,
-        mobile: mobile,
-        password: password,
-        email: email,
-        address: address,
-      };
-      const newProfile = JSON.stringify(_newProfile);
+    const _newProfile = {
+      member_id: currentUser,
+      name: name,
+      mobile: mobile,
+      email: email,
+      address: address,
+    };
+    const newProfile = JSON.stringify(_newProfile);
 
-      // console.log('newProfile', newProfile);
+    // console.log('newProfile', newProfile);
 
-      // console.log(newProfile)
-      // 更新會員資料
-      axios
-        .post(
-          'http://localhost:5000/member/updateProfile',
-          {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          },
-          newProfile
-        )
-        .then((o) => {
-          console.log(o);
-        });
-      // fetch('http://localhost:5000/member/updateProfile', {
-      //   method: 'POST',
-      //   body: JSON.stringify(newProfile),
-      //   headers: new Headers({
-      //     Accept: 'application/json',
-      //     'Content-Type': 'application/json',
-      //   }),
-      // })
-      //   .then((r) => r.json())
-      //   .then((o) => {
-      //     console.log(o);
-      //   });
+    // console.log(newProfile)
+    // 更新會員資料
+    axios
+      .post('http://localhost:5000/member/updateProfile', newProfile, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((o) => {
+        console.log(o);
+      });
+    // fetch('http://localhost:5000/member/updateProfile', {
+    //   method: 'POST',
+    //   body: JSON.stringify(newProfile),
+    //   headers: new Headers({
+    //     Accept: 'application/json',
+    //     'Content-Type': 'application/json',
+    //   }),
+    // })
+    //   .then((r) => r.json())
+    //   .then((o) => {
+    //     console.log(o);
+    //   });
 
-      // 第一次填資料送優惠券
-      // coupon1_status=0 代表之前沒領過
-      // if (currentUserCouponStatus[0].coupon1_status === 0) {
-      //   const newCouponStatus = {
-      //     currentUser: currentUser,
-      //     coupon1: 1,
-      //     coupon2: 0,
-      //     coupon_type: 3,
-      //   };
-      //   // 更新領取狀態
-      //   fetch('http://localhost:5000/member/changeCouponStatus', {
-      //     method: 'POST',
-      //     body: JSON.stringify(newCouponStatus),
-      //     headers: new Headers({
-      //       Accept: 'application/json',
-      //       'Content-Type': 'application/json',
-      //     }),
-      //   })
-      //     .then((r) => r.json())
-      //     .then((o) => {
-      //       // console.log(o)
-      //     });
-      //   // 新增優惠券
-      //   fetch('http://localhost:5000/member/addCoupon', {
-      //     method: 'POST',
-      //     body: JSON.stringify(newCouponStatus),
-      //     headers: new Headers({
-      //       Accept: 'application/json',
-      //       'Content-Type': 'application/json',
-      //     }),
-      //   })
-      //     .then((r) => r.json())
-      //     .then((o) => {
-      //       // console.log(o)
-      //     });
+    // 第一次填資料送優惠券
+    // coupon1_status=0 代表之前沒領過
+    // if (currentUserCouponStatus[0].coupon1_status === 0) {
+    //   const newCouponStatus = {
+    //     currentUser: currentUser,
+    //     coupon1: 1,
+    //     coupon2: 0,
+    //     coupon_type: 3,
+    //   };
+    //   // 更新領取狀態
+    //   fetch('http://localhost:5000/member/changeCouponStatus', {
+    //     method: 'POST',
+    //     body: JSON.stringify(newCouponStatus),
+    //     headers: new Headers({
+    //       Accept: 'application/json',
+    //       'Content-Type': 'application/json',
+    //     }),
+    //   })
+    //     .then((r) => r.json())
+    //     .then((o) => {
+    //       // console.log(o)
+    //     });
+    //   // 新增優惠券
+    //   fetch('http://localhost:5000/member/addCoupon', {
+    //     method: 'POST',
+    //     body: JSON.stringify(newCouponStatus),
+    //     headers: new Headers({
+    //       Accept: 'application/json',
+    //       'Content-Type': 'application/json',
+    //     }),
+    //   })
+    //     .then((r) => r.json())
+    //     .then((o) => {
+    //       // console.log(o)
+    //     });
 
-      //   // 2. 連動menu數字
-      //   // 設甚麼值無所謂，重點是讓狀態改變，menu那邊useEffect才會偵測到
-      //   setBeastiePointAdd(newCouponStatus.coupon1);
+    //   // 2. 連動menu數字
+    //   // 設甚麼值無所謂，重點是讓狀態改變，menu那邊useEffect才會偵測到
+    //   setBeastiePointAdd(newCouponStatus.coupon1);
 
-      //   // 秀成功獲取優惠券光箱
-      //   setShowGetCouponBox(true);
-      //   // setData()
-      // } else {
-      //   // 秀更新成功光箱
-      //   setShowUpdateModal(true);
-      //   // setData()
-      // }
-    }
+    //   // 秀成功獲取優惠券光箱
+    //   setShowGetCouponBox(true);
+    //   // setData()
+    // } else {
+    //   // 秀更新成功光箱
+    //   setShowUpdateModal(true);
+    //   // setData()
+    // }
+    // }
   };
 
   // --------- 取得目前user的優惠券領取狀態 --------- //
@@ -257,9 +241,7 @@ function DataEditSect(props) {
       '台北市南港區南港路一段27號';
   };
 
-  useEffect(() => {
- 
-  }, [memberData]);
+  useEffect(() => {}, [memberData]);
 
   return (
     <>
