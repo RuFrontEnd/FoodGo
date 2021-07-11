@@ -256,7 +256,7 @@ function LoginCard(props) {
       })
         .then((r) => r.json())
         .then((o) => {
-          console.log(o);
+          // console.log('o', o);
           setRegisterStatus(o);
           setIsRegistered(true);
           if (o.status === true) {
@@ -449,12 +449,12 @@ function LoginCard(props) {
             <div
               className="register-title"
               onClick={() => {
-                setCreateAccountValue('a123456789');
-                setCreatePasswordValue('a000000000');
-                setConfirmPasswordValue('a000000000');
-                setNameValue('TEST');
+                setCreateAccountValue('a07110711');
+                setCreatePasswordValue('a07111111');
+                setConfirmPasswordValue('a07111111');
+                setNameValue('測試用帳號2');
                 setUserEmailValue('as2million@gmail.com');
-                setUserMobileValue('0917000000');
+                setUserMobileValue('0907110000');
               }}
             >
               會員註冊
