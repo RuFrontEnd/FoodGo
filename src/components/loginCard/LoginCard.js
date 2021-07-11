@@ -256,15 +256,20 @@ function LoginCard(props) {
       })
         .then((r) => r.json())
         .then((o) => {
-          // console.log(o);
+          console.log(o);
           setRegisterStatus(o);
-          setCreateAccountValue('');
-          setCreatePasswordValue('');
-          setConfirmPasswordValue('');
-          setNameValue('');
-          setUserEmailValue('');
-          setUserMobileValue('');
           setIsRegistered(true);
+          if (o.status === true) {
+            setCreateAccountValue('');
+            setCreatePasswordValue('');
+            setConfirmPasswordValue('');
+            setNameValue('');
+            setUserEmailValue('');
+            setUserMobileValue('');
+          }
+          if (o.status === false) {
+            setCreateAccountValue('');
+          }
           setTimeout(() => {
             setIsRegistered(false);
           }, 3 * 1000);
@@ -326,6 +331,24 @@ function LoginCard(props) {
       document.cookie = 'encryptedPassword=$; max-age=0';
     } // 取消記住我則刪除cookie
   }, [isRemembered]);
+
+  // useEffect(() => {
+  //   if (registerStatus.status) {
+  //     setCreateAccountValue('');
+  //     setCreatePasswordValue('');
+  //     setConfirmPasswordValue('');
+  //     setNameValue('');
+  //     setUserEmailValue('');
+  //     setUserMobileValue('');
+  //     setIsRegistered(true);
+  //   }
+  //   if (!registerStatus.status) {
+  //     setCreateAccountValue('');
+  //   }
+  //   setTimeout(() => {
+  //     setIsRegistered(false);
+  //   }, 3 * 1000);
+  // }, [registerStatus]);
 
   return (
     <div className={className} id={id}>
