@@ -14,8 +14,8 @@ function FoodGoInput(props) {
         type={type}
         placeholder={placeholder}
         id={id}
-        // value={userInfo}
-        // onChange={(e) => setUserInfo(e.target.value)}
+        value={userInfo}
+        onChange={(e) => setUserInfo(e.target.value)}
       />
     </>
   );

@@ -6,6 +6,7 @@ import FoodGoInput from 'components/foodGoInput/FoodGoInput';
 // import SelectBox from './../../../Share/Components/Input/SelectBox';
 import OptionButton from 'components/optionButton/OptionButton';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 import $ from 'jquery';
 
@@ -157,23 +158,18 @@ function DataEditSect(props) {
 
   // -------- 取得目前user的資料 ---------- //
   // 取得所有會員的資料
-  async function getUserInfoFromServer() {
-    const url = 'http://localhost:5000/member/allUserProfile';
-
-    const request = new Request(url, {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    });
-
-    const response = await fetch(request);
-    const data = await response.json();
-
-    console.log(data);
-    setUserInfo(data);
-  }
+  const getUserInfoFromServer = () => {
+    axios
+      .get('http://localhost:5000/member/singleUserProfile', {
+        params: {
+          member_sid: currentUser,
+        },
+      })
+      .then((res) => {
+        // console.log(res);
+        setUserInfo(res.data);
+      });
+  };
 
   // 過濾出現在使用者的資料
   const currentUserInfo = userInfo.filter(
