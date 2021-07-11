@@ -47,7 +47,7 @@ function DataEditSect(props) {
 
   // ------------ 更新會員資料 ----------------- //
   const updateProfile = () => {
-    const familyname = document.querySelector('#iris-member-family-name').value;
+    // const familyname = document.querySelector('#iris-member-family-name').value;
     const givenname = document.querySelector('#iris-member-given-name').value;
     // const birthday = document.querySelector('#iris-member-birthday').value;
     const mobile = document.querySelector('#iris-member-mobile').value;
@@ -72,14 +72,14 @@ function DataEditSect(props) {
         password = document.querySelector('#iris-member-new-password').value;
       } else {
         // 否則設定密碼為舊密碼(密碼不變)
-        password = document.querySelector('#iris-member-password').value;
+        // password = document.querySelector('#iris-member-password').value;
       }
       const email = document.querySelector('#iris-member-email').value;
       const address = document.querySelector('#iris-member-address').value;
 
       const newProfile = {
         member_id: currentUser,
-        familyname: familyname,
+        // familyname: familyname,
         givenname: givenname,
         // birthday: birthday,
         mobile: mobile,
@@ -236,7 +236,7 @@ function DataEditSect(props) {
   };
 
   const fillInData = () => {
-    document.querySelector('#iris-member-family-name').value = '陳';
+    // document.querySelector('#iris-member-family-name').value = '陳';
     document.querySelector('#iris-member-given-name').value = '雪莉';
     document.querySelector('#iris-member-address').value =
       '台北市南港區南港路一段27號';
@@ -257,8 +257,10 @@ function DataEditSect(props) {
         <div className="row justify-content-center iris-content-title-container ">
           <h2 className="iris-profile-title">會員資料</h2>
           <WaveLine />
-          <div />
-          <div className="row justify-content-center">
+          <div
+            id="dataEditSect-forms"
+            className="d-flex flex-column justify-content-center align-items-center"
+          >
             <h6
               className="iris-profile-note"
               onClick={() => {
@@ -275,15 +277,7 @@ function DataEditSect(props) {
             </div> */}
             <form className="iris-form-adjust">
               <div className="d-flex  align-items-center iris-profile-item-wrapper">
-                <div className="iris-input-box testtest">姓氏</div>
-                <FoodGoInput
-                  type="text"
-                  placeholder=""
-                  id="iris-member-family-name"
-                  userInfo={userInfo}
-                />
                 <div className="iris-input-box">名字</div>
-
                 <FoodGoInput
                   type="text"
                   placeholder=""
