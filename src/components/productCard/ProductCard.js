@@ -7,6 +7,8 @@ import OptionButton from 'components/optionButton/OptionButton';
 import AddFavoriteButton from 'components/addFavoriteButton/AddFavoriteButton';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { endpoint } from 'variable/variable';
 
 function ProductCard(props) {
   // title 品名
@@ -36,8 +38,10 @@ function ProductCard(props) {
     setCount,
   } = props;
 
+  const currentUser = useSelector((state) => state.member.currentUser);
   const [isShowFav, setIsShowFav] = useState(false); // 是否要定住我的最愛按鈕
   const [path, setPath] = useState();
+  const [isFavActive, setIsFavActive] = useState(false);
 
   // 定住我的最愛按鈕邏輯
   useEffect(() => {
@@ -64,6 +68,31 @@ function ProductCard(props) {
   }, [data]);
   // 決定path路徑
 
+  useEffect(() => {
+    const newFavItem = {
+      currentUser: currentUser,
+      product_sid: proudctId,
+    };
+    if (isFavActive) {
+      fetch(`${endpoint}/member/addMyFav`, {
+        method: 'POST',
+        body: JSON.stringify(newFavItem),
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+      });
+    }
+    if (!isFavActive) {
+      fetch(`${endpoint}/member/deleteMyFav`, {
+        method: 'POST',
+        body: JSON.stringify(newFavItem),
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+      });
+    }
+  }, [isFavActive]);
+
   if (!data) {
     return;
   }
@@ -82,13 +111,15 @@ function ProductCard(props) {
             ></img>
           </Link>
           {/* 是否固定我的最愛按鈕 */}
-          <div className="ru-card-abs ru-card-abs-stop">
+          <div className={`ru-card-abs ${isFavActive && 'ru-card-abs-stop'}`}>
             <AddFavoriteButton
               data={data}
               proudctId={proudctId}
               dataFav={dataFav}
-              isActive={isShowFav}
-              setIsActive={setIsShowFav}
+              isActive={isFavActive}
+              onClick={() => {
+                setIsFavActive(!isFavActive);
+              }}
             />
           </div>
         </section>

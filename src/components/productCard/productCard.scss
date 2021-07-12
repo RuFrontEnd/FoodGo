@@ -41,10 +41,13 @@
   transition: 0.35s;
 }
 
-.ru-card-abs-stop {
-  position: absolute;
+.ru-card-abs:hover {
   top: 83%;
-  right: 20px;
+  transition: 0.35s;
+}
+
+.ru-card-abs-stop {
+  top: 83%;
   transition: 0.35s;
 }
 
