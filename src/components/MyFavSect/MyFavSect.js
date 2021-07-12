@@ -5,12 +5,12 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { ReactComponent as WaveLine } from './Images/wave_line.svg';
 import { ReactComponent as StarOrange } from './Images/star_orange.svg';
 import { ReactComponent as StarGrey } from './Images/star_grey.svg';
-import 'components/MyFavSect/MyFavSect.scss';
+import 'components/myFavSect/myFavSect.scss';
 import IrisCard from './IrisCard/IrisCard'; //productCard
 // import Star123 from './Images/star_orange.svg';
 import { useSelector } from 'react-redux';
 
-function IrisMyFavSect(props) {
+function MyFavSect(props) {
   const {
     userFavDelete,
     // 設定userFavDelete的狀態，傳到memberMenu，若有改變數字會減一
@@ -86,4 +86,4 @@ function IrisMyFavSect(props) {
   );
 }
 
-export default IrisMyFavSect;
+export default MyFavSect;

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import MemberMenuSect from 'components/memberMenuSect/MemberMenuSect';
-import IrisMyFavSect from '../Components/IrisMyFavSect/IrisMyFavSect';
+// import MyFavSect from 'components/myFavSect/MyFavSect';
+import MyFavSect from 'components/myFavSect/MyFavSect';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 // import VNavbar from 'Share/Components/VNavbar/VNavbar';
 // import './IrisMemberPage.scss';
+import 'pages/myFav/myFav.scss';
 import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -12,7 +14,8 @@ import { useSelector } from 'react-redux';
 function MyFav(props) {
   const isLogin = useSelector((state) => state.member.isLogin);
   const [userFavDelete, setUserFavDelete] = useState('');
-  const { currentUser, currentUserData, setShowLoginModal, setShowBar } = props;
+  const { currentUser, setShowLoginModal, setShowBar } = props;
+  const currentUserData = useSelector((state) => state.member.currentUserData);
 
   useEffect(() => {
     setShowBar(true);
@@ -25,14 +28,19 @@ function MyFav(props) {
   }
   return (
     <>
-      <VNavbar {...props} />
+      {/* <VNavbar {...props} /> */}
       <div className="container iris-memberpage-container">
         <MemberMenuSect
           currentUser={currentUser}
           userFavDelete={userFavDelete}
           currentUserData={currentUserData}
         />
-        <IrisMyFavSect
+        {/* <MyFavSect
+          currentUser={currentUser}
+          userFavDelete={userFavDelete}
+          setUserFavDelete={setUserFavDelete}
+        /> */}
+        <MyFavSect
           currentUser={currentUser}
           userFavDelete={userFavDelete}
           setUserFavDelete={setUserFavDelete}

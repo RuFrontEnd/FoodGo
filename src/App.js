@@ -30,7 +30,7 @@ const ClaudiaFarmDetailedPage = lazy(() =>
 );
 
 // const IrisOrderComment  =lazy(() => import( 'Iris/Pages/IrisOrderComment'));
-const IrisMyFav  =lazy(() => import( 'Iris/Pages/IrisMyFav'));
+const MyFav = lazy(() => import('pages/myFav/MyFav'));
 // const IrisBeastiePoint  =lazy(() => import( 'Iris/Pages/IrisBeastiePoint'));
 // const IrisGetCoupon  =lazy(() => import( 'Iris/Pages/IrisGetCoupon'));
 // const IrisOrderManagement  =lazy(() => import( 'Iris/Pages/IrisOrderManagement'));
@@ -396,7 +396,7 @@ function App() {
             </Route>
             <Route exact path="/myFav">
               <Suspense fallback={<FallBack />}>
-                <IrisMyFav
+                <MyFav
                   setShowBar={setShowBar}
                   // 會員
                   setShowLoginModal={setShowLoginModal}
