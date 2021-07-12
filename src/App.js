@@ -30,7 +30,7 @@ const ClaudiaFarmDetailedPage = lazy(() =>
 );
 
 // const IrisOrderComment  =lazy(() => import( 'Iris/Pages/IrisOrderComment'));
-// const IrisMyFav  =lazy(() => import( 'Iris/Pages/IrisMyFav'));
+const IrisMyFav  =lazy(() => import( 'Iris/Pages/IrisMyFav'));
 // const IrisBeastiePoint  =lazy(() => import( 'Iris/Pages/IrisBeastiePoint'));
 // const IrisGetCoupon  =lazy(() => import( 'Iris/Pages/IrisGetCoupon'));
 // const IrisOrderManagement  =lazy(() => import( 'Iris/Pages/IrisOrderManagement'));

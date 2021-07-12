@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect';
+import MemberMenuSect from 'components/memberMenuSect/MemberMenuSect';
 import IrisMyFavSect from '../Components/IrisMyFavSect/IrisMyFavSect';
 import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import './IrisMemberPage.scss';
