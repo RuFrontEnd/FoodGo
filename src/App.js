@@ -373,7 +373,7 @@ function App() {
               </Suspense>
             </Route>
             <Route exact path="/orderComment">
-              <Suspense fallback={<FallBack />}>
+              {/* <Suspense fallback={<FallBack />}>
                 <IrisOrderComment
                   setShowBar={setShowBar}
                   // 會員
@@ -392,29 +392,29 @@ function App() {
                   slecteTime={slecteTime}
                   setSelectTime={setSelectTime}
                 />
-              </Suspense>
+              </Suspense> */}
             </Route>
             <Route exact path="/myFav">
-              {/* <Suspense fallback={<FallBack />}> */}
-              {/* <IrisMyFav
-                setShowBar={setShowBar}
-                // 會員
-                setShowLoginModal={setShowLoginModal}
-                // vnbar
-                county={county}
-                setCounty={setCounty}
-                township={township}
-                setTownship={setTownship}
-                address={address}
-                setAddress={setAddress}
-                takeOrNot={takeOrNot}
-                setTakeOrNot={setTakeOrNot}
-                selectDate={selectDate}
-                setSelectDate={setSelectDate}
-                slecteTime={slecteTime}
-                setSelectTime={setSelectTime}
-              /> */}
-              {/* </Suspense> */}
+              <Suspense fallback={<FallBack />}>
+                <IrisMyFav
+                  setShowBar={setShowBar}
+                  // 會員
+                  setShowLoginModal={setShowLoginModal}
+                  // vnbar
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                />
+              </Suspense>
             </Route>
             <Route exact path="/beastiePoint">
               {/* <Suspense fallback={<FallBack />}> */}
