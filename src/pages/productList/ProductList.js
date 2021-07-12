@@ -10,8 +10,6 @@ import productListBanner from 'assets/jpg/proudctList-banner.jpg';
 
 // 引用共用元件
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
-// 引用圖片
-import line from './Images/line.png';
 
 function ProductList(props) {
   const { handleCartNumber, amount, setAmount } = props;
