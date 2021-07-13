@@ -22,7 +22,7 @@ function MyFavSect(props) {
   const [hideCard, setHideCard] = useState(false);
 
   // 得到目前所有的最愛資料
-  async function getMyFavFromServer() {
+  async function getMyFav() {
     const url = 'http://localhost:5000/member/myFavList';
 
     const request = new Request(url, {
@@ -42,7 +42,7 @@ function MyFavSect(props) {
 
   // 一開始就會開始載入資料
   useEffect(() => {
-    getMyFavFromServer();
+    getMyFav();
   }, []);
 
   // 過濾出現在使用者的最愛
