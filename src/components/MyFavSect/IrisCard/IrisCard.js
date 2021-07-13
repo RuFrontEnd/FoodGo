@@ -3,7 +3,7 @@ import './IrisCard.scss'
 import star from './Images/star.svg'
 import starHalf from './Images/starHalf.svg'
 import starFull from './Images/starFull.svg'
-import IrisAddCart from 'Iris/Components/IrisMyFavSect/IrisAddCart/IrisAddCart'
+import IrisAddCart from 'components/myFavSect/IrisAddCart/IrisAddCart'
 import IrisAddFavorite from 'Iris/Components/IrisMyFavSect/IrisAddFavorite/IrisAddFavorite'
 import { withRouter } from 'react-router'
 
