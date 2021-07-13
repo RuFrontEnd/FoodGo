@@ -9,6 +9,7 @@ import 'components/myFavSect/myFavSect.scss';
 import ProductCard from 'components/productCard/ProductCard'; //productCard
 // import Star123 from './Images/star_orange.svg';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 function MyFavSect(props) {
   const {
@@ -22,34 +23,21 @@ function MyFavSect(props) {
   const [hideCard, setHideCard] = useState(false);
 
   // 得到目前所有的最愛資料
-  async function getMyFav() {
+  const getMyFav = () => {
     const url = 'http://localhost:5000/member/myFavList';
-
-    const request = new Request(url, {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
+    axios.get(url, { params: { member_sid: currentUser } }).then((res) => {
+      console.log('res.data', res.data);
+      setMyFav(res.data[0]);
     });
 
-    const response = await fetch(request);
-    const data = await response.json();
-
-    console.log(data);
-    setMyFav(data);
-  }
+    // console.log('data', data);
+    // setMyFav(data);
+  };
 
   // 一開始就會開始載入資料
   useEffect(() => {
     getMyFav();
   }, []);
-
-  // 過濾出現在使用者的最愛
-  const currentUserFav = myFav.filter(
-    (myFav) => myFav.member_sid === currentUser
-  );
-  console.log(currentUserFav);
 
   return (
     <>
@@ -59,28 +47,26 @@ function MyFavSect(props) {
           <WaveLine />
         </div>
         <div className="iris-cards-container row">
-          {currentUserFav.map((item, index) => {
-            // const imageId = 'card-img-' + item.product_sid
-            return (
-              <div class="col-4">
-                <ProductCard
-                  // data={commodities}
-                  // favorites={favorites}
-                  // title={commodity.productname}
-                  // comment={commodity.contentNum}
-                  // buy={commodity.purchased}
-                  // price={commodity.price}
-                  // stars={commodity.startRating}
-                  // id={`ru-addCart-btn-${index + 1}`}
-                  // proudctId={commodity.sid}
-                  // parentId={`ru-addCart-btn-warp-${index + 1}`}
-                  // imgId={commodity.img_id}
-                  // handleCartNumber={handleCartNumber} // localStorage函式
-                  // showFavArr={showFavArr}
-                  // count={count}
-                  // setCount={setCount}
-                />
-                {/* <IrisCard
+          {/* // const imageId = 'card-img-' + item.product_sid return ( */}
+          <div class="col-4">
+            {/* <ProductCard
+            data={commodities}
+            favorites={favorites}
+            title={commodity.productname}
+            comment={commodity.contentNum}
+            buy={commodity.purchased}
+            price={commodity.price}
+            stars={commodity.startRating}
+            id={`ru-addCart-btn-${index + 1}`}
+            proudctId={commodity.sid}
+            parentId={`ru-addCart-btn-warp-${index + 1}`}
+            imgId={commodity.img_id}
+            handleCartNumber={handleCartNumber} // localStorage函式
+            showFavArr={showFavArr}
+            count={count}
+            setCount={setCount}
+            /> */}
+            {/* <IrisCard
                   key={item.product_sid}
                   title={item.productname}
                   comment={item.contentNum}
@@ -94,9 +80,8 @@ function MyFavSect(props) {
                   hideCard={hideCard}
                   setHideCard={setHideCard}
                 /> */}
-              </div>
-            );
-          })}
+          </div>
+          {/* ); */}
         </div>
       </div>
     </>
