@@ -6,7 +6,7 @@ import { ReactComponent as WaveLine } from './Images/wave_line.svg';
 import { ReactComponent as StarOrange } from './Images/star_orange.svg';
 import { ReactComponent as StarGrey } from './Images/star_grey.svg';
 import 'components/myFavSect/myFavSect.scss';
-import IrisCard from './IrisCard/IrisCard'; //productCard
+import ProductCard from 'components/productCard/ProductCard'; //productCard
 // import Star123 from './Images/star_orange.svg';
 import { useSelector } from 'react-redux';
 
@@ -63,7 +63,24 @@ function MyFavSect(props) {
             // const imageId = 'card-img-' + item.product_sid
             return (
               <div class="col-4">
-                <IrisCard
+                <ProductCard
+                  // data={commodities}
+                  // favorites={favorites}
+                  // title={commodity.productname}
+                  // comment={commodity.contentNum}
+                  // buy={commodity.purchased}
+                  // price={commodity.price}
+                  // stars={commodity.startRating}
+                  // id={`ru-addCart-btn-${index + 1}`}
+                  // proudctId={commodity.sid}
+                  // parentId={`ru-addCart-btn-warp-${index + 1}`}
+                  // imgId={commodity.img_id}
+                  // handleCartNumber={handleCartNumber} // localStorage函式
+                  // showFavArr={showFavArr}
+                  // count={count}
+                  // setCount={setCount}
+                />
+                {/* <IrisCard
                   key={item.product_sid}
                   title={item.productname}
                   comment={item.contentNum}
@@ -76,7 +93,7 @@ function MyFavSect(props) {
                   setUserFavDelete={setUserFavDelete}
                   hideCard={hideCard}
                   setHideCard={setHideCard}
-                />
+                /> */}
               </div>
             );
           })}
