@@ -29,9 +29,6 @@ function MyFavSect(props) {
       console.log('res.data', res.data);
       setMyFav(res.data[0]);
     });
-
-    // console.log('data', data);
-    // setMyFav(data);
   };
 
   // 一開始就會開始載入資料
