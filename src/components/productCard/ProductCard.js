@@ -32,27 +32,12 @@ function ProductCard(props) {
   } = props;
 
   const currentUser = useSelector((state) => state.member.currentUser);
-  const [isShowFav, setIsShowFav] = useState(false); // 是否要定住我的最愛按鈕
   const [path, setPath] = useState();
   const [isFavActive, setIsFavActive] = useState(false);
 
   const handelLink = () => {
     props.history.push(`/bento/${productSid}`);
   };
-
-  // 定住我的最愛按鈕邏輯
-  useEffect(() => {
-    if (showFavArr !== undefined) {
-      // console.log(showFavArr, showFavArr.length)
-      for (let i = 0; i < showFavArr.length; i++) {
-        // 當該會員的加入過我的最愛的商品id 匹配 這個card元件的商品id 時
-        if (showFavArr[i] === proudctId) {
-          // 就定住我的最愛按鈕
-          setIsShowFav(true);
-        }
-      }
-    }
-  }, []);
 
   useEffect(() => {
     const newFavItem = {

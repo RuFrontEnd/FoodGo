@@ -14,26 +14,6 @@ function CommodityList(props) {
     setCount,
   } = props;
 
-  const currentUser = useSelector((state) => state.member.currentUser);
-  const [showFavArr, setShowFavArr] = useState([]);
-
-  useEffect(() => {
-    console.log('commodities', commodities);
-    if (!commodities || !favorites) {
-      return;
-    }
-
-    // 拿到有幾筆要固定我的最愛按鈕 邏輯
-    const favArr = []; // 放抓到的dataFav[i].product_sid資料
-    for (let i = 0; i < favorites.length; i++) {
-      // 如果當前會員 跟 我的最愛資料表的member_sid匹配
-      if (currentUser === favorites[i].member_sid) {
-        favArr.push(favorites[i].product_sid);
-      }
-    }
-    setShowFavArr(favArr); // 這樣才可以傳到RuAddFavorite
-  }, [commodities, favorites]);
-
   useEffect(() => {
     if (!commodities || !favorites) {
       return;
@@ -48,6 +28,10 @@ function CommodityList(props) {
     }
   }, [searchInput]);
 
+  useEffect(() => {
+    console.log('commodities', commodities);
+  }, []);
+
   if (!commodities || !favorites) {
     return <></>;
   } // waiting for fetching data complete then render
@@ -58,9 +42,9 @@ function CommodityList(props) {
         <div className="ru-card-warp">
           <div className="ru-itemWarp">
             {/* {isShowNothing && <EmptyHint />} */}
-            {commodities.map((commodity, index) => (
+            {commodities.map((commodity) => (
               <ProductCard
-                id={`ru-addCart-btn-${index + 1}`}
+                id={`ru-addCart-btn-${commodity.sid}`}
                 productSid={commodity.sid}
                 title={commodity.productname}
                 comment={commodity.contentNum}
@@ -70,7 +54,6 @@ function CommodityList(props) {
                 proudctId={commodity.sid}
                 imgId={commodity.img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
-                showFavArr={showFavArr}
               />
             ))}
           </div>
