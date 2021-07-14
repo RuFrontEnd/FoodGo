@@ -60,21 +60,17 @@ function CommodityList(props) {
             {/* {isShowNothing && <EmptyHint />} */}
             {commodities.map((commodity, index) => (
               <ProductCard
+                id={`ru-addCart-btn-${index + 1}`}
                 productSid={commodity.sid}
-                favorites={favorites}
                 title={commodity.productname}
                 comment={commodity.contentNum}
                 buy={commodity.purchased}
                 price={commodity.price}
                 stars={commodity.startRating}
-                id={`ru-addCart-btn-${index + 1}`}
                 proudctId={commodity.sid}
-                parentId={`ru-addCart-btn-warp-${index + 1}`}
                 imgId={commodity.img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 showFavArr={showFavArr}
-                count={count}
-                setCount={setCount}
               />
             ))}
           </div>
