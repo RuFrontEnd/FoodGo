@@ -18,6 +18,7 @@ function CommodityList(props) {
   const [showFavArr, setShowFavArr] = useState([]);
 
   useEffect(() => {
+    console.log('commodities', commodities);
     if (!commodities || !favorites) {
       return;
     }
@@ -59,7 +60,7 @@ function CommodityList(props) {
             {/* {isShowNothing && <EmptyHint />} */}
             {commodities.map((commodity, index) => (
               <ProductCard
-                data={commodities}
+                productSid={commodity.sid}
                 favorites={favorites}
                 title={commodity.productname}
                 comment={commodity.contentNum}

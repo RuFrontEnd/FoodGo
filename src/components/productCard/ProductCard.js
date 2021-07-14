@@ -20,7 +20,7 @@ function ProductCard(props) {
   // parentId 不同元件父母id => addCart-btn-warp-n n為自訂數
   // imgId 產品圖片 => card-img-n n為1~9
   const {
-    data,
+    productSid,
     dataFav,
     title,
     comment,
@@ -43,6 +43,10 @@ function ProductCard(props) {
   const [path, setPath] = useState();
   const [isFavActive, setIsFavActive] = useState(false);
 
+  const handelLink = () => {
+    props.history.push(`/bento/${productSid}`);
+  };
+
   // 定住我的最愛按鈕邏輯
   useEffect(() => {
     if (showFavArr !== undefined) {
@@ -56,17 +60,6 @@ function ProductCard(props) {
       }
     }
   }, []);
-
-  // 決定前往頁面 邏輯
-  useEffect(() => {
-    if (!data) {
-      return;
-    }
-    data.forEach((dataItem) => {
-      setPath('/bento/' + (dataItem.sid - 1));
-    });
-  }, [data]);
-  // 決定path路徑
 
   useEffect(() => {
     const newFavItem = {
@@ -98,7 +91,7 @@ function ProductCard(props) {
       <div className="ru-card-container" id={cardMargin}>
         {/* item圖片s */}
         <section className="ru-card-img-warp">
-          <Link to={path} className="ru-card-link">
+          <Link className="ru-card-link" onClick={handelLink}>
             <img
               className="ru-card-img"
               style={{
