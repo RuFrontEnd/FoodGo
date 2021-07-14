@@ -74,10 +74,9 @@ function CommodityList(props) {
                 price={commodity.price}
                 stars={commodity.startRating}
                 proudctId={commodity.sid}
-                parentId={`ru-addCart-btn-warp-${index + 1}`}
                 imgId={commodity.img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
-                showFavArr={showFavArr}
+                // showFavArr={showFavArr}
                 count={count}
                 setCount={setCount}
               />
