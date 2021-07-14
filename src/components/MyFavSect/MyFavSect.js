@@ -18,7 +18,7 @@ function MyFavSect(props) {
     setUserFavDelete,
   } = props;
   const currentUser = useSelector((state) => state.member.currentUser);
-  const [myFav, setMyFav] = useState([]);
+  const [myFavItems, setMyFavItems] = useState([]);
   const [showFavArr, setShowFavArr] = useState([]);
   const [hideCard, setHideCard] = useState(false);
 
@@ -27,7 +27,7 @@ function MyFavSect(props) {
     const url = 'http://localhost:5000/member/myFavList';
     axios.get(url, { params: { member_sid: currentUser } }).then((res) => {
       console.log('res.data', res.data);
-      setMyFav(res.data[0]);
+      setMyFavItems(res.data[0]);
     });
   };
 
@@ -46,23 +46,24 @@ function MyFavSect(props) {
         <div className="iris-cards-container row">
           {/* // const imageId = 'card-img-' + item.product_sid return ( */}
           <div class="col-4">
-            {/* <ProductCard
-            data={commodities}
-            favorites={favorites}
-            title={commodity.productname}
-            comment={commodity.contentNum}
-            buy={commodity.purchased}
-            price={commodity.price}
-            stars={commodity.startRating}
-            id={`ru-addCart-btn-${index + 1}`}
-            proudctId={commodity.sid}
-            parentId={`ru-addCart-btn-warp-${index + 1}`}
-            imgId={commodity.img_id}
-            handleCartNumber={handleCartNumber} // localStorage函式
-            showFavArr={showFavArr}
-            count={count}
-            setCount={setCount}
-            /> */}
+            {/* {myFavItems.map((myFavItem) => (
+              <ProductCard
+                // data={commodities}
+                title={myFavItem.productname}
+                comment={myFavItem.contentNum}
+                buy={myFavItem.purchased}
+                price={myFavItem.price}
+                stars={myFavItem.startRating}
+                id={`ru-addCart-btn-${index + 1}`}
+                proudctId={myFavItem.sid}
+                parentId={`ru-addCart-btn-warp-${index + 1}`}
+                imgId={myFavItem.img_id}
+                handleCartNumber={handleCartNumber} // localStorage函式
+                showFavArr={showFavArr}
+                count={count}
+                setCount={setCount}
+              />
+            ))} */}
             {/* <IrisCard
                   key={item.product_sid}
                   title={item.productname}

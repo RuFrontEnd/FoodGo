@@ -93,9 +93,6 @@ function ProductCard(props) {
     }
   }, [isFavActive]);
 
-  if (!data) {
-    return;
-  }
   return (
     <>
       <div className="ru-card-container" id={cardMargin}>
@@ -113,7 +110,6 @@ function ProductCard(props) {
           {/* 是否固定我的最愛按鈕 */}
           <div className={`ru-card-abs ${isFavActive && 'ru-card-abs-stop'}`}>
             <AddFavoriteButton
-              data={data}
               proudctId={proudctId}
               dataFav={dataFav}
               isActive={isFavActive}
