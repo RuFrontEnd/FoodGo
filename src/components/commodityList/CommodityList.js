@@ -44,7 +44,10 @@ function CommodityList(props) {
             {/* {isShowNothing && <EmptyHint />} */}
             {commodities.map((commodity) => (
               <ProductCard
+<<<<<<< HEAD
                 id={`ru-addCart-btn-${commodity.sid}`}
+=======
+>>>>>>> parent of 7f5406d... 去除productCard不必要參數
                 productSid={commodity.sid}
                 favorites={favorites}
                 title={commodity.productname}
