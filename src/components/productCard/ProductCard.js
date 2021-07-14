@@ -17,18 +17,25 @@ function ProductCard(props) {
   // price 價格
   // cardMargin 卡片margin => props傳入 card-margin
   // id 不同元件id => addCart-btn-n n為自訂數
+  // parentId 不同元件父母id => addCart-btn-warp-n n為自訂數
   // imgId 產品圖片 => card-img-n n為1~9
   const {
     productSid,
+    dataFav,
     title,
     comment,
     buy,
     price,
+    cardMargin,
     stars,
     id,
     proudctId,
+    parentId,
     imgId,
+    handleCartNumber,
     showFavArr,
+    count,
+    setCount,
   } = props;
 
   const currentUser = useSelector((state) => state.member.currentUser);
@@ -66,7 +73,7 @@ function ProductCard(props) {
 
   return (
     <>
-      <div className="ru-card-container" id={id}>
+      <div className="ru-card-container" id={cardMargin}>
         {/* item圖片s */}
         <section className="ru-card-img-warp">
           <Link className="ru-card-link" onClick={handelLink}>
@@ -82,6 +89,7 @@ function ProductCard(props) {
           <div className={`ru-card-abs ${isFavActive && 'ru-card-abs-stop'}`}>
             <AddFavoriteButton
               proudctId={proudctId}
+              dataFav={dataFav}
               isActive={isFavActive}
               onClick={() => {
                 setIsFavActive(!isFavActive);
