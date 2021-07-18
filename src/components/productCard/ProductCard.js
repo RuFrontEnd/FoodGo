@@ -48,7 +48,7 @@ function ProductCard(props) {
   };
 
   useEffect(() => {
-    const isFavorite = favorites.some((favorite) => {ㄏ
+    const isFavorite = favorites.some((favorite) => {
       return favorite.product_sid === productSid;
     });
     isFavorite && setIsFavActive(true);
@@ -68,15 +68,15 @@ function ProductCard(props) {
         }),
       });
     }
-    // if (!isFavActive) {
-    //   fetch(`${endpoint}/member/deleteMyFav`, {
-    //     method: 'POST',
-    //     body: JSON.stringify(newFavItem),
-    //     headers: new Headers({
-    //       'Content-Type': 'application/json',
-    //     }),
-    //   });
-    // }
+    if (!isFavActive) {
+      fetch(`${endpoint}/member/deleteMyFav`, {
+        method: 'POST',
+        body: JSON.stringify(newFavItem),
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+      });
+    }
   }, [isFavActive]);
 
   return (
