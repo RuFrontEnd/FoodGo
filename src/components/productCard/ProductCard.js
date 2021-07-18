@@ -34,7 +34,6 @@ function ProductCard(props) {
   } = props;
 
   const currentUser = useSelector((state) => state.member.currentUser);
-  const [path, setPath] = useState();
   const [isFavActive, setIsFavActive] = useState(false);
 
   const handelLink = () => {
