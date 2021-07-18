@@ -53,7 +53,7 @@ function ProductCard(props) {
       return favorite.product_sid === productSid;
     });
     isFavorite && setIsFavActive(true);
-  }, [favorites]);
+  }, [favorites]);  // 判斷是否是我的最愛商品並且固定愛心
 
   useEffect(() => {
     const newFavItem = {
