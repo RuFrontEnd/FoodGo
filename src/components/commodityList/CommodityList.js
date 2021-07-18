@@ -49,10 +49,6 @@ function CommodityList(props) {
     }
   }, [searchInput]);
 
-  useEffect(() => {
-    console.log('commodities', commodities);
-  }, []);
-
   if (!commodities || !favorites) {
     return <></>;
   } // waiting for fetching data complete then render

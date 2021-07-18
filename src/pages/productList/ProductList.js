@@ -7,11 +7,13 @@ import ProductFeatureBar from 'components/productFeatureBar/ProductFeatureBar';
 import SearchBar from 'components/searchBar/SearchBar';
 import axios from 'axios';
 import productListBanner from 'assets/jpg/proudctList-banner.jpg';
+import { useSelector } from 'react-redux';
 
 // 引用共用元件
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 
 function ProductList(props) {
+  const currentUser = useSelector((state) => state.member.currentUser);
   const { handleCartNumber, amount, setAmount } = props;
   const [commodities, setCommodities] = useState([]);
   const [favorites, setFavorites] = useState('');
@@ -53,9 +55,15 @@ function ProductList(props) {
       console.log('_commodities', _commodities);
       setCommodities(_commodities);
     });
-    axios.get(`${endpoint}/member/myFavList`).then((res) => {
-      setFavorites(res.data);
-    });
+    axios
+      .get(`${endpoint}/member/myFavList`, {
+        params: {
+          member_sid: currentUser,
+        },
+      })
+      .then((res) => {
+        setFavorites(res.data);
+      });
   }, []);
 
   const filterData = () => {

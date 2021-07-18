@@ -36,6 +36,7 @@ function ProductCard(props) {
     showFavArr,
     count,
     setCount,
+    favorites,
   } = props;
 
   const currentUser = useSelector((state) => state.member.currentUser);
@@ -45,6 +46,14 @@ function ProductCard(props) {
   const handelLink = () => {
     props.history.push(`/bento/${productSid}`);
   };
+
+  useEffect(() => {
+    // console.log('favorites', favorites);
+    const isFavorite = favorites.some((favorite) => {
+      return favorite.product_sid === productSid;
+    });
+    isFavorite && setIsFavActive(true);
+  }, [favorites]);
 
   useEffect(() => {
     const newFavItem = {
@@ -60,15 +69,15 @@ function ProductCard(props) {
         }),
       });
     }
-    if (!isFavActive) {
-      fetch(`${endpoint}/member/deleteMyFav`, {
-        method: 'POST',
-        body: JSON.stringify(newFavItem),
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
-      });
-    }
+    // if (!isFavActive) {
+    //   fetch(`${endpoint}/member/deleteMyFav`, {
+    //     method: 'POST',
+    //     body: JSON.stringify(newFavItem),
+    //     headers: new Headers({
+    //       'Content-Type': 'application/json',
+    //     }),
+    //   });
+    // }
   }, [isFavActive]);
 
   return (
