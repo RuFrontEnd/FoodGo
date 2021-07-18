@@ -46,25 +46,47 @@ function ProductList(props) {
     },
   ];
 
-  const getData = useCallback(() => {
-    axios.get(`${endpoint}/product/bento`).then((res) => {
-      console.log('res', res);
-      const _commodities = res.data.filter(
-        (dataItem) => dataItem.categories === '1.低GI便當'
-      );
-      console.log('_commodities', _commodities);
-      setCommodities(_commodities);
+  const getData = useCallback(async () => {
+    const _allProducts = await axios.get(`${endpoint}/product/bento`);
+    const _allmyFavProducts = await axios.get(`${endpoint}/member/myFavList`, {
+      params: {
+        member_sid: currentUser,
+      },
     });
-    axios
-      .get(`${endpoint}/member/myFavList`, {
-        params: {
-          member_sid: currentUser,
-        },
-      })
-      .then((res) => {
-        setFavorites(res.data);
-      });
+    const allProducts = _allProducts.data;
+    const allmyFavProducts = _allmyFavProducts.data;
+
+    const productStatus = allProducts.map((product) => {
+      const isFav = allmyFavProducts.findIndex(
+        (myFavProduct) => myFavProduct.product_sid === product.sid
+      );
+      return {
+        sid: product.sid,
+        img_id: product.img_id,
+        productname: product.productname,
+        price: product.price,
+        purchased: product.purchased,
+        contentNum: product.contentNum,
+        introduction: product.introduction,
+        startRating: product.startRating,
+        fat: product.Fat,
+        protein: product.Protein,
+        calories: product.calories,
+        carbohydrate: product.carbohydrate,
+        categories: product.categories,
+        isFavorite: isFav > -1 ? true : false,
+      };
+    }); // 將products和myFavs結合
+
+    const _commodities = productStatus.filter(
+      (status) => status.categories === '1.低GI便當'
+    );
+    setCommodities(_commodities);
   }, []);
+
+  useEffect(() => {
+    console.log('commodities', commodities);
+  }, [commodities]);
 
   const filterData = () => {
     const filterCommodities = [...commodities];

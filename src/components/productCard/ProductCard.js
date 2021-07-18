@@ -20,19 +20,22 @@ function ProductCard(props) {
   // parentId 不同元件父母id => addCart-btn-warp-n n為自訂數
   // imgId 產品圖片 => card-img-n n為1~9
   const {
-    productSid,
-    dataFav,
+    id,
     title,
     comment,
     buy,
-    price,
-    cardMargin,
     stars,
-    proudctId,
+    price,
+    productSid,
     imgId,
-    favorites,
+    dataFav,
+    proudctId,
+    favorites = [],
   } = props;
-
+  // const isFavorite = favorites.some((favorite) => {
+  //   return favorite.product_sid === productSid;
+  // });
+  // console.log(isFavorite, 'isFavorite');
   const currentUser = useSelector((state) => state.member.currentUser);
   const [isFavActive, setIsFavActive] = useState(false);
 
@@ -40,41 +43,34 @@ function ProductCard(props) {
     props.history.push(`/bento/${productSid}`);
   };
 
-  useEffect(() => {
-    const isFavorite = favorites.some((favorite) => {
-      return favorite.product_sid === productSid;
-    });
-    isFavorite && setIsFavActive(true);
-  }, [favorites]);  // 判斷是否是我的最愛商品並且固定愛心
-
-  useEffect(() => {
-    const newFavItem = {
-      currentUser: currentUser,
-      product_sid: proudctId,
-    };
-    if (isFavActive) {
-      fetch(`${endpoint}/member/addMyFav`, {
-        method: 'POST',
-        body: JSON.stringify(newFavItem),
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
-      });
-    }
-    if (!isFavActive) {
-      fetch(`${endpoint}/member/deleteMyFav`, {
-        method: 'POST',
-        body: JSON.stringify(newFavItem),
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
-      });
-    }
-  }, [isFavActive]);
+  // useEffect(() => {
+  //   const newFavItem = {
+  //     currentUser: currentUser,
+  //     product_sid: proudctId,
+  //   };
+  //   if (isFavActive) {
+  //     fetch(`${endpoint}/member/addMyFav`, {
+  //       method: 'POST',
+  //       body: JSON.stringify(newFavItem),
+  //       headers: new Headers({
+  //         'Content-Type': 'application/json',
+  //       }),
+  //     });
+  //   }
+  //   if (!isFavActive) {
+  //     fetch(`${endpoint}/member/deleteMyFav`, {
+  //       method: 'POST',
+  //       body: JSON.stringify(newFavItem),
+  //       headers: new Headers({
+  //         'Content-Type': 'application/json',
+  //       }),
+  //     });
+  //   }
+  // }, [isFavActive]);
 
   return (
     <>
-      <div className="ru-card-container" id={cardMargin}>
+      <div className="ru-card-container" id={id}>
         {/* item圖片s */}
         <section className="ru-card-img-warp">
           <Link className="ru-card-link" onClick={handelLink}>

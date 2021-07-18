@@ -7,6 +7,8 @@ import { ReactComponent as StarOrange } from './Images/star_orange.svg';
 import { ReactComponent as StarGrey } from './Images/star_grey.svg';
 import 'components/myFavSect/myFavSect.scss';
 import ProductCard from 'components/productCard/ProductCard'; //productCard
+// import IrisCard from './IrisCard/IrisCard';
+import FallBack from 'components/fallBack/FallBack';
 // import Star123 from './Images/star_orange.svg';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
@@ -21,13 +23,16 @@ function MyFavSect(props) {
   const [myFavItems, setMyFavItems] = useState([]);
   const [showFavArr, setShowFavArr] = useState([]);
   const [hideCard, setHideCard] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // 得到目前所有的最愛資料
+
   const getMyFav = () => {
     const url = 'http://localhost:5000/member/myFavList';
     axios.get(url, { params: { member_sid: currentUser } }).then((res) => {
-      console.log('res.data', res.data);
-      setMyFavItems(res.data[0]);
+      // console.log('res.data', res.data);
+      setMyFavItems(res.data);
+      setIsLoading(false);
     });
   };
 
@@ -35,6 +40,14 @@ function MyFavSect(props) {
   useEffect(() => {
     getMyFav();
   }, []);
+
+  useEffect(() => {
+    console.log('myFavItems', myFavItems);
+  }, [myFavItems]);
+
+  if (isLoading) {
+    return <FallBack />;
+  }
 
   return (
     <>
@@ -45,41 +58,35 @@ function MyFavSect(props) {
         </div>
         <div className="iris-cards-container row">
           {/* // const imageId = 'card-img-' + item.product_sid return ( */}
-          <div class="col-4">
-            {/* {myFavItems.map((myFavItem) => (
-              <ProductCard
-                // data={commodities}
-                title={myFavItem.productname}
-                comment={myFavItem.contentNum}
-                buy={myFavItem.purchased}
-                price={myFavItem.price}
-                stars={myFavItem.startRating}
-                id={`ru-addCart-btn-${index + 1}`}
-                proudctId={myFavItem.sid}
-                parentId={`ru-addCart-btn-warp-${index + 1}`}
-                imgId={myFavItem.img_id}
-                handleCartNumber={handleCartNumber} // localStorage函式
-                showFavArr={showFavArr}
-                count={count}
-                setCount={setCount}
-              />
-            ))} */}
-            {/* <IrisCard
-                  key={item.product_sid}
-                  title={item.productname}
-                  comment={item.contentNum}
-                  price={item.price}
-                  imgId={item.img_id}
-                  showFavArr={showFavArr}
-                  currentUserFav={currentUserFav}
-                  stars={item.starRating}
-                  proudctId={item.product_sid}
-                  setUserFavDelete={setUserFavDelete}
-                  hideCard={hideCard}
-                  setHideCard={setHideCard}
-                /> */}
-          </div>
-          {/* ); */}
+          {/* {myFavItems.map((myFavItem) => (
+            // console.log('myFavItem', myFavItem)
+            <ProductCard
+              title={myFavItem.productname}
+              comment={myFavItem.contentNum}
+              buy={myFavItem.purchased}
+              price={myFavItem.price}
+              stars={myFavItem.startRating}
+              proudctId={myFavItem.sid}
+              imgId={myFavItem.img_id}
+              // favorites={myFavItems}
+            />
+          ))} */}
+          {/* {myFavItems.map((myFavItem) => (
+            <IrisCard
+              key={myFavItem.product_sid}
+              title={myFavItem.productname}
+              comment={myFavItem.contentNum}
+              price={myFavItem.price}
+              imgId={myFavItem.img_id}
+              showFavArr={showFavArr}
+              // currentUserFav={currentUserFav}
+              stars={myFavItem.starRating}
+              proudctId={myFavItem.product_sid}
+              setUserFavDelete={setUserFavDelete}
+              hideCard={hideCard}
+              setHideCard={setHideCard}
+            />
+          ))} */}
         </div>
       </div>
     </>
