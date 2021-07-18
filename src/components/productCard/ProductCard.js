@@ -48,8 +48,7 @@ function ProductCard(props) {
   };
 
   useEffect(() => {
-    // console.log('favorites', favorites);
-    const isFavorite = favorites.some((favorite) => {
+    const isFavorite = favorites.some((favorite) => {ㄏ
       return favorite.product_sid === productSid;
     });
     isFavorite && setIsFavActive(true);
