@@ -28,18 +28,12 @@ function MyFav(props) {
   }
   return (
     <>
-      {/* <VNavbar {...props} /> */}
       <div className="container iris-memberpage-container">
         <MemberMenuSect
           currentUser={currentUser}
           userFavDelete={userFavDelete}
           currentUserData={currentUserData}
         />
-        {/* <MyFavSect
-          currentUser={currentUser}
-          userFavDelete={userFavDelete}
-          setUserFavDelete={setUserFavDelete}
-        /> */}
         <MyFavSect
           currentUser={currentUser}
           userFavDelete={userFavDelete}
