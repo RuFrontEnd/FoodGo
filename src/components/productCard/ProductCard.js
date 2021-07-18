@@ -28,14 +28,8 @@ function ProductCard(props) {
     price,
     cardMargin,
     stars,
-    id,
     proudctId,
-    parentId,
     imgId,
-    handleCartNumber,
-    showFavArr,
-    count,
-    setCount,
     favorites,
   } = props;
 
