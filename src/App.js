@@ -15,6 +15,7 @@ import {
   setCurrentUserData,
 } from 'redux/member/memberActions'; // 判斷是否 login 的狀態
 
+// TEST
 import Navbar from 'components/navBar/NavBar';
 import Footer from 'components/footer/Footer';
 import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
