@@ -57,9 +57,7 @@ function MyFavSect(props) {
           <WaveLine />
         </div>
         <div className="iris-cards-container row">
-          {/* // const imageId = 'card-img-' + item.product_sid return ( */}
           {myFavItems.map((myFavItem) => (
-            // console.log('myFavItem', myFavItem)
             <ProductCard
               title={myFavItem.productname}
               comment={myFavItem.contentNum}
@@ -71,22 +69,6 @@ function MyFavSect(props) {
               isFavorite={true}
             />
           ))}
-          {/* {myFavItems.map((myFavItem) => (
-            <IrisCard
-              key={myFavItem.product_sid}
-              title={myFavItem.productname}
-              comment={myFavItem.contentNum}
-              price={myFavItem.price}
-              imgId={myFavItem.img_id}
-              showFavArr={showFavArr}
-              // currentUserFav={currentUserFav}
-              stars={myFavItem.starRating}
-              proudctId={myFavItem.product_sid}
-              setUserFavDelete={setUserFavDelete}
-              hideCard={hideCard}
-              setHideCard={setHideCard}
-            />
-          ))} */}
         </div>
       </div>
     </>
