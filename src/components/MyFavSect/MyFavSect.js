@@ -58,7 +58,7 @@ function MyFavSect(props) {
         </div>
         <div className="iris-cards-container row">
           {/* // const imageId = 'card-img-' + item.product_sid return ( */}
-          {/* {myFavItems.map((myFavItem) => (
+          {myFavItems.map((myFavItem) => (
             // console.log('myFavItem', myFavItem)
             <ProductCard
               title={myFavItem.productname}
@@ -68,9 +68,9 @@ function MyFavSect(props) {
               stars={myFavItem.startRating}
               proudctId={myFavItem.sid}
               imgId={myFavItem.img_id}
-              // favorites={myFavItems}
+              isFavorite={true}
             />
-          ))} */}
+          ))}
           {/* {myFavItems.map((myFavItem) => (
             <IrisCard
               key={myFavItem.product_sid}

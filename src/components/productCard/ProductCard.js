@@ -31,6 +31,7 @@ function ProductCard(props) {
     dataFav,
     proudctId,
     isFavorite,
+    favoriteCardStatus = false,
   } = props;
   // const isFavorite = favorites.some((favorite) => {
   //   return favorite.product_sid === productSid;
