@@ -3,11 +3,11 @@ import 'components/commodityList/commodityList.scss';
 import EmptyHint from 'components/emptyHint/EmptyHint';
 import { useSelector } from 'react-redux';
 import ProductCard from 'components/productCard/ProductCard';
+import FallBack from 'components/fallBack/FallBack';
 
 function CommodityList(props) {
   const {
     commodities,
-    favorites,
     searchInput,
     handleCartNumber,
     count,
@@ -15,7 +15,7 @@ function CommodityList(props) {
   } = props;
 
   useEffect(() => {
-    if (!commodities || !favorites) {
+    if (!commodities) {
       return;
     }
     if (searchInput !== '') {
@@ -28,7 +28,7 @@ function CommodityList(props) {
     }
   }, [searchInput]);
 
-  if (!commodities || !favorites) {
+  if (!commodities) {
     return <></>;
   } // waiting for fetching data complete then render
 
@@ -42,7 +42,6 @@ function CommodityList(props) {
               <ProductCard
                 id={`ru-addCart-btn-${commodity.sid}`}
                 productSid={commodity.sid}
-                favorites={favorites}
                 title={commodity.productname}
                 comment={commodity.contentNum}
                 buy={commodity.purchased}
@@ -51,7 +50,6 @@ function CommodityList(props) {
                 proudctId={commodity.sid}
                 imgId={commodity.img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
-                // showFavArr={showFavArr}
                 count={count}
                 setCount={setCount}
               />

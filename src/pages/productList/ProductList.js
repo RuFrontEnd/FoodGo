@@ -100,6 +100,10 @@ function ProductList(props) {
     getData();
   }, [getData]);
 
+  useEffect(() => {
+    console.log('commodities', commodities);
+  }, [commodities]);
+
   return (
     <>
       <ProductFeatureBar
