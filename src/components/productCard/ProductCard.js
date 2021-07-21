@@ -30,14 +30,14 @@ function ProductCard(props) {
     imgId,
     dataFav,
     proudctId,
-    favorites = [],
+    isFavorite
   } = props;
   // const isFavorite = favorites.some((favorite) => {
   //   return favorite.product_sid === productSid;
   // });
   // console.log(isFavorite, 'isFavorite');
   const currentUser = useSelector((state) => state.member.currentUser);
-  const [isFavActive, setIsFavActive] = useState(false);
+  const [isFavActive, setIsFavActive] = useState(isFavorite);
 
   const handelLink = () => {
     props.history.push(`/bento/${productSid}`);

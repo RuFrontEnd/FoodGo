@@ -6,13 +6,7 @@ import ProductCard from 'components/productCard/ProductCard';
 import FallBack from 'components/fallBack/FallBack';
 
 function CommodityList(props) {
-  const {
-    commodities,
-    searchInput,
-    handleCartNumber,
-    count,
-    setCount,
-  } = props;
+  const { commodities, searchInput, handleCartNumber, count, setCount } = props;
 
   useEffect(() => {
     if (!commodities) {
@@ -29,7 +23,7 @@ function CommodityList(props) {
   }, [searchInput]);
 
   if (!commodities) {
-    return <></>;
+    return <FallBack />;
   } // waiting for fetching data complete then render
 
   return (
@@ -52,6 +46,7 @@ function CommodityList(props) {
                 handleCartNumber={handleCartNumber} // localStorage函式
                 count={count}
                 setCount={setCount}
+                isFavorite={commodity.isFavorite}
               />
             ))}
           </div>
