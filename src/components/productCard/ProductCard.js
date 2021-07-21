@@ -30,7 +30,7 @@ function ProductCard(props) {
     imgId,
     dataFav,
     proudctId,
-    isFavorite
+    isFavorite,
   } = props;
   // const isFavorite = favorites.some((favorite) => {
   //   return favorite.product_sid === productSid;
@@ -43,30 +43,30 @@ function ProductCard(props) {
     props.history.push(`/bento/${productSid}`);
   };
 
-  // useEffect(() => {
-  //   const newFavItem = {
-  //     currentUser: currentUser,
-  //     product_sid: proudctId,
-  //   };
-  //   if (isFavActive) {
-  //     fetch(`${endpoint}/member/addMyFav`, {
-  //       method: 'POST',
-  //       body: JSON.stringify(newFavItem),
-  //       headers: new Headers({
-  //         'Content-Type': 'application/json',
-  //       }),
-  //     });
-  //   }
-  //   if (!isFavActive) {
-  //     fetch(`${endpoint}/member/deleteMyFav`, {
-  //       method: 'POST',
-  //       body: JSON.stringify(newFavItem),
-  //       headers: new Headers({
-  //         'Content-Type': 'application/json',
-  //       }),
-  //     });
-  //   }
-  // }, [isFavActive]);
+  const switchFavStatus = () => {
+    const newFavItem = {
+      product_sid: proudctId,
+      currentUser: currentUser,
+    };
+    if (!isFavActive) {
+      fetch(`${endpoint}/member/addMyFav`, {
+        method: 'POST',
+        body: JSON.stringify(newFavItem),
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+      });
+    }
+    if (isFavActive) {
+      fetch(`${endpoint}/member/deleteMyFav`, {
+        method: 'POST',
+        body: JSON.stringify(newFavItem),
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+      });
+    }
+  };
 
   return (
     <>
@@ -90,6 +90,7 @@ function ProductCard(props) {
               isActive={isFavActive}
               onClick={() => {
                 setIsFavActive(!isFavActive);
+                switchFavStatus();
               }}
             />
           </div>
