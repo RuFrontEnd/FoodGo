@@ -35,7 +35,7 @@ function MyFavSect(props) {
   // 一開始就會開始載入資料
   useEffect(() => {
     getMyFav(currentUser).then((res) => {
-      // console.log('res.data', res.data);
+      console.log('res.data', res.data);
       setMyFavItems(res.data);
       setIsLoading(false);
     });

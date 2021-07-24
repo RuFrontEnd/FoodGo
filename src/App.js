@@ -65,6 +65,8 @@ const CustomBentoList = lazy(() =>
   import('pages/customBentoList/CustomBentoList')
 );
 
+export const currentUser = JSON.parse(localStorage.getItem('currentUser')); // JSON.parse()轉數值
+
 // 路由表
 function App() {
   const dispatch = useDispatch();
@@ -94,7 +96,6 @@ function App() {
 
   useEffect(async () => {
     const accessToken = localStorage.getItem('accessToken');
-    const currentUser = JSON.parse(localStorage.getItem('currentUser')); // JSON.parse()轉數值
     const currentCartNumber =
       JSON.parse(localStorage.getItem('cartNumber')) || 0;
 
