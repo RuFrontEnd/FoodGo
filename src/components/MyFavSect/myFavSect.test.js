@@ -9,7 +9,6 @@ import store from 'redux/store';
 describe('測試myFavSect.js', () => {
   test('是否取得我的最愛資料', async () => {
     const myFavs = await getMyFav(Math.random());
-    // console.log('myFavs', myFavs);
     expect(myFavs.data.length).toBeGreaterThanOrEqual(0);
   });
 
@@ -21,7 +20,6 @@ describe('測試myFavSect.js', () => {
     );
     await getMyFav(Math.random()).then((res) => {
       const title = screen.getByTestId('myFavSect-title');
-      // console.log('title', title);
       expect(title).toBeInTheDocument();
     });
   });
