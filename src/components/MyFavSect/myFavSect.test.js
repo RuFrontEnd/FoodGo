@@ -3,8 +3,6 @@ import { render, screen } from '@testing-library/react';
 import MyFavSect, { getMyFav } from 'components/myFavSect/MyFavSect';
 import { Provider } from 'react-redux';
 import store from 'redux/store';
-// import { useSelector } from 'react-redux';
-// import { jest } from '@jest/globals';
 
 describe('測試myFavSect.js', () => {
   test('是否取得我的最愛資料', async () => {
