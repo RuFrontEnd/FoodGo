@@ -13,9 +13,7 @@ import FallBack from 'components/fallBack/FallBack';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
-const currentUser = useSelector((state) => state.member.currentUser);
-
-export const getMyFav = () => {
+export const getMyFav = (currentUser) => {
   const url = 'http://localhost:5000/member/myFavList';
   return axios.get(url, { params: { member_sid: currentUser } });
 };
@@ -26,6 +24,7 @@ function MyFavSect(props) {
     // 設定userFavDelete的狀態，傳到memberMenu，若有改變數字會減一
     setUserFavDelete,
   } = props;
+  const currentUser = useSelector((state) => state.member.currentUser);
   const [myFavItems, setMyFavItems] = useState([]);
   const [showFavArr, setShowFavArr] = useState([]);
   const [hideCard, setHideCard] = useState(false);
@@ -35,7 +34,7 @@ function MyFavSect(props) {
 
   // 一開始就會開始載入資料
   useEffect(() => {
-    getMyFav().then((res) => {
+    getMyFav(currentUser).then((res) => {
       // console.log('res.data', res.data);
       setMyFavItems(res.data);
       setIsLoading(false);
