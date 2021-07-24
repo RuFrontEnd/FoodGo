@@ -35,25 +35,31 @@ function MyFavSect(props) {
   // 一開始就會開始載入資料
   useEffect(() => {
     getMyFav(currentUser).then((res) => {
-      console.log('res.data', res.data);
+      // console.log('res.data', res.data);
       setMyFavItems(res.data);
       setIsLoading(false);
     });
   }, []);
 
   useEffect(() => {
-    console.log('myFavItems', myFavItems);
+    // console.log('myFavItems', myFavItems);
   }, [myFavItems]);
 
   if (isLoading) {
-    return <FallBack />;
+    return (
+      <div data-testid={'123'}>
+        <FallBack />
+      </div>
+    );
   }
 
   return (
     <>
       <div className="container col-9">
         <div className="row justify-content-center iris-content-title-container ">
-          <h2 className="iris-profile-title">我的最愛</h2>
+          <h2 className="iris-profile-title" data-testid={'myFavSect-title'}>
+            我的最愛
+          </h2>
           <WaveLine />
         </div>
         <div className="iris-cards-container row">
