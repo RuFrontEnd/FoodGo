@@ -13,9 +13,6 @@ describe('測試myFavSect.js', () => {
   });
 
   test('是否myFavSect元件成功渲染', async () => {
-    // const productModule = {
-    //   getMyFavFn: getMyFav,
-    // };
     render(
       <Provider store={store}>
         <Router>
