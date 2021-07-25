@@ -146,6 +146,10 @@
   @include flex($df, $fdc, $jcc, $alc);
 }
 
+.ru-card-container-favorite{
+  width: 215px;
+}
+
 .ru-card-info-warp-favorite {
   flex-direction: column;
   justify-content: center;

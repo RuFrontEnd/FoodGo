@@ -71,7 +71,12 @@ function ProductCard(props) {
 
   return (
     <>
-      <div className="ru-card-container" id={id}>
+      <div
+        className={`ru-card-container ${
+          favoriteCardStatus && 'ru-card-container-favorite'
+        }`}
+        id={id}
+      >
         {/* item圖片s */}
         <section className="ru-card-img-warp">
           <Link className="ru-card-link" onClick={handelLink}>
@@ -168,7 +173,7 @@ function ProductCard(props) {
             </section>
           </div>
           <div
-            className={`ru-card-price${
+            className={`ru-card-price ${
               favoriteCardStatus && 'ru-card-price-favorite'
             }`}
           >
