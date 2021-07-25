@@ -99,7 +99,9 @@ function ProductCard(props) {
         {/* item圖片e */}
         {/* item資訊s */}
         <section
-          className={`ru-card-info-warp ${'ru-card-info-warp-favorite'}`}
+          className={`ru-card-info-warp ${
+            favoriteCardStatus && 'ru-card-info-warp-favorite'
+          }`}
         >
           <div className="ru-card-none">
             {/* 取間隔用 s */}
@@ -165,7 +167,11 @@ function ProductCard(props) {
               </div>
             </section>
           </div>
-          <div className={`ru-card-price ${'ru-card-price-favorite'}`}>
+          <div
+            className={`ru-card-price${
+              favoriteCardStatus && 'ru-card-price-favorite'
+            }`}
+          >
             <h3>${price}</h3>
           </div>
         </section>
