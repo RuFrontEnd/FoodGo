@@ -1,5 +1,5 @@
 @import "variable/variable.scss";
-.productCard-option-button{
+.productCard-option-button {
   padding: 10px 20px;
 }
 
@@ -144,4 +144,16 @@
   height: 100%;
   border-top: 1px solid $hr-Color;
   @include flex($df, $fdc, $jcc, $alc);
+}
+
+.ru-card-info-warp-favorite {
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+}
+
+.ru-card-price-favorite{
+  align-self: unset;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
