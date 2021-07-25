@@ -46,11 +46,7 @@ function MyFavSect(props) {
   }, [myFavItems]);
 
   if (isLoading) {
-    return (
-      <div data-testid={'123'}>
-        <FallBack />
-      </div>
-    );
+    return <FallBack />;
   }
 
   return (
@@ -73,6 +69,7 @@ function MyFavSect(props) {
               proudctId={myFavItem.sid}
               imgId={myFavItem.img_id}
               isFavorite={true}
+              favoriteCardStatus={true}
             />
           ))}
         </div>
