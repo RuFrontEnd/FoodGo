@@ -21,7 +21,7 @@
   // background-color: cornflowerblue;
   min-height: 532px;
   width: 100%;
-  @include flex($df, $fdr, space-between, $als);
+  @include flex($df, $fdr, flex-start, $als);
   flex-wrap: wrap;
 }
 
