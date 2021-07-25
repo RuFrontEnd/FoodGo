@@ -61,7 +61,7 @@ function MyFavSect(props) {
         <div className="iris-cards-container">
           {myFavItems.map((myFavItem) => (
             <ProductCard
-              id={`myFavSect-productCard-`}
+              className={`myFavSect-productCard`}
               title={myFavItem.productname}
               comment={myFavItem.contentNum}
               buy={myFavItem.purchased}
