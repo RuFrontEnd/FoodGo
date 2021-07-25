@@ -21,6 +21,7 @@ function ProductCard(props) {
   // imgId 產品圖片 => card-img-n n為1~9
   const {
     id,
+    className,
     title,
     comment,
     buy,
@@ -70,12 +71,11 @@ function ProductCard(props) {
   };
 
   return (
-    <>
+    <section className={className} id={id}>
       <div
         className={`ru-card-container ${
           favoriteCardStatus && 'ru-card-container-favorite'
         }`}
-        id={id}
       >
         {/* item圖片s */}
         <section className="ru-card-img-warp">
@@ -193,7 +193,7 @@ function ProductCard(props) {
         </section>
         {/* 加入購物車按鈕e */}
       </div>
-    </>
+    </section>
   );
 }
 export default withRouter(ProductCard);

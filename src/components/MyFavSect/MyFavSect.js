@@ -58,9 +58,10 @@ function MyFavSect(props) {
           </h2>
           <WaveLine />
         </div>
-        <div className="iris-cards-container row">
+        <div className="iris-cards-container">
           {myFavItems.map((myFavItem) => (
             <ProductCard
+              id={`myFavSect-productCard-`}
               title={myFavItem.productname}
               comment={myFavItem.contentNum}
               buy={myFavItem.purchased}
