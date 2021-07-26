@@ -8,11 +8,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from 'redux/store';
 import axios from 'axios';
-import MyFavSect from 'components/myFavSect/myFavSect';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from 'redux/store';
-import axios from 'axios';
 
 describe('測試增刪我的最愛', () => {
   test('是否增加我的最愛', async () => {
@@ -27,9 +22,11 @@ describe('測試增刪我的最愛', () => {
     render(
       <Provider store={store}>
         <Router>
-          <MyFavSect />
+          <MyFavSect testid={`myFavSect-productCard-2`} />
         </Router>
       </Provider>
     );
+    const myFavProductCard = screen.getByTestId(`myFavSect-productCard-2`);
+    expect(myFavProductCard).toBeInTheDocument();
   });
 });
