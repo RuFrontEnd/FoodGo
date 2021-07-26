@@ -48,7 +48,7 @@ describe('測試myFavSect.js', () => {
     );
 
     await getMyFav().then((res) => {
-      console.log('res.data', res.data);
+    //   console.log('res.data', res.data);
       const title = screen.getByTestId('myFavSect-title');
       expect(title).toBeInTheDocument();
     });

@@ -59,7 +59,7 @@ function MyFavSect(props) {
           <WaveLine />
         </div>
         <div className="iris-cards-container">
-          {myFavItems.map((myFavItem) => (
+          {myFavItems.map((myFavItem, myFavIndex) => (
             <ProductCard
               className={`myFavSect-productCard`}
               title={myFavItem.productname}
@@ -71,6 +71,7 @@ function MyFavSect(props) {
               imgId={myFavItem.img_id}
               isFavorite={true}
               favoriteCardStatus={true}
+              testid={`myFavSect-productCard-${myFavIndex}`}
             />
           ))}
         </div>

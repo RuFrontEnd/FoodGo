@@ -53,6 +53,7 @@ function ProductCard(props) {
     proudctId,
     isFavorite,
     favoriteCardStatus = false,
+    testid = '',
   } = props;
   // const isFavorite = favorites.some((favorite) => {
   //   return favorite.product_sid === productSid;
@@ -74,7 +75,7 @@ function ProductCard(props) {
   };
 
   return (
-    <section className={className} id={id}>
+    <section className={className} id={id} data-testid={testid}>
       <div
         className={`ru-card-container ${
           favoriteCardStatus && 'ru-card-container-favorite'
