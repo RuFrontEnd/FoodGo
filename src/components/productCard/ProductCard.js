@@ -10,8 +10,8 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { endpoint } from 'variable/variable';
 
-const addMyFav = (favItem) => {
-  fetch(`${endpoint}/member/addMyFav`, {
+export const addMyFav = (favItem) => {
+  return fetch(`${endpoint}/member/addMyFav`, {
     method: 'POST',
     body: JSON.stringify(favItem),
     headers: new Headers({
@@ -20,8 +20,8 @@ const addMyFav = (favItem) => {
   });
 };
 
-const deleteMyFav = (favItem) => {
-  fetch(`${endpoint}/member/deleteMyFav`, {
+export const deleteMyFav = (favItem) => {
+  return fetch(`${endpoint}/member/deleteMyFav`, {
     method: 'POST',
     body: JSON.stringify(favItem),
     headers: new Headers({
