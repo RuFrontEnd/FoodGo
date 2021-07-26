@@ -10,6 +10,26 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { endpoint } from 'variable/variable';
 
+const addMyFav = (favItem) => {
+  fetch(`${endpoint}/member/addMyFav`, {
+    method: 'POST',
+    body: JSON.stringify(favItem),
+    headers: new Headers({
+      'Content-Type': 'application/json',
+    }),
+  });
+};
+
+const deleteMyFav = (favItem) => {
+  fetch(`${endpoint}/member/deleteMyFav`, {
+    method: 'POST',
+    body: JSON.stringify(favItem),
+    headers: new Headers({
+      'Content-Type': 'application/json',
+    }),
+  });
+};
+
 function ProductCard(props) {
   // title 品名
   // comment 有幾則評論
@@ -50,24 +70,7 @@ function ProductCard(props) {
       product_sid: proudctId,
       currentUser: currentUser,
     };
-    if (!isFavActive) {
-      fetch(`${endpoint}/member/addMyFav`, {
-        method: 'POST',
-        body: JSON.stringify(newFavItem),
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
-      });
-    }
-    if (isFavActive) {
-      fetch(`${endpoint}/member/deleteMyFav`, {
-        method: 'POST',
-        body: JSON.stringify(newFavItem),
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
-      });
-    }
+    isFavActive ? deleteMyFav(newFavItem) : addMyFav(newFavItem);
   };
 
   return (
