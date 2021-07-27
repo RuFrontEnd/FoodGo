@@ -34,6 +34,7 @@ function CommodityList(props) {
             {/* {isShowNothing && <EmptyHint />} */}
             {commodities.map((commodity) => (
               <ProductCard
+                className={'commdityList-productCard'}
                 id={`ru-addCart-btn-${commodity.sid}`}
                 productSid={commodity.sid}
                 title={commodity.productname}
