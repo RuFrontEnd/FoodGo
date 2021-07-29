@@ -6,7 +6,8 @@ import 'rc-banner-anim/assets/index.css';
 import styled from 'styled-components';
 
 function JessMenuA(props) {
-  const {className, id, style} = props
+  const { className, id, style } = props;
+
   const MenuContainer = styled.div`
     background-color: $fff;
     width: 100%;
