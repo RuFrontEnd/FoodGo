@@ -24,32 +24,6 @@ $white: #ffffff;
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
 
-/* 通用样式, 下例 demo 单独使用都需要这块样式 */
-.jess-MenuBanner-elem {
-  width: 100%;
-  height: 65rem;
-  text-align: left;
-  position: relative;
-  overflow: hidden;
-}
-.jess-MenuBanner-elem .jess-MenuBanner-title {
-  color: rgb(46, 46, 46);
-  font-size: 3.6rem;
-  font-family: 'Noto Serif TC', serif;
-  font-weight: 600;
-  top: 60%;
-  left: 9%;
-}
-.jess-MenuBanner-elem .jess-MenuBanner-text {
-  color: $darkGary;
-  font-size: 3rem;
-  font-family: 'Noto Serif TC', serif;
-  font-weight: 500;
-  letter-spacing: 0.7rem;
-  line-height: 7rem;
-  top: 60%;
-  left: 9%;
-}
 .banner-anim-elem .bg {
   width: 100%;
   height: 55rem;

@@ -16,44 +16,56 @@ const BannerAnimtion = styled(BannerAnim)`
   display: block;
 `;
 
+const ElementContainer = styled(Element)`
+  width: 100%;
+  height: 65rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+`;
+
+const TweenOneTitle = styled(TweenOne)`
+  color: rgb(46, 46, 46);
+  font-size: 3.6rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 600;
+  top: 60%;
+  left: 9%;
+`;
+
+const TweenOneText = styled(TweenOne)`
+  color: $darkGary;
+  font-size: 3rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 500;
+  letter-spacing: 0.7rem;
+  line-height: 7rem;
+  top: 60%;
+  left: 9%;
+`;
+
 function JessMenuA(props) {
   const { className, id, style } = props;
 
   const BgElement = Element.BgElement;
-  const Demo = () => {
-    return (
-      <>
-        <MenuContainer style={style}>
-          {/* <div className="jess-MenuA-container-fluid"> */}
-          <div className="container-fluid jess-container">
-            {/* <BannerAnim autoPlay> */}
-            <BannerAnimtion autoPlay>
-              <Element prefixCls="jess-MenuBanner-elem" key="0">
-                <BgElement key="bg" className="bg" />
-                <TweenOne
-                  className="jess-MenuBanner-title"
-                  animation={{ x: -30, opacity: 0, type: 'from' }}
-                >
-                  生活不將就
-                </TweenOne>
-                <TweenOne
-                  className="jess-MenuBanner-text"
-                  animation={{ y: 40, opacity: 0, type: 'from', delay: 700 }}
-                >
-                  吃飯就該 好好講究
-                </TweenOne>
-              </Element>
-            </BannerAnimtion>
-            {/* </BannerAnim> */}
-          </div>
-          {/* </div> */}
-        </MenuContainer>
-      </>
-    );
-  };
+
   return (
     <>
-      <Demo />
+      <MenuContainer style={style}>
+        <BannerAnimtion autoPlay>
+          <ElementContainer key="0">
+            <BgElement key="bg" className="bg" />
+            <TweenOneTitle animation={{ x: -30, opacity: 0, type: 'from' }}>
+              生活不將就
+            </TweenOneTitle>
+            <TweenOneText
+              animation={{ y: 40, opacity: 0, type: 'from', delay: 700 }}
+            >
+              吃飯就該 好好講究
+            </TweenOneText>
+          </ElementContainer>
+        </BannerAnimtion>
+      </MenuContainer>
     </>
   );
 }
