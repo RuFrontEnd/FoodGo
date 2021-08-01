@@ -11,7 +11,7 @@ import ProductCard from 'components/productCard/ProductCard'; //productCard
 import FallBack from 'components/fallBack/FallBack';
 // import Star123 from './Images/star_orange.svg';
 import { useSelector } from 'react-redux';
-import axios from 'axios';
+import axios from 'axios'; 
 
 export const getMyFav = (currentUser) => {
   const url = 'http://localhost:5000/member/myFavList';
