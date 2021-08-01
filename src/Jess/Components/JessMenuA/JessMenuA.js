@@ -5,24 +5,29 @@ import TweenOne from 'rc-tween-one';
 import 'rc-banner-anim/assets/index.css';
 import styled from 'styled-components';
 
+const MenuContainer = styled.div`
+  width: 100%;
+  height: 55rem;
+  padding: 0;
+  ${(props) => props.style && props.style}
+`;
+
+const BannerAnimtion = styled(BannerAnim)`
+  display: block;
+`;
+
 function JessMenuA(props) {
   const { className, id, style } = props;
 
-  const MenuContainer = styled.div`
-    background-color: $fff;
-    width: 100%;
-    height: 55rem;
-    padding: 0;
-    ${style && style}
-  `;
   const BgElement = Element.BgElement;
   const Demo = () => {
     return (
       <>
-        <MenuContainer>
+        <MenuContainer style={style}>
           {/* <div className="jess-MenuA-container-fluid"> */}
           <div className="container-fluid jess-container">
-            <BannerAnim prefixCls="jess-MenuBanner" autoPlay>
+            {/* <BannerAnim autoPlay> */}
+            <BannerAnimtion autoPlay>
               <Element prefixCls="jess-MenuBanner-elem" key="0">
                 <BgElement key="bg" className="bg" />
                 <TweenOne
@@ -38,7 +43,8 @@ function JessMenuA(props) {
                   吃飯就該 好好講究
                 </TweenOne>
               </Element>
-            </BannerAnim>
+            </BannerAnimtion>
+            {/* </BannerAnim> */}
           </div>
           {/* </div> */}
         </MenuContainer>
