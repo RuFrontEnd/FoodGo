@@ -8,6 +8,9 @@ import 'rc-banner-anim/assets/index.css';
 import ArrowRight from 'Share/Components/ArrowRight/ArrowRight';
 import styled from 'styled-components/macro';
 import { orange } from 'variable/variable';
+import dailyMenuMainImg from 'assets/jpg/dailyMenu-mainImg.jpg';
+
+const BgElement = Element.BgElement;
 
 const Container = styled.div`
   background-color: $white;
@@ -28,26 +31,61 @@ const Title = styled.p`
   letter-spacing: 1rem;
 `;
 
+const Content = styled.p`
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  color: $darkGary;
+  line-height: 2rem;
+`;
+
+const ItemContainer = styled.div`
+  display: block;
+`;
+
+const MainItem = styled.div`
+  display: block;
+`;
+
+const MainItemBgElement = styled(BgElement)`
+  background: url('${(props) => props.imgUrl}') no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 100%;
+  height: 50rem;
+  position: relative;
+`;
+
+const MainItemTweenOne = styled(TweenOne)`
+  color: #ffffff;
+  font-size: 3rem;
+  font-family: 'Noto Serif TC';
+  font-weight: 600;
+  letter-spacing: 1rem;
+  position: absolute !important;
+  text-shadow: #000 1px 1px 5px;
+  top: 40%;
+  left: 35%;
+  z-index: 20;
+`;
+
 function DailyMenu(props) {
-  const BgElement = Element.BgElement;
   return (
     <>
       <Container className="container">
         <Wrap>
-          <Title className="jess-text-30orange text-center">日常經典</Title>
-          <p className="jess-text-15Gray text-center">
+          <Title className="text-center">日常經典</Title>
+          <Content className="text-center">
             中央廚房當日新鮮現做，嚴選新鮮食材讓您吃得到食材原形
             <br />
             熱量完整揭露輕鬆計算、詳細的食材來源
-          </p>
+          </Content>
 
-          <div className="row mt-5 ">
-            <div class="col-12 col-sm-6 jess-banner-anim ">
+          <ItemContainer className="row mt-5">
+            <MainItem className="col-12 col-sm-6">
               <Link to="/productList">
-                <BannerAnim prefixCls="banner-user">
+                <BannerAnim>
                   <Element
-                    key="aaa"
-                    prefixCls="banner-user-elem"
+                    key="dailyMenu-element"
                     followParallax={{
                       delay: 1000,
                       data: [
@@ -56,18 +94,20 @@ function DailyMenu(props) {
                       ],
                     }}
                   >
-                    <BgElement className="jess-menuB-pic1"></BgElement>
-                    <TweenOne
-                      className="jess-menuB-BentoText"
+                    <MainItemBgElement
+                      imgUrl={dailyMenuMainImg}
+                    ></MainItemBgElement>
+                    <MainItemTweenOne
+                      // className={'jess-menuB-BentoText'}
                       animation={{ y: 20, opacity: 0, type: 'from' }}
                       id="title"
                     >
                       客製化便當
-                    </TweenOne>
+                    </MainItemTweenOne>
                   </Element>
                 </BannerAnim>
               </Link>
-            </div>
+            </MainItem>
 
             <div className="col-12 col-sm-6 d-flex jess-MenuB-RWD">
               <div className="row d-flex  align-content-between">
@@ -111,7 +151,7 @@ function DailyMenu(props) {
                 </div>
               </div>
             </div>
-          </div>
+          </ItemContainer>
           <Link to="/productList">
             <div className="jess-menuBtn float-right mt-5">
               <p className="jess-p">低GI便當</p>
