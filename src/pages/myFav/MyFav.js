@@ -9,7 +9,7 @@ import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import 'pages/myFav/myFav.scss';
 import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'; 
 
 function MyFav(props) {
   const isLogin = useSelector((state) => state.member.isLogin);
