@@ -17,6 +17,7 @@ const Container = styled.div`
   width: 100%;
   height: 85rem;
   padding: 0;
+  ${(props) => props.pattern && props.pattern}
 `;
 
 const Wrap = styled.div`
@@ -69,9 +70,10 @@ const MainItemTweenOne = styled(TweenOne)`
 `;
 
 function DailyMenu(props) {
+  const { style } = props;
   return (
     <>
-      <Container className="container">
+      <Container className="container" pattern={style}>
         <Wrap>
           <Title className="text-center">日常經典</Title>
           <Content className="text-center">
