@@ -18,7 +18,6 @@ function JessMenu(props) {
 
   return (
     <>
-      {/* <VNavbar {...props} /> */}
       <MenuBanner />
       <JessMenuB id={id} />
       <JessMenuC id={id} />
