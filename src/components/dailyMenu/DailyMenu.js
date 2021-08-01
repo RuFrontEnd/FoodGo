@@ -98,7 +98,6 @@ function DailyMenu(props) {
                       imgUrl={dailyMenuMainImg}
                     ></MainItemBgElement>
                     <MainItemTweenOne
-                      // className={'jess-menuB-BentoText'}
                       animation={{ y: 20, opacity: 0, type: 'from' }}
                       id="title"
                     >
