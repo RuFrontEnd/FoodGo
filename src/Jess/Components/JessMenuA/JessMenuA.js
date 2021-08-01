@@ -3,7 +3,7 @@ import './JessMenuA.scss';
 import BannerAnim, { Element } from 'rc-banner-anim';
 import TweenOne from 'rc-tween-one';
 import 'rc-banner-anim/assets/index.css';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const MenuContainer = styled.div`
   width: 100%;
