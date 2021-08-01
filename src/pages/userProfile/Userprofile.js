@@ -20,7 +20,6 @@ function UserProfile(props) {
   const {
     setShowBar,
     setShowLoginModal,
-    // couponStatus,
     setCouponStatus,
     couponOneStatus,
     setCouponOneStatus,
