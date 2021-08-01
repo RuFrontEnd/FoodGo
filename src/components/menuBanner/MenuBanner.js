@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './JessMenuA.scss';
 import BannerAnim, { Element } from 'rc-banner-anim';
 import TweenOne from 'rc-tween-one';
 import 'rc-banner-anim/assets/index.css';
 import styled from 'styled-components/macro';
+import MenuBannerImg from 'assets/jpg/menuBanner.jpg';
+
+const BgElementInstance = Element.BgElement;
 
 const MenuContainer = styled.div`
   width: 100%;
@@ -22,6 +25,19 @@ const ElementContainer = styled(Element)`
   text-align: left;
   position: relative;
   overflow: hidden;
+`;
+
+const BgElement = styled(BgElementInstance)`
+  .banner-anim-elem & {
+    width: 100%;
+    height: 55rem;
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    overflow: hidden;
+    background: url(${MenuBannerImg}) repeat;
+    background-size: cover;
+  }
 `;
 
 const TweenOneTitle = styled(TweenOne)`
@@ -45,16 +61,14 @@ const TweenOneText = styled(TweenOne)`
 `;
 
 function MenuBanner(props) {
-  const { className, id, style } = props;
-
-  const BgElement = Element.BgElement;
+  const { style } = props;
 
   return (
     <>
       <MenuContainer style={style}>
         <BannerAnimtion autoPlay>
           <ElementContainer key="0">
-            <BgElement key="bg" className="bg" />
+            <BgElement key="bg" Bgurl={MenuBannerImg} />
             <TweenOneTitle animation={{ x: -30, opacity: 0, type: 'from' }}>
               生活不將就
             </TweenOneTitle>

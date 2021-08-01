@@ -24,16 +24,16 @@ $white: #ffffff;
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
 
-.banner-anim-elem .bg {
-  width: 100%;
-  height: 55rem;
-  position: absolute;
-  top: 10rem;
-  left: 0;
-  overflow: hidden;
-  background: url('./images/jess-MenuBanner2.jpg') repeat;
-  background-size: cover;
-}
+// .banner-anim-elem .bg {
+//   width: 100%;
+//   height: 55rem;
+//   position: absolute;
+//   top: 10rem;
+//   left: 0;
+//   overflow: hidden;
+//   background: url('./images/jess-MenuBanner2.jpg') repeat;
+//   background-size: cover;
+// }
 .jess-container {
   width: 100%;
   padding: 0 !important;
@@ -88,15 +88,15 @@ $white: #ffffff;
     line-height: 7rem;
     letter-spacing: 0.3rem;
   }
-  .banner-anim-elem .bg {
-    width: 100%;
-    height: 100%;
-    position: absolute;
+  // .banner-anim-elem .bg {
+  //   width: 100%;
+  //   height: 100%;
+  //   position: absolute;
 
-    overflow: hidden;
-    background: url('./images/jess-MenuBanner2.jpg') no-repeat center;
-    background-size: cover;
-  }
+  //   overflow: hidden;
+  //   background: url('./images/jess-MenuBanner2.jpg') no-repeat center;
+  //   background-size: cover;
+  // }
   .jess-container {
     width: 100vw;
     margin-top: 15rem;
