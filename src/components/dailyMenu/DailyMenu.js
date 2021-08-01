@@ -6,13 +6,25 @@ import BannerAnim, { Element } from 'rc-banner-anim';
 import TweenOne from 'rc-tween-one';
 import 'rc-banner-anim/assets/index.css';
 import ArrowRight from 'Share/Components/ArrowRight/ArrowRight';
+import styled from 'styled-components/macro';
+
+const Container = styled.div`
+  background-color: $white;
+  width: 100%;
+  height: 85rem;
+  padding: 0;
+`;
+
+const Wrap = styled.div`
+  display: block;
+`;
 
 function DailyMenu(props) {
   const BgElement = Element.BgElement;
   return (
     <>
-      <div className="container-fluid jess-MenuB-container-fluid ">
-        <div className="container   mb-5">
+      <Container className="container">
+        <Wrap>
           <p className="jess-text-30orange text-center">日常經典</p>
           <p className="jess-text-15Gray text-center">
             中央廚房當日新鮮現做，嚴選新鮮食材讓您吃得到食材原形
@@ -35,11 +47,7 @@ function DailyMenu(props) {
                       ],
                     }}
                   >
-                    <BgElement
-                      className="jess-menuB-pic1"
-                      // key="bg"
-                      // id="bg"
-                    ></BgElement>
+                    <BgElement className="jess-menuB-pic1"></BgElement>
                     <TweenOne
                       className="jess-menuB-BentoText"
                       animation={{ y: 20, opacity: 0, type: 'from' }}
@@ -104,13 +112,8 @@ function DailyMenu(props) {
           <div className="jess-Menu-bottomBorder">
             <img alt="" src={brownBorder}></img>
           </div>
-        </div>
-        {/* <div className="jess-menuBtn">
-          <button className="addCart-btn addCart-btn-n" text="商品列表">
-            商品列表
-          </button>
-        </div> */}
-      </div>
+        </Wrap>
+      </Container>
     </>
   );
 }

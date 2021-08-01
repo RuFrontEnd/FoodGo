@@ -5,6 +5,7 @@ import DailyMenu from 'components/dailyMenu/DailyMenu';
 import JessMenuC from '../Components/JessMenuC/JessMenuC';
 import JessMenuD from '../Components/JessMenuD/JessMenuD';
 import ToTop from 'Share/Components/ToTopButton/ScrollButton';
+import styled from 'styled-components/macro';
 
 function JessMenu(props) {
   const { setShowBar } = props;
@@ -15,9 +16,16 @@ function JessMenu(props) {
 
   let { id } = useParams();
 
+  const MenuBannerStyle = `
+  margin-bottom:50px;
+  @media (max-width: 768px) {
+    background-color: red;
+  };
+  `;
+
   return (
     <>
-      <MenuBanner />
+      <MenuBanner style={MenuBannerStyle} />
       <DailyMenu id={id} />
       <JessMenuC id={id} />
       <JessMenuD />

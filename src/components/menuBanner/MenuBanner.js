@@ -11,7 +11,7 @@ const MenuContainer = styled.div`
   width: 100%;
   height: 55rem;
   padding: 0;
-  ${(props) => props.style && props.style}
+  ${(props) => props.pattern && props.pattern}
 `;
 
 const BannerAnimtion = styled(BannerAnim)`
@@ -64,7 +64,7 @@ function MenuBanner(props) {
 
   return (
     <>
-      <MenuContainer style={style}>
+      <MenuContainer pattern={style}>
         <BannerAnimtion autoPlay>
           <ElementContainer key="0">
             <BgElement key="bg" Bgurl={MenuBannerImg}>
