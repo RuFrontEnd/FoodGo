@@ -7,6 +7,7 @@ import TweenOne from 'rc-tween-one';
 import 'rc-banner-anim/assets/index.css';
 import ArrowRight from 'Share/Components/ArrowRight/ArrowRight';
 import styled from 'styled-components/macro';
+import { orange } from 'variable/variable';
 
 const Container = styled.div`
   background-color: $white;
@@ -19,13 +20,21 @@ const Wrap = styled.div`
   display: block;
 `;
 
+const Title = styled.p`
+  font-size: 3rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+  color: ${orange};
+  letter-spacing: 1rem;
+`;
+
 function DailyMenu(props) {
   const BgElement = Element.BgElement;
   return (
     <>
       <Container className="container">
         <Wrap>
-          <p className="jess-text-30orange text-center">日常經典</p>
+          <Title className="jess-text-30orange text-center">日常經典</Title>
           <p className="jess-text-15Gray text-center">
             中央廚房當日新鮮現做，嚴選新鮮食材讓您吃得到食材原形
             <br />
