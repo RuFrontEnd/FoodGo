@@ -9,6 +9,7 @@ import ArrowRight from 'Share/Components/ArrowRight/ArrowRight';
 import styled from 'styled-components/macro';
 import { orange } from 'variable/variable';
 import dailyMenuMainImg from 'assets/jpg/dailyMenu-mainImg.jpg';
+import MenuSubItemCard from 'components/menuSubItemCard/MenuSubItemCard';
 
 const BgElement = Element.BgElement;
 
@@ -128,16 +129,7 @@ function DailyMenu(props) {
 
             <SubItem className="col-12 col-sm-6 d-flex justify-content-center">
               <SubItemRow className="d-flex flex-column justify-content-between">
-                <div className="jess-view-menuBpic2">
-                  <Link to="/bento/0">
-                    <div className="jess-menuB-pic2"></div>
-                  </Link>
-                  <div class="mask">
-                    <SubItemTitle>中歐香料嫩雞胸</SubItemTitle>
-                    <SubItemPrice>$170</SubItemPrice>
-                  </div>
-                </div>
-
+                <MenuSubItemCard />
                 <div className="jess-view-menuBpic3">
                   <Link to="/bento/1">
                     <div className="jess-menuB-pic3"></div>

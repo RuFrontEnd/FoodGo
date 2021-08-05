@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import 'component/menuSubItemCard/menuSubItemCard.scss';
+import 'components/menuSubItemCard/menuSubItemCard.scss';
 import { Link } from 'react-router-dom';
 import brownBorder from 'Jess/Components/images/SVG/brownBorder.svg';
 import BannerAnim, { Element } from 'rc-banner-anim';
@@ -89,100 +89,15 @@ function MenuSubItemCard(props) {
   const { style } = props;
   return (
     <>
-      <Container className="container" pattern={style}>
-        <Wrap>
-          <Title className="text-center">日常經典</Title>
-          <Content className="text-center">
-            中央廚房當日新鮮現做，嚴選新鮮食材讓您吃得到食材原形
-            <br />
-            熱量完整揭露輕鬆計算、詳細的食材來源
-          </Content>
-
-          <ItemContainer className="row mt-5">
-            <MainItem className="col-12 col-sm-6">
-              <Link to="/productList">
-                <BannerAnim>
-                  <Element
-                    key="dailyMenu-element"
-                    followParallax={{
-                      delay: 1000,
-                      data: [
-                        { id: 'title', value: 50, type: 'x' },
-                        { id: 'content', value: -30, type: 'x' },
-                      ],
-                    }}
-                  >
-                    <MainItemBgElement
-                      imgUrl={dailyMenuMainImg}
-                    ></MainItemBgElement>
-                    <MainItemTweenOne
-                      animation={{ y: 20, opacity: 0, type: 'from' }}
-                      id="title"
-                    >
-                      客製化便當
-                    </MainItemTweenOne>
-                  </Element>
-                </BannerAnim>
-              </Link>
-            </MainItem>
-
-            <SubItem className="col-12 col-sm-6 d-flex justify-content-center">
-              <SubItemRow className="d-flex flex-column justify-content-between">
-                <div className="jess-view-menuBpic2">
-                  <Link to="/bento/0">
-                    <div className="jess-menuB-pic2"></div>
-                  </Link>
-                  <div class="mask">
-                    <SubItemTitle>中歐香料嫩雞胸</SubItemTitle>
-                    <SubItemPrice>$170</SubItemPrice>
-                  </div>
-                </div>
-
-                <div className="jess-view-menuBpic3">
-                  <Link to="/bento/1">
-                    <div className="jess-menuB-pic3"></div>
-                  </Link>
-                  <div class="mask">
-                    <SubItemTitle>日式燒雞腿</SubItemTitle>
-                    <SubItemPrice>$150</SubItemPrice>
-                  </div>
-                </div>
-              </SubItemRow>
-
-              <SubItemRow className="d-flex flex-column justify-content-between">
-                <div className="jess-view-menuBpic4">
-                  <Link to="/bento/6">
-                    <div className="jess-menuB-pic4"></div>
-                  </Link>
-                  <div class="mask">
-                    <SubItemTitle>頂級熟成菲力牛排</SubItemTitle>
-                    <SubItemPrice>$230</SubItemPrice>
-                  </div>
-                </div>
-
-                <div className="jess-view-menuBpic5">
-                  <Link to="/bento/3">
-                    <div className="jess-menuB-pic5"></div>
-                  </Link>
-                  <div class="mask">
-                    <SubItemTitle>熱帶火烤萊姆蝦</SubItemTitle>
-                    <SubItemPrice>$200</SubItemPrice>
-                  </div>
-                </div>
-              </SubItemRow>
-            </SubItem>
-          </ItemContainer>
-          <Link to="/productList">
-            <div className="jess-menuBtn float-right mt-5">
-              <p className="jess-p">低GI便當</p>
-              <ArrowRight />
-            </div>
-          </Link>
-          <div className="jess-Menu-bottomBorder">
-            <img alt="" src={brownBorder}></img>
-          </div>
-        </Wrap>
-      </Container>
+      <div className="jess-view-menuBpic2">
+        <Link to="/bento/0">
+          <div className="jess-menuB-pic2"></div>
+        </Link>
+        <div class="mask">
+          <SubItemTitle>中歐香料嫩雞胸</SubItemTitle>
+          <SubItemPrice>$170</SubItemPrice>
+        </div>
+      </div>
     </>
   );
 }
