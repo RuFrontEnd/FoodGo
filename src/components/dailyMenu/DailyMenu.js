@@ -110,7 +110,7 @@ function DailyMenu(props) {
               </Link>
             </MainItem>
 
-            <div className="col-12 col-sm-6 d-flex jess-MenuB-RWD">
+            <div className="col-12 col-sm-6 d-flex justify-content-center jess-MenuB-RWD">
               <div className="row d-flex  align-content-between">
                 <div className="jess-view-menuBpic2">
                   <Link to="/bento/0">
@@ -121,6 +121,7 @@ function DailyMenu(props) {
                     <p>$170</p>
                   </div>
                 </div>
+
                 <div className="jess-view-menuBpic3">
                   <Link to="/bento/1">
                     <div className="jess-menuB-pic3"></div>
@@ -131,6 +132,7 @@ function DailyMenu(props) {
                   </div>
                 </div>
               </div>
+
               <div className="row d-flex  align-content-between">
                 <div className="jess-view-menuBpic4">
                   <Link to="/bento/6">
@@ -141,6 +143,7 @@ function DailyMenu(props) {
                     <p>$230</p>
                   </div>
                 </div>
+
                 <div className="jess-view-menuBpic5">
                   <Link to="/bento/3">
                     <div className="jess-menuB-pic5"></div>
