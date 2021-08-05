@@ -77,6 +77,14 @@ const SubItemRow = styled.div`
   display: flex;
 `;
 
+const SubItemTitle = styled.div`
+  display: block;
+`;
+
+const SubItemPrice = styled.div`
+  display: block;
+`;
+
 function DailyMenu(props) {
   const { style } = props;
   return (
@@ -125,8 +133,8 @@ function DailyMenu(props) {
                     <div className="jess-menuB-pic2"></div>
                   </Link>
                   <div class="mask">
-                    <h2>中歐香料嫩雞胸</h2>
-                    <p>$170</p>
+                    <SubItemTitle>中歐香料嫩雞胸</SubItemTitle>
+                    <SubItemPrice>$170</SubItemPrice>
                   </div>
                 </div>
 
@@ -135,8 +143,8 @@ function DailyMenu(props) {
                     <div className="jess-menuB-pic3"></div>
                   </Link>
                   <div class="mask">
-                    <h2>日式燒雞腿</h2>
-                    <p>$150</p>
+                    <SubItemTitle>日式燒雞腿</SubItemTitle>
+                    <SubItemPrice>$150</SubItemPrice>
                   </div>
                 </div>
               </SubItemRow>
@@ -147,8 +155,8 @@ function DailyMenu(props) {
                     <div className="jess-menuB-pic4"></div>
                   </Link>
                   <div class="mask">
-                    <h2>頂級熟成菲力牛排</h2>
-                    <p>$230</p>
+                    <SubItemTitle>頂級熟成菲力牛排</SubItemTitle>
+                    <SubItemPrice>$230</SubItemPrice>
                   </div>
                 </div>
 
@@ -157,8 +165,8 @@ function DailyMenu(props) {
                     <div className="jess-menuB-pic5"></div>
                   </Link>
                   <div class="mask">
-                    <h2>熱帶火烤萊姆蝦</h2>
-                    <p>$200</p>
+                    <SubItemTitle>熱帶火烤萊姆蝦</SubItemTitle>
+                    <SubItemPrice>$200</SubItemPrice>
                   </div>
                 </div>
               </SubItemRow>
