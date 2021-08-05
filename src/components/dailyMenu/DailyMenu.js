@@ -69,6 +69,14 @@ const MainItemTweenOne = styled(TweenOne)`
   z-index: 20;
 `;
 
+const SubItem = styled.div`
+  display: flex;
+`;
+
+const SubItemRow = styled.div`
+  display: flex;
+`;
+
 function DailyMenu(props) {
   const { style } = props;
   return (
@@ -110,8 +118,8 @@ function DailyMenu(props) {
               </Link>
             </MainItem>
 
-            <div className="col-12 col-sm-6 d-flex justify-content-center jess-MenuB-RWD">
-              <div className="d-flex flex-column align-content-between">
+            <SubItem className="col-12 col-sm-6 d-flex justify-content-center">
+              <SubItemRow className="d-flex flex-column justify-content-between">
                 <div className="jess-view-menuBpic2">
                   <Link to="/bento/0">
                     <div className="jess-menuB-pic2"></div>
@@ -131,9 +139,9 @@ function DailyMenu(props) {
                     <p>$150</p>
                   </div>
                 </div>
-              </div>
+              </SubItemRow>
 
-              <div className="d-flex flex-column align-content-between">
+              <SubItemRow className="d-flex flex-column justify-content-between">
                 <div className="jess-view-menuBpic4">
                   <Link to="/bento/6">
                     <div className="jess-menuB-pic4"></div>
@@ -153,8 +161,8 @@ function DailyMenu(props) {
                     <p>$200</p>
                   </div>
                 </div>
-              </div>
-            </div>
+              </SubItemRow>
+            </SubItem>
           </ItemContainer>
           <Link to="/productList">
             <div className="jess-menuBtn float-right mt-5">
