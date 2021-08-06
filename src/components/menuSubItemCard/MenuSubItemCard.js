@@ -4,9 +4,6 @@ import styled from 'styled-components/macro';
 
 const Container = styled.div`
   position: relative;
-  width: 100%;
-  height: 85rem;
-  padding: 0;
 `;
 
 const Title = styled.div`
@@ -30,17 +27,19 @@ const Mask = styled.div`
   transform: translateY(50px);
   transition: all 0.5s ease-in-out;
   position: absolute;
-  bottom: 28rem;
+  top: 0;
+  left: 0;
   width: 23rem;
   height: 7rem;
   overflow: hidden;
+  z-index: 10;
 
-  &:hover {
+  /* &:hover {
     opacity: 1;
     transform: translateY(10px);
     background-color: rgba(255, 255, 255, 0.5);
     height: 6rem;
-  }
+  } */
 `;
 
 function MenuSubItemCard(props) {
