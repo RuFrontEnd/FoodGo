@@ -1,23 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import 'components/menuSubItemCard/menuSubItemCard.scss';
 import { Link } from 'react-router-dom';
-import brownBorder from 'Jess/Components/images/SVG/brownBorder.svg';
-import BannerAnim, { Element } from 'rc-banner-anim';
-import TweenOne from 'rc-tween-one';
-import 'rc-banner-anim/assets/index.css';
-import ArrowRight from 'Share/Components/ArrowRight/ArrowRight';
 import styled from 'styled-components/macro';
-import { orange } from 'variable/variable';
-import dailyMenuMainImg from 'assets/jpg/dailyMenu-mainImg.jpg';
-
-const BgElement = Element.BgElement;
 
 const Container = styled.div`
   background-color: $white;
   width: 100%;
   height: 85rem;
   padding: 0;
-  ${(props) => props.pattern && props.pattern}
 `;
 
 const Title = styled.div`
@@ -26,6 +15,14 @@ const Title = styled.div`
 
 const Price = styled.div`
   display: block;
+`;
+
+const Picture = styled.img`
+  background-position: center center;
+  background-size: cover;
+  width: 23rem;
+  height: 23rem;
+  position: relative;
 `;
 
 const Mask = styled.div`
@@ -47,11 +44,11 @@ const Mask = styled.div`
 `;
 
 function MenuSubItemCard(props) {
-  const { style, path, title, price } = props;
+  const { path, title, price } = props;
   return (
     <Container>
       <Link to={path}>
-        <div className="jess-menuB-pic2"></div>
+        <Picture />
       </Link>
       <Mask>
         <Title>{title}</Title>
