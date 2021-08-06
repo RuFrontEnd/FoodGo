@@ -129,13 +129,7 @@ function DailyMenu(props) {
 
             <SubItem className="col-12 col-sm-6 d-flex justify-content-center">
               <SubItemRow className="d-flex flex-column justify-content-between">
-
-
-
-                
-                <MenuSubItemCard />
-
-
+                <MenuSubItemCard path={'/bento/0'} />
 
                 <div className="jess-view-menuBpic3">
                   <Link to="/bento/1">

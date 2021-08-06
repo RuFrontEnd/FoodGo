@@ -20,10 +20,6 @@ const Container = styled.div`
   ${(props) => props.pattern && props.pattern}
 `;
 
-const Wrap = styled.div`
-  display: block;
-`;
-
 const Title = styled.div`
   display: block;
 `;
@@ -41,18 +37,25 @@ const Mask = styled.div`
   width: 23rem;
   height: 7rem;
   overflow: hidden;
+
+  &:hover {
+    opacity: 1;
+    transform: translateY(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 6rem;
+  }
 `;
 
 function MenuSubItemCard(props) {
-  const { style, path } = props;
+  const { style, path, title, price } = props;
   return (
     <Container>
       <Link to={path}>
         <div className="jess-menuB-pic2"></div>
       </Link>
       <Mask>
-        <Title>中歐香料嫩雞胸</Title>
-        <Price>$170</Price>
+        <Title>{title}</Title>
+        <Price>${price}</Price>
       </Mask>
     </Container>
   );
