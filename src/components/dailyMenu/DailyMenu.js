@@ -10,6 +10,7 @@ import styled from 'styled-components/macro';
 import { orange } from 'variable/variable';
 import dailyMenuMainImg from 'assets/jpg/dailyMenu-mainImg.jpg';
 import MenuSubItemCard from 'components/menuSubItemCard/MenuSubItemCard';
+import bentoChickenBreast from 'assets/jpg/00_bento-chicken-breast.jpg';
 
 const BgElement = Element.BgElement;
 
@@ -129,7 +130,7 @@ function DailyMenu(props) {
 
             <SubItem className="col-12 col-sm-6 d-flex justify-content-center">
               <SubItemRow className="d-flex flex-column justify-content-between">
-                <MenuSubItemCard path={'/bento/0'} />
+                <MenuSubItemCard path={'/bento/0'} photo={bentoChickenBreast} />
 
                 <div className="jess-view-menuBpic3">
                   <Link to="/bento/1">

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 
 const Container = styled.div`
-  background-color: $white;
+  position: relative;
   width: 100%;
   height: 85rem;
   padding: 0;
@@ -18,14 +18,14 @@ const Price = styled.div`
 `;
 
 const Picture = styled.img`
-  background-position: center center;
-  background-size: cover;
+  object-fit: cover;
   width: 23rem;
   height: 23rem;
   position: relative;
 `;
 
 const Mask = styled.div`
+  background-color: red;
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.5s ease-in-out;
@@ -44,11 +44,11 @@ const Mask = styled.div`
 `;
 
 function MenuSubItemCard(props) {
-  const { path, title, price } = props;
+  const { path, photo, title, price } = props;
   return (
     <Container>
       <Link to={path}>
-        <Picture />
+        <Picture src={photo} />
       </Link>
       <Mask>
         <Title>{title}</Title>
