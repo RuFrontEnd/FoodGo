@@ -24,81 +24,37 @@ const Wrap = styled.div`
   display: block;
 `;
 
-const Title = styled.p`
-  font-size: 3rem;
-  font-family: 'Noto Serif TC', serif;
-  font-weight: bold;
-  color: ${orange};
-  letter-spacing: 1rem;
-`;
-
-const Content = styled.p`
-  font-size: 1.5rem;
-  font-family: 'Noto Sans TC';
-  color: $darkGary;
-  line-height: 2rem;
-`;
-
-const ItemContainer = styled.div`
+const Title = styled.div`
   display: block;
 `;
 
-const MainItem = styled.div`
+const Price = styled.div`
   display: block;
 `;
 
-const MainItemBgElement = styled(BgElement)`
-  background: url('${(props) => props.imgUrl}') no-repeat;
-  background-position: center center;
-  background-size: contain;
-  width: 100%;
-  height: 50rem;
-  position: relative;
-`;
-
-const MainItemTweenOne = styled(TweenOne)`
-  color: #ffffff;
-  font-size: 3rem;
-  font-family: 'Noto Serif TC';
-  font-weight: 600;
-  letter-spacing: 1rem;
-  position: absolute !important;
-  text-shadow: #000 1px 1px 5px;
-  top: 40%;
-  left: 35%;
-  z-index: 20;
-`;
-
-const SubItem = styled.div`
-  display: flex;
-`;
-
-const SubItemRow = styled.div`
-  display: flex;
-`;
-
-const SubItemTitle = styled.div`
-  display: block;
-`;
-
-const SubItemPrice = styled.div`
-  display: block;
+const Mask = styled.div`
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  bottom: 28rem;
+  width: 23rem;
+  height: 7rem;
+  overflow: hidden;
 `;
 
 function MenuSubItemCard(props) {
-  const { style } = props;
+  const { style, path } = props;
   return (
-    <>
-      <div className="jess-view-menuBpic2">
-        <Link to="/bento/0">
-          <div className="jess-menuB-pic2"></div>
-        </Link>
-        <div class="mask">
-          <SubItemTitle>中歐香料嫩雞胸</SubItemTitle>
-          <SubItemPrice>$170</SubItemPrice>
-        </div>
-      </div>
-    </>
+    <Container>
+      <Link to={path}>
+        <div className="jess-menuB-pic2"></div>
+      </Link>
+      <Mask>
+        <Title>中歐香料嫩雞胸</Title>
+        <Price>$170</Price>
+      </Mask>
+    </Container>
   );
 }
 
