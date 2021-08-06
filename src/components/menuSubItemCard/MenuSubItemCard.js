@@ -23,11 +23,12 @@ const Mask = styled.div`
   align-items: center;
   padding: 0px 30px;
   width: 100%;
-  height: 6rem;
+  height: 8.5rem;
   opacity: 0;
   font-size: 15px;
   bottom: -6rem;
   left: 0;
+  transform: translateY(0px);
   transition: all 0.5s ease-out;
 `;
 
@@ -37,6 +38,7 @@ const Container = styled.section`
 
   &:hover ${Mask} {
     opacity: 1;
+    height: 6.5rem;
     bottom: 0rem;
     background-color: rgba(255, 255, 255, 0.5);
   }
