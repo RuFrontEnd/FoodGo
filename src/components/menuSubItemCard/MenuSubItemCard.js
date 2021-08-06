@@ -2,12 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 
-const Container = styled.div`
-  position: relative;
-`;
-
 const Title = styled.div`
-  display: block;
+  margin-bottom: 2.5px;
 `;
 
 const Price = styled.div`
@@ -15,31 +11,39 @@ const Price = styled.div`
 `;
 
 const Picture = styled.img`
-  object-fit: cover;
+  position: relative;
   width: 23rem;
   height: 23rem;
-  position: relative;
+  object-fit: cover;
 `;
 
 const Mask = styled.div`
-  background-color: red;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.5s ease-in-out;
   position: absolute;
-  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 0px 30px;
+  width: 100%;
+  height: 6rem;
+  opacity: 0;
+  font-size: 15px;
+  bottom: -6rem;
   left: 0;
-  width: 23rem;
-  height: 7rem;
-  overflow: hidden;
-  z-index: 10;
+  transition: all 0.5s ease-out;
+`;
 
-  /* &:hover {
+const Container = styled.section`
+  position: relative;
+  overflow: hidden;
+
+  &:hover ${Mask} {
     opacity: 1;
-    transform: translateY(10px);
+    bottom: 0rem;
     background-color: rgba(255, 255, 255, 0.5);
-    height: 6rem;
-  } */
+  }
+`;
+
+const Info = styled.div`
+  display: block;
 `;
 
 function MenuSubItemCard(props) {
@@ -50,8 +54,10 @@ function MenuSubItemCard(props) {
         <Picture src={photo} />
       </Link>
       <Mask>
-        <Title>{title}</Title>
-        <Price>${price}</Price>
+        <Info>
+          <Title>{title}</Title>
+          <Price>${price}</Price>
+        </Info>
       </Mask>
     </Container>
   );
