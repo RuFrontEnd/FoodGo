@@ -8,6 +8,7 @@ import GetCouponBox from 'components/getCouponBox/GetCouponBox';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import FallBack from 'components/fallBack/FallBack';
+import useAxios from 'hooks/useAxios';
 
 function UserProfile(props) {
   const isLogin = useSelector((state) => state.member.isLogin);
@@ -16,7 +17,7 @@ function UserProfile(props) {
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [showGetCouponBox, setShowGetCouponBox] = useState(false);
   const [beastiePointAdd, setBeastiePointAdd] = useState();
-  const [userInfo, setUserInfo] = useState([]);
+  // const [userInfo, setUserInfo] = useState([]);
   const {
     setShowBar,
     setShowLoginModal,
@@ -24,6 +25,16 @@ function UserProfile(props) {
     couponOneStatus,
     setCouponOneStatus,
   } = props;
+
+  const userInfo = useAxios(
+    'http://localhost:5000/member/singleUserProfile',
+    'get',
+    {
+      params: {
+        member_sid: currentUser,
+      },
+    }
+  );
 
   if (showUpdateModal === true) {
     document.querySelector('.iris-update-success-mask').style.display = 'block';
@@ -47,39 +58,21 @@ function UserProfile(props) {
     }
   }
 
-  const getUserInfoFromServer = () => {
-    axios
-      .get('http://localhost:5000/member/singleUserProfile', {
-        params: {
-          member_sid: currentUser,
-        },
-      })
-      .then((res) => {
-        setUserInfo(res.data[0]);
-      });
-  };
-
   useEffect(() => {
     setShowBar(true);
-    getUserInfoFromServer();
   }, []);
-
-  useEffect(() => {
-    console.log('userInfo', userInfo);
-  }, [userInfo]);
 
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {
-    // setShowLoginModal(true)
     return <Redirect to="/" />;
   }
 
   if (userInfo.length === 0) {
     return <FallBack />;
   }
+
   return (
     <>
-      {/* <VNavbar {...props} /> */}
       <div className="container iris-memberpage-container">
         <MemberMenuSect
           beastiePointAdd={beastiePointAdd}
