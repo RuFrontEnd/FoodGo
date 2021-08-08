@@ -8,7 +8,7 @@ import GetCouponBox from 'components/getCouponBox/GetCouponBox';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import FallBack from 'components/fallBack/FallBack';
-import useAxios from 'hooks/useAxios';
+import useGetData from 'hooks/useGetData';
 
 function UserProfile(props) {
   const isLogin = useSelector((state) => state.member.isLogin);
@@ -26,7 +26,7 @@ function UserProfile(props) {
     setCouponOneStatus,
   } = props;
 
-  const userInfo = useAxios(
+  const userInfo = useGetData(
     'http://localhost:5000/member/singleUserProfile',
     'get',
     {

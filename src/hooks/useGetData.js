@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useAxios = (url, method, params) => {
+const useGetData = (url, method, params) => {
   const [data, setData] = useState([]);
 
   const getData = () => {
@@ -10,18 +10,11 @@ const useAxios = (url, method, params) => {
     });
   };
 
-  const postData = () => {
-    axios.get(url, params).then((res) => {
-      setData(res.data[0]);
-    });
-  };
-
   useEffect(() => {
-    method === 'get' && getData();
-    method === 'post' && postData();
+    getData();
   }, []);
 
   return data;
 };
 
-export default useAxios;
+export default useGetData;
