@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useGetData = (url, method, params) => {
+const useGetData = (url, params) => {
   const [data, setData] = useState([]);
 
   const getData = () => {

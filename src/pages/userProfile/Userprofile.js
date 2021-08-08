@@ -28,7 +28,6 @@ function UserProfile(props) {
 
   const userInfo = useGetData(
     'http://localhost:5000/member/singleUserProfile',
-    'get',
     {
       params: {
         member_sid: currentUser,
