@@ -14,7 +14,7 @@ const useGetData = (url, params) => {
     getData();
   }, []);
 
-  return data;
+  return { data, setData };
 };
 
 export default useGetData;

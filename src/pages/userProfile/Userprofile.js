@@ -26,7 +26,7 @@ function UserProfile(props) {
     setCouponOneStatus,
   } = props;
 
-  const userInfo = useGetData(
+  const { data: userInfo } = useGetData(
     'http://localhost:5000/member/singleUserProfile',
     {
       params: {
