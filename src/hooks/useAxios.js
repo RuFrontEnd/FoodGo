@@ -17,12 +17,8 @@ const useAxios = (url, method, params) => {
   };
 
   useEffect(() => {
-    if (method === 'get') {
-      getData();
-    }
-    if (method === 'post') {
-      postData();
-    }
+    method === 'get' && getData();
+    method === 'post' && postData();
   }, []);
 
   return data;
