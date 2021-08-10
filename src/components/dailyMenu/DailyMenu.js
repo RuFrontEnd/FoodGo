@@ -11,6 +11,8 @@ import { orange } from 'variable/variable';
 import dailyMenuMainImg from 'assets/jpg/dailyMenu-mainImg.jpg';
 import MenuSubItemCard from 'components/menuSubItemCard/MenuSubItemCard';
 import bentoChickenBreast from 'assets/jpg/00_bento-chicken-breast.jpg';
+import bentoChickenThigh from 'assets/jpg/01_bento-chicken-thigh.jpg';
+import bentoTenderLoin from 'assets/jpg/06_bento-tenderloin.jpg';
 
 const BgElement = Element.BgElement;
 
@@ -128,7 +130,7 @@ function DailyMenu(props) {
               </Link>
             </MainItem>
 
-            <SubItem className="col-12 col-sm-6 d-flex justify-content-center">
+            <SubItem className="col-12 col-sm-6 d-flex justify-content-around">
               <SubItemRow className="d-flex flex-column justify-content-between">
                 <MenuSubItemCard
                   path={'/bento/0'}
@@ -136,28 +138,21 @@ function DailyMenu(props) {
                   title={'中歐香料嫩雞胸'}
                   price={170}
                 />
-
-                <div className="jess-view-menuBpic3">
-                  <Link to="/bento/1">
-                    <div className="jess-menuB-pic3"></div>
-                  </Link>
-                  <div class="mask">
-                    <SubItemTitle>日式燒雞腿</SubItemTitle>
-                    <SubItemPrice>$150</SubItemPrice>
-                  </div>
-                </div>
+                <MenuSubItemCard
+                  path={'/bento/1'}
+                  photo={bentoChickenThigh}
+                  title={'日式燒雞腿'}
+                  price={150}
+                />
               </SubItemRow>
 
               <SubItemRow className="d-flex flex-column justify-content-between">
-                <div className="jess-view-menuBpic4">
-                  <Link to="/bento/6">
-                    <div className="jess-menuB-pic4"></div>
-                  </Link>
-                  <div class="mask">
-                    <SubItemTitle>頂級熟成菲力牛排</SubItemTitle>
-                    <SubItemPrice>$230</SubItemPrice>
-                  </div>
-                </div>
+                <MenuSubItemCard
+                  path={'/bento/6'}
+                  photo={bentoTenderLoin}
+                  title={'頂級熟成菲力牛排'}
+                  price={230}
+                />
 
                 <div className="jess-view-menuBpic5">
                   <Link to="/bento/3">
