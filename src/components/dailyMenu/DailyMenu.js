@@ -13,6 +13,7 @@ import MenuSubItemCard from 'components/menuSubItemCard/MenuSubItemCard';
 import bentoChickenBreast from 'assets/jpg/00_bento-chicken-breast.jpg';
 import bentoChickenThigh from 'assets/jpg/01_bento-chicken-thigh.jpg';
 import bentoTenderLoin from 'assets/jpg/06_bento-tenderloin.jpg';
+import bentoShrimp from 'assets/jpg/03_bento-shrimp.jpg';
 
 const BgElement = Element.BgElement;
 
@@ -153,16 +154,12 @@ function DailyMenu(props) {
                   title={'頂級熟成菲力牛排'}
                   price={230}
                 />
-
-                <div className="jess-view-menuBpic5">
-                  <Link to="/bento/3">
-                    <div className="jess-menuB-pic5"></div>
-                  </Link>
-                  <div class="mask">
-                    <SubItemTitle>熱帶火烤萊姆蝦</SubItemTitle>
-                    <SubItemPrice>$200</SubItemPrice>
-                  </div>
-                </div>
+                <MenuSubItemCard
+                  path={'/bento/3'}
+                  photo={bentoShrimp}
+                  title={'熱帶火烤萊姆蝦'}
+                  price={200}
+                />
               </SubItemRow>
             </SubItem>
           </ItemContainer>
