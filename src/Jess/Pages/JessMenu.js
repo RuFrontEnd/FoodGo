@@ -77,7 +77,7 @@ function JessMenu(props) {
         mainItem={{
           title: '活力蔬菜',
           photo: menuVegetableBox,
-          linkTo: '/productList',
+          linkTo: '/vegBox',
         }}
         firstSubItem={{
           title: '中歐香料嫩雞胸',
