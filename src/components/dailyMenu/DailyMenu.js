@@ -45,6 +45,7 @@ const ItemContainer = styled.div`
 
 const MainItem = styled.div`
   display: block;
+  order: ${(props) => (props.isMainItemLeft ? 0 : 1)};
 `;
 
 const MainItemBgElement = styled(BgElement)`
@@ -80,6 +81,7 @@ const SubItemRow = styled.div`
 function DailyMenu(props) {
   const {
     style,
+    isMainItemLeft = true,
     title = '標題',
     mainText = '主文案',
     viceText = '副文案',
@@ -104,9 +106,7 @@ function DailyMenu(props) {
     <>
       <Container className="container" pattern={style}>
         <Wrap>
-          <Title className="text-center">
-            {title}
-          </Title>
+          <Title className="text-center">{title}</Title>
           <Content className="text-center">
             {mainText}
             <br />
@@ -114,10 +114,11 @@ function DailyMenu(props) {
           </Content>
 
           <ItemContainer className="row mt-5">
-            <MainItem className="col-12 col-sm-6">
-              <Link
-                to={mainItem.linkTo}
-              >
+            <MainItem
+              className="col-12 col-sm-6"
+              isMainItemLeft={isMainItemLeft}
+            >
+              <Link to={mainItem.linkTo}>
                 <BannerAnim>
                   <Element
                     key="dailyMenu-element"
