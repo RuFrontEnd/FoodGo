@@ -26,7 +26,7 @@ function JessMenu(props) {
   return (
     <>
       <MenuBanner style={MenuBannerStyle} />
-      <DailyMenu id={id} />
+      <DailyMenu />
       <JessMenuC id={id} />
       <JessMenuD />
       <ToTop />

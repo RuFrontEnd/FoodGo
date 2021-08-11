@@ -82,14 +82,6 @@ const SubItemRow = styled.div`
   display: flex;
 `;
 
-const SubItemTitle = styled.div`
-  display: block;
-`;
-
-const SubItemPrice = styled.div`
-  display: block;
-`;
-
 function DailyMenu(props) {
   const { style } = props;
   return (
