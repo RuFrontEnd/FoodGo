@@ -8,12 +8,7 @@ import 'rc-banner-anim/assets/index.css';
 import ArrowRight from 'Share/Components/ArrowRight/ArrowRight';
 import styled from 'styled-components/macro';
 import { orange } from 'variable/variable';
-import dailyMenuMainImg from 'assets/jpg/dailyMenu-mainImg.jpg';
 import MenuSubItemCard from 'components/menuSubItemCard/MenuSubItemCard';
-import bentoChickenBreast from 'assets/jpg/00_bento-chicken-breast.jpg';
-import bentoChickenThigh from 'assets/jpg/01_bento-chicken-thigh.jpg';
-import bentoTenderLoin from 'assets/jpg/06_bento-tenderloin.jpg';
-import bentoShrimp from 'assets/jpg/03_bento-shrimp.jpg';
 
 const BgElement = Element.BgElement;
 
@@ -110,22 +105,18 @@ function DailyMenu(props) {
       <Container className="container" pattern={style}>
         <Wrap>
           <Title className="text-center">
-            {/* 日常經典 */}
             {title}
           </Title>
           <Content className="text-center">
             {mainText}
-            {/* 中央廚房當日新鮮現做，嚴選新鮮食材讓您吃得到食材原形 */}
             <br />
             {viceText}
-            {/* 熱量完整揭露輕鬆計算、詳細的食材來源 */}
           </Content>
 
           <ItemContainer className="row mt-5">
             <MainItem className="col-12 col-sm-6">
               <Link
                 to={mainItem.linkTo}
-                // to="/productList"
               >
                 <BannerAnim>
                   <Element
@@ -139,7 +130,6 @@ function DailyMenu(props) {
                     }}
                   >
                     <MainItemBgElement
-                      // imgUrl={dailyMenuMainImg}
                       imgUrl={mainItem.photo}
                     ></MainItemBgElement>
                     <MainItemTweenOne
