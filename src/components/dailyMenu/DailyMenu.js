@@ -83,21 +83,50 @@ const SubItemRow = styled.div`
 `;
 
 function DailyMenu(props) {
-  const { style } = props;
+  const {
+    style,
+    title = '標題',
+    mainText = '主文案',
+    viceText = '副文案',
+    mainItem = { title: '主項目標題', photo: '', linkTo: '' },
+    firstSubItem = { title: '第一子項目標題', price: 0, photo: '', linkTo: '' },
+    secondSubItem = {
+      title: '第二子項目標題',
+      price: 0,
+      photo: '',
+      linkTo: '',
+    },
+    thirdSubItem = { title: '第三子項目標題', price: 0, photo: '', linkTo: '' },
+    fourthSubItem = {
+      title: '第四子項目標題',
+      price: 0,
+      photo: '',
+      linkTo: '',
+    },
+    bottomLink = { text: '轉址提示', linkTo: '' },
+  } = props;
   return (
     <>
       <Container className="container" pattern={style}>
         <Wrap>
-          <Title className="text-center">日常經典</Title>
+          <Title className="text-center">
+            {/* 日常經典 */}
+            {title}
+          </Title>
           <Content className="text-center">
-            中央廚房當日新鮮現做，嚴選新鮮食材讓您吃得到食材原形
+            {mainText}
+            {/* 中央廚房當日新鮮現做，嚴選新鮮食材讓您吃得到食材原形 */}
             <br />
-            熱量完整揭露輕鬆計算、詳細的食材來源
+            {viceText}
+            {/* 熱量完整揭露輕鬆計算、詳細的食材來源 */}
           </Content>
 
           <ItemContainer className="row mt-5">
             <MainItem className="col-12 col-sm-6">
-              <Link to="/productList">
+              <Link
+                to={mainItem.linkTo}
+                // to="/productList"
+              >
                 <BannerAnim>
                   <Element
                     key="dailyMenu-element"
@@ -110,13 +139,15 @@ function DailyMenu(props) {
                     }}
                   >
                     <MainItemBgElement
-                      imgUrl={dailyMenuMainImg}
+                      // imgUrl={dailyMenuMainImg}
+                      imgUrl={mainItem.photo}
                     ></MainItemBgElement>
                     <MainItemTweenOne
                       animation={{ y: 20, opacity: 0, type: 'from' }}
                       id="title"
                     >
-                      客製化便當
+                      {/* 客製化便當 */}
+                      {mainItem.title}
                     </MainItemTweenOne>
                   </Element>
                 </BannerAnim>
@@ -126,38 +157,60 @@ function DailyMenu(props) {
             <SubItem className="col-12 col-sm-6 d-flex justify-content-around">
               <SubItemRow className="d-flex flex-column justify-content-between">
                 <MenuSubItemCard
-                  path={'/bento/0'}
-                  photo={bentoChickenBreast}
-                  title={'中歐香料嫩雞胸'}
-                  price={170}
+                  // path={'/bento/0'}
+                  // photo={bentoChickenBreast}
+                  // title={'中歐香料嫩雞胸'}
+                  // price={170}
+                  path={firstSubItem.linkTo}
+                  photo={firstSubItem.photo}
+                  title={firstSubItem.title}
+                  price={firstSubItem.price}
                 />
                 <MenuSubItemCard
-                  path={'/bento/1'}
-                  photo={bentoChickenThigh}
-                  title={'日式燒雞腿'}
-                  price={150}
+                  // path={'/bento/1'}
+                  // photo={bentoChickenThigh}
+                  // title={'日式燒雞腿'}
+                  // price={150}
+                  path={secondSubItem.linkTo}
+                  photo={secondSubItem.photo}
+                  title={secondSubItem.title}
+                  price={secondSubItem.price}
                 />
               </SubItemRow>
 
               <SubItemRow className="d-flex flex-column justify-content-between">
                 <MenuSubItemCard
-                  path={'/bento/6'}
-                  photo={bentoTenderLoin}
-                  title={'頂級熟成菲力牛排'}
-                  price={230}
+                  // path={'/bento/6'}
+                  // photo={bentoTenderLoin}
+                  // title={'頂級熟成菲力牛排'}
+                  // price={230}
+                  path={thirdSubItem.linkTo}
+                  photo={thirdSubItem.photo}
+                  title={thirdSubItem.title}
+                  price={thirdSubItem.price}
                 />
                 <MenuSubItemCard
-                  path={'/bento/3'}
-                  photo={bentoShrimp}
-                  title={'熱帶火烤萊姆蝦'}
-                  price={200}
+                  // path={'/bento/3'}
+                  // photo={bentoShrimp}
+                  // title={'熱帶火烤萊姆蝦'}
+                  // price={200}
+                  path={fourthSubItem.linkTo}
+                  photo={fourthSubItem.photo}
+                  title={fourthSubItem.title}
+                  price={fourthSubItem.price}
                 />
               </SubItemRow>
             </SubItem>
           </ItemContainer>
-          <Link to="/productList">
+          <Link
+            // to="/productList"
+            to={bottomLink.linkTo}
+          >
             <div className="jess-menuBtn float-right mt-5">
-              <p className="jess-p">低GI便當</p>
+              <p className="jess-p">
+                {/* 低GI便當 */}
+                {bottomLink.text}
+              </p>
               <ArrowRight />
             </div>
           </Link>
