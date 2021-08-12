@@ -81,6 +81,7 @@ const SubItemRow = styled.div`
 function DailyMenu(props) {
   const {
     style,
+    key,
     isMainItemLeft = true,
     title = '標題',
     mainText = '主文案',
@@ -102,6 +103,7 @@ function DailyMenu(props) {
     },
     bottomLink = { text: '轉址提示', linkTo: '' },
   } = props;
+
   return (
     <>
       <Container className="container" pattern={style}>
@@ -121,11 +123,11 @@ function DailyMenu(props) {
               <Link to={mainItem.linkTo}>
                 <BannerAnim>
                   <Element
-                    key="dailyMenu-element"
+                    key={key}
                     followParallax={{
                       delay: 1000,
                       data: [
-                        { id: 'title', value: 50, type: 'x' },
+                        { id: title, value: 50, type: 'x' },
                         { id: 'content', value: -30, type: 'x' },
                       ],
                     }}
@@ -135,7 +137,7 @@ function DailyMenu(props) {
                     ></MainItemBgElement>
                     <MainItemTweenOne
                       animation={{ y: 20, opacity: 0, type: 'from' }}
-                      id="title"
+                      id={title}
                     >
                       {/* 客製化便當 */}
                       {mainItem.title}
