@@ -103,7 +103,7 @@ function JessMenu(props) {
           photo: bentoShrimp,
           linkTo: '/bento/3',
         }}
-        bottomLink={{ linkTo: '/productList', text: '低GI便當' }}
+        bottomLink={{ linkTo: '/productListSalad', text: '美味沙拉' }}
       />
       <JessMenuD />
       <ToTop />
