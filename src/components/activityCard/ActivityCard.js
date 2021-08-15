@@ -6,7 +6,9 @@ const Cotainer = styled.section``;
 
 const Wrap = styled.div``;
 
-// const 
+const Title = styled.h2``;
+
+const Content = styled.p``;
 
 function ActivityCard() {
   return (
@@ -15,11 +17,11 @@ function ActivityCard() {
         <div className="jess-menuD-groupon1 "></div>
         <div class="jess-mask text-center">
           <div className="jess-line"></div>
-          <h2 className="text-center">現在訂購</h2>
-          <p className="text-center">
+          <Title className="text-center">現在訂購</Title>
+          <Content className="text-center">
             就 送 <br />
             Blender Bottle 搖搖杯
-          </p>
+          </Content>
           <div className="jess-line2"></div>
         </div>
       </Wrap>
