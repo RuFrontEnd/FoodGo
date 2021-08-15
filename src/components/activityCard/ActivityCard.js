@@ -98,8 +98,8 @@ const Wrap = styled.div`
 function ActivityCard(props) {
   const { className, backgroundImg, title, topContent, bottomContent } = props;
   return (
-    <Cotainer>
-      <Wrap className="jess-view jess-view-first">
+    <Cotainer className={className}>
+      <Wrap>
         <Groupon src={backgroundImg} />
         <Mask>
           <TopLine />
