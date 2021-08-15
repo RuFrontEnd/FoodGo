@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import 'Jess/Components/JessMenuD/JessMenuD.scss';
+// import 'Jess/Components/JessMenuD/JessMenuD.scss';
 import { orange } from 'variable/variable';
 
 const Cotainer = styled.section`
@@ -38,6 +38,10 @@ const BottomLine = styled.div`
   margin: 0 auto;
 `;
 
+const Title = styled.h2``;
+
+const Content = styled.p``;
+
 const Wrap = styled.div`
   position: relative;
   transition: all 0.2s linear;
@@ -63,11 +67,20 @@ const Wrap = styled.div`
     transform: translateY(14rem);
     opacity: 1;
   }
+
+  &:hover ${Content} {
+    opacity: 1;
+    transform: translateY(10rem);
+    transition-delay: 0.5s;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover ${Title} {
+    opacity: 1;
+    transform: translateY(8rem);
+    transition-delay: 0.1s;
+  }
 `;
-
-const Title = styled.h2``;
-
-const Content = styled.p``;
 
 function ActivityCard(props) {
   const { className, backgroundImg, title, topContent, bottomContent } = props;
