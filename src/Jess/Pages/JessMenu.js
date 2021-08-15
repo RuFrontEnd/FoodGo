@@ -24,8 +24,6 @@ function JessMenu(props) {
     setShowBar(true);
   }, []);
 
-  let { id } = useParams();
-
   const MenuBannerStyle = `
   margin-bottom:50px;
   @media (max-width: 768px) {
