@@ -12,6 +12,10 @@ import bentoChickenThigh from 'assets/jpg/01_bento-chicken-thigh.jpg';
 import bentoTenderLoin from 'assets/jpg/06_bento-tenderloin.jpg';
 import bentoShrimp from 'assets/jpg/03_bento-shrimp.jpg';
 import menuVegetableBox from 'assets/jpg/menu-vegetableBox.jpg';
+import ketogenicSalad from 'assets/jpg/13_salad.jpg';
+import eggSalad from 'assets/jpg/16_egg.jpg';
+import muscleSalad from 'assets/jpg/15_musleSalad.jpg';
+import salmonSalad from 'assets/jpg/14_salmon.jpg';
 
 function JessMenu(props) {
   const { setShowBar } = props;
@@ -80,28 +84,28 @@ function JessMenu(props) {
           linkTo: '/vegBox',
         }}
         firstSubItem={{
-          title: '中歐香料嫩雞胸',
-          price: 170,
-          photo: bentoChickenBreast,
-          linkTo: '/bento/0',
+          title: '生酮沙拉',
+          price: 130,
+          photo: ketogenicSalad,
+          linkTo: '/bento/13',
         }}
         secondSubItem={{
-          title: '日式燒雞腿',
+          title: '均衡蛋白質沙拉',
           price: 150,
-          photo: bentoChickenThigh,
-          linkTo: '/bento/1',
+          photo: eggSalad,
+          linkTo: '/bento/16',
         }}
         thirdSubItem={{
-          title: '頂級熟成菲力牛排',
-          price: 230,
-          photo: bentoTenderLoin,
-          linkTo: '/bento/6',
+          title: '肌肉UPUP(增肌)沙拉',
+          price: 170,
+          photo: muscleSalad,
+          linkTo: '/bento/15',
         }}
         fourthSubItem={{
-          title: '熱帶火烤萊姆蝦',
-          price: 200,
-          photo: bentoShrimp,
-          linkTo: '/bento/3',
+          title: '蒜烤鮭魚沙拉',
+          price: 150,
+          photo: salmonSalad,
+          linkTo: '/bento/14',
         }}
         bottomLink={{ linkTo: '/productListSalad', text: '美味沙拉' }}
       />
