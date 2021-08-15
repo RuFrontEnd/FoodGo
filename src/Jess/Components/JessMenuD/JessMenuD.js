@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import './JessMenuD.scss'
+import React, { useState, useEffect } from 'react';
+import './JessMenuD.scss';
+import ActivityCard from 'components/activityCard/ActivityCard';
+import groupon1 from 'assets/jpg/groupon1.jpg';
+import groupon2 from 'assets/jpg/groupon2.jpg';
+import groupon3 from 'assets/jpg/groupon3.jpg';
 
 function JessMenuD() {
   return (
@@ -52,10 +56,10 @@ function JessMenuD() {
             </div>
           </div>
         </div>
-        {/* <div className="jess-border"></div> */}
+        <ActivityCard />
       </div>
     </>
-  )
+  );
 }
 
-export default JessMenuD
+export default JessMenuD;
