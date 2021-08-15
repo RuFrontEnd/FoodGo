@@ -87,15 +87,15 @@ function ActivityCard(props) {
   return (
     <Cotainer>
       <Wrap className="jess-view jess-view-first">
-        <Groupon className="jess-menuD-groupon1" src={backgroundImg} />
+        <Groupon src={backgroundImg} />
         <Mask>
-          <TopLine className="jess-line" />
+          <TopLine />
           <Title className="text-center">{title}</Title>
           <Content className="text-center">
             {topContent} <br />
             {bottomContent}
           </Content>
-          <BottomLine className="jess-line2"></BottomLine>
+          <BottomLine/>
         </Mask>
       </Wrap>
     </Cotainer>
