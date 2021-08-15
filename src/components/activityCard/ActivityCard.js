@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-function Template() {
+function ActivityCard() {
   return <section></section>;
 }
 
-export default Template;
+export default ActivityCard;
