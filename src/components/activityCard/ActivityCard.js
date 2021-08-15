@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-// import 'Jess/Components/JessMenuD/JessMenuD.scss';
 import { orange } from 'variable/variable';
 
 const Cotainer = styled.section`
@@ -38,9 +37,23 @@ const BottomLine = styled.div`
   margin: 0 auto;
 `;
 
-const Title = styled.h2``;
+const Title = styled.h2`
+  transform: translateY(-10rem);
+  opacity: 0;
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+  color: ${orange};
+  font-size: 2.4rem;
+  transition: all 0.2s ease-in-out;
+`;
 
-const Content = styled.p``;
+const Content = styled.p`
+  transform: translateY(40rem);
+  opacity: 1;
+  color: #ffffff;
+  font-size: 2rem;
+  transition: all 0.2s linear;
+`;
 
 const Wrap = styled.div`
   position: relative;
@@ -95,7 +108,7 @@ function ActivityCard(props) {
             {topContent} <br />
             {bottomContent}
           </Content>
-          <BottomLine/>
+          <BottomLine />
         </Mask>
       </Wrap>
     </Cotainer>
