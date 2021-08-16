@@ -14,7 +14,6 @@ import { useSelector } from 'react-redux';
 
 function MemberMenuSect(props) {
   const {
-    userFavDelete,
     commentDelete,
     beastiePointAdd,
     currentUserData,
@@ -84,7 +83,7 @@ function MemberMenuSect(props) {
   // 2. 在myFavSect有設userFavDelete狀態，若狀態有變(代表有刪除最愛),就重抓資料給menu更新數字
   useEffect(() => {
     getMyFavFromServer();
-  }, [userFavDelete]);
+  }, []);
 
   // console.log(currentUser)
 

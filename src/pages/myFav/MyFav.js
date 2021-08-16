@@ -4,12 +4,12 @@ import MemberMenuSect from 'components/memberMenuSect/MemberMenuSect';
 // import MyFavSect from 'components/myFavSect/MyFavSect';
 import MyFavSect from 'components/myFavSect/MyFavSect';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
-// import VNavbar from 'Share/Components/VNavbar/VNavbar';
+import MemberLayout from 'layout/MemberLayout/MemberLayout';
 // import './IrisMemberPage.scss';
 import 'pages/myFav/myFav.scss';
 import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import { useSelector } from 'react-redux'; 
+import { useSelector } from 'react-redux';
 
 function MyFav(props) {
   const isLogin = useSelector((state) => state.member.isLogin);
@@ -27,21 +27,13 @@ function MyFav(props) {
     return <Redirect to="/" />;
   }
   return (
-    <>
-      <div className="container iris-memberpage-container">
-        <MemberMenuSect
-          currentUser={currentUser}
-          userFavDelete={userFavDelete}
-          currentUserData={currentUserData}
-        />
-        <MyFavSect
-          currentUser={currentUser}
-          userFavDelete={userFavDelete}
-          setUserFavDelete={setUserFavDelete}
-        />
-      </div>
-      <ScrollButton />
-    </>
+    <MemberLayout>
+      <MyFavSect
+        currentUser={currentUser}
+        userFavDelete={userFavDelete}
+        setUserFavDelete={setUserFavDelete}
+      />
+    </MemberLayout>
   );
 }
 
