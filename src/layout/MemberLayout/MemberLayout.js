@@ -36,16 +36,14 @@ function MemberLayout(props) {
     return <Redirect to="/" />;
   }
   return (
-    <>
-      <Container className="container">
-        <MemberMenuSect
-          currentUser={currentUser}
-          currentUserData={currentUserData}
-        />
-        {children}
-      </Container>
+    <Container className="container">
+      <MemberMenuSect
+        currentUser={currentUser}
+        currentUserData={currentUserData}
+      />
+      {children}
       <ScrollButton />
-    </>
+    </Container>
   );
 }
 
