@@ -245,51 +245,46 @@ function DataEditSect(props) {
 
   return (
     <>
-      <div className="container col-9">
-        {/* <div className="row justify-content-center"> */}
-        <div className="row justify-content-center iris-content-title-container ">
-          <h2 className="iris-profile-title">會員資料</h2>
-          <WaveLine />
-          <div
-            id="dataEditSect-forms"
-            className="d-flex flex-column justify-content-center align-items-center"
-          >
-            <h6
-              className="iris-profile-note"
-              onClick={() => {
-                fillInData();
-              }}
-            >
-              ※ 部分資料以 * 或隱藏處理，保護您的個人隱私
-            </h6>
-            {/* <div
+      <div
+        id="dataEditSect-forms"
+        className="d-flex flex-column justify-content-center align-items-center"
+      >
+        <h6
+          className="iris-profile-note"
+          onClick={() => {
+            fillInData();
+          }}
+        >
+          ※ 部分資料以 * 或隱藏處理，保護您的個人隱私
+        </h6>
+        {/* <div
               class="alert alert-success iris-update-success-alert"
               role="alert"
             >
               帳號或密碼錯誤
             </div> */}
-            <form className="iris-form-adjust">
-              <div className="d-flex  align-items-center iris-profile-item-wrapper">
-                <div className="iris-input-box">姓名</div>
-                <FoodGoInput
-                  type="text"
-                  placeholder=""
-                  id="iris-member-given-name"
-                  value={name}
-                  setValue={setName}
-                />
-              </div>
-              <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
-                <div className="iris-input-box">手機</div>
-                <FoodGoInput
-                  type="text"
-                  placeholder=""
-                  id="iris-member-mobile"
-                  value={mobile}
-                  setValue={setMobile}
-                />
-              </div>
-              {/* <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
+        <form className="iris-form-adjust">
+          <div className="d-flex  align-items-center iris-profile-item-wrapper">
+            <div className="iris-input-box">姓名</div>
+            <FoodGoInput
+              type="text"
+              placeholder=""
+              id="iris-member-given-name"
+              value={name}
+              setValue={setName}
+            />
+          </div>
+          <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
+            <div className="iris-input-box">手機</div>
+            <FoodGoInput
+              type="text"
+              placeholder=""
+              id="iris-member-mobile"
+              value={mobile}
+              setValue={setMobile}
+            />
+          </div>
+          {/* <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box">密碼</div>
                 <FoodGoInput
                   type="password"
@@ -297,63 +292,59 @@ function DataEditSect(props) {
                   id="iris-member-password"
                 />
               </div> */}
-              <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
-                <div className="iris-input-box">新密碼</div>
-                <FoodGoInput
-                  type="password"
-                  placeholder=""
-                  id="iris-set-new-password"
-                  value={password}
-                  setValue={setPassword}
-                />
-              </div>
-              <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
-                <div className="iris-input-box">確認新密碼</div>
-                <FoodGoInput
-                  type="password"
-                  placeholder=""
-                  id="iris-member-new-password"
-                  value={newPassword}
-                  setValue={setNewPassword}
-                />
-              </div>
-              <div class="iris-password-inconsistent">
-                *密碼不符，請再次確認
-              </div>
-              <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
-                <div className="iris-input-box">信箱</div>
-                <FoodGoInput
-                  type="text"
-                  placeholder=""
-                  id="iris-member-email"
-                  value={email}
-                  setValue={setEmail}
-                />
-              </div>
-              <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
-                <div className="iris-input-box">地址</div>
-                <FoodGoInput
-                  type="text"
-                  placeholder=""
-                  id="iris-member-address"
-                  value={address}
-                  setValue={setAddress}
-                />
-              </div>
-            </form>
-            <div
-              className="iris-profile-button"
-              onClick={() => {
-                updateProfile();
-              }}
-            >
-              <OptionButton
-                type="origin"
-                text="更新個人資料"
-                className="dataEditSect-optionButton"
-              />
-            </div>
+          <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
+            <div className="iris-input-box">新密碼</div>
+            <FoodGoInput
+              type="password"
+              placeholder=""
+              id="iris-set-new-password"
+              value={password}
+              setValue={setPassword}
+            />
           </div>
+          <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
+            <div className="iris-input-box">確認新密碼</div>
+            <FoodGoInput
+              type="password"
+              placeholder=""
+              id="iris-member-new-password"
+              value={newPassword}
+              setValue={setNewPassword}
+            />
+          </div>
+          <div class="iris-password-inconsistent">*密碼不符，請再次確認</div>
+          <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
+            <div className="iris-input-box">信箱</div>
+            <FoodGoInput
+              type="text"
+              placeholder=""
+              id="iris-member-email"
+              value={email}
+              setValue={setEmail}
+            />
+          </div>
+          <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
+            <div className="iris-input-box">地址</div>
+            <FoodGoInput
+              type="text"
+              placeholder=""
+              id="iris-member-address"
+              value={address}
+              setValue={setAddress}
+            />
+          </div>
+        </form>
+        <div
+          className="iris-profile-button"
+          onClick={() => {
+            updateProfile();
+          }}
+        >
+          <OptionButton
+            type="origin"
+            text="更新個人資料"
+            className="dataEditSect-optionButton"
+          />
         </div>
       </div>
     </>

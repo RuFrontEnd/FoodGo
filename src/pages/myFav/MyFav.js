@@ -26,9 +26,9 @@ function MyFav(props) {
     // setShowLoginModal(true)
     return <Redirect to="/" />;
   }
-  
+
   return (
-    <MemberLayout>
+    <MemberLayout title={'我的最愛'}>
       <MyFavSect
         currentUser={currentUser}
         userFavDelete={userFavDelete}

@@ -73,7 +73,7 @@ function UserProfile(props) {
 
   return (
     <>
-      <MemberLayout>
+      <MemberLayout title={'會員資料'}>
         <DataEditSect
           setShowUpdateModal={setShowUpdateModal}
           setShowGetCouponBox={setShowGetCouponBox}
