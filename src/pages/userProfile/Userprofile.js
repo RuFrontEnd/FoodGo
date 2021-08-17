@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import FallBack from 'components/fallBack/FallBack';
 import useGetData from 'hooks/useGetData';
+import MemberLayout from 'layout/MemberLayout';
 
 function UserProfile(props) {
   const isLogin = useSelector((state) => state.member.isLogin);
@@ -72,11 +73,7 @@ function UserProfile(props) {
 
   return (
     <>
-      <div className="container iris-memberpage-container">
-        <MemberMenuSect
-          beastiePointAdd={beastiePointAdd}
-          currentUserData={currentUserData}
-        />
+      <MemberLayout>
         <DataEditSect
           setShowUpdateModal={setShowUpdateModal}
           setShowGetCouponBox={setShowGetCouponBox}
@@ -104,8 +101,8 @@ function UserProfile(props) {
             <div class="iris-update-sucess">會員資料更新成功</div>
           </div>
         </div>
-      </div>
-      <ScrollButton />
+        <ScrollButton />
+      </MemberLayout>
       <div className="IrisGetCouponBox">
         <GetCouponBox
           showGetCouponBox={showGetCouponBox}

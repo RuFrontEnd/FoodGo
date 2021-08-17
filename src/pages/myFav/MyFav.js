@@ -4,7 +4,7 @@ import MemberMenuSect from 'components/memberMenuSect/MemberMenuSect';
 // import MyFavSect from 'components/myFavSect/MyFavSect';
 import MyFavSect from 'components/myFavSect/MyFavSect';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
-import MemberLayout from 'layout/MemberLayout/MemberLayout';
+import MemberLayout from 'layout/MemberLayout';
 // import './IrisMemberPage.scss';
 import 'pages/myFav/myFav.scss';
 import { Redirect } from 'react-router-dom';

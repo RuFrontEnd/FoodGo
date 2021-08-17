@@ -6,7 +6,7 @@ import MyFavSect from 'components/myFavSect/MyFavSect';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 // import VNavbar from 'Share/Components/VNavbar/VNavbar';
 // import './IrisMemberPage.scss';
-import 'pages/myFav/myFav.scss';
+// import 'pages/myFav/myFav.scss';
 import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
