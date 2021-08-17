@@ -51,13 +51,6 @@ function MyFavSect(props) {
 
   return (
     <>
-      <div className="container col-9">
-        <div className="row justify-content-center iris-content-title-container ">
-          <h2 className="iris-profile-title" data-testid={'myFavSect-title'}>
-            我的最愛
-          </h2>
-          <WaveLine />
-        </div>
         <div className="iris-cards-container">
           {myFavItems.map((myFavItem, myFavIndex) => (
             <ProductCard
@@ -75,7 +68,6 @@ function MyFavSect(props) {
             />
           ))}
         </div>
-      </div>
     </>
   );
 }

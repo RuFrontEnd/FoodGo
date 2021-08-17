@@ -26,6 +26,7 @@ function MyFav(props) {
     // setShowLoginModal(true)
     return <Redirect to="/" />;
   }
+  
   return (
     <MemberLayout>
       <MyFavSect
