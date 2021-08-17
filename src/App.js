@@ -33,7 +33,7 @@ const ClaudiaFarmDetailedPage = lazy(() =>
 const MyFav = lazy(() => import('pages/myFav/MyFav'));
 // const IrisBeastiePoint  =lazy(() => import( 'Iris/Pages/IrisBeastiePoint'));
 // const IrisGetCoupon  =lazy(() => import( 'Iris/Pages/IrisGetCoupon'));
-// const IrisOrderManagement  =lazy(() => import( 'Iris/Pages/IrisOrderManagement'));
+const OrderManagement = lazy(() => import('pages/OrderManagement'));
 const JessMenu = lazy(() => import('Jess/Pages/JessMenu'));
 const JessBento = lazy(() => import('Jess/Pages/JessBento'));
 const JessVegBox = lazy(() => import('Jess/Pages/JessVegBox'));
@@ -464,28 +464,28 @@ function App() {
               {/* </Suspense> */}
             </Route>
             <Route path="/orderManagement">
-              {/* <Suspense fallback={<FallBack />}> */}
-              {/* <IrisOrderManagement
-                handleCartNumber={handleCartNumber}
-                showBar={showBar}
-                setShowBar={setShowBar}
-                // 會員
-                setShowLoginModal={setShowLoginModal}
-                // vnbar
-                county={county}
-                setCounty={setCounty}
-                township={township}
-                setTownship={setTownship}
-                address={address}
-                setAddress={setAddress}
-                takeOrNot={takeOrNot}
-                setTakeOrNot={setTakeOrNot}
-                selectDate={selectDate}
-                setSelectDate={setSelectDate}
-                slecteTime={slecteTime}
-                setSelectTime={setSelectTime}
-              /> */}
-              {/* </Suspense> */}
+              <Suspense fallback={<FallBack />}>
+                <OrderManagement
+                  handleCartNumber={handleCartNumber}
+                  showBar={showBar}
+                  setShowBar={setShowBar}
+                  // 會員
+                  setShowLoginModal={setShowLoginModal}
+                  // vnbar
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                />
+              </Suspense>
             </Route>
             {/* jess */}
             <Route path="/menu">
