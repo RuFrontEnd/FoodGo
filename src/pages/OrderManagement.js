@@ -9,6 +9,12 @@ import { Redirect } from 'react-router-dom';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import { useSelector } from 'react-redux';
 
+
+
+// import IrisOrderCommentSect from '../Components/IrisOrderCommentSect/IrisOrderCommentSect';
+
+
+
 function IrisOrderManagement(props) {
   const { currentUserData, setShowLoginModal, setShowBar, handleCartNumber } =
     props;
@@ -26,7 +32,7 @@ function IrisOrderManagement(props) {
   }
   return (
     <>
-      <MemberLayout></MemberLayout>
+      <MemberLayout title="訂單管理"></MemberLayout>
     </>
   );
 }

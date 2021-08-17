@@ -35,7 +35,7 @@ const Title = styled.h2`
 
 function MemberLayout(props) {
   const isLogin = useSelector((state) => state.member.isLogin);
-  const { currentUser, children, title } = props;
+  const { currentUser, children, title = '標題' } = props;
   const currentUserData = useSelector((state) => state.member.currentUserData);
 
   // useEffect(() => {
