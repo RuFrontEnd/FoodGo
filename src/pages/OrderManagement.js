@@ -24,7 +24,7 @@ function IrisOrderManagement(props) {
   }
   return (
     <>
-      <MemberLayout title="訂單管理">
+      <MemberLayout>
         <OrderManagementSect {...props} />
       </MemberLayout>
     </>

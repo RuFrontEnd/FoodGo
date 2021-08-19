@@ -35,7 +35,7 @@ const Title = styled.h2`
 
 function MemberLayout(props) {
   const isLogin = useSelector((state) => state.member.isLogin);
-  const { currentUser, children, title = '標題' } = props;
+  const { currentUser, children, title } = props;
   const currentUserData = useSelector((state) => state.member.currentUserData);
 
   // useEffect(() => {
@@ -55,10 +55,12 @@ function MemberLayout(props) {
         currentUserData={currentUserData}
       />
       <ContentContainer className="container col-9">
-        <ContentWrap className="row justify-content-center">
-          <Title>{title}</Title>
-          <WaveLine />
-        </ContentWrap>
+        {title && (
+          <ContentWrap className="row justify-content-center">
+            <Title>{title}</Title>
+            <WaveLine />
+          </ContentWrap>
+        )}
         {children}
       </ContentContainer>
       <ScrollButton />
