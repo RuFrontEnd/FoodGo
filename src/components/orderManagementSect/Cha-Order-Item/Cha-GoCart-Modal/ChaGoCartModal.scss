@@ -1,0 +1,215 @@
+$primary: #f5a016;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+
+.cha-go-cart-coupon-add-checkbox input {
+  background-color: #faf;
+  color: #ffa;
+  height: 2rem;
+}
+.cha-go-cart-claudia-overlay {
+  position: fixed;
+  display: block;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.cha-go-cart-claudia-modal-bg {
+  margin: 230px auto 0px auto;
+  background-color: white;
+  border-radius: 2rem;
+  width: 700px;
+  height: 450px;
+  padding: 6.5rem 7.5rem 6.5rem 8.5rem;
+  position: relative;
+}
+// 我增添的樣式
+// .cha-go-cart-wrap-coupon-container {
+//   margin-top: 0rem;
+//   // width: 600px;
+//   height: 380px;
+//   overflow: hidden;
+//   overflow-y: scroll;
+//   overflow-x: hidden;
+//   background-attachment: scroll;
+// background-color: rgb(240, 240, 240);
+// }
+.cha-go-cart-coupon-add-checkbox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 3rem;
+  cursor: pointer;
+}
+.cha-go-cart-iris-coupon-box {
+  width: 48rem;
+}
+.cha-go-cart-wrap-coupon-container::-webkit-scrollbar {
+  display: none;
+}
+
+.cha-go-cart-claudia-modal-cross-img {
+  background: url(./Images/cross.svg) no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  cursor: pointer;
+  float: right;
+  position: absolute;
+  right: 6rem;
+  transition: 0.3s;
+  visibility: hidden;
+}
+// .cha-go-cart-claudia-modal-cross-img:hover {
+//   background: url(./Images/cross-black.svg) no-repeat;
+//   background-position: center center;
+//   background-size: cover;
+//   width: 3rem;
+//   height: 3rem;
+//   transition: 0.3s;
+// }
+
+@media only screen and (max-width: 57.6rem) {
+  .cha-go-cart-claudia-modal-bg {
+    width: 335px;
+    height: 535px;
+    padding: 2.5rem 2rem 4.5rem 2rem;
+    border-radius: 40px;
+    margin: 115px auto;
+  }
+
+  .cha-go-cart-claudia-overlay {
+    overflow: hidden;
+  }
+}
+
+//提交成功的確認況
+.cha-go-cart-modal-container {
+  // background-color: rgb(247, 213, 213);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0rem;
+  // width: 600px;
+}
+.cha-go-cart-modal-container h1 {
+  color: #e0611e;
+  font-size: 3.6rem;
+  margin-bottom: 3rem;
+}
+.cha-go-cart-modal-container {
+  position: relative;
+}
+.cha-run-mons {
+  background: url(./Images/run-monster.svg) no-repeat;
+  // background-color: #faf;
+  background-position: center center;
+  background-size: 100%;
+  height: 15rem;
+  width: 12rem;
+  position: absolute;
+  left: 15rem;
+  top: 8rem;
+  transform: rotateY(180deg);
+}
+
+.cha-run-balls {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  // animation: heart-move 1s infinite;
+}
+
+.cha-run-ball {
+  position: absolute;
+  background-color: #f6bd60;
+  // width: 2rem;
+  // height: 2rem;
+  border-radius: 30rem;
+  margin-right: 1.5rem;
+}
+.cha-run-ball1 {
+  top: 9rem;
+  left: -10rem;
+  width: 2rem;
+  height: 2rem;
+  animation: ball1 1s infinite;
+}
+@keyframes ball1 {
+  0% {
+    top: 9rem;
+    left: -10rem;
+  }
+
+  50% {
+    top: 11rem;
+    left: -10rem;
+  }
+
+  100% {
+    top: 9rem;
+    left: -10rem;
+  }
+}
+.cha-run-ball2 {
+  top: 9rem;
+  left: -6.3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  animation: ball2 1s infinite;
+}
+@keyframes ball2 {
+  0% {
+    top: 11rem;
+    left: -6.3rem;
+  }
+
+  50% {
+    top: 9rem;
+    left: -6.3rem;
+  }
+
+  100% {
+    top: 11rem;
+    left: -6.3rem;
+  }
+}
+.cha-run-ball3 {
+  top: 9rem;
+  left: -2rem;
+  width: 3rem;
+  height: 3rem;
+  animation: ball3 1s infinite;
+}
+@keyframes ball3 {
+  0% {
+    top: 9rem;
+    left: -2rem;
+  }
+
+  50% {
+    top: 11rem;
+    left: -2rem;
+  }
+
+  100% {
+    top: 9rem;
+    left: -2rem;
+  }
+}
+.cha-run-btn {
+  width: 30rem;
+  margin-top: 18rem;
+  margin-bottom: 8rem;
+}

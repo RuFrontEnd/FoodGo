@@ -1,0 +1,72 @@
+@import './Variable.scss';
+
+// 橘色
+.cha-order-refund-btn:focus {
+  outline: none;
+}
+.cha-order-refund-btn {
+  background-color: #fff;
+  height: 3rem;
+  width: 10rem;
+  border: 1px solid #858585;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    1.5rem,
+    $regular,
+    inherit,
+    #858585
+  );
+}
+
+// height: 3rem;
+// width: 10rem;
+// border-radius: 3rem;
+// outline: none;
+// cursor: pointer;
+// background-color: #fff;
+// border: 0.1rem solid#f48145;
+// color: #f48145;
+// font-size: 1.5rem;
+
+.cha-order-refund-btn:hover {
+  color: $white;
+  transition: 0.5s;
+}
+
+.cha-order-refund-btn:active {
+  border: 1px solid #858585;
+}
+
+.cha-order-refund-btn::after {
+  content: '';
+  background-color: #858585;
+  height: 3rem;
+  width: 10rem;
+  position: absolute;
+  z-index: -1;
+  top: 30px;
+  left: 0px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    1.5rem,
+    $regular,
+    inherit,
+    $white
+  );
+}
+
+.cha-order-refund-btn:hover::after {
+  top: 0px;
+}
+
+.cha-order-refund-btn:active::after {
+  background-color: #858585;
+}

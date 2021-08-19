@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import MemberLayout from 'layout/MemberLayout';
 import { Redirect } from 'react-router-dom';
-import IrisOrderCommentSect from 'components/IrisOrderCommentSect/IrisOrderCommentSect';
+import OrderManagementSect from 'components/orderManagementSect/OrderManagementSect';
 import { useSelector } from 'react-redux';
 
 // import IrisOrderCommentSect from '../Components/IrisOrderCommentSect/IrisOrderCommentSect';
@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 function IrisOrderManagement(props) {
   const { currentUserData, setShowLoginModal, setShowBar, handleCartNumber } =
     props;
-
+  const [commentDelete, setCommentDelete] = useState('');
   const isLogin = useSelector((state) => state.member.isLogin);
 
   useEffect(() => {
@@ -25,10 +25,7 @@ function IrisOrderManagement(props) {
   return (
     <>
       <MemberLayout title="訂單管理">
-        <IrisOrderCommentSect
-          commentDelete={commentDelete}
-          setCommentDelete={setCommentDelete}
-        />
+        <OrderManagementSect {...props} />
       </MemberLayout>
     </>
   );
