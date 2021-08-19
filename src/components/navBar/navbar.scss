@@ -154,16 +154,14 @@ nav {
 
 .navBar-dropdown {
   display: none;
-  background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   width: 17rem;
-  margin-top: 3.5rem;
+  padding-top: 3.5rem;
   border-radius: 0.5rem;
   text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%);
-  backdrop-filter: blur(3px);
 }
 
 //下拉式選單 hover後效果
@@ -175,6 +173,8 @@ nav {
 
 .navBar-dropdown-item-wrap {
   position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
 }
 
 .navBar-dropdown-item {

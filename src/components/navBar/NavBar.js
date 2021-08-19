@@ -171,8 +171,8 @@ function NavBar(props) {
                   <Nav.Link as={NavLink} to="/menu">
                     尋找美味 <DropArrow className="navBar-dropArrow" />
                   </Nav.Link>
-                  <ul className="navBar-dropdown">
-                    <div className="navBar-dropdown-item-wrap">
+                  <div className="navBar-dropdown">
+                    <ul className="navBar-dropdown-item-wrap">
                       <div className="navBar-triangle"></div>
                       <li className="navBar-dropdown-item">
                         <Nav.Link
@@ -214,8 +214,8 @@ function NavBar(props) {
                         外送服務
                       </Nav.Link>
                     </li> */}
-                    </div>
-                  </ul>
+                    </ul>
+                  </div>
                 </li>
               </ul>
               <div className="navBar-navigation navBar-navigation-2">
