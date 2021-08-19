@@ -1,19 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-// import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect';
-// import IrisBeastiePointSect from '../Components/IrisBeastiePointSect/IrisBeastiePointSect';
-// import ChaOrderManagement from './../../Cha/Components/Cha-Order-Management/ChaOrderManagement';
 import MemberLayout from 'layout/MemberLayout';
-// import './IrisMemberPage.scss';
 import { Redirect } from 'react-router-dom';
-import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
+import IrisOrderCommentSect from 'components/IrisOrderCommentSect/IrisOrderCommentSect';
 import { useSelector } from 'react-redux';
 
-
-
 // import IrisOrderCommentSect from '../Components/IrisOrderCommentSect/IrisOrderCommentSect';
-
-
 
 function IrisOrderManagement(props) {
   const { currentUserData, setShowLoginModal, setShowBar, handleCartNumber } =
@@ -32,7 +24,12 @@ function IrisOrderManagement(props) {
   }
   return (
     <>
-      <MemberLayout title="訂單管理"></MemberLayout>
+      <MemberLayout title="訂單管理">
+        <IrisOrderCommentSect
+          commentDelete={commentDelete}
+          setCommentDelete={setCommentDelete}
+        />
+      </MemberLayout>
     </>
   );
 }
