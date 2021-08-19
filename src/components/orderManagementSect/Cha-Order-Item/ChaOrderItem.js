@@ -6,8 +6,8 @@ import ChaGrayButton from './Cha-Gray-Button/ChaGrayButton';
 import ChaOrangeButton from './Cha-Orange-Button/ChaOrangeButton';
 import ChaOrangeButtonPlus from './Cha-Orange-Button-Plus/ChaOrangeButtonPlus';
 import UpdateCartToLocalStorage from 'Share/Components/Tools/UpdateCartToLocalStorage';
-import ChaRefundModal from '../Cha-Order-Item/Cha-Refund-Modal/ChaRefundModal';
-import ChaGoCartModal from '../Cha-Order-Item/Cha-GoCart-Modal/ChaGoCartModal';
+import ChaRefundModal from './Cha-Refund-Modal/ChaRefundModal';
+import ChaGoCartModal from './Cha-GoCart-Modal/ChaGoCartModal';
 
 //加上這三個 路徑要注意------------
 import JessModal from '../../../../Jess/Components/JessModal/JessModal';
