@@ -7,25 +7,14 @@ import ChaRefundModal from './Cha-Order-Item/Cha-Refund-Modal/ChaRefundModal';
 import QueueAnim from 'rc-queue-anim';
 
 function OrderManagementSect(props) {
-  // ---------點選退費，實現自動切換頁面---------------//
   const [forceKey, setForceKey] = useState(false);
   const [tabindexKey, setTabindexKey] = useState('A');
-
   const [error, setError] = useState(null);
-
-  // ---------當前登入的會員id--------------//
-  const [currentMemberSid, setCurrentMemberSid] = useState(1);
-
-  //----------- 整包訂單、訂單明細的資料------------//
+  const [currentMemberSid, setCurrentMemberSid] = useState(1); // 當前登入的會員id
   const [orderData, setOrderData] = useState([]);
-
-  // -----------退費後重新讀入資料的控制狀態-----------//
   const [changeOrderState, setChangeOrderState] = useState(0);
-
   const { setShowBar, handleCartNumber } = props;
 
-  // //--------------光箱控制器，refund---------------//
-  // const [refundModalController, setRefundModalController] = useState(false);
 
   useEffect(() => {
     // -----------恢復Navbar--------------//
@@ -267,6 +256,7 @@ function OrderManagementSect(props) {
       </>
     );
   };
+  
   return (
     <>
       <TabMenu
