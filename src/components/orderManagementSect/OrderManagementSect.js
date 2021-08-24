@@ -6,6 +6,101 @@ import ChaOrderItem from 'Cha/Components/Cha-Order-Management/Cha-Order-Item/Cha
 import ChaRefundModal from './Cha-Order-Item/Cha-Refund-Modal/ChaRefundModal';
 import QueueAnim from 'rc-queue-anim';
 
+function handleClassifyState(orderState1, orderState2) {
+  return orderData.filter(
+    (item, index) =>
+      item.order_state === orderState1 || item.order_state === orderState2
+  );
+} // 分類訂單內容的函式
+
+// 未送達
+const ComponentA = (props) => {
+  return (
+    <>
+      {/* notArrivedItem */}
+      {handleClassifyState('未送達', '火速運送中')
+        .reverse()
+        .map((item, value) => (
+          <QueueAnim delay={50} className="queue-simple">
+            <ChaOrderItem
+              key={item.sid}
+              orderItem={item}
+              setForceKey={setForceKey}
+              setTabindexKey={setTabindexKey}
+              setChangeOrderState={setChangeOrderState}
+            />
+          </QueueAnim>
+        ))}
+    </>
+  );
+};
+
+// 已送達
+const ComponentB = (props) => {
+  return (
+    <>
+      {handleClassifyState('已送達')
+        .reverse()
+        .map((item, value) => (
+          <QueueAnim delay={50} className="queue-simple">
+            <ChaOrderItem
+              key={item.sid}
+              orderItem={item}
+              // setChangeOrderState={setChangeOrderState}
+              handleCartNumber={handleCartNumber}
+            />
+          </QueueAnim>
+        ))}
+    </>
+  );
+};
+
+// 已退費/已取消
+const ComponentC = (props) => {
+  const { setRefundModalController } = props;
+  return (
+    <>
+      {handleClassifyState('已退費')
+        .reverse()
+        .map((item, value) => (
+          <QueueAnim delay={50} className="queue-simple">
+            <ChaOrderItem
+              key={item.sid}
+              orderItem={item}
+              setForceKey={setForceKey}
+              setTabindexKey={setTabindexKey}
+              // setChangeOrderState={setChangeOrderState}
+              handleCartNumber={handleCartNumber}
+              // 光箱用
+              // closeModal={() => setRefundModalController(false)}
+              setRefundModalController={setRefundModalController}
+            />
+          </QueueAnim>
+        ))}
+    </>
+  );
+};
+
+// 揪團中
+const ComponentD = (props) => {
+  // const {setRefundModalController}
+  return (
+    <>
+      {handleClassifyState('揪團中').map((item, value) => (
+        <QueueAnim delay={50} className="queue-simple">
+          <ChaOrderItem
+            key={item.sid}
+            orderItem={item}
+            // setChangeOrderState={setChangeOrderState}
+
+            // closeModal={() => setRefundModalController(false)}
+          />
+        </QueueAnim>
+      ))}
+    </>
+  );
+};
+
 function OrderManagementSect(props) {
   const [forceKey, setForceKey] = useState(false);
   const [tabindexKey, setTabindexKey] = useState('A');
@@ -14,7 +109,6 @@ function OrderManagementSect(props) {
   const [orderData, setOrderData] = useState([]);
   const [changeOrderState, setChangeOrderState] = useState(0);
   const { setShowBar, handleCartNumber } = props;
-
 
   useEffect(() => {
     // -----------恢復Navbar--------------//
@@ -63,99 +157,6 @@ function OrderManagementSect(props) {
     }
   }, [changeOrderState]);
 
-  console.log('changeOrderState', changeOrderState);
-  //  --------------分類訂單內容的函式-----------------//
-  function handleClassifyState(orderState1, orderState2) {
-    return orderData.filter(
-      (item, index) =>
-        item.order_state === orderState1 || item.order_state === orderState2
-    );
-  }
-
-  // 未送達
-  const ComponentA = (props) => {
-    return (
-      <>
-        {/* notArrivedItem */}
-        {handleClassifyState('未送達', '火速運送中')
-          .reverse()
-          .map((item, value) => (
-            <QueueAnim delay={50} className="queue-simple">
-              <ChaOrderItem
-                key={item.sid}
-                orderItem={item}
-                setForceKey={setForceKey}
-                setTabindexKey={setTabindexKey}
-                setChangeOrderState={setChangeOrderState}
-              />
-            </QueueAnim>
-          ))}
-      </>
-    );
-  };
-  // 已送達
-  const ComponentB = (props) => {
-    return (
-      <>
-        {handleClassifyState('已送達')
-          .reverse()
-          .map((item, value) => (
-            <QueueAnim delay={50} className="queue-simple">
-              <ChaOrderItem
-                key={item.sid}
-                orderItem={item}
-                // setChangeOrderState={setChangeOrderState}
-                handleCartNumber={handleCartNumber}
-              />
-            </QueueAnim>
-          ))}
-      </>
-    );
-  };
-  // 已退費/已取消
-  const ComponentC = (props) => {
-    const { setRefundModalController } = props;
-    return (
-      <>
-        {handleClassifyState('已退費')
-          .reverse()
-          .map((item, value) => (
-            <QueueAnim delay={50} className="queue-simple">
-              <ChaOrderItem
-                key={item.sid}
-                orderItem={item}
-                setForceKey={setForceKey}
-                setTabindexKey={setTabindexKey}
-                // setChangeOrderState={setChangeOrderState}
-                handleCartNumber={handleCartNumber}
-                // 光箱用
-                // closeModal={() => setRefundModalController(false)}
-                setRefundModalController={setRefundModalController}
-              />
-            </QueueAnim>
-          ))}
-      </>
-    );
-  };
-  // 揪團中
-  const ComponentD = (props) => {
-    // const {setRefundModalController}
-    return (
-      <>
-        {handleClassifyState('揪團中').map((item, value) => (
-          <QueueAnim delay={50} className="queue-simple">
-            <ChaOrderItem
-              key={item.sid}
-              orderItem={item}
-              // setChangeOrderState={setChangeOrderState}
-
-              // closeModal={() => setRefundModalController(false)}
-            />
-          </QueueAnim>
-        ))}
-      </>
-    );
-  };
   // 切換用函式
   const setTabActive = (addElem, removeName) => {
     let removeTargets = document.querySelectorAll(removeName);
@@ -256,7 +257,7 @@ function OrderManagementSect(props) {
       </>
     );
   };
-  
+
   return (
     <>
       <TabMenu
