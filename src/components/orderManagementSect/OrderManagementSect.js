@@ -236,7 +236,7 @@ function OrderManagementSect(props) {
             closeModal={() => setRefundModalController(false)}
           ></ChaRefundModal>
         )} */}
-        <div className="col-9">
+        <div>
           <div className="cha-order-mana-content-row1">
             <div
               className="cha-order-mana-title-switch cha-active"
