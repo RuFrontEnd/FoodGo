@@ -5,8 +5,9 @@ import ChaOrderItem from 'Cha/Components/Cha-Order-Management/Cha-Order-Item/Cha
 // 光箱
 import ChaRefundModal from './Cha-Order-Item/Cha-Refund-Modal/ChaRefundModal';
 import QueueAnim from 'rc-queue-anim';
+import { endpoint } from 'variable/variable';
 
-function handleClassifyState(orderState1, orderState2) {
+function handleClassifyState(orderData, orderState1, orderState2) {
   // return orderData.filter(
   //   (item, index) =>
   //     item.order_state === orderState1 || item.order_state === orderState2
@@ -14,26 +15,23 @@ function handleClassifyState(orderState1, orderState2) {
 } // 分類訂單內容的函式
 
 // 未送達
-const ComponentA = (props) => {
-  // return (
-  //   <>
-  //     {/* notArrivedItem */}
-  //     {handleClassifyState('未送達', '火速運送中')
-  //       .reverse()
-  //       .map((item, value) => (
-  //         <QueueAnim delay={50} className="queue-simple">
-  //           <ChaOrderItem
-  //             key={item.sid}
-  //             orderItem={item}
-  //             // setForceKey={setForceKey}
-  //             // setTabindexKey={setTabindexKey}
-  //             // setChangeOrderState={setChangeOrderState}
-  //           />
-  //         </QueueAnim>
-  //       ))}
-  //   </>
-  // );
-};
+const NotDeliveredMerchandise = (props) => (
+  <>
+    {/* {handleClassifyState('未送達', '火速運送中')
+      .reverse()
+      .map((item, value) => (
+        <QueueAnim delay={50} className="queue-simple">
+          <ChaOrderItem
+            key={item.sid}
+            orderItem={item}
+            // setForceKey={setForceKey}
+            // setTabindexKey={setTabindexKey}
+            // setChangeOrderState={setChangeOrderState}
+          />
+        </QueueAnim>
+      ))} */}
+  </>
+);
 
 // 已送達
 const ComponentB = (props) => {
@@ -106,8 +104,7 @@ function OrderManagementSect(props) {
 
   // ---------------讀入訂單資料--------------//
   async function getMyOrderData(paramsMemberId) {
-    const url = `http://localhost:5000/cart-api/my-order-my-order-detail/${paramsMemberId}`;
-    console.log('讀入my-order & detail');
+    const url = `${endpoint}/cart-api/my-order-my-order-detail/${paramsMemberId}`;
     const request = new Request(url, {
       method: 'GET',
       headers: new Headers({
@@ -116,9 +113,8 @@ function OrderManagementSect(props) {
       }),
     });
     const response = await fetch(request);
-    const dataAllOrder = await response.json();
-    console.log('讀入my-order & detail成功', dataAllOrder);
-    setOrderData(dataAllOrder);
+    const _orderData = await response.json();
+    setOrderData(_orderData);
   }
 
   //  --------------點選取消/退費，重新載入資料，切換到退費頁面-------------//
@@ -148,7 +144,9 @@ function OrderManagementSect(props) {
   };
 
   const TabMenu = (props) => {
-    const [orderComponent, setOrderComponent] = useState(<ComponentA />);
+    const [orderComponent, setOrderComponent] = useState(
+      <NotDeliveredMerchandise />
+    );
 
     // 點選取消/退費後，會觸發的切換用函式
     // force bool, index = A, B, C...
@@ -161,12 +159,26 @@ function OrderManagementSect(props) {
     const elA = useRef(null);
     const elC = useRef(null);
 
+    const tabContentA = (e) => {
+      setTabActive(e.target, '.cha-order-mana-title-switch');
+      setOrderComponent(<NotDeliveredMerchandise />);
+    };
+
+    const tabContentB = (e) => {
+      setTabActive(e.target, '.cha-order-mana-title-switch');
+      setOrderComponent(<ComponentB />);
+    };
+    const tabContentC = (e) => {
+      setTabActive(e.target, '.cha-order-mana-title-switch');
+      setOrderComponent(<ComponentC />);
+    };
+
     useEffect(() => {
       if (force && index) {
         switch (index) {
           case 'A':
             setTabActive(elA.current, '.cha-order-mana-title-switch');
-            setOrderComponent(<ComponentA />);
+            setOrderComponent(<NotDeliveredMerchandise />);
             break;
           case 'C':
             console.log(elC.current);
@@ -178,20 +190,6 @@ function OrderManagementSect(props) {
         }
       }
     }, [force, index]);
-
-    const tabContentA = (e) => {
-      setTabActive(e.target, '.cha-order-mana-title-switch');
-      setOrderComponent(<ComponentA />);
-    };
-
-    const tabContentB = (e) => {
-      setTabActive(e.target, '.cha-order-mana-title-switch');
-      setOrderComponent(<ComponentB />);
-    };
-    const tabContentC = (e) => {
-      setTabActive(e.target, '.cha-order-mana-title-switch');
-      setOrderComponent(<ComponentC />);
-    };
 
     return (
       <>
@@ -225,9 +223,8 @@ function OrderManagementSect(props) {
           <div className="cha-order-mana-content-row2">
             <WaveLine />
           </div>
-          <div>{orderComponent}</div>
+          {/* <div>{orderComponent}</div> */}
         </div>
-        <div>123</div>
       </>
     );
   };
