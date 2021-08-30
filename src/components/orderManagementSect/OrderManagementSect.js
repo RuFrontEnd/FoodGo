@@ -8,16 +8,16 @@ import QueueAnim from 'rc-queue-anim';
 import { endpoint } from 'variable/variable';
 
 function handleClassifyState(orderData, orderState1, orderState2) {
-  // return orderData.filter(
-  //   (item, index) =>
-  //     item.order_state === orderState1 || item.order_state === orderState2
-  // );
+  return orderData.filter(
+    (item, index) =>
+      item.order_state === orderState1 || item.order_state === orderState2
+  );
 } // 分類訂單內容的函式
 
 // 未送達
 const NotDeliveredMerchandise = (props) => (
   <>
-    {/* {handleClassifyState('未送達', '火速運送中')
+    {handleClassifyState(props.data, '未送達', '火速運送中')
       .reverse()
       .map((item, value) => (
         <QueueAnim delay={50} className="queue-simple">
@@ -29,7 +29,7 @@ const NotDeliveredMerchandise = (props) => (
             // setChangeOrderState={setChangeOrderState}
           />
         </QueueAnim>
-      ))} */}
+      ))}
   </>
 );
 
@@ -145,7 +145,7 @@ function OrderManagementSect(props) {
 
   const TabMenu = (props) => {
     const [orderComponent, setOrderComponent] = useState(
-      <NotDeliveredMerchandise />
+      <NotDeliveredMerchandise data={orderData} />
     );
 
     // 點選取消/退費後，會觸發的切換用函式
@@ -223,7 +223,7 @@ function OrderManagementSect(props) {
           <div className="cha-order-mana-content-row2">
             <WaveLine />
           </div>
-          {/* <div>{orderComponent}</div> */}
+          <div>{orderComponent}</div>
         </div>
       </>
     );
