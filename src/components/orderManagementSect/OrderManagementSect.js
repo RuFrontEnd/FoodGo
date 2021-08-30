@@ -7,32 +7,32 @@ import ChaRefundModal from './Cha-Order-Item/Cha-Refund-Modal/ChaRefundModal';
 import QueueAnim from 'rc-queue-anim';
 
 function handleClassifyState(orderState1, orderState2) {
-  return orderData.filter(
-    (item, index) =>
-      item.order_state === orderState1 || item.order_state === orderState2
-  );
+  // return orderData.filter(
+  //   (item, index) =>
+  //     item.order_state === orderState1 || item.order_state === orderState2
+  // );
 } // 分類訂單內容的函式
 
 // 未送達
 const ComponentA = (props) => {
-  return (
-    <>
-      {/* notArrivedItem */}
-      {handleClassifyState('未送達', '火速運送中')
-        .reverse()
-        .map((item, value) => (
-          <QueueAnim delay={50} className="queue-simple">
-            <ChaOrderItem
-              key={item.sid}
-              orderItem={item}
-              setForceKey={setForceKey}
-              setTabindexKey={setTabindexKey}
-              setChangeOrderState={setChangeOrderState}
-            />
-          </QueueAnim>
-        ))}
-    </>
-  );
+  // return (
+  //   <>
+  //     {/* notArrivedItem */}
+  //     {handleClassifyState('未送達', '火速運送中')
+  //       .reverse()
+  //       .map((item, value) => (
+  //         <QueueAnim delay={50} className="queue-simple">
+  //           <ChaOrderItem
+  //             key={item.sid}
+  //             orderItem={item}
+  //             // setForceKey={setForceKey}
+  //             // setTabindexKey={setTabindexKey}
+  //             // setChangeOrderState={setChangeOrderState}
+  //           />
+  //         </QueueAnim>
+  //       ))}
+  //   </>
+  // );
 };
 
 // 已送達
@@ -47,7 +47,7 @@ const ComponentB = (props) => {
               key={item.sid}
               orderItem={item}
               // setChangeOrderState={setChangeOrderState}
-              handleCartNumber={handleCartNumber}
+              // handleCartNumber={handleCartNumber}
             />
           </QueueAnim>
         ))}
@@ -67,36 +67,16 @@ const ComponentC = (props) => {
             <ChaOrderItem
               key={item.sid}
               orderItem={item}
-              setForceKey={setForceKey}
-              setTabindexKey={setTabindexKey}
+              // setForceKey={setForceKey}
+              // setTabindexKey={setTabindexKey}
               // setChangeOrderState={setChangeOrderState}
-              handleCartNumber={handleCartNumber}
+              // handleCartNumber={handleCartNumber}
               // 光箱用
               // closeModal={() => setRefundModalController(false)}
               setRefundModalController={setRefundModalController}
             />
           </QueueAnim>
         ))}
-    </>
-  );
-};
-
-// 揪團中
-const ComponentD = (props) => {
-  // const {setRefundModalController}
-  return (
-    <>
-      {handleClassifyState('揪團中').map((item, value) => (
-        <QueueAnim delay={50} className="queue-simple">
-          <ChaOrderItem
-            key={item.sid}
-            orderItem={item}
-            // setChangeOrderState={setChangeOrderState}
-
-            // closeModal={() => setRefundModalController(false)}
-          />
-        </QueueAnim>
-      ))}
     </>
   );
 };
@@ -116,8 +96,8 @@ function OrderManagementSect(props) {
     console.log('useEffect，設定navbar出現');
 
     // --------------掛載就篩選掉order_detail為空陣列的order-----------------//
-    setOrderData(orderData.map((item) => item.order_detail === !['']));
-    console.log('useEffect，篩選掉order_detail為空陣列的order');
+    // setOrderData(orderData.map((item) => item.order_detail === !['']));
+    // console.log('useEffect，篩選掉order_detail為空陣列的order');
 
     // --------------掛載就讀入當前會員的訂單-----------------//
     getMyOrderData(currentMemberSid);
@@ -212,10 +192,6 @@ function OrderManagementSect(props) {
       setTabActive(e.target, '.cha-order-mana-title-switch');
       setOrderComponent(<ComponentC />);
     };
-    const tabContentD = (e) => {
-      setTabActive(e.target, '.cha-order-mana-title-switch');
-      setOrderComponent(<ComponentD />);
-    };
 
     return (
       <>
@@ -245,15 +221,13 @@ function OrderManagementSect(props) {
             >
               已退費
             </div>
-            {/* <div className="cha-order-mana-title-switch" onClick={tabContentD}>
-              揪團中
-            </div> */}
           </div>
           <div className="cha-order-mana-content-row2">
             <WaveLine />
           </div>
           <div>{orderComponent}</div>
         </div>
+        <div>123</div>
       </>
     );
   };
