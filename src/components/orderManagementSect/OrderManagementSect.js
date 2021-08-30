@@ -34,7 +34,7 @@ const NotDeliveredMerchandise = (props) => (
 );
 
 // 已送達
-const ComponentB = (props) => {
+const DeliveredMerchandise = (props) => {
   return (
     <>
       {handleClassifyState('已送達')
@@ -54,7 +54,7 @@ const ComponentB = (props) => {
 };
 
 // 已退費/已取消
-const ComponentC = (props) => {
+const hadRefundMerchandise = (props) => {
   const { setRefundModalController } = props;
   return (
     <>
@@ -88,20 +88,6 @@ function OrderManagementSect(props) {
   const [changeOrderState, setChangeOrderState] = useState(0);
   const { setShowBar, handleCartNumber } = props;
 
-  useEffect(() => {
-    // -----------恢復Navbar--------------//
-    setShowBar(true);
-    console.log('useEffect，設定navbar出現');
-
-    // --------------掛載就篩選掉order_detail為空陣列的order-----------------//
-    // setOrderData(orderData.map((item) => item.order_detail === !['']));
-    // console.log('useEffect，篩選掉order_detail為空陣列的order');
-
-    // --------------掛載就讀入當前會員的訂單-----------------//
-    getMyOrderData(currentMemberSid);
-    console.log('useEffect，讀入當前會員的訂單資料');
-  }, []);
-
   // ---------------讀入訂單資料--------------//
   async function getMyOrderData(paramsMemberId) {
     const url = `${endpoint}/cart-api/my-order-my-order-detail/${paramsMemberId}`;
@@ -116,22 +102,6 @@ function OrderManagementSect(props) {
     const _orderData = await response.json();
     setOrderData(_orderData);
   }
-
-  //  --------------點選取消/退費，重新載入資料，切換到退費頁面-------------//
-  useEffect(() => {
-    if (!(changeOrderState === 0)) {
-      getMyOrderData(currentMemberSid);
-      console.log(
-        'useEffect，[changeOrderState]，getMyOrderData(currentMemberSid)'
-      );
-      console.log(
-        'useEffect，[changeOrderState]，切換到退費訂單頁面',
-        changeOrderState
-      );
-      setForceKey(true);
-      setTabindexKey('C');
-    }
-  }, [changeOrderState]);
 
   // 切換用函式
   const setTabActive = (addElem, removeName) => {
@@ -159,31 +129,62 @@ function OrderManagementSect(props) {
     const elA = useRef(null);
     const elC = useRef(null);
 
-    const tabContentA = (e) => {
+    const pressNotDeliveredButton = (e) => {
       setTabActive(e.target, '.cha-order-mana-title-switch');
-      setOrderComponent(<NotDeliveredMerchandise />);
+      setOrderComponent(<NotDeliveredMerchandise data={orderData} />);
     };
 
-    const tabContentB = (e) => {
+    const pressDeliveredButton = (e) => {
       setTabActive(e.target, '.cha-order-mana-title-switch');
-      setOrderComponent(<ComponentB />);
+      setOrderComponent(<DeliveredMerchandise data={orderData} />);
     };
-    const tabContentC = (e) => {
+    const pressHadRefundButton = (e) => {
       setTabActive(e.target, '.cha-order-mana-title-switch');
-      setOrderComponent(<ComponentC />);
+      setOrderComponent(<hadRefundMerchandise data={orderData} />);
     };
+
+    useEffect(() => {
+      // -----------恢復Navbar--------------//
+      // setShowBar(true);
+      // console.log('useEffect，設定navbar出現');
+
+      // --------------掛載就篩選掉order_detail為空陣列的order-----------------//
+      // setOrderData(orderData.map((item) => item.order_detail === !['']));
+      // console.log('useEffect，篩選掉order_detail為空陣列的order');
+
+      // --------------掛載就讀入當前會員的訂單-----------------//
+      if (orderData.length !== 0) return;
+      getMyOrderData(currentMemberSid);
+      console.log('useEffect，讀入當前會員的訂單資料');
+    }, []);
+
+    //  --------------點選取消/退費，重新載入資料，切換到退費頁面-------------//
+    useEffect(() => {
+      if (!(changeOrderState === 0)) {
+        getMyOrderData(currentMemberSid);
+        console.log(
+          'useEffect，[changeOrderState]，getMyOrderData(currentMemberSid)'
+        );
+        console.log(
+          'useEffect，[changeOrderState]，切換到退費訂單頁面',
+          changeOrderState
+        );
+        setForceKey(true);
+        setTabindexKey('C');
+      }
+    }, [changeOrderState]);
 
     useEffect(() => {
       if (force && index) {
         switch (index) {
           case 'A':
             setTabActive(elA.current, '.cha-order-mana-title-switch');
-            setOrderComponent(<NotDeliveredMerchandise />);
+            setOrderComponent(<NotDeliveredMerchandise data={orderData} />);
             break;
           case 'C':
             console.log(elC.current);
             setTabActive(elC.current, '.cha-order-mana-title-switch');
-            setOrderComponent(<ComponentC />);
+            setOrderComponent(<hadRefundMerchandise data={orderData} />);
             break;
           default:
             break;
@@ -205,16 +206,19 @@ function OrderManagementSect(props) {
             <div
               className="cha-order-mana-title-switch cha-active"
               ref={elA}
-              onClick={tabContentA}
+              onClick={pressNotDeliveredButton}
             >
               未送達
             </div>
-            <div className="cha-order-mana-title-switch" onClick={tabContentB}>
+            <div
+              className="cha-order-mana-title-switch"
+              onClick={pressDeliveredButton}
+            >
               已送達
             </div>
             <div
               className="cha-order-mana-title-switch"
-              onClick={tabContentC}
+              onClick={pressHadRefundButton}
               ref={elC}
             >
               已退費
