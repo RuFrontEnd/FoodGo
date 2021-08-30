@@ -15,29 +15,33 @@ function handleClassifyState(orderData, orderState1, orderState2) {
 } // 分類訂單內容的函式
 
 // 未送達
-const NotDeliveredMerchandise = (props) => (
-  <>
-    {handleClassifyState(props.data, '未送達', '火速運送中')
-      .reverse()
-      .map((item, value) => (
-        <QueueAnim delay={50} className="queue-simple">
-          <ChaOrderItem
-            key={item.sid}
-            orderItem={item}
-            // setForceKey={setForceKey}
-            // setTabindexKey={setTabindexKey}
-            // setChangeOrderState={setChangeOrderState}
-          />
-        </QueueAnim>
-      ))}
-  </>
-);
+const NotDeliveredMerchandise = (props) => {
+  const { data } = props;
+  return (
+    <>
+      {handleClassifyState(data, '未送達', '火速運送中')
+        .reverse()
+        .map((item, value) => (
+          <QueueAnim delay={50} className="queue-simple">
+            <ChaOrderItem
+              key={item.sid}
+              orderItem={item}
+              // setForceKey={setForceKey}
+              // setTabindexKey={setTabindexKey}
+              // setChangeOrderState={setChangeOrderState}
+            />
+          </QueueAnim>
+        ))}
+    </>
+  );
+};
 
 // 已送達
 const DeliveredMerchandise = (props) => {
+  const { data } = props;
   return (
     <>
-      {handleClassifyState('已送達')
+      {handleClassifyState(data, '已送達')
         .reverse()
         .map((item, value) => (
           <QueueAnim delay={50} className="queue-simple">
@@ -54,11 +58,11 @@ const DeliveredMerchandise = (props) => {
 };
 
 // 已退費/已取消
-const hadRefundMerchandise = (props) => {
-  const { setRefundModalController } = props;
+const HadRefundMerchandise = (props) => {
+  const { data, setRefundModalController } = props;
   return (
     <>
-      {handleClassifyState('已退費')
+      {handleClassifyState(data, '已退費')
         .reverse()
         .map((item, value) => (
           <QueueAnim delay={50} className="queue-simple">
@@ -102,6 +106,7 @@ function OrderManagementSect(props) {
     const _orderData = await response.json();
     setOrderData(_orderData);
   }
+  console.log(orderData)
 
   // 切換用函式
   const setTabActive = (addElem, removeName) => {
@@ -140,7 +145,7 @@ function OrderManagementSect(props) {
     };
     const pressHadRefundButton = (e) => {
       setTabActive(e.target, '.cha-order-mana-title-switch');
-      setOrderComponent(<hadRefundMerchandise data={orderData} />);
+      setOrderComponent(<HadRefundMerchandise data={orderData} />);
     };
 
     useEffect(() => {
@@ -155,7 +160,6 @@ function OrderManagementSect(props) {
       // --------------掛載就讀入當前會員的訂單-----------------//
       if (orderData.length !== 0) return;
       getMyOrderData(currentMemberSid);
-      console.log('useEffect，讀入當前會員的訂單資料');
     }, []);
 
     //  --------------點選取消/退費，重新載入資料，切換到退費頁面-------------//
