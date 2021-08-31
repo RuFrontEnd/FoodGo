@@ -145,25 +145,25 @@ function MemberMenuSect(props) {
 
             <div class="iris-user-name">{currentUserData.name}</div>
 
-            <div class="iris-brief-info-wraper d-flex flex-wrap">
+            {/* <div class="iris-brief-info-wraper d-flex flex-wrap">
               <div class="iris-brief-info">
-                <div>我的評論</div>
+                <div>我的評論</div> */}
                 {/* <div>{userCommentCount}</div> */}
-                <div id="iris-comment-count">{currentUserComment.length}</div>
+                {/* <div id="iris-comment-count">{currentUserComment.length}</div>
               </div>
               <div class="iris-vl"></div>
               <div class="iris-brief-info">
-                <div>我的最愛</div>
+                <div>我的最愛</div> */}
                 {/* <div class="iris-fav-count">{userFavCount}</div> */}
-                <div id="iris-fav-count">{currentUserFav.length}</div>
+                {/* <div id="iris-fav-count">{currentUserFav.length}</div>
               </div>
               <div class="iris-vl"></div>
               <div class="iris-brief-info">
-                <div>怪獸幣</div>
+                <div>怪獸幣</div> */}
                 {/* <div>{userToTalCoin}</div> */}
-                <div id="iris-total-coin">{userBeastieCoin}</div>
+                {/* <div id="iris-total-coin">{userBeastieCoin}</div>
               </div>
-            </div>
+            </div> */}
             {/* ---------- menu ----------- */}
             <div class="iris-mune-item-wrapper d-flex flex-wrap">
               <div
@@ -189,7 +189,7 @@ function MemberMenuSect(props) {
 
               <div class="iris-menu-hr"></div>
 
-              <div
+              {/* <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
                   props.history.push('/getCoupon');
@@ -197,7 +197,7 @@ function MemberMenuSect(props) {
               >
                 <OrderIcon class="iris-menu-icon" />
                 <div class="iris-menu-text">專屬優惠</div>
-              </div>
+              </div> */}
 
               <div class="iris-menu-hr"></div>
 
@@ -237,7 +237,7 @@ function MemberMenuSect(props) {
 
               <div class="iris-menu-hr"></div>
 
-              <div
+              {/* <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
                   props.history.push('/orderComment');
@@ -245,7 +245,7 @@ function MemberMenuSect(props) {
               >
                 <MyCommentIcon class="iris-menu-icon" />
                 <div class="iris-menu-text">我的評論</div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
