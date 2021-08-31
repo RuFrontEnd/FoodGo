@@ -8,8 +8,9 @@
 }
 
 .ru-card-warp {
-  // background-color: gold;
-  @include page();
+  @include xl();
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .ru-itemWarp {
@@ -19,19 +20,15 @@
   flex-wrap: wrap;
 }
 
-.ru-itemWarp .ru-card-container {
-  // width: 27.9135%;
-  margin-bottom: 80px;
-}
-
 .commdityList-productCard {
   width: 33.3%;
-  padding: 0px 40px;
+  padding: 0px 10px;
+  margin-bottom: 80px;
 }
 // ------------------------------------------- 網頁版 e -------------------------------------------
 
 //  ------------------------------------------- ipad pro版 s -------------------------------------------
-@media screen and (min-width: 992px) and (max-width: 1365.99px) {
+@media screen and (min-width: 992px) and (max-width: 1200px) {
   //   // ******** 便當 / 沙拉 s ********
 
   .ru-item-container {
@@ -40,7 +37,7 @@
 
   .ru-card-warp {
     // background-color: gold;
-    @include page-iPadPro();
+    @include lg();
     width: 100%;
   }
 
@@ -51,7 +48,7 @@
 
   .commdityList-productCard {
     width: 33.3%;
-    padding: 0px 10px;
+    padding: 0px 5px;
   }
 }
 
@@ -64,7 +61,7 @@
 
   .ru-card-warp {
     // background-color: gold;
-    @include page-iPad();
+    @include md();
     padding: 0px 30px;
     width: 100%;
   }
@@ -76,7 +73,7 @@
 
   .commdityList-productCard {
     width: 50%;
-    padding: 0px 20px;
+    padding: 0px 10px;
   }
 }
 //  ------------------------------------------- ipad pro版 e -------------------------------------------
@@ -90,7 +87,7 @@
 
   .ru-card-warp {
     // background-color: gold;
-    @include page-iPad();
+    @include sm();
     padding: 0px 40px;
     width: 100%;
   }
@@ -102,8 +99,7 @@
 
   .commdityList-productCard {
     width: 100%;
-    padding: 0px 40px;
-    max-width: 400px;
+    padding: 0px 50px;
   }
 }
 //  ------------------------------------------- ipad 版 e -------------------------------------------
@@ -118,9 +114,9 @@
 
   .ru-card-warp {
     // background-color: gold;
+    @include xs();
     height: 100%;
     width: 100%;
-    @include page-phone();
   }
 
   .ru-itemWarp {
@@ -131,8 +127,7 @@
 
   .commdityList-productCard {
     width: 100%;
-    padding: 0px 10px;
-    max-width: 400px;
+    padding: 0px 40px;
   }
 }
 //  ------------------------------------------- 手機 版 e -------------------------------------------

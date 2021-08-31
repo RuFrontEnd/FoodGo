@@ -30,27 +30,25 @@ function CommodityList(props) {
     <>
       <div className="ru-item-container">
         <div className="ru-card-warp">
-          <div className="ru-itemWarp">
-            {/* {isShowNothing && <EmptyHint />} */}
-            {commodities.map((commodity) => (
-              <ProductCard
-                className={'commdityList-productCard'}
-                id={`ru-addCart-btn-${commodity.sid}`}
-                productSid={commodity.sid}
-                title={commodity.productname}
-                comment={commodity.contentNum}
-                buy={commodity.purchased}
-                price={commodity.price}
-                stars={commodity.startRating}
-                proudctId={commodity.sid}
-                imgId={commodity.img_id}
-                handleCartNumber={handleCartNumber} // localStorage函式
-                count={count}
-                setCount={setCount}
-                isFavorite={commodity.isFavorite}
-              />
-            ))}
-          </div>
+          {/* {isShowNothing && <EmptyHint />} */}
+          {commodities.map((commodity) => (
+            <ProductCard
+              className={'commdityList-productCard'}
+              id={`ru-addCart-btn-${commodity.sid}`}
+              productSid={commodity.sid}
+              title={commodity.productname}
+              comment={commodity.contentNum}
+              buy={commodity.purchased}
+              price={commodity.price}
+              stars={commodity.startRating}
+              proudctId={commodity.sid}
+              imgId={commodity.img_id}
+              handleCartNumber={handleCartNumber} // localStorage函式
+              count={count}
+              setCount={setCount}
+              isFavorite={commodity.isFavorite}
+            />
+          ))}
         </div>
       </div>
     </>

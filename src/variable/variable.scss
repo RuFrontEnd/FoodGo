@@ -86,34 +86,39 @@ $letter-spacing: 5px;
   margin: auto;
 }
 
-// breakpoint:1440
-@mixin xxl {
-  max-width: 1320px;
-}
-
 // breakpoint:1200
 @mixin xl {
   max-width: 1140px;
+  padding: 20px;
+  margin: auto;
 }
 
 // breakpoint:992
 @mixin lg {
   max-width: 960px;
+  padding: 20px;
+  margin: auto;
 }
 
 // breakpoint:768
 @mixin md {
   max-width: 720px;
+  padding: 20px;
+  margin: auto;
 }
 
 // breakpoint:576
 @mixin sm {
-  max-width: 540;
+  max-width: 540px;
+  padding: 20px;
+  margin: auto;
 }
 
 // breakpoint:480
 @mixin xs {
-  max-width: 100%;
+  max-width: 420px;
+  padding: 20px;
+  margin: auto;
 }
 
 // flex
