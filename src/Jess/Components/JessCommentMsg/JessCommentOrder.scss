@@ -14,8 +14,6 @@ $brown: #decdbb;
 $lightBrown: #f7ede2;
 $white: #ffffff;
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
-@import '~antd/dist/antd.css';
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 //引入字體
