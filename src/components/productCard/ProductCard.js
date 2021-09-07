@@ -9,6 +9,7 @@ import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { endpoint } from 'variable/variable';
+import { updateCartToLocalStorage } from 'utils/utils';
 import useAxios from 'hooks/useGetData';
 
 export const addMyFav = (favItem) => {
@@ -73,6 +74,21 @@ function ProductCard(props) {
       currentUser: currentUser,
     };
     isFavActive ? deleteMyFav(newFavItem) : addMyFav(newFavItem);
+  };
+
+  const addProductToCard = (proudctId, title, count, imgId, price) => {
+    updateCartToLocalStorage(
+      {
+        // 設定要加入的資料
+        id: proudctId,
+        productName: title,
+        productAmount: count,
+        productImage: imgId,
+        productPrice: price,
+      },
+      count,
+      true
+    );
   };
 
   return (
@@ -193,6 +209,9 @@ function ProductCard(props) {
               type={'origin'}
               className={'productCard-option-button'}
               text={'加入購物車'}
+              onClick={() => {
+                addProductToCard(proudctId, title, 1, imgId, price);
+              }}
             />
           </div>
         </section>
