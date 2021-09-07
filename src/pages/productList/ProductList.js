@@ -19,32 +19,6 @@ function ProductList(props) {
   const [favorites, setFavorites] = useState('');
   const [count, setCount] = useState(1);
   const [searchInput, setSearchInput] = useState('');
-  const buttonAttributes = [
-    {
-      text: '低GI便當',
-      isSelected: true,
-      type: 'origin',
-      routes: '/productList',
-    },
-    {
-      text: '鮮蔬沙拉',
-      isSelected: false,
-      type: 'origin',
-      routes: '/productListSalad',
-    },
-    {
-      text: '客製化便當',
-      isSelected: false,
-      type: 'origin',
-      routes: '/productListCustom',
-    },
-    {
-      text: '蔬菜箱',
-      isSelected: false,
-      type: 'green',
-      routes: '/vegBox',
-    },
-  ];
 
   const getData = useCallback(async () => {
     const _allProducts = await axios.get(`${endpoint}/product/bento`);
@@ -84,10 +58,6 @@ function ProductList(props) {
     setCommodities(_commodities);
   }, []);
 
-  useEffect(() => {
-    console.log('commodities', commodities);
-  }, [commodities]);
-
   const filterData = () => {
     const filterCommodities = [...commodities];
     const _commodities = filterCommodities.filter((filterCommodity) =>
@@ -100,10 +70,6 @@ function ProductList(props) {
     getData();
   }, [getData]);
 
-  useEffect(() => {
-    console.log('commodities', commodities);
-  }, [commodities]);
-
   return (
     <>
       <ProductFeatureBar
@@ -112,7 +78,6 @@ function ProductList(props) {
         searchInput={searchInput}
         setSearchInput={setSearchInput}
         onSearch={filterData}
-        buttonAttributes={buttonAttributes}
       />
       <CommodityList
         commodities={commodities}
