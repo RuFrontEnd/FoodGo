@@ -10,7 +10,6 @@ function OptionButton(props) {
     text = '', // show btn content
     isSelected = false, // is button active
     type = 'origin', // orange or green
-    routes = '', // link address
   } = props;
 
   let btnColor = '';

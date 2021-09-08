@@ -21,7 +21,6 @@ import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
 import LoginModal from 'components/loginModal/LoginModal';
 import FallBack from 'components/fallBack/FallBack';
 import HomePage from 'pages/homePage/HomePage';
-import Test from 'components/test/Test';
 
 // const Suspense = () =>returnFallBack;
 // 引入 所有人的總元件
@@ -92,10 +91,6 @@ function App() {
   //----------------------索引值轉字串----------------------
   const [textCounty, setTextCounty] = useState('');
   const [textTownship, setTextTownship] = useState('');
-
-  useEffect(() => {
-    console.log('a');
-  }, []);
 
   useEffect(async () => {
     const accessToken = localStorage.getItem('accessToken');
@@ -181,29 +176,29 @@ function App() {
           setShowSuccessBox={setShowSuccessBox}
         />
         <ScrollToTop>
-          <Switch>
-            <Test>
-              {/* 首頁 */}
-              <Route exact path="/">
-                <HomePage
-                  takeOrNot={takeOrNot}
-                  setTakeOrNot={setTakeOrNot}
-                  selectDate={selectDate}
-                  setSelectDate={setSelectDate}
-                  slecteTime={slecteTime}
-                  setSelectTime={setSelectTime}
-                  setShowBar={setShowBar}
-                  county={county}
-                  setCounty={setCounty}
-                  township={township}
-                  setTownship={setTownship}
-                  address={address}
-                  setAddress={setAddress}
-                />
-              </Route>
-              {/* 便當商品列表 */}
-              <Route exact path="/productList">
-                <Suspense fallback={<FallBack />}>
+          <Suspense fallback={<FallBack />}>
+            <Switch>
+
+                {/* 首頁 */}
+                <Route exact path="/">
+                  <HomePage
+                    takeOrNot={takeOrNot}
+                    setTakeOrNot={setTakeOrNot}
+                    selectDate={selectDate}
+                    setSelectDate={setSelectDate}
+                    slecteTime={slecteTime}
+                    setSelectTime={setSelectTime}
+                    setShowBar={setShowBar}
+                    county={county}
+                    setCounty={setCounty}
+                    township={township}
+                    setTownship={setTownship}
+                    address={address}
+                    setAddress={setAddress}
+                  />
+                </Route>
+                {/* 便當商品列表 */}
+                <Route exact path="/productList">
                   <ProductList
                     setShowBar={setShowBar}
                     handleCartNumber={handleCartNumber}
@@ -222,11 +217,9 @@ function App() {
                     amount={amount}
                     setAmount={setAmount}
                   />
-                </Suspense>
-              </Route>
-              {/* 沙拉商品列表 */}
-              <Route exact path="/productListSalad">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                {/* 沙拉商品列表 */}
+                <Route exact path="/productListSalad">
                   <SaladList
                     setShowBar={setShowBar}
                     handleCartNumber={handleCartNumber}
@@ -245,11 +238,9 @@ function App() {
                     amount={amount}
                     setAmount={setAmount}
                   />
-                </Suspense>
-              </Route>
-              {/* 客製化便當 */}
-              <Route exact path="/productListCustom">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                {/* 客製化便當 */}
+                <Route exact path="/productListCustom">
                   <CustomBentoList
                     setShowBar={setShowBar}
                     handleCartNumber={handleCartNumber}
@@ -268,25 +259,19 @@ function App() {
                     amount={amount}
                     setAmount={setAmount}
                   />
-                </Suspense>
-              </Route>
+                </Route>
 
-              {/* claudia */}
-              <Route exact path="/farmMap">
-                <Suspense fallback={<FallBack />}>
+                {/* claudia */}
+                <Route exact path="/farmMap">
                   <ClaudiaFarmIndex />
-                </Suspense>
-              </Route>
-              <Route exact path="/farmIntro">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                <Route exact path="/farmIntro">
                   <ClaudiaFarmDetailedPage
                     handleCartNumber={handleCartNumber}
                   />
-                </Suspense>
-              </Route>
-              {/* cha */}
-              <Route exact path="/cart">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                {/* cha */}
+                <Route exact path="/cart">
                   <ChaCart
                     setShowBar={setShowBar}
                     setCartNumber={setCartNumber}
@@ -307,55 +292,37 @@ function App() {
                     textTownship={textTownship}
                     textAddress={textAddress}
                   />
-                </Suspense>
-              </Route>
-              <Route exact path="/groupOrder/groupOrderCreate">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                <Route exact path="/groupOrder/groupOrderCreate">
                   <ChaGroupOrderCreate />
-                </Suspense>
-              </Route>
-              <Route path="/groupOrder/groupOrderSearch">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                <Route path="/groupOrder/groupOrderSearch">
                   <ChaGroupOrderSearch />
-                </Suspense>
-              </Route>
-              <Route path="/groupOrder/groupOrderSignIn">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                <Route path="/groupOrder/groupOrderSignIn">
                   <ChaGroupOrderSignIn />
-                </Suspense>
-              </Route>
-              <Route path="/groupOrder/groupOrderConfirm">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                <Route path="/groupOrder/groupOrderConfirm">
                   <ChaGroupOrderConfirm />
-                </Suspense>
-              </Route>
-              <Route path="/groupOrder/groupOrderMenu">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                <Route path="/groupOrder/groupOrderMenu">
                   <ChaGroupOrderMenu />
-                </Suspense>
-              </Route>
-              {/* 訂單管理已置入<IrisOrderManagement /> */}
-              {/* 測試用：中繼站、商品清單 */}
-              <Route exact path="/checkpoint">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                {/* 訂單管理已置入<IrisOrderManagement /> */}
+                {/* 測試用：中繼站、商品清單 */}
+                <Route exact path="/checkpoint">
                   <ChaCheckpoint />
-                </Suspense>
-              </Route>
-              <Route exact path="/chaProductList">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                <Route exact path="/chaProductList">
                   <ChaProductList handleCartNumber={handleCartNumber} />
-                </Suspense>
-              </Route>
-              <Route exact path="/chaCartTest">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                <Route exact path="/chaCartTest">
                   <ChaCartTest />
-                </Suspense>
-              </Route>
-              {/* 404 */}
+                </Route>
+                {/* 404 */}
 
-              {/* iris */}
-              <Route exact path="/memberUserprofile">
-                <Suspense fallback={<FallBack />}>
+                {/* iris */}
+                <Route exact path="/memberUserprofile">
                   <Userprofile
                     setShowBar={setShowBar}
                     // 會員
@@ -378,10 +345,9 @@ function App() {
                     slecteTime={slecteTime}
                     setSelectTime={setSelectTime}
                   />
-                </Suspense>
-              </Route>
-              <Route exact path="/orderComment">
-                {/* <Suspense fallback={<FallBack />}>
+                </Route>
+                <Route exact path="/orderComment">
+                  {/* 
                 <IrisOrderComment
                   setShowBar={setShowBar}
                   // 會員
@@ -400,10 +366,9 @@ function App() {
                   slecteTime={slecteTime}
                   setSelectTime={setSelectTime}
                 />
-              </Suspense> */}
-              </Route>
-              <Route exact path="/myFav">
-                <Suspense fallback={<FallBack />}>
+               */}
+                </Route>
+                <Route exact path="/myFav">
                   <MyFav
                     setShowBar={setShowBar}
                     // 會員
@@ -422,11 +387,10 @@ function App() {
                     slecteTime={slecteTime}
                     setSelectTime={setSelectTime}
                   />
-                </Suspense>
-              </Route>
-              <Route exact path="/beastiePoint">
-                {/* <Suspense fallback={<FallBack />}> */}
-                {/* <IrisBeastiePoint
+                </Route>
+                <Route exact path="/beastiePoint">
+                  {/*  */}
+                  {/* <IrisBeastiePoint
                 setShowBar={setShowBar}
                 // 會員
                 setShowLoginModal={setShowLoginModal}
@@ -444,11 +408,11 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               /> */}
-                {/* </Suspense> */}
-              </Route>
-              <Route path="/getCoupon">
-                {/* <Suspense fallback={<FallBack />}> */}
-                {/* <IrisGetCoupon
+                  {/*  */}
+                </Route>
+                <Route path="/getCoupon">
+                  {/*  */}
+                  {/* <IrisGetCoupon
                 setShowBar={setShowBar}
                 // 會員
                 setShowLoginModal={setShowLoginModal}
@@ -469,10 +433,9 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               /> */}
-                {/* </Suspense> */}
-              </Route>
-              <Route path="/orderManagement">
-                <Suspense fallback={<FallBack />}>
+                  {/*  */}
+                </Route>
+                <Route path="/orderManagement">
                   <OrderManagement
                     handleCartNumber={handleCartNumber}
                     showBar={showBar}
@@ -493,11 +456,9 @@ function App() {
                     slecteTime={slecteTime}
                     setSelectTime={setSelectTime}
                   />
-                </Suspense>
-              </Route>
-              {/* jess */}
-              <Route path="/menu">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                {/* jess */}
+                <Route path="/menu">
                   <JessMenu
                     setShowBar={setShowBar}
                     setCartNumber={setCartNumber}
@@ -514,10 +475,8 @@ function App() {
                     slecteTime={slecteTime}
                     setSelectTime={setSelectTime}
                   />
-                </Suspense>
-              </Route>
-              <Route path="/bento/:id?">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                <Route path="/bento/:id?">
                   <JessBento
                     setShowBar={setShowBar}
                     setCartNumber={setCartNumber}
@@ -535,10 +494,8 @@ function App() {
                     slecteTime={slecteTime}
                     setSelectTime={setSelectTime}
                   />
-                </Suspense>
-              </Route>
-              <Route path="/vegBox">
-                <Suspense fallback={<FallBack />}>
+                </Route>
+                <Route path="/vegBox">
                   <JessVegBox
                     setShowBar={setShowBar}
                     setCartNumber={setCartNumber}
@@ -556,10 +513,9 @@ function App() {
                     slecteTime={slecteTime}
                     setSelectTime={setSelectTime}
                   />
-                </Suspense>
-              </Route>
-            </Test>
-          </Switch>
+                </Route>
+            </Switch>
+          </Suspense>
         </ScrollToTop>
         <Footer />
       </>
