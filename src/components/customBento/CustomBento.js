@@ -133,7 +133,7 @@ function CustomBento(props) {
     );
 
     let _foods = [...foods];
-    if (e.target.id === $vegBoxLeft.current.id) {
+    if (e.target.id === $vegBoxLeft.current.id && selection === 'vegetable') {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setVegBoxLeftImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
@@ -145,7 +145,7 @@ function CustomBento(props) {
       });
     } // 左邊蔬菜區
 
-    if (e.target.id === $vegBoxMiddle.current.id) {
+    if (e.target.id === $vegBoxMiddle.current.id && selection === 'vegetable') {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setVegBoxMiddleImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
@@ -157,7 +157,7 @@ function CustomBento(props) {
       });
     } // 中間蔬菜區
 
-    if (e.target.id === $vegBoxRight.current.id) {
+    if (e.target.id === $vegBoxRight.current.id && selection === 'vegetable') {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setvegBoxRightImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
@@ -169,7 +169,7 @@ function CustomBento(props) {
       });
     } // 右邊蔬菜區
 
-    if (e.target.id === $riceBox.current.id) {
+    if (selection === 'rice') {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setRiceImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
@@ -180,7 +180,8 @@ function CustomBento(props) {
       });
     } // 白飯區
 
-    if (e.target.id === $meetBox.current.id) {
+    if (selection === 'meet') {
+      console.log('a');
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setMeetImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
@@ -191,7 +192,7 @@ function CustomBento(props) {
       });
     } // 主食區
 
-    if (e.target.id === $eggBox.current.id) {
+    if (selection === 'egg') {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setEggImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
