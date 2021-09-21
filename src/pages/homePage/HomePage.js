@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { showNavBar } from 'redux/navBar/navBarActions'; // 判斷是否 login 的狀態
 import 'pages/homePage/homePage.scss';
 import { Carousel } from 'antd';
 import { Link } from 'react-router-dom';
@@ -132,6 +134,7 @@ function HomePage(props) {
   const $featureDot = useRef();
   const $homePageCircles = useRef();
   const $featureTriangle = useRef();
+  const dispatch = useDispatch();
   const [price, setPrice] = useState(-1);
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const [isFarmerFeatureActive, setIsFarmerFeatureActive] = useState(true);

@@ -69,6 +69,7 @@ const CustomBentoList = lazy(() =>
 function App() {
   const dispatch = useDispatch();
   const isLogin = useSelector((state) => state.member.isLogin);
+  const showNavBar = useSelector((state) => state.navBar.showNavBar);
   const [showBar, setShowBar] = useState(true);
   const [cartNumber, setCartNumber] = useState(0);
   const [amount, setAmount] = useState(1);
@@ -153,6 +154,8 @@ function App() {
       setCartNumber(newCartNumber);
     }
   };
+  
+  console.log('showNavBar',showNavBar)
 
   if (isLogin === null) {
     return <></>;
@@ -162,7 +165,7 @@ function App() {
       <>
         {/* 切頁時不重新渲染的部份 */}
         <Navbar
-          style={{ display: !showBar && 'none' }}
+          style={{ display: !showNavBar && 'none' }}
           cartNumber={cartNumber}
           amount={amount}
           setShowLoginModal={setShowLoginModal}
@@ -178,176 +181,173 @@ function App() {
         <ScrollToTop>
           <Suspense fallback={<FallBack />}>
             <Switch>
+              {/* 首頁 */}
+              <Route exact path="/">
+                <HomePage
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                  setShowBar={setShowBar}
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                />
+              </Route>
+              {/* 便當商品列表 */}
+              <Route exact path="/productList">
+                <ProductList
+                  setShowBar={setShowBar}
+                  handleCartNumber={handleCartNumber}
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                  amount={amount}
+                  setAmount={setAmount}
+                />
+              </Route>
+              {/* 沙拉商品列表 */}
+              <Route exact path="/productListSalad">
+                <SaladList
+                  setShowBar={setShowBar}
+                  handleCartNumber={handleCartNumber}
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                  amount={amount}
+                  setAmount={setAmount}
+                />
+              </Route>
+              {/* 客製化便當 */}
+              <Route exact path="/productListCustom">
+                <CustomBentoList
+                  setShowBar={setShowBar}
+                  handleCartNumber={handleCartNumber}
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                  amount={amount}
+                  setAmount={setAmount}
+                />
+              </Route>
 
-                {/* 首頁 */}
-                <Route exact path="/">
-                  <HomePage
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                    setShowBar={setShowBar}
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                  />
-                </Route>
-                {/* 便當商品列表 */}
-                <Route exact path="/productList">
-                  <ProductList
-                    setShowBar={setShowBar}
-                    handleCartNumber={handleCartNumber}
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                    amount={amount}
-                    setAmount={setAmount}
-                  />
-                </Route>
-                {/* 沙拉商品列表 */}
-                <Route exact path="/productListSalad">
-                  <SaladList
-                    setShowBar={setShowBar}
-                    handleCartNumber={handleCartNumber}
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                    amount={amount}
-                    setAmount={setAmount}
-                  />
-                </Route>
-                {/* 客製化便當 */}
-                <Route exact path="/productListCustom">
-                  <CustomBentoList
-                    setShowBar={setShowBar}
-                    handleCartNumber={handleCartNumber}
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                    amount={amount}
-                    setAmount={setAmount}
-                  />
-                </Route>
+              {/* claudia */}
+              <Route exact path="/farmMap">
+                <ClaudiaFarmIndex />
+              </Route>
+              <Route exact path="/farmIntro">
+                <ClaudiaFarmDetailedPage handleCartNumber={handleCartNumber} />
+              </Route>
+              {/* cha */}
+              <Route exact path="/cart">
+                <ChaCart
+                  setShowBar={setShowBar}
+                  setCartNumber={setCartNumber}
+                  // handleCartNumber={handleCartNumber}
+                  // county={county}
+                  // setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  // address={address}
+                  // setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                  textCounty={textCounty}
+                  textTownship={textTownship}
+                  textAddress={textAddress}
+                />
+              </Route>
+              <Route exact path="/groupOrder/groupOrderCreate">
+                <ChaGroupOrderCreate />
+              </Route>
+              <Route path="/groupOrder/groupOrderSearch">
+                <ChaGroupOrderSearch />
+              </Route>
+              <Route path="/groupOrder/groupOrderSignIn">
+                <ChaGroupOrderSignIn />
+              </Route>
+              <Route path="/groupOrder/groupOrderConfirm">
+                <ChaGroupOrderConfirm />
+              </Route>
+              <Route path="/groupOrder/groupOrderMenu">
+                <ChaGroupOrderMenu />
+              </Route>
+              {/* 訂單管理已置入<IrisOrderManagement /> */}
+              {/* 測試用：中繼站、商品清單 */}
+              <Route exact path="/checkpoint">
+                <ChaCheckpoint />
+              </Route>
+              <Route exact path="/chaProductList">
+                <ChaProductList handleCartNumber={handleCartNumber} />
+              </Route>
+              <Route exact path="/chaCartTest">
+                <ChaCartTest />
+              </Route>
+              {/* 404 */}
 
-                {/* claudia */}
-                <Route exact path="/farmMap">
-                  <ClaudiaFarmIndex />
-                </Route>
-                <Route exact path="/farmIntro">
-                  <ClaudiaFarmDetailedPage
-                    handleCartNumber={handleCartNumber}
-                  />
-                </Route>
-                {/* cha */}
-                <Route exact path="/cart">
-                  <ChaCart
-                    setShowBar={setShowBar}
-                    setCartNumber={setCartNumber}
-                    // handleCartNumber={handleCartNumber}
-                    // county={county}
-                    // setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    // address={address}
-                    // setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                    textCounty={textCounty}
-                    textTownship={textTownship}
-                    textAddress={textAddress}
-                  />
-                </Route>
-                <Route exact path="/groupOrder/groupOrderCreate">
-                  <ChaGroupOrderCreate />
-                </Route>
-                <Route path="/groupOrder/groupOrderSearch">
-                  <ChaGroupOrderSearch />
-                </Route>
-                <Route path="/groupOrder/groupOrderSignIn">
-                  <ChaGroupOrderSignIn />
-                </Route>
-                <Route path="/groupOrder/groupOrderConfirm">
-                  <ChaGroupOrderConfirm />
-                </Route>
-                <Route path="/groupOrder/groupOrderMenu">
-                  <ChaGroupOrderMenu />
-                </Route>
-                {/* 訂單管理已置入<IrisOrderManagement /> */}
-                {/* 測試用：中繼站、商品清單 */}
-                <Route exact path="/checkpoint">
-                  <ChaCheckpoint />
-                </Route>
-                <Route exact path="/chaProductList">
-                  <ChaProductList handleCartNumber={handleCartNumber} />
-                </Route>
-                <Route exact path="/chaCartTest">
-                  <ChaCartTest />
-                </Route>
-                {/* 404 */}
-
-                {/* iris */}
-                <Route exact path="/memberUserprofile">
-                  <Userprofile
-                    setShowBar={setShowBar}
-                    // 會員
-                    setShowLoginModal={setShowLoginModal}
-                    couponStatus={couponStatus}
-                    setCouponStatus={setCouponStatus}
-                    couponOneStatus={couponOneStatus}
-                    setCouponOneStatus={setCouponOneStatus}
-                    // vnbar
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                  />
-                </Route>
-                <Route exact path="/orderComment">
-                  {/* 
+              {/* iris */}
+              <Route exact path="/memberUserprofile">
+                <Userprofile
+                  setShowBar={setShowBar}
+                  // 會員
+                  setShowLoginModal={setShowLoginModal}
+                  couponStatus={couponStatus}
+                  setCouponStatus={setCouponStatus}
+                  couponOneStatus={couponOneStatus}
+                  setCouponOneStatus={setCouponOneStatus}
+                  // vnbar
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                />
+              </Route>
+              <Route exact path="/orderComment">
+                {/* 
                 <IrisOrderComment
                   setShowBar={setShowBar}
                   // 會員
@@ -367,30 +367,30 @@ function App() {
                   setSelectTime={setSelectTime}
                 />
                */}
-                </Route>
-                <Route exact path="/myFav">
-                  <MyFav
-                    setShowBar={setShowBar}
-                    // 會員
-                    setShowLoginModal={setShowLoginModal}
-                    // vnbar
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                  />
-                </Route>
-                <Route exact path="/beastiePoint">
-                  {/*  */}
-                  {/* <IrisBeastiePoint
+              </Route>
+              <Route exact path="/myFav">
+                <MyFav
+                  setShowBar={setShowBar}
+                  // 會員
+                  setShowLoginModal={setShowLoginModal}
+                  // vnbar
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                />
+              </Route>
+              <Route exact path="/beastiePoint">
+                {/*  */}
+                {/* <IrisBeastiePoint
                 setShowBar={setShowBar}
                 // 會員
                 setShowLoginModal={setShowLoginModal}
@@ -408,11 +408,11 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               /> */}
-                  {/*  */}
-                </Route>
-                <Route path="/getCoupon">
-                  {/*  */}
-                  {/* <IrisGetCoupon
+                {/*  */}
+              </Route>
+              <Route path="/getCoupon">
+                {/*  */}
+                {/* <IrisGetCoupon
                 setShowBar={setShowBar}
                 // 會員
                 setShowLoginModal={setShowLoginModal}
@@ -433,87 +433,87 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               /> */}
-                  {/*  */}
-                </Route>
-                <Route path="/orderManagement">
-                  <OrderManagement
-                    handleCartNumber={handleCartNumber}
-                    showBar={showBar}
-                    setShowBar={setShowBar}
-                    // 會員
-                    setShowLoginModal={setShowLoginModal}
-                    // vnbar
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                  />
-                </Route>
-                {/* jess */}
-                <Route path="/menu">
-                  <JessMenu
-                    setShowBar={setShowBar}
-                    setCartNumber={setCartNumber}
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                  />
-                </Route>
-                <Route path="/bento/:id?">
-                  <JessBento
-                    setShowBar={setShowBar}
-                    setCartNumber={setCartNumber}
-                    handleCartNumber={handleCartNumber}
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                  />
-                </Route>
-                <Route path="/vegBox">
-                  <JessVegBox
-                    setShowBar={setShowBar}
-                    setCartNumber={setCartNumber}
-                    handleCartNumber={handleCartNumber}
-                    county={county}
-                    setCounty={setCounty}
-                    township={township}
-                    setTownship={setTownship}
-                    address={address}
-                    setAddress={setAddress}
-                    takeOrNot={takeOrNot}
-                    setTakeOrNot={setTakeOrNot}
-                    selectDate={selectDate}
-                    setSelectDate={setSelectDate}
-                    slecteTime={slecteTime}
-                    setSelectTime={setSelectTime}
-                  />
-                </Route>
+                {/*  */}
+              </Route>
+              <Route path="/orderManagement">
+                <OrderManagement
+                  handleCartNumber={handleCartNumber}
+                  showBar={showBar}
+                  setShowBar={setShowBar}
+                  // 會員
+                  setShowLoginModal={setShowLoginModal}
+                  // vnbar
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                />
+              </Route>
+              {/* jess */}
+              <Route path="/menu">
+                <JessMenu
+                  setShowBar={setShowBar}
+                  setCartNumber={setCartNumber}
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                />
+              </Route>
+              <Route path="/bento/:id?">
+                <JessBento
+                  setShowBar={setShowBar}
+                  setCartNumber={setCartNumber}
+                  handleCartNumber={handleCartNumber}
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                />
+              </Route>
+              <Route path="/vegBox">
+                <JessVegBox
+                  setShowBar={setShowBar}
+                  setCartNumber={setCartNumber}
+                  handleCartNumber={handleCartNumber}
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                />
+              </Route>
             </Switch>
           </Suspense>
         </ScrollToTop>
