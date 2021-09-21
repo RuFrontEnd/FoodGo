@@ -5,12 +5,12 @@ import './navbar.scss';
 import 'antd/dist/antd.css';
 // import { Popover } from 'antd';
 import { FastForwardFilled, MenuOutlined } from '@ant-design/icons';
-import { ReactComponent as Logo } from 'components/navBar/images/navbar-logo.svg';
+import { ReactComponent as Logo } from 'assets/svg/logo.svg';
 import { ReactComponent as Member } from 'components/navBar/images/navBar-member.svg';
 import { ReactComponent as DropArrow } from 'components/navBar/images/navbar-dropArrow.svg';
-import { ReactComponent as Monster } from 'components/navBar/images/navbar-monster.svg';
-import { ReactComponent as ShoppingCart } from 'components/navBar/images/navbar-shopping-cart.svg';
-import { ReactComponent as ShoppingAmount } from 'components/navBar/images/navbar-cartNumber.svg';
+import { ReactComponent as Monster } from 'assets/svg/monster.svg';
+import { ReactComponent as ShoppingCart } from 'assets/svg/shoppingCart.svg';
+import { ReactComponent as ShoppingNumber } from 'assets/svg/shoppingNumber.svg';
 import { ReactComponent as HamburgerMenu } from 'components/navBar/images/navBar-hamburger.svg';
 import { ReactComponent as BackArrow } from 'components/navBar/images/navBar-backArrow.svg';
 import { ReactComponent as Cancel } from 'components/navBar/images/navBar-cancel.svg';
@@ -312,6 +312,7 @@ function NavBar(props) {
                         </Nav.Link>
                         <Monster className="navBar-monster4" />
                       </li> */}
+                        {/* TODO: 下拉選單暫時取消我的怪獸*/}
                         <li
                           className="navBar-dropdown-item navBar-login-option"
                           onClick={() => {
@@ -337,7 +338,7 @@ function NavBar(props) {
                   </Nav.Link>
                   <div className="navbar-tag-wrap">
                     <div className="navbar-tag">
-                      <ShoppingAmount className="navBar-navbarCartAmount" />
+                      <ShoppingNumber className="navBar-navbarCartAmount" />
                       <span
                         className="navBar-navbarCartNum"
                         id="navBar-navbarCartNum"
