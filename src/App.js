@@ -200,7 +200,6 @@ function App() {
               {/* 便當商品列表 */}
               <Route exact path="/productList">
                 <ProductList
-                  setShowBar={setShowBar}
                   handleCartNumber={handleCartNumber}
                   county={county}
                   setCounty={setCounty}
@@ -271,7 +270,6 @@ function App() {
               {/* cha */}
               <Route exact path="/cart">
                 <ChaCart
-                  setShowBar={setShowBar}
                   setCartNumber={setCartNumber}
                   // handleCartNumber={handleCartNumber}
                   // county={county}

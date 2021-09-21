@@ -8,7 +8,8 @@ import ChaCartStepCardStep3 from 'Cha/Components/Cha-Cart-Step-Card-Step3/ChaCar
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import $ from 'jquery';
 import 'Cha/Pages/Cha-Cart/ChaCart.scss';
-// import { withRouter } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { showNavBar } from 'redux/navBar/navBarActions';
 
 function ChaCart(props) {
   //-------------當前登入會員的id--------------//
@@ -20,7 +21,6 @@ function ChaCart(props) {
 
   // ---------------控制navbar------------//
   const {
-    setShowBar,
     setCartNumber,
     county,
     township,
@@ -56,8 +56,7 @@ function ChaCart(props) {
 
   //------------ 掛載就設定隱藏navbar----------//
   useEffect(() => {
-    setShowBar(false);
-    console.log('useEffect，在購物車隱藏navbar');
+    dispatch(showNavBar(false))
   }, []);
 
   //------------- 讀取LocalStorage-----------//

@@ -7,7 +7,8 @@ import ProductFeatureBar from 'components/productFeatureBar/ProductFeatureBar';
 import SearchBar from 'components/searchBar/SearchBar';
 import axios from 'axios';
 import productListBanner from 'assets/jpg/proudctList-banner.jpg';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { showNavBar } from 'redux/navBar/navBarActions';
 
 // 引用共用元件
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
@@ -19,6 +20,7 @@ function ProductList(props) {
   const [favorites, setFavorites] = useState('');
   const [count, setCount] = useState(1);
   const [searchInput, setSearchInput] = useState('');
+  const dispatch = useDispatch();
 
   const getData = useCallback(async () => {
     const _allProducts = await axios.get(`${endpoint}/product/bento`);
@@ -65,6 +67,10 @@ function ProductList(props) {
     );
     setCommodities(_commodities);
   };
+
+  useEffect(() => {
+    dispatch(showNavBar(true));
+  }, []);
 
   useEffect(() => {
     getData();

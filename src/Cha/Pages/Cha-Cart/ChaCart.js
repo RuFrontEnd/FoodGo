@@ -6,6 +6,8 @@ import ChaCartStepCardStep1 from 'Cha/Components/Cha-Cart-Step-Card-Step1/ChaCar
 import ChaCartStepCardStep2 from 'Cha/Components/Cha-Cart-Step-Card-Step2/ChaCartStepCardStep2';
 import ChaCartStepCardStep3 from 'Cha/Components/Cha-Cart-Step-Card-Step3/ChaCartStepCardStep3';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
+import { useDispatch } from 'react-redux';
+import { showNavBar } from 'redux/navBar/navBarActions';
 import $ from 'jquery';
 import 'Cha/Pages/Cha-Cart/ChaCart.scss';
 // import { withRouter } from 'react-router-dom';
@@ -45,6 +47,7 @@ function ChaCart(props) {
   // }
   // console.log('isLogin', isLogin);
   // ----------給「會員資料表」用-------------//
+  const dispatch = useDispatch()
   const [memberSid, setMemberSid] = useState(1);
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
@@ -53,7 +56,7 @@ function ChaCart(props) {
   const [takeTime, setTakeTime] = useState(slecteTime);
   const [county, setCounty] = useState(textCounty);
   const [district, setDistrict] = useState(textTownship);
-  const [address,setAddress] = useState(textAddress);
+  const [address, setAddress] = useState(textAddress);
   // console.log('textCounty', textCounty);
   // console.log('textTownship', textTownship);
 
@@ -80,12 +83,6 @@ function ChaCart(props) {
   //格式檢查用
   const [formatCheck, setFormatCheck] = useState(false);
 
-  //------------ 掛載就設定隱藏navbar----------//
-  useEffect(() => {
-    setShowBar(false);
-    console.log('useEffect，在購物車隱藏navbar');
-  }, []);
-
   //------------- 讀取LocalStorage-----------//
   function readCartFromLocalStorage() {
     const newCart = localStorage.getItem('cart') || '[]';
@@ -95,6 +92,7 @@ function ChaCart(props) {
   // ------------componentDidMount，一開始會載入資料(在元件初始化完成後)------//
   useEffect(() => {
     readCartFromLocalStorage();
+    dispatch(showNavBar(false));
     console.log('useEffect，讀取LocalStorage的「cart」', meals);
   }, []);
   // // }, [meals]);
