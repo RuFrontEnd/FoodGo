@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 // import BreadCrumb from '../Components/JessBreadCrumb/BreadCrumb'
-import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import JessVegHeader from '../Components/JessVegAHeader/JessVegHeader';
 import JessVegB from '../Components/JessVegB/JessVegB';
 import JessVegC from '../Components/JessVegC/JessVegC';
@@ -19,7 +18,6 @@ function JessVegBox(props) {
   }, []);
   return (
     <>
-      <VNavbar {...props} />
       <JessVegHeader
         handleCartNumber={handleCartNumber}
         handleCarList={handleCarList}

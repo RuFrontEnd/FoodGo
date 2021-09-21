@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter, useParams } from 'react-router-dom';
-import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import JessHeader from '../Components/JessHeader/JessHeader';
 import JessListA from '../Components/JessListA/JessListA';
 import JessListB from '../Components/JessListB/JessListB';
@@ -65,7 +64,6 @@ function JessBento(props) {
 
   return (
     <>
-      <VNavbar {...props} />
       <JessHeader
         handleCartNumber={handleCartNumber}
         handleCarList={handleCarList}

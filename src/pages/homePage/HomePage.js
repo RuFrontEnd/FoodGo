@@ -47,7 +47,6 @@ import stepImage5 from 'assets/svg/step5.svg';
 import customVideo from 'assets/mp4/customFinalVideo.mp4';
 
 import OptionButton from 'components/optionButton/OptionButton';
-import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import ToToop from 'Share/Components/ToTopButton/ScrollButton';
 import AreaTitle from 'components/areaTitle/AreaTitle';
 import RecommendCard from 'components/recommendCard/RecommendCard';
@@ -252,15 +251,6 @@ function HomePage(props) {
 
   return (
     <>
-      {/* <VNavbar
-        {...props}
-        county={county}
-        setCounty={setCounty}
-        township={township}
-        setTownship={setTownship}
-        address={address}
-        setAddress={setAddress}
-      /> */}
       {/* 輪播牆 */}
       <section
         id="homePage-carousel-container"

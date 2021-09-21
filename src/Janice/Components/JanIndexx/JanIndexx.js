@@ -13,7 +13,6 @@ import Button from '../../../Share/Components/Button/Button';
 import starO from './Images/Svg/star-o.svg';
 import ArrowLeft from '../../../Share/Components/ArrowLeft/ArrowLeft';
 import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight';
-import VNavbar from '../../../Share/Components/VNavbar/VNavbar';
 import ToToop from '../../../Share/Components/ToTopButton/ScrollButton';
 import { datacountries, datatownships, dataprice } from './data';
 
@@ -243,16 +242,6 @@ function JanIndexx(props) {
 
   return (
     <>
-      {/* <VNavbar
-        {...props}
-        county={county}
-        setCounty={setCounty}
-        township={township}
-        setTownship={setTownship}
-        address={address}
-        setAddress={setAddress}
-      /> */}
-
       <div className="jan-fake-nav d-flex justify-content-center align-items-center">
         navbar的高度
       </div>
