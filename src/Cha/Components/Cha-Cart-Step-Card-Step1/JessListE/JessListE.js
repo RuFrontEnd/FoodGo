@@ -19,7 +19,6 @@ function JessListE(props) {
   return (
     <>
       <div className="container-fluid">
-        <div className="container ">
           {/* <div className="cha-jess-productTabBorder"></div> */}
           <h2 className="cha-jess-text-30orange text-center">你可能還想來點</h2>
           <div className="mx-auto cha-jess-carousel">
@@ -101,7 +100,6 @@ function JessListE(props) {
               </div>
             </ItemsCarousel>
           </div>
-        </div>
       </div>
     </>
   );
