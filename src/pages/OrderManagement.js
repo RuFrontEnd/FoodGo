@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 // import IrisOrderCommentSect from '../Components/IrisOrderCommentSect/IrisOrderCommentSect';
 
-function IrisOrderManagement(props) {
+function OrderManagement(props) {
   const { currentUserData, setShowLoginModal, setShowBar, handleCartNumber } =
     props;
   const [commentDelete, setCommentDelete] = useState('');
@@ -31,4 +31,4 @@ function IrisOrderManagement(props) {
   );
 }
 
-export default IrisOrderManagement;
+export default OrderManagement;
