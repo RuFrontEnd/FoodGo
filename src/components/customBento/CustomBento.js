@@ -4,7 +4,6 @@ import 'components/customBento/customBento.scss';
 import MultiCarousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import OptionButtonRef from 'components/optionButton/OptionButton';
-import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
 import Counter from 'components/counter/Counter';
 import AddCart from 'components/addCart/AddCart';
 import PriceArea from 'components/priceArea/PriceArea'; // 資訊區價格 網頁版
