@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './IrisAddCart.scss'
 import { TimelineMax, TimelineLite } from 'gsap' // npm install gsap react-gsap 安裝 tween套件
-import cart from './Images/cart.svg'
+import cart from 'assets/svg/cart.svg';
 function AddCart(props) {
   // 目標的id一律用target
   // id 不同元件id

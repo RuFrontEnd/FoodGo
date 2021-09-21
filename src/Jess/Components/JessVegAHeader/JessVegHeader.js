@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
 import './JessVegHeader.scss';
-import AddCart from 'Share/Components/AddCart/AddCart';
 import BreadCrumb from '../JessBreadCrumb/BreadCrumb';
 import AddFavorite from 'Share/Components/AddFavorite/AddFavorite';
-import cart from '../../../Share/Components/AddCart/Images/cart.svg';
+import cart from 'assets/svg/cart.svg';
 import vegPic from './Images/vegetableBox_slick_pic2.png';
 import vegPic2 from './Images/VegBox2.jpg';
 

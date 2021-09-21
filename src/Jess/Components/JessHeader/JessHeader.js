@@ -5,8 +5,7 @@ import 'antd/dist/antd.css';
 import './JessHeader.scss';
 import chickenpic from './Images/02.jpg';
 import Counter from '../../../Share/Components/Counter/Counter';
-import AddCart from 'Share/Components/AddCart/AddCart';
-import cart from '../../../Share/Components/AddCart/Images/cart.svg';
+import cart from 'assets/svg/cart.svg';
 import BreadCrumb from '../JessBreadCrumb/BreadCrumb';
 
 function JessProdoctList(props) {
