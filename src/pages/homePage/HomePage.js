@@ -121,7 +121,6 @@ const dataprice = datacountries.map((v, i, array) =>
 
 function HomePage(props) {
   const {
-    setShowBar,
     county,
     setCounty,
     township,
@@ -148,7 +147,7 @@ function HomePage(props) {
   const [showDiscountCard, setShowDiscountCard] = useState('discountCard-1');
 
   useEffect(() => {
-    setShowBar(true);
+    dispatch(showNavBar(true))
   }, []);
 
   // 品牌特色切換

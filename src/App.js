@@ -154,8 +154,6 @@ function App() {
       setCartNumber(newCartNumber);
     }
   };
-  
-  console.log('showNavBar',showNavBar)
 
   if (isLogin === null) {
     return <></>;

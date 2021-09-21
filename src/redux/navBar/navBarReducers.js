@@ -9,7 +9,7 @@ const navBarReducers = (state = initialState, action) => {
     case SHOWNAVBAR:
       return {
         ...state,
-        showNavBar: false,
+        showNavBar: action.showNavBar,
       };
 
     default:
