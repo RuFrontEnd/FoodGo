@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import styled from 'styled-components/macro';
 import 'components/customBento/customBento.scss';
 import MultiCarousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import OptionButtonRef from 'components/optionButton/OptionButton';
 import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
 import Counter from 'components/counter/Counter';
 import AddCart from 'components/addCart/AddCart';
@@ -21,6 +23,11 @@ import hintF from './Images/hintF.svg';
 // 引用圖片
 import background from './Images/background.png';
 import { ReactComponent as LunchBox } from 'assets/svg/lunchBox.svg'; // 將svg以元件方式引入
+
+const OptionButton = styled(OptionButtonRef)`
+  padding: 5px 25px;
+  margin: 0px 20px;
+`;
 
 function CustomBento(props) {
   const { handleCartNumber, amount, setAmount, count, setCount } = props;
@@ -86,6 +93,29 @@ function CustomBento(props) {
   const [foods, setFoods] = useState([]);
   const [foodItems, setFoodItems] = useState([]);
 
+  const optionButtonSettings = [
+    {
+      text: '副食',
+      id: 'rice-items',
+      selected: selection === 'rice',
+    },
+    {
+      text: '主食',
+      id: 'meet-items',
+      selected: selection === 'meet',
+    },
+    {
+      text: '配菜',
+      id: 'vegetable-items',
+      selected: selection === 'vegetable',
+    },
+    {
+      text: '蛋',
+      id: 'egg-items',
+      selected: selection === 'egg',
+    },
+  ];
+
   // 給localStorage的id
   let today = +new Date();
   const [todayId, setTodayId] = useState(today);
@@ -95,6 +125,7 @@ function CustomBento(props) {
     setIsPrice(true);
     setIsCal(false);
   }
+
   function switchCal() {
     setIsPrice(false);
     setIsCal(true);
@@ -261,6 +292,35 @@ function CustomBento(props) {
       setEggPrice(0);
       setEggCal(0);
     } // 主食區
+  };
+
+  const switchItems = (id) => {
+    setIsShowHintA(false);
+    setIsShowHintB(false);
+    setIsShowHintC(false);
+    setIsShowHintD(false);
+    setIsShowHintE(false);
+    setIsShowHintF(false);
+    switch (id) {
+      case 'rice-items':
+        setSelection('rice'); // 開啟白飯選區
+        setIsShowHintD(true);
+        break;
+      case 'meet-items':
+        setSelection('meet'); // 開啟主菜選區
+        setIsShowHintF(true);
+        break;
+      case 'vegetable-items':
+        setSelection('vegetable'); // 開啟配菜選區
+        setIsShowHintA(true);
+        setIsShowHintB(true);
+        setIsShowHintC(true);
+        break;
+      case 'egg-items':
+        setSelection('egg'); // 開啟蛋選區
+        setIsShowHintE(true);
+        break;
+    }
   };
 
   // 向後端請求資料
@@ -639,94 +699,16 @@ function CustomBento(props) {
             <div className="ru-drag-warp">
               <div className="ru-selection-container">
                 <div className="ru-selection-warp">
-                  <RuButtonB
-                    text={'副食'}
-                    id={'ru-buttonB-rice'}
-                    selection={selection}
-                    setSelection={setSelection}
-                    moveX={moveX}
-                    setMoveX={setMoveX}
-                    limitX={limitX} // 調配右滑極限值
-                    setLimitX={setLimitX} // 調配右滑極限值
-                    isShowHintA={isShowHintA}
-                    setIsShowHintA={setIsShowHintA}
-                    isShowHintB={isShowHintB}
-                    setIsShowHintB={setIsShowHintB}
-                    isShowHintC={isShowHintC}
-                    setIsShowHintC={setIsShowHintC}
-                    isShowHintD={isShowHintD}
-                    setIsShowHintD={setIsShowHintD}
-                    isShowHintE={isShowHintE}
-                    setIsShowHintE={setIsShowHintE}
-                    isShowHintF={isShowHintF}
-                    setIsShowHintF={setIsShowHintF}
-                  />
-                  <RuButtonB
-                    text={'主食'}
-                    id={'ru-buttonB-meet'}
-                    selection={selection}
-                    setSelection={setSelection}
-                    moveX={moveX}
-                    setMoveX={setMoveX}
-                    limitX={limitX} // 調配右滑極限值
-                    setLimitX={setLimitX} // 調配右滑極限值
-                    isShowHintA={isShowHintA}
-                    setIsShowHintA={setIsShowHintA}
-                    isShowHintB={isShowHintB}
-                    setIsShowHintB={setIsShowHintB}
-                    isShowHintC={isShowHintC}
-                    setIsShowHintC={setIsShowHintC}
-                    isShowHintD={isShowHintD}
-                    setIsShowHintD={setIsShowHintD}
-                    isShowHintE={isShowHintE}
-                    setIsShowHintE={setIsShowHintE}
-                    isShowHintF={isShowHintF}
-                    setIsShowHintF={setIsShowHintF}
-                  />
-                  <RuButtonB
-                    text={'配菜'}
-                    id={'ru-buttonB-vegetable'}
-                    selection={selection}
-                    setSelection={setSelection}
-                    moveX={moveX}
-                    setMoveX={setMoveX}
-                    limitX={limitX} // 調配右滑極限值
-                    setLimitX={setLimitX} // 調配右滑極限值
-                    isShowHintA={isShowHintA}
-                    setIsShowHintA={setIsShowHintA}
-                    isShowHintB={isShowHintB}
-                    setIsShowHintB={setIsShowHintB}
-                    isShowHintC={isShowHintC}
-                    setIsShowHintC={setIsShowHintC}
-                    isShowHintD={isShowHintD}
-                    setIsShowHintD={setIsShowHintD}
-                    isShowHintE={isShowHintE}
-                    setIsShowHintE={setIsShowHintE}
-                    isShowHintF={isShowHintF}
-                    setIsShowHintF={setIsShowHintF}
-                  />
-                  <RuButtonB
-                    text={'蛋'}
-                    id={'ru-buttonB-egg'}
-                    selection={selection}
-                    setSelection={setSelection}
-                    moveX={moveX}
-                    setMoveX={setMoveX}
-                    limitX={limitX} // 調配右滑極限值
-                    setLimitX={setLimitX} // 調配右滑極限值
-                    isShowHintA={isShowHintA}
-                    setIsShowHintA={setIsShowHintA}
-                    isShowHintB={isShowHintB}
-                    setIsShowHintB={setIsShowHintB}
-                    isShowHintC={isShowHintC}
-                    setIsShowHintC={setIsShowHintC}
-                    isShowHintD={isShowHintD}
-                    setIsShowHintD={setIsShowHintD}
-                    isShowHintE={isShowHintE}
-                    setIsShowHintE={setIsShowHintE}
-                    isShowHintF={isShowHintF}
-                    setIsShowHintF={setIsShowHintF}
-                  />
+                  {optionButtonSettings.map((optionButtonSetting) => (
+                    <OptionButton
+                      text={optionButtonSetting.text}
+                      id={optionButtonSetting.id}
+                      onClick={() => {
+                        switchItems(optionButtonSetting.id);
+                      }}
+                      isSelected={optionButtonSetting.selected}
+                    />
+                  ))}
                 </div>
               </div>
               <MultiCarousel
