@@ -54,7 +54,6 @@ const ChaGroupOrderConfirm = lazy(() =>
 const ChaGroupOrderMenu = lazy(() =>
   import('Cha/Components/Cha-Group-Order-Menu/ChaGroupOrderMenu')
 );
-const ChaCheckpoint = lazy(() => import('Cha/Pages/ChaCheckpoint'));
 const ChaProductList = lazy(() => import('Cha/Components-demo/ChaProductList'));
 const ChaCartTest = lazy(() => import('Cha/Components-demo/ChaCartTest'));
 
@@ -306,9 +305,6 @@ function App() {
               </Route>
               {/* 訂單管理已置入<IrisOrderManagement /> */}
               {/* 測試用：中繼站、商品清單 */}
-              <Route exact path="/checkpoint">
-                <ChaCheckpoint />
-              </Route>
               <Route exact path="/chaProductList">
                 <ChaProductList handleCartNumber={handleCartNumber} />
               </Route>
