@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {
   datacountries,
   datatownships,
-} from '../src/Janice/Components/JanIndexx/data.js';
+} from 'data/AdministrativeDistrict.js';
 import {
   login,
   logout,

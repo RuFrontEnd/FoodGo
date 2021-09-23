@@ -315,16 +315,6 @@ $white: #ffffff;
   transform: scale(0.85);
 }
 
-// .jan-arrow-circleR {
-//   background: url('../../../Janice/Components/JanIndexx/Images/Svg/arrow-circle.svg')
-//     center center no-repeat;
-//   background-size: cover;
-//   width: 8rem;
-//   height: 8rem;
-//   position: relative;
-//   cursor: pointer;
-//   transition: 0.5s;
-// }
 .jess-arrow {
   background: url('./SVG/jess-arrow-circle-01.svg') center center no-repeat;
   background-size: cover;
@@ -336,7 +326,7 @@ $white: #ffffff;
 }
 
 .jan-arrow-right {
-  background: url('../../../Janice/Components/JanIndexx/Images/Svg/arrow-right.svg')
+  background: url('../../../assets/svg/arrow-right.svg')
     center center;
   width: 6.5rem;
   height: 2.2rem;

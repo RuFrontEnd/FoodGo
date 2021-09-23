@@ -5,7 +5,7 @@ import {
   datacountries,
   datatownships,
   dataprice,
-} from '../../../Janice/Components/JanIndexx/data.js';
+} from 'data/AdministrativeDistrict.js';
 import { useSelector } from 'react-redux';
 
 function AddressTabs(props) {
