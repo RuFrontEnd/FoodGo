@@ -38,7 +38,7 @@ const JessMenu = lazy(() => import('Jess/Pages/JessMenu'));
 const JessBento = lazy(() => import('Jess/Pages/JessBento'));
 const JessVegBox = lazy(() => import('Jess/Pages/JessVegBox'));
 
-const ChaCart = lazy(() => import('Cha/Pages/Cha-Cart/ChaCart'));
+const ShoppingCart = lazy(() => import('pages/shoppingCart/ShoppingCart'));
 const ChaGroupOrderCreate = lazy(() =>
   import('Cha/Components/Cha-Group-Order-Create/ChaGroupOrderCreate')
 );
@@ -269,7 +269,7 @@ function App() {
               </Route>
               {/* cha */}
               <Route exact path="/cart">
-                <ChaCart
+                <ShoppingCart
                   setCartNumber={setCartNumber}
                   // handleCartNumber={handleCartNumber}
                   // county={county}

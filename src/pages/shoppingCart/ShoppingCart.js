@@ -9,8 +9,7 @@ import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import { useDispatch } from 'react-redux';
 import { showNavBar } from 'redux/navBar/navBarActions';
 import $ from 'jquery';
-import 'Cha/Pages/Cha-Cart/ChaCart.scss';
-// import { withRouter } from 'react-router-dom';
+import 'pages/shoppingCart/shoppingCart.scss';
 
 function ChaCart(props) {
   //-------------當前登入會員的id--------------//
@@ -47,7 +46,7 @@ function ChaCart(props) {
   // }
   // console.log('isLogin', isLogin);
   // ----------給「會員資料表」用-------------//
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [memberSid, setMemberSid] = useState(1);
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
