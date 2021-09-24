@@ -17,7 +17,7 @@ import {
 
 import Navbar from 'components/navBar/NavBar';
 import Footer from 'components/footer/Footer';
-import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
+import ScrollToTop from 'components/scrollToTop/ScrollToTop';
 import LoginModal from 'components/loginModal/LoginModal';
 import FallBack from 'components/fallBack/FallBack';
 import HomePage from 'pages/homePage/HomePage';
