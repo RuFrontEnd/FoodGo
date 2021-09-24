@@ -1,22 +1,16 @@
 //----------------------------Desktop 1920-----------------------------
 
 @media screen and (min-width: 1440px) and (max-width: 1920px) {
-
-  .claudia-fake-navbar {
-    width: 100vw;
-    height: 100px;
-  }
-
   .claudia-index-background-image {
-    background-image: url(./Images/index_bg_1920.jpg);
-    height: 1080px;
-    width: 1920px;
+    background-image: url("../../assets/jpg/farm.jpg");
+    height: 100vh;
+    width: 100%;
     margin: 0px auto;
     position: relative;
   }
 
   .claudia-index-text {
-    font-family: 'Noto Serif TC';
+    font-family: "Noto Serif TC";
     position: absolute;
     top: 600px;
     right: 150px;
@@ -60,7 +54,7 @@
   }
 
   .claudia-mouseLayout::before {
-    content: '';
+    content: "";
     border: 2px solid #fff;
     position: absolute;
     top: 20%;
@@ -71,7 +65,7 @@
   }
 
   .claudia-mouseLayout::after {
-    content: '';
+    content: "";
     border: 2px solid #fff;
     height: 10px;
     position: absolute;
@@ -101,29 +95,26 @@
 
   .claudia-text {
     margin-top: 10px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 1rem;
     letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 700;
   }
-
 }
-
 
 //----------------------------Desktop 1920-----------------------------
 
 //----------------------------Desktop 1440-----------------------------
 
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
-
   .claudia-fake-navbar {
     width: 100vw;
     height: 100px;
   }
 
   .claudia-index-background-image {
-    background-image: url(./Images/index_new_bg.jpg);
+    background-image: url("../../assets/jpg/farm.jpg");
     height: 765px;
     width: 1440px;
     margin: 0px auto;
@@ -131,7 +122,7 @@
   }
 
   .claudia-index-text {
-    font-family: 'Noto Serif TC';
+    font-family: "Noto Serif TC";
     position: absolute;
     top: 450px;
     right: 200px;
@@ -175,7 +166,7 @@
   }
 
   .claudia-mouseLayout::before {
-    content: '';
+    content: "";
     border: 2px solid #fff;
     position: absolute;
     top: 20%;
@@ -186,7 +177,7 @@
   }
 
   .claudia-mouseLayout::after {
-    content: '';
+    content: "";
     border: 2px solid #fff;
     height: 10px;
     position: absolute;
@@ -216,13 +207,12 @@
 
   .claudia-text {
     margin-top: 10px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 1rem;
     letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 700;
   }
-
 }
 
 //----------------------------Desktop 1440-----------------------------
@@ -239,11 +229,11 @@
   .claudia-index-background-image {
     width: 768px;
     height: 1024px;
-    background-image: url(./Images/rwd_pad_index_bg.jpg);
+    background-image: url("../../assets/jpg/farm_rwd.jpg");
   }
 
   .claudia-index-text {
-    font-family: 'Noto Serif TC';
+    font-family: "Noto Serif TC";
     text-align: center;
   }
 
@@ -254,7 +244,7 @@
   .claudia-index-text-1 {
     font-size: 70px;
   }
-  
+
   .claudia-index-text-2 {
     font-size: 50px;
   }
@@ -268,7 +258,7 @@
   .claudia-index-background-image {
     width: 1024px;
     height: 1366px;
-    background-image: url(./Images/rwd_pad_pro_index_bg.jpg);
+    background-image: url("../../assets/jpg/farm_rwd.jpg");
   }
 
   //mouse scroll icon
@@ -276,7 +266,6 @@
   .claudia-center {
     display: none;
   }
-
 }
 
 //-----------------------------Ipad Pro--------------------------------
@@ -285,7 +274,7 @@
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
   .claudia-index-text {
-    font-family: 'Noto Serif TC';
+    font-family: "Noto Serif TC";
     position: absolute;
     top: 770px;
     right: 240px;
@@ -294,7 +283,7 @@
   .claudia-index-background-image {
     width: 768px;
     height: 1024px;
-    background-image: url(./Images/rwd_pad_index_bg.jpg);
+    background-image: url("../../assets/jpg/farm_rwd.jpg");
   }
 
   .claudia-index-text h1 {
@@ -302,12 +291,12 @@
   }
 
   .claudia-index-text-1 {
-        font-size: 50px;
-      }
-      
-      .claudia-index-text-2 {
-        font-size: 30px;
-      }
+    font-size: 50px;
+  }
+
+  .claudia-index-text-2 {
+    font-size: 30px;
+  }
 
   //mouse scroll icon
 
@@ -329,11 +318,11 @@
   .claudia-index-background-image {
     width: 414px;
     height: 736px;
-    background-image: url(./Images/rwd_plus_index_bg.jpg);
+    background-image: url("../../assets/jpg/farm_rwd.jpg");
   }
 
   .claudia-index-text {
-    font-family: 'Noto Serif TC';
+    font-family: "Noto Serif TC";
     position: absolute;
     top: 530px;
     right: 100px;
@@ -366,11 +355,11 @@
   .claudia-index-background-image {
     width: 375px;
     height: 667px;
-    background-image: url(./Images/rwd_index_bg.jpg);
+    background-image: url("../../assets/jpg/farm_rwd.jpg");
   }
 
   .claudia-index-text {
-    font-family: 'Noto Serif TC';
+    font-family: "Noto Serif TC";
     position: absolute;
     right: 80px;
   }

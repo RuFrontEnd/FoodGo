@@ -2,6 +2,7 @@ import { SHOWNAVBAR } from 'redux/navBar/navBarTypes';
 
 const initialState = {
   showNavBar: true,
+  height: 100,
 };
 
 const navBarReducers = (state = initialState, action) => {
