@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'components/searchBar/searchBar.scss';
-import { ReactComponent as SearchIcon } from 'components/searchBar/Images/search_icon.svg';
-import { ReactComponent as CrossIcon } from 'components/searchBar/Images/cross.svg';
+import { ReactComponent as SearchIcon } from 'assets/svg/search.svg';
+import { ReactComponent as CrossIcon } from 'assets/svg/cross.svg';
 
 function SearchBar(props) {
   const { searchInput, setSearchInput, searchId, onSearch } = props;
