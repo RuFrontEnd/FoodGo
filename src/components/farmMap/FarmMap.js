@@ -1,33 +1,33 @@
-import React, { useState, useEffect } from 'react'
-import './ClaudiaIndexMap.scss'
-import '../ClaudiaIndexCardList/ClaudiaIndexCardList.scss'
-import Icon from './Images/placeholder.svg'
+import React from 'react';
+import './farmMap.scss';
+import './ClaudiaIndexCardList_tmp.scss';
+import Icon from 'assets/svg/placeholder.svg';
 
-function ClaudiaIndexMap(props) {
-  const { setCity, setData, data } = props
+function FarmMap(props) {
+  const { setCity, setData, data } = props;
 
   //show card list
 
   const showCardList = (e) => {
     //update data
-    let cityId = e.target.dataset.id
+    let cityId = e.target.dataset.id;
 
     // useEffect(() => {
     fetch(`http://localhost:5000/farm/info/${cityId}`)
       .then((res) => res.json())
       .then((data) => {
-        let dataResult = data
+        let dataResult = data;
 
-        setCity(dataResult[0].city)
-        setData(dataResult)
-        console.log('data', dataResult)
+        setCity(dataResult[0].city);
+        setData(dataResult);
+        console.log('data', dataResult);
       })
-      .catch((err) => console.log(err))
+      .catch((err) => console.log(err));
     // })
 
     //show box
     document.getElementsByClassName('claudia-index-card')[0].style.height =
-      '690px'
+      '690px';
 
     if (
       document.getElementsByClassName('claudia-index-card-list-box')[0].style
@@ -35,41 +35,41 @@ function ClaudiaIndexMap(props) {
     ) {
       document.getElementsByClassName(
         'claudia-index-card-list-box'
-      )[0].style.display = 'none'
+      )[0].style.display = 'none';
       document.getElementsByClassName(
         'claudia-index-card-list-box'
-      )[0].style.opacity = 0
+      )[0].style.opacity = 0;
       setTimeout(() => {
         document.getElementsByClassName(
           'claudia-index-card-list-box'
-        )[0].style.display = 'block'
+        )[0].style.display = 'block';
         document.getElementsByClassName(
           'claudia-index-card-list-box'
-        )[0].style.opacity = 1
-      }, 200)
+        )[0].style.opacity = 1;
+      }, 200);
     } else if (
       document.getElementsByClassName('claudia-index-card-intro-box')[0].style
         .display !== 'block'
     ) {
       document.getElementsByClassName(
         'claudia-index-card-list-box'
-      )[0].style.display = 'block'
+      )[0].style.display = 'block';
       document.getElementsByClassName(
         'claudia-index-card-list-box'
-      )[0].style.opacity = 1
+      )[0].style.opacity = 1;
     } else {
       document.getElementsByClassName(
         'claudia-index-card-intro-box'
-      )[0].style.display = 'none'
+      )[0].style.display = 'none';
       document.getElementsByClassName(
         'claudia-index-card-intro-box'
-      )[0].style.opacity = 0
+      )[0].style.opacity = 0;
       document.getElementsByClassName(
         'claudia-index-card-list-box'
-      )[0].style.display = 'block'
+      )[0].style.display = 'block';
       document.getElementsByClassName(
         'claudia-index-card-list-box'
-      )[0].style.opacity = 1
+      )[0].style.opacity = 1;
     }
 
     // if (document.getElementsByClassName('claudia-index-card-intro-box')[0].style.display !== 'block') {
@@ -82,12 +82,12 @@ function ClaudiaIndexMap(props) {
     //     document.getElementsByClassName('claudia-index-card-list-box')[0].style.opacity = 1;
 
     // }
-  }
+  };
 
   //show icons
   const showIcon = (e) => {
-    const selectedCity = e.target
-    const selectedCityItem = e.target.dataset.item
+    const selectedCity = e.target;
+    const selectedCityItem = e.target.dataset.item;
     // console.log(selectedCity);
 
     if (selectedCityItem !== undefined) {
@@ -98,34 +98,34 @@ function ClaudiaIndexMap(props) {
 
         let selectedCityIcons = document.getElementsByClassName(
           `${selectedCityItem}`
-        )
+        );
 
         // console.log('selectedCityIcons', selectedCityIcons)
 
         for (let i = 0; i < selectedCityIcons.length; i++) {
           // console.log('result', selectedCityIcons[i]);
-          selectedCityIcons[i].style.visibility = 'visible'
-          selectedCityIcons[i].style.opacity = 1
+          selectedCityIcons[i].style.visibility = 'visible';
+          selectedCityIcons[i].style.opacity = 1;
         }
-      })
+      });
 
       selectedCity.addEventListener('mouseout', () => {
         // console.log('test', document.getElementsByClassName(`${selectedCityItem}`));
 
         let selectedCityIcons = document.getElementsByClassName(
           `${selectedCityItem}`
-        )
+        );
 
         // console.log('selectedCityIcons', selectedCityIcons)
 
         for (let i = 0; i < selectedCityIcons.length; i++) {
           // console.log('result', selectedCityIcons[i]);
-          selectedCityIcons[i].style.visibility = 'hidden'
-          selectedCityIcons[i].style.opacity = 0
+          selectedCityIcons[i].style.visibility = 'hidden';
+          selectedCityIcons[i].style.opacity = 0;
         }
-      })
+      });
     }
-  }
+  };
 
   return (
     <>
@@ -776,7 +776,7 @@ function ClaudiaIndexMap(props) {
         />
       </div>
     </>
-  )
+  );
 }
 
-export default ClaudiaIndexMap
+export default FarmMap;

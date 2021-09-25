@@ -4,7 +4,6 @@ import { lightBeige } from 'variable/variable';
 import { useSelector } from 'react-redux';
 import 'pages/farm/farm.scss';
 import farmImg from 'assets/jpg/farm.jpg';
-import ClaudiaIndexInducText from '../../Claudia/Components/ClaudiaIndexInducText/ClaudiaIndexInducText';
 import ClaudiaIndexContent from '../../Claudia/Components/ClaudiaIndexContent/ClaudiaIndexContent';
 // import ScrollButtonGreen from '../../Share/Components/ToTopButton/ScrollButtonGreen'
 
@@ -39,7 +38,15 @@ function ClaudiaFarmIndex() {
             </h1>
           </div>
         </Background>
-        <ClaudiaIndexInducText />
+        <div className="claudia-induc-text">
+          <div className="claudia-induc-text-container">
+            <h3>
+              <b>
+                <span>點選想去的縣市，</span>開始探索你想造訪的農場吧！
+              </b>
+            </h3>
+          </div>
+        </div>
         <ClaudiaIndexContent />
       </Container>
       {/* <ScrollButtonGreen /> */}

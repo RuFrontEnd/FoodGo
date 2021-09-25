@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ClaudiaIndexContent.scss';
-import ClaudiaIndexMap from '../ClaudiaIndexMap/ClaudiaIndexMap';
+import FarmMap from 'components/farmMap/FarmMap';
 import ClaudiaIndexCardIntro from '../ClaudiaIndexCardIntro/ClaudiaIndexCardIntro';
 import ClaudiaIndexCardList from '../ClaudiaIndexCardList/ClaudiaIndexCardList';
 
@@ -16,7 +16,7 @@ function ClaudiaIndexContent() {
         <div className="claudia-index-content-fix-container">
           <div className="claudia-index-content-container">
             <div className="claudia-index-map">
-              <ClaudiaIndexMap
+              <FarmMap
                 setCity={setCity}
                 setData={setData}
                 data={data}
