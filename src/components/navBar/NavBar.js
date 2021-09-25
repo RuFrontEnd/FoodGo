@@ -47,7 +47,7 @@ function NavBar(props) {
   const [isMemberSideBarOpen, setIsMemberSideBarOpen] = useState(false);
   const mainSideBarItems = [
     { linkTo: '/groupOrder/groupOrderCreate', content: '作伙揪團' },
-    { linkTo: '/farmMap', content: '哈囉小農' },
+    { linkTo: '/farm', content: '哈囉小農' },
     {
       linkTo: '',
       content: '尋找美味',

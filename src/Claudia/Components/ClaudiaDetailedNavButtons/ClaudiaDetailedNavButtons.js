@@ -20,7 +20,7 @@ function ClaudiaDetailedNavButtons() {
                         <div className="claudia-detailed-nav-buttons-area">
                             <div className="claudia-detailed-nav-buttons-box">
                                 <div className="claudia-detailed-nav-buttons-icons"><img className="claudia-taiwan" alt="taiwan" src={Taiwan} /></div>
-                                <Link to="/farmMap">
+                                <Link to="/farm">
                                     <div className="claudia-detailed-nav-button2"><Button className="button-btn-g" text="回小農地圖" /></div>
                                 </Link>
                             </div>

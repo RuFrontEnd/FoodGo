@@ -261,7 +261,7 @@ function App() {
               </Route>
 
               {/* claudia */}
-              <Route exact path="/farmMap">
+              <Route exact path="/farm">
                 <Farm />
               </Route>
               <Route exact path="/farmIntro">

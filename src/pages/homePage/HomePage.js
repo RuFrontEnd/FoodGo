@@ -470,7 +470,7 @@ function HomePage(props) {
               className={'homePage-index-button  float-right mt-3'}
               type={'green'}
               text={'小農地圖'}
-              routes={'/farmMap'}
+              routes={'/farm'}
             />
           </div>
           {/* 小農欄位 */}
