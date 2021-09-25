@@ -24,7 +24,7 @@ import HomePage from 'pages/homePage/HomePage';
 
 // const Suspense = () =>returnFallBack;
 // 引入 所有人的總元件
-const ClaudiaFarmIndex = lazy(() => import('Claudia/Pages/ClaudiaFarmIndex'));
+const Farm = lazy(() => import('pages/farm/Farm'));
 const ClaudiaFarmDetailedPage = lazy(() =>
   import('Claudia/Pages/ClaudiaFarmDetailedPage')
 );
@@ -262,7 +262,7 @@ function App() {
 
               {/* claudia */}
               <Route exact path="/farmMap">
-                <ClaudiaFarmIndex />
+                <Farm />
               </Route>
               <Route exact path="/farmIntro">
                 <ClaudiaFarmDetailedPage handleCartNumber={handleCartNumber} />
