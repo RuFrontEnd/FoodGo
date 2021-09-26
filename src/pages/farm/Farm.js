@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components/macro';
 import { lightBeige } from 'variable/variable';
 import { useSelector } from 'react-redux';
 import 'pages/farm/farm.scss';
 import farmImg from 'assets/jpg/farm.jpg';
-import ClaudiaIndexContent from '../../Claudia/Components/ClaudiaIndexContent/ClaudiaIndexContent';
+import FarmMap from 'components/farmMap/FarmMap';
+import FarmCard from 'components/farmCard/FarmCard';
+import FarmCardIntro from 'components/farmCardIntro/FarmCardIntro';
 // import ScrollButtonGreen from '../../Share/Components/ToTopButton/ScrollButtonGreen'
 
 const Container = styled.section`
@@ -22,9 +24,12 @@ const Background = styled.div`
   position: relative;
 `;
 
-function ClaudiaFarmIndex() {
+function Farm() {
+  const [city, setCity] = useState('');
+  const [imgNum, setImgNum] = useState('1');
+  const [data, setData] = useState('');
+  const [buttonNum, setButtonNum] = useState(0);
   const navBarHeight = useSelector((state) => state.navBar.height);
-  console.log('navBarHeight', navBarHeight);
   return (
     <>
       <Container>
@@ -47,11 +52,32 @@ function ClaudiaFarmIndex() {
             </h3>
           </div>
         </div>
-        <ClaudiaIndexContent />
+        <div className="claudia-index-content">
+          <div className="claudia-index-content-fix-container">
+            <div className="claudia-index-content-container">
+              <div className="claudia-index-map">
+                <FarmMap setCity={setCity} setData={setData} data={data} />
+              </div>
+              <FarmCard
+                city={city}
+                data={data}
+                setButtonNum={setButtonNum}
+                setImgNum={setImgNum}
+              >
+                <FarmCardIntro
+                  city={city}
+                  data={data}
+                  imgNum={imgNum}
+                  buttonNum={buttonNum}
+                />
+              </FarmCard>
+            </div>
+          </div>
+        </div>
       </Container>
       {/* <ScrollButtonGreen /> */}
     </>
   );
 }
 
-export default ClaudiaFarmIndex;
+export default Farm;
