@@ -163,7 +163,7 @@ function NavBar(props) {
                 </Nav.Link>
               </li> */}
                 <li className="navBar-navigation-item navBar-navigation-item-txt">
-                  <Nav.Link as={NavLink} to="/farmMap">
+                  <Nav.Link as={NavLink} to="/farm">
                     哈囉小農
                   </Nav.Link>
                 </li>
