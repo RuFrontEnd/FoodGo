@@ -9,8 +9,8 @@ import ClaudiaDetailedFarmAdr from '../Components/ClaudiaDetailedFarmAdr/Claudia
 import ClaudiaDetailedNavButtons from '../Components/ClaudiaDetailedNavButtons/ClaudiaDetailedNavButtons';
 import ClaudiaDetailedRecommended from '../Components/ClaudiaDetailedRecommended/ClaudiaDetailedRecommended';
 import ScrollButtonGreen from '../../Share/Components/ToTopButton/ScrollButtonGreen';
-import ClaudiaDetailedMainTextLeft from '../Components/ClaudiaDetailedMainTextLeft/ClaudiaDetailedMainTextLeft';
-import ClaudiaDetailedMainTextRight from '../Components/ClaudiaDetailedMainTextRight/ClaudiaDetailedMainTextRight'
+import FromIntroText from 'components/farmIntroText/FarmIntroText';
+import FarmDetailedCard from 'components/farmDetailCard/FarmDetailCard'
 
 const MainContent = styled.div`
   background-color: ${lightBeige};
@@ -38,10 +38,10 @@ function ClaudiaFarmIntroPage(props) {
         <div className="claudia-detailed-maintext">
           <div className="claudia-detailed-maintext-container">
             <div className="claudia-detailed-maintext-left">
-              <ClaudiaDetailedMainTextLeft />
+              <FromIntroText />
             </div>
             <div className="claudia-detailed-maintext-right">
-              <ClaudiaDetailedMainTextRight
+              <FarmDetailedCard
                 handleCartNumber={handleCartNumber}
               />
             </div>

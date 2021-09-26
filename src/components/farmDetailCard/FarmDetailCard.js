@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import './ClaudiaDetailedMainTextRight.scss';
-import Location from './Images/location.svg';
-import Button from '../../../Share/Components/Button/Button';
-import ClaudiaModalFrame from '../ClaudiaModalFrame/ClaudiaModalFrame';
-import ClaudiaModalContent from '../ClaudiaModalContent/ClaudiaModalContent';
-import { Link, withRouter } from 'react-router-dom';
+import './farmDetailCard.scss';
+import Location from 'assets/svg/location.svg';
+import Button from '../../Share/Components/Button/Button';
+import ClaudiaModalFrame from '../../Claudia/Components/ClaudiaModalFrame/ClaudiaModalFrame';
+import ClaudiaModalContent from '../../Claudia/Components/ClaudiaModalContent/ClaudiaModalContent';
 
 function ClaudiaDetailedMainTextRight(props) {
   const [status, setStatus] = useState(false);
