@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './farmDetailCard.scss';
 import Location from 'assets/svg/location.svg';
 import Button from '../../Share/Components/Button/Button';
-import ClaudiaModalFrame from '../../Claudia/Components/ClaudiaModalFrame/ClaudiaModalFrame';
-import ClaudiaModalContent from '../../Claudia/Components/ClaudiaModalContent/ClaudiaModalContent';
+import Modal from 'components/modal/Modal';
+import FarmBookTicket from 'components/farmBookTicket/FarmBookTicket';
 
 function ClaudiaDetailedMainTextRight(props) {
   const [status, setStatus] = useState(false);
@@ -13,9 +13,9 @@ function ClaudiaDetailedMainTextRight(props) {
     <>
       {/* Modal */}
       {status && (
-        <ClaudiaModalFrame closeModal={() => setStatus(false)}>
-          <ClaudiaModalContent handleCartNumber={handleCartNumber} />
-        </ClaudiaModalFrame>
+        <Modal closeModal={() => setStatus(false)}>
+          <FarmBookTicket handleCartNumber={handleCartNumber} />
+        </Modal>
       )}
 
       {/* Page Content */}

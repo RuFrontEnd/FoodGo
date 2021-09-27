@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import './ClaudiaModalContent.scss'
-import Reset from './Images/reset.svg'
-import Calender from './Images/calender.svg'
+import './farmBookTicket.scss'
+import Calender from 'assets/svg/calender.svg'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-import selectArrow from './Images/selectArrow.svg'
+import selectArrow from 'assets/svg/selectArrow.svg'
 
-function ClaudiaModalContent(props) {
+function FarmBookTicket(props) {
   const [total, setTotal] = useState(0)
   const { handleCartNumber } = props
 
@@ -365,4 +364,4 @@ function ClaudiaModalContent(props) {
   )
 }
 
-export default ClaudiaModalContent
+export default FarmBookTicket

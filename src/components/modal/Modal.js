@@ -1,8 +1,8 @@
 import React from 'react'
-import './ClaudiaModalFrame.scss'
-import Cross from './Images/cross.svg'
+import './modal.scss'
+import Cross from 'assets/svg/cross.svg'
 
-const ClaudiaModalFrame = (props) => {
+const Modal = (props) => {
   const { closeModal } = props
 
   return (
@@ -20,4 +20,4 @@ const ClaudiaModalFrame = (props) => {
   )
 }
 
-export default ClaudiaModalFrame
+export default Modal
