@@ -2,7 +2,11 @@ import React from 'react';
 import 'pages/farmIntro/farmIntro.scss';
 import styled from 'styled-components/macro';
 import { lightBeige } from 'variable/variable';
-import ClaudiaDetailedSilder from '../Components/ClaudiaDetailedSilder/ClaudiaDetailedSilder';
+import farmIntro01 from 'assets/jpg/farmIntro01.jpg';
+import farmIntro02 from 'assets/jpg/farmIntro02.jpg';
+import farmIntro03 from 'assets/jpg//farmIntro03.jpg';
+import farmIntro04 from 'assets/jpg/farmIntro04.jpg';
+import ImageSlider from 'components/imageSlider/ImageSlider';
 import ClaudiaDetailedSchedule from '../Components/ClaudiaDetailedSchedule/ClaudiaDetailedSchedule';
 import ClaudiaDetailedFarmIntro from '../Components/ClaudiaDetailedFarmIntro/ClaudiaDetailedFarmIntro';
 import ClaudiaDetailedFarmAdr from '../Components/ClaudiaDetailedFarmAdr/ClaudiaDetailedFarmAdr';
@@ -10,7 +14,7 @@ import ClaudiaDetailedNavButtons from '../Components/ClaudiaDetailedNavButtons/C
 import ClaudiaDetailedRecommended from '../Components/ClaudiaDetailedRecommended/ClaudiaDetailedRecommended';
 import ScrollButtonGreen from '../../Share/Components/ToTopButton/ScrollButtonGreen';
 import FromIntroText from 'components/farmIntroText/FarmIntroText';
-import FarmDetailedCard from 'components/farmDetailCard/FarmDetailCard'
+import FarmDetailedCard from 'components/farmDetailCard/FarmDetailCard';
 
 const MainContent = styled.div`
   background-color: ${lightBeige};
@@ -41,13 +45,11 @@ function ClaudiaFarmIntroPage(props) {
               <FromIntroText />
             </div>
             <div className="claudia-detailed-maintext-right">
-              <FarmDetailedCard
-                handleCartNumber={handleCartNumber}
-              />
+              <FarmDetailedCard handleCartNumber={handleCartNumber} />
             </div>
           </div>
         </div>
-        <ClaudiaDetailedSilder />
+        <ImageSlider pic1={farmIntro01} pic2={farmIntro02} pic3={farmIntro03} pic4={farmIntro04}/>
         <ClaudiaDetailedSchedule />
         <ClaudiaDetailedFarmIntro />
         <ClaudiaDetailedFarmAdr />

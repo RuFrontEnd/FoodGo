@@ -14,20 +14,15 @@ function ClaudiaDetailedSilder() {
 
         //change image
         let selectImg = e.target.src;
-        console.log('img', e.target.src);
         setImgSrc(selectImg);
 
         //change triangle display - step 1: find index - make triangle appears
 
         const child = e.target;
         const parent = child.parentNode;
-        console.log('child', child);
-        console.log('parent', parent);
         const index = Array.prototype.indexOf.call(parent.children, child);
-        console.log('index', index);
 
         const triangleIcon = e.target.parentNode.nextElementSibling.children[index].children[0]
-        console.log('triangleIcon', e.target.parentNode.nextElementSibling.children[index].children[0]);
         triangleIcon.style.visibility = 'visible';
 
         //change triangle display - step 2: find .siblings - make triangles disappear
