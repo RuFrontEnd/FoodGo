@@ -1,0 +1,120 @@
+@import "variable/variable.scss";
+
+// common
+.option-btn {
+  background-color: $white;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+}
+
+.option-btn::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  bottom: -100%;
+  left: 0%;
+  transition: bottom $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.option-btn:focus {
+  outline: none;
+}
+
+.option-btn:hover {
+  color: $white;
+}
+
+.option-btn:hover::after {
+  bottom: 0%;
+}
+
+// orange
+.option-btn-orange {
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $light-orange
+  );
+  border: 1px solid $light-orange;
+}
+
+.option-btn-orange::after {
+  background-color: $light-orange;
+}
+
+.option-btn:active::after {
+  background-color: $dark-orange;
+}
+
+.option-btn-orange-active {
+  color: white;
+  background-color: $light-orange;
+}
+
+// green
+.option-btn-green {
+  border: 1px solid $light-green;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $light-green
+  );
+}
+
+.option-btn-green::after {
+  background-color: $light-green;
+}
+
+.option-btn-green:active::after {
+  background-color: $dark-green;
+}
+
+.option-btn-green-active {
+  background-color: $light-green;
+  color: white;
+}
+
+// yellow
+.option-btn-yellow {
+  border: 1px solid $dark-yellow;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $dark-yellow
+  );
+}
+
+.option-btn-yellow::after {
+  background-color: $dark-yellow;
+}
+
+.option-btn-yellow:active::after {
+  background-color: $dark-yellow;
+}
+
+.option-btn-yellow-active {
+  background-color: $dark-yellow;
+  color: white;
+}
