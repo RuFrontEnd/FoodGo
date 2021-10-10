@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import MemberMenuSect from 'components/memberMenuSect/MemberMenuSect';
-// import MyFavSect from 'components/myFavSect/MyFavSect';
-import MyFavSect from 'components/myFavSect/MyFavSect';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 // import './IrisMemberPage.scss';
 // import 'pages/myFav/myFav.scss';
