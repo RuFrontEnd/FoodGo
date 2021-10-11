@@ -41,8 +41,32 @@
 
 //--------------------------------Ipad---------------------------------
 
-@media screen and (min-width: 576px) and (max-width: 769px) {
+@media screen and (min-width: 576px) and (max-width: 1200px) {
 
+  .claudia-detailed-farm-silder {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+  }
+  .claudia-detailed-farm-silder-img-container {
+    width: 600px;
+    height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .claudia-detailed-farm-silder img {
+    width: 600px;
+    height: 370px;
+    margin: 20px auto;
+    position: static;
+  }
+
+  .claudia-detailed-farm-silder-container {
+    display: none;
+  }
 }
 
 //--------------------------------Ipad---------------------------------
@@ -50,6 +74,31 @@
 //----------------------Iphone 6/7/8 + Plus + X------------------------
 
 @media screen and (max-width: 576px) {
+  .claudia-detailed-farm-silder {
+    width: 375px;
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .claudia-detailed-farm-silder-img-container {
+    width: 375px;
+    height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .claudia-detailed-farm-silder img {
+    width: 335px;
+    height: 210px;
+    position: static;
+  }
+
+  .claudia-detailed-farm-silder-container {
+    display: none;
+  }
 
 }
 
