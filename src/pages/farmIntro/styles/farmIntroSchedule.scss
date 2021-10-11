@@ -1,127 +1,121 @@
 //------------------------------Desktop--------------------------------
 .claudia-detailed-schedule {
-    width: 100vw;
-    height: 2130px;
-    background-image: url(./Images/PNG/shop-bg.png);
+  width: 100vw;
+  height: 2130px;
+  background-image: url(../../../assets/png/shop-bg.png);
 }
 
 .claudia-detailed-schedule h1 {
-    font-family: 'Noto Serif TC';
-    color: #66AB8C;
-    font-size: 3.6rem;
-    text-align: center;
-    margin: 60px auto;
+  font-family: 'Noto Serif TC';
+  color: #66AB8C;
+  font-size: 3.6rem;
+  text-align: center;
+  margin: 60px auto;
 }
 
 .claudia-detailed-schedule-container {
-    width: 850px;
-    height: 2000px;
-    margin: 0px auto;
-    position: relative;
+  width: 850px;
+  height: 2000px;
+  margin: 0px auto;
+  position: relative;
 }
 
 .claudia-detailed-schedule-timeline {
-    margin: 0px;
-    width: 590px;
-    height: 1892px;
-    background-image: url(./Images/SVG/timeline.svg);
+  margin: 0px;
+  width: 590px;
+  height: 1892px;
+  background-image: url(../../../assets/svg/timeline.svg);
 }
 
 //Card1
 
 .claudia-detailed-schedule-card1 {
-    width: 400px;
-    height: 470px;
+  width: 400px;
+  height: 470px;
 }
 
 .claudia-detailed-schedule-card1-text {
-    position: absolute;
-    top: 0px;
-    right: 240px
+  position: absolute;
+  top: 0px;
+  right: 240px
 
 }
 
 .claudia-detailed-schedule-card1 img {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    margin-top: 30px;
-    position: absolute;
-    top: 50px;
-    right: 100px;
-    object-fit: cover;
-
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  margin-top: 30px;
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  object-fit: cover;
 }
 
 .claudia-detailed-schedule-card1 h2 {
-    font-size: 20px;
-    color: #858585;
+  font-size: 20px;
+  color: #858585;
 }
 
 .claudia-detailed-schedule-card1 h3 {
-    font-size: 20px;
-    color: #66AB8C;
+  font-size: 20px;
+  color: #66AB8C;
 }
 
 //Card2
 
-
 .claudia-detailed-schedule-card2 {
-    width: 400px;
-    height: 470px;
+  width: 400px;
+  height: 470px;
 }
 
 .claudia-detailed-schedule-card2-text {
-    position: absolute;
-    top: 345px;
-    left: 15px;
-
+  position: absolute;
+  top: 345px;
+  left: 15px;
 }
 
 .claudia-detailed-schedule-card2 img {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    margin-top: 30px;
-    position: absolute;
-    top: 390px;
-    left: -40px;
-
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  margin-top: 30px;
+  position: absolute;
+  top: 390px;
+  left: -40px;
 }
 
 .claudia-detailed-schedule-card2 h2 {
-    font-size: 20px;
-    color: #858585;
+  font-size: 20px;
+  color: #858585;
 }
 
 .claudia-detailed-schedule-card2 h3 {
-    font-size: 20px;
-    color: #66AB8C;
+  font-size: 20px;
+  color: #66AB8C;
 }
 
 //Card3
 
 .claudia-detailed-schedule-card3 {
-    width: 400px;
-    height: 470px;
+  width: 400px;
+  height: 470px;
 }
 
 .claudia-detailed-schedule-card3-text {
-    position: absolute;
-    top: 715px;
-    right: 25px;
-
+  position: absolute;
+  top: 715px;
+  right: 25px;
 }
 
 .claudia-detailed-schedule-card3 img {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    margin-top: 30px;
-    position: absolute;
-    top: 770px;
-    right: -10px;
-
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  margin-top: 30px;
+  position: absolute;
+  top: 770px;
+  right: -10px;
 }
 
 .claudia-detailed-schedule-card3 h2 {
@@ -226,7 +220,7 @@
         margin: 0px;
         width: 22px;
         height: 1681px;
-        background-image: url(./Images/SVG/rwd_ipad_timeline.svg);
+        background-image: url(../../../assets/svg/timeline-ipad.svg);
         position: absolute;
         left: 0px;
     }
@@ -408,7 +402,7 @@
         margin: 0px;
         width: 22px;
         height: 1361px;
-        background-image: url(./Images/SVG/rwd_timeline.svg);
+        background-image: url(../../../assets/svg/timeline-phone.svg);
         position: absolute;
         left: 40px;
     }

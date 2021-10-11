@@ -26,7 +26,7 @@ import HomePage from 'pages/homePage/HomePage';
 // 引入 所有人的總元件
 const Farm = lazy(() => import('pages/farm/Farm'));
 const ClaudiaFarmDetailedPage = lazy(() =>
-  import('Claudia/Pages/ClaudiaFarmDetailedPage')
+  import('pages/farmIntro/FarmIntro')
 );
 
 // const IrisOrderComment  =lazy(() => import( 'Iris/Pages/IrisOrderComment'));

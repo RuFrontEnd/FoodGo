@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './imageSlider.scss';
-import Rice from 'assets/svg/rice.svg';
 
 function ImageSlider(props) {
   const { pic1, pic2, pic3, pic4 } = props;
@@ -49,43 +48,38 @@ function ImageSlider(props) {
 
   return (
     <>
-      <div className="claudia-detailed-slider">
-        <div className="claudia-detailed-slider-fixed-container">
-          <img className="claudia-detailed-slider-ricebg" alt="" src={Rice} />
-          <div className="claudia-detailed-slider-container">
-            <div className="claudia-image-select">
-              <img onClick={imageSlider} alt="" src={pic1} />
-              <img onClick={imageSlider} alt="" src={pic2} />
-              <img onClick={imageSlider} alt="" src={pic3} />
-              <img onClick={imageSlider} alt="" src={pic4} />
-            </div>
-            <div className="claudia-image-triangle-area">
-              <div className="claudia-image-triangle-box">
-                <div className="claudia-image-triangle"></div>
-              </div>
-              <div className="claudia-image-triangle-box">
-                <div
-                  style={{ visibility: 'hidden' }}
-                  className="claudia-image-triangle"
-                ></div>
-              </div>
-              <div className="claudia-image-triangle-box">
-                <div
-                  style={{ visibility: 'hidden' }}
-                  className="claudia-image-triangle"
-                ></div>
-              </div>
-              <div className="claudia-image-triangle-box">
-                <div
-                  style={{ visibility: 'hidden' }}
-                  className="claudia-image-triangle"
-                ></div>
-              </div>
-            </div>
-            <div className="claudia-image-large">
-              <img alt="" src={imgSrc} />
-            </div>
+      <div className="claudia-detailed-slider-container">
+        <div className="claudia-image-select">
+          <img onClick={imageSlider} alt="" src={pic1} />
+          <img onClick={imageSlider} alt="" src={pic2} />
+          <img onClick={imageSlider} alt="" src={pic3} />
+          <img onClick={imageSlider} alt="" src={pic4} />
+        </div>
+        <div className="claudia-image-triangle-area">
+          <div className="claudia-image-triangle-box">
+            <div className="claudia-image-triangle"></div>
           </div>
+          <div className="claudia-image-triangle-box">
+            <div
+              style={{ visibility: 'hidden' }}
+              className="claudia-image-triangle"
+            ></div>
+          </div>
+          <div className="claudia-image-triangle-box">
+            <div
+              style={{ visibility: 'hidden' }}
+              className="claudia-image-triangle"
+            ></div>
+          </div>
+          <div className="claudia-image-triangle-box">
+            <div
+              style={{ visibility: 'hidden' }}
+              className="claudia-image-triangle"
+            ></div>
+          </div>
+        </div>
+        <div className="claudia-image-large">
+          <img alt="" src={imgSrc} />
         </div>
       </div>
     </>
