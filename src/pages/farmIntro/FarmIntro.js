@@ -36,11 +36,11 @@ import { Link } from 'react-router-dom';
 import RecommendFarm1 from 'assets/jpg/farm-intro-recommend-1.jpg';
 import RecommendFarm2 from 'assets/jpg/farm-intro-recommend-2.jpg';
 import RecommendFarm3 from 'assets/jpg/farm-intro-recommend-3.jpg';
-import Wave from 'components/farmIntroRecommend/Images/SVG/wave.svg';
+import Wave from 'assets/svg/wave.svg';
 
 // Components
 import ScrollButtonGreen from '../../Share/Components/ToTopButton/ScrollButtonGreen';
-import FromIntroText from 'components/farmIntroText/FarmIntroText';
+import FarmIntroText from 'components/farmIntroText/FarmIntroText';
 import FarmDetailedCard from 'components/farmDetailCard/FarmDetailCard';
 import ImageSlider from 'components/imageSlider/ImageSlider';
 import Button from 'components/optionButton/OptionButton';
@@ -71,10 +71,10 @@ const changeImage = (e) => {
     let sibling = e.parentNode.firstChild;
 
     while (sibling) {
-        if (sibling.nodeType === 1 && sibling !== e) {
-            siblings.push(sibling);
-        }
-        sibling = sibling.nextSibling;
+      if (sibling.nodeType === 1 && sibling !== e) {
+          siblings.push(sibling);
+      }
+      sibling = sibling.nextSibling;
     }
     return siblings;
   }
@@ -139,7 +139,7 @@ function ClaudiaFarmIntroPage(props) {
         <div className="claudia-detailed-maintext">
           <div className="claudia-detailed-maintext-container">
             <div className="claudia-detailed-maintext-left">
-              <FromIntroText />
+              <FarmIntroText />
             </div>
             <div className="claudia-detailed-maintext-right">
               <FarmDetailedCard handleCartNumber={handleCartNumber} />
