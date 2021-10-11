@@ -1,7 +1,4 @@
 import React from 'react';
-import Farm1 from 'assets/jpg/farm-intro-recommend-1.jpg';
-import Farm2 from 'assets/jpg/farm-intro-farm-2.jpg';
-import Farm3 from 'assets/jpg/farm-intro-farm-3.jpg';
 import './farmIntroRecommendCard.scss';
 
 
