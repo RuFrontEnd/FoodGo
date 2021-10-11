@@ -27,9 +27,6 @@ import Taiwan from 'assets/png/taiwan.png';
 import Bento from 'assets/png/bento.png';
 import Vegs from 'assets/png/vegs.png';
 import { Link } from 'react-router-dom';
-import RecommendFarm1 from 'assets/jpg/farm-intro-recommend-1.jpg';
-import RecommendFarm2 from 'assets/jpg/farm-intro-recommend-2.jpg';
-import RecommendFarm3 from 'assets/jpg/farm-intro-recommend-3.jpg';
 import Wave from 'assets/svg/wave.svg';
 
 // Components
@@ -39,6 +36,7 @@ import FarmIntroCard from 'components/farmIntroCard/FarmIntroCard';
 import ImageSlider from 'components/imageSlider/ImageSlider';
 import FarmIntroDetailSlider from 'components/farmIntroDetailSlider/FarmIntroDetailSlider';
 import FarmIntroDetailQuote from 'components/farmIntroDetailQuote/farmIntroDetailQuote';
+import FarmIntroRecommendCard from 'components/farmIntroRecommendCard/FarmIntroRecommendCard';
 import Button from 'components/optionButton/OptionButton';
 
 const MainContent = styled.div`
@@ -62,8 +60,38 @@ const changeTextPrivate = () => {
     <p>3.中山北路→北安路→內湖路→碧山路</p>`
 }
 
+// Farm Recommend Card
+
+const farmRecommendInfo = [
+  {
+    name: '荖阡坑教育實習農園',
+    src: 'farm-intro-recommend-1',
+    date: '2021/01/17（日）',
+    price: '900元/1人',
+    place: '台北車站',
+    address: '台北市內湖區碧山路58-1號'
+  },
+  {
+    name: '北新有機休閒農場',
+    src: 'farm-intro-recommend-2',
+    date: '2021/02/20（六）',
+    price: '500元/1人',
+    place: '捷運淡水站',
+    address: '新北市淡水區忠寮里3-2號'
+  },
+  {
+    name: '泰源幽谷農場',
+    src: 'farm-intro-recommend-3',
+    date: '2021/01/23（六）',
+    price: '800元/1人',
+    place: '台東火車站',
+    address: '台東縣東河鄉台23省道入口'
+  }
+];
+
 function ClaudiaFarmIntroPage(props) {
   const { handleCartNumber } = props;
+
   return (
     <>
       <MainContent>
@@ -233,33 +261,18 @@ function ClaudiaFarmIntroPage(props) {
             <b>更多推薦</b>
           </h1>
           <div className="claudia-detailed-recommanded-card-container">
-            <div className="claudia-detailed-recommanded-card">
-              <h2>荖阡坑教育實習農園</h2>
-              <h2>一日遊</h2>
-              <img alt="farm_recommanded" src={RecommendFarm1} />
-              <h3>日期：2021/01/17（日）</h3>
-              <h3>價錢：900元/1人</h3>
-              <h3>集合地點：台北車站</h3>
-              <h3>地址：台北市內湖區碧山路58-1號</h3>
-            </div>
-            <div className="claudia-detailed-recommanded-card">
-              <h2>北新有機休閒農場</h2>
-              <h2>半日體驗</h2>
-              <img alt="farm_recommanded" src={RecommendFarm2} />
-              <h3>日期：2021/02/20（六）</h3>
-              <h3>價錢：500元/1人</h3>
-              <h3>集合地點：捷運淡水站</h3>
-              <h3>地址：新北市淡水區忠寮里3-2號</h3>
-            </div>
-            <div className="claudia-detailed-recommanded-card">
-              <h2>泰源幽谷農場</h2>
-              <h2>——養生五色米</h2>
-              <img alt="farm_recommanded" src={RecommendFarm3} />
-              <h3>日期：2021/01/23（六）</h3>
-              <h3>價錢：800元/1人</h3>
-              <h3>集合地點：台東火車站</h3>
-              <h3>地址：台東縣東河鄉台23省道入口</h3>
-            </div>
+            {farmRecommendInfo.map(farm => {
+              return(
+                <FarmIntroRecommendCard 
+                  name={farm.name}
+                  src={farm.src}
+                  date={farm.date}
+                  price={farm.price}
+                  place={farm.place}
+                  address={farm.address}/>
+                )
+              })
+            }
           </div>
         </div>
         <div className="claudia-detailed-recommanded-wave-bg">

@@ -42,25 +42,6 @@ html {
   justify-content: space-between;
 }
 
-.claudia-detailed-recommanded-card img {
-  width: 240px;
-  height: 160px;
-  margin: 20px auto 20px auto;
-  background-color: #f7ede2;
-}
-
-.claudia-detailed-recommanded-card h2 {
-  font-size: 20px;
-  color: #66ab8c;
-  text-align: center;
-}
-
-.claudia-detailed-recommanded-card h3 {
-  font-size: 15px;
-  color: #676462;
-  margin: 10px auto;
-}
-
 .claudia-detailed-recommanded-wave-bg img {
   width: 100%;
 }
@@ -181,20 +162,6 @@ html {
     transform: scale(1);
   }
 
-  .claudia-detailed-recommanded-card img {
-    width: 245px;
-    height: 160px;
-    margin-bottom: 10px;
-  }
-
-  .claudia-detailed-recommanded-card h2 {
-    font-size: 18px;
-  }
-
-  .claudia-detailed-recommanded-card h3 {
-    font-size: 14px;
-  }
-
   .claudia-detailed-recommanded-wave {
     display: none;
   }
@@ -245,20 +212,6 @@ html {
 
   .claudia-detailed-recommanded-card:hover {
     transform: scale(1);
-  }
-
-  .claudia-detailed-recommanded-card img {
-    width: 245px;
-    height: 160px;
-    margin-bottom: 10px;
-  }
-
-  .claudia-detailed-recommanded-card h2 {
-    font-size: 18px;
-  }
-
-  .claudia-detailed-recommanded-card h3 {
-    font-size: 14px;
   }
 
   .claudia-detailed-recommanded-wave {

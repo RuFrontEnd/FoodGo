@@ -1,0 +1,62 @@
+//------------------------------Desktop--------------------------------
+
+.claudia-detailed-recommanded-card img {
+  width: 240px;
+  height: 160px;
+  margin: 20px auto 20px auto;
+  background-color: #f7ede2;
+}
+
+.claudia-detailed-recommanded-card h2 {
+  font-size: 20px;
+  color: #66ab8c;
+  text-align: center;
+}
+
+.claudia-detailed-recommanded-card h3 {
+  font-size: 15px;
+  color: #676462;
+  margin: 10px auto;
+}
+
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576px) and (max-width: 769px) {
+  .claudia-detailed-recommanded-card img {
+    width: 245px;
+    height: 160px;
+    margin-bottom: 10px;
+  }
+
+  .claudia-detailed-recommanded-card h2 {
+    font-size: 18px;
+  }
+
+  .claudia-detailed-recommanded-card h3 {
+    font-size: 14px;
+  }
+}
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media screen and (max-width: 576px) {
+  .claudia-detailed-recommanded-card img {
+    width: 245px;
+    height: 160px;
+    margin-bottom: 10px;
+  }
+
+  .claudia-detailed-recommanded-card h2 {
+    font-size: 18px;
+  }
+
+  .claudia-detailed-recommanded-card h3 {
+    font-size: 14px;
+  }
+}
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
