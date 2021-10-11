@@ -9,7 +9,7 @@ function ImageSlider(props) {
     let selectImg = e.target.src;
     setImgSrc(selectImg);
 
-    //change triangle display - step 1: find index - make triangle appears
+    // change triangle display - step 1: find index - make triangle appears
     const child = e.target;
     const parent = child.parentNode;
     const index = Array.prototype.indexOf.call(parent.children, child);
@@ -17,7 +17,7 @@ function ImageSlider(props) {
       e.target.parentNode.nextElementSibling.children[index].children[0];
     triangleIcon.style.visibility = 'visible';
 
-    //change triangle display - step 2: find .siblings - make triangles disappear
+    // change triangle display - step 2: find .siblings - make triangles disappear
     const getSiblings = function (e) {
       let siblings = [];
 
