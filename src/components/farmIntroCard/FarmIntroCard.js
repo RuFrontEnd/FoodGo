@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './farmDetailCard.scss';
+import './farmIntroCard.scss';
 import Location from 'assets/svg/location.svg';
 import Button from '../../Share/Components/Button/Button';
 import Modal from 'components/modal/Modal';
 import FarmBookTicket from 'components/farmBookTicket/FarmBookTicket';
 
-function ClaudiaDetailedMainTextRight(props) {
+function FarmIntroCard(props) {
   const [status, setStatus] = useState(false);
   const { handleCartNumber } = props;
 
@@ -85,4 +85,4 @@ function ClaudiaDetailedMainTextRight(props) {
   );
 }
 
-export default ClaudiaDetailedMainTextRight;
+export default FarmIntroCard;

@@ -64,13 +64,13 @@ function Farm() {
                 setButtonNum={setButtonNum}
                 setImgNum={setImgNum}
               >
-                <FarmCardIntro
-                  city={city}
-                  data={data}
-                  imgNum={imgNum}
-                  buttonNum={buttonNum}
-                />
-              </FarmCard>
+              <FarmCardIntro
+                city={city}
+                data={data}
+                imgNum={imgNum}
+                buttonNum={buttonNum}
+              />
+            </FarmCard>
             </div>
           </div>
         </div>

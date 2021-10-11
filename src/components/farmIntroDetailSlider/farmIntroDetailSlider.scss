@@ -1,0 +1,56 @@
+//------------------------------Desktop--------------------------------
+
+.claudia-detailed-farm-silder {
+  width: 425px;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.claudia-detailed-farm-silder-img-container {
+  width: 425px;
+  height: 280px;
+  display: flex;
+  position: absolute;
+}
+
+.claudia-detailed-farm-silder img {
+  width: 425px;
+  height: 280px;
+}
+
+.claudia-detailed-farm-silder-container {
+  display: flex;
+  justify-content: space-between;
+  width: 185px;
+  position: absolute;
+  bottom: 20px;
+  left: 120px;
+  z-index: 30;
+}
+
+.claudia-detailed-farm-silder-bar {
+  width: 40px;
+  height: 7px;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576px) and (max-width: 769px) {
+
+}
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media screen and (max-width: 576px) {
+
+}
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
