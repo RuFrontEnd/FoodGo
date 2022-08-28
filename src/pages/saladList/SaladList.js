@@ -10,8 +10,6 @@ import productListBanner from 'assets/jpg/proudctList-banner.jpg';
 
 // 引用共用元件
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
-// 引用圖片
-import line from './Images/line.png';
 
 function SaladList(props) {
   const { handleCartNumber, amount, setAmount } = props;
@@ -50,7 +48,7 @@ function SaladList(props) {
     axios.get(`${endpoint}/product/bento`).then((res) => {
       console.log('res', res);
       const _commodities = res.data.filter(
-        (dataItem) => dataItem.categories === '1.低GI便當'
+        (dataItem) => dataItem.categories === '2.蔬食沙拉'
       );
       console.log('_commodities', _commodities);
       setCommodities(_commodities);

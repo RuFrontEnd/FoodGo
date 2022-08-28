@@ -3,11 +3,34 @@ import 'components/productCard/productCard.scss';
 import starEmpty from 'assets/svg/starEmpty.svg';
 import starHalf from 'assets/svg/starHalf.svg';
 import starFull from 'assets/svg/starFull.svg';
-import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
 import OptionButton from 'components/optionButton/OptionButton';
 import AddFavoriteButton from 'components/addFavoriteButton/AddFavoriteButton';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { endpoint } from 'variable/variable';
+import { updateCartToLocalStorage } from 'utils/utils';
+import useAxios from 'hooks/useGetData';
+
+export const addMyFav = (favItem) => {
+  return fetch(`${endpoint}/member/addMyFav`, {
+    method: 'POST',
+    body: JSON.stringify(favItem),
+    headers: new Headers({
+      'Content-Type': 'application/json',
+    }),
+  });
+};
+
+export const deleteMyFav = (favItem) => {
+  return fetch(`${endpoint}/member/deleteMyFav`, {
+    method: 'POST',
+    body: JSON.stringify(favItem),
+    headers: new Headers({
+      'Content-Type': 'application/json',
+    }),
+  });
+};
 
 function ProductCard(props) {
   // title 品名
@@ -19,61 +42,65 @@ function ProductCard(props) {
   // parentId 不同元件父母id => addCart-btn-warp-n n為自訂數
   // imgId 產品圖片 => card-img-n n為1~9
   const {
-    data,
-    dataFav,
+    id,
+    className,
     title,
     comment,
     buy,
-    price,
-    cardMargin,
     stars,
-    id,
-    proudctId,
-    parentId,
+    price,
+    productSid,
     imgId,
-    handleCartNumber,
-    showFavArr,
-    count,
-    setCount,
+    dataFav,
+    proudctId,
+    isFavorite,
+    favoriteCardStatus = false,
+    testid = '',
   } = props;
+  // const isFavorite = favorites.some((favorite) => {
+  //   return favorite.product_sid === productSid;
+  // });
+  // console.log(isFavorite, 'isFavorite');
+  const currentUser = useSelector((state) => state.member.currentUser);
+  const [isFavActive, setIsFavActive] = useState(isFavorite);
 
-  const [isShowFav, setIsShowFav] = useState(false); // 是否要定住我的最愛按鈕
-  const [path, setPath] = useState();
+  const handelLink = () => {
+    props.history.push(`/bento/${productSid}`);
+  };
 
-  // 定住我的最愛按鈕邏輯
-  useEffect(() => {
-    if (showFavArr !== undefined) {
-      // console.log(showFavArr, showFavArr.length)
-      for (let i = 0; i < showFavArr.length; i++) {
-        // 當該會員的加入過我的最愛的商品id 匹配 這個card元件的商品id 時
-        if (showFavArr[i] === proudctId) {
-          // 就定住我的最愛按鈕
-          setIsShowFav(true);
-        }
-      }
-    }
-  }, []);
+  const switchFavStatus = () => {
+    const newFavItem = {
+      product_sid: proudctId,
+      currentUser: currentUser,
+    };
+    isFavActive ? deleteMyFav(newFavItem) : addMyFav(newFavItem);
+  };
 
-  // 決定前往頁面 邏輯
-  useEffect(() => {
-    if (!data) {
-      return;
-    }
-    data.forEach((dataItem) => {
-      setPath('/bento/' + (dataItem.sid - 1));
-    });
-  }, [data]);
-  // 決定path路徑
+  const addProductToCard = (proudctId, title, count, imgId, price) => {
+    updateCartToLocalStorage(
+      {
+        // 設定要加入的資料
+        id: proudctId,
+        productName: title,
+        productAmount: count,
+        productImage: imgId,
+        productPrice: price,
+      },
+      count,
+      true
+    );
+  };
 
-  if (!data) {
-    return;
-  }
   return (
-    <>
-      <div className="ru-card-container" id={cardMargin}>
+    <section className={className} id={id} data-testid={testid}>
+      <div
+        className={`ru-card-container ${
+          favoriteCardStatus && 'ru-card-container-favorite'
+        }`}
+      >
         {/* item圖片s */}
         <section className="ru-card-img-warp">
-          <Link to={path} className="ru-card-link">
+          <Link className="ru-card-link" onClick={handelLink}>
             <img
               className="ru-card-img"
               style={{
@@ -83,19 +110,25 @@ function ProductCard(props) {
             ></img>
           </Link>
           {/* 是否固定我的最愛按鈕 */}
-          <div className="ru-card-abs ru-card-abs-stop">
+          <div className={`ru-card-abs ${isFavActive && 'ru-card-abs-stop'}`}>
             <AddFavoriteButton
-              data={data}
               proudctId={proudctId}
               dataFav={dataFav}
-              isActive={isShowFav}
-              setIsActive={setIsShowFav}
+              isActive={isFavActive}
+              onClick={() => {
+                setIsFavActive(!isFavActive);
+                switchFavStatus();
+              }}
             />
           </div>
         </section>
         {/* item圖片e */}
         {/* item資訊s */}
-        <section className="ru-card-info-warp">
+        <section
+          className={`ru-card-info-warp ${
+            favoriteCardStatus && 'ru-card-info-warp-favorite'
+          }`}
+        >
           <div className="ru-card-none">
             {/* 取間隔用 s */}
             <h3>${price}</h3>
@@ -160,7 +193,11 @@ function ProductCard(props) {
               </div>
             </section>
           </div>
-          <div className="ru-card-price">
+          <div
+            className={`ru-card-price ${
+              favoriteCardStatus && 'ru-card-price-favorite'
+            }`}
+          >
             <h3>${price}</h3>
           </div>
         </section>
@@ -172,12 +209,15 @@ function ProductCard(props) {
               type={'origin'}
               className={'productCard-option-button'}
               text={'加入購物車'}
+              onClick={() => {
+                addProductToCard(proudctId, title, 1, imgId, price);
+              }}
             />
           </div>
         </section>
         {/* 加入購物車按鈕e */}
       </div>
-    </>
+    </section>
   );
 }
 export default withRouter(ProductCard);

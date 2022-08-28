@@ -9,18 +9,17 @@ html {
   margin: 0;
   padding: 0;
 }
+$white: #fff;
 $orange: #f48145;
 $darkGary: #858585;
 $darkBrown: #a59583;
 $brown: #decdbb;
 $lightBrown: #f7ede2;
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
 
-// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 //引入字體
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap");
 
 .jess-proE-bg {
   width: 100%;
@@ -29,7 +28,7 @@ $lightBrown: #f7ede2;
   position: relative;
 }
 .jess-productTabBorder {
-  background: url('../images/SVG/border.svg') no-repeat;
+  background: url("../images/SVG/border.svg") no-repeat;
   width: 114rem;
   height: 1rem;
   margin: 4rem 0;
@@ -40,7 +39,7 @@ $lightBrown: #f7ede2;
   width: 100%;
 }
 .jess-arrowR {
-  background: url('./Images/right.svg');
+  background: url("./Images/right.svg");
   width: 5rem;
   height: 5rem;
   float: right;
@@ -49,7 +48,7 @@ $lightBrown: #f7ede2;
 // 第1張
 .jessListE-view-first .jess-proE-pic1 {
   /*2*/
-  background: url('../images/images/07_bento-scallop.jpg') no-repeat;
+  background: url("../images/images/07_bento-scallop.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
   width: 32rem;
@@ -75,7 +74,7 @@ $lightBrown: #f7ede2;
   transition: all 0.5s ease-in-out;
   padding-left: 3rem;
   font-size: 1.8rem;
-  font-family: 'Noto Sans TC';
+  font-family: "Noto Sans TC";
   font-weight: 400;
   color: $white;
   // position: absolute;
@@ -87,7 +86,7 @@ $lightBrown: #f7ede2;
   transition: all 0.5s ease-in-out;
   padding-left: 3rem;
   font-size: 1.8rem;
-  font-family: 'Noto Sans TC';
+  font-family: "Noto Sans TC";
   font-weight: 400;
   color: $white;
   // position: absolute;
@@ -105,7 +104,7 @@ $lightBrown: #f7ede2;
   transform: translateY(20px);
   opacity: 1;
   font-size: 1.8rem;
-  font-family: 'Noto Sans TC';
+  font-family: "Noto Sans TC";
   color: $white;
   transition-delay: 0.1s;
   // position: absolute;
@@ -114,7 +113,7 @@ $lightBrown: #f7ede2;
 // 第2張
 .jessListE-view-first .jess-proE-pic2 {
   /*2*/
-  background: url('../images/images/01_bento-chicken-thigh.jpg') no-repeat;
+  background: url("../images/images/01_bento-chicken-thigh.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
   width: 32rem;
@@ -140,7 +139,7 @@ $lightBrown: #f7ede2;
   transition: all 0.5s ease-in-out;
   padding-left: 3rem;
   font-size: 1.8rem;
-  font-family: 'Noto Sans TC';
+  font-family: "Noto Sans TC";
   font-weight: 400;
   color: $white;
   // position: absolute;
@@ -152,7 +151,7 @@ $lightBrown: #f7ede2;
   transition: all 0.5s ease-in-out;
   padding-left: 3rem;
   font-size: 1.8rem;
-  font-family: 'Noto Sans TC';
+  font-family: "Noto Sans TC";
   font-weight: 400;
   color: $white;
   // position: absolute;
@@ -164,7 +163,7 @@ $lightBrown: #f7ede2;
   transform: translateY(20px);
   opacity: 1;
   font-size: 1.8rem;
-  font-family: 'Noto Sans TC';
+  font-family: "Noto Sans TC";
   color: $white;
   transition-delay: 0.1s;
   // position: absolute;
@@ -174,7 +173,7 @@ $lightBrown: #f7ede2;
 
 .jessListE-view-first .jess-proE-pic3 {
   /*1*/
-  background: url('../images/images/06_bento-tenderloin.jpg') no-repeat;
+  background: url("../images/images/06_bento-tenderloin.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
   width: 32rem;
@@ -200,7 +199,7 @@ $lightBrown: #f7ede2;
   transition: all 0.5s ease-in-out;
   padding-left: 3rem;
   font-size: 1.8rem;
-  font-family: 'Noto Sans TC';
+  font-family: "Noto Sans TC";
   font-weight: 400;
   color: $white;
   // position: absolute;
@@ -212,7 +211,7 @@ $lightBrown: #f7ede2;
   transition: all 0.5s ease-in-out;
   padding-left: 3rem;
   font-size: 1.8rem;
-  font-family: 'Noto Sans TC';
+  font-family: "Noto Sans TC";
   font-weight: 400;
   color: $white;
   // position: absolute;
@@ -230,7 +229,7 @@ $lightBrown: #f7ede2;
   transform: translateY(20px);
   opacity: 1;
   font-size: 1.8rem;
-  font-family: 'Noto Sans TC';
+  font-family: "Noto Sans TC";
   color: $white;
   transition-delay: 0.1s;
   // position: absolute;
@@ -264,7 +263,7 @@ $lightBrown: #f7ede2;
   transition: all 0.5s ease-in-out;
   padding-left: 3rem;
   font-size: 1.8rem;
-  font-family: 'Noto Sans TC';
+  font-family: "Noto Sans TC";
   font-weight: 400;
   color: $white;
   // position: absolute;
@@ -276,7 +275,7 @@ $lightBrown: #f7ede2;
   transition: all 0.5s ease-in-out;
   padding-left: 3rem;
   font-size: 1.8rem;
-  font-family: 'Noto Sans TC';
+  font-family: "Noto Sans TC";
   font-weight: 400;
   color: $white;
   // position: absolute;
@@ -294,7 +293,7 @@ $lightBrown: #f7ede2;
   transform: translateY(20px);
   opacity: 1;
   font-size: 1.8rem;
-  font-family: 'Noto Sans TC';
+  font-family: "Noto Sans TC";
   color: $white;
   transition-delay: 0.1s;
   // position: absolute;

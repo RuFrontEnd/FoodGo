@@ -9,15 +9,16 @@ html {
   margin: 0;
   padding: 0;
 }
+$white: #fff;
 $orange: #f48145;
 $darkGary: #858585;
 $darkBrown: #a59583;
 $brown: #decdbb;
 $lightBrown: #f7ede2;
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
 
-// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+
+
 //引入字體
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');

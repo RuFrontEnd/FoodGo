@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {
   datacountries,
   datatownships,
-} from '../src/Janice/Components/JanIndexx/data.js';
+} from 'data/AdministrativeDistrict.js';
 import {
   login,
   logout,
@@ -18,28 +18,29 @@ import {
 // TEST
 import Navbar from 'components/navBar/NavBar';
 import Footer from 'components/footer/Footer';
-import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
+import ScrollToTop from 'components/scrollToTop/ScrollToTop';
 import LoginModal from 'components/loginModal/LoginModal';
 import FallBack from 'components/fallBack/FallBack';
 import HomePage from 'pages/homePage/HomePage';
 
 // const Suspense = () =>returnFallBack;
 // 引入 所有人的總元件
-const ClaudiaFarmIndex = lazy(() => import('Claudia/Pages/ClaudiaFarmIndex'));
+const Farm = lazy(() => import('pages/farm/Farm'));
 const ClaudiaFarmDetailedPage = lazy(() =>
   import('Claudia/Pages/ClaudiaFarmDetailedPage')
 );
 
 // const IrisOrderComment  =lazy(() => import( 'Iris/Pages/IrisOrderComment'));
-// const IrisMyFav  =lazy(() => import( 'Iris/Pages/IrisMyFav'));
 // const IrisBeastiePoint  =lazy(() => import( 'Iris/Pages/IrisBeastiePoint'));
 // const IrisGetCoupon  =lazy(() => import( 'Iris/Pages/IrisGetCoupon'));
-// const IrisOrderManagement  =lazy(() => import( 'Iris/Pages/IrisOrderManagement'));
+const MyFav = lazy(() => import('pages/myFav/MyFav'));
+const OrderManagement = lazy(() => import('pages/OrderManagement'));
+
 const JessMenu = lazy(() => import('Jess/Pages/JessMenu'));
 const JessBento = lazy(() => import('Jess/Pages/JessBento'));
 const JessVegBox = lazy(() => import('Jess/Pages/JessVegBox'));
 
-const ChaCart = lazy(() => import('Cha/Pages/Cha-Cart/ChaCart'));
+const ShoppingCart = lazy(() => import('pages/shoppingCart/ShoppingCart'));
 const ChaGroupOrderCreate = lazy(() =>
   import('Cha/Components/Cha-Group-Order-Create/ChaGroupOrderCreate')
 );
@@ -55,7 +56,6 @@ const ChaGroupOrderConfirm = lazy(() =>
 const ChaGroupOrderMenu = lazy(() =>
   import('Cha/Components/Cha-Group-Order-Menu/ChaGroupOrderMenu')
 );
-const ChaCheckpoint = lazy(() => import('Cha/Pages/ChaCheckpoint'));
 const ChaProductList = lazy(() => import('Cha/Components-demo/ChaProductList'));
 const ChaCartTest = lazy(() => import('Cha/Components-demo/ChaCartTest'));
 
@@ -70,6 +70,7 @@ const CustomBentoList = lazy(() =>
 function App() {
   const dispatch = useDispatch();
   const isLogin = useSelector((state) => state.member.isLogin);
+  const showNavBar = useSelector((state) => state.navBar.showNavBar);
   const [showBar, setShowBar] = useState(true);
   const [cartNumber, setCartNumber] = useState(0);
   const [amount, setAmount] = useState(1);
@@ -163,7 +164,7 @@ function App() {
       <>
         {/* 切頁時不重新渲染的部份 */}
         <Navbar
-          style={{ display: !showBar && 'none' }}
+          style={{ display: !showNavBar && 'none' }}
           cartNumber={cartNumber}
           amount={amount}
           setShowLoginModal={setShowLoginModal}
@@ -177,30 +178,29 @@ function App() {
           setShowSuccessBox={setShowSuccessBox}
         />
         <ScrollToTop>
-          <Switch>
-            {/* 首頁 */}
-            <Route exact path="/">
-              <HomePage
-                takeOrNot={takeOrNot}
-                setTakeOrNot={setTakeOrNot}
-                selectDate={selectDate}
-                setSelectDate={setSelectDate}
-                slecteTime={slecteTime}
-                setSelectTime={setSelectTime}
-                setShowBar={setShowBar}
-                county={county}
-                setCounty={setCounty}
-                township={township}
-                setTownship={setTownship}
-                address={address}
-                setAddress={setAddress}
-              />
-            </Route>
-            {/* 便當商品列表 */}
-            <Route exact path="/productList">
-              <Suspense fallback={<FallBack />}>
-                <ProductList
+          <Suspense fallback={<FallBack />}>
+            <Switch>
+              {/* 首頁 */}
+              <Route exact path="/">
+                <HomePage
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
                   setShowBar={setShowBar}
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                />
+              </Route>
+              {/* 便當商品列表 */}
+              <Route exact path="/productList">
+                <ProductList
                   handleCartNumber={handleCartNumber}
                   county={county}
                   setCounty={setCounty}
@@ -217,11 +217,9 @@ function App() {
                   amount={amount}
                   setAmount={setAmount}
                 />
-              </Suspense>
-            </Route>
-            {/* 沙拉商品列表 */}
-            <Route exact path="/productListSalad">
-              <Suspense fallback={<FallBack />}>
+              </Route>
+              {/* 沙拉商品列表 */}
+              <Route exact path="/productListSalad">
                 <SaladList
                   setShowBar={setShowBar}
                   handleCartNumber={handleCartNumber}
@@ -240,11 +238,9 @@ function App() {
                   amount={amount}
                   setAmount={setAmount}
                 />
-              </Suspense>
-            </Route>
-            {/* 客製化便當 */}
-            <Route exact path="/productListCustom">
-              <Suspense fallback={<FallBack />}>
+              </Route>
+              {/* 客製化便當 */}
+              <Route exact path="/productListCustom">
                 <CustomBentoList
                   setShowBar={setShowBar}
                   handleCartNumber={handleCartNumber}
@@ -263,25 +259,18 @@ function App() {
                   amount={amount}
                   setAmount={setAmount}
                 />
-              </Suspense>
-            </Route>
+              </Route>
 
-            {/* claudia */}
-            <Route exact path="/farmMap">
-              <Suspense fallback={<FallBack />}>
-                <ClaudiaFarmIndex />
-              </Suspense>
-            </Route>
-            <Route exact path="/farmIntro">
-              <Suspense fallback={<FallBack />}>
+              {/* claudia */}
+              <Route exact path="/farm">
+                <Farm />
+              </Route>
+              <Route exact path="/farmIntro">
                 <ClaudiaFarmDetailedPage handleCartNumber={handleCartNumber} />
-              </Suspense>
-            </Route>
-            {/* cha */}
-            <Route exact path="/cart">
-              <Suspense fallback={<FallBack />}>
-                <ChaCart
-                  setShowBar={setShowBar}
+              </Route>
+              {/* cha */}
+              <Route exact path="/cart">
+                <ShoppingCart
                   setCartNumber={setCartNumber}
                   // handleCartNumber={handleCartNumber}
                   // county={county}
@@ -300,55 +289,34 @@ function App() {
                   textTownship={textTownship}
                   textAddress={textAddress}
                 />
-              </Suspense>
-            </Route>
-            <Route exact path="/groupOrder/groupOrderCreate">
-              <Suspense fallback={<FallBack />}>
+              </Route>
+              <Route exact path="/groupOrder/groupOrderCreate">
                 <ChaGroupOrderCreate />
-              </Suspense>
-            </Route>
-            <Route path="/groupOrder/groupOrderSearch">
-              <Suspense fallback={<FallBack />}>
+              </Route>
+              <Route path="/groupOrder/groupOrderSearch">
                 <ChaGroupOrderSearch />
-              </Suspense>
-            </Route>
-            <Route path="/groupOrder/groupOrderSignIn">
-              <Suspense fallback={<FallBack />}>
+              </Route>
+              <Route path="/groupOrder/groupOrderSignIn">
                 <ChaGroupOrderSignIn />
-              </Suspense>
-            </Route>
-            <Route path="/groupOrder/groupOrderConfirm">
-              <Suspense fallback={<FallBack />}>
+              </Route>
+              <Route path="/groupOrder/groupOrderConfirm">
                 <ChaGroupOrderConfirm />
-              </Suspense>
-            </Route>
-            <Route path="/groupOrder/groupOrderMenu">
-              <Suspense fallback={<FallBack />}>
+              </Route>
+              <Route path="/groupOrder/groupOrderMenu">
                 <ChaGroupOrderMenu />
-              </Suspense>
-            </Route>
-            {/* 訂單管理已置入<IrisOrderManagement /> */}
-            {/* 測試用：中繼站、商品清單 */}
-            <Route exact path="/checkpoint">
-              <Suspense fallback={<FallBack />}>
-                <ChaCheckpoint />
-              </Suspense>
-            </Route>
-            <Route exact path="/chaProductList">
-              <Suspense fallback={<FallBack />}>
+              </Route>
+              {/* 訂單管理已置入<IrisOrderManagement /> */}
+              {/* 測試用：中繼站、商品清單 */}
+              <Route exact path="/chaProductList">
                 <ChaProductList handleCartNumber={handleCartNumber} />
-              </Suspense>
-            </Route>
-            <Route exact path="/chaCartTest">
-              <Suspense fallback={<FallBack />}>
+              </Route>
+              <Route exact path="/chaCartTest">
                 <ChaCartTest />
-              </Suspense>
-            </Route>
-            {/* 404 */}
+              </Route>
+              {/* 404 */}
 
-            {/* iris */}
-            <Route exact path="/memberUserprofile">
-              <Suspense fallback={<FallBack />}>
+              {/* iris */}
+              <Route exact path="/memberUserprofile">
                 <Userprofile
                   setShowBar={setShowBar}
                   // 會員
@@ -371,11 +339,52 @@ function App() {
                   slecteTime={slecteTime}
                   setSelectTime={setSelectTime}
                 />
-              </Suspense>
-            </Route>
-            <Route exact path="/orderComment">
-              {/* <Suspense fallback={<FallBack />}> */}
-              {/* <IrisOrderComment
+              </Route>
+              <Route exact path="/orderComment">
+                {/* 
+                <IrisOrderComment
+                  setShowBar={setShowBar}
+                  // 會員
+                  setShowLoginModal={setShowLoginModal}
+                  // vnbar
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                />
+               */}
+              </Route>
+              <Route exact path="/myFav">
+                <MyFav
+                  setShowBar={setShowBar}
+                  // 會員
+                  setShowLoginModal={setShowLoginModal}
+                  // vnbar
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                />
+              </Route>
+              <Route exact path="/beastiePoint">
+                {/*  */}
+                {/* <IrisBeastiePoint
                 setShowBar={setShowBar}
                 // 會員
                 setShowLoginModal={setShowLoginModal}
@@ -393,55 +402,11 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               /> */}
-              {/* </Suspense> */}
-            </Route>
-            <Route exact path="/myFav">
-              {/* <Suspense fallback={<FallBack />}> */}
-              {/* <IrisMyFav
-                setShowBar={setShowBar}
-                // 會員
-                setShowLoginModal={setShowLoginModal}
-                // vnbar
-                county={county}
-                setCounty={setCounty}
-                township={township}
-                setTownship={setTownship}
-                address={address}
-                setAddress={setAddress}
-                takeOrNot={takeOrNot}
-                setTakeOrNot={setTakeOrNot}
-                selectDate={selectDate}
-                setSelectDate={setSelectDate}
-                slecteTime={slecteTime}
-                setSelectTime={setSelectTime}
-              /> */}
-              {/* </Suspense> */}
-            </Route>
-            <Route exact path="/beastiePoint">
-              {/* <Suspense fallback={<FallBack />}> */}
-              {/* <IrisBeastiePoint
-                setShowBar={setShowBar}
-                // 會員
-                setShowLoginModal={setShowLoginModal}
-                // vnbar
-                county={county}
-                setCounty={setCounty}
-                township={township}
-                setTownship={setTownship}
-                address={address}
-                setAddress={setAddress}
-                takeOrNot={takeOrNot}
-                setTakeOrNot={setTakeOrNot}
-                selectDate={selectDate}
-                setSelectDate={setSelectDate}
-                slecteTime={slecteTime}
-                setSelectTime={setSelectTime}
-              /> */}
-              {/* </Suspense> */}
-            </Route>
-            <Route path="/getCoupon">
-              {/* <Suspense fallback={<FallBack />}> */}
-              {/* <IrisGetCoupon
+                {/*  */}
+              </Route>
+              <Route path="/getCoupon">
+                {/*  */}
+                {/* <IrisGetCoupon
                 setShowBar={setShowBar}
                 // 會員
                 setShowLoginModal={setShowLoginModal}
@@ -462,35 +427,32 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               /> */}
-              {/* </Suspense> */}
-            </Route>
-            <Route path="/orderManagement">
-              {/* <Suspense fallback={<FallBack />}> */}
-              {/* <IrisOrderManagement
-                handleCartNumber={handleCartNumber}
-                showBar={showBar}
-                setShowBar={setShowBar}
-                // 會員
-                setShowLoginModal={setShowLoginModal}
-                // vnbar
-                county={county}
-                setCounty={setCounty}
-                township={township}
-                setTownship={setTownship}
-                address={address}
-                setAddress={setAddress}
-                takeOrNot={takeOrNot}
-                setTakeOrNot={setTakeOrNot}
-                selectDate={selectDate}
-                setSelectDate={setSelectDate}
-                slecteTime={slecteTime}
-                setSelectTime={setSelectTime}
-              /> */}
-              {/* </Suspense> */}
-            </Route>
-            {/* jess */}
-            <Route path="/menu">
-              <Suspense fallback={<FallBack />}>
+                {/*  */}
+              </Route>
+              <Route path="/orderManagement">
+                <OrderManagement
+                  handleCartNumber={handleCartNumber}
+                  showBar={showBar}
+                  setShowBar={setShowBar}
+                  // 會員
+                  setShowLoginModal={setShowLoginModal}
+                  // vnbar
+                  county={county}
+                  setCounty={setCounty}
+                  township={township}
+                  setTownship={setTownship}
+                  address={address}
+                  setAddress={setAddress}
+                  takeOrNot={takeOrNot}
+                  setTakeOrNot={setTakeOrNot}
+                  selectDate={selectDate}
+                  setSelectDate={setSelectDate}
+                  slecteTime={slecteTime}
+                  setSelectTime={setSelectTime}
+                />
+              </Route>
+              {/* jess */}
+              <Route path="/menu">
                 <JessMenu
                   setShowBar={setShowBar}
                   setCartNumber={setCartNumber}
@@ -507,10 +469,8 @@ function App() {
                   slecteTime={slecteTime}
                   setSelectTime={setSelectTime}
                 />
-              </Suspense>
-            </Route>
-            <Route path="/bento/:id?">
-              <Suspense fallback={<FallBack />}>
+              </Route>
+              <Route path="/bento/:id?">
                 <JessBento
                   setShowBar={setShowBar}
                   setCartNumber={setCartNumber}
@@ -528,10 +488,8 @@ function App() {
                   slecteTime={slecteTime}
                   setSelectTime={setSelectTime}
                 />
-              </Suspense>
-            </Route>
-            <Route path="/vegBox">
-              <Suspense fallback={<FallBack />}>
+              </Route>
+              <Route path="/vegBox">
                 <JessVegBox
                   setShowBar={setShowBar}
                   setCartNumber={setCartNumber}
@@ -549,9 +507,9 @@ function App() {
                   slecteTime={slecteTime}
                   setSelectTime={setSelectTime}
                 />
-              </Suspense>
-            </Route>
-          </Switch>
+              </Route>
+            </Switch>
+          </Suspense>
         </ScrollToTop>
         <Footer />
       </>

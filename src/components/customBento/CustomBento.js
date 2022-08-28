@@ -1,38 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
+import styled from 'styled-components/macro';
 import 'components/customBento/customBento.scss';
 import MultiCarousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import RuArrowLeft from 'Ru/Components/RuArrowLeft/RuArrowLeft';
-import RuArrowRight from 'Ru/Components/RuArrowRight/RuArrowRight';
-import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
-import RuCounter from 'Ru/Components/RuCounter/RuCounter';
-import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
-import RuPriceA from 'Ru/Components/RuPriceA/RuPriceA'; // 資訊區價格 網頁版
-import RuCalA from 'Ru/Components/RuCalA/RuCalA'; // 資訊區熱量 網頁版
-import RuRiceA from 'Ru/Components/RuFoodItems/RuRiceA/RuRiceA';
-import RuMeetA from 'Ru/Components/RuFoodItems/RuMeetA/RuMeetA';
-import RuVegetableA from 'Ru/Components/RuFoodItems/RuVegetableA/RuVegetableA';
-import RuEggA from 'Ru/Components/RuFoodItems/RuEggA/RuEggA';
-import RuCutsomHint from 'Ru/Components/RuCutsomHint/RuCutsomHint';
-import Carousel from 'components/carousel/Carousel';
+import OptionButtonRef from 'components/optionButton/OptionButton';
+import Counter from 'components/counter/Counter';
+import AddCart from 'components/addCart/AddCart';
+import PriceArea from 'components/priceArea/PriceArea'; // 資訊區價格 網頁版
+import CalorieArea from 'components/calorieArea/CalorieArea'; // 資訊區熱量 網頁版
+import CustomHint from 'components/customHint/CustomHint';
 import FoodItem from 'components/foodItem/FoodItem';
-
-// 引用共用元件
-import cauliflower from './Images/cauliflower.svg'; // rwd暫放(待刪)
-// 品項放置後s
-import cauliflowerAfter from './Images/cauliflowerAfter.svg';
-import cabageAfter from './Images/cabageAfter.svg';
-import cornAfter from './Images/cornAfter.svg';
-import qingjiangAfter from './Images/qingjiangAfter.svg';
-import eggplantAfter from './Images/eggplantAfter.svg';
-import eggAfter from './Images/eggAfter.svg';
-import poachedEggAfter from './Images/poachedEggAfter.svg';
-import riceAfter from './Images/riceAfter.svg';
-import grainRiceAfter from './Images/grainRiceAfter.svg';
-import redQuinoaAfter from './Images/redQuinoaAfter.svg';
-import chickenBreastAfter from './Images/chickenBreastAfter.svg';
-import chickenLegAfter from './Images/chickenLegAfter.svg';
-import shrimpAfter from './Images/shrimpAfter.svg';
 
 // 品項放置後 e
 import hintA from './Images/hintA.svg';
@@ -45,6 +22,11 @@ import hintF from './Images/hintF.svg';
 // 引用圖片
 import background from './Images/background.png';
 import { ReactComponent as LunchBox } from 'assets/svg/lunchBox.svg'; // 將svg以元件方式引入
+
+const OptionButton = styled(OptionButtonRef)`
+  padding: 5px 25px;
+  margin: 0px 20px;
+`;
 
 function CustomBento(props) {
   const { handleCartNumber, amount, setAmount, count, setCount } = props;
@@ -110,6 +92,29 @@ function CustomBento(props) {
   const [foods, setFoods] = useState([]);
   const [foodItems, setFoodItems] = useState([]);
 
+  const optionButtonSettings = [
+    {
+      text: '副食',
+      id: 'rice-items',
+      selected: selection === 'rice',
+    },
+    {
+      text: '主食',
+      id: 'meet-items',
+      selected: selection === 'meet',
+    },
+    {
+      text: '配菜',
+      id: 'vegetable-items',
+      selected: selection === 'vegetable',
+    },
+    {
+      text: '蛋',
+      id: 'egg-items',
+      selected: selection === 'egg',
+    },
+  ];
+
   // 給localStorage的id
   let today = +new Date();
   const [todayId, setTodayId] = useState(today);
@@ -119,6 +124,7 @@ function CustomBento(props) {
     setIsPrice(true);
     setIsCal(false);
   }
+
   function switchCal() {
     setIsPrice(false);
     setIsCal(true);
@@ -157,7 +163,7 @@ function CustomBento(props) {
     );
 
     let _foods = [...foods];
-    if (e.target.id === $vegBoxLeft.current.id) {
+    if (e.target.id === $vegBoxLeft.current.id && selection === 'vegetable') {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setVegBoxLeftImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
@@ -169,7 +175,7 @@ function CustomBento(props) {
       });
     } // 左邊蔬菜區
 
-    if (e.target.id === $vegBoxMiddle.current.id) {
+    if (e.target.id === $vegBoxMiddle.current.id && selection === 'vegetable') {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setVegBoxMiddleImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
@@ -181,7 +187,7 @@ function CustomBento(props) {
       });
     } // 中間蔬菜區
 
-    if (e.target.id === $vegBoxRight.current.id) {
+    if (e.target.id === $vegBoxRight.current.id && selection === 'vegetable') {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setvegBoxRightImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
@@ -193,7 +199,7 @@ function CustomBento(props) {
       });
     } // 右邊蔬菜區
 
-    if (e.target.id === $riceBox.current.id) {
+    if (selection === 'rice') {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setRiceImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
@@ -204,7 +210,8 @@ function CustomBento(props) {
       });
     } // 白飯區
 
-    if (e.target.id === $meetBox.current.id) {
+    if (selection === 'meet') {
+      console.log('a');
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setMeetImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
@@ -215,7 +222,7 @@ function CustomBento(props) {
       });
     } // 主食區
 
-    if (e.target.id === $eggBox.current.id) {
+    if (selection === 'egg') {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setEggImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
@@ -284,6 +291,35 @@ function CustomBento(props) {
       setEggPrice(0);
       setEggCal(0);
     } // 主食區
+  };
+
+  const switchItems = (id) => {
+    setIsShowHintA(false);
+    setIsShowHintB(false);
+    setIsShowHintC(false);
+    setIsShowHintD(false);
+    setIsShowHintE(false);
+    setIsShowHintF(false);
+    switch (id) {
+      case 'rice-items':
+        setSelection('rice'); // 開啟白飯選區
+        setIsShowHintD(true);
+        break;
+      case 'meet-items':
+        setSelection('meet'); // 開啟主菜選區
+        setIsShowHintF(true);
+        break;
+      case 'vegetable-items':
+        setSelection('vegetable'); // 開啟配菜選區
+        setIsShowHintA(true);
+        setIsShowHintB(true);
+        setIsShowHintC(true);
+        break;
+      case 'egg-items':
+        setSelection('egg'); // 開啟蛋選區
+        setIsShowHintE(true);
+        break;
+    }
   };
 
   // 向後端請求資料
@@ -427,7 +463,7 @@ function CustomBento(props) {
             <div className="ru-drop-warp" id="ru-dropOutAreaC">
               <div className="ru-box-container">
                 <div className="ru-box-warp">
-                  {isShowHint && <RuCutsomHint />}
+                  {isShowHint && <CustomHint />}
                   {/* 放置菜色A區vegA s*/}
                   <div id="ru-hintA">
                     {isShowHintA && <img src={hintA}></img>}
@@ -553,7 +589,7 @@ function CustomBento(props) {
                 </div>
                 <div className="ru-info-container">
                   {isPrice && (
-                    <RuPriceA
+                    <PriceArea
                       riceName={riceName}
                       ricePrice={ricePrice}
                       meetName={meetName}
@@ -569,7 +605,7 @@ function CustomBento(props) {
                     />
                   )}
                   {isCal && (
-                    <RuCalA
+                    <CalorieArea
                       data={data}
                       riceName={riceName}
                       riceCal={riceCal}
@@ -588,13 +624,13 @@ function CustomBento(props) {
                 </div>
                 <div className="ru-checkout-container">
                   <div className="ru-checkout-warp">
-                    <RuCounter
+                    <Counter
                       setAmount={setAmount}
                       count={count}
                       setCount={setCount}
                     />
                     {isCanBuy ? (
-                      <RuAddCart
+                      <AddCart
                         id={'addCart-btn-custom'}
                         parentId={'addCart-btn-warp-custom'}
                         handleCartNumber={handleCartNumber}
@@ -627,7 +663,7 @@ function CustomBento(props) {
                           filter: 'grayscale(100%)',
                         }}
                       >
-                        <RuAddCart
+                        <AddCart
                           id={'addCart-btn-custom'}
                           parentId={'addCart-btn-warp-custom'}
                           handleCartNumber={handleCartNumber}
@@ -662,94 +698,16 @@ function CustomBento(props) {
             <div className="ru-drag-warp">
               <div className="ru-selection-container">
                 <div className="ru-selection-warp">
-                  <RuButtonB
-                    text={'副食'}
-                    id={'ru-buttonB-rice'}
-                    selection={selection}
-                    setSelection={setSelection}
-                    moveX={moveX}
-                    setMoveX={setMoveX}
-                    limitX={limitX} // 調配右滑極限值
-                    setLimitX={setLimitX} // 調配右滑極限值
-                    isShowHintA={isShowHintA}
-                    setIsShowHintA={setIsShowHintA}
-                    isShowHintB={isShowHintB}
-                    setIsShowHintB={setIsShowHintB}
-                    isShowHintC={isShowHintC}
-                    setIsShowHintC={setIsShowHintC}
-                    isShowHintD={isShowHintD}
-                    setIsShowHintD={setIsShowHintD}
-                    isShowHintE={isShowHintE}
-                    setIsShowHintE={setIsShowHintE}
-                    isShowHintF={isShowHintF}
-                    setIsShowHintF={setIsShowHintF}
-                  />
-                  <RuButtonB
-                    text={'主食'}
-                    id={'ru-buttonB-meet'}
-                    selection={selection}
-                    setSelection={setSelection}
-                    moveX={moveX}
-                    setMoveX={setMoveX}
-                    limitX={limitX} // 調配右滑極限值
-                    setLimitX={setLimitX} // 調配右滑極限值
-                    isShowHintA={isShowHintA}
-                    setIsShowHintA={setIsShowHintA}
-                    isShowHintB={isShowHintB}
-                    setIsShowHintB={setIsShowHintB}
-                    isShowHintC={isShowHintC}
-                    setIsShowHintC={setIsShowHintC}
-                    isShowHintD={isShowHintD}
-                    setIsShowHintD={setIsShowHintD}
-                    isShowHintE={isShowHintE}
-                    setIsShowHintE={setIsShowHintE}
-                    isShowHintF={isShowHintF}
-                    setIsShowHintF={setIsShowHintF}
-                  />
-                  <RuButtonB
-                    text={'配菜'}
-                    id={'ru-buttonB-vegetable'}
-                    selection={selection}
-                    setSelection={setSelection}
-                    moveX={moveX}
-                    setMoveX={setMoveX}
-                    limitX={limitX} // 調配右滑極限值
-                    setLimitX={setLimitX} // 調配右滑極限值
-                    isShowHintA={isShowHintA}
-                    setIsShowHintA={setIsShowHintA}
-                    isShowHintB={isShowHintB}
-                    setIsShowHintB={setIsShowHintB}
-                    isShowHintC={isShowHintC}
-                    setIsShowHintC={setIsShowHintC}
-                    isShowHintD={isShowHintD}
-                    setIsShowHintD={setIsShowHintD}
-                    isShowHintE={isShowHintE}
-                    setIsShowHintE={setIsShowHintE}
-                    isShowHintF={isShowHintF}
-                    setIsShowHintF={setIsShowHintF}
-                  />
-                  <RuButtonB
-                    text={'蛋'}
-                    id={'ru-buttonB-egg'}
-                    selection={selection}
-                    setSelection={setSelection}
-                    moveX={moveX}
-                    setMoveX={setMoveX}
-                    limitX={limitX} // 調配右滑極限值
-                    setLimitX={setLimitX} // 調配右滑極限值
-                    isShowHintA={isShowHintA}
-                    setIsShowHintA={setIsShowHintA}
-                    isShowHintB={isShowHintB}
-                    setIsShowHintB={setIsShowHintB}
-                    isShowHintC={isShowHintC}
-                    setIsShowHintC={setIsShowHintC}
-                    isShowHintD={isShowHintD}
-                    setIsShowHintD={setIsShowHintD}
-                    isShowHintE={isShowHintE}
-                    setIsShowHintE={setIsShowHintE}
-                    isShowHintF={isShowHintF}
-                    setIsShowHintF={setIsShowHintF}
-                  />
+                  {optionButtonSettings.map((optionButtonSetting) => (
+                    <OptionButton
+                      text={optionButtonSetting.text}
+                      id={optionButtonSetting.id}
+                      onClick={() => {
+                        switchItems(optionButtonSetting.id);
+                      }}
+                      isSelected={optionButtonSetting.selected}
+                    />
+                  ))}
                 </div>
               </div>
               <MultiCarousel
@@ -777,7 +735,7 @@ function CustomBento(props) {
             </div>
             <div className="ru-info-container">
               {isPrice && (
-                <RuPriceA
+                <PriceArea
                   riceName={riceName}
                   ricePrice={ricePrice}
                   meetName={meetName}
@@ -793,7 +751,7 @@ function CustomBento(props) {
                 />
               )}
               {isCal && (
-                <RuCalA
+                <CalorieArea
                   data={data}
                   riceName={riceName}
                   riceCal={riceCal}
@@ -812,13 +770,13 @@ function CustomBento(props) {
             </div>
             <div className="ru-checkout-container">
               <div className="ru-checkout-warp">
-                <RuCounter
+                <Counter
                   setAmount={setAmount}
                   count={count}
                   setCount={setCount}
                 />
                 {isCanBuy ? (
-                  <RuAddCart
+                  <AddCart
                     id={'addCart-btn-custom'}
                     parentId={'addCart-btn-warp-custom'}
                     handleCartNumber={handleCartNumber}
@@ -851,7 +809,7 @@ function CustomBento(props) {
                       filter: 'grayscale(100%)',
                     }}
                   >
-                    <RuAddCart
+                    <AddCart
                       id={'addCart-btn-custom'}
                       parentId={'addCart-btn-warp-custom'}
                       handleCartNumber={handleCartNumber}

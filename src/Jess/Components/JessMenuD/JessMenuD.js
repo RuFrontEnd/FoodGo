@@ -1,61 +1,55 @@
-import React, { useState, useEffect } from 'react'
-import './JessMenuD.scss'
+import React, { useState, useEffect } from 'react';
+import './JessMenuD.scss';
+import styled from 'styled-components/macro';
+import ActivityCard from 'components/activityCard/ActivityCard';
+import { orange } from 'variable/variable';
+import groupon1 from 'assets/jpg/groupon1.jpg';
+import groupon2 from 'assets/jpg/groupon2.jpg';
+import groupon3 from 'assets/jpg/groupon3.jpg';
+
+const ActivityCards = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Title = styled.p`
+  font-size: 3rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+  color: ${orange};
+  letter-spacing: 1rem;
+`;
 
 function JessMenuD() {
   return (
     <>
       <div className="container-fluid jess-MenuD-container-fluid mt-5">
         <div className="container">
-          <p className="jess-text-30orange text-center  ">好康優惠</p>
-          <div className="row mt-5 d-flex justify-content-between jess-MenuD-RWD">
-            <div class="col-12 col-sm-3">
-              <div class="jess-view jess-view-first">
-                <div className="jess-menuD-groupon1 "></div>
-                <div class="jess-mask text-center">
-                  <div className="jess-line"></div>
-                  <h2 className="text-center">現在訂購</h2>
-                  <p className="text-center">
-                    就 送 <br />
-                    Blender Bottle 搖搖杯
-                  </p>
-                  <div className="jess-line2"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-3">
-              <div class="jess-view jess-view-first">
-                <div className="jess-menuD-groupon2"></div>
-                <div class="jess-mask text-center">
-                  <div className="jess-line"></div>
-                  <h2 className="text-center">開始訂購</h2>
-                  <p className="text-center">
-                    立 即 <br />
-                    享受美食
-                  </p>
-                  <div className="jess-line2"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-3">
-              <div class="jess-view jess-view-first">
-                <div className="jess-menuD-groupon3"></div>
-                <div class="jess-mask text-center">
-                  <div className="jess-line"></div>
-                  <h2 className="text-center">APP點餐</h2>
-                  <p className="text-center">
-                    揪 團 <br />
-                    大家一起來
-                  </p>
-                  <div className="jess-line2"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Title className="text-center">好康優惠</Title>
+          <ActivityCards>
+            <ActivityCard
+              backgroundImg={groupon1}
+              title={'現在訂購'}
+              topContent={'就 送'}
+              bottomContent={'Blender Bottle 搖搖杯'}
+            />
+            <ActivityCard
+              backgroundImg={groupon2}
+              title={'開始訂購'}
+              topContent={'立 即'}
+              bottomContent={'享受美食'}
+            />
+            <ActivityCard
+              backgroundImg={groupon3}
+              title={'APP點餐'}
+              topContent={'揪 團'}
+              bottomContent={'大家一起來'}
+            />
+          </ActivityCards>
         </div>
-        {/* <div className="jess-border"></div> */}
       </div>
     </>
-  )
+  );
 }
 
-export default JessMenuD
+export default JessMenuD;

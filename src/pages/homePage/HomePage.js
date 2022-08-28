@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { showNavBar } from 'redux/navBar/navBarActions'; // 判斷是否 login 的狀態
 import 'pages/homePage/homePage.scss';
 import { Carousel } from 'antd';
 import { Link } from 'react-router-dom';
@@ -45,7 +47,6 @@ import stepImage5 from 'assets/svg/step5.svg';
 import customVideo from 'assets/mp4/customFinalVideo.mp4';
 
 import OptionButton from 'components/optionButton/OptionButton';
-import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import ToToop from 'Share/Components/ToTopButton/ScrollButton';
 import AreaTitle from 'components/areaTitle/AreaTitle';
 import RecommendCard from 'components/recommendCard/RecommendCard';
@@ -119,7 +120,6 @@ const dataprice = datacountries.map((v, i, array) =>
 
 function HomePage(props) {
   const {
-    setShowBar,
     county,
     setCounty,
     township,
@@ -132,6 +132,7 @@ function HomePage(props) {
   const $featureDot = useRef();
   const $homePageCircles = useRef();
   const $featureTriangle = useRef();
+  const dispatch = useDispatch();
   const [price, setPrice] = useState(-1);
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const [isFarmerFeatureActive, setIsFarmerFeatureActive] = useState(true);
@@ -145,7 +146,7 @@ function HomePage(props) {
   const [showDiscountCard, setShowDiscountCard] = useState('discountCard-1');
 
   useEffect(() => {
-    setShowBar(true);
+    dispatch(showNavBar(true))
   }, []);
 
   // 品牌特色切換
@@ -250,15 +251,6 @@ function HomePage(props) {
 
   return (
     <>
-      {/* <VNavbar
-        {...props}
-        county={county}
-        setCounty={setCounty}
-        township={township}
-        setTownship={setTownship}
-        address={address}
-        setAddress={setAddress}
-      /> */}
       {/* 輪播牆 */}
       <section
         id="homePage-carousel-container"
@@ -478,7 +470,7 @@ function HomePage(props) {
               className={'homePage-index-button  float-right mt-3'}
               type={'green'}
               text={'小農地圖'}
-              routes={'/farmMap'}
+              routes={'/farm'}
             />
           </div>
           {/* 小農欄位 */}

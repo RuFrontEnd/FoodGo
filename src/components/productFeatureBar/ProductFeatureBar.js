@@ -3,8 +3,10 @@ import 'components/productFeatureBar/productFeatureBar.scss';
 import OptionButton from 'components/optionButton/OptionButton';
 import SearchBar from 'components/searchBar/SearchBar';
 import line from 'assets/png/line.png';
+import { withRouter } from 'react-router';
+import { useLocation } from 'react-router-dom';
 
-function productFeatureBar(props) {
+function ProductFeatureBar(props) {
   const {
     className,
     style,
@@ -13,9 +15,37 @@ function productFeatureBar(props) {
     searchInput,
     setSearchInput,
     onSearch,
-    buttonAttributes,
+    history,
   } = props;
+  const currentURL = useLocation();
 
+  const buttonAttributes = [
+    {
+      text: '低GI便當',
+      isSelected: currentURL.pathname === '/productList',
+      type: 'origin',
+      routes: '/productList',
+    },
+    {
+      text: '鮮蔬沙拉',
+      isSelected: currentURL.pathname === '/productListSalad',
+      type: 'origin',
+      routes: '/productListSalad',
+    },
+    {
+      text: '客製化便當',
+      isSelected: currentURL.pathname === '/productListCustom',
+      type: 'origin',
+      routes: '/productListCustom',
+    },
+    {
+      text: '蔬菜箱',
+      isSelected: currentURL.pathname === '/vegBox',
+      type: 'green',
+      routes: '/vegBox',
+    },
+  ];
+  
   return (
     <section
       id="productFeatureBar-container"
@@ -41,7 +71,9 @@ function productFeatureBar(props) {
                   className={'productFeatureBar-option-button'}
                   text={buttonAttribute.text}
                   isSelected={buttonAttribute.isSelected}
-                  routes={buttonAttribute.routes}
+                  onClick={() => {
+                    history.push(buttonAttribute.routes);
+                  }}
                 />
               ))}
             </div>
@@ -55,4 +87,4 @@ function productFeatureBar(props) {
   );
 }
 
-export default productFeatureBar;
+export default withRouter(ProductFeatureBar);

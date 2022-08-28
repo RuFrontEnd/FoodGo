@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import 'components/foodGoInput/foodGoInput.scss';
 
 function FoodGoInput(props) {
-  const { placeholder, type, id, userInfo, setUserInfo } = props;
+  const { placeholder, type, id, value, setValue } = props;
 
   return (
     <>
@@ -14,8 +14,8 @@ function FoodGoInput(props) {
         type={type}
         placeholder={placeholder}
         id={id}
-        // value={userInfo}
-        // onChange={(e) => setUserInfo(e.target.value)}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
       />
     </>
   );

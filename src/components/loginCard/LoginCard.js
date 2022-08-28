@@ -256,15 +256,20 @@ function LoginCard(props) {
       })
         .then((r) => r.json())
         .then((o) => {
-          // console.log(o);
+          // console.log('o', o);
           setRegisterStatus(o);
-          setCreateAccountValue('');
-          setCreatePasswordValue('');
-          setConfirmPasswordValue('');
-          setNameValue('');
-          setUserEmailValue('');
-          setUserMobileValue('');
           setIsRegistered(true);
+          if (o.status === true) {
+            setCreateAccountValue('');
+            setCreatePasswordValue('');
+            setConfirmPasswordValue('');
+            setNameValue('');
+            setUserEmailValue('');
+            setUserMobileValue('');
+          }
+          if (o.status === false) {
+            setCreateAccountValue('');
+          }
           setTimeout(() => {
             setIsRegistered(false);
           }, 3 * 1000);
@@ -326,6 +331,24 @@ function LoginCard(props) {
       document.cookie = 'encryptedPassword=$; max-age=0';
     } // 取消記住我則刪除cookie
   }, [isRemembered]);
+
+  // useEffect(() => {
+  //   if (registerStatus.status) {
+  //     setCreateAccountValue('');
+  //     setCreatePasswordValue('');
+  //     setConfirmPasswordValue('');
+  //     setNameValue('');
+  //     setUserEmailValue('');
+  //     setUserMobileValue('');
+  //     setIsRegistered(true);
+  //   }
+  //   if (!registerStatus.status) {
+  //     setCreateAccountValue('');
+  //   }
+  //   setTimeout(() => {
+  //     setIsRegistered(false);
+  //   }, 3 * 1000);
+  // }, [registerStatus]);
 
   return (
     <div className={className} id={id}>
@@ -426,12 +449,12 @@ function LoginCard(props) {
             <div
               className="register-title"
               onClick={() => {
-                setCreateAccountValue('a123456789');
-                setCreatePasswordValue('a000000000');
-                setConfirmPasswordValue('a000000000');
-                setNameValue('TEST');
+                setCreateAccountValue('a07110711');
+                setCreatePasswordValue('a07111111');
+                setConfirmPasswordValue('a07111111');
+                setNameValue('測試用帳號2');
                 setUserEmailValue('as2million@gmail.com');
-                setUserMobileValue('0917000000');
+                setUserMobileValue('0907110000');
               }}
             >
               會員註冊

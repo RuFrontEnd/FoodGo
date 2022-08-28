@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect';
 import IrisOrderCommentSect from '../Components/IrisOrderCommentSect/IrisOrderCommentSect';
-import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import './IrisMemberPage.scss';
 import { Redirect } from 'react-router-dom';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
@@ -29,7 +28,6 @@ function IrisOrderComment(props) {
   }
   return (
     <>
-      <VNavbar {...props} />
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect
           commentDelete={commentDelete}

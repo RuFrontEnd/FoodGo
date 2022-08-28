@@ -16,9 +16,9 @@ $brown: #decdbb;
 $lightBrown: #f7ede2;
 $white: #ffffff;
 // Import Bootstrap and its default variables
-// @import '~bootstrap/scss/bootstrap.scss';
+// 
 
-// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+
 //引入字體
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
@@ -315,16 +315,6 @@ $white: #ffffff;
   transform: scale(0.85);
 }
 
-// .jan-arrow-circleR {
-//   background: url('../../../Janice/Components/JanIndexx/Images/Svg/arrow-circle.svg')
-//     center center no-repeat;
-//   background-size: cover;
-//   width: 8rem;
-//   height: 8rem;
-//   position: relative;
-//   cursor: pointer;
-//   transition: 0.5s;
-// }
 .jess-arrow {
   background: url('./SVG/jess-arrow-circle-01.svg') center center no-repeat;
   background-size: cover;
@@ -336,7 +326,7 @@ $white: #ffffff;
 }
 
 .jan-arrow-right {
-  background: url('../../../Janice/Components/JanIndexx/Images/Svg/arrow-right.svg')
+  background: url('../../../assets/svg/arrow-right.svg')
     center center;
   width: 6.5rem;
   height: 2.2rem;

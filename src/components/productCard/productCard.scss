@@ -1,5 +1,5 @@
-@import "Ru/Pages/variable.scss";
-.productCard-option-button{
+@import "variable/variable.scss";
+.productCard-option-button {
   padding: 10px 20px;
 }
 
@@ -9,8 +9,8 @@
 
 .ru-card-container {
   border-radius: 5px;
-  width: 345px;
   height: 100%;
+  width: 100%;
 }
 
 .ru-card-img-warp {
@@ -41,10 +41,13 @@
   transition: 0.35s;
 }
 
-.ru-card-abs-stop {
-  position: absolute;
+.ru-card-abs:hover {
   top: 83%;
-  right: 20px;
+  transition: 0.35s;
+}
+
+.ru-card-abs-stop {
+  top: 83%;
   transition: 0.35s;
 }
 
@@ -141,4 +144,20 @@
   height: 100%;
   border-top: 1px solid $hr-Color;
   @include flex($df, $fdc, $jcc, $alc);
+}
+
+.ru-card-container-favorite{
+  width: 215px;
+}
+
+.ru-card-info-warp-favorite {
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+}
+
+.ru-card-price-favorite{
+  align-self: unset;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

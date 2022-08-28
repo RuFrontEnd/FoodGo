@@ -7,57 +7,57 @@ import ProductFeatureBar from 'components/productFeatureBar/ProductFeatureBar';
 import SearchBar from 'components/searchBar/SearchBar';
 import axios from 'axios';
 import productListBanner from 'assets/jpg/proudctList-banner.jpg';
+import { useSelector, useDispatch } from 'react-redux';
+import { showNavBar } from 'redux/navBar/navBarActions';
 
 // 引用共用元件
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
-// 引用圖片
-import line from './Images/line.png';
 
 function ProductList(props) {
+  const currentUser = useSelector((state) => state.member.currentUser);
   const { handleCartNumber, amount, setAmount } = props;
   const [commodities, setCommodities] = useState([]);
   const [favorites, setFavorites] = useState('');
   const [count, setCount] = useState(1);
   const [searchInput, setSearchInput] = useState('');
-  const buttonAttributes = [
-    {
-      text: '低GI便當',
-      isSelected: true,
-      type: 'origin',
-      routes: '/productList',
-    },
-    {
-      text: '鮮蔬沙拉',
-      isSelected: false,
-      type: 'origin',
-      routes: '/productListSalad',
-    },
-    {
-      text: '客製化便當',
-      isSelected: false,
-      type: 'origin',
-      routes: '/productListCustom',
-    },
-    {
-      text: '蔬菜箱',
-      isSelected: false,
-      type: 'green',
-      routes: '/vegBox',
-    },
-  ];
+  const dispatch = useDispatch();
 
-  const getData = useCallback(() => {
-    axios.get(`${endpoint}/product/bento`).then((res) => {
-      console.log('res', res);
-      const _commodities = res.data.filter(
-        (dataItem) => dataItem.categories === '1.低GI便當'
+  const getData = useCallback(async () => {
+    const _allProducts = await axios.get(`${endpoint}/product/bento`);
+    const _allmyFavProducts = await axios.get(`${endpoint}/member/myFavList`, {
+      params: {
+        member_sid: currentUser,
+      },
+    });
+    const allProducts = _allProducts.data;
+    const allmyFavProducts = _allmyFavProducts.data;
+
+    const productStatus = allProducts.map((product) => {
+      const isFav = allmyFavProducts.findIndex(
+        (myFavProduct) => myFavProduct.product_sid === product.sid
       );
-      console.log('_commodities', _commodities);
-      setCommodities(_commodities);
-    });
-    axios.get(`${endpoint}/member/myFavList`).then((res) => {
-      setFavorites(res.data);
-    });
+      return {
+        sid: product.sid,
+        img_id: product.img_id,
+        productname: product.productname,
+        price: product.price,
+        purchased: product.purchased,
+        contentNum: product.contentNum,
+        introduction: product.introduction,
+        startRating: product.startRating,
+        fat: product.Fat,
+        protein: product.Protein,
+        calories: product.calories,
+        carbohydrate: product.carbohydrate,
+        categories: product.categories,
+        isFavorite: isFav > -1 ? true : false,
+      };
+    }); // 將products和myFavs結合
+
+    const _commodities = productStatus.filter(
+      (status) => status.categories === '1.低GI便當'
+    );
+    setCommodities(_commodities);
   }, []);
 
   const filterData = () => {
@@ -67,6 +67,10 @@ function ProductList(props) {
     );
     setCommodities(_commodities);
   };
+
+  useEffect(() => {
+    dispatch(showNavBar(true));
+  }, []);
 
   useEffect(() => {
     getData();
@@ -80,7 +84,6 @@ function ProductList(props) {
         searchInput={searchInput}
         setSearchInput={setSearchInput}
         onSearch={filterData}
-        buttonAttributes={buttonAttributes}
       />
       <CommodityList
         commodities={commodities}

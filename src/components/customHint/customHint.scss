@@ -1,0 +1,25 @@
+@import "variable/variable.scss";
+
+.ru-hint-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 65%;
+
+}
+
+.ru-hint-warp {
+  @include flex($df, $fdr, $jcc, $alc);
+}
+
+.ru-hint-warp > h3 {
+  @include font($notoSansTC, 25px, $regular, 1.25px, $grey);
+  margin-right: 10px;
+  opacity: 1;
+}
+
+.ru-hint-warp > img {
+  width: 40px;
+  opacity: 1;
+}

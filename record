@@ -22,3 +22,6 @@ https://stackoverflow.com/questions/13154552/javascript-set-cookie-with-expire-t
 
 加密字串 AES方法
 https://stackoverflow.com/questions/49602276/how-to-encrypt-decrypt-with-crypto-js
+
+git辨認大小寫檔名為更動紀錄
+git config core.ignorecase false

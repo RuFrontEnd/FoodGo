@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss';
-// import RequestToServer from 'Cha/RequestToServer';
 import ChaCartButton from './Cha-Cart-Button/ChaCartButton';
 import { withRouter, useHistory } from 'react-router-dom';
 import ChaCouponModal from './Cha-Coupon-Modal/ChaCouponModal';

@@ -17,9 +17,9 @@ $lightBrown: #f7ede2;
 $green: #66ab8c;
 $white: #ffffff;
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
 
-// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+
+
 //引入字體
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
@@ -32,11 +32,11 @@ $white: #ffffff;
 }
 
 .jess-menuD-groupon1 {
-  background: url('./images/jess-menuD-groupon1.jpg') no-repeat;
-  background-size: contain;
-  width: 29rem;
-  height: 29rem;
-  position: relative;
+  // background: url('./images/jess-menuD-groupon1.jpg') no-repeat;
+  // background-size: contain;
+  // width: 29rem;
+  // height: 29rem;
+  // position: relative;
 }
 
 .jess-menuD-groupon2 {
@@ -53,89 +53,89 @@ $white: #ffffff;
 }
 
 /*1*/
-.jess-view .jess-mask,
-.jess-view .content {
-  width: 29rem;
-  height: 29rem;
-  position: absolute;
-  overflow: hidden;
-  margin: 0 auto;
-  text-align: center;
-}
+// .jess-view .jess-mask,
+// .jess-view .content {
+//   width: 29rem;
+//   height: 29rem;
+//   position: absolute;
+//   overflow: hidden;
+//   margin: 0 auto;
+//   text-align: center;
+// }
 
-.jess-view-first .jess-menuD-groupon1 {
-  /*1*/
-  transition: all 0.2s linear;
-  width: 29rem;
-  height: 29rem;
-}
+// .jess-view-first .jess-menuD-groupon1 {
+//   /*1*/
+//   transition: all 0.2s linear;
+//   width: 29rem;
+//   height: 29rem;
+// }
 
-.jess-view-first .jess-mask {
-  opacity: 0;
-  background-color: rgba(8, 8, 8, 0.658);
-  transition: all 0.4s ease-in-out;
-  width: 29rem;
-  height: 29rem;
-  top: 0;
-}
+// .jess-view-first .jess-mask {
+//   opacity: 0;
+//   background-color: rgba(8, 8, 8, 0.658);
+//   transition: all 0.4s ease-in-out;
+//   width: 29rem;
+//   height: 29rem;
+//   top: 0;
+// }
 
-.jess-view-first .jess-line {
-  border-bottom: 0.3rem solid $orange;
-  width: 25rem;
-  transform: translateY(-20rem);
-  opacity: 0;
-  margin: 0 auto;
-}
-.jess-view-first .jess-line2 {
-  border-bottom: 0.3rem solid $orange;
-  width: 25rem;
-  transform: translateY(20rem);
-  opacity: 1;
-  margin: 0 auto;
-}
-.jess-view-first h2 {
-  transform: translateY(-10rem);
-  opacity: 0;
-  font-family: 'Noto Sans TC';
-  font-weight: 400;
-  color: $orange;
-  font-size: 2.4rem;
-  transition: all 0.2s ease-in-out;
-}
+// .jess-view-first .jess-line {
+//   border-bottom: 0.3rem solid $orange;
+//   width: 25rem;
+//   transform: translateY(-20rem);
+//   opacity: 0;
+//   margin: 0 auto;
+// }
+// .jess-view-first .jess-line2 {
+//   border-bottom: 0.3rem solid $orange;
+//   width: 25rem;
+//   transform: translateY(20rem);
+//   opacity: 1;
+//   margin: 0 auto;
+// }
+// .jess-view-first h2 {
+//   transform: translateY(-10rem);
+//   opacity: 0;
+//   font-family: 'Noto Sans TC';
+//   font-weight: 400;
+//   color: $orange;
+//   font-size: 2.4rem;
+//   transition: all 0.2s ease-in-out;
+// }
 
-.jess-view-first p {
-  transform: translateY(40rem);
-  opacity: 1;
-  color: #ffffff;
-  font-size: 2rem;
-  transition: all 0.2s linear;
-}
+// .jess-view-first p {
+//   transform: translateY(40rem);
+//   opacity: 1;
+//   color: #ffffff;
+//   font-size: 2rem;
+//   transition: all 0.2s linear;
+// }
 
 /* */
 .jess-view-first:hover .jess-line {
   transform: translateY(5rem);
   opacity: 1;
 }
-.jess-view-first:hover .jess-line2 {
-  // border-bottom: 0.3rem solid $orange;
-  transform: translateY(14rem);
-  opacity: 1;
-}
-.jess-view-first:hover .jess-mask {
-  opacity: 1;
-}
+// .jess-view-first:hover .jess-line2 {
+//   // border-bottom: 0.3rem solid $orange;
+//   transform: translateY(14rem);
+//   opacity: 1;
+// }
+// .jess-view-first:hover .jess-mask {
+//   opacity: 1;
+// }
 
-.jess-view-first:hover h2 {
-  opacity: 1;
-  transform: translateY(8rem);
-  transition-delay: 0.1s;
-}
-.jess-view-first:hover p {
-  opacity: 1;
-  transform: translateY(10rem);
-  transition-delay: 0.5s;
-  transition: all 0.2s ease-in-out;
-}
+// .jess-view-first:hover h2 {
+//   opacity: 1;
+//   transform: translateY(8rem);
+//   transition-delay: 0.1s;
+// }
+// .jess-view-first:hover p {
+//   opacity: 1;
+//   transform: translateY(10rem);
+//   transition-delay: 0.5s;
+//   transition: all 0.2s ease-in-out;
+// }
 
 @media screen and (max-width: 576px) {
   .jess-MenuD-container-fluid {
