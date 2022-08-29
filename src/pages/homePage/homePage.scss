@@ -25,7 +25,7 @@ $featureCircleWidth: 160px;
 $featureDotWidth: 15px;
 $homePageCirclesWidth: 1170px;
 $featureTriangleWidth: 30px;
-$featurePadding: ($homePageCirclesWidth - $featureCircleWidth * 5 - $featureDotWidth * 4) / 18;
+$featurePadding: calc(($homePageCirclesWidth - $featureCircleWidth * 5 - $featureDotWidth * 4) / 18);
 $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 
 @import "variable/variable.scss";
@@ -48,7 +48,7 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
   font-size: 1.8rem;
 }
 
-#homePage-recommend-button{
+#homePage-recommend-button {
   margin: 30px auto 0px;
 }
 
@@ -361,23 +361,23 @@ $gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
 }
 
 .homePage-index-feature-triangle-active-farmer {
-  left: $featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth;
+  left: calc($featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth);
 }
 
 .homePage-index-feature-triangle-active-diet {
-  left: $featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth + $gap;
+  left: calc($featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth + $gap);
 }
 
 .homePage-index-feature-triangle-active-choices {
-  left: $featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth + $gap * 2;
+  left: calc($featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth + $gap * 2);
 }
 
 .homePage-index-feature-triangle-active-network {
-  left: $featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth + $gap * 3;
+  left: calc($featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth + $gap * 3);
 }
 
 .homePage-index-feature-triangle-active-kcal {
-  left: $featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth + $gap * 4;
+  left: calc($featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth + $gap * 4);
 }
 
 // 特色內容

@@ -139,8 +139,8 @@ function NavBar(props) {
             }}
           >
             <div className="navBar-collapse">
-              <ul className="navBar-navigation navBar-navigation-1">
-                <li
+              {/* <ul className="navBar-navigation navBar-navigation-1"> */}
+              {/* <li
                   id="navBar-hamburger-wrap"
                   className="navBar-navigation-item"
                   onClick={() => {
@@ -150,8 +150,8 @@ function NavBar(props) {
                   <Nav.Link style={{ padding: '0px' }}>
                     <HamburgerMenu className="navbar-icon navBar-hamburger" />
                   </Nav.Link>
-                </li>
-                {/* <li className="navBar-navigation-item navBar-navigation-item-txt">
+                </li> */}
+              {/* <li className="navBar-navigation-item navBar-navigation-item-txt">
                 <Nav.Link
                   as={NavLink}
                   to="/groupOrder/groupOrderCreate"
@@ -162,19 +162,19 @@ function NavBar(props) {
                   作伙揪團
                 </Nav.Link>
               </li> */}
-                <li className="navBar-navigation-item navBar-navigation-item-txt">
+              {/* <li className="navBar-navigation-item navBar-navigation-item-txt">
                   <Nav.Link as={NavLink} to="/farm">
                     哈囉小農
                   </Nav.Link>
-                </li>
-                <li className="navBar-navigation-item navBar-navigation-item-txt">
-                  <Nav.Link as={NavLink} to="/menu">
+                </li> */}
+              {/* <li className="navBar-navigation-item navBar-navigation-item-txt"> */}
+              {/* <Nav.Link as={NavLink} to="/menu">
                     尋找美味 <DropArrow className="navBar-dropArrow" />
-                  </Nav.Link>
-                  <div className="navBar-dropdown">
-                    <ul className="navBar-dropdown-item-wrap">
-                      <div className="navBar-triangle"></div>
-                      <li className="navBar-dropdown-item">
+                  </Nav.Link> */}
+              {/* <div className="navBar-dropdown"> */}
+              {/* <ul className="navBar-dropdown-item-wrap"> */}
+              {/* <div className="navBar-triangle"></div> */}
+              {/* <li className="navBar-dropdown-item">
                         <Nav.Link
                           as={NavLink}
                           to={{
@@ -208,23 +208,23 @@ function NavBar(props) {
                         >
                           客製化便當
                         </Nav.Link>
-                      </li>
-                      {/* <li className="navBar-dropdown-item">
+                      </li> */}
+              {/* <li className="navBar-dropdown-item">
                       <Nav.Link as={NavLink} to="/">
                         外送服務
                       </Nav.Link>
                     </li> */}
-                    </ul>
-                  </div>
-                </li>
-              </ul>
+              {/* </ul> */}
+              {/* </div> */}
+              {/* </li> */}
+              {/* </ul> */}
               <div className="navBar-navigation navBar-navigation-2">
                 <Nav.Link as={NavLink} to="/" exact className="navBar-navBrand">
                   <Logo className="navBar-logo" />
                 </Nav.Link>
               </div>
-              <ul className="navBar-navigation navBar-navigation-3">
-                {/* <li className="navBar-navigation-item navBar-navigation-item-txt">
+              {/* <ul className="navBar-navigation navBar-navigation-3"> */}
+              {/* <li className="navBar-navigation-item navBar-navigation-item-txt">
                 <Nav.Link
                   as={NavLink}
                   to="/getcoupon"
@@ -235,12 +235,12 @@ function NavBar(props) {
                   專屬優惠
                 </Nav.Link>
               </li> */}
-                <li className="navBar-navigation-item navBar-navigation-item-txt">
+              {/* <li className="navBar-navigation-item navBar-navigation-item-txt">
                   <Nav.Link as={NavLink} to="/">
                     關於我們
                   </Nav.Link>
-                </li>
-                {!isLogin && (
+                </li> */}
+              {/* {!isLogin && (
                   <li className="navBar-navigation-item">
                     <Nav.Link
                       as={NavLink}
@@ -252,10 +252,10 @@ function NavBar(props) {
                       登入
                     </Nav.Link>
                   </li>
-                )}
-                {isLogin && (
-                  <li className="navBar-navigation-item navBar-navigation-item-member">
-                    <Nav.Link
+                )} */}
+              {/* {isLogin && (
+                  <li className="navBar-navigation-item navBar-navigation-item-member"> */}
+              {/* <Nav.Link
                       as={NavLink}
                       to="/memberUserprofile"
                       onClick={(e) => {
@@ -263,11 +263,11 @@ function NavBar(props) {
                       }}
                     >
                       <Member className="navbar-icon navBar-member" />
-                    </Nav.Link>
-                    <ul className="navBar-dropdown">
+                    </Nav.Link> */}
+              {/* <ul className="navBar-dropdown">
                       <div className="navBar-dropdown-item-wrap">
-                        <div className="navBar-triangle"></div>
-                        <li className="navBar-dropdown-item">
+                        <div className="navBar-triangle"></div> */}
+              {/* <li className="navBar-dropdown-item">
                           <Nav.Link
                             as={NavLink}
                             to="/orderManagement"
@@ -277,8 +277,8 @@ function NavBar(props) {
                           >
                             訂單管理
                           </Nav.Link>
-                        </li>
-                        <li className="navBar-dropdown-item">
+                        </li> */}
+              {/* <li className="navBar-dropdown-item">
                           <Nav.Link
                             as={NavLink}
                             to="/memberUserprofile"
@@ -288,8 +288,8 @@ function NavBar(props) {
                           >
                             修改會員資料
                           </Nav.Link>
-                        </li>
-                        <li className="navBar-dropdown-item">
+                        </li> */}
+              {/* <li className="navBar-dropdown-item">
                           <Nav.Link
                             as={NavLink}
                             to="/myFav"
@@ -299,8 +299,8 @@ function NavBar(props) {
                           >
                             我的最愛
                           </Nav.Link>
-                        </li>
-                        {/* <li className="navBar-dropdown-item">
+                        </li> */}
+              {/* <li className="navBar-dropdown-item">
                         <Nav.Link
                           as={NavLink}
                           to="/beastiePoint"
@@ -312,20 +312,20 @@ function NavBar(props) {
                         </Nav.Link>
                         <Monster className="navBar-monster4" />
                       </li> */}
-                        {/* TODO: 下拉選單暫時取消我的怪獸*/}
-                        <li
+              {/* TODO: 下拉選單暫時取消我的怪獸*/}
+              {/* <li
                           className="navBar-dropdown-item navBar-login-option"
                           onClick={() => {
                             handleLogout();
                           }}
                         >
                           登出
-                        </li>
-                      </div>
-                    </ul>
-                  </li>
-                )}
-                <li className="navBar-navigation-item navBar-shoppingCard-container">
+                        </li> */}
+              {/* </div>
+                    </ul> */}
+              {/* </li>
+                )} */}
+              {/* <li className="navBar-navigation-item navBar-shoppingCard-container">
                   <Nav.Link
                     as={NavLink}
                     style={{ padding: '0px' }}
@@ -347,8 +347,8 @@ function NavBar(props) {
                       </span>
                     </div>
                   </div>
-                </li>
-              </ul>
+                </li> */}
+              {/* </ul> */}
             </div>
           </div>
           <div

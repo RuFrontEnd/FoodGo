@@ -4,10 +4,7 @@ import './App.css';
 
 // install react router => npm install react-router-dom
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import {
-  datacountries,
-  datatownships,
-} from 'data/AdministrativeDistrict.js';
+import { datacountries, datatownships } from 'data/AdministrativeDistrict.js';
 import {
   login,
   logout,
@@ -130,10 +127,9 @@ function App() {
   }, []); // 判斷初始會員狀態與資料(是否須要重新登入)
 
   useEffect(() => setTextAddress(address), [address]);
-  useEffect(
-    () => setTextCounty(county !== -1 ? datacountries[county] : ''),
-    [county]
-  );
+  useEffect(() => setTextCounty(county !== -1 ? datacountries[county] : ''), [
+    county,
+  ]);
   useEffect(
     () =>
       setTextTownship(
@@ -177,11 +173,11 @@ function App() {
           showSuccessBox={showSuccessBox}
           setShowSuccessBox={setShowSuccessBox}
         />
-        <ScrollToTop>
-          <Suspense fallback={<FallBack />}>
-            <Switch>
-              {/* 首頁 */}
-              <Route exact path="/">
+        {/* <ScrollToTop> */}
+        <Suspense fallback={<FallBack />}>
+          <Switch>
+            {/* 首頁 */}
+            {/* <Route exact path="/">
                 <HomePage
                   takeOrNot={takeOrNot}
                   setTakeOrNot={setTakeOrNot}
@@ -197,9 +193,9 @@ function App() {
                   address={address}
                   setAddress={setAddress}
                 />
-              </Route>
-              {/* 便當商品列表 */}
-              <Route exact path="/productList">
+              </Route> */}
+            {/* 便當商品列表 */}
+            {/* <Route exact path="/productList">
                 <ProductList
                   handleCartNumber={handleCartNumber}
                   county={county}
@@ -217,9 +213,9 @@ function App() {
                   amount={amount}
                   setAmount={setAmount}
                 />
-              </Route>
-              {/* 沙拉商品列表 */}
-              <Route exact path="/productListSalad">
+              </Route> */}
+            {/* 沙拉商品列表 */}
+            {/* <Route exact path="/productListSalad">
                 <SaladList
                   setShowBar={setShowBar}
                   handleCartNumber={handleCartNumber}
@@ -238,38 +234,38 @@ function App() {
                   amount={amount}
                   setAmount={setAmount}
                 />
-              </Route>
-              {/* 客製化便當 */}
-              <Route exact path="/productListCustom">
-                <CustomBentoList
-                  setShowBar={setShowBar}
-                  handleCartNumber={handleCartNumber}
-                  county={county}
-                  setCounty={setCounty}
-                  township={township}
-                  setTownship={setTownship}
-                  address={address}
-                  setAddress={setAddress}
-                  takeOrNot={takeOrNot}
-                  setTakeOrNot={setTakeOrNot}
-                  selectDate={selectDate}
-                  setSelectDate={setSelectDate}
-                  slecteTime={slecteTime}
-                  setSelectTime={setSelectTime}
-                  amount={amount}
-                  setAmount={setAmount}
-                />
-              </Route>
+              </Route> */}
+            {/* 客製化便當 */}
+            <Route exact path="/">
+              <CustomBentoList
+                setShowBar={setShowBar}
+                handleCartNumber={handleCartNumber}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                amount={amount}
+                setAmount={setAmount}
+              />
+            </Route>
 
-              {/* claudia */}
-              <Route exact path="/farm">
+            {/* claudia */}
+            {/* <Route exact path="/farm">
                 <Farm />
-              </Route>
-              <Route exact path="/farmIntro">
+              </Route> */}
+            {/* <Route exact path="/farmIntro">
                 <ClaudiaFarmDetailedPage handleCartNumber={handleCartNumber} />
-              </Route>
-              {/* cha */}
-              <Route exact path="/cart">
+              </Route> */}
+            {/* cha */}
+            {/* <Route exact path="/cart">
                 <ShoppingCart
                   setCartNumber={setCartNumber}
                   // handleCartNumber={handleCartNumber}
@@ -289,8 +285,8 @@ function App() {
                   textTownship={textTownship}
                   textAddress={textAddress}
                 />
-              </Route>
-              <Route exact path="/groupOrder/groupOrderCreate">
+              </Route> */}
+            {/* <Route exact path="/groupOrder/groupOrderCreate">
                 <ChaGroupOrderCreate />
               </Route>
               <Route path="/groupOrder/groupOrderSearch">
@@ -304,19 +300,19 @@ function App() {
               </Route>
               <Route path="/groupOrder/groupOrderMenu">
                 <ChaGroupOrderMenu />
-              </Route>
-              {/* 訂單管理已置入<IrisOrderManagement /> */}
-              {/* 測試用：中繼站、商品清單 */}
-              <Route exact path="/chaProductList">
+              </Route> */}
+            {/* 訂單管理已置入<IrisOrderManagement /> */}
+            {/* 測試用：中繼站、商品清單 */}
+            {/* <Route exact path="/chaProductList">
                 <ChaProductList handleCartNumber={handleCartNumber} />
               </Route>
               <Route exact path="/chaCartTest">
                 <ChaCartTest />
-              </Route>
-              {/* 404 */}
+              </Route> */}
+            {/* 404 */}
 
-              {/* iris */}
-              <Route exact path="/memberUserprofile">
+            {/* iris */}
+            {/* <Route exact path="/memberUserprofile">
                 <Userprofile
                   setShowBar={setShowBar}
                   // 會員
@@ -339,9 +335,9 @@ function App() {
                   slecteTime={slecteTime}
                   setSelectTime={setSelectTime}
                 />
-              </Route>
-              <Route exact path="/orderComment">
-                {/* 
+              </Route> */}
+            {/* <Route exact path="/orderComment"> */}
+            {/* 
                 <IrisOrderComment
                   setShowBar={setShowBar}
                   // 會員
@@ -361,8 +357,8 @@ function App() {
                   setSelectTime={setSelectTime}
                 />
                */}
-              </Route>
-              <Route exact path="/myFav">
+            {/* </Route> */}
+            {/* <Route exact path="/myFav">
                 <MyFav
                   setShowBar={setShowBar}
                   // 會員
@@ -381,10 +377,10 @@ function App() {
                   slecteTime={slecteTime}
                   setSelectTime={setSelectTime}
                 />
-              </Route>
-              <Route exact path="/beastiePoint">
-                {/*  */}
-                {/* <IrisBeastiePoint
+              </Route> */}
+            {/* <Route exact path="/beastiePoint"> */}
+            {/*  */}
+            {/* <IrisBeastiePoint
                 setShowBar={setShowBar}
                 // 會員
                 setShowLoginModal={setShowLoginModal}
@@ -402,11 +398,11 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               /> */}
-                {/*  */}
-              </Route>
-              <Route path="/getCoupon">
-                {/*  */}
-                {/* <IrisGetCoupon
+            {/*  */}
+            {/* </Route> */}
+            {/* <Route path="/getCoupon"> */}
+            {/*  */}
+            {/* <IrisGetCoupon
                 setShowBar={setShowBar}
                 // 會員
                 setShowLoginModal={setShowLoginModal}
@@ -427,9 +423,9 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               /> */}
-                {/*  */}
-              </Route>
-              <Route path="/orderManagement">
+            {/*  */}
+            {/* </Route> */}
+            {/* <Route path="/orderManagement">
                 <OrderManagement
                   handleCartNumber={handleCartNumber}
                   showBar={showBar}
@@ -450,9 +446,9 @@ function App() {
                   slecteTime={slecteTime}
                   setSelectTime={setSelectTime}
                 />
-              </Route>
-              {/* jess */}
-              <Route path="/menu">
+              </Route> */}
+            {/* jess */}
+            {/* <Route path="/menu">
                 <JessMenu
                   setShowBar={setShowBar}
                   setCartNumber={setCartNumber}
@@ -469,8 +465,8 @@ function App() {
                   slecteTime={slecteTime}
                   setSelectTime={setSelectTime}
                 />
-              </Route>
-              <Route path="/bento/:id?">
+              </Route> */}
+            {/* <Route path="/bento/:id?">
                 <JessBento
                   setShowBar={setShowBar}
                   setCartNumber={setCartNumber}
@@ -488,8 +484,8 @@ function App() {
                   slecteTime={slecteTime}
                   setSelectTime={setSelectTime}
                 />
-              </Route>
-              <Route path="/vegBox">
+              </Route> */}
+            {/* <Route path="/vegBox">
                 <JessVegBox
                   setShowBar={setShowBar}
                   setCartNumber={setCartNumber}
@@ -507,10 +503,10 @@ function App() {
                   slecteTime={slecteTime}
                   setSelectTime={setSelectTime}
                 />
-              </Route>
-            </Switch>
-          </Suspense>
-        </ScrollToTop>
+              </Route> */}
+          </Switch>
+        </Suspense>
+        {/* </ScrollToTop> */}
         <Footer />
       </>
     </Router>

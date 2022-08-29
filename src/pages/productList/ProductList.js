@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { endpoint } from 'variable/variable';
 import 'pages/productList/productList.scss';
-import OptionButton from 'components/optionButton/OptionButton';
+// import OptionButton from 'components/optionButton/OptionButton';
 import CommodityList from 'components/commodityList/CommodityList';
 import ProductFeatureBar from 'components/productFeatureBar/ProductFeatureBar';
 import SearchBar from 'components/searchBar/SearchBar';

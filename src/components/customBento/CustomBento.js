@@ -10,6 +10,7 @@ import PriceArea from 'components/priceArea/PriceArea'; // 資訊區價格 網�
 import CalorieArea from 'components/calorieArea/CalorieArea'; // 資訊區熱量 網頁版
 import CustomHint from 'components/customHint/CustomHint';
 import FoodItem from 'components/foodItem/FoodItem';
+import Button from 'components/button/Button';
 
 // 品項放置後 e
 import hintA from './Images/hintA.svg';
@@ -74,12 +75,15 @@ function CustomBento(props) {
   const [vegNameC, setVegNameC] = useState('');
   const [vegPriceC, setVegPriceC] = useState(0);
   const [vegCalC, setVegCalC] = useState(0);
+  const [riceSid, setRiceSid] = useState(0);
   const [riceName, setRiceName] = useState('');
   const [ricePrice, setRicePrice] = useState(0);
   const [riceCal, setRiceCal] = useState(0);
+  const [eggSid, setEggSid] = useState(0);
   const [eggName, setEggName] = useState('');
   const [eggPrice, setEggPrice] = useState(0);
   const [eggCal, setEggCal] = useState(0);
+  const [meetSid, setMeetSid] = useState(0);
   const [meetName, setMeetName] = useState('');
   const [meetPrice, setMeetPrice] = useState(0);
   const [meetCal, setMeetCal] = useState(0);
@@ -203,6 +207,7 @@ function CustomBento(props) {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setRiceImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
+          setRiceSid(_food.sid);
           setRiceName(_food.productName);
           setRicePrice(_food.price);
           setRiceCal(_food.calories);
@@ -211,10 +216,10 @@ function CustomBento(props) {
     } // 白飯區
 
     if (selection === 'meet') {
-      console.log('a');
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setMeetImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
+          setMeetSid(_food.sid);
           setMeetName(_food.productName);
           setMeetPrice(_food.price);
           setMeetCal(_food.calories);
@@ -226,6 +231,7 @@ function CustomBento(props) {
       _foods.forEach((_food) => {
         if (datasetSid === _food.sid) {
           setEggImg(`http://localhost:5000/svg/${_food.unfoldImage}`);
+          setEggSid(_food.sid);
           setEggName(_food.productName);
           setEggPrice(_food.price);
           setEggCal(_food.calories);
@@ -329,6 +335,7 @@ function CustomBento(props) {
         return res.json();
       })
       .then(function (res) {
+        console.log('res', res);
         const _data = [...res];
         setData(_data);
       });
@@ -355,6 +362,8 @@ function CustomBento(props) {
       setPriority('0');
       filterFoods = data.filter((dataItem) => dataItem.categories === 'egg');
     }
+
+    console.log('filterFoods', filterFoods);
 
     _foods = filterFoods.map((filterFood) => ({
       sid: filterFood.sid,
@@ -402,6 +411,35 @@ function CustomBento(props) {
 
     setFoods(_foods);
   }, [data, selection, vegSidA, vegSidB, vegSidC]);
+
+  const createOrder = () => {
+    const postData = {
+      vice: riceSid,
+      main: meetSid,
+      side1: vegSidA,
+      side2: vegSidB,
+      side3: vegSidC,
+      egg: eggSid,
+    };
+
+    console.log('JSON.stringify(postData)', JSON.stringify(postData));
+
+    fetch('http://localhost:5000/product/custom_list', {
+      method: 'post',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(postData),
+    }); // 非同步
+    // .then(function (res) {
+    //   return res.json();
+    // })
+    // .then(function (res) {
+    //   console.log('res', res);
+    //   const _data = [...res];
+    //   setData(_data);
+    // });
+  };
 
   useEffect(() => {
     const _foodItems = foods.map((food, foodsIndex) => (
@@ -629,7 +667,8 @@ function CustomBento(props) {
                       count={count}
                       setCount={setCount}
                     />
-                    {isCanBuy ? (
+                    <Button onClick={createOrder} />
+                    {/* {isCanBuy ? (
                       <AddCart
                         id={'addCart-btn-custom'}
                         parentId={'addCart-btn-warp-custom'}
@@ -687,7 +726,7 @@ function CustomBento(props) {
                           setIsShowHintF={setIsShowHintF}
                         />
                       </div>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </div>
@@ -718,6 +757,7 @@ function CustomBento(props) {
               </MultiCarousel>
             </div>
           </div>
+
           {/* rwd 詳細資訊 s */}
           <div
             className="ru-detail-container ru-detail-container-rwd"

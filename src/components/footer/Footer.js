@@ -8,7 +8,7 @@ function Footer() {
     <>
       <section id="footer-container">
         <div id="footer-wrap">
-          <div id="footer-text-box">
+          {/* <div id="footer-text-box">
             <div id="footer-text">
               <a href="#">
                 <p>常見問題</p>
@@ -23,15 +23,15 @@ function Footer() {
                 <p>隱私權政策</p>
               </a>
             </div>
-          </div>
-          <div id="footer-icons">
+          </div> */}
+          {/* <div id="footer-icons">
             <a>
               <img src={Facebook} />
             </a>
             <a>
               <img src={Instagram} />
             </a>
-          </div>
+          </div> */}
           <div id="footer-copyright">
             <p>Copyright © 2021 拾餐便當. All rights reserved.</p>
           </div>

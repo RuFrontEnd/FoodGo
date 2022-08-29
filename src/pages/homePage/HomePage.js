@@ -146,7 +146,7 @@ function HomePage(props) {
   const [showDiscountCard, setShowDiscountCard] = useState('discountCard-1');
 
   useEffect(() => {
-    dispatch(showNavBar(true))
+    dispatch(showNavBar(true));
   }, []);
 
   // 品牌特色切換

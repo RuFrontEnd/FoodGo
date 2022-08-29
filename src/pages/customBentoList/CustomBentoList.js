@@ -99,14 +99,14 @@ function CustomBentoList(props) {
 
   return (
     <>
-      <ProductFeatureBar
+      {/* <ProductFeatureBar
         title={'享受美食 不需要理由'}
         imgUrl={productListBanner}
         searchInput={searchInput}
         setSearchInput={setSearchInput}
         onSearch={filterData}
         buttonAttributes={buttonAttributes}
-      />
+      /> */}
       <CustomBento
         handleCartNumber={handleCartNumber}
         setAmount={setAmount}
@@ -114,7 +114,7 @@ function CustomBentoList(props) {
         count={count}
         setCount={setCount}
       />
-      <ScrollButton />
+      {/* <ScrollButton /> */}
     </>
   );
 }
