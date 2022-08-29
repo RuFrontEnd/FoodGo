@@ -14,7 +14,7 @@ import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import line from './Images/line.png';
 
 function CustomBentoList(props) {
-  const { handleCartNumber, amount, setAmount } = props;
+  const { handleCartNumber, amount, setAmount, ws } = props;
   const [commodities, setCommodities] = useState([]);
   const [favorites, setFavorites] = useState('');
   const [count, setCount] = useState(1);
@@ -113,6 +113,7 @@ function CustomBentoList(props) {
         amount={amount}
         count={count}
         setCount={setCount}
+        ws={ws}
       />
       {/* <ScrollButton /> */}
     </>

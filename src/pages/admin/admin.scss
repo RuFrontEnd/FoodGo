@@ -1,0 +1,1932 @@
+$gray: #858585;
+$lightGray: #fafafa;
+$brown: #a59583;
+$lightBrown: #decdbb;
+$skin: #f7ede2;
+$green: #66ab8c;
+$deepGreen: #438b6b;
+$orange: #f48145;
+$deepOrange: #e0611e;
+$yellow: #f6bd60;
+$deepYellow: #f5a016;
+
+$featureIconSize_xxl: 9rem;
+$featureIconSize_xxl_active: 10rem;
+$featureIconSize_xl: 8rem;
+$featureIconSize_xl_active: 9rem;
+$featureIconSize_xl: 6rem;
+$featureIconSize_xl_active: 7rem;
+$featureIconSize_md: 4rem;
+$featureIconSize_md_active: 5rem;
+$featureIconSize_sm: 8rem;
+$featureIconSize_sm_active: 9rem;
+
+$featureCircleWidth: 160px;
+$featureDotWidth: 15px;
+$homePageCirclesWidth: 1170px;
+$featureTriangleWidth: 30px;
+$featurePadding: calc(($homePageCirclesWidth - $featureCircleWidth * 5 - $featureDotWidth * 4) / 18);
+$gap: $featureCircleWidth + $featurePadding * 4 + $featureDotWidth;
+
+@import "variable/variable.scss";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap");
+
+.homePage-fake-nav {
+  width: 100%;
+  height: 10rem;
+  background-color: red;
+}
+
+.homePage-p0 {
+  padding: 0px !important;
+}
+
+// 共用元件按鈕大小修改
+.homePage-index-button {
+  width: 15rem;
+  height: 5rem;
+  font-size: 1.8rem;
+}
+
+#homePage-recommend-button {
+  margin: 30px auto 0px;
+}
+
+// 輪播牆
+.ant-carousel .slick-dots li.slick-active {
+  width: 7.5rem;
+}
+.ant-carousel .slick-dots li.slick-active button {
+  background-color: $orange;
+}
+.ant-carousel .slick-dots li {
+  width: 6rem;
+}
+
+.ant-carousel .slick-dots li button {
+  height: 1.5rem;
+  background-color: $lightGray;
+  opacity: 0.7;
+}
+
+.ant-carousel .slick-dots-bottom {
+  margin-bottom: 40px;
+}
+
+#homePage-carousel-wrap {
+  width: 100%;
+}
+
+.homepage-banner-wrap {
+  width: 100%;
+  height: calc(50vw - 100px);
+  max-height: calc(100vh - 100px);
+  min-height: 300px;
+}
+
+#homePage-banner1 {
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/png/banner01.png") center center no-repeat;
+  background-size: cover;
+}
+
+#homePage-health {
+  background: url("../../assets/svg/healthtitle.svg") center center no-repeat;
+  background-size: cover;
+  margin-top: 26rem;
+}
+
+#homePage-fresh {
+  background: url("../../assets/svg/FRESHEVERYDAY.svg") center center no-repeat;
+  background-size: cover;
+  margin-top: 26rem;
+}
+
+#homePage-banner2 {
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/jpg/banner5.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+#homePage-banner3 {
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/jpg/banner2.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+#homePage-banner4 {
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/png/banner4.png") center center no-repeat;
+  background-size: cover;
+}
+
+#homePage-mouse-wrap {
+  bottom: 10rem;
+  left: calc(50% - 15px);
+}
+
+// 滾動提示
+#homePage-mouse {
+  width: 3rem;
+  height: 5rem;
+  background: url("../../assets/svg/mouse.svg") center center no-repeat;
+  cursor: pointer;
+}
+
+#homePage-mouse-arrow {
+  width: 3rem;
+  height: 1rem;
+  background: url("../../assets/svg/mouse-arrow.svg") center center no-repeat;
+  cursor: pointer;
+  animation: mouse-arrow 0.7s infinite;
+}
+
+@keyframes mouse-arrow {
+  from {
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(15px);
+  }
+}
+
+#homePage-download-wrap {
+  bottom: 2.5rem;
+  left: 5rem;
+  border-radius: 20px;
+  background-color: #f5a0168e;
+  padding: 1rem;
+  z-index: 50;
+  transition: transform 1s;
+}
+
+#homePage-app-logo {
+  background: url("../../assets/png/appLogo.png") center center no-repeat;
+  background-size: cover;
+  margin: auto;
+  width: 7rem;
+  height: 7rem;
+}
+
+#homePage-app-info {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#homePage-app-info > p {
+  color: $skin;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+#homePage-ios {
+  background: url("../../assets/png/ios.png") center center no-repeat;
+  background-size: cover;
+  height: 2.5rem;
+  width: 8rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#homePage-android {
+  background: url("../../assets/png/android.png") center center no-repeat;
+  background-size: cover;
+  width: 8rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#homePage-col-download {
+  background: url("../../assets/svg/downloadIcon.svg") center center no-repeat;
+  background-size: cover;
+  width: 2.5rem;
+  height: 8.5rem;
+  display: none;
+  cursor: pointer;
+  transition: transform 1s;
+}
+
+// 特色專區-切換區域
+
+#homePage-feature-wrap {
+  background-color: #fff;
+  margin: 60px 0px 70px 0px;
+}
+
+.homePage-areaTitle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.homePage-step-areaTitle {
+  margin: 60px 0px;
+}
+
+#homePage-feature-title-wrap {
+  margin-bottom: 30px;
+}
+
+// 標題宋體樣式
+#homePage-feature-title {
+  font-size: 3.2rem;
+  font-family: "Noto Serif TC", serif;
+  color: $gray;
+  margin: 0.5rem 1rem 1rem 1rem;
+  font-weight: 600;
+}
+
+#homePage-feature-circles {
+  width: 100%;
+}
+
+.homePage-index-feature-smcircle {
+  background-color: $orange;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.homePage-feature-circle {
+  position: relative;
+  background-color: $skin;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+}
+
+.homePage-circle-title {
+  position: absolute;
+  bottom: -10px;
+  left: calc(50% - 40px);
+  font-size: 2rem;
+  font-family: "Noto Sans TC", sans-serif;
+  color: $brown;
+  margin-bottom: 0;
+}
+
+#homePage-circle-title-customize {
+  left: calc(50% - 50px);
+}
+
+.homePage-feature-icon {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+// 在地小農
+#homePage-farmer-icon {
+  background: url("../../assets/svg/farmer.svg") center center no-repeat;
+  background-size: $featureIconSize_xxl $featureIconSize_xxl;
+  transition: 0.3s;
+}
+
+#homePage-farmer-icon-active {
+  background: url("../../assets/svg/farmer-o.svg") center center no-repeat;
+  background-size: $featureIconSize_xxl_active $featureIconSize_xxl_active;
+  transition: 0.3s;
+}
+
+// 產銷履歷
+#homePage-diet-icon {
+  background: url("../../assets/svg/diet.svg") center center no-repeat;
+  background-size: $featureIconSize_xxl $featureIconSize_xxl;
+  transition: 0.3s;
+}
+
+#homePage-diet-icon-active {
+  background: url("../../assets/svg/diet-o.svg") center center no-repeat;
+  background-size: $featureIconSize_xxl_active $featureIconSize_xxl_active;
+  transition: 0.3s;
+}
+
+// 客製化便當
+#homePage-choices-icon {
+  background: url("../../assets/svg/choices.svg") center center no-repeat;
+  background-size: $featureIconSize_xxl $featureIconSize_xxl;
+  transition: 0.3s;
+}
+
+#homePage-choices-icon-active {
+  background: url("../../assets/svg/choices-o.svg") center center no-repeat;
+  background-size: $featureIconSize_xxl_active $featureIconSize_xxl_active;
+  transition: 0.3s;
+}
+
+// 揪團訂餐
+#homePage-network-icon {
+  background: url("../../assets/svg/network.svg") center center no-repeat;
+  background-size: $featureIconSize_xxl $featureIconSize_xxl;
+  transition: 0.3s;
+}
+
+#homePage-network-icon-active {
+  background: url("../../assets/svg/network-o.svg") center center no-repeat;
+  background-size: $featureIconSize_xxl_active $featureIconSize_xxl_active;
+  transition: 0.3s;
+}
+
+// 卡路里計算
+#homePage-kcal-icon {
+  background: url("../../assets/svg/kcal.svg") center center no-repeat;
+  background-size: $featureIconSize_xxl $featureIconSize_xxl;
+  transition: 0.3s;
+}
+
+#homePage-kcal-icon-active {
+  background: url("../../assets/svg/kcal-o.svg") center center no-repeat;
+  background-size: $featureIconSize_xxl_active $featureIconSize_xxl_active;
+  transition: 0.3s;
+}
+
+// 切換指示的三角形
+.homePage-index-feature-triangle {
+  display: flex;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 22px 15px;
+  border-color: transparent transparent $skin transparent;
+  margin-top: 2rem;
+  bottom: -4rem;
+  transition: 0.3s;
+}
+
+.homePage-index-feature-triangle-active-farmer {
+  left: calc($featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth);
+}
+
+.homePage-index-feature-triangle-active-diet {
+  left: calc($featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth + $gap);
+}
+
+.homePage-index-feature-triangle-active-choices {
+  left: calc($featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth + $gap * 2);
+}
+
+.homePage-index-feature-triangle-active-network {
+  left: calc($featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth + $gap * 3);
+}
+
+.homePage-index-feature-triangle-active-kcal {
+  left: calc($featurePadding + $featureCircleWidth / 2 - $featureTriangleWidth + $gap * 4);
+}
+
+// 特色內容
+#homePage-intro-container {
+  width: 100%;
+  background-color: $skin;
+}
+
+.homePage-intro {
+  display: none;
+  padding: 30px 0px;
+}
+
+#homePage-intro1-large-text {
+  color: $green;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+#homePage-intro1-title {
+  background: url("../../assets/svg/intro1.svg") center center no-repeat;
+  background-size: cover;
+  height: 11rem;
+}
+#homePage-intro1-text {
+  height: 30rem;
+  color: $gray;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-left: 5rem;
+}
+
+#homePage-intro1-fake-farmer1 {
+  width: 15rem;
+  height: 15rem;
+  margin: 3rem auto 2rem auto;
+}
+#homePage-card1-title {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+#homePage-card1-text {
+  width: 25rem;
+  height: 15rem;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0 auto;
+}
+.homePage-card-arrow {
+  background: url("../../assets/svg/intro1-arrow.svg") center center no-repeat;
+  background-size: cover;
+  width: 3rem;
+  height: 2.2rem;
+  cursor: pointer;
+}
+
+.homePage-card1-viewmore {
+  font-family: "Noto Sans TC", sans-serif;
+  color: $gray;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+#homePage-intro1-farmer1 {
+  border-radius: 50%;
+  background: url("../../assets/jpg/farmer1.jpg") center center no-repeat;
+  background-size: 40rem;
+  background-position: -5rem -1.5rem;
+  width: 15rem;
+  height: 15rem;
+  margin: 3rem auto 0 auto;
+  display: flex;
+  justify-content: center;
+}
+#homePage-intro1-card1-wrap {
+  width: 25rem;
+  height: 45rem;
+  top: 0;
+  right: 2.5rem;
+  position: absolute;
+}
+
+#homePage-intro1-card1 {
+  background-color: $lightGray;
+  width: 30rem;
+  height: 45rem;
+  margin-right: 20px;
+  border-radius: 20px;
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+  position: relative;
+  overflow: hidden;
+}
+
+#homePage-intro1-card1:hover {
+  #homePage-intro1-farmer1 {
+    margin-left: -15rem;
+    margin-top: -7.5rem;
+    background: url("../../assets/jpg/farmer1.jpg") center center no-repeat;
+    background-size: 80rem;
+    background-position: -2rem 6rem;
+    transition: 0.5s;
+    border-radius: 50rem;
+    opacity: 0.3;
+    width: 60rem;
+    height: 60rem;
+  }
+  #homePage-card-arrow {
+    animation: myCustomAnimate 0.7s infinite;
+  }
+  @keyframes myCustomAnimate {
+    from {
+      margin-right: 3rem;
+    }
+    to {
+      margin-right: 0rem;
+    }
+  }
+}
+
+#homePage-intro1-fake-farmer2 {
+  width: 15rem;
+  height: 15rem;
+  margin: 3rem auto 2rem auto;
+}
+#homePage-card2-title {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+#homePage-card2-text {
+  width: 25rem;
+  height: 15rem;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0 auto;
+}
+#homePage-card-arrow {
+  background: url("../../assets/svg/intro1-arrow.svg") center center no-repeat;
+  background-size: cover;
+  width: 3rem;
+  height: 2.2rem;
+  cursor: pointer;
+}
+#homePage-card2-viewmore {
+  font-family: "Noto Sans TC", sans-serif;
+  color: $gray;
+  font-size: 1rem;
+  // margin-right: 2.5rem;
+}
+
+#homePage-intro1-card2:hover {
+  #homePage-intro1-farmer2 {
+    margin-left: -15rem;
+    margin-top: -7.5rem;
+    background: url("../../assets/jpg/farmer2.jpg") center center no-repeat;
+    background-size: 80rem;
+    background-position: -30rem 3rem;
+    transition: 0.5s;
+    border-radius: 50rem;
+    opacity: 0.3;
+    width: 60rem;
+    height: 60rem;
+  }
+  #homePage-card-arrow {
+    animation: myCustomAnimate 0.7s infinite;
+  }
+  @keyframes myCustomAnimate {
+    from {
+      margin-right: 3rem;
+    }
+    to {
+      margin-right: 0rem;
+    }
+  }
+}
+
+#homePage-intro1-farmer2 {
+  border-radius: 50%;
+  background: url("../../assets/jpg/farmer2.jpg") center center no-repeat;
+  background-size: 24rem;
+  background-position: -8rem 0rem;
+  width: 15rem;
+  height: 15rem;
+  margin: 3rem auto 0 auto;
+  display: flex;
+  justify-content: center;
+}
+#homePage-intro1-card2-wrap {
+  width: 25rem;
+  height: 45rem;
+  top: 0;
+  right: 2.5rem;
+  position: absolute;
+}
+
+#homePage-intro1-card2 {
+  background-color: $lightGray;
+  width: 30rem;
+  height: 45rem;
+  border-radius: 20px;
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+  position: relative;
+  overflow: hidden;
+}
+
+#homePage-intro1-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homePage-IntroCard-1 {
+  padding-right: 15px;
+}
+
+#homePage-intro1-container {
+  margin: auto;
+  max-width: 117rem;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.homePage-intro2-cards {
+  background: url("../../assets/jpg/intro2.jpg");
+}
+
+.homePage-intro2-large-text {
+  color: $deepYellow;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+#homePage-intro2-text {
+  width: 38rem;
+  height: 30rem;
+  color: $gray;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 6rem;
+  margin-left: 5rem;
+}
+
+#homePage-intro2-title {
+  background: url("../../assets/svg/intro2.svg") center center no-repeat;
+  background-size: cover;
+  height: 11rem;
+}
+
+#homePage-intro2-container {
+  margin: auto;
+  max-width: 117rem;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.homePage-intro3-cards > video {
+  outline: none;
+}
+
+.homePage-intro3-large-text {
+  color: $deepYellow;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.homePage-intro3-text {
+  width: 38rem;
+  height: 30rem;
+  color: $gray;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 6rem;
+  margin-left: 5rem;
+}
+
+.homePage-intro3-title {
+  background: url("../../assets/svg/intro3.svg") center center no-repeat;
+  background-size: cover;
+  width: 35rem;
+  height: 11rem;
+}
+
+.homePage-intro3-container {
+  display: none;
+  margin: auto;
+  max-width: 117rem;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.homePage-intro4-title {
+  background: url("../../assets/svg/intro4.svg") center center no-repeat;
+  background-size: cover;
+  width: 43rem;
+  height: 11rem;
+}
+
+.homePage-intro4-large-text {
+  color: $deepYellow;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.homePage-intro4-text {
+  width: 38rem;
+  height: 30rem;
+  color: $gray;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 6rem;
+  margin-left: 5rem;
+}
+
+.homePage-intro4-container {
+  display: none;
+  margin: auto;
+  max-width: 117rem;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.homePage-intro-title {
+  width: 50rem;
+  height: 15rem;
+}
+
+#homePage-intro-title-1 {
+  background: url("../../assets/svg/intro1.svg") center center no-repeat;
+  background-size: contain;
+}
+
+#homePage-intro-title-2 {
+  background: url("../../assets/svg/intro2.svg") center center no-repeat;
+  background-size: contain;
+}
+
+#homePage-intro-title-3 {
+  background: url("../../assets/svg/intro3.svg") center center no-repeat;
+  background-size: contain;
+}
+
+#homePage-intro-title-4 {
+  background: url("../../assets/svg/intro4.svg") center center no-repeat;
+  background-size: contain;
+}
+
+#homePage-intro-title-5 {
+  background: url("../../assets/svg/intro5.svg") center center no-repeat;
+  background-size: contain;
+}
+
+.homePage-intro-large-text {
+  color: $deepYellow;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+#homePage-intro-large-text-green {
+  color: $deepGreen;
+}
+
+.homePage-intro-text {
+  color: $gray;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 6rem;
+  margin-left: 5rem;
+}
+
+.homePage-intro-wrap {
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.homePage-intro-active {
+  display: flex;
+  transition: 0.3s;
+}
+
+.homePage-intro-card {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 25px;
+  width: 100%;
+  height: 500px;
+}
+
+#homePage-intro-video {
+  width: 100%;
+  height: 100%;
+}
+
+#homePage-intro-card-2 {
+  background-image: url("../../assets/jpg/intro2.jpg");
+}
+
+#homePage-intro-card-4 {
+  background-image: url("../../assets/jpg/networkintro4.jpg");
+}
+
+#homePage-intro-card-5 {
+  background-image: url("../../assets/png/kcalintro5.png");
+}
+
+.homePage-intro-card > img {
+  width: 100%;
+  height: 100%;
+}
+
+.homePage-card-img1 {
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/jpg/01_bento-chicken-breast.jpg");
+  background-size: cover;
+  background-position: 70% center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.homePage-card-img2 {
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/jpg/04_bento-shrimp.jpg");
+  background-size: cover;
+  background-position: 70% center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.homePage-card-img3 {
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/jpg/05_bento-porkneck.jpg");
+  background-size: cover;
+  background-position: 70% center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.homePage-ingredient {
+  border-radius: 20px 20px 0 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+}
+
+// 今日推薦
+.homePage-recommend-container {
+  background: url("../../assets/svg/rice.svg") center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+}
+
+.homePage-recommend-wrap {
+  margin: 4rem auto;
+  width: 100%;
+  height: 100%;
+}
+
+.homePage-ingredient-content {
+  margin-top: 5rem;
+  letter-spacing: 5px;
+  line-height: 30px;
+  width: 20rem;
+  height: 8rem;
+  transition: 0.5s;
+}
+
+.homePage-ingredient {
+  border-radius: 20px 20px 0 0;
+  display: block;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  background-color: #0000003c;
+  font-size: 1.5rem;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 300;
+  transition: 0.5s;
+}
+
+.homePage-card-img-warp:hover {
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+.homePage-card-img-warp {
+  height: 30rem;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.homePage-card-container {
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+  background-color: $lightGray;
+  border-radius: 20px;
+  width: 30rem;
+  height: 45rem;
+}
+
+.homePage-card-info > h3 {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  margin: 2.5rem 0;
+}
+
+.homePage-card-hr {
+  width: 25rem;
+  height: 100%;
+  border-top: 1px solid $lightBrown;
+}
+
+.homePage-card-hr > p {
+  color: $gray;
+  font-family: "Noto Sans TC", sans-serif;
+  margin: 0 1rem;
+}
+
+.homePage-card-star {
+  margin: 0px 2px;
+  width: 1.4rem;
+}
+
+// 專屬優惠
+#homePage-discount-container {
+  background-color: $skin;
+  width: 100%;
+}
+
+#homePage-discount-wrap {
+  padding: 30px 15px;
+}
+
+#homePage-discount-area {
+  width: 100%;
+}
+
+.homePage-DiscountCard {
+  height: 475px;
+}
+
+#homePage-discount-BrainCarousel {
+  width: 100%;
+}
+
+#homePage-event-img {
+  width: 40rem;
+  height: 40rem;
+  background: url("../../assets/png/event1.png") center center no-repeat;
+  background-size: cover;
+}
+#homePage-event {
+  width: 85rem;
+  height: 40rem;
+  background-color: $lightGray;
+  border-radius: 20px;
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+  overflow: hidden;
+}
+
+#homePage-event-text {
+  padding: 20px;
+}
+
+.homePage-event-title {
+  font-size: 1.8rem;
+  font-family: "Noto Serif TC", serif;
+  color: $orange;
+  line-height: 13px;
+  font-weight: 700;
+}
+
+.homePage-event-title2 {
+  display: none;
+}
+
+.homePage-event-title3 {
+  display: none;
+}
+
+.homePage-event-content2 {
+  display: none;
+}
+
+.homePage-event-content3 {
+  display: none;
+}
+
+.homePage-event-content {
+  font-size: 1.3rem;
+  font-family: "Noto Sans TC", sans-serif;
+  color: $gray;
+  line-height: 10px;
+}
+
+.homePage-event-content > p {
+  line-height: 15px;
+}
+
+.homePage-call-to-action {
+  color: $orange;
+}
+
+.homePage-event-date {
+  font-size: 1rem;
+  font-family: "Noto Sans TC", sans-serif;
+  color: $gray;
+}
+
+.homePage-img-select {
+  width: 700px;
+  // height: 17rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.img-row {
+  display: flex;
+  justify-content: center;
+}
+
+.img-row > img {
+  width: 17rem;
+  height: 17rem;
+  border-radius: 20px;
+  margin: auto;
+  cursor: pointer;
+  position: relative;
+}
+
+// 購物流程背景樣式
+.homePage-shopping-process {
+  background: url("../../assets/jpg/bentos.jpg") center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0 1.5rem;
+  overflow: hidden;
+}
+
+.homePage-black-blur {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#homePage-blur {
+  background-color: rgba(255, 255, 255, 0.235);
+  width: 100%;
+  backdrop-filter: blur(5px) brightness(1.2);
+  padding: 180px 0px;
+}
+
+.homePage-step-circle > p {
+  font-size: 1.8rem;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 700;
+  color: $skin;
+}
+
+.homePage-step1 {
+  background: url("../../assets/svg/step1.svg") center center no-repeat;
+  width: 12rem;
+  height: 12rem;
+  background-size: cover;
+}
+.homePage-step2 {
+  background: url("../../assets/svg/step2.svg") center center no-repeat;
+  width: 12rem;
+  height: 12rem;
+  background-size: cover;
+}
+.homePage-step3 {
+  background: url("../../assets/svg/step3.svg") center center no-repeat;
+  width: 12rem;
+  height: 12rem;
+  background-size: cover;
+}
+.homePage-step4 {
+  background: url("../../assets/svg/step4.svg") center center no-repeat;
+  width: 12rem;
+  height: 12rem;
+  background-size: cover;
+}
+.homePage-step5 {
+  background: url("../../assets/svg/step5.svg") center center no-repeat;
+  width: 12rem;
+  height: 12rem;
+  background-size: cover;
+}
+
+// 地圖
+// 米粒底圖
+#hamePage-map-container {
+  background-color: $skin;
+}
+
+.homePage-map {
+  background-size: cover;
+  width: 100%;
+  position: relative;
+  // 表單背景色
+}
+
+#homePage-map-form-bcc {
+  padding: 60px 15px;
+}
+
+.homePage-form-announce {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: $deepYellow;
+}
+.homePage-adress-radio {
+  color: $brown;
+  font-size: 1.6rem;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+}
+
+.homePage-map-results {
+  color: $brown;
+  font-size: 1.6rem;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+}
+
+#homePage-adress-form-wrap {
+  width: 100%;
+}
+
+.homepage-map-title > img {
+  width: 500px;
+}
+
+// 首頁select box
+.iris-mainpage-select-wrapper .iris-mainpage-select {
+  font-size: 2rem;
+  border-radius: 2.5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+
+// 橘色
+.button-btn:focus {
+  outline: none;
+}
+
+.button-btn {
+  background-color: $white;
+  height: 65px;
+  width: 200px;
+  border: 1px solid $light-orange;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $light-orange
+  );
+}
+
+.button-btn:hover {
+  color: $white;
+}
+
+.button-btn:active {
+  border: 1px solid $dark-orange;
+}
+
+.button-btn::after {
+  content: "";
+  background-color: $light-orange;
+  height: 65px;
+  width: 220px;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: -10px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.button-btn:hover::after {
+  top: 0px;
+}
+
+.button-btn:active::after {
+  background-color: $dark-orange;
+}
+
+// 綠色
+.button-btn-g:focus {
+  outline: none;
+}
+.button-btn-g {
+  background-color: $white;
+  height: 65px;
+  width: 200px;
+  border: 1px solid $light-green;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $light-green
+  );
+}
+
+.button-btn-g:hover {
+  color: $white;
+}
+
+.button-btn-g:active {
+  border: 1px solid $dark-green;
+}
+
+.button-btn-g::after {
+  content: "";
+  background-color: $light-green;
+  height: 65px;
+  width: 220px;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: -10px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.button-btn-g:hover::after {
+  top: 0px;
+}
+
+.button-btn-g:active::after {
+  background-color: $dark-green;
+}
+
+// 黃色
+.button-btn-y:focus {
+  outline: none;
+}
+.button-btn-y {
+  background-color: $white;
+  height: 65px;
+  width: 200px;
+  border: 1px solid $light-yellow;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $dark-yellow
+  );
+}
+
+.button-btn-y:hover {
+  color: $white;
+}
+
+.button-btn-y:active {
+  border: 1px solid $dark-yellow;
+}
+
+.button-btn-y::after {
+  content: "";
+  background-color: $light-yellow;
+  height: 65px;
+  width: 220px;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: -10px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.button-btn-y:hover::after {
+  top: 0px;
+}
+
+.button-btn-y:active::after {
+  background-color: $dark-yellow;
+}
+
+// 好文推薦
+.homePage-article-sbcc {
+  background-color: $lightGray;
+  width: 20rem;
+  height: 28rem;
+  border-radius: 20px;
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+}
+
+.homePage-article-img1 {
+  background: url("../../assets/jpg/article-img1.jpg") center center no-repeat;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  margin: 2rem auto 1rem auto;
+}
+.homePage-article-img2 {
+  background: url("../../assets/jpg/article-img2.jpg") center center no-repeat;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  margin: 2rem auto 1rem auto;
+}
+.homePage-article-img3 {
+  background: url("../../assets/jpg/article-img4.jpg") center center no-repeat;
+  background-size: cover;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  margin: 2rem auto 1rem auto;
+}
+
+.homePage-article-name {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: $gray;
+  margin: 1rem auto;
+  text-align: center;
+}
+.homePage-article-text {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: $brown;
+  text-align: center;
+}
+
+.homePage-article-text-area {
+  width: 25rem;
+  height: 25rem;
+  border-top: 1px solid $lightBrown;
+  margin: 0 auto;
+}
+
+.homePage-article-bcc {
+  background-color: $lightGray;
+  width: 30rem;
+  height: 45rem;
+  border-radius: 20px;
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+}
+
+.homePage-article {
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+}
+
+.homePage-article-name {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $gray;
+  margin: 1rem auto;
+  text-align: center;
+}
+.homePage-article-text {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: $brown;
+  text-align: center;
+}
+
+.homePage-article-img {
+  background: url("../../assets/jpg/article-img1.jpg") center center no-repeat;
+  background-size: cover;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin: 1.5rem auto 1rem auto;
+}
+.homePage-article-text-area {
+  width: 21rem;
+  height: 22rem;
+  margin: 0 auto;
+}
+
+.homePage-article-name {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $gray;
+  margin: 1rem auto;
+  text-align: center;
+}
+.homePage-article-text {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: $brown;
+  text-align: center;
+}
+
+.homePage-article-left-blur {
+  width: 20rem;
+  height: 28rem;
+  filter: blur(5px);
+}
+
+.homePage-article-text-area {
+  width: 21rem;
+  height: 22rem;
+  margin: 0 auto;
+}
+
+.homePage-article-img {
+  background: url("../../assets/jpg/article-img2.jpg") center center no-repeat;
+  background-size: cover;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin: 1.5rem auto 1rem auto;
+}
+
+.homePage-article-right-blur {
+  width: 25rem;
+  height: 35rem;
+  filter: blur(5px);
+}
+
+.homePage-discountCard-text {
+  text-align: justify;
+}
+.homePage-discountCard-text-padding {
+  padding: 50px 10px;
+}
+
+#homePage-steps {
+  margin-bottom: 170px;
+  align-items: center;
+}
+
+.homePage-stepArrow {
+  width: 5rem;
+  height: 5rem;
+}
+
+#homePage-article-wrap {
+  margin-top: 60px;
+}
+
+.homePage-map-view {
+  width: 100%;
+  height: 100%;
+  margin-left: 15px;
+}
+
+.homePage-map-view iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.homePage-adress-select,
+.homePage-adress-input {
+  margin-bottom: 10px;
+}
+
+.homepage-articleCard {
+  width: 30rem;
+}
+
+@media screen and (max-width: 1199.98px) {
+  .homePage-index-feature-smcircle {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .homePage-feature-circle {
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+  }
+
+  #homePage-farmer-icon {
+    background-size: $featureIconSize_xl $featureIconSize_xl;
+  }
+
+  #homePage-farmer-icon-active {
+    background-size: $featureIconSize_xl_active $featureIconSize_xl_active;
+  }
+
+  #homePage-diet-icon {
+    background-size: $featureIconSize_xl $featureIconSize_xl;
+  }
+
+  #homePage-diet-icon-active {
+    background-size: $featureIconSize_xl_active $featureIconSize_xl_active;
+  }
+
+  #homePage-choices-icon {
+    background-size: $featureIconSize_xl $featureIconSize_xl;
+  }
+
+  #homePage-choices-icon-active {
+    background-size: $featureIconSize_xl_active $featureIconSize_xl_active;
+  }
+
+  #homePage-network-icon {
+    background-size: $featureIconSize_xl $featureIconSize_xl;
+  }
+
+  #homePage-network-icon-active {
+    background-size: $featureIconSize_xl_active $featureIconSize_xl_active;
+  }
+
+  #homePage-kcal-icon {
+    background-size: $featureIconSize_xl $featureIconSize_xl;
+  }
+
+  #homePage-kcal-icon-active {
+    background-size: $featureIconSize_xl_active $featureIconSize_xl_active;
+  }
+
+  .homePage-intro {
+    flex-direction: column;
+  }
+
+  .homePage-discountCard-text-padding {
+    padding: 50px 30px;
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .homePage-index-feature-smcircle {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .homePage-feature-circle {
+    width: 11rem;
+    height: 11rem;
+  }
+
+  #homePage-farmer-icon {
+    background-size: $featureIconSize_xl $featureIconSize_xl;
+  }
+
+  #homePage-farmer-icon-active {
+    background-size: $featureIconSize_xl_active $featureIconSize_xl_active;
+  }
+
+  #homePage-diet-icon {
+    background-size: $featureIconSize_xl $featureIconSize_xl;
+  }
+
+  #homePage-diet-icon-active {
+    background-size: $featureIconSize_xl_active $featureIconSize_xl_active;
+  }
+
+  #homePage-choices-icon {
+    background-size: $featureIconSize_xl $featureIconSize_xl;
+  }
+
+  #homePage-choices-icon-active {
+    background-size: $featureIconSize_xl_active $featureIconSize_xl_active;
+  }
+
+  #homePage-network-icon {
+    background-size: $featureIconSize_xl $featureIconSize_xl;
+  }
+
+  #homePage-network-icon-active {
+    background-size: $featureIconSize_xl_active $featureIconSize_xl_active;
+  }
+
+  #homePage-kcal-icon {
+    background-size: $featureIconSize_xl $featureIconSize_xl;
+  }
+
+  #homePage-kcal-icon-active {
+    background-size: $featureIconSize_xl_active $featureIconSize_xl_active;
+  }
+
+  .homePage-recommend-card {
+    margin-bottom: 50px;
+  }
+
+  #homePage-recommend-card-wrap {
+    flex-wrap: wrap;
+  }
+
+  .homePage-step-circle .homePage-step1,
+  .homePage-step-circle .homePage-step2,
+  .homePage-step-circle .homePage-step3,
+  .homePage-step-circle .homePage-step4,
+  .homePage-step-circle .homePage-step5 {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  #homepage-articles {
+    flex-wrap: wrap;
+    justify-content: space-between !important;
+  }
+
+  .homePage-article .homePage-article-bcc {
+    margin-bottom: 30px;
+  }
+
+  .homePage-discountCard-text-padding {
+    padding: 50px 10px;
+  }
+
+  .homePage-stepArrow {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .homepage-articleCard {
+    margin-bottom: 50px;
+  }
+
+  .homepage-map-title > img {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  #homePage-intro1-container #homePage-intro1-cards {
+    flex-direction: column;
+  }
+
+  #homePage-intro1-container #homePage-intro1-cards #homePage-intro1-card1 {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+
+  .homePage-index-feature-smcircle {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  .homePage-feature-circle {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+  }
+
+  .homePage-circle-title {
+    font-size: 1.5rem;
+    left: calc(50% - 30px);
+  }
+  #homePage-circle-title-customize {
+    font-size: 1.5rem;
+    left: calc(50% - 37.5px);
+  }
+
+  #homePage-farmer-icon {
+    background-size: $featureIconSize_md $featureIconSize_md;
+  }
+
+  #homePage-farmer-icon-active {
+    background-size: $featureIconSize_md_active $featureIconSize_md_active;
+  }
+
+  #homePage-diet-icon {
+    background-size: $featureIconSize_md $featureIconSize_md;
+  }
+
+  #homePage-diet-icon-active {
+    background-size: $featureIconSize_md_active $featureIconSize_md_active;
+  }
+
+  #homePage-choices-icon {
+    background-size: $featureIconSize_md $featureIconSize_md;
+  }
+
+  #homePage-choices-icon-active {
+    background-size: $featureIconSize_md_active $featureIconSize_md_active;
+  }
+
+  #homePage-network-icon {
+    background-size: $featureIconSize_md $featureIconSize_md;
+  }
+
+  #homePage-network-icon-active {
+    background-size: $featureIconSize_md_active $featureIconSize_md_active;
+  }
+
+  #homePage-kcal-icon {
+    background-size: $featureIconSize_md $featureIconSize_md;
+  }
+
+  #homePage-kcal-icon-active {
+    background-size: $featureIconSize_md_active $featureIconSize_md_active;
+  }
+
+  .homePage-intro-card {
+    width: 500px;
+    height: 397px;
+    background-size: cover;
+  }
+
+  #homePage-recommend-card-wrap {
+    justify-content: center !important;
+  }
+
+  .homePage-step-circle .homePage-step1,
+  .homePage-step-circle .homePage-step2,
+  .homePage-step-circle .homePage-step3,
+  .homePage-step-circle .homePage-step4,
+  .homePage-step-circle .homePage-step5 {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  #homepage-articles {
+    justify-content: center !important;
+  }
+
+  .homePage-DiscountCard {
+    height: 100%;
+  }
+
+  #homePage-steps {
+    flex-direction: column !important;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  .homePage-stepArrow {
+    transform: rotate(90deg);
+    margin: 20px 0;
+  }
+
+  .homepage-map-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homepage-map-title > img {
+    width: 400px;
+  }
+
+  #homePage-map-form-bcc {
+    flex-direction: column;
+  }
+
+  .homePage-map-view {
+    margin-top: 50px;
+    margin-left: 0px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  #homePage-feature-circles {
+    flex-direction: column;
+  }
+
+  .homePage-index-feature-smcircle {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 18px 0px 15px 0px;
+  }
+
+  .homePage-feature-circle {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .homePage-circle-title {
+    font-size: 2rem;
+    left: calc(50% - 40px);
+  }
+
+  #homePage-circle-title-customize {
+    font-size: 2rem;
+    left: calc(50% - 50px);
+  }
+
+  #homePage-farmer-icon {
+    background-size: $featureIconSize_sm $featureIconSize_sm;
+  }
+
+  #homePage-farmer-icon-active {
+    background-size: $featureIconSize_sm_active $featureIconSize_sm_active;
+  }
+
+  #homePage-diet-icon {
+    background-size: $featureIconSize_sm $featureIconSize_sm;
+  }
+
+  #homePage-diet-icon-active {
+    background-size: $featureIconSize_sm_active $featureIconSize_sm_active;
+  }
+
+  #homePage-choices-icon {
+    background-size: $featureIconSize_sm $featureIconSize_sm;
+  }
+
+  #homePage-choices-icon-active {
+    background-size: $featureIconSize_sm_active $featureIconSize_sm_active;
+  }
+
+  #homePage-network-icon {
+    background-size: $featureIconSize_sm $featureIconSize_sm;
+  }
+
+  #homePage-network-icon-active {
+    background-size: $featureIconSize_sm_active $featureIconSize_sm_active;
+  }
+
+  #homePage-kcal-icon {
+    background-size: $featureIconSize_sm $featureIconSize_sm;
+  }
+
+  #homePage-kcal-icon-active {
+    background-size: $featureIconSize_sm_active $featureIconSize_sm_active;
+  }
+
+  #homePage-intro1-card1 {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  #homePage-intro1-card1 {
+    margin-top: 20px;
+  }
+
+  #homePage-intro1-cards {
+    flex-direction: column;
+  }
+
+  .homePage-intro2-cards {
+    width: 300px;
+    height: 200px;
+  }
+
+  .homePage-intro-card {
+    width: 397px;
+    height: 315px;
+    background-size: cover;
+  }
+
+  #homePage-intro1-title {
+    height: 7rem;
+  }
+
+  #homePage-intro1-text {
+    margin-left: 0rem;
+  }
+
+  #homePage-intro2-title {
+    height: 6rem;
+    width: 25rem;
+    margin: auto;
+  }
+
+  #homePage-intro2-wrap {
+    width: 100%;
+  }
+
+  #homePage-intro2-text {
+    width: 100%;
+    height: 100%;
+    margin-left: 0rem;
+  }
+
+  #homePage-steps img {
+    width: 20px;
+  }
+
+  .homePage-intro-title {
+    width: 36rem;
+    height: 12rem;
+  }
+
+  .homePage-IntroCard-1 {
+    padding-right: 0px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .homePage-intro-title {
+    width: 27rem;
+    height: 8rem;
+  }
+
+  .homePage-intro-text {
+    margin: auto;
+  }
+
+  .homepage-articleCard {
+    width: 28rem;
+  }
+}

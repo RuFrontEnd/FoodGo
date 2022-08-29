@@ -19,6 +19,7 @@ import ScrollToTop from 'components/scrollToTop/ScrollToTop';
 import LoginModal from 'components/loginModal/LoginModal';
 import FallBack from 'components/fallBack/FallBack';
 import HomePage from 'pages/homePage/HomePage';
+import Admin from 'pages/admin/Admin';
 
 // const Suspense = () =>returnFallBack;
 // 引入 所有人的總元件
@@ -155,6 +156,18 @@ function App() {
   if (isLogin === null) {
     return <></>;
   }
+
+  let ws = new WebSocket('ws://localhost:5000');
+
+  ws.onopen = () => {
+    console.log('open connection');
+  };
+
+  //關閉後執行的動作，指定一個 function 會在連結中斷後執行
+  ws.onclose = () => {
+    console.log('close connection');
+  };
+
   return (
     <Router>
       <>
@@ -176,6 +189,32 @@ function App() {
         {/* <ScrollToTop> */}
         <Suspense fallback={<FallBack />}>
           <Switch>
+            {/* 客製化便當 */}
+            <Route exact path="/">
+              <CustomBentoList
+                setShowBar={setShowBar}
+                handleCartNumber={handleCartNumber}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                amount={amount}
+                setAmount={setAmount}
+                ws={ws}
+              />
+            </Route>
+            <Route exact path="/admin">
+              <Admin ws={ws} />
+            </Route>
+
             {/* 首頁 */}
             {/* <Route exact path="/">
                 <HomePage
@@ -235,27 +274,6 @@ function App() {
                   setAmount={setAmount}
                 />
               </Route> */}
-            {/* 客製化便當 */}
-            <Route exact path="/">
-              <CustomBentoList
-                setShowBar={setShowBar}
-                handleCartNumber={handleCartNumber}
-                county={county}
-                setCounty={setCounty}
-                township={township}
-                setTownship={setTownship}
-                address={address}
-                setAddress={setAddress}
-                takeOrNot={takeOrNot}
-                setTakeOrNot={setTakeOrNot}
-                selectDate={selectDate}
-                setSelectDate={setSelectDate}
-                slecteTime={slecteTime}
-                setSelectTime={setSelectTime}
-                amount={amount}
-                setAmount={setAmount}
-              />
-            </Route>
 
             {/* claudia */}
             {/* <Route exact path="/farm">

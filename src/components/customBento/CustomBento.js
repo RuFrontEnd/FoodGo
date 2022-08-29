@@ -30,7 +30,7 @@ const OptionButton = styled(OptionButtonRef)`
 `;
 
 function CustomBento(props) {
-  const { handleCartNumber, amount, setAmount, count, setCount } = props;
+  const { handleCartNumber, amount, setAmount, count, setCount, ws } = props;
   const $dragTarget = useRef();
   const $vegBoxLeft = useRef();
   const $vegBoxMiddle = useRef();
@@ -335,7 +335,6 @@ function CustomBento(props) {
         return res.json();
       })
       .then(function (res) {
-        console.log('res', res);
         const _data = [...res];
         setData(_data);
       });
@@ -362,8 +361,6 @@ function CustomBento(props) {
       setPriority('0');
       filterFoods = data.filter((dataItem) => dataItem.categories === 'egg');
     }
-
-    console.log('filterFoods', filterFoods);
 
     _foods = filterFoods.map((filterFood) => ({
       sid: filterFood.sid,
@@ -422,8 +419,6 @@ function CustomBento(props) {
       egg: eggSid,
     };
 
-    console.log('JSON.stringify(postData)', JSON.stringify(postData));
-
     fetch('http://localhost:5000/product/custom_list', {
       method: 'post',
       headers: {
@@ -458,7 +453,6 @@ function CustomBento(props) {
 
   // 購物車選購完畢開啟加入購物車按鈕邏輯
   useEffect(() => {
-    // console.log(ricePrice !== 0)
     if (
       // 開啟邏輯
       ricePrice !== 0 &&
@@ -490,6 +484,16 @@ function CustomBento(props) {
     <>
       {/* <div>{data[3].sid}</div> */}
       {/* 商品區 - 網頁版 s */}
+
+      <button
+        onClick={() => {
+          console.log('AAA');
+          ws.send(JSON.stringify('hello'));
+        }}
+      >
+        test websocket
+      </button>
+
       <div
         className="ru-custom-container"
         id="ru-dropArea"
