@@ -411,21 +411,25 @@ function CustomBento(props) {
 
   const createOrder = () => {
     const postData = {
-      vice: riceSid,
-      main: meetSid,
-      side1: vegSidA,
-      side2: vegSidB,
-      side3: vegSidC,
-      egg: eggSid,
+      path: '/custom_list',
+      body: {
+        vice: riceSid,
+        main: meetSid,
+        side1: vegSidA,
+        side2: vegSidB,
+        side3: vegSidC,
+        egg: eggSid,
+      },
     };
 
-    fetch('http://localhost:5000/product/custom_list', {
-      method: 'post',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(postData),
-    }); // 非同步
+    ws.send(JSON.stringify(postData));
+    // fetch('http://localhost:5000/product/custom_list', {
+    //   method: 'post',
+    //   headers: {
+    //     'content-type': 'application/json',
+    //   },
+    //   body: JSON.stringify(postData),
+    // }); // 非同步
     // .then(function (res) {
     //   return res.json();
     // })
