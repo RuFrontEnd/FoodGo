@@ -5,7 +5,8 @@ function Admin(props) {
   const { ws } = props;
 
   ws.onmessage = (event) => {
-    console.log(event);
+    if (JSON.parse(event.data).pathname !== '/admin') return;
+    console.log('hi');
   };
 
   return (

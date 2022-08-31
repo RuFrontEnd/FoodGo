@@ -97,6 +97,13 @@ function CustomBentoList(props) {
     }
   }, [selectedTypes]); // get backend data
 
+  useEffect(() => {
+    ws.onmessage = (event) => {
+      if (event.pathName !== '/') return;
+      console.log(event);
+    };
+  }, []);
+
   return (
     <>
       {/* <ProductFeatureBar
