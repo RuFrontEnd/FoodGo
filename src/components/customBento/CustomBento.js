@@ -658,7 +658,7 @@ function CustomBento(props) {
                       count={count}
                       setCount={setCount}
                     />
-                    <Button onClick={createOrder} />
+                    <Button onClick={createOrder} disabled />
                     {/* {isCanBuy ? (
                       <AddCart
                         id={'addCart-btn-custom'}
