@@ -135,7 +135,6 @@ function Button(props) {
     <>
       <div className="addCart-btn-warp" id={parentId}>
         <button className="addCart-btn addCart-btn-n" id={id} onClick={onClick}>
-          {/* <img className="addCart-cart addCart-cart-n" src={cart} /> */}
           <Cart className="addCart-cart" />
         </button>
       </div>

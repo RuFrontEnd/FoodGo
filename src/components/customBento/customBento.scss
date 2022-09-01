@@ -8,7 +8,7 @@
 .ru-custom-container {
   // 超過設計稿部份
   // background-color: rgb(0, 185, 71);
-  overflow: hidden; // 遮蔽背景圖
+  // overflow: hidden; // 遮蔽背景圖
   padding-top: 90px;
   margin-bottom: 60px; // footer距離
   position: relative;
@@ -19,7 +19,7 @@
   top: 0;
   left: 0;
   z-index: -100;
-  width: 1920px;
+  width: 100%;
 }
 
 .ru-custom-warp {
@@ -31,6 +31,7 @@
 .ru-drop-container {
   // 1170區
   // background-color: rgb(139, 189, 255);
+  width: 1400px;
   margin-bottom: 30px;
   @include flex($df, $fdr, $jcc, $alc);
 }
@@ -135,7 +136,7 @@
   // opacity: 0.5;
 }
 
-.customBento-box-container{
+.customBento-box-container {
   cursor: grab;
 }
 
@@ -249,6 +250,7 @@
 }
 
 .ru-drag-container {
+  width: 1400px;
   // 1170區
   // background-color: #ffc1bc;
   @include flex($df, $fdr, $jcc, $alc);
@@ -339,192 +341,192 @@
 }
 // ------------------------------------------- 網頁版 e -------------------------------------------
 
-//  ------------------------------------------- ipad 版 s -------------------------------------------
+// //  ------------------------------------------- ipad 版 s -------------------------------------------
 
-@media screen and (min-width: 992px) and (max-width: 1365.99px) {
-  .ru-custom-warp {
-    // 1440區
-    // background-color: rgb(255, 242, 185);
-    @include page-iPadPro();
-  }
+// @media screen and (min-width: 992px) and (max-width: 1365.99px) {
+//   .ru-custom-warp {
+//     // 1440區
+//     // background-color: rgb(255, 242, 185);
+//     @include page-iPadPro();
+//   }
 
-  .ru-detail-container-web {
-    margin-left: 30px;
-  }
+//   .ru-detail-container-web {
+//     margin-left: 30px;
+//   }
 
-  .ru-selection-warp {
-    width: 57.35%;
-  }
+//   .ru-selection-warp {
+//     width: 57.35%;
+//   }
 
-  // 切換商品區 ----------
-  .ru-detail-container-web {
-    display: block;
-  }
+//   // 切換商品區 ----------
+//   .ru-detail-container-web {
+//     display: block;
+//   }
 
-  .ru-detail-container-rwd {
-    display: none;
-  }
-}
+//   .ru-detail-container-rwd {
+//     display: none;
+//   }
+// }
 
-@media screen and (min-width: 768px) and (max-width: 991.99px) {
-  .ru-custom-warp {
-    // 1440區
-    // background-color: rgb(255, 242, 185);
-    @include page-iPad();
-    padding: 0px 30px;
-    width: 100%;
-  }
+// @media screen and (min-width: 768px) and (max-width: 991.99px) {
+//   .ru-custom-warp {
+//     // 1440區
+//     // background-color: rgb(255, 242, 185);
+//     @include page-iPad();
+//     padding: 0px 30px;
+//     width: 100%;
+//   }
 
-  .ru-drop-warp {
-    display: block;
-  }
+//   .ru-drop-warp {
+//     display: block;
+//   }
 
-  .ru-box-container {
-    width: 100%;
-  }
+//   .ru-box-container {
+//     width: 100%;
+//   }
 
-  .ru-detail-container {
-    width: 100%;
-    margin: 0px;
-  }
+//   .ru-detail-container {
+//     width: 100%;
+//     margin: 0px;
+//   }
 
-  .ru-selection-warp {
-    width: 69.25%;
-    margin: 25px 0px;
-  }
+//   .ru-selection-warp {
+//     width: 69.25%;
+//     margin: 25px 0px;
+//   }
 
-  .ru-arrow-container .ru-arrowLeft-warp,
-  .ru-arrow-container .ru-arrowRight-warp {
-    width: 14.145%;
-  }
-  // 切換商品區 ----------
-  .ru-detail-container-web {
-    display: none;
-  }
+//   .ru-arrow-container .ru-arrowLeft-warp,
+//   .ru-arrow-container .ru-arrowRight-warp {
+//     width: 14.145%;
+//   }
+//   // 切換商品區 ----------
+//   .ru-detail-container-web {
+//     display: none;
+//   }
 
-  .ru-detail-container-rwd {
-    display: block;
-    width: 75%;
-    margin: 0px auto;
-    margin-top: 40px;
-  }
-}
+//   .ru-detail-container-rwd {
+//     display: block;
+//     width: 75%;
+//     margin: 0px auto;
+//     margin-top: 40px;
+//   }
+// }
 
-@media screen and (min-width: 576px) and (max-width: 767.99px) {
-  .ru-custom-warp {
-    // background-color: rgb(255, 242, 185);
-    @include page-iPad();
-    padding: 0px 40px;
-    width: 100%;
-  }
+// @media screen and (min-width: 576px) and (max-width: 767.99px) {
+//   .ru-custom-warp {
+//     // background-color: rgb(255, 242, 185);
+//     @include page-iPad();
+//     padding: 0px 40px;
+//     width: 100%;
+//   }
 
-  .ru-drop-warp {
-    display: block;
-  }
+//   .ru-drop-warp {
+//     display: block;
+//   }
 
-  .ru-box-container {
-    width: 100%;
-  }
+//   .ru-box-container {
+//     width: 100%;
+//   }
 
-  .ru-detail-container {
-    width: 100%;
-    margin: 0px;
-  }
+//   .ru-detail-container {
+//     width: 100%;
+//     margin: 0px;
+//   }
 
-  .ru-selection-warp {
-    width: 69.25%;
-    margin: 25px 0px;
-  }
+//   .ru-selection-warp {
+//     width: 69.25%;
+//     margin: 25px 0px;
+//   }
 
-  .ru-arrow-container .ru-arrowLeft-warp,
-  .ru-arrow-container .ru-arrowRight-warp {
-    width: 14.145%;
-  }
-  // 切換商品區 ----------
-  .ru-detail-container-web {
-    display: none;
-  }
+//   .ru-arrow-container .ru-arrowLeft-warp,
+//   .ru-arrow-container .ru-arrowRight-warp {
+//     width: 14.145%;
+//   }
+//   // 切換商品區 ----------
+//   .ru-detail-container-web {
+//     display: none;
+//   }
 
-  .ru-detail-container-rwd {
-    display: block;
-    width: 75%;
-    margin: 0px auto;
-    margin-top: 40px;
-  }
-}
-//  ------------------------------------------- ipad 版 e -------------------------------------------
+//   .ru-detail-container-rwd {
+//     display: block;
+//     width: 75%;
+//     margin: 0px auto;
+//     margin-top: 40px;
+//   }
+// }
+// //  ------------------------------------------- ipad 版 e -------------------------------------------
 
-//  ------------------------------------------- 手機 版 s -------------------------------------------
-@media screen and (max-width: 575.99px) {
-  .ru-custom-warp {
-    // 1440區
-    // background-color: rgb(255, 242, 185);
-    @include page-phone();
-  }
+// //  ------------------------------------------- 手機 版 s -------------------------------------------
+// @media screen and (max-width: 575.99px) {
+//   .ru-custom-warp {
+//     // 1440區
+//     // background-color: rgb(255, 242, 185);
+//     @include page-phone();
+//   }
 
-  .ru-drop-warp {
-    display: block;
-  }
+//   .ru-drop-warp {
+//     display: block;
+//   }
 
-  .ru-box-container {
-    width: 100%;
-  }
+//   .ru-box-container {
+//     width: 100%;
+//   }
 
-  .ru-detail-container {
-    width: 100%;
-    margin: 0px;
-  }
+//   .ru-detail-container {
+//     width: 100%;
+//     margin: 0px;
+//   }
 
-  .ru-selection-warp {
-    width: 100%;
-    margin: 25px 0px;
-  }
+//   .ru-selection-warp {
+//     width: 100%;
+//     margin: 25px 0px;
+//   }
 
-  .ru-arrow-container .ru-arrowLeft-warp,
-  .ru-arrow-container .ru-arrowRight-warp {
-    width: 17.145%;
-    margin: 0px;
-  }
+//   .ru-arrow-container .ru-arrowLeft-warp,
+//   .ru-arrow-container .ru-arrowRight-warp {
+//     width: 17.145%;
+//     margin: 0px;
+//   }
 
-  .ru-species-container {
-    height: 300px;
-  }
+//   .ru-species-container {
+//     height: 300px;
+//   }
 
-  .ru-species-container .ru-species-warp .ru-species-item {
-    // background-color: yellow;
-    flex-basis: 250px;
-    height: 100%;
-    @include flex($df, $fdr, $jcs, $alc);
-  }
+//   .ru-species-container .ru-species-warp .ru-species-item {
+//     // background-color: yellow;
+//     flex-basis: 250px;
+//     height: 100%;
+//     @include flex($df, $fdr, $jcs, $alc);
+//   }
 
-  #moveArea1 li {
-    flex-direction: column;
-    text-align: center;
-  }
+//   #moveArea1 li {
+//     flex-direction: column;
+//     text-align: center;
+//   }
 
-  #moveArea1 li .ru-species-img {
-    height: 45%;
-  }
+//   #moveArea1 li .ru-species-img {
+//     height: 45%;
+//   }
 
-  #moveArea1 li .ru-species-info {
-    margin: 0px;
-  }
+//   #moveArea1 li .ru-species-info {
+//     margin: 0px;
+//   }
 
-  #moveArea1 li .ru-species-info h4 {
-    display: flex;
-    flex-direction: column;
-  }
+//   #moveArea1 li .ru-species-info h4 {
+//     display: flex;
+//     flex-direction: column;
+//   }
 
-  .ru-box-warp .ru-hint-warp h3 {
-    font-size: 18px;
-  }
-  // 切換商品區 ----------
-  .ru-detail-container-web {
-    display: none;
-  }
+//   .ru-box-warp .ru-hint-warp h3 {
+//     font-size: 18px;
+//   }
+//   // 切換商品區 ----------
+//   .ru-detail-container-web {
+//     display: none;
+//   }
 
-  .ru-detail-container-rwd {
-    display: block;
-    margin-top: 40px;
-  }
-}
+//   .ru-detail-container-rwd {
+//     display: block;
+//     margin-top: 40px;
+//   }
+// }

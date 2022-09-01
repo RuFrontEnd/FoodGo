@@ -5,7 +5,6 @@ import MultiCarousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import OptionButtonRef from 'components/optionButton/OptionButton';
 import Counter from 'components/counter/Counter';
-import AddCart from 'components/addCart/AddCart';
 import PriceArea from 'components/priceArea/PriceArea'; // 資訊區價格 網頁版
 import CalorieArea from 'components/calorieArea/CalorieArea'; // 資訊區熱量 網頁版
 import CustomHint from 'components/customHint/CustomHint';
@@ -63,27 +62,27 @@ function CustomBento(props) {
   const [isShowHintF, setIsShowHintF] = useState(false);
 
   // 標記蔬菜區sid 以及 設定今日菜色(價格)資訊
-  const [vegSidA, setVegSidA] = useState(0);
+  const [vegSidA, setVegSidA] = useState(null);
   const [vegNameA, setVegNameA] = useState('');
   const [vegPriceA, setVegPriceA] = useState(0);
   const [vegCalA, setVegCalA] = useState(0);
-  const [vegSidB, setVegSidB] = useState(0);
+  const [vegSidB, setVegSidB] = useState(null);
   const [vegNameB, setVegNameB] = useState('');
   const [vegPriceB, setVegPriceB] = useState(0);
   const [vegCalB, setVegCalB] = useState(0);
-  const [vegSidC, setVegSidC] = useState(0);
+  const [vegSidC, setVegSidC] = useState(null);
   const [vegNameC, setVegNameC] = useState('');
   const [vegPriceC, setVegPriceC] = useState(0);
   const [vegCalC, setVegCalC] = useState(0);
-  const [riceSid, setRiceSid] = useState(0);
+  const [riceSid, setRiceSid] = useState(null);
   const [riceName, setRiceName] = useState('');
   const [ricePrice, setRicePrice] = useState(0);
   const [riceCal, setRiceCal] = useState(0);
-  const [eggSid, setEggSid] = useState(0);
+  const [eggSid, setEggSid] = useState(null);
   const [eggName, setEggName] = useState('');
   const [eggPrice, setEggPrice] = useState(0);
   const [eggCal, setEggCal] = useState(0);
-  const [meetSid, setMeetSid] = useState(0);
+  const [meetSid, setMeetSid] = useState(null);
   const [meetName, setMeetName] = useState('');
   const [meetPrice, setMeetPrice] = useState(0);
   const [meetCal, setMeetCal] = useState(0);
@@ -141,21 +140,25 @@ function CustomBento(props) {
 
   const MultiCarouselResponsive = {
     desktop: {
-      breakpoint: { max: 1920, min: 1199.99 },
+      breakpoint: { max: 8192, min: 0 },
       items: 4,
     },
-    tablet: {
-      breakpoint: { max: 1199.98, min: 991.99 },
-      items: 3,
-    },
-    tabletMini: {
-      breakpoint: { max: 991.98, min: 575.99 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 575.98, min: 0 },
-      items: 1,
-    },
+    // desktop: {
+    //   breakpoint: { max: 1920, min: 1199.99 },
+    //   items: 4,
+    // },
+    // tablet: {
+    //   breakpoint: { max: 1199.98, min: 991.99 },
+    //   items: 3,
+    // },
+    // tabletMini: {
+    //   breakpoint: { max: 991.98, min: 575.99 },
+    //   items: 2,
+    // },
+    // mobile: {
+    //   breakpoint: { max: 575.98, min: 0 },
+    //   items: 1,
+    // },
   };
 
   // 品項放到目標容器
@@ -175,6 +178,7 @@ function CustomBento(props) {
           setVegNameA(_food.productName);
           setVegPriceA(_food.price);
           setVegCalA(_food.calories);
+          setVegSidA(null);
         }
       });
     } // 左邊蔬菜區
@@ -187,6 +191,7 @@ function CustomBento(props) {
           setVegNameB(_food.productName);
           setVegPriceB(_food.price);
           setVegCalB(_food.calories);
+          setVegSidB(null);
         }
       });
     } // 中間蔬菜區
@@ -199,6 +204,7 @@ function CustomBento(props) {
           setVegNameC(_food.productName);
           setVegPriceC(_food.price);
           setVegCalC(_food.calories);
+          setVegSidC(null);
         }
       });
     } // 右邊蔬菜區
@@ -211,6 +217,7 @@ function CustomBento(props) {
           setRiceName(_food.productName);
           setRicePrice(_food.price);
           setRiceCal(_food.calories);
+          setRiceSid(null);
         }
       });
     } // 白飯區
@@ -223,6 +230,7 @@ function CustomBento(props) {
           setMeetName(_food.productName);
           setMeetPrice(_food.price);
           setMeetCal(_food.calories);
+          setEggSid(null);
         }
       });
     } // 主食區
@@ -235,6 +243,7 @@ function CustomBento(props) {
           setEggName(_food.productName);
           setEggPrice(_food.price);
           setEggCal(_food.calories);
+          setMeetSid(null);
         }
       });
     } // 蛋區
@@ -423,21 +432,6 @@ function CustomBento(props) {
     };
 
     ws.send(JSON.stringify(postData));
-    // fetch('http://localhost:5000/product/custom_list', {
-    //   method: 'post',
-    //   headers: {
-    //     'content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify(postData),
-    // }); // 非同步
-    // .then(function (res) {
-    //   return res.json();
-    // })
-    // .then(function (res) {
-    //   console.log('res', res);
-    //   const _data = [...res];
-    //   setData(_data);
-    // });
   };
 
   useEffect(() => {
@@ -486,18 +480,7 @@ function CustomBento(props) {
   }
   return (
     <>
-      {/* <div>{data[3].sid}</div> */}
       {/* 商品區 - 網頁版 s */}
-
-      <button
-        onClick={() => {
-          console.log('AAA');
-          ws.send(JSON.stringify('hello'));
-        }}
-      >
-        test websocket
-      </button>
-
       <div
         className="ru-custom-container"
         id="ru-dropArea"
@@ -757,140 +740,16 @@ function CustomBento(props) {
                   ))}
                 </div>
               </div>
-              <MultiCarousel
-                infinite={true}
-                responsive={MultiCarouselResponsive}
-              >
+              <MultiCarousel infinite responsive={MultiCarouselResponsive}>
                 {foodItems.map((foodItem) => foodItem)}
               </MultiCarousel>
             </div>
           </div>
-
-          {/* rwd 詳細資訊 s */}
-          <div
-            className="ru-detail-container ru-detail-container-rwd"
-            id="ru-dropOutAreaD"
-          >
-            <div className="ru-switchBtn-container">
-              {/* 是否開啟價格標示 */}
-              <button id={isPrice && 'ru-active'} onClick={switchPrice}>
-                今日菜色
-              </button>
-              {/* 是否開啟營養標示 */}
-              <button id={isCal && 'ru-active'} onClick={switchCal}>
-                營養標示
-              </button>
-            </div>
-            <div className="ru-info-container">
-              {isPrice && (
-                <PriceArea
-                  riceName={riceName}
-                  ricePrice={ricePrice}
-                  meetName={meetName}
-                  meetPrice={meetPrice}
-                  eggName={eggName}
-                  eggPrice={eggPrice}
-                  vegNameA={vegNameA}
-                  vegPriceA={vegPriceA}
-                  vegNameB={vegNameB}
-                  vegPriceB={vegPriceB}
-                  vegNameC={vegNameC}
-                  vegPriceC={vegPriceC}
-                />
-              )}
-              {isCal && (
-                <CalorieArea
-                  data={data}
-                  riceName={riceName}
-                  riceCal={riceCal}
-                  meetName={meetName}
-                  meetCal={meetCal}
-                  eggName={eggName}
-                  eggCal={eggCal}
-                  vegNameA={vegNameA}
-                  vegCalA={vegCalA}
-                  vegNameB={vegNameB}
-                  vegCalB={vegCalB}
-                  vegNameC={vegNameC}
-                  vegCalC={vegCalC}
-                />
-              )}
-            </div>
-            <div className="ru-checkout-container">
-              <div className="ru-checkout-warp">
-                <Counter
-                  setAmount={setAmount}
-                  count={count}
-                  setCount={setCount}
-                />
-                {isCanBuy ? (
-                  <AddCart
-                    id={'addCart-btn-custom'}
-                    parentId={'addCart-btn-warp-custom'}
-                    handleCartNumber={handleCartNumber}
-                    proudctId={todayId}
-                    imgId={'23_custom'}
-                    price={
-                      ricePrice +
-                      meetPrice +
-                      eggPrice +
-                      vegPriceA +
-                      vegPriceB +
-                      vegPriceC
-                    }
-                    title={'客製化便當'}
-                    amount={amount}
-                    setIsShowHintA={setIsShowHintA}
-                    setIsShowHintB={setIsShowHintB}
-                    setIsShowHintC={setIsShowHintC}
-                    setIsShowHintD={setIsShowHintD}
-                    setIsShowHintE={setIsShowHintE}
-                    setIsShowHintF={setIsShowHintF}
-                    count={count}
-                  />
-                ) : (
-                  <div
-                    class="ru-isCanBuy"
-                    style={{
-                      width: '100%',
-                      pointerEvents: 'none',
-                      filter: 'grayscale(100%)',
-                    }}
-                  >
-                    <AddCart
-                      id={'addCart-btn-custom'}
-                      parentId={'addCart-btn-warp-custom'}
-                      handleCartNumber={handleCartNumber}
-                      proudctId={todayId}
-                      imgId={'23_custom'}
-                      price={
-                        ricePrice +
-                        meetPrice +
-                        eggPrice +
-                        vegPriceA +
-                        vegPriceB +
-                        vegPriceC
-                      }
-                      title={'客製化便當'}
-                      amount={amount}
-                      setIsShowHintA={setIsShowHintA}
-                      setIsShowHintB={setIsShowHintB}
-                      setIsShowHintC={setIsShowHintC}
-                      setIsShowHintD={setIsShowHintD}
-                      setIsShowHintE={setIsShowHintE}
-                      setIsShowHintF={setIsShowHintF}
-                    />
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
         </div>
-        {/* rwd 詳細資訊 e */}
 
-        {/* 背景米圖 s */}
-        <img id="customBento-background" src={background}></img>
-        {/* 背景米圖 e */}
+        {/* <div> */}
+        {/* <img id="customBento-background" src={background} /> */}
+        {/* </div> */}
       </div>
       {/* 商品區 - 網頁版 e */}
     </>

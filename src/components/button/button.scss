@@ -5,6 +5,10 @@
   outline: none;
 }
 
+.addCart-btn-warp:hover .addCart-cart {
+  opacity: 0;
+}
+
 .ru-checkout-warp .addCart-btn {
   background-color: $white;
   width: 94.11764705885%;
@@ -39,6 +43,7 @@
   );
   @include flex($df, $fdr, $jcc, $alc);
 }
+
 // 當 加入購物車 被 按到時
 .ru-checkout-warp .addCart-btn:hover::after {
   opacity: 100;
