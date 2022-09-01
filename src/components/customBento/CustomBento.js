@@ -178,7 +178,6 @@ function CustomBento(props) {
           setVegNameA(_food.productName);
           setVegPriceA(_food.price);
           setVegCalA(_food.calories);
-          setVegSidA(null);
         }
       });
     } // 左邊蔬菜區
@@ -191,7 +190,6 @@ function CustomBento(props) {
           setVegNameB(_food.productName);
           setVegPriceB(_food.price);
           setVegCalB(_food.calories);
-          setVegSidB(null);
         }
       });
     } // 中間蔬菜區
@@ -204,7 +202,6 @@ function CustomBento(props) {
           setVegNameC(_food.productName);
           setVegPriceC(_food.price);
           setVegCalC(_food.calories);
-          setVegSidC(null);
         }
       });
     } // 右邊蔬菜區
@@ -217,7 +214,6 @@ function CustomBento(props) {
           setRiceName(_food.productName);
           setRicePrice(_food.price);
           setRiceCal(_food.calories);
-          setRiceSid(null);
         }
       });
     } // 白飯區
@@ -230,7 +226,6 @@ function CustomBento(props) {
           setMeetName(_food.productName);
           setMeetPrice(_food.price);
           setMeetCal(_food.calories);
-          setEggSid(null);
         }
       });
     } // 主食區
@@ -243,7 +238,6 @@ function CustomBento(props) {
           setEggName(_food.productName);
           setEggPrice(_food.price);
           setEggCal(_food.calories);
-          setMeetSid(null);
         }
       });
     } // 蛋區
@@ -268,6 +262,7 @@ function CustomBento(props) {
       setVegNameA('');
       setVegPriceA(0);
       setVegCalA(0);
+      setVegSidA(null);
     } // 左邊蔬菜區
 
     if (targetId === 'customBento-boxItem-vegBoxMiddle') {
@@ -276,6 +271,7 @@ function CustomBento(props) {
       setVegNameB('');
       setVegPriceB(0);
       setVegCalB(0);
+      setVegSidB(null);
     } // 中間蔬菜區
 
     if (targetId === 'customBento-boxItem-vegBoxRight') {
@@ -284,6 +280,7 @@ function CustomBento(props) {
       setVegNameC('');
       setVegPriceC(0);
       setVegCalC(0);
+      setVegSidC(null);
     } // 右邊蔬菜區
 
     if (targetId === 'customBento-boxItem-rice') {
@@ -291,6 +288,7 @@ function CustomBento(props) {
       setRiceName('');
       setRicePrice(0);
       setRiceCal(0);
+      setRiceSid(null);
     } // 白飯區
 
     if (targetId === 'customBento-boxItem-meet') {
@@ -298,6 +296,7 @@ function CustomBento(props) {
       setMeetName('');
       setMeetPrice(0);
       setMeetCal(0);
+      setMeetSid(null);
     } // 蛋區
 
     if (targetId === 'customBento-boxItem-egg') {
@@ -305,6 +304,7 @@ function CustomBento(props) {
       setEggName('');
       setEggPrice(0);
       setEggCal(0);
+      setEggSid(null);
     } // 主食區
   };
 
@@ -428,6 +428,7 @@ function CustomBento(props) {
         side2: vegSidB,
         side3: vegSidC,
         egg: eggSid,
+        count: count,
       },
     };
 
@@ -553,12 +554,7 @@ function CustomBento(props) {
                   <div id="ru-hintD">
                     {isShowHintD && <img src={hintD}></img>}
                   </div>
-                  <div
-                    id="ru-areaD"
-                    ref={$riceBox}
-                    style={{ zIndex: priority }}
-                    onDrop={handleDropFoodItem}
-                  >
+                  <div id="ru-areaD" ref={$riceBox} onDrop={handleDropFoodItem}>
                     <img
                       src={riceImg}
                       draggable="true"
@@ -658,7 +654,17 @@ function CustomBento(props) {
                       count={count}
                       setCount={setCount}
                     />
-                    <Button onClick={createOrder} disabled />
+                    <Button
+                      onClick={createOrder}
+                      disabled={
+                        vegSidA === null ||
+                        vegSidB === null ||
+                        vegSidC === null ||
+                        riceSid === null ||
+                        eggSid === null ||
+                        meetSid === null
+                      }
+                    />
                     {/* {isCanBuy ? (
                       <AddCart
                         id={'addCart-btn-custom'}

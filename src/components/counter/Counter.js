@@ -23,35 +23,14 @@ function Counter(props) {
         <div
           onClick={() => {
             handleClick('decrement');
-            // if (count === 2) {
-            //   setHoverBackgroundColor('white')
-            //   setHoverMinusColor('#858585')
-            // }
           }}
           className={
             count === 1
               ? 'counter-decrement cursor-default'
               : 'counter-decrement counter-hover'
           }
-
-          // onMouseEnter={() => {
-          //   if (count === 1) {
-          //     return
-          //   } else {
-          //     setHoverBackgroundColor('#f6bd60')
-          //     setHoverMinusColor('#FFF')
-          //   }
-          // }}
-          // onMouseLeave={() => {
-          //   setHoverBackgroundColor('white')
-          //   setHoverMinusColor('#858585')
-          // }}
-          // style={{
-          //   backgroundColor: hoverBackgroundColor,
-          //   color: hoverMinusColor,
-          // }}
         >
-          <p>-</p>
+          <p className="counter-sign">-</p>
         </div>
         <div className="counter-count">
           <p>{count}</p>
@@ -60,7 +39,7 @@ function Counter(props) {
           onClick={() => handleClick('increment')}
           className="counter-increment"
         >
-          <p>+</p>
+          <p className="counter-sign">+</p>
         </div>
       </div>
     </>
