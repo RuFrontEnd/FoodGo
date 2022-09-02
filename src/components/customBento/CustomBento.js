@@ -746,7 +746,11 @@ function CustomBento(props) {
                   ))}
                 </div>
               </div>
-              <MultiCarousel infinite responsive={MultiCarouselResponsive}>
+              <MultiCarousel
+                infinite
+                responsive={MultiCarouselResponsive}
+                className="ru-multi-carousel"
+              >
                 {foodItems.map((foodItem) => foodItem)}
               </MultiCarousel>
             </div>

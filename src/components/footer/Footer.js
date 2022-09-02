@@ -3,6 +3,8 @@ import 'components/footer/footer.scss';
 import Facebook from 'assets/svg/facebook.svg';
 import Instagram from 'assets/svg/instagram.svg';
 
+const thisYear = new Date().getFullYear();
+
 function Footer() {
   return (
     <>
@@ -33,7 +35,7 @@ function Footer() {
             </a>
           </div> */}
           <div id="footer-copyright">
-            <p>Copyright © 2021 拾餐便當. All rights reserved.</p>
+            <p>Copyright © {thisYear} 拾餐便當. All rights reserved.</p>
           </div>
         </div>
       </section>

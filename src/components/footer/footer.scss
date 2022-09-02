@@ -1,19 +1,20 @@
 @import "variable/variable.scss";
 
 //------------------------------Desktop--------------------------------
-#footer-container a,
-#footer-container p {
-    margin: 0px;
-}
 
 #footer-container {
     width: 100%;
     background-color: #f7ede2;
     // height: 22.2rem;
-    padding: 40px 0px;
+    padding: 16px 0px;
     display: flex;
     justify-content: center;
     margin-top: 60px;
+}
+
+#footer-container a,
+#footer-container p {
+    margin: 0px;
 }
 
 #footer-wrap {
@@ -72,7 +73,6 @@
     justify-content: center;
     align-items: center;
     padding-top: 10px;
-    border-top: 1px solid #cccccc;
 }
 //------------------------------Desktop--------------------------------
 
